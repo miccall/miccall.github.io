@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            LEAPMotion猎户座(VR)开发~001~ | 
+        
+        Mr.Metro
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/fav.jpg">
+    <link rel="icon" sizes="192x192" href="/img/fav.jpg">
+    <link rel="apple-touch-icon" href="/img/fav.jpg">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="miccall">
+    <meta name="description" content="Blog of miccall is records about my work">
+    <meta name="keywords" content="miccall">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Metro">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="LEAPMotion猎户座(VR)开发~001~ | Mr.Metro">
+    <meta property="og:description" content="Blog of miccall is records about my work">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+
+    a {
+        color: #00838F;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #7EC0EE !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #7EC0EE !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #7EC0EE !important;
+    }
+
+    .toTop {
+        background: #757575 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #757575;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #757575;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #757575;
+    }
+
+    .post-toc a:hover {
+        color: #00838F;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-image: url(/img/bg.png);
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+
+    <script src="/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/highlight/androidstudio.css">
+
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LEAPMotion猎户座-VR-开发-001"><span class="post-toc-number">1.</span> <span class="post-toc-text">LEAPMotion猎户座(VR)开发~001~ </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-（转载请注明出处-miccall-tech-）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  （转载请注明出处  miccall.tech  ）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Leap-Motion-介绍"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Leap Motion 介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#引用："><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">引用： </span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Leap-版本-："><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Leap 版本 ： </span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Leap-Orion-正文-源码分析篇-较难-初学者可以先绕过去看下一篇文章-："><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Leap Orion 正文(源码分析篇 较难 初学者可以先绕过去看下一篇文章)  ： </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一个脚本LeapHandController"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">第一个脚本LeapHandController</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二个脚本LeapServiceProvider"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">第二个脚本LeapServiceProvider</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最后一个脚本Hand-pool"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">最后一个脚本Hand pool</span></a></li></ol></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://img1.cache.netease.com/catchpic/C/CE/CEE334AC399E6FBF35A9C47999863C88.gif)">
+    
+            <p class="article-headline-p">
+                LEAPMotion猎户座(VR)开发~001~
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>miccall</strong>
+        <span>1月 18, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/leap-motion/">leap motion</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/unity-3d/">unity 3d</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <hr>
+<h1 id="LEAPMotion猎户座-VR-开发-001"><a href="#LEAPMotion猎户座-VR-开发-001" class="headerlink" title="LEAPMotion猎户座(VR)开发~001~ "></a><strong>LEAPMotion猎户座(VR)开发~001~ </strong></h1><h6 id="Created-by-miccall-（转载请注明出处-miccall-tech-）"><a href="#Created-by-miccall-（转载请注明出处-miccall-tech-）" class="headerlink" title="Created by miccall  （转载请注明出处  miccall.tech  ）"></a>Created by miccall  （转载请注明出处  <a href="http://miccall.tech/tags/leap-motion/" target="_blank" rel="external">miccall.tech</a>  ）</h6><h2 id="Leap-Motion-介绍"><a href="#Leap-Motion-介绍" class="headerlink" title="Leap Motion 介绍"></a>Leap Motion 介绍</h2><ul>
+<li>( <a href="http://winshare.tech/2016/10/12/leap-unity-develop%EF%BC%881%EF%BC%89/" target="_blank" rel="external">转载自我们老大的博客</a>  - 和- <a href="http://blog.csdn.net/admintan/article/category/5972691" target="_blank" rel="external">他的csdn</a>)<h3 id="引用："><a href="#引用：" class="headerlink" title="引用： "></a><strong>引用： </strong></h3>  （当然，我是给他打过招呼的） </li>
+<li><p>首先，关于leapmotion 我想会看此类文章的应该都知道这是什么，无关将来这个产品的发展会如何，它作为虚拟现实或现实增强开发的练手是非常合适的。因为他有着非常舒适的开发环境，简单而成熟的SDK。最最重要的是结合unity/unreal，更是一种让你能在短时间之内通过引擎完成高质量手势识别应用的方法。</p>
+</li>
+<li><p>关于原理，和底层算法，因为代码封装完善，你根本不可能窥探到什么（当然肯定有人可以）。所以我的评价仅仅从实际效果出发先对leapmotion做出一个评价。</p>
+</li>
+<li><p>下图为leapmotion传感器的识别区域：<br><img src="https://developer-china-cdn.leapmotion.com/documentation/images/Leap_horizontalViewAngle.png" alt="这里写图片描述"></p>
+</li>
+<li><p>我们可以看到在y轴也就是高度上 leapmotion的识别距离真的是小的可怜（根据我实际测试不会超过50cm）也就是说如果不和其他硬件搭配<br>leapmotion的使用范围很窄</p>
+</li>
+<li><p>单单的桌面使用的话，基本没有什么实用价值原因有二：</p>
+</li>
+</ul>
+<ol>
+<li><p>桌面使用场景下，手势识别很累低效</p>
+</li>
+<li><p>leap仅仅依靠景深画面和算法得出的手势识别精度高，但是精确度差。也就是说可以识别你手势动作很微小的变化，但是对这些变化的呈现又表现出很大的偏差。</p>
+</li>
+</ol>
+<ul>
+<li><p>在和oculus dk2结合之后，leapmotion的实用性总算提高了一些，但是效果仍然不理想。</p>
+</li>
+<li><p>因此，后续leap在不推出新硬件的条件下，我十分不看好这个传感器的发展，未来的leap，要么被OVR等厂家收购，要么倒闭。</p>
+</li>
+<li><p>ok 有点跑题，绕回来。虽然他这不好那不好，但这是我们在市场上能获取到的最优秀的性价比最高的手势识别设备。以他和oculus来学习虚拟现实开发，是最合适不过的了</p>
+</li>
+<li>那废话说够了，开始吧</li>
+</ul>
+<h2 id="Leap-版本-："><a href="#Leap-版本-：" class="headerlink" title="Leap 版本 ： "></a><strong>Leap 版本 ： </strong></h2><ul>
+<li>当然 我是希望你们看完他的所有关于leap的介绍再来看我的 ，毕竟我也是看他的博客 一步步学来的 。</li>
+<li>但是呢 ，他的leap 版本是 v2 ， leap最近用于 VR 的 版本是 猎户座。 </li>
+<li>之前的版本我就不介绍了 ，我们从 orion 这个版本开始 。<br><em>（请一定看完老大的博客再来看我的 ，不然初学者会看不懂我讲的是啥）</em><h2 id="Leap-Orion-正文-源码分析篇-较难-初学者可以先绕过去看下一篇文章-："><a href="#Leap-Orion-正文-源码分析篇-较难-初学者可以先绕过去看下一篇文章-：" class="headerlink" title="Leap Orion 正文(源码分析篇 较难 初学者可以先绕过去看下一篇文章)  ： "></a><strong>Leap Orion 正文(源码分析篇 较难 初学者可以先绕过去看下一篇文章)  ： </strong></h2></li>
+<li>打开unity 3d 导入4.1的leap资产包 。找一个官方场景打开看看  </li>
+<li>猎户座取消了HandController 获取 Frame的信息 ，而是在 LeapHandController上添加了其他两个脚本。。<br><img src="http://img.blog.csdn.net/20170118155606037?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><h3 id="第一个脚本LeapHandController"><a href="#第一个脚本LeapHandController" class="headerlink" title="第一个脚本LeapHandController"></a>第一个脚本LeapHandController</h3></li>
+<li>我们一个个看一看  ，第一个脚本LeapHandController 有些面熟~~<br>v2版本的leap使用的是HandController 这次在前面加了一个Leap 感觉怪怪的<br>来看看里面有些什么鬼 ：<br>打开这个脚本</li>
+<li><p>1 . 它定义了两个脚本的实例 分别是LeapProvider和HandFactory</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">protected LeapProvider  provider = requireComponent&lt;LeapProvider&gt;();</div><div class="line">protected HandFactory    factory = requireComponent&lt;HandFactory&gt;();</div></pre></td></tr></table></figure>
+</li>
+<li><p>2 . 然后就是两个字典列表 一个图形手的列表（graphicsReps），一个物理手的列表（physicsReps）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">protected Dictionary&lt;int, HandRepresentation&gt; graphicsReps = </div><div class="line">      new Dictionary&lt;int, HandRepresentation&gt;();</div><div class="line">protected Dictionary&lt;int, HandRepresentation&gt; physicsReps = </div><div class="line">      new Dictionary&lt;int, HandRepresentation&gt;();</div></pre></td></tr></table></figure>
+</li>
+<li><p>3 . GIZMO_SCALE 从拇指底至小指底的参考距离，单位为mm 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">protected const float GIZMO_SCALE = 5.0f;</div></pre></td></tr></table></figure>
+</li>
+<li><p>4 . 图形手和物理手模型的开关状态 并且写了一个方法来获取他们的bool值 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">protected bool graphicsEnabled = true;</div><div class="line">    protected bool physicsEnabled = true;</div><div class="line"></div><div class="line">    public bool GraphicsEnabled &#123;</div><div class="line">      get &#123;</div><div class="line">        return graphicsEnabled;</div><div class="line">      &#125;</div><div class="line">      set &#123;</div><div class="line">        graphicsEnabled = value;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public bool PhysicsEnabled &#123;</div><div class="line">      get &#123;</div><div class="line">        return physicsEnabled;</div><div class="line">      &#125;</div><div class="line">      set &#123;</div><div class="line">        physicsEnabled = value;</div><div class="line">      &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>5 . 重要的来了 ： OnEnable 和 OnDisable  </p>
+</li>
+<li><p>执行回调的时候 provider维持了一个frame帧的事件 。<br>当OnEnable的时候，向providr的frame中，添加OnUpdateFrame事件和OnFixedFrame事件。他们在不同的循环中 ，我们知道unity的update()和fixedupdate().他们也维持在不同的循环之中，就是这个道理。</p>
+<p>相反的，当OnDisable时,又从provider里面的frame移除这个事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">protected virtual void OnEnable() &#123;</div><div class="line">      provider = requireComponent&lt;LeapProvider&gt;();</div><div class="line">      factory = requireComponent&lt;HandFactory&gt;();</div><div class="line"></div><div class="line">      provider.OnUpdateFrame += OnUpdateFrame;</div><div class="line">      provider.OnFixedFrame += OnFixedFrame;</div><div class="line">&#125;</div><div class="line">protected virtual void OnDisable() &#123;</div><div class="line">      provider.OnUpdateFrame -= OnUpdateFrame;</div><div class="line">      provider.OnFixedFrame -= OnFixedFrame;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>那么 ，这个事件时干什么的呢 ？ </p>
+<pre><code>他们在一定条件下执行一个UpdatesHandRepresentations()方法 
+这个方法基于指定的HandRepresentation字典。如果它们所表示的手仍存在于provider的currentFrame（当前帧）中，则更新活动HandRepresentation实例;否则，HandRepresentation被移除。如果新的Leap Hand对象存在于Leap HandRepresentation
+的Dictionary中，则新的HandRepresentations创建并添加到字典。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/** Updates the graphics HandRepresentations. */</div><div class="line">protected virtual void OnUpdateFrame(Frame frame) &#123;</div><div class="line">  if (frame != null &amp;&amp; graphicsEnabled) &#123;</div><div class="line">    UpdateHandRepresentations(graphicsReps, ModelType.Graphics, frame);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/** Updates the physics HandRepresentations. */</div><div class="line">protected virtual void OnFixedFrame(Frame frame) &#123;</div><div class="line">  if (frame != null &amp;&amp; physicsEnabled) &#123;</div><div class="line">    UpdateHandRepresentations(physicsReps, ModelType.Physics, frame);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>而在frame对象里面 存放的并不是手的实例 而是hand的id<br>根据hand的id，由factory对象来分配到这个可以从LeapHandController接收更新的手表示对象。一一存放在HandRepresentation组成的字典当中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">HandRepresentation rep;</div><div class="line">rep = factory.MakeHandRepresentation(curHand, modelType);</div><div class="line">          if (rep != null) &#123;</div><div class="line">            all_hand_reps.Add(curHand.Id, rep);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>估计有人会问 HandRepresentation 对象到底是个啥 ，其实也很简单，他只是由一些基本信息组成的抽象类 。包含{handid 上一次更新时间，是否存放在字典中等等 }。</p>
+</li>
+<li><p>最后呢 我大概总结成一句话<br><strong> LeapHandController 通过使用 Factory 去创建且基于Provider收到的帧数据去 更新手部模型 </strong> </p>
+</li>
+<li>这样就很清楚了 我们要得到手的数据 就可以从  provider 中获取当前帧 然后从Frame帧对象中得到想要的手的数据了 .</li>
+</ul>
+<h3 id="第二个脚本LeapServiceProvider"><a href="#第二个脚本LeapServiceProvider" class="headerlink" title="第二个脚本LeapServiceProvider"></a>第二个脚本LeapServiceProvider</h3><p>第二个脚本主要涉及到与硬件的链接~<br>也许也是我们将来用到最多的一个关联脚本了 。<br>同样我们打开它 来看看他有写什么  </p>
+<ul>
+<li><p>先来看看他的属性 ，其实也没啥用 贴出来让大家偶一个直观的认识</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">[Tooltip(&quot;如果Leap Motion硬件安装在头戴设备上，则设置为true; 否则，设置为false&quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected bool _isHeadMounted = false;</div><div class="line">    [AutoFind]</div><div class="line">    [SerializeField]</div><div class="line">    protected LeapVRTemporalWarping _temporalWarping;</div><div class="line">    [Tooltip(&quot;当为true时，更新帧将重新用于物理。这是一种优化, 因为需要计算的帧的总数减半 &quot; +</div><div class="line">             &quot;然而，这会在物理帧中引入额外的延迟和不准确性。 &quot; +</div><div class="line">             &quot; &quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected bool _reuseFramesForPhysics = false;</div><div class="line">    [Header(&quot;Device Type&quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected bool _overrideDeviceType = false;</div><div class="line">    [Tooltip(&quot;如果启用了覆盖设备类型，手动控制器将返回此类型的设备.&quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected LeapDeviceType _overrideDeviceTypeWith = LeapDeviceType.Peripheral;</div><div class="line">    [Header(&quot;Interpolation&quot;)]</div><div class="line">    [Tooltip(&quot;插值帧以提供更平滑的体验。 目前试验.&quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected bool _useInterpolation = false;</div><div class="line">    [Tooltip(&quot;应该将多少延迟添加到插值。 需要非零量来防止外推伪影.&quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected long _interpolationDelay = 15;</div></pre></td></tr></table></figure>
+</li>
+<li><p>其次就是方法了 首先 最重要的一个方法 CurrentFrame(); 它提供了一个get方法来获取当前的Frame对象 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public override Frame CurrentFrame &#123;</div><div class="line">      get &#123;</div><div class="line">        return _transformedUpdateFrame;</div><div class="line">      &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public override Frame CurrentFixedFrame &#123;</div><div class="line">      get &#123;</div><div class="line">        if (_reuseFramesForPhysics) &#123;</div><div class="line">          return _transformedUpdateFrame;</div><div class="line">        &#125; else &#123;</div><div class="line">          return _transformedFixedFrame;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>是否使用插值 和设置参数 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public bool UseInterpolation &#123;</div><div class="line">      get &#123;</div><div class="line">        return _useInterpolation;</div><div class="line">      &#125;</div><div class="line">      set &#123;</div><div class="line">        _useInterpolation = value;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">public long InterpolationDelay &#123;</div><div class="line">      get &#123;</div><div class="line">        return _interpolationDelay;</div><div class="line">      &#125;</div><div class="line">      set &#123;</div><div class="line">        _interpolationDelay = value;</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取当前的Controller实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">    /** Returns the Leap Controller instance. */</div><div class="line">    public Controller GetLeapController() &#123;</div><div class="line">#if UNITY_EDITOR</div><div class="line">      //Null check to deal with hot reloading</div><div class="line">      if (leap_controller_ == null) &#123;</div><div class="line">        createController();</div><div class="line">      &#125;</div><div class="line">#endif</div><div class="line">      return leap_controller_;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>还有一些项目必须要的重要方法</p>
+</li>
+<li><p>判断是否链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/** True, if the Leap Motion hardware is plugged in and this application is connected to the Leap Motion service. */</div><div class="line">public bool IsConnected() &#123;</div><div class="line">  return GetLeapController().IsConnected;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>获取设备信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/** Returns information describing the device hardware. */</div><div class="line">public LeapDeviceInfo GetDeviceInfo() &#123;</div><div class="line">  if (_overrideDeviceType) &#123;</div><div class="line">    return new LeapDeviceInfo(_overrideDeviceTypeWith);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>刷新所有的Frame </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public void ReTransformFrames() &#123;</div><div class="line">      transformFrame(_untransformedUpdateFrame, _transformedUpdateFrame);</div><div class="line">      transformFrame(_untransformedFixedFrame, _transformedFixedFrame);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>很显然 ，这些方法都是public的 我们在自己的脚本那就可以直接调出来用了 。。。</p>
+<h3 id="最后一个脚本Hand-pool"><a href="#最后一个脚本Hand-pool" class="headerlink" title="最后一个脚本Hand pool"></a>最后一个脚本Hand pool</h3><p>顾名思义 猜猜是干什么的 作为一个程序员 我看到名字大概可以猜到他是干什么的了</p>
+</li>
+<li><p>HandPool拥有一个IHandModels池，并使HandProxys<br>  当给出一个Hand和模型类型的图形模型或物理模型。<br>  当创建一个HandProxy时，从池中删除一个IHandModel。<br>  当HandProxy完成后，其IHandModel返回到池中。</p>
+</li>
+<li>官方解释跟屎一样 简单一点说 ，这个就是管理手的碰撞器和模型网格</li>
+<li>这里我不细讲这个池的原理了 算法复杂非常人理解 ，与其研究这个，不如去看看更实用的线程池的原理 。<br>不过呢 还是简单说一下怎么用吧 </li>
+<li><strong> ModelsParent </strong> 一个Transform 它的子物体存放手的模型和碰撞器 这个我们以后还会细说到 工程要求我改变模型 。 </li>
+<li><strong> Hand Pool </strong><br>   size里面写数量 然后把ModelsParent下面的模型按要求拖进去就ok啦<br>先讲这么多啦 。看第二篇吧</li>
+</ul>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #7EC0EE !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #7EC0EE !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #7EC0EE !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://yoursite.com/2017/01/18/leapmotion/LEAP Motion 的猎户座  -001-/"
+        data-title="LEAPMotion猎户座(VR)开发~001~">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/01/18/leapmotion/LEAP Motion 的猎户座  -002-/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/01/18/unity3d/Unity 3d 常用脚本/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/preview.gif);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/BA201701210404530018-00-000000.png" alt="miccall's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        316459829@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:316459829@qq.com.com" target="_blank" title="Email Me">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://shang.qq.com/email/stop/email_stop.html?qq=316459829&amp;sig=a1c657365db7e82805ea4b2351081fc3ebcde159f8ae49b1&amp;tttt=1" target="_blank" title="腾讯 QQ">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">phone</i>
+                        腾讯 QQ
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://blog.csdn.net/qq_31411825" target="_blank" title="CSDN">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">user</i>
+                        CSDN
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+  	
+        <li>
+            <a href="/about/" title="About Me">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About Me
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/group/" title="About Group">
+                
+                    <i class="material-icons sidebar-material-icons">group</i>
+                
+                About Group
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/gallery/" title="My Grally">
+                
+                    <i class="material-icons sidebar-material-icons">image</i>
+                
+                My Grally
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/tag/" title="Tag">
+                
+                    <i class="material-icons sidebar-material-icons">expore</i>
+                
+                Tag
+            </a>
+        </li>
+  	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">18</span>
+        </a>
+    </li>
+</ul>
+
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        主题 - Material
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/p/1005055195377360/home?from=page_100505&amp;mod=TAB&amp;is_all=1#place" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/miccall" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Mr.Metro
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    <script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'null'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>

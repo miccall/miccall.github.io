@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            Android学习笔记 007 | 
+        
+        Mr.Metro
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/fav.jpg">
+    <link rel="icon" sizes="192x192" href="/img/fav.jpg">
+    <link rel="apple-touch-icon" href="/img/fav.jpg">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="miccall">
+    <meta name="description" content="Blog of miccall is records about my work">
+    <meta name="keywords" content="miccall">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Metro">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Android学习笔记 007 | Mr.Metro">
+    <meta property="og:description" content="Blog of miccall is records about my work">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+
+    a {
+        color: #00838F;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #7EC0EE !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #7EC0EE !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #7EC0EE !important;
+    }
+
+    .toTop {
+        background: #757575 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #757575;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #757575;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #757575;
+    }
+
+    .post-toc a:hover {
+        color: #00838F;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-image: url(/img/bg.png);
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+
+    <script src="/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/highlight/androidstudio.css">
+
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#监听文本变化"><span class="post-toc-number">2.</span> <span class="post-toc-text">监听文本变化</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Android学习笔记 007
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>miccall</strong>
+        <span>1月 19, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <hr>
+<h1 id="Android学习笔记"><a href="#Android学习笔记" class="headerlink" title=" Android学习笔记 "></a><strong> Android学习笔记 </strong></h1><h1 id="监听文本变化"><a href="#监听文本变化" class="headerlink" title="监听文本变化"></a>监听文本变化</h1><pre><code>//监听输入框文本变化
+et_address_queryphone.addTextChangedListener(new TextWatcher() {
+    //当文本变化完成的的时候调用
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        //1.获取输入框输入的内容
+        String phone = s.toString();
+        //2.根据号码查询号码归属地
+        String queryAddress = AddressDao.queryAddress(phone, getApplicationContext());
+        //3.判断查询的号码归属地是否为空
+        if (!TextUtils.isEmpty(queryAddress)) {
+            //将查询的号码归属地设置给textveiw显示
+            tv_address_queryaddress.setText(queryAddress);
+        }
+    }
+    //当文本变化之前调用
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count,
+            int after) {
+        // TODO Auto-generated method stub
+
+    }
+    //文本变化之后调用
+    @Override
+    public void afterTextChanged(Editable s) {
+        // TODO Auto-generated method stub
+
+    }
+});
+</code></pre><p>#抖动的效果#</p>
+<pre><code>借鉴别人代码的技巧
+    1.根据布局文件中的文本,去找相应布局文件
+    2.根据布局文件去找java类
+    3.在java类根据效果触发事件,去找相应的实现代码
+1.res -&gt; anim -&gt; shake.xml
+    &lt;!-- interpolator : 动画插补器 --&gt;
+    &lt;translate xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:duration=&quot;1000&quot;
+        android:fromXDelta=&quot;0&quot;
+        android:interpolator=&quot;@anim/cycle_7&quot;
+        android:toXDelta=&quot;10&quot; /&gt;
+2.res -&gt; anim -&gt; cycle_7.xml
+    &lt;!-- cycleInterpolator : 循环插补器   cycles : 执行的次数 --&gt;
+    &lt;cycleInterpolator xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:cycles=&quot;7&quot; /&gt;
+3.使用
+        //实现抖动的效果
+        Animation shake = AnimationUtils.loadAnimation(this, R.anim.shake);
+        /*shake.setInterpolator(new Interpolator() {
+
+            @Override
+            public float getInterpolation(float x) {
+                return 0;//根据x的值获取y的值  y=x*x  y=x-k
+            }
+        });*/
+        et_address_queryphone.startAnimation(shake);//开启动画
+</code></pre><p>#振动的效果#</p>
+<pre><code>    //1.获取振动的管理者
+    Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+    //2.振动的效果
+    //vibrator.vibrate(Long.MAX_VALUE);//milliseconds : 振动的持续时间,毫秒值,但是在国产定制系统只会振动一次,比如小米
+    //pattern : 振动平率
+    //repeat : 是否重复振动,-1不重复,非-1重复,如果是非-1表示从振动平率的那个元素开始振动
+    vibrator.vibrate(new long[]{20l,10l,20l,10l}, -1);
+
+权限
+    &lt;uses-permission android:name=&quot;android.permission.VIBRATE&quot;/&gt;
+</code></pre><p>#监听电话状态# (重点:服务,telephoneManger)</p>
+<pre><code>1.创建一个服务
+    public class AddressService extends Service {
+
+2.通过telephoneManager监听电话的状态
+    //监听电话状态
+    //1.获取电话的管理者
+    telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+    //2.监听电话的状态
+    myPhoneStateListener = new MyPhoneStateListener();
+    //listener : 电话状态的回调监听
+    //events : 监听电话的事件
+    //LISTEN_NONE : 不做任务监听操作
+    //LISTEN_CALL_STATE : 监听电话状态
+    telephonyManager.listen(myPhoneStateListener, PhoneStateListener.LISTEN_CALL_STATE);
+3.创建phonesatelistener
+    private class MyPhoneStateListener extends PhoneStateListener{
+        //监听电话状态的回调方法
+        //state : 电话的状态
+        //incomingNumber :　来电电话
+        @Override
+        public void onCallStateChanged(int state, String incomingNumber) {
+            switch (state) {
+            case TelephonyManager.CALL_STATE_IDLE://空闲 状态,挂断状态
+                break;
+            case TelephonyManager.CALL_STATE_RINGING:;//响铃的状态
+                //查询号码归属地并显示
+                String queryAddress = AddressDao.queryAddress(incomingNumber, getApplicationContext());
+                //判断查询归属地是否为空
+                if (!TextUtils.isEmpty(queryAddress)) {
+                    //显示号码归属地
+                    Toast.makeText(getApplicationContext(), queryAddress, 0).show();
+                }
+                break;
+            case TelephonyManager.CALL_STATE_OFFHOOK://通话的状态
+                break;
+            }
+            super.onCallStateChanged(state, incomingNumber);
+        }
+    }
+4.服务关闭的时候,取消监听
+    @Override
+    public void onDestroy() {
+        //当服务关闭的时候,取消监听操作
+        telephonyManager.listen(myPhoneStateListener, PhoneStateListener.LISTEN_NONE);
+        super.onDestroy();
+    }
+</code></pre><p>#自定义toast#  (重点:看源码,layoutParams)</p>
+<pre><code>抄写系统源码实现
+1.显示toast
+    /**
+     * 显示toast
+     */
+    public void showToast(String queryAddress) {
+        //1.获取windowmanager
+        windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
+
+        textView = new TextView(getApplicationContext());
+        textView.setText(queryAddress);
+        textView.setTextSize(100);
+        textView.setTextColor(Color.RED);
+
+        //3.设置toast的属性
+        //layoutparams是toast的属性,控件要添加到那个父控件中,父控件就要使用那个父控件的属性,表示控件的属性规则符合父控件的属性规则
+        WindowManager.LayoutParams params = new WindowManager.LayoutParams();
+        params.height = WindowManager.LayoutParams.WRAP_CONTENT;//高度包裹内容
+        params.width = WindowManager.LayoutParams.WRAP_CONTENT; //宽度包裹内容
+        params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE  //没有焦点
+                | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE  // 不可触摸
+                | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON; // 保持当前屏幕
+        params.format = PixelFormat.TRANSLUCENT; // 透明
+        params.type = WindowManager.LayoutParams.TYPE_TOAST; // 执行toast的类型
+
+        //2.将view对象添加到windowManager中
+        //params : layoutparams  控件的属性
+        //将params属性设置给view对象,并添加到windowManager中
+        windowManager.addView(textView, params);
+    }
+2.隐藏toast的方法
+    /**
+     * 隐藏toast
+     */
+    public void hideToast(){
+        if (windowManager != null &amp;&amp; textView!= null) {
+            windowManager.removeView(textView);//移出控件
+            windowManager= null;
+            textView=null;
+        }
+    }
+</code></pre><p>#服务开启#  (重点:动态获取正在运行服务)</p>
+<pre><code>alt+shift+m : 将选中的代码抽取到方法中
+
+1.在SettingActivity中增加显示号码归属地的条目
+2.给条目设置点击事件
+    sv_setting_address.setOnClickListener(new OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(SettingActivity.this,AddressService.class);
+            //根据checkbox的状态设置描述信息的状态
+            //isChecked() : 之前的状态
+            if (sv_setting_address.isChecked()) {
+                //关闭提示更新
+                stopService(intent);
+                //更新checkbox的状态
+                sv_setting_address.setChecked(false);
+            }else{
+                //打开提示更新
+                startService(intent);
+                sv_setting_address.setChecked(true);
+            }
+        }
+    });
+2.回显操作了,因为我们可以在设置中心中手动关闭服务,所以要动态的去获取服务是否开启
+    a.创建工具类,动态获取服务是否开启
+        /**
+         * 动态获取服务是否开启
+         * @return
+         */
+        public static boolean isRunningService(String className,Context context){
+            //进程的管理者,活动的管理者
+            ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+            //获取正在运行的服务
+            List&lt;RunningServiceInfo&gt; runningServices = activityManager.getRunningServices(1000);//maxNum 返回正在运行的服务的上限个数,最多返回多少个服务
+            //遍历集合
+            for (RunningServiceInfo runningServiceInfo : runningServices) {
+                //获取控件的标示
+                ComponentName service = runningServiceInfo.service;
+                //获取正在运行的服务的全类名
+                String className2 = service.getClassName();
+                //将获取到的正在运行的服务的全类名和传递过来的服务的全类名比较,一直表示服务正在运行  返回true,不一致表示服务没有运行  返回false
+                if (className.equals(className2)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    b.使用
+        //回显操作
+        //动态的获取服务是否开启
+        if (AdressUtils.isRunningService(&quot;com.itheima.mobliesafe75.service.AddressService&quot;, getApplicationContext())) {
+            //开启服务
+            sv_setting_address.setChecked(true);
+        }else{
+            //关闭服务
+            sv_setting_address.setChecked(false);
+        }
+3.当最小化应用的时候,从设置中心关闭服务,再次打开应用,发现条目没有进行更新的操作,解决:在onstart中调用动态获取服务是否开启的操作
+    //activity可见的时候调用
+    @Override
+    protected void onStart() {
+        super.onStart();
+        address();
+    }
+</code></pre><p>#自定义toast样式#</p>
+<pre><code>1.创建布局文件设置样式
+    &lt;LinearLayout xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:orientation=&quot;horizontal&quot; 
+        android:gravity=&quot;center_vertical&quot;
+        android:background=&quot;@drawable/call_locate_blue&quot;
+        &gt;
+        &lt;ImageView 
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:src=&quot;@drawable/ic_launcher&quot;
+            /&gt;
+        &lt;TextView 
+            android:id=&quot;@+id/tv_toastcustom_address&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;北京移动&quot;
+            android:textSize=&quot;18sp&quot;
+            android:textColor=&quot;#000000&quot;
+            /&gt;
+    &lt;/LinearLayout&gt;
+2.将布局文件转化成view对象,并添加到windowmanager
+    //将布局文件转化成view对象
+    view = View.inflate(getApplicationContext(), R.layout.toast_custom, null);
+    //初始化控件
+    //view.findViewById表示去toast_custom找控件
+    TextView tv_toastcustom_address = (TextView) view.findViewById(R.id.tv_toastcustom_address);
+    tv_toastcustom_address.setText(queryAddress);
+
+    //将params属性设置给view对象,并添加到windowManager中
+    windowManager.addView(view, params);
+</code></pre><p>#外拨电话显示号码归属地# (重点:代码注册广播接受者)</p>
+<pre><code>广播接受者有两种注册方式
+    1.清单文件中注册
+        只要程序安装,就会一直生效,不能注销广播接受者,不受程序员控制
+    2.代码注册
+        只有程序运行,才会生效,杀死进程,就会失效,可以通过代码注销广播接受者,受程序员控制
+
+代码注册广播接受者步骤
+    1.在服务中创建广播接受者
+        /**
+         * 外拨电话的广播接受者
+         * @author Administrator
+         *
+         */
+        private class MyOutGoingCallReceiver extends BroadcastReceiver{
+
+            @Override
+            public void onReceive(Context context, Intent intent) {
+
+            }
+        }
+    2.设置接受的广播事件
+        //1.设置广播接受者
+        myOutGoingCallReceiver = new MyOutGoingCallReceiver();
+        //2.设置接受的广播事件
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(&quot;android.intent.action.NEW_OUTGOING_CALL&quot;);//设置接受的广播事件
+    3.注册广播接受者
+        //3.注册广播接受者
+        registerReceiver(myOutGoingCallReceiver, intentFilter);
+    4.注销广播接受者
+        //注销外拨电话广播接受者
+        unregisterReceiver(myOutGoingCallReceiver);
+    5.在广播接受者的onReceive中进行操作
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //查询外拨电话的号码归属地
+            //1.获取外拨电话
+            String phone = getResultData();
+            //2.查询号码归属地
+            String queryAddress = AddressDao.queryAddress(phone, getApplicationContext());
+            //3.判断号码归属地是否为空
+            if (!TextUtils.isEmpty(queryAddress)) {
+                //显示toast
+                showToast(queryAddress);
+            }
+        }
+</code></pre><p>#归属地提示框风格# (重点:单选框)</p>
+<pre><code>1.创建settingClickview及布局文件,拷贝settingview,将checkbox及自定义属性全部去掉
+2.使用
+    /**
+     * 设置归属地提示框风格
+     */
+    private void changedbg() {
+        final String[] items={&quot;半透明&quot;,&quot;活力橙&quot;,&quot;卫士蓝&quot;,&quot;金属灰&quot;,&quot;苹果绿&quot;};
+        //设置标题和描述信息
+        scv_setting_changedbg.setTitle(&quot;归属地提示框风格&quot;);
+        //根据保存的选中的选项的索引值设置自定义组合控件描述信息回显操作
+        scv_setting_changedbg.setDes(items[sp.getInt(&quot;which&quot;, 0)]);
+        //设置自定义组合控件的点击事件
+        scv_setting_changedbg.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //弹出单选对话框
+                AlertDialog.Builder builder = new Builder(SettingActivity.this);
+                //设置图标
+                builder.setIcon(R.drawable.ic_launcher);
+                //设置标题
+                builder.setTitle(&quot;归属地提示框风格&quot;);
+                //设置单选框
+                //items : 选项的文本的数组
+                //checkedItem : 选中的选项
+                //listener : 点击事件
+                //设置单选框选中选项的回显操作
+                builder.setSingleChoiceItems(items, sp.getInt(&quot;which&quot;, 0), new DialogInterface.OnClickListener(){
+                    //which : 选中的选项索引值
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Editor edit = sp.edit();
+                        edit.putInt(&quot;which&quot;, which);
+                        edit.commit();
+                        //1.设置自定义组合控件描述信息文本
+                        scv_setting_changedbg.setDes(items[which]);//根据选中选项索引值从items数组中获取出相应文本,设置给描述信息控件
+                        //2.隐藏对话框
+                        dialog.dismiss();
+                    }
+                });
+                //设置取消按钮
+                builder.setNegativeButton(&quot;取消&quot;, null);//当点击按钮只是需要进行隐藏对话框的操作的话,参数2可以写null,表示隐藏对话框
+                builder.show();
+            }
+        });
+    }
+3.修改toast背景风格
+    //根据归属地提示框风格中设置的风格索引值设置toast显示的背景风格
+    view.setBackgroundResource(bgcolor[sp.getInt(&quot;which&quot;, 0)]);
+</code></pre><p>#设置toast位置#  (重点)</p>
+<pre><code>//设置toast位置
+//效果冲突,以默认的效果为主
+params.gravity = Gravity.LEFT | Gravity.TOP;
+
+params.x = 120;//不是坐标,表示的距离边框的距离,根据gravity来设置的,如果gravity是left表示距离左边框的距离,如果是right表示距离有边框的距离
+params.y = 100;//跟x的含义
+</code></pre><p>#归属地提示框位置界面#</p>
+<pre><code>1.在设置中心添加归属地提示框风格相似条目
+2.设置标题,描述信息和点击事件
+    /**
+     * 归属地提示框位置
+     */
+    private void location() {
+        scv_setting_location.setTitle(&quot;归属地提示框位置&quot;);
+        scv_setting_location.setDes(&quot;设置归属地提示框的显示位置&quot;);
+        scv_setting_location.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //跳转到设置位置的界面
+                Intent intent = new Intent(SettingActivity.this,DragViewActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+3.设置dragviewActivity的界面
+    a.在清单文件中设置activity的theme属性
+        &lt;activity android:name=&quot;.DragViewActivity&quot;
+            android:theme=&quot;@android:style/Theme.Translucent.NoTitleBar&quot;
+        /&gt;
+    b.设置布局文件中的父控件的背景
+         android:background=&quot;#aa000000&quot;
+    c.设置相应的控件
+        &lt;LinearLayout
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:background=&quot;@drawable/call_locate_orange&quot;
+            android:gravity=&quot;center_vertical&quot;
+            android:orientation=&quot;horizontal&quot; &gt;
+
+            &lt;ImageView
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:src=&quot;@drawable/ic_launcher&quot; /&gt;
+
+            &lt;TextView
+                android:id=&quot;@+id/tv_toastcustom_address&quot;
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;双击居中&quot;
+                android:textColor=&quot;#ffffff&quot;
+                android:textSize=&quot;18sp&quot; /&gt;
+        &lt;/LinearLayout&gt;
+
+        &lt;TextView 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;按住提示框拖到任意位置\n按手机返回键立即生效&quot;
+            android:textColor=&quot;#000000&quot;
+            android:layout_alignParentBottom=&quot;true&quot;
+            android:textSize=&quot;18sp&quot;
+            android:gravity=&quot;center_horizontal&quot;
+            android:background=&quot;@drawable/call_locate_blue&quot;
+            android:padding=&quot;10dp&quot;
+            /&gt;
+</code></pre><p>#随着手指移动而移动的操作# (重点)</p>
+<pre><code>给控件设置触摸监听事件
+    /**
+     * 设置触摸监听
+     */
+    private void setTouch() {
+        ll_dragview_toast.setOnTouchListener(new OnTouchListener() {
+            private int startX;
+            private int startY;
+
+            //v : 当前的控件
+            //event : 控件执行的事件
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                //event.getAction() : 获取控制的执行的事件
+                switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    //按下的事件
+                    System.out.println(&quot;按下了....&quot;);
+                    //1.按下控件,记录开始的x和y的坐标
+                    startX = (int) event.getRawX();
+                    startY = (int) event.getRawY();
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    //移动的事件
+                    System.out.println(&quot;移动了....&quot;);
+                    //2.移动到新的位置记录新的位置的x和y的坐标
+                    int newX = (int) event.getRawX();
+                    int newY = (int) event.getRawY();
+                    //3.计算移动的偏移量
+                    int dX = newX-startX;
+                    int dY = newY-startY;
+                    //4.移动相应的偏移量,重新绘制控件
+                    //获取的时候原控件距离父控件左边和顶部的距离
+                    int l = ll_dragview_toast.getLeft();
+                    int t = ll_dragview_toast.getTop();
+                    //获取新的控件的距离父控件左边和顶部的距离
+                    l+=dX;
+                    t+=dY;
+                    int r = l+ll_dragview_toast.getWidth();
+                    int b = t+ll_dragview_toast.getHeight();
+                    ll_dragview_toast.layout(l, t, r, b);//重新绘制控件
+                    //5.更新开始的坐标
+                    startX=newX;
+                    startY=newY;
+                    break;
+                case MotionEvent.ACTION_UP:
+                    //抬起的事件
+                    System.out.println(&quot;抬起了....&quot;);
+                    break;
+                }
+                //True if the listener has consumed the event, false otherwise.
+                //true:事件消费了,执行了,false:表示事件被拦截了
+                return true;
+            }
+        });
+    }
+</code></pre>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #7EC0EE !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #7EC0EE !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #7EC0EE !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://yoursite.com/2017/01/19/android/android_007/"
+        data-title="Android学习笔记 007">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/01/19/android/android_008/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/01/19/android/android_006/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/preview.gif);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/BA201701210404530018-00-000000.png" alt="miccall's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        316459829@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:316459829@qq.com.com" target="_blank" title="Email Me">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://shang.qq.com/email/stop/email_stop.html?qq=316459829&amp;sig=a1c657365db7e82805ea4b2351081fc3ebcde159f8ae49b1&amp;tttt=1" target="_blank" title="腾讯 QQ">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">phone</i>
+                        腾讯 QQ
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://blog.csdn.net/qq_31411825" target="_blank" title="CSDN">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">user</i>
+                        CSDN
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+  	
+        <li>
+            <a href="/about/" title="About Me">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About Me
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/group/" title="About Group">
+                
+                    <i class="material-icons sidebar-material-icons">group</i>
+                
+                About Group
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/gallery/" title="My Grally">
+                
+                    <i class="material-icons sidebar-material-icons">image</i>
+                
+                My Grally
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/tag/" title="Tag">
+                
+                    <i class="material-icons sidebar-material-icons">expore</i>
+                
+                Tag
+            </a>
+        </li>
+  	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">18</span>
+        </a>
+    </li>
+</ul>
+
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        主题 - Material
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/p/1005055195377360/home?from=page_100505&amp;mod=TAB&amp;is_all=1#place" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/miccall" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Mr.Metro
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    <script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'null'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>

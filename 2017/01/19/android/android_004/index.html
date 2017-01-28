@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            Android学习笔记 004 | 
+        
+        Mr.Metro
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/fav.jpg">
+    <link rel="icon" sizes="192x192" href="/img/fav.jpg">
+    <link rel="apple-touch-icon" href="/img/fav.jpg">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="miccall">
+    <meta name="description" content="Blog of miccall is records about my work">
+    <meta name="keywords" content="miccall">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Metro">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Android学习笔记 004 | Mr.Metro">
+    <meta property="og:description" content="Blog of miccall is records about my work">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+
+    a {
+        color: #00838F;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #7EC0EE !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #7EC0EE !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #7EC0EE !important;
+    }
+
+    .toTop {
+        background: #757575 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #757575;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #757575;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #757575;
+    }
+
+    .post-toc a:hover {
+        color: #00838F;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-image: url(/img/bg.png);
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+
+    <script src="/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/highlight/androidstudio.css">
+
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#界面切换动画效果-重点"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">界面切换动画效果#  (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手势识别器-重点"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">手势识别器#  (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第四个界面设置完成操作"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">第四个界面设置完成操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shape资源-重点"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">shape资源#  (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#绑定SIM卡"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">绑定SIM卡</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#监听手机重启-重点-广播接受者"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">监听手机重启#  (重点:广播接受者)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#保存安全号码"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">保存安全号码</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取联系人操作-重点"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">获取联系人操作# (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取联系人测试"><span class="post-toc-number">1.0.9.</span> <span class="post-toc-text">获取联系人测试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#选择联系人界面"><span class="post-toc-number">1.0.10.</span> <span class="post-toc-text">选择联系人界面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#选择联系人界面设置安全号码-重点-两个activity之间的数据传递"><span class="post-toc-number">1.0.11.</span> <span class="post-toc-text">选择联系人界面设置安全号码#  (重点:两个activity之间的数据传递)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#细节处理-重点-耗时操作-注解初始化控件"><span class="post-toc-number">1.0.12.</span> <span class="post-toc-text">细节处理#  (重点:耗时操作,注解初始化控件)</span></a></li></ol></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Android学习笔记 004
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>miccall</strong>
+        <span>1月 19, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <hr>
+<h1 id="Android学习笔记"><a href="#Android学习笔记" class="headerlink" title=" Android学习笔记 "></a><strong> Android学习笔记 </strong></h1><h3 id="界面切换动画效果-重点"><a href="#界面切换动画效果-重点" class="headerlink" title="界面切换动画效果#  (重点)"></a>界面切换动画效果#  (重点)</h3><pre><code>平移动画 
+1.res -&gt; anim -&gt; xxx.xml   (translate)
+    &lt;translate
+        xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:fromXDelta=&quot;100%&quot;
+        android:toXDelta=&quot;0&quot;
+        android:duration=&quot;500&quot;
+        &gt;
+        &lt;!-- fromXDelta : 表示从x轴哪里开始移动 
+             toXDelta : 移动到哪里
+             duration : 持续时间
+        --&gt;
+
+    &lt;/translate&gt;
+2.调用
+    //执行平移动画
+    //执行界面切换动画的操作,是在startActivity或者finish之后执行
+    //enterAnim : 新的界面进入的动画
+    //exitAnim : 旧的界面退出的动画
+    overridePendingTransition(R.anim.setup_enter_next, R.anim.setup_exit_next);
+</code></pre><h3 id="手势识别器-重点"><a href="#手势识别器-重点" class="headerlink" title="手势识别器#  (重点)"></a>手势识别器#  (重点)</h3><pre><code>private GestureDetector gestureDetector;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    //1.获取手势识别器
+    //要想让手势是识别器生效,必须将手势识别器注册到屏幕的触摸事件中
+    gestureDetector = new GestureDetector(this, new MyOnGestureListener());
+}
+//界面的触摸事件
+@Override
+public boolean onTouchEvent(MotionEvent event) {
+    gestureDetector.onTouchEvent(event);
+    return super.onTouchEvent(event);
+}
+//base simple
+private class MyOnGestureListener extends SimpleOnGestureListener{
+    //e1 : 按下的事件,保存有按下的坐标
+    //e2 : 抬起的事件,保存有抬起的坐标
+    //velocityX : velocity 速度    在x轴上移动的速率
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+            float velocityY) {
+        //得到按下的x坐标
+        float startX = e1.getRawX();
+        //得到抬起的x坐标
+        float endX = e2.getRawX();
+        //得到按下的Y坐标
+        float startY = e1.getRawY();
+        //得到抬起的y坐标
+        float endY = e2.getRawY();
+        //判断是否是斜滑
+        if ((Math.abs(startY-endY)) &gt; 50) {
+            Toast.makeText(getApplicationContext(), &quot;你小子又乱滑了,别闹了....&quot;, 0).show();
+            return false;
+        }
+        //下一步
+        if ((startX-endX) &gt; 100) {
+            next_activity();
+        }
+        //上一步
+        if ((endX-startX) &gt; 100) {
+            pre_activity();
+        }
+        //true if the event is consumed, else false
+        //true : 事件执行     false:拦截事件,事件不执行
+        return true;
+    }
+
+}
+</code></pre><h3 id="第四个界面设置完成操作"><a href="#第四个界面设置完成操作" class="headerlink" title="第四个界面设置完成操作"></a>第四个界面设置完成操作</h3><pre><code>@Override
+public void next_activity() {
+    //保存用户第一次进入手机防盗模块设置向导的状态,frist
+    Editor edit = sp.edit();
+    edit.putBoolean(&quot;first&quot;, false);
+    edit.commit();
+    // 跳转到手机防盗页面
+    Intent intent = new Intent(this,LostfindActivity.class);
+    startActivity(intent);
+    finish();
+}
+</code></pre><h3 id="shape资源-重点"><a href="#shape资源-重点" class="headerlink" title="shape资源#  (重点)"></a>shape资源#  (重点)</h3><pre><code>1.res -&gt; drawable -&gt; xxx.xml  (shape)
+    &lt;shape xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; 
+        android:shape=&quot;rectangle&quot;
+        &gt;
+        &lt;!-- shape : 设置图片的行状态      rectangle : 矩形     oval:椭圆    line:线    ring:环形--&gt;
+        &lt;!-- corners : 弧度 --&gt;
+        &lt;corners android:radius=&quot;10dp&quot;/&gt;
+        &lt;!-- solid : 颜色 --&gt;
+        &lt;solid android:color=&quot;#ff0000&quot;/&gt;
+        &lt;!-- stroke :　虚线　　　 dashWidth : 点的宽度   dashGap : 点之间的距离
+        &lt;stroke android:width=&quot;3dp&quot; android:color=&quot;#00ff00&quot; android:dashWidth=&quot;3dp&quot; android:dashGap=&quot;5dp&quot;/&gt;
+        --&gt;
+        &lt;!-- gradient : 渐变      angle : 渐变的角度--&gt;
+        &lt;gradient android:startColor=&quot;#ff0000&quot; android:centerColor=&quot;#00ff00&quot; android:endColor=&quot;#0000ff&quot;/&gt;
+    &lt;/shape&gt;
+2.调用
+    android:background=&quot;@drawable/shape_drawable&quot;
+</code></pre><h3 id="绑定SIM卡"><a href="#绑定SIM卡" class="headerlink" title="绑定SIM卡"></a>绑定SIM卡</h3><pre><code>//设置回显操作
+//根据保存的SIM卡去初始化控件状态,有保存SIM卡号就是绑定SIM卡,如果没有就是没有绑定SIM卡
+if (TextUtils.isEmpty(sp.getString(&quot;sim&quot;, &quot;&quot;))) {
+    //没有绑定
+    sv_setup2_sim.setChecked(false);
+}else{
+    //绑定SIM卡
+    sv_setup2_sim.setChecked(true);
+}
+sv_setup2_sim.setOnClickListener(new OnClickListener() {
+
+    @Override
+    public void onClick(View v) {
+        Editor edit = sp.edit();
+        //绑定SIM卡
+        //根据checkbox的状态设置描述信息的状态
+        //isChecked() : 获取之前checkbox的状态
+        if (sv_setup2_sim.isChecked()) {
+            //解绑
+            edit.putString(&quot;sim&quot;, &quot;&quot;);
+            sv_setup2_sim.setChecked(false);
+        }else{
+            //绑定SIM卡
+            //获取SIM卡号
+            //电话的管理者
+            TelephonyManager tel = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+            //tel.getLine1Number();//获取SIM卡绑定的电话号码    line1:双卡双待.在中国不太适用,运营商一般不会将SIM卡和手机号码绑定
+            String sim = tel.getSimSerialNumber();//获取SIM卡序列号,唯一标示
+            //保存SIM卡号
+            edit.putString(&quot;sim&quot;, sim);
+            sv_setup2_sim.setChecked(true);
+        }
+        edit.commit();
+    }
+});
+</code></pre><h3 id="监听手机重启-重点-广播接受者"><a href="#监听手机重启-重点-广播接受者" class="headerlink" title="监听手机重启#  (重点:广播接受者)"></a>监听手机重启#  (重点:广播接受者)</h3><pre><code>1.监听手机重启
+    a.创建一个广播接受者,接受者手机重启的广播事件
+        public class BootCompleteReceiver extends BroadcastReceiver {
+
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                System.out.println(&quot;手机重启了......&quot;);
+            }
+
+        }
+    b.清单文件中配置
+        &lt;receiver android:name=&quot;com.itheima.mobliesafe75.receiver.BootCompleteReceiver&quot;&gt;
+            &lt;!-- priority : 广播接受者的优先级,值越大优先级越高,越先接收到广播 --&gt;
+            &lt;intent-filter 
+                android:priority=&quot;1000&quot;&gt;
+                &lt;action android:name=&quot;android.intent.action.BOOT_COMPLETED&quot;/&gt;
+            &lt;/intent-filter&gt;
+        &lt;/receiver&gt;
+    c.权限
+        &lt;uses-permission android:name=&quot;android.permission.RECEIVE_BOOT_COMPLETED&quot;/&gt;
+2.发送短信
+    a.发送短信
+        //发送报警短信
+        //短信的管理者
+        SmsManager smsManager = SmsManager.getDefault();
+        //destinationAddress : 收件人
+        //scAddress :　短信中心的地址　　一般null
+        //text : 短信的内容
+        //sentIntent : 是否发送成功
+        //deliveryIntent : 短信的协议  一般null
+        smsManager.sendTextMessage(&quot;5556&quot;, null, &quot;da ge wo bei dao le,help me!!!!&quot;, null, null);
+    b.权限
+        &lt;uses-permission android:name=&quot;android.permission.SEND_SMS&quot;/&gt;
+3.检查SIM卡是否发生变化
+    //1.获取保存的SIM卡号
+    String sp_sim = sp.getString(&quot;sim&quot;, &quot;&quot;);
+    //2.再次获取本地SIM卡号
+    TelephonyManager tel = (TelephonyManager)context.getSystemService(Context.TELEPHONY_SERVICE);
+    //tel.getLine1Number();//获取SIM卡绑定的电话号码    line1:双卡双待.在中国不太适用,运营商一般不会将SIM卡和手机号码绑定
+    String sim = tel.getSimSerialNumber();//获取SIM卡序列号,唯一标示
+    //3.判断两个SIM卡号是否为空
+    if (!TextUtils.isEmpty(sp_sim) &amp;&amp; !TextUtils.isEmpty(sim)) {
+        //4.判断两个SIM卡是否一致,如果一致就不发送报警短信,不一致发送报警短信
+        if (!sp_sim.equals(sim)) {
+            //发送报警短信
+            //短信的管理者
+            SmsManager smsManager = SmsManager.getDefault();
+            //destinationAddress : 收件人
+            //scAddress :　短信中心的地址　　一般null
+            //text : 短信的内容
+            //sentIntent : 是否发送成功
+            //deliveryIntent : 短信的协议  一般null
+            smsManager.sendTextMessage(&quot;5556&quot;, null, &quot;da ge wo bei dao le,help me!!!!&quot;, null, null);
+        }
+    }
+</code></pre><h3 id="保存安全号码"><a href="#保存安全号码" class="headerlink" title="保存安全号码"></a>保存安全号码</h3><pre><code>1.保存安全号码
+    //保存输入的安全号
+    //1.获取输入的安全号码
+    String safenum = et_setup3_safenum.getText().toString().trim();
+    //2.判断号码是否为空
+    if (TextUtils.isEmpty(safenum)) {
+        Toast.makeText(getApplicationContext(), &quot;请输入安全号码&quot;, 0).show();
+        return;
+    }
+    //3.保存输入的安全号码
+    Editor edit = sp.edit();
+    edit.putString(&quot;safenum&quot;, safenum);
+    edit.commit();
+2.回显操作
+    //回显操作
+    et_setup3_safenum.setText(sp.getString(&quot;safenum&quot;, &quot;&quot;));
+</code></pre><h3 id="获取联系人操作-重点"><a href="#获取联系人操作-重点" class="headerlink" title="获取联系人操作# (重点)"></a>获取联系人操作# (重点)</h3><pre><code>/**
+ * 获取系统联系人
+ * @return
+ */
+public static List&lt;HashMap&lt;String, String&gt;&gt; getAllContactInfo(Context context){
+    ArrayList&lt;HashMap&lt;String, String&gt;&gt; list = new ArrayList&lt;HashMap&lt;String,String&gt;&gt;();
+    //1.获取内容解析者
+    ContentResolver resolver = context.getContentResolver();
+    //2.获取内容提供者的地址:com.android.contacts    www.baidu.com/jdk
+    //raw_contacts表的地址 :raw_contacts
+    //view_data表的地址 : data
+    //3.生成查询地址
+    Uri raw_uri = Uri.parse(&quot;content://com.android.contacts/raw_contacts&quot;);//http://
+    Uri date_uri = Uri.parse(&quot;content://com.android.contacts/data&quot;);
+    //4.查询操作,先查询raw_contacts,查询contact_id
+    //projection : 查询的字段
+    Cursor cursor = resolver.query(raw_uri, new String[]{&quot;contact_id&quot;}, null, null, null);
+    //5.解析cursor
+    while(cursor.moveToNext()){
+        //6.获取查询的数据
+        String contact_id = cursor.getString(0);
+        //cursor.getString(cursor.getColumnIndex(&quot;contact_id&quot;));//getColumnIndex : 查询字段在cursor中索引值,一般都是用在查询字段比较多的时候
+        //7.根据contact_id查询view_data表中的数据
+        //selection : 查询条件
+        //selectionArgs :查询条件的参数
+        //sortOrder : 排序
+        Cursor c = resolver.query(date_uri, new String[]{&quot;data1&quot;,&quot;mimetype&quot;}, &quot;raw_contact_id=?&quot;, new String[]{contact_id}, null);
+        HashMap&lt;String, String&gt; map = new HashMap&lt;String, String&gt;();
+        //8.解析c
+        while(c.moveToNext()){
+            //9.获取数据
+            String data1 = c.getString(0);
+            String mimetype = c.getString(1);
+            //10.根据类型去判断获取的data1数据并保存
+            if (mimetype.equals(&quot;vnd.android.cursor.item/phone_v2&quot;)) {
+                //电话
+                map.put(&quot;phone&quot;, data1);
+            }else if(mimetype.equals(&quot;vnd.android.cursor.item/name&quot;)){
+                //姓名
+                map.put(&quot;name&quot;, data1);
+            }
+        }
+        //11.添加到集合中数据
+        list.add(map);
+        //12.关闭cursor
+        c.close();
+    }
+    //12.关闭cursor
+    cursor.close();
+    return list;
+}
+
+权限:&lt;uses-permission android:name=&quot;android.permission.READ_CONTACTS&quot;/&gt;
+</code></pre><h3 id="获取联系人测试"><a href="#获取联系人测试" class="headerlink" title="获取联系人测试"></a>获取联系人测试</h3><pre><code>1.创建一个测试工程
+2.解决contact_id为null
+    if (!TextUtils.isEmpty(contact_id)) {//null   &quot;&quot;
+        .......     
+    }
+</code></pre><h3 id="选择联系人界面"><a href="#选择联系人界面" class="headerlink" title="选择联系人界面"></a>选择联系人界面</h3><pre><code>1.listview使用
+     &lt;ListView 
+        android:id=&quot;@+id/lv_contact_contacts&quot;
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;match_parent&quot;
+        &gt;&lt;/ListView&gt;
+2.代码中使用
+    lv_contact_contacts = (ListView) findViewById(R.id.lv_contact_contacts);
+    lv_contact_contacts.setAdapter(new Myadapter());
+
+adapter
+
+    // 设置条目的样式
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View view = View.inflate(getApplicationContext(), R.layout.item_contact, null);
+        //初始化控件
+        //view.findViewById 是从item_contact找控件,findViewById是从activity_contacts找控件
+        TextView tv_itemcontact_name = (TextView) view.findViewById(R.id.tv_itemcontact_name);
+        TextView tv_itemcontact_phone = (TextView) view.findViewById(R.id.tv_itemcontact_phone);
+        //设置控件的值
+        tv_itemcontact_name.setText(list.get(position).get(&quot;name&quot;));//根据条目的位置从list集合中获取相应的数据
+        tv_itemcontact_phone.setText(list.get(position).get(&quot;phone&quot;));
+        return view;
+    }
+</code></pre><h3 id="选择联系人界面设置安全号码-重点-两个activity之间的数据传递"><a href="#选择联系人界面设置安全号码-重点-两个activity之间的数据传递" class="headerlink" title="选择联系人界面设置安全号码#  (重点:两个activity之间的数据传递)"></a>选择联系人界面设置安全号码#  (重点:两个activity之间的数据传递)</h3><pre><code>两个activity之间的数据传递
+    1.在setup3Activity中使用startActivityForResult(intent, 0);进行跳转
+        /**
+         * 选择联系人按钮
+         * @param v
+         */
+        public void selectContacts(View v){
+            //跳转到选择联系人界面
+            Intent intent = new Intent(this,ContactActivity.class);
+            //当现在的activity退出的时候,会调用之前activity的onActivityResult方法
+            startActivityForResult(intent, 0);
+        }
+    同时重写setup3Activity的onActivityResult方法
+        @Override
+        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
+
+        }
+    2.在contactActivity中给listview设置条目点击事件,并传递数据
+        lv_contact_contacts.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView&lt;?&gt; parent, View view,
+                    int position, long id) {
+                //将点击联系人的号码传递给设置安全号码界面
+                Intent intent = new Intent();
+                intent.putExtra(&quot;num&quot;, list.get(position).get(&quot;phone&quot;));
+                //将数据传递给设置安全号码界面
+                //设置结果的方法,会将结果传递给调用当前activity的activity
+                setResult(RESULT_OK, intent);
+                //移出界面
+                finish();
+            }
+        });
+    3.在setup3Activity的onActivityResult方法中接受数据
+        @Override
+        protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            super.onActivityResult(requestCode, resultCode, data);
+            if (data!=null) {
+                //接受选择联系人界面传递过来的数据,null.方法      参数为null
+                String num = data.getStringExtra(&quot;num&quot;);
+                //将获取到的号码,设置给安全号码输入框
+                et_setup3_safenum.setText(num);
+            }
+        }
+</code></pre><h3 id="细节处理-重点-耗时操作-注解初始化控件"><a href="#细节处理-重点-耗时操作-注解初始化控件" class="headerlink" title="细节处理#  (重点:耗时操作,注解初始化控件)"></a>细节处理#  (重点:耗时操作,注解初始化控件)</h3><pre><code>耗时操作的处理
+1.将获取联系人的操作放到子线程中执行
+    private Handler handler = new Handler(){
+        public void handleMessage(android.os.Message msg) {
+            lv_contact_contacts.setAdapter(new Myadapter());
+
+        };
+    };
+
+    new Thread(){
+        public void run() {
+            //获取联系人
+            list = ContactEngine.getAllContactInfo(getApplicationContext());
+            //获取完联系人的时候给handler发送一个消息,在handler中去setadapter
+            handler.sendEmptyMessage(0);
+        };
+    }.start();
+2.解决界面加载数据时,空白页面展示问题,使用进度条
+    使用注解的方式初始化控件
+        a.在类的成员变量出去声明控件,并加上注解
+            @ViewInject(R.id.lv_contact_contacts)
+            private ListView lv_contact_contacts;
+        b.在oncreate方法中初始化操作
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_contacts);
+                ViewUtils.inject(this);
+    处理空白界面问题,使用进度条
+        //在加载数据之前显示进度条
+        loading.setVisibility(View.VISIBLE);
+        new Thread(){}
+
+        private Handler handler = new Handler(){
+            public void handleMessage(android.os.Message msg) {
+                lv_contact_contacts.setAdapter(new Myadapter());
+                //数据显示完成,隐藏进度条
+                loading.setVisibility(View.INVISIBLE);
+            };
+        };
+</code></pre>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #7EC0EE !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #7EC0EE !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #7EC0EE !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://yoursite.com/2017/01/19/android/android_004/"
+        data-title="Android学习笔记 004">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/01/19/android/android_005/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/01/19/android/android_003/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/preview.gif);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/BA201701210404530018-00-000000.png" alt="miccall's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        316459829@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:316459829@qq.com.com" target="_blank" title="Email Me">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://shang.qq.com/email/stop/email_stop.html?qq=316459829&amp;sig=a1c657365db7e82805ea4b2351081fc3ebcde159f8ae49b1&amp;tttt=1" target="_blank" title="腾讯 QQ">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">phone</i>
+                        腾讯 QQ
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://blog.csdn.net/qq_31411825" target="_blank" title="CSDN">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">user</i>
+                        CSDN
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+  	
+        <li>
+            <a href="/about/" title="About Me">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About Me
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/group/" title="About Group">
+                
+                    <i class="material-icons sidebar-material-icons">group</i>
+                
+                About Group
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/gallery/" title="My Grally">
+                
+                    <i class="material-icons sidebar-material-icons">image</i>
+                
+                My Grally
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/tag/" title="Tag">
+                
+                    <i class="material-icons sidebar-material-icons">expore</i>
+                
+                Tag
+            </a>
+        </li>
+  	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">18</span>
+        </a>
+    </li>
+</ul>
+
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        主题 - Material
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/p/1005055195377360/home?from=page_100505&amp;mod=TAB&amp;is_all=1#place" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/miccall" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Mr.Metro
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    <script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'null'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>

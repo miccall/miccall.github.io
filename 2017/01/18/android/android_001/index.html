@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.2.6 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            Android学习笔记 001 | 
+        
+        Mr.Metro
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/fav.jpg">
+    <link rel="icon" sizes="192x192" href="/img/fav.jpg">
+    <link rel="apple-touch-icon" href="/img/fav.jpg">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="miccall">
+    <meta name="description" content="Blog of miccall is records about my work">
+    <meta name="keywords" content="miccall">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Metro">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://yoursite.com">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Android学习笔记 001 | Mr.Metro">
+    <meta property="og:description" content="Blog of miccall is records about my work">
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+    body, html {
+        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    }
+
+    a {
+        color: #00838F;
+    }
+
+    .mdl-card__media,
+    #search-label,
+    #search-form-label:after,
+    #scheme-Paradox .hot_tags-count,
+    #scheme-Paradox .sidebar_archives-count,
+    #scheme-Paradox .sidebar-colored .sidebar-header,
+    #scheme-Paradox .sidebar-colored .sidebar-badge{
+        background-color: #7EC0EE !important;
+    }
+
+    /* Sidebar User Drop Down Menu Text Color */
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+        color: #7EC0EE !important;
+    }
+
+    #post_entry-right-info,
+    .sidebar-colored .sidebar-nav li:hover > a,
+    .sidebar-colored .sidebar-nav li:hover > a i,
+    .sidebar-colored .sidebar-nav li > a:hover,
+    .sidebar-colored .sidebar-nav li > a:hover i,
+    .sidebar-colored .sidebar-nav li > a:focus i,
+    .sidebar-colored .sidebar-nav > .open > a,
+    .sidebar-colored .sidebar-nav > .open > a:hover,
+    .sidebar-colored .sidebar-nav > .open > a:focus,
+    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+        color: #7EC0EE !important;
+    }
+
+    .toTop {
+        background: #757575 !important;
+    }
+
+    .material-layout .material-post>.material-nav,
+    .material-layout .material-index>.material-nav,
+    .material-nav a {
+        color: #757575;
+    }
+
+    #scheme-Paradox .MD-burger-layer {
+        background-color: #757575;
+    }
+
+    #scheme-Paradox #post-toc-trigger-btn {
+        color: #757575;
+    }
+
+    .post-toc a:hover {
+        color: #00838F;
+        text-decoration: underline;
+    }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+        body{
+            background-image: url(/img/bg.png);
+        }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+        .fade {
+            transition: all 800ms linear;
+            -webkit-transform: translate3d(0,0,0);
+            -moz-transform: translate3d(0,0,0);
+            -ms-transform: translate3d(0,0,0);
+            -o-transform: translate3d(0,0,0);
+            transform: translate3d(0,0,0);
+            opacity: 1;
+        }
+
+        .fade.out{
+            opacity: 0;
+        }
+    </style>
+
+
+    <script src="/js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="/css/highlight/androidstudio.css">
+
+    <!-- UC Browser Compatible-->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#spalsh界面搭建-重点"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">spalsh界面搭建 (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#获取版本号-重点"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">获取版本号  (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#连接服务器"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">连接服务器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据封装形式-重点"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">数据封装形式(重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解析json数据-重点"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">解析json数据 (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#弹出对话框"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">弹出对话框</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#对话框细节的处理"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">对话框细节的处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载操作-重点"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">下载操作 (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装新的apk-重点"><span class="post-toc-number">1.0.9.</span> <span class="post-toc-text">安装新的apk (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异常处理"><span class="post-toc-number">1.0.10.</span> <span class="post-toc-text">异常处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#两种上下文的区别"><span class="post-toc-number">1.0.11.</span> <span class="post-toc-text">两种上下文的区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#打包签名-重点"><span class="post-toc-number">1.0.12.</span> <span class="post-toc-text">打包签名(重点!!!!!)</span></a></li></ol></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Android学习笔记 001
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>miccall</strong>
+        <span>1月 18, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <hr>
+<h1 id="Android学习笔记"><a href="#Android学习笔记" class="headerlink" title=" Android学习笔记 "></a><strong> Android学习笔记 </strong></h1><h3 id="spalsh界面搭建-重点"><a href="#spalsh界面搭建-重点" class="headerlink" title="spalsh界面搭建 (重点)"></a>spalsh界面搭建 (重点)</h3><pre><code>1.textview的阴影效果
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!-- layout_centerInParent: 是否在父控件的中间位置 </div><div class="line">   shadow</div><div class="line">   hadowColor : 设置阴影颜色</div><div class="line">  	shadowDx : 关于x轴的偏移量</div><div class="line">   shadowRadius : 偏移的角度</div><div class="line">   --&gt;</div><div class="line">	</div><div class="line">   &lt;TextView</div><div class="line">       android:id=&quot;@+id/textView1&quot;</div><div class="line">       android:layout_width=&quot;wrap_content&quot;</div><div class="line">       android:layout_height=&quot;wrap_content&quot;</div><div class="line">       android:layout_centerInParent=&quot;true&quot;  </div><div class="line">       android:text=&quot;版本号:1.0&quot; </div><div class="line">       android:shadowColor=&quot;#ffff00&quot;</div><div class="line">       android:shadowDx=&quot;1&quot;</div><div class="line">       android:shadowDy=&quot;1&quot;</div><div class="line">       android:shadowRadius=&quot;2&quot;</div><div class="line">       /&gt;</div></pre></td></tr></table></figure>
+<pre><code>2.去除标题栏
+
+   1.在values目录的styles.xml文件中增加属性
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- Application theme. --&gt;</div><div class="line">   &lt;style name=&quot;AppTheme&quot; parent=&quot;AppBaseTheme&quot;&gt;</div><div class="line">       &lt;!-- 去除标题栏 --&gt;</div><div class="line">       &lt;item name=&quot;android:windowNoTitle&quot;&gt;true&lt;/item&gt;</div><div class="line">       &lt;!-- All customizations that are NOT specific to a particular API-level can go here. --&gt;</div><div class="line">   &lt;/style&gt;</div></pre></td></tr></table></figure>
+<pre><code>2.在清单文件中的application中设置theme属性是我们工程的AppTheme
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:theme=&quot;@style/AppTheme&quot;</div></pre></td></tr></table></figure>
+<h3 id="获取版本号-重点"><a href="#获取版本号-重点" class="headerlink" title="获取版本号  (重点)"></a>获取版本号  (重点)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getVersionName</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    	<span class="comment">/*包的管理者,获取清单文件中的所有信息*/</span></div><div class="line">    	PackageManager pm = getPackageManager();</div><div class="line">    	<span class="keyword">try</span> &#123;</div><div class="line">    		<span class="comment">/*根据包名获取清单文件中的信息,其实就是返回一个保存有清单文件信息的javabean*/</span></div><div class="line">    		<span class="comment">/*packageName :应用程序的包名*/</span></div><div class="line">        	<span class="comment">/*flags : 指定信息的标签,0:获取基础的信息,比如包名,版本号,要想获取</span></div><div class="line">        	权限等等信息,必须通过标签来指定,才能去获取*/</div><div class="line">        	<span class="comment">/*GET_PERMISSIONS : 标签的含义:处理获取基础信息之外,还会额外获取权限的信息*/</span></div><div class="line">    		<span class="comment">/*getPackageName() : 获取当前应用程序的包名*/</span></div><div class="line">		PackageInfo packageInfo = pm.getPackageInfo(getPackageName(), <span class="number">0</span>);</div><div class="line">			<span class="comment">/*获取版本号名称*/</span></div><div class="line">		String versionName = packageInfo.versionName;</div><div class="line">		<span class="keyword">return</span> versionName;</div><div class="line">		&#125;<span class="keyword">catch</span> (NameNotFoundException e) &#123;</div><div class="line">			<span class="comment">/*包名找不到的异常*/</span></div><div class="line">		e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="连接服务器"><a href="#连接服务器" class="headerlink" title="连接服务器"></a>连接服务器</h3><pre><code>连接服务器,查看是否有最新版本
+连接服务器
+设置连接路径
+连接路径
+</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">()</span> </span>&#123;</div><div class="line">   	<span class="keyword">new</span> Thread()&#123;</div><div class="line">   		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">   			<span class="keyword">try</span> &#123;</div><div class="line">				URL url = <span class="keyword">new</span> URL(<span class="string">"xxxxx"</span>);</div><div class="line">				HttpURLConnection conn = (HttpURLConnection) url.openConnection();</div><div class="line">				conn.setConnectTimeout(<span class="number">5000</span>);</div><div class="line">				conn.setRequestMethod(<span class="string">"GET"</span>);</div><div class="line">				<span class="keyword">int</span> responseCode = conn.getResponseCode();</div><div class="line">				<span class="keyword">if</span> (responseCode == <span class="number">200</span>) &#123;</div><div class="line">				System.out.println(<span class="string">"sucess"</span>);</div><div class="line">				&#125;<span class="keyword">else</span>&#123;</div><div class="line">				System.out.println(<span class="string">"failed"</span>);</div><div class="line">				&#125;</div><div class="line">			&#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</div><div class="line">				e.printStackTrace();</div><div class="line">			&#125;</div><div class="line">   		&#125;;</div><div class="line">   	&#125;.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong> 权限: </strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="数据封装形式-重点"><a href="#数据封装形式-重点" class="headerlink" title="数据封装形式(重点)"></a>数据封装形式(重点)</h3><pre><code>1.xml
+2.json
+json封装形式:{&quot;code&quot;:&quot;2.0&quot;,&quot;apkurl&quot;:&quot;xxxxx&quot;,&quot;des&quot;:&quot;新版本上线了,快来下载吧!!!!&quot;}
+
+json : utf-8无bom格式  Notepad++
+       editplus : utf-8 (选择)   utf-8+bom
+</code></pre><h3 id="解析json数据-重点"><a href="#解析json数据-重点" class="headerlink" title="解析json数据 (重点)"></a>解析json数据 (重点)</h3><pre><code>1.获取服务器返回的流信息
+    //获取服务器返回的流信息
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">InputStream in = conn.getInputStream();</div></pre></td></tr></table></figure>
+<pre><code>2.将流信息转化成字符串
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 将流信息转化成字符串</div><div class="line">* @return</div><div class="line">* @throws IOException </div><div class="line">*/</div><div class="line">public class StreamUtil &#123;			</div><div class="line">	public static String parserStreamUtil(InputStream in) throws IOException&#123;</div><div class="line">		BufferedReader br = new BufferedReader(new InputStreamReader(in));</div><div class="line">		StringWriter sw  = new StringWriter();</div><div class="line">		String str = null;</div><div class="line">		while((str = br.readLine()) !=null)&#123;</div><div class="line">			sw.write(str);</div><div class="line">		&#125;</div><div class="line">		sw.close();</div><div class="line">		br.close();</div><div class="line">		return sw.toString();</div><div class="line">	&#125;	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>3.解析json数据
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//将获取到的流信息转化成字符串</div><div class="line">String json = StreamUtil.parserStreamUtil(in);</div><div class="line">//解析json数据</div><div class="line">JSONObject jsonObject = new JSONObject(json);</div></pre></td></tr></table></figure>
+<pre><code>4.获取数据
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//获取数据</div><div class="line">code = jsonObject.getString(&quot;code&quot;);</div><div class="line">apkurl = jsonObject.getString(&quot;apkurl&quot;);</div><div class="line">des = jsonObject.getString(&quot;des&quot;);</div></pre></td></tr></table></figure>
+<h3 id="弹出对话框"><a href="#弹出对话框" class="headerlink" title="弹出对话框"></a>弹出对话框</h3><pre><code>1.因为在子线程不能更新主线程ui所以给handler发送一个,在handler中弹出对话框
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">private Handler handler = new Handler()&#123;</div><div class="line">		public void handleMessage(android.os.Message msg) &#123;</div><div class="line">			switch (msg.what) &#123;</div><div class="line">				case MSG_UPDATE_DIALOG:</div><div class="line">					showdialog();</div><div class="line">					break;</div><div class="line">			&#125;</div><div class="line">		&#125;;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<pre><code>2.弹出对话框
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 弹出对话框</div><div class="line">*/</div><div class="line">protected void showdialog() &#123;	</div><div class="line"></div><div class="line">	AlertDialog.Builder builder = new Builder(this);</div><div class="line">	builder.setCancelable(false);   /*设置对话框不能消失*/</div><div class="line">	builder.setTitle(&quot;新版本:&quot;+code); /*设置对话框的标题*/</div><div class="line">	builder.setIcon(R.drawable.ic_launcher);/*设置对话框的图标*/</div><div class="line">	builder.setMessage(des);/*设置对话框的描述信息*/</div><div class="line">	/*设置升级和取消按钮*/</div><div class="line">	builder.setPositiveButton(&quot;升级&quot;, new DialogInterface.OnClickListener() &#123;</div><div class="line">		@Override</div><div class="line">		public void onClick(DialogInterface dialog, int which) &#123;&#125;&#125;);</div><div class="line"></div><div class="line">	builder.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener() &#123;</div><div class="line">	   @Override</div><div class="line">		public void onClick(DialogInterface dialog, int which) &#123;&#125;&#125;);</div><div class="line">	/*显示对话框*/</div><div class="line">	builder.show();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="对话框细节的处理"><a href="#对话框细节的处理" class="headerlink" title="对话框细节的处理"></a>对话框细节的处理</h3><pre><code>1.实现了取消按钮的操作
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">builder.setNegativeButton(&quot;取消&quot;, new DialogInterface.OnClickListener()</div><div class="line">&#123;</div><div class="line">	@Override</div><div class="line">	public void onClick(DialogInterface dialog, int which) &#123;</div><div class="line">		/*1.隐藏对话框*/</div><div class="line">		dialog.dismiss();</div><div class="line">		/*2.跳转到主界面*/</div><div class="line">		enterHome();</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<pre><code>2.处理了在跳转到主界面,从主界面点击返回键返回的时候,返回splash界面的问题,解决:在跳转的是将splash界面移出
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 跳转到主界面</div><div class="line">*/</div><div class="line">protected void enterHome() &#123;</div><div class="line">	Intent intent = new Intent(this,HomeActivity.class);</div><div class="line">	startActivity(intent);</div><div class="line">	/*移出splash界面*/</div><div class="line">	finish();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre><code>3.处理对话框延迟显示的问题
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//处理连接外网连接时间的问题</div><div class="line">//在连接成功之后在去获取一个时间</div><div class="line">int endTime = (int) System.currentTimeMillis();</div><div class="line">//比较两个时间的时间差,如果小于两秒,睡两秒,大于两秒,不睡</div><div class="line">int dTime = endTime-startTime;</div><div class="line">if (dTime&lt;2000) &#123;</div><div class="line">	//睡两秒钟</div><div class="line">	SystemClock.sleep(2000-dTime);//始终都是睡两秒钟的时间</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="下载操作-重点"><a href="#下载操作-重点" class="headerlink" title="下载操作 (重点)"></a>下载操作 (重点)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 3.下载最新版本</div><div class="line">*/</div><div class="line">protected void download() &#123;</div><div class="line">	HttpUtils httpUtils = new HttpUtils();</div><div class="line">	//判断SD卡是否挂载</div><div class="line">	if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) &#123;</div><div class="line">		//url : 新版本下载的路径 apkurl</div><div class="line">		//target : 保存新版本的目录</div><div class="line">		//callback : RequestCallBack</div><div class="line">		httpUtils.download(apkurl,&quot; /mnt/sdcard/mobliesafe75_2.apk&quot; , new RequestCallBack&lt;File&gt;() &#123;</div><div class="line">		//现在成功调用的方法</div><div class="line">			@Override</div><div class="line">			public void onSuccess(ResponseInfo&lt;File&gt; arg0) &#123;</div><div class="line">				// TODO Auto-generated method stub	</div><div class="line">			&#125;</div><div class="line">		//下载失败调用的方法</div><div class="line">			@Override</div><div class="line">			ublic void onFailure(HttpException arg0, String arg1) &#123;</div><div class="line">				// TODO Auto-generated method stub	</div><div class="line">			&#125;</div><div class="line">		//显示当前下载进度操作</div><div class="line">		//total : 下载总进度</div><div class="line">		//current : 下载的当前进度</div><div class="line">		//isUploading : 是否支持断点续传</div><div class="line">			@Override</div><div class="line">			public void onLoading(long total, long current, boolean isUploading) &#123;</div><div class="line">			super.onLoading(total, current, isUploading);</div><div class="line">			//设置显示下载进度的textview可见,同时设置相应的下载进度</div><div class="line">			tv_spalsh_plan.setVisibility(View.VISIBLE);//设置控件是否可见</div><div class="line">			tv_spalsh_plan.setText(current+&quot;/&quot;+total);//110/200</div><div class="line">			&#125;</div><div class="line">		&#125;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong> 注意问题 </strong><br>        1.修改apkurl地址<br>        2.增加sd操作权限<br>        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;/&gt;</div></pre></td></tr></table></figure></p>
+<pre><code>3.判断sd是否挂载
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) &#123;&#125;</div></pre></td></tr></table></figure>
+
+4.生成2.0版本的apk
+    工程的bin目录下去找
+    a.将清单文件中的版本号改成2.0
+    b.重新运行
+    c.拷贝bin目录下的文件
+</code></pre><h3 id="安装新的apk-重点"><a href="#安装新的apk-重点" class="headerlink" title="安装新的apk (重点)"></a>安装新的apk (重点)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 4.安装最新的版本</div><div class="line"> */</div><div class="line">protected void installAPK() &#123;</div><div class="line">	/**</div><div class="line">	 *  &lt;intent-filter&gt;</div><div class="line">               &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;</div><div class="line">               &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;</div><div class="line">               &lt;data android:scheme=&quot;content&quot; /&gt; //content : 从内容提供者中获取数据  content://</div><div class="line">               &lt;data android:scheme=&quot;file&quot; /&gt; // file : 从文件中获取数据</div><div class="line">               &lt;data android:mimeType=&quot;application/vnd.android.package-archive&quot; /&gt;</div><div class="line">           &lt;/intent-filter&gt;</div><div class="line">	 */</div><div class="line">	Intent intent = new Intent();</div><div class="line">	intent.setAction(&quot;android.intent.action.VIEW&quot;);</div><div class="line">	intent.addCategory(&quot;android.intent.category.DEFAULT&quot;);</div><div class="line">	//单独设置会相互覆盖</div><div class="line">	/*intent.setType(&quot;application/vnd.android.package-archive&quot;);</div><div class="line">	intent.setData(Uri.fromFile(new File(&quot;/mnt/sdcard/mobliesafe75_2.apk&quot;)));*/</div><div class="line">	intent.setDataAndType(Uri.fromFile(new File(&quot;/mnt/sdcard/mobliesafe75_2.apk&quot;)), &quot;application/vnd.android.package-archive&quot;);</div><div class="line">	//在当前activity退出的时候,会调用之前的activity的onActivityResult方法</div><div class="line">	//requestCode : 请求码,用来标示是从哪个activity跳转过来</div><div class="line">	//ABC  a -&gt; c    b-&gt; c  ,c区分intent是从哪个activity传递过来的,这时候就要用到请求码</div><div class="line">	startActivityForResult(intent, 0);</div><div class="line">&#125;</div><div class="line">@Override</div><div class="line">protected void onActivityResult(int requestCode, int resultCode, Intent data) &#123;</div><div class="line">	super.onActivityResult(requestCode, resultCode, data);</div><div class="line">	enterHome();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><pre><code>根据不同的异常,采用不同方式处理,方便项目后期定位异常,便于解决维护异常
+</code></pre><h3 id="两种上下文的区别"><a href="#两种上下文的区别" class="headerlink" title="两种上下文的区别"></a>两种上下文的区别</h3><pre><code>1.getApplicationContext()  返回Context 
+2.activity.this   代表的就是当前的activity,继承context,父类当中有的方法子类中一定有,子类中有的方法父类中不一定有,在用getApplicationContext()一定能使用activity.this,但是能用activity.this不一定能使用getApplicationContext()
+
+android.view.WindowManager$BadTokenException: Unable to add window -- token null is not for an application  没有添加窗口,
+
+在使用对话框的时候,必须告诉对话框,要挂载在那个activity,也是告诉对话框应用在那个activity中显示
+
+在使用跟对话框相关的操作的时候必须使用activity.this不能使用getApplicationContext()
+
+getContext() : 返回Context ,一般用在单元测试中或者是自定义控件,其实和getApplicationContext()一样操作
+</code></pre><h3 id="打包签名-重点"><a href="#打包签名-重点" class="headerlink" title="打包签名(重点!!!!!)"></a>打包签名(重点!!!!!)</h3><pre><code>只有打包签名过的应用才能上传应用市场上去
+
+应用升级条件
+    1.包名一致
+    2.签名一致
+微信  com.weixin
+流氓程序  com.weixin
+
+注意:签名千万不能丢的,密码也不能忘,丢失用户
+解决办法:将原应用下架,重新打包签名上架,  应用市场会有一模一样的应用,  丢失一部分用户
+</code></pre>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #7EC0EE !important;
+    }
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #7EC0EE !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #7EC0EE !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://yoursite.com/2017/01/18/android/android_001/"
+        data-title="Android学习笔记 001">
+    </div>
+    <!-- 多说评论框 end -->
+</div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/01/19/android/android_002/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/01/18/leapmotion/LEAP Motion 的猎户座  -002-/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/preview.gif);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/BA201701210404530018-00-000000.png" alt="miccall's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        316459829@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:316459829@qq.com.com" target="_blank" title="Email Me">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        Email Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://shang.qq.com/email/stop/email_stop.html?qq=316459829&amp;sig=a1c657365db7e82805ea4b2351081fc3ebcde159f8ae49b1&amp;tttt=1" target="_blank" title="腾讯 QQ">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">phone</i>
+                        腾讯 QQ
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://blog.csdn.net/qq_31411825" target="_blank" title="CSDN">
+                        <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">user</i>
+                        CSDN
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    <li id="sidebar-first-li">
+        <a href="/" target="_self">
+            <i class="material-icons sidebar-material-icons">home</i>
+            主页
+        </a>
+    </li>
+
+    <!-- I'm Feeling Lucky -->
+    <!--
+    <li class="dropdown">
+        <a href="" target="_self">
+            <i class="material-icons sidebar-material-icons">explore</i>
+             sidebar.imlucky
+        </a>
+    </li>
+    -->
+
+    <!-- Archives  -->
+    <li class="dropdown">
+        <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+            <i class="material-icons sidebar-material-icons">inbox</i>
+             归档
+            <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+            <a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
+        </ul>
+    </li>
+
+    <!-- Categories  -->
+    
+
+    <!-- Divider -->
+    <li class="divider"></li>
+
+
+    <!-- Pages  -->
+  	
+        <li>
+            <a href="/about/" title="About Me">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About Me
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/group/" title="About Group">
+                
+                    <i class="material-icons sidebar-material-icons">group</i>
+                
+                About Group
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/gallery/" title="My Grally">
+                
+                    <i class="material-icons sidebar-material-icons">image</i>
+                
+                My Grally
+            </a>
+        </li>
+  	
+        <li>
+            <a href="/tag/" title="Tag">
+                
+                    <i class="material-icons sidebar-material-icons">expore</i>
+                
+                Tag
+            </a>
+        </li>
+  	
+
+    <!-- Article Numebr  -->
+    <li>
+        <a href="/archives">
+            文章总数
+            <span class="sidebar-badge">18</span>
+        </a>
+    </li>
+</ul>
+
+
+        <!-- Sidebar Divider -->
+        <div class="sidebar-divider"></div>
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Theme Material -->
+<a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+        主题 - Material
+        <span class="sidebar-badge badge-circle">i</span>
+    </div>
+</a>
+
+<!-- Help & Support -->
+<!--
+<a href="mailto:hiviosey@gmail.com" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+    sidebar.help
+    <span class="mdl-button__ripple-container">
+      <span class="mdl-ripple"></span>
+    </span>
+  </div>
+</a>
+-->
+
+<!-- Feedback -->
+<!--
+<a href="https://github.com/viosey/hexo-theme-material/issues" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.feedback
+                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>
+-->
+
+<!-- Abount Theme -->
+<!--
+<a href="https://blog.viosey.com/index.php/Material.html" target="_blank" class="sidebar-footer-text-a">
+    <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+         sidebar.about_theme
+        <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></div>
+</a>-->
+
+    </div>
+
+    <!-- Sidebar Sponsor -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/twitter" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+        <a href="https://www.facebook.com/facebook" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-facebook.png);">
+                <span class="visuallyhidden">Facebook</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Google + -->
+    
+        <a href="https://www.google.com/" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
+                <span class="visuallyhidden">Google Plus</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Weibo -->
+    
+        <a href="http://weibo.com/p/1005055195377360/home?from=page_100505&amp;mod=TAB&amp;is_all=1#place" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
+                <span class="visuallyhidden">Weibo</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/miccall" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Mr.Metro
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/highlight.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    <script src="/js/smoothscroll.js"></script>
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 多说公共 js 代码 start -->
+    <script type="text/javascript">
+        var duoshuoQuery = {
+            short_name: 'null'
+        };
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';
+            ds.async = true;
+            ds.src = 'https://static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0]
+             || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+    <!-- 多说公共 js 代码 end -->
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>

@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> miccall - bootstrap </title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    body {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    
+    .carousel {
+        height: 500px;
+        background-color: #000;
+        margin-bottom: 50px;
+    }
+    
+    .carousel .item {
+        height: 500px;
+        background-color: #000;
+    }
+    
+    .carousel img {
+        width: 100%;
+    }
+    
+    .carousel-caption p {
+        margin-bottom: 20px;
+        font-size: 30px;
+        line-height: 1.8;
+    }
+    
+    #summary-container .col-md-4 {
+        text-align: center;
+    }
+    
+    hr.divider {
+        margin: 40px;
+    }
+    
+    .frature {
+        padding: 30px 0;
+    }
+    
+    .feature-heading {
+        font-size: 50px;
+        color: #216496;
+        margin-top: 120px;
+    }
+    
+    .feature-heading .text-muted {
+        font-size: 28px;
+        color: #999;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Miccall</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">综述</a></li>
+                    <li><a href="#">简述</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">特点<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">unity 3d</a></li>
+                            <li><a href="#">Leap motion</a></li>
+                            <li><a href="#">android</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" data-toggle="modal" data-target="#about"  >关于</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+        </ol>
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="images/chrome-big.jpg" alt="1 slide">
+                <div class="carousel-caption">
+                    <h1>Chrome</h1>
+                    <p> google chrome aadjfalnaldafafknksasdfafafa</p>
+                    <p><a class="btn btn-lg btn-primary" href=" " role="button" target="_blank">点我下载</a></p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/firefox-big.jpg" alt="2 slide">
+                <div class="carousel-caption">
+                    <h1>Chrome</h1>
+                    <p> google chrome aadjfalnaldafafknksasdfafafa</p>
+                    <p><a class="btn btn-lg btn-primary" href=" " role="button" target="_blank">点我下载</a></p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/ie-big.jpg" alt="3 slide">
+                <div class="carousel-caption">
+                    <h1>Chrome</h1>
+                    <p> google chrome aadjfalnaldafafknksasdfafafa</p>
+                    <p><a class="btn btn-lg btn-primary" href=" " role="button" target="_blank">点我下载</a></p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/opera-big.jpg" alt="4 slide">
+                <div class="carousel-caption">
+                    <h1>Chrome</h1>
+                    <p> google chrome aadjfalnaldafafknksasdfafafa</p>
+                    <p><a class="btn btn-lg btn-primary" href=" " role="button" target="_blank">点我下载</a></p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/safari-big.jpg" alt="5 slide">
+                <div class="carousel-caption">
+                    <h1>Chrome</h1>
+                    <p> google chrome aadjfalnaldafafknksasdfafafa</p>
+                    <p><a class="btn btn-lg btn-primary" href=" " role="button" target="_blank">点我下载</a></p>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">上一页</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">下一页</span>
+        </a>
+    </div>
+    <div class="container" id="summary-container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images/chrome-logo-small.jpg" alt="chrome">
+                <h2>Chrome</h2>
+                <p> google chrome aadjfalnaldafafknksasdfafafa</p>
+                <p><a class="btn btn-lg btn-primary" href=" " role="button" target="_blank">点我下载</a></p>
+            </div>
+            <div class="col-md-4">
+                <img src="images/firefox-logo-small.jpg" alt="chrome">
+                <h2>Chrome</h2>
+                <p> google chrome aadjfalnaldafafknksasdfafafa</p>
+                <p><a class="btn btn-lg btn-primary" href=" " role="button" target="_blank">点我下载</a></p>
+            </div>
+            <div class="col-md-4">
+                <img src="images/safari-logo-small.jpg" alt="chrome">
+                <h2>Chrome</h2>
+                <p> google chrome aadjfalnaldafafknksasdfafafa</p>
+                <p><a class="btn btn-lg btn-primary" href=" " role="button" target="_blank">点我下载</a></p>
+            </div>
+        </div>
+        <hr class="divider">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#chrome" role="tab" data-toggle="tab">chrome</a></li>
+            <li role="presentation"><a href="#firefox" role="tab" data-toggle="tab">firefox</a></li>
+            <li role="presentation"><a href="#opera" role="tab" data-toggle="tab">opera</a></li>
+            <li role="presentation"><a href="#safari" role="tab" data-toggle="tab">safari</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="chrome">
+                <div class="row feature">
+                    <div class="col-md-5">
+                        <h2 class="feature-heading">google Chrome <span
+ class="text-muted"> adiaainfjaklfnalnla</span></h2>
+                        <p class="lead">afnjkbfajnkankslmndaljdknnasbfajklnasn dasdafwasafaf </p>
+                    </div>
+                    <div class="col-md-7">
+                        <img src="images/chrome-logo.jpg" class="feature-img img-responsive" alt="Chrome">
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="firefox">
+                <div class="row feature">
+                    <div class="col-md-7">
+                        <img src="images/firefox-logo.jpg" class="feature-img img-responsive" alt="Chrome">
+                    </div>
+                    <div class="col-md-5">
+                        <h2 class="feature-heading">google Chrome <span
+ class="text-muted"> adiaainfjaklfnalnla</span></h2>
+                        <p class="lead">afnjkbfajnkankslmndaljdknnasbfajklnasn dasdafwasafaf </p>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="opera">
+                <div class="row feature">
+                    <div class="col-md-5">
+                        <h2 class="feature-heading">google Chrome <span
+ class="text-muted"> adiaainfjaklfnalnla</span></h2>
+                        <p class="lead">afnjkbfajnkankslmndaljdknnasbfajklnasn dasdafwasafaf </p>
+                    </div>
+                    <div class="col-md-7">
+                        <img src="images/opera-logo.jpg" class="feature-img img-responsive" alt="Chrome">
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="safari">
+                <div class="row feature">
+                    <div class="col-md-7">
+                        <img src="images/safari-logo.jpg" class="feature-img img-responsive" alt="Chrome">
+                    </div>
+                    <div class="col-md-5">
+                        <h2 class="feature-heading">google Chrome <span
+ class="text-muted"> adiaainfjaklfnalnla</span></h2>
+                        <p class="lead">afnjkbfajnkankslmndaljdknnasbfajklnasn dasdafwasafaf </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="divider">
+        <footer>
+            <p class="pull-right">
+                <a href="#top"> ↑ </a>
+            </p>
+            <p> © 2016 miccall </p>
+        </footer>
+    </div>
+    <div class="modal fade" id="about">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">关于</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">了解</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#demo-novbar .dropdown-menu a").click(function(){
+            var href =  $(this).attr("href");
+
+            $("#tab-list a[href = '"+ href +"']").tab("show");
+        });
+    });
+    </script>
+</body>
+
+</html>
