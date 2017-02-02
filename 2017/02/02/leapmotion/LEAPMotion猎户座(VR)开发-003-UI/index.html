@@ -10,7 +10,7 @@
     
     <title>
         
-            标签: unity 3d | 
+            LEAPMotion猎户座(VR)开发~003~UI | 
         
         Mr.Metro
     </title>
@@ -48,7 +48,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://yoursite.com">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: unity 3d | Mr.Metro">
+    <meta property="og:title" content="LEAPMotion猎户座(VR)开发~003~UI | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
 
     <!--[if lte IE 9]>
@@ -195,456 +195,383 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
     
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LEAPMotion猎户座-VR-开发-003-UI"><span class="post-toc-number">1.</span> <span class="post-toc-text">LEAPMotion猎户座(VR)开发~003~UI </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-（转载请注明出处）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  （转载请注明出处）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UI-的添加"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">UI 的添加</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Button"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Button</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#响应的事件"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">响应的事件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Toggle"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Toggle</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Slider"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Slider</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Script-c-for-unity"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Script c# for unity</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         <!-- Custom Thumbnail -->
         <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://img.blog.csdn.net/20170202185121430?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)">
     
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/02/02/leapmotion/LEAPMotion猎户座(VR)开发-003-UI/">LEAPMotion猎户座(VR)开发~003~UI</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/02/02/leapmotion/LEAPMotion猎户座(VR)开发-003-UI/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="miccall's avatar">
-            </div>
-            <div>
-                <strong>miccall</strong>
-                <span>2月 02, 2017</span>
-            </div>
+            <p class="article-headline-p">
+                LEAPMotion猎户座(VR)开发~003~UI
+            </p>
         </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+
+
+
+
+
                 
-            </span>
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
 
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>miccall</strong>
+        <span>2月 02, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/leap-motion/">leap motion</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/unity-3d/">unity 3d</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+
+    <!-- Share Twitter -->
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
 </div>
 
-        
-        
-    
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://img.blog.csdn.net/20170129201256975?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/">LEAPMotion VR 各种手势的判断~</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="miccall's avatar">
-            </div>
-            <div>
-                <strong>miccall</strong>
-                <span>1月 29, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
                 
-            </span>
 
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
+                <!-- Post Content -->
+                <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <hr>
+<h1 id="LEAPMotion猎户座-VR-开发-003-UI"><a href="#LEAPMotion猎户座-VR-开发-003-UI" class="headerlink" title="LEAPMotion猎户座(VR)开发~003~UI "></a><strong>LEAPMotion猎户座(VR)开发~003~UI </strong></h1><h6 id="Created-by-miccall-（转载请注明出处）"><a href="#Created-by-miccall-（转载请注明出处）" class="headerlink" title="Created by miccall  （转载请注明出处）"></a>Created by miccall  （转载请注明出处）</h6><ul>
+<li>先来看看UI的效果 （抱歉 不会做gif）</li>
+<li>demo下载的话 leap官网就有 本篇文章讲讲构建和简单的使用 </li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20170202185121430?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="UI-的添加"><a href="#UI-的添加" class="headerlink" title="UI 的添加"></a>UI 的添加</h2><ul>
+<li><p>从官网下载下来的UI Input 的包 导入 </p>
+</li>
+<li><p>VR场景拖入 LMHeadMountedRig 预制体 </p>
+</li>
+<li><p>在导入的UI包中 ，找到LeapMotionModules \ UIInput 预制文件夹下 ，把“LeapEventSystem”组合式拖入场景 。</p>
+</li>
+<li><p>自己创建一个Canvas（右击 -&gt; UI -&gt; canvas）  并在其下添加  UI 元素(ui元素当然也在LeapMotionModules \ UIInput 预制文件夹下)<br>  重要的一点 ： canvas的属性 ： Render Mode 设置为 ： world space<br>   然后把自己加入ui组件 ，进行排版  （可以是默认的UGUI  也可以是UI组件里面带的UI元素） </p>
+</li>
+<li><p>调整canvas 的边界 到恰好合适   （width 和 Height 属性）</p>
+</li>
+<li><p>调整canvas 的 scale 到合适  </p>
+</li>
+<li><p>调整位置到合适的地方 （LMHeadMountedRig 里面的摄像机可以看到的位置 ）</p>
+</li>
+</ul>
+<p>差不多就这样了 还有几点要提醒的 </p>
+<ul>
+<li><p>标准系统 的 GUI 元素 可以添加父画布上 。 </p>
+</li>
+<li><p>Leap UI 输入 模块 也可以用到 的uGUI的 系统。 </p>
+</li>
+<li><p>特殊的leap UI元素, 可以在预制的文件夹中找到</p>
+</li>
+<li><p>这些预制也兼容鼠标交互</p>
+</li>
+</ul>
+<p><br><br>UI组件里面提供的UI元素 : </p>
+<p><img src="http://img.blog.csdn.net/20170202190315322?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>分别是 ： </p>
+<ul>
+<li>一般的button </li>
+<li>只能用于物理的button （不能鼠标点击 ）</li>
+<li>滑动的布局 </li>
+<li>滑动条              </li>
+<li>单选开关 </li>
+</ul>
+<h2 id="Button"><a href="#Button" class="headerlink" title="Button"></a>Button</h2><p><img src="http://img.blog.csdn.net/20170202190640320?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>最里层Text 显示了button的按钮文字<br>外面一层是button 的 Image<br>最外面一层便是最主要的一层了 </p>
+<p><img src="http://img.blog.csdn.net/20170202190745196?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>Compressible UI   在模块中这是一个小助手工具,允许UI元素扩展和压缩与画布的表面——响应联系和互动。 它也可以控制阴影的不透明度。 这是一个强大的工具向你的UI元素增加了活力。</p>
+<p><img src="http://img.blog.csdn.net/20170202190858845?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unityc#   Event Trigger ： &lt;Component&gt;</div></pre></td></tr></table></figure></p>
+<p><img src="http://img.blog.csdn.net/20170202191038198?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>它默认挂了两个事件 播放按键声音<br>还有 CompressibleUI 脚本<br>按下执行  Rereact()         弹起执行 Expand() </p>
+<h2 id="响应的事件"><a href="#响应的事件" class="headerlink" title="响应的事件"></a>响应的事件</h2><p>该UI在创立的时候 ，给我们加入了<br>PointerDown 和 PoninterUp 两个事件<br>官方给的事件信息  我们也可以用接口的形式获取对应的事件 </p>
+<table>
+<thead>
+<tr>
+<th>回调方法</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OnBeginDrag</td>
+<td style="text-align:center">在开始拖动之前调用。</td>
+</tr>
+<tr>
+<td>OnCancel</td>
+<td style="text-align:center">当发生取消事件时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnDeselect</td>
+<td style="text-align:center">当选择一个新对象时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnDrag</td>
+<td style="text-align:center">每次在拖动期间移动指针时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnDrop</td>
+<td style="text-align:center">当对象接受删除时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnEndDrag</td>
+<td style="text-align:center">一旦拖动结束，由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnInitializePotentialDrag</td>
+<td style="text-align:center">当发现拖动时，但在有效开始拖动之前由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnMove</td>
+<td style="text-align:center">当Move事件发生时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnPointerClick</td>
+<td style="text-align:center">发生Click事件时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnPointerDown</td>
+<td style="text-align:center">当发生PointerDown事件时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnPointerEnter</td>
+<td style="text-align:center">当指针输入与此EventTrigger关联的对象时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnPointerExit</td>
+<td style="text-align:center">当指针退出与此EventTrigger关联的对象时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnPointerUp</td>
+<td style="text-align:center">当发生PointerUp事件时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnScroll</td>
+<td style="text-align:center">当发生Scroll事件时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnSelect</td>
+<td style="text-align:center">当Select事件发生时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnSubmit</td>
+<td style="text-align:center">当发生Submit事件时由EventSystem调用。</td>
+</tr>
+<tr>
+<td>OnUpdateSelected</td>
+<td style="text-align:center">与此EventTrigger关联的对象更新时由EventSystem调用。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Toggle"><a href="#Toggle" class="headerlink" title="Toggle"></a>Toggle</h2><ul>
+<li>toggle 和Button很像 这里就讲不同的点 ： </li>
+<li>它比button多过了一个脚本  <ol>
+<li>C# ：  ToggleToggler  脚本很简单  当触发系统的 Toogle <component> 的 OnvalueChange时  做一些改变 ，例如 更改文字 更改颜色 。 </component></li>
+<li>多调用 CompressibleUI的一个 DivideLayerHeightsOnToggle();   方法<br>BUG ： 当设置了默认状态为is on 时 。初始化的状态没有发生改变 。 单次点击不变 。</li>
+</ol>
+</li>
+</ul>
+<h2 id="Slider"><a href="#Slider" class="headerlink" title="Slider"></a>Slider</h2><ul>
+<li>找个组件比其他的复杂一些   </li>
+<li><p>层次 ： </p>
+<pre><code>1.  Hnadle Slide Area ：
+     导航的滑块 是一个Canvas  他的Child 同样是一个 Canvas 里面包含一个Image （滑块） 
+2.  Fill   Area   ：             
+    滑动的填充Canvas  由一个Image和一个 Mask 组成他的child 由Fill 和 HnadleShow 组成  Fill完成大部分的填充任务 而HnadleShadow 细节化了阴影效果 包括它上面挂载一个Slider Shadow 脚本 。用来实时更新位置变化和阴影效果 。
+3.  Background ： 不用说就是背景而已 
+</code></pre></li>
+<li><p>功能部分 ： </p>
+<pre><code>1. Slider &lt;Component&gt; 调用OnvalueChange时 ，  调用挂载自身的SliderVolume脚本
+                                      setSliderSoundVolume()；方法  来更新滑块的值 。 
+2. Event Trigger 
+                                     --  BeginDrag           开始拖拽  
+                                     --  PointerDown       点击
+                                     --  Pointer Up           抬起  
+</code></pre></li>
+<li><p>除了BeginDrag方法 播放声音 ，其余的执行都和其他一样   </p>
+</li>
+</ul>
+<h2 id="Script-c-for-unity"><a href="#Script-c-for-unity" class="headerlink" title="Script c# for unity"></a>Script c# for unity</h2><p> Interface<br> <img src="http://img.blog.csdn.net/20170202192239906?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<pre><code>1. Using  引入
+2. 实现对应的接口   实现接口的方法 。
+</code></pre><p><img src="http://img.blog.csdn.net/20170202192332907?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
+    
+
+    
 </div>
 
-        
-        
-    
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://img.blog.csdn.net/20170127120014163?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)">
-    
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/27/leapmotion/unity实现3d摇杆结合leapmotion控制实现VR场景移动/">unity实现3d摇杆结合leapmotion控制实现VR场景移动</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/27/leapmotion/unity实现3d摇杆结合leapmotion控制实现VR场景移动/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="miccall's avatar">
-            </div>
-            <div>
-                <strong>miccall</strong>
-                <span>1月 27, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
                 
-            </span>
 
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-    
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://www.smarthey.com/ueditor/php/upload/image/20160826/1472180703926114.jpg)">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/18/leapmotion/LEAP Motion 的猎户座  -002-/">LEAPMotion猎户座(VR)开发~002~</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/18/leapmotion/LEAP Motion 的猎户座  -002-/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="miccall's avatar">
-            </div>
-            <div>
-                <strong>miccall</strong>
-                <span>1月 18, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
+                <!-- Post Comments -->
                 
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-    
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://img1.cache.netease.com/catchpic/C/CE/CEE334AC399E6FBF35A9C47999863C88.gif)">
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/18/leapmotion/LEAP Motion 的猎户座  -001-/">LEAPMotion猎户座(VR)开发~001~</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/18/leapmotion/LEAP Motion 的猎户座  -001-/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="miccall's avatar">
-            </div>
-            <div>
-                <strong>miccall</strong>
-                <span>1月 18, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-    
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/18/unity3d/Unity 3d 常用脚本/">Unity 3d 常用脚本</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/18/unity3d/Unity 3d 常用脚本/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="miccall's avatar">
-            </div>
-            <div>
-                <strong>miccall</strong>
-                <span>1月 18, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-    
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/01/17/unity3d/unity3d文章迁移/">Unity 3d 文章迁移</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/01/17/unity3d/unity3d文章迁移/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="miccall's avatar">
-            </div>
-            <div>
-                <strong>miccall</strong>
-                <span>1月 17, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-                <!-- Comment Number -->
-                &nbsp;|&nbsp;
-                <span class="post_entry-comment" >
-                        <span class="ds-thread-count" data-thread-key="" data-count-type="comments"></span>
-                </span>
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-    
-
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
-
-        locatePost = locatePost.next();
+                    
+    <!-- 使用多说评论 -->
+    <link rel="stylesheet" href="/css/duoshuo.min.css">
+<style>
+    #ds-thread #ds-reset .ds-post-button{
+        background-color: #7EC0EE !important;
     }
-</script>
-
-    
+    #ds-wrapper #ds-reset .ds-icons-32{
+        background-color: #7EC0EE !important;
+    }
+    #ds-reset .ds-highlight {
+        color: #7EC0EE !important;
+    }
+</style>
+<div id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread"
+        data-thread-key=""
+        data-url="http://yoursite.com/2017/02/02/leapmotion/LEAPMotion猎户座(VR)开发-003-UI/"
+        data-title="LEAPMotion猎户座(VR)开发~003~UI">
+    </div>
+    <!-- 多说评论框 end -->
 </div>
+
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -857,6 +784,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
