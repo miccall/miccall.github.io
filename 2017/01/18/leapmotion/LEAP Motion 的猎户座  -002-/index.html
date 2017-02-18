@@ -348,17 +348,20 @@
     
         <hr>
 <h1 id="LEAPMotion猎户座-VR-开发教程-002"><a href="#LEAPMotion猎户座-VR-开发教程-002" class="headerlink" title="LEAPMotion猎户座(VR)开发教程~002~ "></a><strong>LEAPMotion猎户座(VR)开发教程~002~ </strong></h1><h6 id="Created-by-miccall-（转载请注明出处）"><a href="#Created-by-miccall-（转载请注明出处）" class="headerlink" title="Created by miccall  （转载请注明出处）"></a>Created by miccall  （转载请注明出处）</h6><ul>
-<li>上一讲讲的比较杂，也比较难 本篇将从基本讲起 ，一步步带你登天装逼 <h2 id="看见你的手"><a href="#看见你的手" class="headerlink" title="看见你的手"></a>看见你的手</h2></li>
+<li>上一讲讲的比较杂，也比较难 本篇将从基本讲起 ，一步步带你登天装逼<h2 id="看见你的手"><a href="#看见你的手" class="headerlink" title="看见你的手"></a>看见你的手</h2></li>
 <li>打开unity 3d 创建一个工程 导入4.1.4的包 （好像又更新了？？算了，不管他）</li>
-<li>LeapMotion目录下 找到Scenes 里有三个场景 分别是AR DESKTOP 和 VR 三个模式 </li>
-<li>我们打开一个  运行一下 看看效果 </li>
+<li>LeapMotion目录下 找到Scenes 里有三个场景 分别是AR DESKTOP 和 VR 三个模式</li>
+<li>我们打开一个  运行一下 看看效果</li>
 </ul>
 <p><img src="http://img.blog.csdn.net/20170118161657145?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="game视图"></p>
 <ul>
-<li>上一篇也跟大家提了一下脚本 。 我们这次细看一下工程结构 </li>
+<li>上一篇也跟大家提了一下脚本 。 我们这次细看一下工程结构</li>
 <li>在Hierachy界面 我们看到的是一个官方给的样例  </li>
-<li>camera下面一个LeapHandController 物体 他挂着我们上一篇提到的三个脚本 就其他的你不去细研究也没关系 。我们主要还是看看第三个脚本 Hand Pool 之之前我也没去细看 最近在工程里面，老大让我去换手的模型，我不得不看了看找个脚本 </li>
-<li>其实也蛮简单的  。 Model Pool 模型池 先设置了他的size。表示模型手有几对。在工程目录的camera下面的一个HandModels 的子物体中 ，放了 Hand的capsule（mesh模型）以及Rigid（大概可以理解为碰撞器吧）<br><img src="http://img.blog.csdn.net/20170118163145988?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
+<li>camera下面一个LeapHandController 物体 他挂着我们上一篇提到的三个脚本 就其他的你不去细研究也没关系 。我们主要还是看看第三个脚本 Hand Pool 之之前我也没去细看 最近在工程里面，老大让我去换手的模型，我不得不看了看找个脚本</li>
+<li>其实也蛮简单的  。 Model Pool 模型池 先设置了他的size。表示模型手有几对。在工程目录的camera下面的一个HandModels 的子物体中 ，放了 Hand的capsule（mesh模型）以及Rigid（大概可以理解为碰撞器吧）</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20170118163145988?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<ul>
 <li>后缀不说了吧 R为右 L为左 其他的大概都是一些基本的英文单词 程序员应该顾名思义了，但是考虑到大多数人，我就简单提一下 。</li>
 </ul>
 <table>
@@ -398,11 +401,12 @@
 <tr>
 <td>palm</td>
 <td style="text-align:center">手掌</td>
-<td style="text-align:right"></td>
+<td style="text-align:right">#</td>
 </tr>
 <tr>
 <td>forearm</td>
 <td style="text-align:center">前 臂</td>
+<td style="text-align:right">#</td>
 </tr>
 </tbody>
 </table>
@@ -410,7 +414,7 @@
 <li>基本的工程结构就是这样了 。在Hand Pool 下面 依次把他们拖进去<br><img src="http://img.blog.csdn.net/20170118164239664?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
 <li><p>注意托的时候 左右要分清楚 左右对也要分清楚 。</p>
 </li>
-<li><p><strong> 换模型的教程我以后会贴出来 今天就讲这么多了 </strong> </p>
+<li><p><strong> 换模型的教程我以后会贴出来 今天就讲这么多了 </strong></p>
 </li>
 </ul>
 <h2 id="程序员的疑惑"><a href="#程序员的疑惑" class="headerlink" title="程序员的疑惑"></a>程序员的疑惑</h2><p>怎获取手的数据 供我么开发使用呢 ？？？<br>当然我上一篇文章提到了LeapProvider，就是它了 。<br>接下来呢 ，带大家做一个小东西 先来感受一下unity 结合leap的乐趣。</p>
@@ -421,9 +425,9 @@
 </li>
 <li><p>调整位置 让场景全部可视 这个就不用我多教了吧 unity的基本功 。</p>
 </li>
-<li><p>第三步 创建不同的材质颜色 分别给plane和cube不同的颜色区分 </p>
+<li><p>第三步 创建不同的材质颜色 分别给plane和cube不同的颜色区分</p>
 </li>
-<li><p>好 完成这个部分 我们就来先在game当中预览一下效果 还不错的话 就跟着我做下一步啦 不满足的自己调整调整 </p>
+<li><p>好 完成这个部分 我们就来先在game当中预览一下效果 还不错的话 就跟着我做下一步啦 不满足的自己调整调整</p>
 </li>
 </ul>
 <p><img src="http://img.blog.csdn.net/20170123174735048?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
@@ -434,15 +438,15 @@
 </li>
 <li><p>玩过了实体操作 ，我们接下来做一些基本的代码演示 。</p>
 </li>
-<li><p>鉴于下一章直接要讲一些功能的实现方式 我们在此直接贴出一些代码供大家调试<br>using Leap;<br>using Leap.Unity;<br>注意了 ，加入必要的命名空间 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">using UnityEngine;</div><div class="line">using System.Collections;</div><div class="line">using System;</div><div class="line">using Leap;</div><div class="line">using Leap.Unity;</div><div class="line">public class debug : MonoBehaviour &#123;</div><div class="line">    LeapProvider provider;</div><div class="line">    Frame currentframe;</div><div class="line">    Hand lefthand;</div><div class="line">    Hand righthand;</div><div class="line">    bool lefthand_exist;</div><div class="line">    bool righthand_exist;</div><div class="line">    // Use this for initialization</div><div class="line">    void Start () &#123;</div><div class="line">        provider = FindObjectOfType&lt;LeapProvider&gt;() as LeapProvider;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    // Update is called once per frame</div><div class="line">    void Update () &#123;</div><div class="line">        currentframe = provider.CurrentFrame;</div><div class="line">        foreach (Hand h in currentframe.Hands)</div><div class="line">        &#123;</div><div class="line">            if (h.IsLeft)</div><div class="line">            &#123;</div><div class="line">                lefthand = h;</div><div class="line">                lefthand_exist = true;</div><div class="line">            &#125;</div><div class="line">            if (h.IsRight)</div><div class="line">            &#123;</div><div class="line">                righthand = h;</div><div class="line">                righthand_exist = true;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    void Hnaddebug(Hand h)</div><div class="line">    &#123;</div><div class="line">        print(&quot;PalmPosition手掌的位置 &quot;+h.PalmPosition</div><div class="line">            +&quot;手的id&quot;+h.Id</div><div class="line">            +&quot;手掌的垂直向量&quot;+h.PalmNormal</div><div class="line">            +&quot;手掌向手指方向的向量&quot;+h.Direction</div><div class="line">            +&quot;手掌移动速度（矢量）&quot;+h.PalmVelocity</div><div class="line">            +&quot;手指的捏合力&quot;+h.PinchStrength</div><div class="line">            +&quot;手指的握和力&quot;+h.GrabStrength</div><div class="line">            );</div><div class="line">    &#125;</div><div class="line">    void Framedebug(Frame f)</div><div class="line">    &#123;</div><div class="line">        print(&quot;frame id &quot;+f.Id</div><div class="line">             +&quot;frame每一帧检测到手的列表&quot;+f.Hands</div><div class="line">            );</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>鉴于下一章直接要讲一些功能的实现方式 我们在此直接贴出一些代码供大家调试<br>using Leap;<br>using Leap.Unity;<br>注意了 ，加入必要的命名空间</p>
+</li>
+</ul>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line">using UnityEngine;</div><div class="line">using System.Collections;</div><div class="line">using System;</div><div class="line">using Leap;</div><div class="line">using Leap.Unity;</div><div class="line"></div><div class="line">public class debug : MonoBehaviour &#123;</div><div class="line"></div><div class="line">  Frame frame; //  当前帧对象</div><div class="line">  Frame lastframe;  // 前一帧</div><div class="line">  Hand righthand;   //当前的右手对象</div><div class="line">  Hand lefthand;     // 当前的左手对象</div><div class="line">  Hand lastrighthand;   //上一帧的右手对象</div><div class="line">  Hand lastlefthand;    // 上一帧的左手对象</div><div class="line">  List&lt;Hand&gt; handlist;     //当前的手的集合</div><div class="line"></div><div class="line">    // Use this for initialization</div><div class="line">    void Start () &#123;</div><div class="line">        provider = FindObjectOfType&lt;LeapProvider&gt;() as LeapProvider;  //获取手的提供者对象</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // Update is called once per frame</div><div class="line">    void Update () &#123;</div><div class="line">      inithand();  //初始化手的信息</div><div class="line">      //Hnaddebug(righthand);  //调试用的</div><div class="line">      //Framedebug(frame);</div><div class="line">    &#125;</div><div class="line">    private void inithand()</div><div class="line">    &#123;</div><div class="line">        frame = provider.CurrentFrame;</div><div class="line">        handlist = frame.Hands;</div><div class="line">        //print(&quot;handcont&quot; + handlist.Count);</div><div class="line">        if (handlist.Count &gt; 0)</div><div class="line">        &#123;</div><div class="line">            foreach(Hand h in handlist)  //遍历手的集合 数组</div><div class="line">            &#123;</div><div class="line">                if (h.IsLeft) //判断左手还右手</div><div class="line">                &#123;</div><div class="line">                    lefthand = h;</div><div class="line">                    lastlefthand = frame.Hand(lefthand.Id);  //根据hand的id 来获取上一帧的手的信息  </div><div class="line">                    //print(&quot;isleft&quot;);</div><div class="line">                &#125;</div><div class="line">                if (h.IsRight)   //同理 右手也一样</div><div class="line">                &#123;</div><div class="line">                    righthand = h;</div><div class="line">                    lastrighthand = frame.Hand(righthand.Id);</div><div class="line">                    //print(&quot;isright&quot;);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line"></div><div class="line">      &#125;</div><div class="line">      //这些信息都是基于leap的坐标系 ，如果要转化成unity的坐标系 就要调用leap给的一个Utils 类 UnityVectorExtension</div><div class="line">    void Hnaddebug(Hand h)</div><div class="line">    &#123;</div><div class="line">        print(&quot;PalmPosition手掌的位置 &quot;+h.PalmPosition</div><div class="line">            +&quot;手的id&quot;+h.Id</div><div class="line">            +&quot;手掌的垂直向量&quot;+h.PalmNormal</div><div class="line">            +&quot;手掌向手指方向的向量&quot;+h.Direction</div><div class="line">            +&quot;手掌移动速度（矢量）&quot;+h.PalmVelocity</div><div class="line">            +&quot;手指的捏合力&quot;+h.PinchStrength</div><div class="line">            +&quot;手指的握和力&quot;+h.GrabStrength</div><div class="line">            );</div><div class="line">    &#125;</div><div class="line">    void Framedebug(Frame f)</div><div class="line">    &#123;</div><div class="line">        print(&quot;frame id &quot;+f.Id</div><div class="line">             +&quot;frame每一帧检测到手的列表&quot;+f.Hands</div><div class="line">            );</div><div class="line">    &#125;</div><div class="line">    //UnityVectorExtension 类的基本用法 。</div><div class="line">    void leap_unity()&#123;</div><div class="line">      Vector3 palmnomal = UnityVectorExtension.ToVector3(righthand.PalmNormal);</div><div class="line">      Vector3 palmposition = UnityVectorExtension.ToVector3(righthand.PalmPosition);</div><div class="line">      Vector3 palmDirection = UnityVectorExtension.ToVector3(righthand.Direction);</div><div class="line">      //Debug输出一下 ，就能看到场景下各个向量的线了 很直观 。</div><div class="line">      Debug.DrawLine(palmposition, palmnomal, Color.red);</div><div class="line">      Debug.DrawLine(palmposition, palmDirection, Color.green);</div><div class="line">      Debug.DrawLine(palmposition, Vector3.Cross(palmnomal, palmDirection), Color.blue);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <ul>
 <li>还是简单解释一下这些调试 。</li>
 <li>Hand.id  &lt;====&gt; LEAP分配给此Hand对象的唯一ID，他的值在连续frame中保持相同。如果leap检测不到手（例如，当手被另一只手遮挡时，或者当手从Leap Motion Controller视野中消失或到达Leap Motion Controller视野的边缘时），Leap Motion软件可以在重新检测到手时分配新的ID 。</li>
 <li>PalmPosition   手掌的位置 他是相对于刚刚设定的leap原点的位置 。</li>
-<li>frame.hands 会返回一个列表 注意 这是这一帧对象中所有获取到的手的列表<br>我们可以通过对这个列表的遍历，来获取到当前场景里面的手的对象。  </li>
-</ul>
-</li>
+<li>frame.hands 会返回一个列表 注意 这是这一帧对象中所有获取到的手的列表<br>我们可以通过对这个列表的遍历，来获取到当前场景里面的手的对象。这个建议大家去直观的调试一下 。  </li>
 </ul>
 <ul>
 <li>更多的调试方式我就不多写了 看看官方的API 这才是程序员应该做的事 。</li>
@@ -891,7 +895,7 @@ It will not impact the appearance and can give developers a lot of support :)
     <!-- 多说公共 js 代码 start -->
     <script type="text/javascript">
         var duoshuoQuery = {
-            short_name: 'null'
+            short_name: 'miccall.github.io.git'
         };
         (function() {
             var ds = document.createElement('script');
