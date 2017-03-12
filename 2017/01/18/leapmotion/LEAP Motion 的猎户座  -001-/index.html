@@ -396,8 +396,8 @@
 </li>
 <li><p>5 . 重要的来了 ： OnEnable 和 OnDisable  </p>
 </li>
-<li><p>执行回调的时候 provider维持了一个frame帧的事件 。<br>当OnEnable的时候，向providr的frame中，添加OnUpdateFrame事件和OnFixedFrame事件。他们在不同的循环中 ，我们知道unity的update()和fixedupdate().他们也维持在不同的循环之中，就是这个道理。</p>
-<p>相反的，当OnDisable时,又从provider里面的frame移除这个事件。</p>
+<li><p>执行回调的时候 provider维持了一个frame帧的事件 。<br>  当OnEnable的时候，向providr的frame中，添加OnUpdateFrame事件和OnFixedFrame事件。他们在不同的循环中 ，我们知道unity的update()和fixedupdate().他们也维持在不同的循环之中，就是这个道理。</p>
+<p>  相反的，当OnDisable时,又从provider里面的frame移除这个事件。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">protected virtual void OnEnable() &#123;</div><div class="line">      provider = requireComponent&lt;LeapProvider&gt;();</div><div class="line">      factory = requireComponent&lt;HandFactory&gt;();</div><div class="line"></div><div class="line">      provider.OnUpdateFrame += OnUpdateFrame;</div><div class="line">      provider.OnFixedFrame += OnFixedFrame;</div><div class="line">&#125;</div><div class="line">protected virtual void OnDisable() &#123;</div><div class="line">      provider.OnUpdateFrame -= OnUpdateFrame;</div><div class="line">      provider.OnFixedFrame -= OnFixedFrame;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>那么 ，这个事件时干什么的呢 ？ </p>
@@ -443,8 +443,11 @@
 <li><p>很显然 ，这些方法都是public的 我们在自己的脚本那就可以直接调出来用了 。。。</p>
 <h3 id="最后一个脚本Hand-pool"><a href="#最后一个脚本Hand-pool" class="headerlink" title="最后一个脚本Hand pool"></a>最后一个脚本Hand pool</h3><p>顾名思义 猜猜是干什么的 作为一个程序员 我看到名字大概可以猜到他是干什么的了</p>
 </li>
-<li><p>HandPool拥有一个IHandModels池，并使HandProxys<br>  当给出一个Hand和模型类型的图形模型或物理模型。<br>  当创建一个HandProxy时，从池中删除一个IHandModel。<br>  当HandProxy完成后，其IHandModel返回到池中。</p>
-</li>
+<li><p>HandPool拥有一个IHandModels池，并使HandProxys</p>
+<pre><code>当给出一个Hand和模型类型的图形模型或物理模型。
+当创建一个HandProxy时，从池中删除一个IHandModel。
+当HandProxy完成后，其IHandModel返回到池中。
+</code></pre></li>
 <li>官方解释跟屎一样 简单一点说 ，这个就是管理手的碰撞器和模型网格</li>
 <li>这里我不细讲这个池的原理了 算法复杂非常人理解 ，与其研究这个，不如去看看更实用的线程池的原理 。<br>不过呢 还是简单说一下怎么用吧 </li>
 <li><strong> ModelsParent </strong> 一个Transform 它的子物体存放手的模型和碰撞器 这个我们以后还会细说到 工程要求我改变模型 。 </li>
@@ -616,7 +619,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-            <a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">19</span></a>
+            <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">19</span></a>
         </ul>
     </li>
 
@@ -670,7 +673,7 @@
     <li>
         <a href="/archives">
             文章总数
-            <span class="sidebar-badge">20</span>
+            <span class="sidebar-badge">21</span>
         </a>
     </li>
 </ul>
