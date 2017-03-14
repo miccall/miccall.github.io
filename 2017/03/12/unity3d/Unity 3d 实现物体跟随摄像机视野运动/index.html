@@ -347,69 +347,56 @@
                 <div id="post-content" class="markdown-Github mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <hr>
-<h1 id="Unity-3d-实现物体跟随摄像机视野运动"><a href="#Unity-3d-实现物体跟随摄像机视野运动" class="headerlink" title="Unity 3d 实现物体跟随摄像机视野运动 "></a><strong>Unity 3d 实现物体跟随摄像机视野运动 </strong></h1><h6 id="Created-by-miccall-（转载请注明出处-miccall-tech-）"><a href="#Created-by-miccall-（转载请注明出处-miccall-tech-）" class="headerlink" title="Created by miccall    （转载请注明出处  miccall.tech  ）"></a>Created by miccall    （转载请注明出处  <a href="http://miccall.tech" target="_blank" rel="external">miccall.tech</a>  ）</h6><h2 id="1-VR实现机器人导航"><a href="#1-VR实现机器人导航" class="headerlink" title="1. VR实现机器人导航"></a>1. VR实现机器人导航</h2><pre><code>- 
-项目里要求一个机器人跟随在角色旁边，一直飞着，就像一个精灵一样，总在主角的身边，移动，转头，都要移动到合适的位置 。还得让他面向主角，今天就来实现这个样例 。 
--
-</code></pre><h2 id="2-问题思考"><a href="#2-问题思考" class="headerlink" title="2. 问题思考"></a>2. 问题思考</h2><pre><code>- 1. 物体移动到某个给定的位置（target）
+<h1 id="Unity-3d-实现物体跟随摄像机视野运动"><a href="#Unity-3d-实现物体跟随摄像机视野运动" class="headerlink" title="Unity 3d 实现物体跟随摄像机视野运动 "></a><strong>Unity 3d 实现物体跟随摄像机视野运动 </strong></h1><h6 id="Created-by-miccall-（转载请注明出处-miccall-tech-）"><a href="#Created-by-miccall-（转载请注明出处-miccall-tech-）" class="headerlink" title="Created by miccall    （转载请注明出处  miccall.tech  ）"></a>Created by miccall    （转载请注明出处  <a href="http://miccall.tech" target="_blank" rel="external">miccall.tech</a>  ）</h6><h2 id="1-VR实现机器人导航"><a href="#1-VR实现机器人导航" class="headerlink" title="1. VR实现机器人导航"></a>1. VR实现机器人导航</h2><ul>
+<li>项目里要求一个机器人跟随在角色旁边，一直飞着，就像一个精灵一样，总在主角的身边，移动，转头，都要移动到合适的位置 。还得让他面向主角，今天就来实现这个样例 。 </li>
+</ul>
+<h2 id="2-问题思考"><a href="#2-问题思考" class="headerlink" title="2. 问题思考"></a>2. 问题思考</h2><pre><code>- 1. 物体移动到某个给定的位置（target）
 - 2. 物体转动到面向摄像机 
 - 3. 出现在相机的视野当中 
 - 4. 自定义物体在摄影机的Screen中的位置 
-</code></pre><h2 id="3-实现以及方法"><a href="#3-实现以及方法" class="headerlink" title="3.实现以及方法"></a>3.实现以及方法</h2><pre><code>- 
-移动的话 ，本来可以用动画来实现 ，因为动画还没有做好，我就用一个cube当作那个机器人做样例了 。 
-首先有个cube之后 ，给他放一个移动的脚本。这里我给他命名为PlayerTank 。
-我们的目的就是让他运动到某个target ，所以我们得给他指定一个followTransform 。 同时还有他的移动速度和转动速度 。
-为了使他移动不是很突兀，我的思路是他先转动到面向follow物体，然后在直线移动到给物体 。所以算法很快写好了 。
-—
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">void LookTransform(Transform Mtransform)</div><div class="line">    &#123;</div><div class="line">        Vector3 tarPos = Mtransform.position;</div><div class="line">        Vector3 dirRot = tarPos - transform.position;</div><div class="line">        Quaternion tarRot = Quaternion.LookRotation(dirRot);</div><div class="line">        transform.rotation = Quaternion.Slerp(transform.rotation, tarRot, rotSpeed * Time.deltaTime);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<pre><code>-
-  简单解释一下，就是先确定物体的位置，然后求出指向他的方向，并用插值的方法，让物体转动到面向指定的物体 。
-  好了，既然有了朝向的运动方向，那么走到这方向，就很简单了。
--
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform.Translate(new Vector3(0, 0, movementSpeed * Time.deltaTime));</div></pre></td></tr></table></figure>
-<pre><code>-
-  那么什么时候停止运动呢 ，我想了一下，决定用位置的差来判断
-  就是
--
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vector3.Distance(transform.position, followTransform.position);</div></pre></td></tr></table></figure>
-<pre><code>-
- 好了，既然停止的方法也有了，最后要解决的问题就是朝向摄像机了。
- 突然一想，这是问题么，对，这不是问题 ，哈哈，刚刚写的那个算法，给一个摄像机就解决了嘛 。
- 然后给出具体的判断逻辑 。
--
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//该物体 接近要  到达的目标   指定位置后就停止  </div><div class="line">if (Vector3.Distance(transform.position, followTransform.position) &lt; 3f)</div><div class="line">&#123;</div><div class="line">    //当物体道到位置时 让物体面 向摄像机 </div><div class="line">    LookTransform(Camre);</div><div class="line">    return;</div><div class="line">&#125;</div><div class="line">else</div><div class="line">&#123;</div><div class="line">    //让物体转向 将要运动 的方向 </div><div class="line">    LookTransform(followTransform);</div><div class="line">    transform.Translate(new Vector3(0, 0, movementSpeed * Time.deltaTime));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>-
-  这样就解决了物体移动到target了，下一步就是固定target的位置，让他在摄像机的固定位置了 。
-  新建一个脚本文件CameraView，挂在摄像机上。为了方便调试，我又用了FPS脚本，就是第一人称视角跟随鼠标转动，就跟cs里面的玩法一样，（百度一大推代码）。
-  第二个调试算法是一个国外大牛写的 ，他可以给定一个距离，画出摄像机的视野范围
--
-</code></pre><p><img src="http://img.blog.csdn.net/20170312173313807?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
-<pre><code>-
-  这里我画了两个边 ，一个是距离摄像机8.5米 用黄色表示，距离摄像机12米的用红色表示。
-  应为篇幅问题和详略问题，这里不多解释这个算法，有兴趣的可以去研究一下，这里我们引用一下就行了。
--
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">Vector3[] GetCorners(float distance)</div><div class="line">    &#123;</div><div class="line">        Vector3[] corners = new Vector3[4];</div><div class="line"></div><div class="line">        float halfFOV = (theCamera.fieldOfView * 0.5f) * Mathf.Deg2Rad;</div><div class="line">        float aspect = theCamera.aspect;</div><div class="line"></div><div class="line">        float height = distance * Mathf.Tan(halfFOV);</div><div class="line">        float width = height * aspect;</div><div class="line"></div><div class="line">        // UpperLeft</div><div class="line">        corners[0] = tx.position - (tx.right * width);</div><div class="line">        corners[0] += tx.up * height;</div><div class="line">        corners[0] += tx.forward * distance;</div><div class="line"></div><div class="line">        // UpperRight</div><div class="line">        corners[1] = tx.position + (tx.right * width);</div><div class="line">        corners[1] += tx.up * height;</div><div class="line">        corners[1] += tx.forward * distance;</div><div class="line"></div><div class="line">        // LowerLeft</div><div class="line">        corners[2] = tx.position - (tx.right * width);</div><div class="line">        corners[2] -= tx.up * height;</div><div class="line">        corners[2] += tx.forward * distance;</div><div class="line"></div><div class="line">        // LowerRight</div><div class="line">        corners[3] = tx.position + (tx.right * width);</div><div class="line">        corners[3] -= tx.up * height;</div><div class="line">        corners[3] += tx.forward * distance;</div><div class="line"></div><div class="line">        return corners;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</code></pre><h2 id="3-实现以及方法"><a href="#3-实现以及方法" class="headerlink" title="3.实现以及方法"></a>3.实现以及方法</h2><ul>
+<li>移动的话 ，本来可以用动画来实现 ，因为动画还没有做好，我就用一个cube当作那个机器人做样例了 。 </li>
+<li>首先有个cube之后 ，给他放一个移动的脚本。这里我给他命名为PlayerTank 。</li>
+<li>我们的目的就是让他运动到某个target ，所以我们得给他指定一个followTransform 。 同时还有他的移动速度和转动速度 。</li>
+<li>为了使他移动不是很突兀，我的思路是他先转动到面向follow物体，然后在直线移动到给物体 。所以算法很快写好了 。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">void LookTransform(Transform Mtransform)</div><div class="line">    &#123;</div><div class="line">        Vector3 tarPos = Mtransform.position;</div><div class="line">        Vector3 dirRot = tarPos - transform.position;</div><div class="line">        Quaternion tarRot = Quaternion.LookRotation(dirRot);</div><div class="line">        transform.rotation = Quaternion.Slerp(transform.rotation, tarRot, rotSpeed * Time.deltaTime);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>简单解释一下，就是先确定物体的位置，然后求出指向他的方向，并用插值的方法，<br>让物体转动到面向指定的物体 。<br>好了，既然有了朝向的运动方向，那么走到这方向，就很简单了。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform.Translate(new Vector3(0, 0, movementSpeed * Time.deltaTime));</div></pre></td></tr></table></figure>
+<ul>
+<li>那么什么时候停止运动呢 ，我想了一下，决定用位置的差来判断<br>就是</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vector3.Distance(transform.position, followTransform.position);</div></pre></td></tr></table></figure>
+<ul>
+<li>好了，既然停止的方法也有了，最后要解决的问题就是朝向摄像机了。<br>   突然一想，这是问题么，对，这不是问题 ，哈哈，刚刚写的那个算法，给一个摄像机就解决了嘛 。<br>   然后给出具体的判断逻辑 。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//该物体 接近要  到达的目标   指定位置后就停止  </div><div class="line">if (Vector3.Distance(transform.position, followTransform.position) &lt; 3f)</div><div class="line">&#123;</div><div class="line">    //当物体道到位置时 让物体面 向摄像机 </div><div class="line">    LookTransform(Camre);</div><div class="line">    return;</div><div class="line">&#125;</div><div class="line">else</div><div class="line">&#123;</div><div class="line">    //让物体转向 将要运动 的方向 </div><div class="line">    LookTransform(followTransform);</div><div class="line">    transform.Translate(new Vector3(0, 0, movementSpeed * Time.deltaTime));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>这样就解决了物体移动到target了，下一步就是固定target的位置，让他在摄像机的固定位置了 。<br>新建一个脚本文件CameraView，挂在摄像机上。为了方便调试，我又用了FPS脚本，<br>就是第一人称视角跟随鼠标转动，就跟cs里面的玩法一样，（百度一大推代码）。<br>第二个调试算法是一个国外大牛写的 ，他可以给定一个距离，画出摄像机的视野范围</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20170312173313807?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<ul>
+<li>这里我画了两个边 ，一个是距离摄像机8.5米 用黄色表示，距离摄像机12米的用红色表示。<pre><code>应为篇幅问题和详略问题，这里不多解释这个算法，有兴趣的可以去研究一下，这里我们引用一下就行了。
+</code></pre></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">Vector3[] GetCorners(float distance)</div><div class="line">    &#123;</div><div class="line">        Vector3[] corners = new Vector3[4];</div><div class="line"></div><div class="line">        float halfFOV = (theCamera.fieldOfView * 0.5f) * Mathf.Deg2Rad;</div><div class="line">        float aspect = theCamera.aspect;</div><div class="line"></div><div class="line">        float height = distance * Mathf.Tan(halfFOV);</div><div class="line">        float width = height * aspect;</div><div class="line"></div><div class="line">        // UpperLeft</div><div class="line">        corners[0] = tx.position - (tx.right * width);</div><div class="line">        corners[0] += tx.up * height;</div><div class="line">        corners[0] += tx.forward * distance;</div><div class="line"></div><div class="line">        // UpperRight</div><div class="line">        corners[1] = tx.position + (tx.right * width);</div><div class="line">        corners[1] += tx.up * height;</div><div class="line">        corners[1] += tx.forward * distance;</div><div class="line"></div><div class="line">        // LowerLeft</div><div class="line">        corners[2] = tx.position - (tx.right * width);</div><div class="line">        corners[2] -= tx.up * height;</div><div class="line">        corners[2] += tx.forward * distance;</div><div class="line"></div><div class="line">        // LowerRight</div><div class="line">        corners[3] = tx.position + (tx.right * width);</div><div class="line">        corners[3] -= tx.up * height;</div><div class="line">        corners[3] += tx.forward * distance;</div><div class="line"></div><div class="line">        return corners;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">void FindUpperCorners()</div><div class="line">&#123;</div><div class="line">        Vector3[] corners = GetCorners(upperDistance);</div><div class="line">        // for debugging</div><div class="line">        Debug.DrawLine(corners[0], corners[1], Color.yellow); // UpperLeft -&gt; UpperRight</div><div class="line">        Debug.DrawLine(corners[1], corners[3], Color.yellow); // UpperRight -&gt; LowerRight</div><div class="line">        Debug.DrawLine(corners[3], corners[2], Color.yellow); // LowerRight -&gt; LowerLeft</div><div class="line">        Debug.DrawLine(corners[2], corners[0], Color.yellow); // LowerLeft -&gt; UpperLeft</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>-
-  debug的时候，直接调用FindUpperCorners()就可以了 。
-  刚开始的时候 ，我就用的这个调试 ，给出一个位置，然后计算他的偏移量，调试了很久，没有一个良好的效果，我决定换个思路了 ，为了普遍大众 ，我还是把这个调试方法贴出来了，有需要的可以试试 。 
-  第二个我就去翻api了 ，因为我貌似记得有个屏幕坐标和世界坐标转化的什么鬼方法来着。果然不出我所料，这个方法的确是相当的好用的呀 。
-  试了一下官方给的调试方法，画了一个点出来 。
--
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">void OnDrawGizmosSelected()</div><div class="line">&#123;</div><div class="line">    Vector3 p = theCamera.ScreenToWorldPoint(new Vector3(100, 200, 8));</div><div class="line">    Gizmos.color = Color.blue;</div><div class="line">    //target.position = p;</div><div class="line">    Gizmos.DrawSphere(p, 1F);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>-
-   好了，就连我最后决定用的位置也标明了。
-   然后，我就写了一个很简单的方法来达到目的。
--
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">void maketarget()</div><div class="line">&#123;</div><div class="line">    Vector3 p = theCamera.ScreenToWorldPoint(new Vector3(RH, RV, upperDistance));</div><div class="line">    target.position = p;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>-
-  写完我都吓了一跳 ，竟然如此简单。还是简单解释一下 ，RH 是水平偏移量，RV是垂直偏移量，upperDistance是距离摄像机的一个平面位置 。
-  接下来就是运行看效果了 。
--
-</code></pre><h2 id="4-中途出现的小BUG"><a href="#4-中途出现的小BUG" class="headerlink" title="4.中途出现的小BUG"></a>4.中途出现的小BUG</h2><pre><code>-
-   莫名其妙的做圆周运动 ，然后我分析了线速度，角速度和半径的关系 ，然后总结出一个基本的规律，他应该是当运动到某个特定的位置 ，正好满足了圆周运动的关系，然后我们调整movementSpeed 和rotSpeed 的值，让他么尽可能的和Distance消除乘积关系，这样出现的几率就微乎其微了 。
-   感想 -- 其实unity和现实物理，理论物理 还是有很大的不同。
--
-</code></pre>
+<ul>
+<li>debug的时候，直接调用FindUpperCorners()就可以了 。<br>刚开始的时候 ，我就用的这个调试 ，给出一个位置，然后计算他的偏移量，调试了很久，没有一个良好的效果，我决定换个思路了 ，为了普遍大众 ，我还是把这个调试方法贴出来了，有需要的可以试试 。<br>第二个我就去翻api了 ，因为我貌似记得有个屏幕坐标和世界坐标转化的什么鬼方法来着。果然不出我所料，这个方法的确是相当的好用的呀 。<br>试了一下官方给的调试方法，画了一个点出来 。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">void OnDrawGizmosSelected()</div><div class="line">&#123;</div><div class="line">    Vector3 p = theCamera.ScreenToWorldPoint(new Vector3(100, 200, 8));</div><div class="line">    Gizmos.color = Color.blue;</div><div class="line">    //target.position = p;</div><div class="line">    Gizmos.DrawSphere(p, 1F);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>好了，就连我最后决定用的位置也标明了。<br>然后，我就写了一个很简单的方法来达到目的。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">void maketarget()</div><div class="line">&#123;</div><div class="line">    Vector3 p = theCamera.ScreenToWorldPoint(new Vector3(RH, RV, upperDistance));</div><div class="line">    target.position = p;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>写完我都吓了一跳 ，竟然如此简单。还是简单解释一下 ，RH 是水平偏移量，RV是垂直偏移量，upperDistance是距离摄像机的一个平面位置 。<pre><code>接下来就是运行看效果了 。
+</code></pre></li>
+</ul>
+<h2 id="4-中途出现的小BUG"><a href="#4-中途出现的小BUG" class="headerlink" title="4.中途出现的小BUG"></a>4.中途出现的小BUG</h2><p>-<br>       莫名其妙的做圆周运动 ，然后我分析了线速度，角速度和半径的关系 ，<br>       然后总结出一个基本的规律，他应该是当运动到某个特定的位置 ，正好满足了<br>       圆周运动的关系，然后我们调整movementSpeed 和rotSpeed 的值，让他么尽可能<br>       的和Distance消除乘积关系，这样出现的几率就微乎其微了 。<br>       感想 – 其实unity和现实物理，理论物理 还是有很大的不同。</p>
+
     
 
     
@@ -454,6 +441,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2017/03/14/unity3d/shader forge 插件笔记(一)/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -567,7 +562,7 @@
         </a>
         <ul class="dropdown-menu">
             <li>
-            <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">19</span></a>
+            <a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">19</span></a>
         </ul>
     </li>
 
@@ -621,7 +616,7 @@
     <li>
         <a href="/archives">
             文章总数
-            <span class="sidebar-badge">21</span>
+            <span class="sidebar-badge">22</span>
         </a>
     </li>
 </ul>
