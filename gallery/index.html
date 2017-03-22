@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
     <head>
-    <!--
+    <!-- 
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.2.6 -->
+        Version: 1.3.0 -->
 
     <!-- Title -->
     
@@ -50,6 +50,7 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Gallery | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
+    
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -67,74 +68,74 @@
 
 <!-- Other Styles -->
 <style>
-    body, html {
-        font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    }
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
 
-    a {
-        color: #00838F;
-    }
+  a {
+    color: #00838F;
+  }
 
-    .mdl-card__media,
-    #search-label,
-    #search-form-label:after,
-    #scheme-Paradox .hot_tags-count,
-    #scheme-Paradox .sidebar_archives-count,
-    #scheme-Paradox .sidebar-colored .sidebar-header,
-    #scheme-Paradox .sidebar-colored .sidebar-badge{
-        background-color: #7EC0EE !important;
-    }
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #7EC0EE !important;
+  }
 
-    /* Sidebar User Drop Down Menu Text Color */
-    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-    #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-        color: #7EC0EE !important;
-    }
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #7EC0EE !important;
+  }
 
-    #post_entry-right-info,
-    .sidebar-colored .sidebar-nav li:hover > a,
-    .sidebar-colored .sidebar-nav li:hover > a i,
-    .sidebar-colored .sidebar-nav li > a:hover,
-    .sidebar-colored .sidebar-nav li > a:hover i,
-    .sidebar-colored .sidebar-nav li > a:focus i,
-    .sidebar-colored .sidebar-nav > .open > a,
-    .sidebar-colored .sidebar-nav > .open > a:hover,
-    .sidebar-colored .sidebar-nav > .open > a:focus,
-    #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-        color: #7EC0EE !important;
-    }
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #7EC0EE !important;
+  }
 
-    .toTop {
-        background: #757575 !important;
-    }
+  .toTop {
+    background: #757575 !important;
+  }
 
-    .material-layout .material-post>.material-nav,
-    .material-layout .material-index>.material-nav,
-    .material-nav a {
-        color: #757575;
-    }
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
 
-    #scheme-Paradox .MD-burger-layer {
-        background-color: #757575;
-    }
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
 
-    #scheme-Paradox #post-toc-trigger-btn {
-        color: #757575;
-    }
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
 
-    .post-toc a:hover {
-        color: #00838F;
-        text-decoration: underline;
-    }
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
 </style>
 
 
 <!-- Theme Background Related-->
 
     <style>
-        body{
-            background-image: url(/img/bg.png);
-        }
+      body{
+        background-image: url(/img/bg.png);
+      }
     </style>
 
 
@@ -143,34 +144,41 @@
 <!-- Fade Effect -->
 
     <style>
-        .fade {
-            transition: all 800ms linear;
-            -webkit-transform: translate3d(0,0,0);
-            -moz-transform: translate3d(0,0,0);
-            -ms-transform: translate3d(0,0,0);
-            -o-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            opacity: 1;
-        }
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
 
-        .fade.out{
-            opacity: 0;
-        }
+      .fade.out{
+        opacity: 0;
+      }
     </style>
 
 
+
     <script src="/js/jquery.min.js"></script>
+    <script src="/js/queue.js"></script>
 
-    <link rel="stylesheet" href="/css/highlight/androidstudio.css">
-
-    <!-- UC Browser Compatible-->
+    <!-- UC Browser Compatible -->
     <script>
         var agent = navigator.userAgent.toLowerCase();
         if(agent.indexOf('ucbrowser')>0) {
-            document.write('<link rel="stylesheet" href="/css/uc.css">');
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
             alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
         }
     </script>
+
+    
+
+    
+
+    <!-- Bing Background -->
+    
 
     <!-- Custom Head -->
     
@@ -180,6 +188,7 @@
     
         <!-- Single Gallery Page -->
         <link rel="stylesheet" href="/css/gallery.min.css">
+
 
 <body>
     <!-- Wrapper -->
@@ -206,56 +215,55 @@
             
                 
                     <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100" class="image"><img src="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100" alt="给自己一个绿色" /></a>
+                        <a href="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100" class="image lazy" data-original="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100"><img class="lazy" data-original="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100" alt="给自己一个绿色" /></a>
                         <h2>给自己一个绿色</h2>
                         <p>keep learning</p>
                     </article>
                 
                     <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" class="image"><img src="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" alt="圣诞快乐" /></a>
+                        <a href="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" class="image lazy" data-original="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2"><img class="lazy" data-original="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" alt="圣诞快乐" /></a>
                         <h2>圣诞快乐</h2>
                         <p>要热爱这个世界</p>
                     </article>
                 
                     <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9" class="image"><img src="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9" alt="想念自己的世界" /></a>
+                        <a href="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9" class="image lazy" data-original="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9"><img class="lazy" data-original="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9" alt="想念自己的世界" /></a>
                         <h2>想念自己的世界</h2>
                         <p>做一个充满爱的人</p>
                     </article>
                 
                     <article class="thumb">
-                        <a href="http://www.dujin.org/sys/bing/1366.php" class="image"><img src="http://www.dujin.org/sys/bing/1366.php" alt="静谧的世界" /></a>
+                        <a href="http://www.dujin.org/sys/bing/1366.php" class="image lazy" data-original="http://www.dujin.org/sys/bing/1366.php"><img class="lazy" data-original="http://www.dujin.org/sys/bing/1366.php" alt="静谧的世界" /></a>
                         <h2>静谧的世界</h2>
                         <p>lala in my heart</p>
                     </article>
                 
                     <article class="thumb">
-                        <a href="http://tu.ihuan.me/api/me_all_pic" class="image"><img src="http://tu.ihuan.me/api/me_all_pic_go" alt="神奇的图片" /></a>
+                        <a href="http://tu.ihuan.me/api/me_all_pic" class="image lazy" data-original="http://tu.ihuan.me/api/me_all_pic_go"><img class="lazy" data-original="http://tu.ihuan.me/api/me_all_pic_go" alt="神奇的图片" /></a>
                         <h2>神奇的图片</h2>
                         <p>每次点击都会出现不同的照片</p>
                     </article>
                 
                     <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795" class="image"><img src="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795" alt="background" /></a>
+                        <a href="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795" class="image lazy" data-original="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795"><img class="lazy" data-original="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795" alt="background" /></a>
                         <h2>background</h2>
                         <p>love lonely</p>
                     </article>
                 
                     <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8" class="image"><img src="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8" alt="background2" /></a>
+                        <a href="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8" class="image lazy" data-original="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8"><img class="lazy" data-original="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8" alt="background2" /></a>
                         <h2>background2</h2>
                         <p>low poly design </p>
                     </article>
                 
                     <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" class="image"><img src="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" alt="Samoye" /></a>
+                        <a href="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" class="image lazy" data-original="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb"><img class="lazy" data-original="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" alt="Samoye" /></a>
                         <h2>Samoye</h2>
                         <p>love life like samoye</p>
                     </article>
                 
             
         </div>
-
         <!-- Footer -->
         <!--
         <footer id="footer" class="panel">
@@ -313,6 +321,17 @@
     <script src="/js/gallery/skel.min.js"></script>
     <script src="/js/gallery/util.min.js"></script>
     <script src="/js/gallery/main.min.js"></script>
+    <script src="/js/gallery/jquery.scrollstop.min.js"></script>
+    <script src="/js/lazyload.min.js"></script>
+
+    <script type="text/javascript">
+        queue.offer(function(){
+            $('.lazy').lazyload({
+              effect: 'fadeIn',
+              event: 'scrollstop'
+            });
+        })
+    </script>
 </body>
 
     
