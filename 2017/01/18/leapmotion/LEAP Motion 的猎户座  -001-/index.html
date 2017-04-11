@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall,leap motion,unity 3d">
+    <meta name="keywords" content="miccall,unity 3d,leap motion">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -50,7 +62,7 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="LEAPMotion猎户座(VR)开发~001~ | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
-    <meta property="og:article:tag" content="leap motion"> <meta property="og:article:tag" content="unity 3d"> 
+    <meta property="og:article:tag" content="unity 3d"> <meta property="og:article:tag" content="leap motion"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LEAPMotion猎户座-VR-开发-001"><span class="post-toc-number">1.</span> <span class="post-toc-text">LEAPMotion猎户座(VR)开发~001~ </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-（转载请注明出处-miccall-tech-）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  （转载请注明出处  miccall.tech  ）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Leap-Motion-介绍"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Leap Motion 介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#引用："><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">引用： </span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Leap-版本-："><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Leap 版本 ： </span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Leap-Orion-正文-源码分析篇-较难-初学者可以先绕过去看下一篇文章-："><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Leap Orion 正文(源码分析篇 较难 初学者可以先绕过去看下一篇文章)  ： </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第一个脚本LeapHandController"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">第一个脚本LeapHandController</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第二个脚本LeapServiceProvider"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">第二个脚本LeapServiceProvider</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#最后一个脚本Hand-pool"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">最后一个脚本Hand pool</span></a></li></ol></li></ol></li></ol>
 
         <!--
@@ -363,6 +379,12 @@
 
     <!-- Share Google+ -->
     
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/18/leapmotion/LEAP Motion 的猎户座  -001-/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
     <!-- Share LinkedIn -->
     
@@ -424,31 +446,84 @@
 <li>猎户座取消了HandController 获取 Frame的信息 ，而是在 LeapHandController上添加了其他两个脚本。。<br><img src="http://img.blog.csdn.net/20170118155606037?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><h3 id="第一个脚本LeapHandController"><a href="#第一个脚本LeapHandController" class="headerlink" title="第一个脚本LeapHandController"></a>第一个脚本LeapHandController</h3></li>
 <li>我们一个个看一看  ，第一个脚本LeapHandController 有些面熟~~<br>v2版本的leap使用的是HandController 这次在前面加了一个Leap 感觉怪怪的<br>来看看里面有些什么鬼 ：<br>打开这个脚本</li>
 <li><p>1 . 它定义了两个脚本的实例 分别是LeapProvider和HandFactory</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">protected LeapProvider  provider = requireComponent&lt;LeapProvider&gt;();</div><div class="line">protected HandFactory    factory = requireComponent&lt;HandFactory&gt;();</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-c#"><code class="language-c#">    protected LeapProvider  provider = requireComponent<LeapProvider>();
+    protected HandFactory    factory = requireComponent<HandFactory>();
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 </li>
 <li><p>2 . 然后就是两个字典列表 一个图形手的列表（graphicsReps），一个物理手的列表（physicsReps）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">protected Dictionary&lt;int, HandRepresentation&gt; graphicsReps = </div><div class="line">      new Dictionary&lt;int, HandRepresentation&gt;();</div><div class="line">protected Dictionary&lt;int, HandRepresentation&gt; physicsReps = </div><div class="line">      new Dictionary&lt;int, HandRepresentation&gt;();</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-c#"><code class="language-c#">protected Dictionary<int, HandRepresentation> graphicsReps = 
+  new Dictionary<int, HandRepresentation>();
+protected Dictionary<int, HandRepresentation> physicsReps = 
+  new Dictionary<int, HandRepresentation>();
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>3 . GIZMO_SCALE 从拇指底至小指底的参考距离，单位为mm 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">protected const float GIZMO_SCALE = 5.0f;</div></pre></td></tr></table></figure>
-</li>
+<li>3 . GIZMO_SCALE 从拇指底至小指底的参考距离，单位为mm 。<pre><code>protected const float GIZMO_SCALE = 5.0f;
+</code></pre></li>
 <li><p>4 . 图形手和物理手模型的开关状态 并且写了一个方法来获取他们的bool值 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">protected bool graphicsEnabled = true;</div><div class="line">    protected bool physicsEnabled = true;</div><div class="line"></div><div class="line">    public bool GraphicsEnabled &#123;</div><div class="line">      get &#123;</div><div class="line">        return graphicsEnabled;</div><div class="line">      &#125;</div><div class="line">      set &#123;</div><div class="line">        graphicsEnabled = value;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public bool PhysicsEnabled &#123;</div><div class="line">      get &#123;</div><div class="line">        return physicsEnabled;</div><div class="line">      &#125;</div><div class="line">      set &#123;</div><div class="line">        physicsEnabled = value;</div><div class="line">      &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-c#"><code class="language-c#">protected bool graphicsEnabled = true;
+protected bool physicsEnabled = true;
+
+public bool GraphicsEnabled {
+  get {
+    return graphicsEnabled;
+  }
+  set {
+    graphicsEnabled = value;
+  }
+}
+
+public bool PhysicsEnabled {
+  get {
+    return physicsEnabled;
+  }
+  set {
+    physicsEnabled = value;
+  }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>5 . 重要的来了 ： OnEnable 和 OnDisable  </p>
 </li>
 <li><p>执行回调的时候 provider维持了一个frame帧的事件 。<br>  当OnEnable的时候，向providr的frame中，添加OnUpdateFrame事件和OnFixedFrame事件。他们在不同的循环中 ，我们知道unity的update()和fixedupdate().他们也维持在不同的循环之中，就是这个道理。</p>
 <p>  相反的，当OnDisable时,又从provider里面的frame移除这个事件。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">protected virtual void OnEnable() &#123;</div><div class="line">      provider = requireComponent&lt;LeapProvider&gt;();</div><div class="line">      factory = requireComponent&lt;HandFactory&gt;();</div><div class="line"></div><div class="line">      provider.OnUpdateFrame += OnUpdateFrame;</div><div class="line">      provider.OnFixedFrame += OnFixedFrame;</div><div class="line">&#125;</div><div class="line">protected virtual void OnDisable() &#123;</div><div class="line">      provider.OnUpdateFrame -= OnUpdateFrame;</div><div class="line">      provider.OnFixedFrame -= OnFixedFrame;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-c#"><code class="language-c#">protected virtual void OnEnable() {
+  provider = requireComponent<LeapProvider>();
+  factory = requireComponent<HandFactory>();
+
+  provider.OnUpdateFrame += OnUpdateFrame;
+  provider.OnFixedFrame += OnFixedFrame;
+}
+protected virtual void OnDisable() {
+  provider.OnUpdateFrame -= OnUpdateFrame;
+  provider.OnFixedFrame -= OnFixedFrame;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>那么 ，这个事件时干什么的呢 ？ </p>
 <pre><code>他们在一定条件下执行一个UpdatesHandRepresentations()方法 
 这个方法基于指定的HandRepresentation字典。如果它们所表示的手仍存在于provider的currentFrame（当前帧）中，则更新活动HandRepresentation实例;否则，HandRepresentation被移除。如果新的Leap Hand对象存在于Leap HandRepresentation
 的Dictionary中，则新的HandRepresentations创建并添加到字典。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/** Updates the graphics HandRepresentations. */</div><div class="line">protected virtual void OnUpdateFrame(Frame frame) &#123;</div><div class="line">  if (frame != null &amp;&amp; graphicsEnabled) &#123;</div><div class="line">    UpdateHandRepresentations(graphicsReps, ModelType.Graphics, frame);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/** Updates the physics HandRepresentations. */</div><div class="line">protected virtual void OnFixedFrame(Frame frame) &#123;</div><div class="line">  if (frame != null &amp;&amp; physicsEnabled) &#123;</div><div class="line">    UpdateHandRepresentations(physicsReps, ModelType.Physics, frame);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><pre class="line-numbers language-c#"><code class="language-c#">  /** Updates the graphics HandRepresentations. */
+  protected virtual void OnUpdateFrame(Frame frame) {
+    if (frame != null && graphicsEnabled) {
+      UpdateHandRepresentations(graphicsReps, ModelType.Graphics, frame);
+    }
+  }
+
+  /** Updates the physics HandRepresentations. */
+  protected virtual void OnFixedFrame(Frame frame) {
+    if (frame != null && physicsEnabled) {
+      UpdateHandRepresentations(physicsReps, ModelType.Physics, frame);
+    }
+  }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>而在frame对象里面 存放的并不是手的实例 而是hand的id<br>根据hand的id，由factory对象来分配到这个可以从LeapHandController接收更新的手表示对象。一一存放在HandRepresentation组成的字典当中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">HandRepresentation rep;</div><div class="line">rep = factory.MakeHandRepresentation(curHand, modelType);</div><div class="line">          if (rep != null) &#123;</div><div class="line">            all_hand_reps.Add(curHand.Id, rep);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>而在frame对象里面 存放的并不是手的实例 而是hand的id<br>根据hand的id，由factory对象来分配到这个可以从LeapHandController接收更新的手表示对象。一一存放在HandRepresentation组成的字典当中。<pre class="line-numbers language-c#"><code class="language-c#">HandRepresentation rep;
+rep = factory.MakeHandRepresentation(curHand, modelType);
+        if (rep != null) {
+          all_hand_reps.Add(curHand.Id, rep);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>估计有人会问 HandRepresentation 对象到底是个啥 ，其实也很简单，他只是由一些基本信息组成的抽象类 。包含{handid 上一次更新时间，是否存放在字典中等等 }。</p>
 </li>
@@ -458,28 +533,89 @@
 </ul>
 <h3 id="第二个脚本LeapServiceProvider"><a href="#第二个脚本LeapServiceProvider" class="headerlink" title="第二个脚本LeapServiceProvider"></a>第二个脚本LeapServiceProvider</h3><p>第二个脚本主要涉及到与硬件的链接~<br>也许也是我们将来用到最多的一个关联脚本了 。<br>同样我们打开它 来看看他有写什么  </p>
 <ul>
-<li><p>先来看看他的属性 ，其实也没啥用 贴出来让大家偶一个直观的认识</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">[Tooltip(&quot;如果Leap Motion硬件安装在头戴设备上，则设置为true; 否则，设置为false&quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected bool _isHeadMounted = false;</div><div class="line">    [AutoFind]</div><div class="line">    [SerializeField]</div><div class="line">    protected LeapVRTemporalWarping _temporalWarping;</div><div class="line">    [Tooltip(&quot;当为true时，更新帧将重新用于物理。这是一种优化, 因为需要计算的帧的总数减半 &quot; +</div><div class="line">             &quot;然而，这会在物理帧中引入额外的延迟和不准确性。 &quot; +</div><div class="line">             &quot; &quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected bool _reuseFramesForPhysics = false;</div><div class="line">    [Header(&quot;Device Type&quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected bool _overrideDeviceType = false;</div><div class="line">    [Tooltip(&quot;如果启用了覆盖设备类型，手动控制器将返回此类型的设备.&quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected LeapDeviceType _overrideDeviceTypeWith = LeapDeviceType.Peripheral;</div><div class="line">    [Header(&quot;Interpolation&quot;)]</div><div class="line">    [Tooltip(&quot;插值帧以提供更平滑的体验。 目前试验.&quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected bool _useInterpolation = false;</div><div class="line">    [Tooltip(&quot;应该将多少延迟添加到插值。 需要非零量来防止外推伪影.&quot;)]</div><div class="line">    [SerializeField]</div><div class="line">    protected long _interpolationDelay = 15;</div></pre></td></tr></table></figure>
+<li>先来看看他的属性 ，其实也没啥用 贴出来让大家偶一个直观的认识<pre class="line-numbers language-c#"><code class="language-c#">[Tooltip("如果Leap Motion硬件安装在头戴设备上，则设置为true; 否则，设置为false")]
+  [SerializeField]
+  protected bool _isHeadMounted = false;
+  [AutoFind]
+  [SerializeField]
+  protected LeapVRTemporalWarping _temporalWarping;
+  [Tooltip("当为true时，更新帧将重新用于物理。这是一种优化, 因为需要计算的帧的总数减半 " +
+           "然而，这会在物理帧中引入额外的延迟和不准确性。 " +
+           " ")]
+  [SerializeField]
+  protected bool _reuseFramesForPhysics = false;
+  [Header("Device Type")]
+  [SerializeField]
+  protected bool _overrideDeviceType = false;
+  [Tooltip("如果启用了覆盖设备类型，手动控制器将返回此类型的设备.")]
+  [SerializeField]
+  protected LeapDeviceType _overrideDeviceTypeWith = LeapDeviceType.Peripheral;
+  [Header("Interpolation")]
+  [Tooltip("插值帧以提供更平滑的体验。 目前试验.")]
+  [SerializeField]
+  protected bool _useInterpolation = false;
+  [Tooltip("应该将多少延迟添加到插值。 需要非零量来防止外推伪影.")]
+  [SerializeField]
+  protected long _interpolationDelay = 15;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>其次就是方法了 首先 最重要的一个方法 CurrentFrame(); 它提供了一个get方法来获取当前的Frame对象 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public override Frame CurrentFrame &#123;</div><div class="line">      get &#123;</div><div class="line">        return _transformedUpdateFrame;</div><div class="line">      &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">public override Frame CurrentFixedFrame &#123;</div><div class="line">      get &#123;</div><div class="line">        if (_reuseFramesForPhysics) &#123;</div><div class="line">          return _transformedUpdateFrame;</div><div class="line">        &#125; else &#123;</div><div class="line">          return _transformedFixedFrame;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>其次就是方法了 首先 最重要的一个方法 CurrentFrame(); 它提供了一个get方法来获取当前的Frame对象 。<br>```c#<br>public override Frame CurrentFrame {<pre><code>get {
+  return _transformedUpdateFrame;
+}
+</code></pre>}</li>
+</ul>
+<p>public override Frame CurrentFixedFrame {<br>      get {<br>        if (_reuseFramesForPhysics) {<br>          return _transformedUpdateFrame;<br>        } else {<br>          return _transformedFixedFrame;<br>        }<br>      }<br>}</p>
+<pre><code>- 是否使用插值 和设置参数 
+```c#
+public bool UseInterpolation {
+      get {
+        return _useInterpolation;
+      }
+      set {
+        _useInterpolation = value;
+      }
+    }
+public long InterpolationDelay {
+      get {
+        return _interpolationDelay;
+      }
+      set {
+        _interpolationDelay = value;
+      }
+}
+</code></pre><ul>
+<li>获取当前的Controller实例<pre class="line-numbers language-c#"><code class="language-c#">  /** Returns the Leap Controller instance. */
+  public Controller GetLeapController() {
+#if UNITY_EDITOR
+    //Null check to deal with hot reloading
+    if (leap_controller_ == null) {
+      createController();
+    }
+#endif
+    return leap_controller_;
+  }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>是否使用插值 和设置参数 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">public bool UseInterpolation &#123;</div><div class="line">      get &#123;</div><div class="line">        return _useInterpolation;</div><div class="line">      &#125;</div><div class="line">      set &#123;</div><div class="line">        _useInterpolation = value;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">public long InterpolationDelay &#123;</div><div class="line">      get &#123;</div><div class="line">        return _interpolationDelay;</div><div class="line">      &#125;</div><div class="line">      set &#123;</div><div class="line">        _interpolationDelay = value;</div><div class="line">      &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>还有一些项目必须要的重要方法</li>
+<li>判断是否链接<pre class="line-numbers language-c#"><code class="language-c#">  /** True, if the Leap Motion hardware is plugged in and this application is connected to the Leap Motion service. */
+  public bool IsConnected() {
+    return GetLeapController().IsConnected;
+  }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>获取当前的Controller实例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">    /** Returns the Leap Controller instance. */</div><div class="line">    public Controller GetLeapController() &#123;</div><div class="line">#if UNITY_EDITOR</div><div class="line">      //Null check to deal with hot reloading</div><div class="line">      if (leap_controller_ == null) &#123;</div><div class="line">        createController();</div><div class="line">      &#125;</div><div class="line">#endif</div><div class="line">      return leap_controller_;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>还有一些项目必须要的重要方法</p>
-</li>
-<li><p>判断是否链接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/** True, if the Leap Motion hardware is plugged in and this application is connected to the Leap Motion service. */</div><div class="line">public bool IsConnected() &#123;</div><div class="line">  return GetLeapController().IsConnected;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>获取设备信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/** Returns information describing the device hardware. */</div><div class="line">public LeapDeviceInfo GetDeviceInfo() &#123;</div><div class="line">  if (_overrideDeviceType) &#123;</div><div class="line">    return new LeapDeviceInfo(_overrideDeviceTypeWith);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<li>获取设备信息<pre class="line-numbers language-c#"><code class="language-c#"> /** Returns information describing the device hardware. */
+ public LeapDeviceInfo GetDeviceInfo() {
+   if (_overrideDeviceType) {
+     return new LeapDeviceInfo(_overrideDeviceTypeWith);
+   }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>刷新所有的Frame </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">public void ReTransformFrames() &#123;</div><div class="line">      transformFrame(_untransformedUpdateFrame, _transformedUpdateFrame);</div><div class="line">      transformFrame(_untransformedFixedFrame, _transformedFixedFrame);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-c#"><code class="language-c#">public void ReTransformFrames() {
+    transformFrame(_untransformedUpdateFrame, _transformedUpdateFrame);
+    transformFrame(_untransformedFixedFrame, _transformedFixedFrame);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>很显然 ，这些方法都是public的 我们在自己的脚本那就可以直接调出来用了 。。。</p>
 <h3 id="最后一个脚本Hand-pool"><a href="#最后一个脚本Hand-pool" class="headerlink" title="最后一个脚本Hand pool"></a>最后一个脚本Hand pool</h3><p>顾名思义 猜猜是干什么的 作为一个程序员 我看到名字大概可以猜到他是干什么的了</p>
@@ -510,11 +646,11 @@
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -536,19 +672,37 @@
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -560,11 +714,11 @@
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/18/leapmotion/LEAP Motion 的猎户座  -001-/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/18/leapmotion/LEAP Motion 的猎户座  -001-/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/18/leapmotion/LEAP Motion 的猎户座  -001-/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -584,6 +738,7 @@
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -904,9 +1059,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -931,7 +1091,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -946,10 +1108,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -962,6 +1121,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

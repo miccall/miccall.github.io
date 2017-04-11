@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
     <meta name="keywords" content="miccall,android">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系统程序和用户程序拆分"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">系统程序和用户程序拆分</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浮动显示程序个数"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">浮动显示程序个数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#popuwindow操作-重点"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">popuwindow操作#  (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#popuwindow动画-重点"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">popuwindow动画# (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置控件点击事件"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">设置控件点击事件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#卸载"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">卸载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">启动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#详情"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">详情</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分享-重点"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">分享# (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取可用空间"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">获取可用空间</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取系统所有进程信息-重点"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">获取系统所有进程信息# (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程管理界面-重点-思路"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">进程管理界面# (重点:思路)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#checkboxBug解决-重点"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">checkboxBug解决#  (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全选和取消"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">全选和取消</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#清理进程-重点-五个进程"><span class="post-toc-number">1.15.</span> <span class="post-toc-text">清理进程# (重点:五个进程)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#清理细节处理"><span class="post-toc-number">1.16.</span> <span class="post-toc-text">清理细节处理</span></a></li></ol></li></ol>
 
         <!--
@@ -259,7 +275,8 @@
             <script>
     var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 </script>
 
         
@@ -370,6 +387,12 @@
     
 
     <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/19/android/android_010/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
     
 
     <!-- Share LinkedIn -->
@@ -600,39 +623,39 @@ private void listviewItemClick() {
                 break;
             }
         }
-</code></pre><h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><pre><code>/**
- * 卸载
- */
-private void uninstall() {
-    /**
-     * &lt;intent-filter&gt;
-            &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;
-            &lt;action android:name=&quot;android.intent.action.DELETE&quot; /&gt;
-            &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
-            &lt;data android:scheme=&quot;package&quot; /&gt;
-        &lt;/intent-filter&gt;
+</code></pre><h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><pre><code>    /**
+     * 卸载
      */
-    //判断是否是系统程序
-    if (appInfo.isUser()) {
-        //判断是否是我们自己的应用,是不能卸载
-        if (!appInfo.getPackagName().equals(getPackageName())) {
-            Intent intent = new Intent();
-            intent.setAction(&quot;android.intent.action.DELETE&quot;);
-            intent.addCategory(&quot;android.intent.category.DEFAULT&quot;);
-            intent.setData(Uri.parse(&quot;package:&quot;+appInfo.getPackagName()));//tel:110
-            startActivityForResult(intent,0);
+    private void uninstall() {
+        /**
+         * &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;
+                &lt;action android:name=&quot;android.intent.action.DELETE&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
+                &lt;data android:scheme=&quot;package&quot; /&gt;
+            &lt;/intent-filter&gt;
+         */
+        //判断是否是系统程序
+        if (appInfo.isUser()) {
+            //判断是否是我们自己的应用,是不能卸载
+            if (!appInfo.getPackagName().equals(getPackageName())) {
+                Intent intent = new Intent();
+                intent.setAction(&quot;android.intent.action.DELETE&quot;);
+                intent.addCategory(&quot;android.intent.category.DEFAULT&quot;);
+                intent.setData(Uri.parse(&quot;package:&quot;+appInfo.getPackagName()));//tel:110
+                startActivityForResult(intent,0);
+            }else{
+                Toast.makeText(getApplicationContext(), &quot;文明社会,杜绝自杀&quot;, 0).show();
+            }
         }else{
-            Toast.makeText(getApplicationContext(), &quot;文明社会,杜绝自杀&quot;, 0).show();
+            Toast.makeText(getApplicationContext(), &quot;要想卸载系统程序,请root先&quot;, 0).show();
         }
-    }else{
-        Toast.makeText(getApplicationContext(), &quot;要想卸载系统程序,请root先&quot;, 0).show();
     }
-}
-@Override
-protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-    fillData();
-}
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        fillData();
+    }
 </code></pre><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre><code>/**
  * 启动
  */
@@ -853,38 +876,38 @@ public static List&lt;TaskInfo&gt; getTaskAllInfo(Context context){
     }
 5.单独更新单个条目
     因为控件是保存在ViewHolder控件容器中,而容器又是在listview条目展示的时候通过view.settag和view对象进行绑定了,那我们就可以在条目点击事件进行使用处理,因为在条目点击事件中有view参数,这个参数代表就是点击条目的view对象,通过view.gettag获取到和view对象绑定的容器,从容器中获取控件,设置控件的状态了
-</code></pre><h2 id="全选和取消"><a href="#全选和取消" class="headerlink" title="全选和取消"></a>全选和取消</h2><pre><code>/**
- * 全选
- * @param v
- */
-public void all(View v){
-    //用户进程
-    for (int i = 0; i &lt; userappinfo.size(); i++) {
-        userappinfo.get(i).setChecked(true);
+</code></pre><h2 id="全选和取消"><a href="#全选和取消" class="headerlink" title="全选和取消"></a>全选和取消</h2><pre><code>    /**
+     * 全选
+     * @param v
+     */
+    public void all(View v){
+        //用户进程
+        for (int i = 0; i &lt; userappinfo.size(); i++) {
+            userappinfo.get(i).setChecked(true);
+        }
+        //系统进程
+        for (int i = 0; i &lt; systemappinfo.size(); i++) {
+            systemappinfo.get(i).setChecked(true);
+        }
+        //更新界面
+        myadapter.notifyDataSetChanged();
     }
-    //系统进程
-    for (int i = 0; i &lt; systemappinfo.size(); i++) {
-        systemappinfo.get(i).setChecked(true);
+    /**
+     * 取消
+     * @param v
+     */
+    public void cancel(View v){
+        //用户进程
+        for (int i = 0; i &lt; userappinfo.size(); i++) {
+            userappinfo.get(i).setChecked(false);
+        }
+        //系统进程
+        for (int i = 0; i &lt; systemappinfo.size(); i++) {
+            systemappinfo.get(i).setChecked(false);
+        }
+        //更新界面
+        myadapter.notifyDataSetChanged();
     }
-    //更新界面
-    myadapter.notifyDataSetChanged();
-}
-/**
- * 取消
- * @param v
- */
-public void cancel(View v){
-    //用户进程
-    for (int i = 0; i &lt; userappinfo.size(); i++) {
-        userappinfo.get(i).setChecked(false);
-    }
-    //系统进程
-    for (int i = 0; i &lt; systemappinfo.size(); i++) {
-        systemappinfo.get(i).setChecked(false);
-    }
-    //更新界面
-    myadapter.notifyDataSetChanged();
-}
 </code></pre><h2 id="清理进程-重点-五个进程"><a href="#清理进程-重点-五个进程" class="headerlink" title="清理进程# (重点:五个进程)"></a>清理进程# (重点:五个进程)</h2><pre><code>android进程
     1.前台进程  正在操作的进程,正在运行进程,不可杀死
     2.可见进程  没有焦点,但是可见的进程
@@ -995,11 +1018,11 @@ public void clear(View v){
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -1021,19 +1044,37 @@ public void clear(View v){
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -1045,11 +1086,11 @@ public void clear(View v){
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/19/android/android_010/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/19/android/android_010/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/19/android/android_010/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -1069,6 +1110,7 @@ public void clear(View v){
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -1389,9 +1431,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -1416,7 +1463,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -1431,10 +1480,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -1447,6 +1493,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

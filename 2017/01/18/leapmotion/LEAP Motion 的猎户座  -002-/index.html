@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall,leap motion,unity 3d">
+    <meta name="keywords" content="miccall,unity 3d,leap motion">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -50,7 +62,7 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="LEAPMotion猎户座(VR)开发~002~ | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
-    <meta property="og:article:tag" content="leap motion"> <meta property="og:article:tag" content="unity 3d"> 
+    <meta property="og:article:tag" content="unity 3d"> <meta property="og:article:tag" content="leap motion"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LEAPMotion猎户座-VR-开发教程-002"><span class="post-toc-number">1.</span> <span class="post-toc-text">LEAPMotion猎户座(VR)开发教程~002~ </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-（转载请注明出处）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  （转载请注明出处）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#看见你的手"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">看见你的手</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#程序员的疑惑"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">程序员的疑惑</span></a></li></ol></li></ol>
 
         <!--
@@ -363,6 +379,12 @@
 
     <!-- Share Google+ -->
     
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/18/leapmotion/LEAP Motion 的猎户座  -002-/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
     <!-- Share LinkedIn -->
     
@@ -482,8 +504,88 @@
 <li><p>鉴于下一章直接要讲一些功能的实现方式 我们在此直接贴出一些代码供大家调试<br>using Leap;<br>using Leap.Unity;<br>注意了 ，加入必要的命名空间</p>
 </li>
 </ul>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line">using UnityEngine;</div><div class="line">using System.Collections;</div><div class="line">using System;</div><div class="line">using Leap;</div><div class="line">using Leap.Unity;</div><div class="line"></div><div class="line">public class debug : MonoBehaviour &#123;</div><div class="line"></div><div class="line">  Frame frame; //  当前帧对象</div><div class="line">  Frame lastframe;  // 前一帧</div><div class="line">  Hand righthand;   //当前的右手对象</div><div class="line">  Hand lefthand;     // 当前的左手对象</div><div class="line">  Hand lastrighthand;   //上一帧的右手对象</div><div class="line">  Hand lastlefthand;    // 上一帧的左手对象</div><div class="line">  List&lt;Hand&gt; handlist;     //当前的手的集合</div><div class="line"></div><div class="line">    // Use this for initialization</div><div class="line">    void Start () &#123;</div><div class="line">        provider = FindObjectOfType&lt;LeapProvider&gt;() as LeapProvider;  //获取手的提供者对象</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    // Update is called once per frame</div><div class="line">    void Update () &#123;</div><div class="line">      inithand();  //初始化手的信息</div><div class="line">      //Hnaddebug(righthand);  //调试用的</div><div class="line">      //Framedebug(frame);</div><div class="line">    &#125;</div><div class="line">    private void inithand()</div><div class="line">    &#123;</div><div class="line">        frame = provider.CurrentFrame;</div><div class="line">        handlist = frame.Hands;</div><div class="line">        //print(&quot;handcont&quot; + handlist.Count);</div><div class="line">        if (handlist.Count &gt; 0)</div><div class="line">        &#123;</div><div class="line">            foreach(Hand h in handlist)  //遍历手的集合 数组</div><div class="line">            &#123;</div><div class="line">                if (h.IsLeft) //判断左手还右手</div><div class="line">                &#123;</div><div class="line">                    lefthand = h;</div><div class="line">                    lastlefthand = frame.Hand(lefthand.Id);  //根据hand的id 来获取上一帧的手的信息  </div><div class="line">                    //print(&quot;isleft&quot;);</div><div class="line">                &#125;</div><div class="line">                if (h.IsRight)   //同理 右手也一样</div><div class="line">                &#123;</div><div class="line">                    righthand = h;</div><div class="line">                    lastrighthand = frame.Hand(righthand.Id);</div><div class="line">                    //print(&quot;isright&quot;);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line"></div><div class="line">      &#125;</div><div class="line">      //这些信息都是基于leap的坐标系 ，如果要转化成unity的坐标系 就要调用leap给的一个Utils 类 UnityVectorExtension</div><div class="line">    void Hnaddebug(Hand h)</div><div class="line">    &#123;</div><div class="line">        print(&quot;PalmPosition手掌的位置 &quot;+h.PalmPosition</div><div class="line">            +&quot;手的id&quot;+h.Id</div><div class="line">            +&quot;手掌的垂直向量&quot;+h.PalmNormal</div><div class="line">            +&quot;手掌向手指方向的向量&quot;+h.Direction</div><div class="line">            +&quot;手掌移动速度（矢量）&quot;+h.PalmVelocity</div><div class="line">            +&quot;手指的捏合力&quot;+h.PinchStrength</div><div class="line">            +&quot;手指的握和力&quot;+h.GrabStrength</div><div class="line">            );</div><div class="line">    &#125;</div><div class="line">    void Framedebug(Frame f)</div><div class="line">    &#123;</div><div class="line">        print(&quot;frame id &quot;+f.Id</div><div class="line">             +&quot;frame每一帧检测到手的列表&quot;+f.Hands</div><div class="line">            );</div><div class="line">    &#125;</div><div class="line">    //UnityVectorExtension 类的基本用法 。</div><div class="line">    void leap_unity()&#123;</div><div class="line">      Vector3 palmnomal = UnityVectorExtension.ToVector3(righthand.PalmNormal);</div><div class="line">      Vector3 palmposition = UnityVectorExtension.ToVector3(righthand.PalmPosition);</div><div class="line">      Vector3 palmDirection = UnityVectorExtension.ToVector3(righthand.Direction);</div><div class="line">      //Debug输出一下 ，就能看到场景下各个向量的线了 很直观 。</div><div class="line">      Debug.DrawLine(palmposition, palmnomal, Color.red);</div><div class="line">      Debug.DrawLine(palmposition, palmDirection, Color.green);</div><div class="line">      Debug.DrawLine(palmposition, Vector3.Cross(palmnomal, palmDirection), Color.blue);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<ul>
+<pre><code>using UnityEngine;
+using System.Collections;
+using System;
+using Leap;
+using Leap.Unity;
+
+public class debug : MonoBehaviour {
+
+  Frame frame; //  当前帧对象
+  Frame lastframe;  // 前一帧
+  Hand righthand;   //当前的右手对象
+  Hand lefthand;     // 当前的左手对象
+  Hand lastrighthand;   //上一帧的右手对象
+  Hand lastlefthand;    // 上一帧的左手对象
+  List&lt;Hand&gt; handlist;     //当前的手的集合
+
+    // Use this for initialization
+    void Start () {
+        provider = FindObjectOfType&lt;LeapProvider&gt;() as LeapProvider;  //获取手的提供者对象
+    }
+
+    // Update is called once per frame
+    void Update () {
+      inithand();  //初始化手的信息
+      //Hnaddebug(righthand);  //调试用的
+      //Framedebug(frame);
+    }
+    private void inithand()
+    {
+        frame = provider.CurrentFrame;
+        handlist = frame.Hands;
+        //print(&quot;handcont&quot; + handlist.Count);
+        if (handlist.Count &gt; 0)
+        {
+            foreach(Hand h in handlist)  //遍历手的集合 数组
+            {
+                if (h.IsLeft) //判断左手还右手
+                {
+                    lefthand = h;
+                    lastlefthand = frame.Hand(lefthand.Id);  //根据hand的id 来获取上一帧的手的信息  
+                    //print(&quot;isleft&quot;);
+                }
+                if (h.IsRight)   //同理 右手也一样
+                {
+                    righthand = h;
+                    lastrighthand = frame.Hand(righthand.Id);
+                    //print(&quot;isright&quot;);
+                }
+            }
+          }
+
+      }
+      //这些信息都是基于leap的坐标系 ，如果要转化成unity的坐标系 就要调用leap给的一个Utils 类 UnityVectorExtension
+    void Hnaddebug(Hand h)
+    {
+        print(&quot;PalmPosition手掌的位置 &quot;+h.PalmPosition
+            +&quot;手的id&quot;+h.Id
+            +&quot;手掌的垂直向量&quot;+h.PalmNormal
+            +&quot;手掌向手指方向的向量&quot;+h.Direction
+            +&quot;手掌移动速度（矢量）&quot;+h.PalmVelocity
+            +&quot;手指的捏合力&quot;+h.PinchStrength
+            +&quot;手指的握和力&quot;+h.GrabStrength
+            );
+    }
+    void Framedebug(Frame f)
+    {
+        print(&quot;frame id &quot;+f.Id
+             +&quot;frame每一帧检测到手的列表&quot;+f.Hands
+            );
+    }
+    //UnityVectorExtension 类的基本用法 。
+    void leap_unity(){
+      Vector3 palmnomal = UnityVectorExtension.ToVector3(righthand.PalmNormal);
+      Vector3 palmposition = UnityVectorExtension.ToVector3(righthand.PalmPosition);
+      Vector3 palmDirection = UnityVectorExtension.ToVector3(righthand.Direction);
+      //Debug输出一下 ，就能看到场景下各个向量的线了 很直观 。
+      Debug.DrawLine(palmposition, palmnomal, Color.red);
+      Debug.DrawLine(palmposition, palmDirection, Color.green);
+      Debug.DrawLine(palmposition, Vector3.Cross(palmnomal, palmDirection), Color.blue);
+    }
+}
+</code></pre><ul>
 <li>还是简单解释一下这些调试 。</li>
 <li>Hand.id  &lt;====&gt; LEAP分配给此Hand对象的唯一ID，他的值在连续frame中保持相同。如果leap检测不到手（例如，当手被另一只手遮挡时，或者当手从Leap Motion Controller视野中消失或到达Leap Motion Controller视野的边缘时），Leap Motion软件可以在重新检测到手时分配新的ID 。</li>
 <li>PalmPosition   手掌的位置 他是相对于刚刚设定的leap原点的位置 。</li>
@@ -512,11 +614,11 @@
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -538,19 +640,37 @@
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -562,11 +682,11 @@
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/18/leapmotion/LEAP Motion 的猎户座  -002-/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/18/leapmotion/LEAP Motion 的猎户座  -002-/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/18/leapmotion/LEAP Motion 的猎户座  -002-/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -586,6 +706,7 @@
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -906,9 +1027,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -933,7 +1059,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -948,10 +1076,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -964,6 +1089,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

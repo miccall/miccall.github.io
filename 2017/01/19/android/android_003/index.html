@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
     <meta name="keywords" content="miccall,android">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义属性"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">自定义属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置密码对话框布局-重点"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">设置密码对话框布局# (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置密码操作"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">设置密码操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#输入密码对话框"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">输入密码对话框</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#兼容低版本"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">兼容低版本</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MD5加密-重点"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">MD5加密# (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#隐藏显示密码效果"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">隐藏显示密码效果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#界面跳转逻辑-重点-逻辑"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">界面跳转逻辑# (重点:逻辑)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置向导第一个界面"><span class="post-toc-number">1.0.9.</span> <span class="post-toc-text">设置向导第一个界面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#状态选择器-重点"><span class="post-toc-number">1.0.10.</span> <span class="post-toc-text">状态选择器# (重点)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置向导第二界面-amp-抽取样式-重点-抽取样式"><span class="post-toc-number">1.0.11.</span> <span class="post-toc-text">设置向导第二界面&抽取样式# (重点:抽取样式)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第三个界面-amp-9图片-重点-9图片"><span class="post-toc-number">1.0.12.</span> <span class="post-toc-text">第三个界面&.9图片# (重点:.9图片)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#第四个界面"><span class="post-toc-number">1.0.13.</span> <span class="post-toc-text">第四个界面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#抽取操作-重点"><span class="post-toc-number">1.0.14.</span> <span class="post-toc-text">抽取操作# (重点!!!!!!)</span></a></li></ol></li></ol></li></ol>
 
         <!--
@@ -259,7 +275,8 @@
             <script>
     var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 </script>
 
         
@@ -371,6 +388,12 @@
 
     <!-- Share Google+ -->
     
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/19/android/android_003/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
     <!-- Share LinkedIn -->
     
@@ -397,52 +420,468 @@
     
         <hr>
 <h1 id="Android学习笔记"><a href="#Android学习笔记" class="headerlink" title=" Android学习笔记 "></a><strong> Android学习笔记 </strong></h1><h3 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h3><pre><code>1.在values-&gt;attrs.xml
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;resources&gt;</div><div class="line">    &lt;declare-styleable name=&quot;com.itheima.mobliesafe75.ui.SettingView&quot;&gt;</div><div class="line">        &lt;attr name=&quot;title&quot; format=&quot;string&quot; /&gt;&lt;!-- name:属性的名称,format:类型 --&gt;</div><div class="line">        &lt;attr name=&quot;des_on&quot; format=&quot;string&quot; /&gt;</div><div class="line">        &lt;attr name=&quot;des_off&quot; format=&quot;string&quot; /&gt;</div><div class="line">    &lt;/declare-styleable&gt;</div><div class="line">&lt;/resources&gt;</div></pre></td></tr></table></figure>
-<pre><code>2.在布局中使用
+</code></pre><pre><code>        &lt;resources&gt;
+            &lt;declare-styleable name=&quot;com.itheima.mobliesafe75.ui.SettingView&quot;&gt;
+                &lt;attr name=&quot;title&quot; format=&quot;string&quot; /&gt;&lt;!-- name:属性的名称,format:类型 --&gt;
+                &lt;attr name=&quot;des_on&quot; format=&quot;string&quot; /&gt;
+                &lt;attr name=&quot;des_off&quot; format=&quot;string&quot; /&gt;
+            &lt;/declare-styleable&gt;
+        &lt;/resources&gt;
+</code></pre><pre><code>2.在布局中使用
     a.命名空间
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">xmlns:itheima=&quot;http://schemas.android.com/apk/res/com.itheima.mobliesafe75&quot;</div></pre></td></tr></table></figure>
-<pre><code>b.控件中使用
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">    &lt;com.itheima.mobliesafe75.ui.SettingView</div><div class="line">        android:id=&quot;@+id/sv_setting_update&quot;</div><div class="line">        android:layout_width=&quot;match_parent&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        itheima:title=&quot;提示更新&quot;</div><div class="line">        itheima:des_on=&quot;打开提示更新&quot;</div><div class="line">        itheima:des_off=&quot;关闭提示更新&quot;</div><div class="line">&gt;&lt;/com.itheima.mobliesafe75.ui.SettingView&gt;</div></pre></td></tr></table></figure>
-<pre><code>3.代码中使用
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">String title = attrs.getAttributeValue(&quot;http://schemas.android.com/apk/res/com.itheima.mobliesafe75&quot;, &quot;title&quot;);</div><div class="line">des_on = attrs.getAttributeValue(&quot;http://schemas.android.com/apk/res/com.itheima.mobliesafe75&quot;, &quot;des_on&quot;);</div><div class="line">des_off = attrs.getAttributeValue(&quot;http://schemas.android.com/apk/res/com.itheima.mobliesafe75&quot;, &quot;des_off&quot;);</div><div class="line">//给自定义组合控件的控件设置相应的值</div><div class="line">//初始化控件的值</div><div class="line">tv_setting_title.setText(title);</div><div class="line">if (isChecked()) &#123;</div><div class="line">    tv_setting_des.setText(des_on);</div><div class="line">&#125;else&#123;</div><div class="line">    tv_setting_des.setText(des_off);</div><div class="line">&#125;</div><div class="line">    </div><div class="line"></div><div class="line">/**</div><div class="line"> * 设置checkbox状态</div><div class="line"> */</div><div class="line">public void setChecked(boolean isChecked)&#123;</div><div class="line">    //设置checkbox的状态</div><div class="line">    cb_setting_update.setChecked(isChecked);</div><div class="line">    //其实就是把sv_setting_update.setDes(&quot;打开提示更新&quot;);封装到了setChecked方法中</div><div class="line">    if (isChecked()) &#123;</div><div class="line">        tv_setting_des.setText(des_on);</div><div class="line">    &#125;else&#123;</div><div class="line">        tv_setting_des.setText(des_off);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>4.修改settingactivity中的操作
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//defValue : 缺省的值</div><div class="line">if (sp.getBoolean(&quot;update&quot;, true)) &#123;</div><div class="line">    //sv_setting_update.setDes(&quot;打开提示更新&quot;);</div><div class="line">    sv_setting_update.setChecked(true); </div><div class="line">&#125;else&#123;</div><div class="line">    //sv_setting_update.setDes(&quot;关闭提示更新&quot;);</div><div class="line">    sv_setting_update.setChecked(false);    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="设置密码对话框布局-重点"><a href="#设置密码对话框布局-重点" class="headerlink" title="设置密码对话框布局# (重点)"></a>设置密码对话框布局# (重点)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 设置密码对话框</div><div class="line"> */</div><div class="line">protected void showSetPassWordDialog() &#123;</div><div class="line">    AlertDialog.Builder builder = new Builder(this);</div><div class="line">    //设置对话框不能消息</div><div class="line">    builder.setCancelable(false);</div><div class="line">    //将布局文件转化成view对象</div><div class="line">    View view = View.inflate(getApplicationContext(), R.layout.dialog_setpassword, null);</div><div class="line">    EditText et_setpassword_password = (EditText) view.findViewById(R.id.et_setpassword_password);</div><div class="line">    EditText et_setpassword_confrim = (EditText) view.findViewById(R.id.et_setpassword_confrim);</div><div class="line">    Button btn_ok = (Button) view.findViewById(R.id.btn_ok);</div><div class="line">    Button btn_cancle = (Button) view.findViewById(R.id.btn_cancle);</div><div class="line">    //设置确定,取消按钮的点击事件</div><div class="line">    btn_cancle.setOnClickListener(new OnClickListener() &#123;</div><div class="line">        </div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            //隐藏对话框</div><div class="line">            dialog.dismiss();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    builder.setView(view);</div><div class="line">    //显示对话框</div><div class="line">    //builder.show();</div><div class="line">    dialog = builder.create();</div><div class="line">    dialog.show();</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="设置密码操作"><a href="#设置密码操作" class="headerlink" title="设置密码操作"></a>设置密码操作</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">btn_ok.setOnClickListener(new OnClickListener() &#123;</div><div class="line">        </div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            //设置密码</div><div class="line">            //1.获取密码输入框输入的内容</div><div class="line">            String password = et_setpassword_password.getText().toString().trim();</div><div class="line">            //2.判断密码是否为空</div><div class="line">            if (TextUtils.isEmpty(password)) &#123;//null :没有内存     &quot;&quot;:有内存地址但是没有内容</div><div class="line">                Toast.makeText(getApplicationContext(), &quot;请输入密码&quot;, 0).show();</div><div class="line">                return;</div><div class="line">            &#125;</div><div class="line">            //3.获取确认密码</div><div class="line">            String confrim_password = et_setpassword_confrim.getText().toString().trim();</div><div class="line">            //4.判断两次密码是否一致</div><div class="line">            if (password.equals(confrim_password)) &#123;</div><div class="line">                //保存密码,sp</div><div class="line">                Editor edit = sp.edit();</div><div class="line">                edit.putString(&quot;password&quot;, password);</div><div class="line">                edit.commit();</div><div class="line">                //隐藏对话框</div><div class="line">                dialog.dismiss();</div><div class="line">                //提醒用户</div><div class="line">                Toast.makeText(getApplicationContext(), &quot;密码设置成功&quot;, 0).show();</div><div class="line">            &#125;else&#123;</div><div class="line">                Toast.makeText(getApplicationContext(), &quot;两次密码输入不一致&quot;, 0).show();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div></pre></td></tr></table></figure>
-<h3 id="输入密码对话框"><a href="#输入密码对话框" class="headerlink" title="输入密码对话框"></a>输入密码对话框</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 输入密码对话框</div><div class="line"> */</div><div class="line">protected void showEnterPasswordDialog() &#123;</div><div class="line">    //第一步:复制布局</div><div class="line">    AlertDialog.Builder builder = new Builder(this);</div><div class="line">    //设置对话框不能消息</div><div class="line">    builder.setCancelable(false);</div><div class="line">    //将布局文件转化成view对象</div><div class="line">    View view = View.inflate(getApplicationContext(), R.layout.dialog_enterpassword, null);</div><div class="line">    //第三步:复制初始化控件及功能实现</div><div class="line">    final EditText et_setpassword_password = (EditText) view.findViewById(R.id.et_setpassword_password);</div><div class="line">    Button btn_ok = (Button) view.findViewById(R.id.btn_ok);</div><div class="line">    Button btn_cancle = (Button) view.findViewById(R.id.btn_cancle);</div><div class="line">    btn_ok.setOnClickListener(new OnClickListener() &#123;</div><div class="line">        </div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            //判断密码输入是否正确</div><div class="line">            //1.获取输入的密码</div><div class="line">            String password = et_setpassword_password.getText().toString().trim();</div><div class="line">            //2.判断密码是否为空</div><div class="line">            if (TextUtils.isEmpty(password)) &#123;</div><div class="line">                Toast.makeText(getApplicationContext(), &quot;请输入密码&quot;, 0).show();</div><div class="line">                return;</div><div class="line">            &#125;</div><div class="line">            //3.获取保存的密码</div><div class="line">            String sp_password = sp.getString(&quot;password&quot;, &quot;&quot;);</div><div class="line">            //4.判断两个密码是否一致</div><div class="line">            if (password.equals(sp_password)) &#123;</div><div class="line">                //跳转到到手机防盗界面</div><div class="line">                //隐藏对话框</div><div class="line">                dialog.dismiss();</div><div class="line">                //提醒用户</div><div class="line">                Toast.makeText(getApplicationContext(), &quot;密码正确&quot;, 0).show();</div><div class="line">            &#125;else&#123;</div><div class="line">                Toast.makeText(getApplicationContext(), &quot;密码错误&quot;, 0).show();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    btn_cancle.setOnClickListener(new OnClickListener() &#123;</div><div class="line">        </div><div class="line">        @Override</div><div class="line">        public void onClick(View v) &#123;</div><div class="line">            //隐藏对话框</div><div class="line">            dialog.dismiss();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    //第二步:复制显示</div><div class="line">    builder.setView(view);</div><div class="line">    //显示对话框</div><div class="line">    //builder.show();</div><div class="line">    dialog = builder.create();</div><div class="line">    dialog.show();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="兼容低版本"><a href="#兼容低版本" class="headerlink" title="兼容低版本"></a>兼容低版本</h3><pre><code>根据具体显示风格,去进行修改
+</code></pre><pre><code>             xmlns:itheima=&quot;http://schemas.android.com/apk/res/com.itheima.mobliesafe75&quot;
+</code></pre><pre><code>   b.控件中使用
+</code></pre><pre><code>            &lt;com.itheima.mobliesafe75.ui.SettingView
+                android:id=&quot;@+id/sv_setting_update&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                itheima:title=&quot;提示更新&quot;
+                itheima:des_on=&quot;打开提示更新&quot;
+                itheima:des_off=&quot;关闭提示更新&quot;
+        &gt;&lt;/com.itheima.mobliesafe75.ui.SettingView&gt;
+</code></pre><pre><code>3.代码中使用
+</code></pre><pre><code>        String title = attrs.getAttributeValue(&quot;http://schemas.android.com/apk/res/com.itheima.mobliesafe75&quot;, &quot;title&quot;);
+        des_on = attrs.getAttributeValue(&quot;http://schemas.android.com/apk/res/com.itheima.mobliesafe75&quot;, &quot;des_on&quot;);
+        des_off = attrs.getAttributeValue(&quot;http://schemas.android.com/apk/res/com.itheima.mobliesafe75&quot;, &quot;des_off&quot;);
+        //给自定义组合控件的控件设置相应的值
+        //初始化控件的值
+        tv_setting_title.setText(title);
+        if (isChecked()) {
+            tv_setting_des.setText(des_on);
+        }else{
+            tv_setting_des.setText(des_off);
+        }
+
+
+        /**
+         * 设置checkbox状态
+         */
+        public void setChecked(boolean isChecked){
+            //设置checkbox的状态
+            cb_setting_update.setChecked(isChecked);
+            //其实就是把sv_setting_update.setDes(&quot;打开提示更新&quot;);封装到了setChecked方法中
+            if (isChecked()) {
+                tv_setting_des.setText(des_on);
+            }else{
+                tv_setting_des.setText(des_off);
+            }
+        }
+</code></pre><pre><code>4.修改settingactivity中的操作
+</code></pre><pre class="line-numbers language-//sv_setting_update.setTitle(&quot;提示更新&quot;);"><code class="language-//sv_setting_update.setTitle(&quot;提示更新&quot;);">        //defValue : 缺省的值
+        if (sp.getBoolean("update", true)) {
+            //sv_setting_update.setDes("打开提示更新");
+            sv_setting_update.setChecked(true); 
+        }else{
+            //sv_setting_update.setDes("关闭提示更新");
+            sv_setting_update.setChecked(false);    
+        }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="设置密码对话框布局-重点"><a href="#设置密码对话框布局-重点" class="headerlink" title="设置密码对话框布局# (重点)"></a>设置密码对话框布局# (重点)</h3><pre><code>    /**
+     * 设置密码对话框
+     */
+    protected void showSetPassWordDialog() {
+        AlertDialog.Builder builder = new Builder(this);
+        //设置对话框不能消息
+        builder.setCancelable(false);
+        //将布局文件转化成view对象
+        View view = View.inflate(getApplicationContext(), R.layout.dialog_setpassword, null);
+        EditText et_setpassword_password = (EditText) view.findViewById(R.id.et_setpassword_password);
+        EditText et_setpassword_confrim = (EditText) view.findViewById(R.id.et_setpassword_confrim);
+        Button btn_ok = (Button) view.findViewById(R.id.btn_ok);
+        Button btn_cancle = (Button) view.findViewById(R.id.btn_cancle);
+        //设置确定,取消按钮的点击事件
+        btn_cancle.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //隐藏对话框
+                dialog.dismiss();
+            }
+        });
+        builder.setView(view);
+        //显示对话框
+        //builder.show();
+        dialog = builder.create();
+        dialog.show();
+
+    }
+</code></pre><h3 id="设置密码操作"><a href="#设置密码操作" class="headerlink" title="设置密码操作"></a>设置密码操作</h3><pre><code>    btn_ok.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //设置密码
+                //1.获取密码输入框输入的内容
+                String password = et_setpassword_password.getText().toString().trim();
+                //2.判断密码是否为空
+                if (TextUtils.isEmpty(password)) {//null :没有内存     &quot;&quot;:有内存地址但是没有内容
+                    Toast.makeText(getApplicationContext(), &quot;请输入密码&quot;, 0).show();
+                    return;
+                }
+                //3.获取确认密码
+                String confrim_password = et_setpassword_confrim.getText().toString().trim();
+                //4.判断两次密码是否一致
+                if (password.equals(confrim_password)) {
+                    //保存密码,sp
+                    Editor edit = sp.edit();
+                    edit.putString(&quot;password&quot;, password);
+                    edit.commit();
+                    //隐藏对话框
+                    dialog.dismiss();
+                    //提醒用户
+                    Toast.makeText(getApplicationContext(), &quot;密码设置成功&quot;, 0).show();
+                }else{
+                    Toast.makeText(getApplicationContext(), &quot;两次密码输入不一致&quot;, 0).show();
+                }
+            }
+        });
+</code></pre><h3 id="输入密码对话框"><a href="#输入密码对话框" class="headerlink" title="输入密码对话框"></a>输入密码对话框</h3><pre><code>        /**
+         * 输入密码对话框
+         */
+        protected void showEnterPasswordDialog() {
+            //第一步:复制布局
+            AlertDialog.Builder builder = new Builder(this);
+            //设置对话框不能消息
+            builder.setCancelable(false);
+            //将布局文件转化成view对象
+            View view = View.inflate(getApplicationContext(), R.layout.dialog_enterpassword, null);
+            //第三步:复制初始化控件及功能实现
+            final EditText et_setpassword_password = (EditText) view.findViewById(R.id.et_setpassword_password);
+            Button btn_ok = (Button) view.findViewById(R.id.btn_ok);
+            Button btn_cancle = (Button) view.findViewById(R.id.btn_cancle);
+            btn_ok.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    //判断密码输入是否正确
+                    //1.获取输入的密码
+                    String password = et_setpassword_password.getText().toString().trim();
+                    //2.判断密码是否为空
+                    if (TextUtils.isEmpty(password)) {
+                        Toast.makeText(getApplicationContext(), &quot;请输入密码&quot;, 0).show();
+                        return;
+                    }
+                    //3.获取保存的密码
+                    String sp_password = sp.getString(&quot;password&quot;, &quot;&quot;);
+                    //4.判断两个密码是否一致
+                    if (password.equals(sp_password)) {
+                        //跳转到到手机防盗界面
+                        //隐藏对话框
+                        dialog.dismiss();
+                        //提醒用户
+                        Toast.makeText(getApplicationContext(), &quot;密码正确&quot;, 0).show();
+                    }else{
+                        Toast.makeText(getApplicationContext(), &quot;密码错误&quot;, 0).show();
+                    }
+                }
+            });
+            btn_cancle.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    //隐藏对话框
+                    dialog.dismiss();
+                }
+            });
+            //第二步:复制显示
+            builder.setView(view);
+            //显示对话框
+            //builder.show();
+            dialog = builder.create();
+            dialog.show();
+        }
+</code></pre><h3 id="兼容低版本"><a href="#兼容低版本" class="headerlink" title="兼容低版本"></a>兼容低版本</h3><pre><code>根据具体显示风格,去进行修改
 </code></pre><h3 id="MD5加密-重点"><a href="#MD5加密-重点" class="headerlink" title="MD5加密# (重点)"></a>MD5加密# (重点)</h3><pre><code>md5加密:明文转化成密文之后,密文是不能转化成明文
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">    /**</div><div class="line">     * MD5加密</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    public static String passwordMD5(String password)&#123;</div><div class="line">        StringBuilder sb = new StringBuilder();</div><div class="line">        try &#123;</div><div class="line">            //1.获取数据摘要器</div><div class="line">            //arg0 : 加密的方式</div><div class="line">            MessageDigest messageDigest = MessageDigest.getInstance(&quot;MD5&quot;);</div><div class="line">            //2.将一个byte数组进行加密,返回的是一个加密过的byte数组,二进制的哈希计算,md5加密的第一步</div><div class="line">            byte[] digest = messageDigest.digest(password.getBytes());</div><div class="line">            //3.遍历byte数组</div><div class="line">            for (int i = 0; i &lt; digest.length; i++) &#123;</div><div class="line">                //4.MD5加密</div><div class="line">                //byte值    -128-127</div><div class="line">                int result = digest[i] &amp; 0xff;</div><div class="line">                //将得到int类型转化成16进制字符串</div><div class="line">                //String hexString = Integer.toHexString(result)+1;//不规则加密,加盐</div><div class="line">                String hexString = Integer.toHexString(result);</div><div class="line">                if (hexString.length() &lt; 2) &#123;</div><div class="line">//                  System.out.print(&quot;0&quot;);</div><div class="line">                    sb.append(&quot;0&quot;);</div><div class="line">                &#125;</div><div class="line">                //System.out.println(hexString);</div><div class="line">                //e10adc3949ba59abbe56e057f20f883e</div><div class="line">                sb.append(hexString);</div><div class="line">            &#125;</div><div class="line">            return sb.toString();</div><div class="line">        &#125; catch (NoSuchAlgorithmException e) &#123;</div><div class="line">            //找不到加密方式的异常</div><div class="line">            e.printStackTrace();</div><div class="line">        &#125;</div><div class="line">        return null;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h3 id="隐藏显示密码效果"><a href="#隐藏显示密码效果" class="headerlink" title="隐藏显示密码效果"></a>隐藏显示密码效果</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">1.添加隐藏显示按钮</div><div class="line">    &lt;LinearLayout </div><div class="line">        android:layout_width=&quot;match_parent&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:orientation=&quot;horizontal&quot;</div><div class="line">        &gt;</div><div class="line">        &lt;!-- layout_weight : 设置渲染优先级别,值越大优先级越低,优先级低的后渲染 </div><div class="line">        inputType : 设置输入框输入类型</div><div class="line">        --&gt;</div><div class="line">    &lt;EditText</div><div class="line">        android:id=&quot;@+id/et_setpassword_password&quot;</div><div class="line">        android:layout_width=&quot;0dp&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:layout_weight=&quot;1&quot;</div><div class="line">        android:ems=&quot;10&quot;</div><div class="line">        android:inputType=&quot;textPassword&quot; </div><div class="line">        android:textColor=&quot;#000000&quot;</div><div class="line">        android:hint=&quot;请输入密码&quot;</div><div class="line">        &gt;</div><div class="line">    &lt;/EditText&gt;</div><div class="line">    &lt;ImageView </div><div class="line">        android:id=&quot;@+id/iv_enterpassword_hide&quot;</div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:src=&quot;@drawable/btn_circle_pressed&quot;</div><div class="line">        android:layout_gravity=&quot;center_vertical&quot;</div><div class="line">        /&gt;</div><div class="line">    &lt;/LinearLayout&gt;</div></pre></td></tr></table></figure>
-<pre><code>2.代码中进行操作
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">int count=0;</div><div class="line">ImageView iv_enterpassword_hide = (ImageView) view.findViewById(R.id.iv_enterpassword_hide);</div><div class="line">iv_enterpassword_hide.setOnClickListener(new OnClickListener() &#123;</div><div class="line">    </div><div class="line">    @Override</div><div class="line">    public void onClick(View v) &#123;</div><div class="line">        //隐藏显示密码</div><div class="line">        if (count%2 == 0) &#123;</div><div class="line">            //显示密码</div><div class="line">            et_setpassword_password.setInputType(0);</div><div class="line">        &#125;else&#123;</div><div class="line">            //隐藏密码</div><div class="line">            et_setpassword_password.setInputType(129);//代码设置输入框输入类型</div><div class="line">        &#125;</div><div class="line">        count++;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="界面跳转逻辑-重点-逻辑"><a href="#界面跳转逻辑-重点-逻辑" class="headerlink" title="界面跳转逻辑# (重点:逻辑)"></a>界面跳转逻辑# (重点:逻辑)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">private SharedPreferences sp;</div><div class="line">@Override</div><div class="line">protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">    super.onCreate(savedInstanceState);</div><div class="line">    sp = getSharedPreferences(&quot;config&quot;, MODE_PRIVATE);</div><div class="line">    //分为两部分1.显示设置过的手机防盗功能,2.设置手机防盗功能</div><div class="line">    //判断用户是否是第一次进入手机防盗模块,是,跳转到设置向导界面,不是,跳转防盗功能显示界面</div><div class="line">    if (sp.getBoolean(&quot;first&quot;, true)) &#123;</div><div class="line">        //第一次进入,跳转到手机防盗设置向导界面</div><div class="line">        Intent intent = new Intent(this,SetUp1Activity.class);</div><div class="line">        startActivity(intent);</div><div class="line">        //移出lostfindActivity</div><div class="line">        finish();</div><div class="line">    &#125;else&#123;</div><div class="line">        //手机防盗显示界面</div><div class="line">        setContentView(R.layout.activity_lostfind);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="设置向导第一个界面"><a href="#设置向导第一个界面" class="headerlink" title="设置向导第一个界面"></a>设置向导第一个界面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div></pre></td><td class="code"><pre><div class="line">&lt;!-- layout_margin : 距离上下左右的距离 --&gt;</div><div class="line">&lt;TextView </div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    android:text=&quot;您的手机防盗卫士:&quot;</div><div class="line">    android:layout_margin=&quot;5dp&quot;</div><div class="line">    android:textSize=&quot;18sp&quot;</div><div class="line">    /&gt;</div><div class="line">&lt;!-- drawableLeft : 是在文本的左边设置一张图片 </div><div class="line">@android:drawable/star_big_on : 调用系统的图片,使用系统图片可以节省我们应用的体积</div><div class="line">--&gt;</div><div class="line">&lt;TextView </div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    android:text=&quot;SIM卡变更报警&quot;</div><div class="line">    android:textSize=&quot;18sp&quot;</div><div class="line">    android:drawableLeft=&quot;@android:drawable/star_big_on&quot;</div><div class="line">    android:gravity=&quot;center_vertical&quot;</div><div class="line">    android:layout_marginLeft=&quot;5dp&quot;</div><div class="line">    /&gt;</div><div class="line">&lt;TextView </div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    android:text=&quot;GPS追踪&quot;</div><div class="line">    android:textSize=&quot;18sp&quot;</div><div class="line">    android:drawableLeft=&quot;@android:drawable/star_big_on&quot;</div><div class="line">    android:gravity=&quot;center_vertical&quot;</div><div class="line">    android:layout_marginLeft=&quot;5dp&quot;</div><div class="line">    /&gt;</div><div class="line">&lt;TextView </div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    android:text=&quot;远程数据销毁&quot;</div><div class="line">    android:textSize=&quot;18sp&quot;</div><div class="line">    android:drawableLeft=&quot;@android:drawable/star_big_on&quot;</div><div class="line">    android:gravity=&quot;center_vertical&quot;</div><div class="line">    android:layout_marginLeft=&quot;5dp&quot;</div><div class="line">    /&gt;</div><div class="line">&lt;TextView </div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    android:text=&quot;远程锁屏&quot;</div><div class="line">    android:textSize=&quot;18sp&quot;</div><div class="line">    android:drawableLeft=&quot;@android:drawable/star_big_on&quot;</div><div class="line">    android:gravity=&quot;center_vertical&quot;</div><div class="line">    android:layout_marginLeft=&quot;5dp&quot;</div><div class="line">    /&gt;</div><div class="line">&lt;LinearLayout </div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    android:gravity=&quot;center_horizontal&quot;</div><div class="line">    &gt;</div><div class="line">    &lt;ImageView </div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:src=&quot;@android:drawable/presence_online&quot;</div><div class="line">        /&gt;</div><div class="line">    &lt;ImageView </div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:src=&quot;@android:drawable/presence_invisible&quot;</div><div class="line">        /&gt;</div><div class="line">    &lt;ImageView </div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:src=&quot;@android:drawable/presence_invisible&quot;</div><div class="line">        /&gt;</div><div class="line">    &lt;ImageView </div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:src=&quot;@android:drawable/presence_invisible&quot;</div><div class="line">        /&gt;</div><div class="line">&lt;/LinearLayout&gt;</div><div class="line"></div><div class="line">&lt;RelativeLayout </div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;match_parent&quot;</div><div class="line">    &gt;</div><div class="line">    &lt;!-- layout_centerInParent : 在父控件的中间位置 --&gt;</div><div class="line">    &lt;ImageView </div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:src=&quot;@drawable/setup1&quot;</div><div class="line">        android:layout_centerInParent=&quot;true&quot;</div><div class="line">        /&gt;</div><div class="line">    &lt;!-- layout_alignParentRight : 在父控件的右方 </div><div class="line">    layout_alignParentBottom : 在父控件的下方</div><div class="line">    --&gt;</div><div class="line">    &lt;Button </div><div class="line">        android:layout_width=&quot;wrap_content&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:text=&quot;下一步&quot;</div><div class="line">        android:layout_alignParentRight=&quot;true&quot;</div><div class="line">        android:layout_alignParentBottom=&quot;true&quot;</div><div class="line">        /&gt;</div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure>
-<h3 id="状态选择器-重点"><a href="#状态选择器-重点" class="headerlink" title="状态选择器# (重点)"></a>状态选择器# (重点)</h3><pre><code>状态选择器:特殊图片,根据不同的状态显示不同的图片,比如按下,抬起
+</code></pre><pre><code>    /**
+     * MD5加密
+     * @return
+     */
+    public static String passwordMD5(String password){
+        StringBuilder sb = new StringBuilder();
+        try {
+            //1.获取数据摘要器
+            //arg0 : 加密的方式
+            MessageDigest messageDigest = MessageDigest.getInstance(&quot;MD5&quot;);
+            //2.将一个byte数组进行加密,返回的是一个加密过的byte数组,二进制的哈希计算,md5加密的第一步
+            byte[] digest = messageDigest.digest(password.getBytes());
+            //3.遍历byte数组
+            for (int i = 0; i &lt; digest.length; i++) {
+                //4.MD5加密
+                //byte值    -128-127
+                int result = digest[i] &amp; 0xff;
+                //将得到int类型转化成16进制字符串
+                //String hexString = Integer.toHexString(result)+1;//不规则加密,加盐
+                String hexString = Integer.toHexString(result);
+                if (hexString.length() &lt; 2) {
+//                  System.out.print(&quot;0&quot;);
+                    sb.append(&quot;0&quot;);
+                }
+                //System.out.println(hexString);
+                //e10adc3949ba59abbe56e057f20f883e
+                sb.append(hexString);
+            }
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            //找不到加密方式的异常
+            e.printStackTrace();
+        }
+        return null;
+    }
+</code></pre><h3 id="隐藏显示密码效果"><a href="#隐藏显示密码效果" class="headerlink" title="隐藏显示密码效果"></a>隐藏显示密码效果</h3><pre><code>    1.添加隐藏显示按钮
+        &lt;LinearLayout 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:orientation=&quot;horizontal&quot;
+            &gt;
+            &lt;!-- layout_weight : 设置渲染优先级别,值越大优先级越低,优先级低的后渲染 
+            inputType : 设置输入框输入类型
+            --&gt;
+        &lt;EditText
+            android:id=&quot;@+id/et_setpassword_password&quot;
+            android:layout_width=&quot;0dp&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_weight=&quot;1&quot;
+            android:ems=&quot;10&quot;
+            android:inputType=&quot;textPassword&quot; 
+            android:textColor=&quot;#000000&quot;
+            android:hint=&quot;请输入密码&quot;
+            &gt;
+        &lt;/EditText&gt;
+        &lt;ImageView 
+            android:id=&quot;@+id/iv_enterpassword_hide&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:src=&quot;@drawable/btn_circle_pressed&quot;
+            android:layout_gravity=&quot;center_vertical&quot;
+            /&gt;
+        &lt;/LinearLayout&gt;
+</code></pre><pre><code>2.代码中进行操作
+</code></pre><pre><code>        int count=0;
+        ImageView iv_enterpassword_hide = (ImageView) view.findViewById(R.id.iv_enterpassword_hide);
+        iv_enterpassword_hide.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //隐藏显示密码
+                if (count%2 == 0) {
+                    //显示密码
+                    et_setpassword_password.setInputType(0);
+                }else{
+                    //隐藏密码
+                    et_setpassword_password.setInputType(129);//代码设置输入框输入类型
+                }
+                count++;
+            }
+        });
+</code></pre><h3 id="界面跳转逻辑-重点-逻辑"><a href="#界面跳转逻辑-重点-逻辑" class="headerlink" title="界面跳转逻辑# (重点:逻辑)"></a>界面跳转逻辑# (重点:逻辑)</h3><pre><code>    private SharedPreferences sp;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        sp = getSharedPreferences(&quot;config&quot;, MODE_PRIVATE);
+        //分为两部分1.显示设置过的手机防盗功能,2.设置手机防盗功能
+        //判断用户是否是第一次进入手机防盗模块,是,跳转到设置向导界面,不是,跳转防盗功能显示界面
+        if (sp.getBoolean(&quot;first&quot;, true)) {
+            //第一次进入,跳转到手机防盗设置向导界面
+            Intent intent = new Intent(this,SetUp1Activity.class);
+            startActivity(intent);
+            //移出lostfindActivity
+            finish();
+        }else{
+            //手机防盗显示界面
+            setContentView(R.layout.activity_lostfind);
+        }
+    }
+</code></pre><h3 id="设置向导第一个界面"><a href="#设置向导第一个界面" class="headerlink" title="设置向导第一个界面"></a>设置向导第一个界面</h3><pre><code>        &lt;!-- layout_margin : 距离上下左右的距离 --&gt;
+        &lt;TextView 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;您的手机防盗卫士:&quot;
+            android:layout_margin=&quot;5dp&quot;
+            android:textSize=&quot;18sp&quot;
+            /&gt;
+        &lt;!-- drawableLeft : 是在文本的左边设置一张图片 
+        @android:drawable/star_big_on : 调用系统的图片,使用系统图片可以节省我们应用的体积
+        --&gt;
+        &lt;TextView 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;SIM卡变更报警&quot;
+            android:textSize=&quot;18sp&quot;
+            android:drawableLeft=&quot;@android:drawable/star_big_on&quot;
+            android:gravity=&quot;center_vertical&quot;
+            android:layout_marginLeft=&quot;5dp&quot;
+            /&gt;
+        &lt;TextView 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;GPS追踪&quot;
+            android:textSize=&quot;18sp&quot;
+            android:drawableLeft=&quot;@android:drawable/star_big_on&quot;
+            android:gravity=&quot;center_vertical&quot;
+            android:layout_marginLeft=&quot;5dp&quot;
+            /&gt;
+        &lt;TextView 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;远程数据销毁&quot;
+            android:textSize=&quot;18sp&quot;
+            android:drawableLeft=&quot;@android:drawable/star_big_on&quot;
+            android:gravity=&quot;center_vertical&quot;
+            android:layout_marginLeft=&quot;5dp&quot;
+            /&gt;
+        &lt;TextView 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;远程锁屏&quot;
+            android:textSize=&quot;18sp&quot;
+            android:drawableLeft=&quot;@android:drawable/star_big_on&quot;
+            android:gravity=&quot;center_vertical&quot;
+            android:layout_marginLeft=&quot;5dp&quot;
+            /&gt;
+        &lt;LinearLayout 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:gravity=&quot;center_horizontal&quot;
+            &gt;
+            &lt;ImageView 
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:src=&quot;@android:drawable/presence_online&quot;
+                /&gt;
+            &lt;ImageView 
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:src=&quot;@android:drawable/presence_invisible&quot;
+                /&gt;
+            &lt;ImageView 
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:src=&quot;@android:drawable/presence_invisible&quot;
+                /&gt;
+            &lt;ImageView 
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:src=&quot;@android:drawable/presence_invisible&quot;
+                /&gt;
+        &lt;/LinearLayout&gt;
+
+        &lt;RelativeLayout 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;
+            &gt;
+            &lt;!-- layout_centerInParent : 在父控件的中间位置 --&gt;
+            &lt;ImageView 
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:src=&quot;@drawable/setup1&quot;
+                android:layout_centerInParent=&quot;true&quot;
+                /&gt;
+            &lt;!-- layout_alignParentRight : 在父控件的右方 
+            layout_alignParentBottom : 在父控件的下方
+            --&gt;
+            &lt;Button 
+                android:layout_width=&quot;wrap_content&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;下一步&quot;
+                android:layout_alignParentRight=&quot;true&quot;
+                android:layout_alignParentBottom=&quot;true&quot;
+                /&gt;
+        &lt;/RelativeLayout&gt;
+</code></pre><h3 id="状态选择器-重点"><a href="#状态选择器-重点" class="headerlink" title="状态选择器# (重点)"></a>状态选择器# (重点)</h3><pre><code>状态选择器:特殊图片,根据不同的状态显示不同的图片,比如按下,抬起
 1.res-&gt;drawable -&gt; button.xml
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</div><div class="line">    &lt;item android:state_pressed=&quot;true&quot;</div><div class="line">          android:drawable=&quot;@drawable/function_greenbutton_pressed&quot; /&gt; &lt;!-- pressed :按下的时候显示图片--&gt;</div><div class="line">    &lt;item android:drawable=&quot;@drawable/function_greenbutton_normal&quot; /&gt; &lt;!-- default :默认显示图片--&gt;</div><div class="line">&lt;/selector&gt;</div></pre></td></tr></table></figure>
-<pre><code>2.使用
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:background=&quot;@drawable/button&quot;</div></pre></td></tr></table></figure>
-<h3 id="设置向导第二界面-amp-抽取样式-重点-抽取样式"><a href="#设置向导第二界面-amp-抽取样式-重点-抽取样式" class="headerlink" title="设置向导第二界面&amp;抽取样式# (重点:抽取样式)"></a>设置向导第二界面&amp;抽取样式# (重点:抽取样式)</h3><pre><code>1.在styles.xml文件中
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;style name=&quot;next&quot;&gt;</div><div class="line">    &lt;item name=&quot;android:layout_width&quot;&gt;wrap_content&lt;/item&gt;</div><div class="line">    &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;</div><div class="line">    &lt;item name=&quot;android:text&quot;&gt;下一步&lt;/item&gt;</div><div class="line">    &lt;item name=&quot;android:layout_alignParentRight&quot;&gt;true&lt;/item&gt;</div><div class="line">    &lt;item name=&quot;android:layout_alignParentBottom&quot;&gt;true&lt;/item&gt;</div><div class="line">    &lt;item name=&quot;android:background&quot;&gt;@drawable/button&lt;/item&gt;</div><div class="line">    &lt;item name=&quot;android:drawableRight&quot;&gt;@drawable/next&lt;/item&gt;</div><div class="line">    &lt;item name=&quot;android:padding&quot;&gt;5dp&lt;/item&gt;</div><div class="line">    &lt;item name=&quot;android:onClick&quot;&gt;next&lt;/item&gt;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-<pre><code>2.使用
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Button </div><div class="line">   style=&quot;@style/next&quot;</div><div class="line"> /&gt;</div></pre></td></tr></table></figure>
-<h3 id="第三个界面-amp-9图片-重点-9图片"><a href="#第三个界面-amp-9图片-重点-9图片" class="headerlink" title="第三个界面&amp;.9图片# (重点:.9图片)"></a>第三个界面&amp;.9图片# (重点:.9图片)</h3><pre><code>.9图片:为了防止图片拉伸变形
+</code></pre><pre><code>        &lt;selector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+            &lt;item android:state_pressed=&quot;true&quot;
+                  android:drawable=&quot;@drawable/function_greenbutton_pressed&quot; /&gt; &lt;!-- pressed :按下的时候显示图片--&gt;
+            &lt;item android:drawable=&quot;@drawable/function_greenbutton_normal&quot; /&gt; &lt;!-- default :默认显示图片--&gt;
+        &lt;/selector&gt;
+</code></pre><pre><code>2.使用
+</code></pre><pre><code>        android:background=&quot;@drawable/button&quot;
+</code></pre><h3 id="设置向导第二界面-amp-抽取样式-重点-抽取样式"><a href="#设置向导第二界面-amp-抽取样式-重点-抽取样式" class="headerlink" title="设置向导第二界面&amp;抽取样式# (重点:抽取样式)"></a>设置向导第二界面&amp;抽取样式# (重点:抽取样式)</h3><pre><code>1.在styles.xml文件中
+</code></pre><pre><code>        &lt;style name=&quot;next&quot;&gt;
+            &lt;item name=&quot;android:layout_width&quot;&gt;wrap_content&lt;/item&gt;
+            &lt;item name=&quot;android:layout_height&quot;&gt;wrap_content&lt;/item&gt;
+            &lt;item name=&quot;android:text&quot;&gt;下一步&lt;/item&gt;
+            &lt;item name=&quot;android:layout_alignParentRight&quot;&gt;true&lt;/item&gt;
+            &lt;item name=&quot;android:layout_alignParentBottom&quot;&gt;true&lt;/item&gt;
+            &lt;item name=&quot;android:background&quot;&gt;@drawable/button&lt;/item&gt;
+            &lt;item name=&quot;android:drawableRight&quot;&gt;@drawable/next&lt;/item&gt;
+            &lt;item name=&quot;android:padding&quot;&gt;5dp&lt;/item&gt;
+            &lt;item name=&quot;android:onClick&quot;&gt;next&lt;/item&gt;
+        &lt;/style&gt;
+</code></pre><pre><code>2.使用
+</code></pre><pre><code>        &lt;Button 
+           style=&quot;@style/next&quot;
+         /&gt;
+</code></pre><h3 id="第三个界面-amp-9图片-重点-9图片"><a href="#第三个界面-amp-9图片-重点-9图片" class="headerlink" title="第三个界面&amp;.9图片# (重点:.9图片)"></a>第三个界面&amp;.9图片# (重点:.9图片)</h3><pre><code>.9图片:为了防止图片拉伸变形
 
 sdk\tools\draw9patch.bat
-</code></pre><h3 id="第四个界面"><a href="#第四个界面" class="headerlink" title="第四个界面"></a>第四个界面</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;!-- layout_alignParentRight : 在父控件的右方 </div><div class="line">    layout_alignParentBottom : 在父控件的下方</div><div class="line">    padding : 距离控件上下左右内边框的距离</div><div class="line">    要想将样式文件中的属性的值覆盖,在控件中使用相同的属性,并设置值就可以</div><div class="line">    --&gt;</div><div class="line">&lt;Button </div><div class="line">   style=&quot;@style/next&quot;</div><div class="line">   android:text=&quot;设置完成&quot;</div><div class="line">   android:drawableRight=&quot;@null&quot;</div><div class="line"> /&gt;</div></pre></td></tr></table></figure>
-<h3 id="抽取操作-重点"><a href="#抽取操作-重点" class="headerlink" title="抽取操作# (重点!!!!!!)"></a>抽取操作# (重点!!!!!!)</h3><pre><code>第一个抽取
+</code></pre><h3 id="第四个界面"><a href="#第四个界面" class="headerlink" title="第四个界面"></a>第四个界面</h3><pre><code>    &lt;!-- layout_alignParentRight : 在父控件的右方 
+        layout_alignParentBottom : 在父控件的下方
+        padding : 距离控件上下左右内边框的距离
+        要想将样式文件中的属性的值覆盖,在控件中使用相同的属性,并设置值就可以
+        --&gt;
+    &lt;Button 
+       style=&quot;@style/next&quot;
+       android:text=&quot;设置完成&quot;
+       android:drawableRight=&quot;@null&quot;
+     /&gt;
+</code></pre><h3 id="抽取操作-重点"><a href="#抽取操作-重点" class="headerlink" title="抽取操作# (重点!!!!!!)"></a>抽取操作# (重点!!!!!!)</h3><pre><code>第一个抽取
     1.创建父类
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">public abstract class SetUpBaseActivity extends Activity &#123;</div></pre></td></tr></table></figure>
-<pre><code>2.将子类中的上一步,下一步按钮点击事件抽取到父类中
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//按钮点击事件的操作</div><div class="line">//将每个界面中的上一步,下一步按钮操作,抽取到父类中</div><div class="line">public void pre(View v)&#123;</div><div class="line">    pre_activity();</div><div class="line">&#125;</div><div class="line">public void next(View v)&#123;</div><div class="line">    next_activity();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>3.因为父类不知道子类上一步,下一步具体实现,所以创建两个抽象方法,让子类去实现,根据自己的特性去实现响应的操作
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//因为父类不知道子类上一步,下一步具体的执行操作代码,所以要创建一个抽象方法,让子类实现这个抽象方法,根据自己的特性去实现相应的操作</div><div class="line">//下一步的操作</div><div class="line">public abstract void next_activity();</div><div class="line">//上一步的操作</div><div class="line">public abstract void pre_activity();</div></pre></td></tr></table></figure>
-<pre><code>4.子类继承父类,实现抽象方法,根据自己的特性去进行相应的实现
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">public class SetUp2Activity extends SetUpBaseActivity &#123;</div><div class="line">    </div><div class="line">    @Override</div><div class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">        setContentView(R.layout.activity_setup2);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void next_activity() &#123;</div><div class="line">        // 跳转到第三个界面</div><div class="line">        Intent intent = new Intent(this, SetUp3Activity.class);</div><div class="line">        startActivity(intent);</div><div class="line">        finish();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void pre_activity() &#123;</div><div class="line">        // 跳转到第一个界面</div><div class="line">        Intent intent = new Intent(this, SetUp1Activity.class);</div><div class="line">        startActivity(intent);</div><div class="line">        finish();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>第二个抽取:因为在进行第二个界面的时候,点击返回键会直接回到主界面,因为每个界面中都有返回键操作,所以向上抽取到父类进行统一的处理,子类就不去单独处理返回键的操作
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//监听手机物理按钮的点击事件</div><div class="line">//keyCode :　物理按钮的标示</div><div class="line">//event : 按键的处理事件</div><div class="line">@Override</div><div class="line">public boolean onKeyDown(int keyCode, KeyEvent event) &#123;</div><div class="line">    //判断keycode是否是返回键的标示</div><div class="line">    if (keyCode == KeyEvent.KEYCODE_BACK) &#123;</div><div class="line">        //true:是可以屏蔽按键的事件</div><div class="line">        //return true;</div><div class="line">        pre_activity();</div><div class="line">    &#125;</div><div class="line">    return super.onKeyDown(keyCode, event);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><pre><code>            public abstract class SetUpBaseActivity extends Activity {
+</code></pre><pre><code>    2.将子类中的上一步,下一步按钮点击事件抽取到父类中
+</code></pre><pre><code>            //按钮点击事件的操作
+            //将每个界面中的上一步,下一步按钮操作,抽取到父类中
+            public void pre(View v){
+                pre_activity();
+            }
+            public void next(View v){
+                next_activity();
+            }
+</code></pre><pre><code>    3.因为父类不知道子类上一步,下一步具体实现,所以创建两个抽象方法,让子类去实现,根据自己的特性去实现响应的操作
+</code></pre><pre><code>            //因为父类不知道子类上一步,下一步具体的执行操作代码,所以要创建一个抽象方法,让子类实现这个抽象方法,根据自己的特性去实现相应的操作
+            //下一步的操作
+            public abstract void next_activity();
+            //上一步的操作
+            public abstract void pre_activity();
+</code></pre><pre><code>    4.子类继承父类,实现抽象方法,根据自己的特性去进行相应的实现
+</code></pre><pre><code>            public class SetUp2Activity extends SetUpBaseActivity {
 
+                @Override
+                protected void onCreate(Bundle savedInstanceState) {
+                    super.onCreate(savedInstanceState);
+                    setContentView(R.layout.activity_setup2);
+                }
+
+                @Override
+                public void next_activity() {
+                    // 跳转到第三个界面
+                    Intent intent = new Intent(this, SetUp3Activity.class);
+                    startActivity(intent);
+                    finish();
+                }
+
+                @Override
+                public void pre_activity() {
+                    // 跳转到第一个界面
+                    Intent intent = new Intent(this, SetUp1Activity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+</code></pre><pre><code>第二个抽取:因为在进行第二个界面的时候,点击返回键会直接回到主界面,因为每个界面中都有返回键操作,所以向上抽取到父类进行统一的处理,子类就不去单独处理返回键的操作
+</code></pre><pre><code>        //监听手机物理按钮的点击事件
+        //keyCode :　物理按钮的标示
+        //event : 按键的处理事件
+        @Override
+        public boolean onKeyDown(int keyCode, KeyEvent event) {
+            //判断keycode是否是返回键的标示
+            if (keyCode == KeyEvent.KEYCODE_BACK) {
+                //true:是可以屏蔽按键的事件
+                //return true;
+                pre_activity();
+            }
+            return super.onKeyDown(keyCode, event);
+        }
+</code></pre>
     
 
     
@@ -458,11 +897,11 @@ sdk\tools\draw9patch.bat
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -484,19 +923,37 @@ sdk\tools\draw9patch.bat
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -508,11 +965,11 @@ sdk\tools\draw9patch.bat
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/19/android/android_003/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/19/android/android_003/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/19/android/android_003/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -533,6 +990,7 @@ sdk\tools\draw9patch.bat
         }
     </style>
 
+
                 
             </div>
 
@@ -540,7 +998,7 @@ sdk\tools\draw9patch.bat
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/01/19/android/android_005/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/01/19/android/android_004/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -852,9 +1310,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -879,7 +1342,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -894,10 +1359,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -910,6 +1372,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

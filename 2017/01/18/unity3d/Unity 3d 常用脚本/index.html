@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
     <meta name="keywords" content="miccall,unity 3d">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unity-3d-常用脚本"><span class="post-toc-number">1.</span> <span class="post-toc-text">Unity 3d 常用脚本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Collected-by-miccall-（内容均来自于网络）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Collected by miccall  （内容均来自于网络）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
 
         <!--
@@ -259,7 +275,8 @@
             <script>
     var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 </script>
 
         
@@ -371,6 +388,12 @@
 
     <!-- Share Google+ -->
     
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
     <!-- Share LinkedIn -->
     
@@ -398,31 +421,58 @@
         <hr>
 <h1 id="Unity-3d-常用脚本"><a href="#Unity-3d-常用脚本" class="headerlink" title="Unity 3d 常用脚本"></a><strong>Unity 3d 常用脚本</strong></h1><h6 id="Collected-by-miccall-（内容均来自于网络）"><a href="#Collected-by-miccall-（内容均来自于网络）" class="headerlink" title="Collected by miccall  （内容均来自于网络）"></a>Collected by miccall  （内容均来自于网络）</h6><p>不定时更新 </p>
 <ul>
-<li><p>Time.deltaTime  :   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">void Update () &#123;</div><div class="line">        transform.Translate(new Vector3(0,0,1) * Time.deltaTime);</div><div class="line">        // * Time.deltaTime 以后， 物体一秒运动一次 </div><div class="line">	&#125;</div></pre></td></tr></table></figure>
-<p>Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transform.Rotate()  都是根据自身坐标<br>LookAt()   可以让对象的正前方 ，朝向设定的坐标方向  。一般用于摄像机跟踪对象<br>平滑过渡 ：  SmoothDamp函数<br>插值  :    Mathf.Lerp(起始值,结束值,比例)   同样的 Vector3 和Color 也有该方法  。 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Instantiate(); //用来实例化对象 。。。 返回值是Object 。</div><div class="line">Instantiate(Prefab);</div><div class="line">//默认(0,0,0)</div><div class="line">//以下是指定在某个对象的位置和角度创建 。。</div><div class="line">Instantiate(Prefab,Transform.position , Transform.rotation);</div></pre></td></tr></table></figure>
-<p>   Rigidbody   添加力    AddForce()  ;   </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">AddForce(Transform.position  * 倍数 ,ForceMode mode = ForceMode.Force) ; </div><div class="line">AddForce(Transform.position  * 倍数 ) ;</div></pre></td></tr></table></figure>
-<p>对象的销毁  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Destory(Object gameObject , Time t );</div></pre></td></tr></table></figure>
+<li>Time.deltaTime  :   <pre class="line-numbers language-csharp"><code class="language-csharp">      <span class="token keyword">void</span> <span class="token function">Update</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          transform<span class="token punctuation">.</span><span class="token function">Translate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Vector3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> Time<span class="token punctuation">.</span>deltaTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token comment" spellcheck="true">// * Time.deltaTime 以后， 物体一秒运动一次 </span>
+      <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transform.Rotate()  都是根据自身坐标<br>LookAt()   可以让对象的正前方 ，朝向设定的坐标方向  。一般用于摄像机跟踪对象<br>平滑过渡 ：  SmoothDamp函数<br>插值  :    Mathf.Lerp(起始值,结束值,比例)   同样的 Vector3 和Color 也有该方法  。 <pre class="line-numbers language-csharp"><code class="language-csharp">  <span class="token function">Instantiate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//用来实例化对象 。。。 返回值是Object 。</span>
+  <span class="token function">Instantiate</span><span class="token punctuation">(</span>Prefab<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">//默认(0,0,0)</span>
+  <span class="token comment" spellcheck="true">//以下是指定在某个对象的位置和角度创建 。。</span>
+  <span class="token function">Instantiate</span><span class="token punctuation">(</span>Prefab<span class="token punctuation">,</span>Transform<span class="token punctuation">.</span>position <span class="token punctuation">,</span> Transform<span class="token punctuation">.</span>rotation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+   Rigidbody   添加力    AddForce()  ;   <pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">AddForce</span><span class="token punctuation">(</span>Transform<span class="token punctuation">.</span>position  <span class="token operator">*</span> 倍数 <span class="token punctuation">,</span>ForceMode mode <span class="token operator">=</span> ForceMode<span class="token punctuation">.</span>Force<span class="token punctuation">)</span> <span class="token punctuation">;</span> 
+   <span class="token function">AddForce</span><span class="token punctuation">(</span>Transform<span class="token punctuation">.</span>position  <span class="token operator">*</span> 倍数 <span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+对象的销毁  <pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">Destory</span><span class="token punctuation">(</span>Object gameObject <span class="token punctuation">,</span> Time t <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>Invoke(); 延时调用某函数 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">InvokeRepeating();  重复调用某函数 </div><div class="line">CanceInvoke(); 结束InvokeRepeating()的调用 。</div><div class="line">Invoke(&quot;FunctionName&quot;,DelayTime  s );</div><div class="line">InvokeRepeating(&quot;FunctionName&quot;,FirstDelayTime  s1 , CirclyDelayTime s2);</div><div class="line">CanceInvoke(&quot;FunctionName&quot;);</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  重复调用某函数 
+   <span class="token function">CanceInvoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 结束<span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token punctuation">)</span>的调用 。
+   <span class="token function">Invoke</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">,</span>DelayTime  s <span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">,</span>FirstDelayTime  s1 <span class="token punctuation">,</span> CirclyDelayTime s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token function">CanceInvoke</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>四元数 。。Quaternion ,默认是（0，0，0，0）用Quaternion.identity 表示。<br>Quaternion.identity就是指Quaternion(0,0,0,0),就是每旋转前的初始角度,<br>是一个确切的值,而transform.rotation是指本物体的角度,值是不确定的,<br>比如可以这么设置transform.rotation = Quaternion.identity;<br>一个是值类型,一个是属性变量</p>
 </li>
 <li><p>枚举类型 。。 Enumerations == Enums</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">enum Name&#123;</div><div class="line">      N,E,S,W</div><div class="line">&#125;;</div><div class="line">//默认 ： N==0,E==1,S==2,W==3</div><div class="line">// enum Name : int&#123;&#125;;</div><div class="line">//声明 ：  </div><div class="line"> Name name ;</div><div class="line">name.N;</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp"><code class="language-csharp">  <span class="token keyword">enum</span> Name<span class="token punctuation">{</span>
+        N<span class="token punctuation">,</span>E<span class="token punctuation">,</span>S<span class="token punctuation">,</span>W
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">//默认 ： N==0,E==1,S==2,W==3</span>
+  <span class="token comment" spellcheck="true">// enum Name : int{};</span>
+  <span class="token comment" spellcheck="true">//声明 ：  </span>
+   Name name <span class="token punctuation">;</span>
+  name<span class="token punctuation">.</span>N<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>GetComponentsInChildren&lt;组件&gt;();<br>这种方式是 大家经常用到的，这种是获取自己和它的孩子有同样的组件（比如 Rigidbody），返回一个数组，数组包括自己和它的孩子。如果他的孩子里面有的是不活跃SetActive(false);则获取不到。<br>所以就会有第二个参数GetComponentsInChildren&lt;组件&gt;(true);</p>
 </li>
 <li><p>Transform组件<br>Variables<br>position                    Vector3类型，物体位置，相对于世界坐标系的值。就是矩阵的最后一行的值。<br>localPosition             Vector3类型，物体相对于父元素的位置.<br>eulerAngles              Vector3类型，旋转后的欧拉角相对世界坐标的值。简单理解为各向量坐标所转动的值就好了。<br>localEulerAngles      Vector3类型，相对父元素的欧拉角。<br>right                        Vector3类型，表示x轴（U3里红色的轴）方向的单位向量。<br>up                           Vector3类型，表示y轴（U3里绿色的轴）方向的单位向量。<br>forward                   Vector3类型，表示z轴（U3里蓝色的轴）方向的单位向量。<br>rotation                   Quaternion类型(quatermion就是个四维数，比vector3多一个w变量表示旋转角度的)，世界坐标旋转。.<br>localRotation           Quaternion类型，本地坐标的旋转度数（相对父元素）。<br>localScale                Vector3类型，相对本地坐标系缩放（就是矩阵的乘法）<br>parent                      Transform类型，他的父元素。<br>worldToLocalMatrix  Matrix4<em>4类型，把一个点从世界坐标系的位置转换为本地坐标系位置。（终究得用矩阵，哈哈）只读<br>localToWorldMatrix  Matrix4</em>4类型，把一个点从本地坐标系转换为世界坐标系。（只读）<br>root                          Transform类型，返回最上层的那个Transform，就是他父亲的父亲的父亲的。。。（如果有的话）<br>childCount                int型，你子元素的数量<br>lossyScale                Vector3类型，相对世界坐标系缩放</p>
 </li>
 <li><p>这个功能很实用，传入的两个参数分别代表前方盯着的方向以及自己的上方向。它可以让一个GameObject转动脑袋盯着另一个物体。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">public Transform target;</div><div class="line">void Update() &#123;</div><div class="line">    Vector3 relativePos = target.position - transform.position;</div><div class="line">    Quaternion rotation = Quaternion.LookRotation(relativePos);</div><div class="line">    transform.rotation = rotation;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">public</span> Transform target<span class="token punctuation">;</span>
+        <span class="token keyword">void</span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            Vector3 relativePos <span class="token operator">=</span> target<span class="token punctuation">.</span>position <span class="token operator">-</span> transform<span class="token punctuation">.</span>position<span class="token punctuation">;</span>
+            Quaternion rotation <span class="token operator">=</span> Quaternion<span class="token punctuation">.</span><span class="token function">LookRotation</span><span class="token punctuation">(</span>relativePos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            transform<span class="token punctuation">.</span>rotation <span class="token operator">=</span> rotation<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
     
 
@@ -439,11 +489,11 @@
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -465,19 +515,37 @@
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -489,11 +557,11 @@
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -513,6 +581,7 @@
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -833,9 +902,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -860,7 +934,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -875,10 +951,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -891,6 +964,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

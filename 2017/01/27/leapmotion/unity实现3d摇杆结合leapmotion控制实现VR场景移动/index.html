@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall,leap motion,unity 3d">
+    <meta name="keywords" content="miccall,unity 3d,leap motion">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -50,7 +62,7 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="unity实现3d摇杆结合leapmotion控制实现VR场景移动 | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
-    <meta property="og:article:tag" content="leap motion"> <meta property="og:article:tag" content="unity 3d"> 
+    <meta property="og:article:tag" content="unity 3d"> <meta property="og:article:tag" content="leap motion"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#unity实现3d摇杆-结合leapmotion控制实现VR场景移动"><span class="post-toc-number">1.</span> <span class="post-toc-text"> unity实现3d摇杆 结合leapmotion控制实现VR场景移动  </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-（转载请注明出处）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  （转载请注明出处）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3d摇杆的基本框架"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">3d摇杆的基本框架</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现思路"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">实现思路</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开始写脚本"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">开始写脚本</span></a></li></ol></li></ol>
 
         <!--
@@ -363,6 +379,12 @@
 
     <!-- Share Google+ -->
     
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/27/leapmotion/unity实现3d摇杆结合leapmotion控制实现VR场景移动/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
     <!-- Share LinkedIn -->
     
@@ -423,13 +445,187 @@
 </li>
 </ul>
 <h2 id="开始写脚本"><a href="#开始写脚本" class="headerlink" title="开始写脚本"></a>开始写脚本</h2><ul>
-<li>先在父类上面建立一个Controller脚本 用来管理游戏移动对象， root和sphere 。<br>好 那就先这样写 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div></pre></td><td class="code"><pre><div class="line">public class springController : MonoBehaviour</div><div class="line">   &#123;</div><div class="line">       [Tooltip(&quot;Navigation Controls the walking game object&quot;)]</div><div class="line">       public GameObject player;</div><div class="line">       [Tooltip(&quot;Used to move the navigation ball&quot;)]</div><div class="line">       public GameObject sphere;</div><div class="line">       [Tooltip(&quot;The root node of the navigation (reset point)&quot;)]</div><div class="line">       public GameObject root;</div><div class="line">       Vector3 sphereposition;</div><div class="line">       Vector3 rootposition;</div><div class="line">       float speed = 5f;  // 导航球复位的速度</div><div class="line">       // Use this for initialization</div><div class="line">       void Start()</div><div class="line">       &#123;</div><div class="line">           //获取  初始位置</div><div class="line">           sphereposition = sphere.transform.localPosition;</div><div class="line">           rootposition = root.transform.localPosition;</div><div class="line">       &#125;</div><div class="line">       // Update is called once per frame</div><div class="line">       void Update()</div><div class="line">       &#123;</div><div class="line">           //更新   导航球  的位置 </div><div class="line">           sphereposition = sphere.transform.localPosition;</div><div class="line">           Movecheck();      //判断并控制player的移动</div><div class="line">           setstop();        //导航球归位</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       void setstop()</div><div class="line">       &#123;</div><div class="line">           if (HandState.Handstate == HandState.HandStateRelease)</div><div class="line">           &#123;</div><div class="line">               float step = speed * Time.deltaTime;</div><div class="line">               sphere.GetComponent&lt;Rigidbody&gt;().velocity = Vector3.zero;</div><div class="line">               sphere.transform.localPosition = new Vector3(Mathf.Lerp(sphereposition.x, rootposition.x, step), Mathf.Lerp(sphereposition.y, rootposition.y, step), Mathf.Lerp(sphereposition.z, rootposition.z, step));//插值算法也可以</div><div class="line">               if (SphereState.Spherestate == SphereState.Spherestateclosed)</div><div class="line">                   sphere.transform.localPosition = new Vector3(0, 0, 0);</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       </div><div class="line">       void debugshpereposition()</div><div class="line">       &#123;</div><div class="line">           print(&quot;sphereposition&quot; + sphereposition);</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       void Movecheck()</div><div class="line">       &#123;</div><div class="line">           if(HandState.Handstate == HandState.HandStateHold)</div><div class="line">           &#123;</div><div class="line">               startfollow();</div><div class="line">           &#125;</div><div class="line">           else if(SphereState.Spherestate == SphereState.Spherestateclosed)</div><div class="line">           &#123;</div><div class="line">               Stopfollow();</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       </div><div class="line">       void startfollow()</div><div class="line">       &#123;</div><div class="line">           transform.parent.GetComponent&lt;test&gt;().enabled = true;</div><div class="line">       &#125;</div><div class="line">       void Stopfollow()</div><div class="line">       &#123;</div><div class="line">           transform.parent.GetComponent&lt;test&gt;().enabled = false;</div><div class="line">       &#125;</div><div class="line">      </div><div class="line">       void OnTriggerExit(Collider other)</div><div class="line">       &#123;</div><div class="line">           if (issphere(other))</div><div class="line">           &#123;</div><div class="line">               HandState.Handstate = HandState.HandStateRelease;</div><div class="line">               setstop();</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line"></div><div class="line">       bool issphere(Collider other)</div><div class="line">       &#123;</div><div class="line">           return other.transform.name == &quot;Sphere&quot;;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<li><p>先在父类上面建立一个Controller脚本 用来管理游戏移动对象， root和sphere 。<br>好 那就先这样写 </p>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">springController</span> <span class="token punctuation">:</span> MonoBehaviour
+  <span class="token punctuation">{</span>
+      <span class="token punctuation">[</span><span class="token function">Tooltip</span><span class="token punctuation">(</span><span class="token string">"Navigation Controls the walking game object"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+      <span class="token keyword">public</span> GameObject player<span class="token punctuation">;</span>
+      <span class="token punctuation">[</span><span class="token function">Tooltip</span><span class="token punctuation">(</span><span class="token string">"Used to move the navigation ball"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+      <span class="token keyword">public</span> GameObject sphere<span class="token punctuation">;</span>
+      <span class="token punctuation">[</span><span class="token function">Tooltip</span><span class="token punctuation">(</span><span class="token string">"The root node of the navigation (reset point)"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+      <span class="token keyword">public</span> GameObject root<span class="token punctuation">;</span>
+      Vector3 sphereposition<span class="token punctuation">;</span>
+      Vector3 rootposition<span class="token punctuation">;</span>
+      <span class="token keyword">float</span> speed <span class="token operator">=</span> <span class="token number">5f</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 导航球复位的速度</span>
+      <span class="token comment" spellcheck="true">// Use this for initialization</span>
+      <span class="token keyword">void</span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          <span class="token comment" spellcheck="true">//获取  初始位置</span>
+          sphereposition <span class="token operator">=</span> sphere<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>localPosition<span class="token punctuation">;</span>
+          rootposition <span class="token operator">=</span> root<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>localPosition<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true">// Update is called once per frame</span>
+      <span class="token keyword">void</span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          <span class="token comment" spellcheck="true">//更新   导航球  的位置 </span>
+          sphereposition <span class="token operator">=</span> sphere<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>localPosition<span class="token punctuation">;</span>
+          <span class="token function">Movecheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>      <span class="token comment" spellcheck="true">//判断并控制player的移动</span>
+          <span class="token function">setstop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment" spellcheck="true">//导航球归位</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">void</span> <span class="token function">setstop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>HandState<span class="token punctuation">.</span>Handstate <span class="token operator">==</span> HandState<span class="token punctuation">.</span>HandStateRelease<span class="token punctuation">)</span>
+          <span class="token punctuation">{</span>
+              <span class="token keyword">float</span> step <span class="token operator">=</span> speed <span class="token operator">*</span> Time<span class="token punctuation">.</span>deltaTime<span class="token punctuation">;</span>
+              sphere<span class="token punctuation">.</span><span class="token generic-method function">GetComponent<span class="token punctuation">&lt;</span>Rigidbody<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>velocity <span class="token operator">=</span> Vector3<span class="token punctuation">.</span>zero<span class="token punctuation">;</span>
+              sphere<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>localPosition <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vector3</span><span class="token punctuation">(</span>Mathf<span class="token punctuation">.</span><span class="token function">Lerp</span><span class="token punctuation">(</span>sphereposition<span class="token punctuation">.</span>x<span class="token punctuation">,</span> rootposition<span class="token punctuation">.</span>x<span class="token punctuation">,</span> step<span class="token punctuation">)</span><span class="token punctuation">,</span> Mathf<span class="token punctuation">.</span><span class="token function">Lerp</span><span class="token punctuation">(</span>sphereposition<span class="token punctuation">.</span>y<span class="token punctuation">,</span> rootposition<span class="token punctuation">.</span>y<span class="token punctuation">,</span> step<span class="token punctuation">)</span><span class="token punctuation">,</span> Mathf<span class="token punctuation">.</span><span class="token function">Lerp</span><span class="token punctuation">(</span>sphereposition<span class="token punctuation">.</span>z<span class="token punctuation">,</span> rootposition<span class="token punctuation">.</span>z<span class="token punctuation">,</span> step<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//插值算法也可以</span>
+              <span class="token keyword">if</span> <span class="token punctuation">(</span>SphereState<span class="token punctuation">.</span>Spherestate <span class="token operator">==</span> SphereState<span class="token punctuation">.</span>Spherestateclosed<span class="token punctuation">)</span>
+                  sphere<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>localPosition <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vector3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">void</span> <span class="token function">debugshpereposition</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"sphereposition"</span> <span class="token operator">+</span> sphereposition<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">void</span> <span class="token function">Movecheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span>HandState<span class="token punctuation">.</span>Handstate <span class="token operator">==</span> HandState<span class="token punctuation">.</span>HandStateHold<span class="token punctuation">)</span>
+          <span class="token punctuation">{</span>
+              <span class="token function">startfollow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+          <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>SphereState<span class="token punctuation">.</span>Spherestate <span class="token operator">==</span> SphereState<span class="token punctuation">.</span>Spherestateclosed<span class="token punctuation">)</span>
+          <span class="token punctuation">{</span>
+              <span class="token function">Stopfollow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">void</span> <span class="token function">startfollow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          transform<span class="token punctuation">.</span>parent<span class="token punctuation">.</span><span class="token generic-method function">GetComponent<span class="token punctuation">&lt;</span>test<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>enabled <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">void</span> <span class="token function">Stopfollow</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          transform<span class="token punctuation">.</span>parent<span class="token punctuation">.</span><span class="token generic-method function">GetComponent<span class="token punctuation">&lt;</span>test<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>enabled <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">void</span> <span class="token function">OnTriggerExit</span><span class="token punctuation">(</span>Collider other<span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">issphere</span><span class="token punctuation">(</span>other<span class="token punctuation">)</span><span class="token punctuation">)</span>
+          <span class="token punctuation">{</span>
+              HandState<span class="token punctuation">.</span>Handstate <span class="token operator">=</span> HandState<span class="token punctuation">.</span>HandStateRelease<span class="token punctuation">;</span>
+              <span class="token function">setstop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword">bool</span> <span class="token function">issphere</span><span class="token punctuation">(</span>Collider other<span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> other<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>name <span class="token operator">==</span> <span class="token string">"Sphere"</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
 <p>然后就是root和sphere上面 各有一个triiger判断的类 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">public class rootTrigger : SphereState</div><div class="line">&#123;</div><div class="line"></div><div class="line">    Collider currentcollider;</div><div class="line">    enum currentstate</div><div class="line">    &#123;</div><div class="line">        colse,move</div><div class="line">    &#125;</div><div class="line">    currentstate state; </div><div class="line">    void OnTriggerEnter(Collider collider)</div><div class="line">    &#123;</div><div class="line">        currentcollider = collider;</div><div class="line">        state = currentstate.colse;</div><div class="line">        //spheredebug(collider, &quot;in&quot;);</div><div class="line">    &#125;</div><div class="line">    void OnTriggerExit(Collider collider)</div><div class="line">    &#123;</div><div class="line">        currentcollider = collider;</div><div class="line">        state = currentstate.move;</div><div class="line">        //spheredebug(collider, &quot;out&quot;);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public override bool isclosed()</div><div class="line">    &#123;</div><div class="line">        if (Isphere(currentcollider))</div><div class="line">        &#123;</div><div class="line">            if (state == currentstate.colse)</div><div class="line">                return true;</div><div class="line">            else return false;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private bool Isphere(Collider collider)</div><div class="line">    &#123;</div><div class="line">        return collider.transform.name == &quot;Sphere&quot; ;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void spheredebug(Collider collider,string state)</div><div class="line">    &#123;</div><div class="line">        if (Isphere(collider))</div><div class="line">        &#123;</div><div class="line">            print(&quot;Sphere&quot;+&quot;   &quot;+ state);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">rootTrigger</span> <span class="token punctuation">:</span> SphereState
+<span class="token punctuation">{</span>
+
+    Collider currentcollider<span class="token punctuation">;</span>
+    <span class="token keyword">enum</span> currentstate
+    <span class="token punctuation">{</span>
+        colse<span class="token punctuation">,</span>move
+    <span class="token punctuation">}</span>
+    currentstate state<span class="token punctuation">;</span> 
+    <span class="token keyword">void</span> <span class="token function">OnTriggerEnter</span><span class="token punctuation">(</span>Collider collider<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        currentcollider <span class="token operator">=</span> collider<span class="token punctuation">;</span>
+        state <span class="token operator">=</span> currentstate<span class="token punctuation">.</span>colse<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//spheredebug(collider, "in");</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">OnTriggerExit</span><span class="token punctuation">(</span>Collider collider<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        currentcollider <span class="token operator">=</span> collider<span class="token punctuation">;</span>
+        state <span class="token operator">=</span> currentstate<span class="token punctuation">.</span>move<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//spheredebug(collider, "out");</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">bool</span> <span class="token function">isclosed</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">Isphere</span><span class="token punctuation">(</span>currentcollider<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>state <span class="token operator">==</span> currentstate<span class="token punctuation">.</span>colse<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">bool</span> <span class="token function">Isphere</span><span class="token punctuation">(</span>Collider collider<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> collider<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>name <span class="token operator">==</span> <span class="token string">"Sphere"</span> <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">void</span> <span class="token function">spheredebug</span><span class="token punctuation">(</span>Collider collider<span class="token punctuation">,</span><span class="token keyword">string</span> state<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">Isphere</span><span class="token punctuation">(</span>collider<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Sphere"</span><span class="token operator">+</span><span class="token string">"   "</span><span class="token operator">+</span> state<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>第二个 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">public class HnadTrigger : HandState</div><div class="line">&#123;</div><div class="line">    int  handcount = 0 ;</div><div class="line">    //public Text handcounttext ;</div><div class="line">    void OnTriggerEnter(Collider other)</div><div class="line">    &#123;</div><div class="line">        if(IShand(other))</div><div class="line">        &#123;</div><div class="line">           //handdebug(other, &quot;in&quot;);</div><div class="line">           handcount++;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    void OnTriggerExit(Collider other)</div><div class="line">    &#123;</div><div class="line">        if(IShand(other))</div><div class="line">        &#123;</div><div class="line">           //handdebug(other, &quot;out&quot;);</div><div class="line">           handcount--;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    bool IShand(Collider other)</div><div class="line">    &#123;</div><div class="line">        string Collidername = other.transform.parent.name;</div><div class="line">        if (Collidername == &quot;thumb&quot;) return true;</div><div class="line">        else if (Collidername == &quot;index&quot;) return true;</div><div class="line">        else if (Collidername == &quot;middle&quot;) return true;</div><div class="line">        else if (Collidername == &quot;thumb&quot;) return true;</div><div class="line">        else if (Collidername == &quot;RigidRoundHand_L&quot; || Collidername == &quot;RigidRoundHand_R&quot;) return true;</div><div class="line">        else return false;</div><div class="line">    &#125;</div><div class="line">    void handdebug(Collider other, string state)</div><div class="line">    &#123;</div><div class="line">        print(&quot;hand&quot; + state+&quot; ++++++++++++&quot; + Time.time);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public override bool ishold()</div><div class="line">    &#123;</div><div class="line">        //print(&quot; ishold() child &quot;);</div><div class="line">        //handcounttext.text = &quot; count&quot;+handcount;</div><div class="line">        if (handcount != 0)</div><div class="line">        &#123;</div><div class="line">            //print(&quot;is  hold&quot;);</div><div class="line">            return true;</div><div class="line">        &#125;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HnadTrigger</span> <span class="token punctuation">:</span> HandState
+<span class="token punctuation">{</span>
+    <span class="token keyword">int</span>  handcount <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//public Text handcounttext ;</span>
+    <span class="token keyword">void</span> <span class="token function">OnTriggerEnter</span><span class="token punctuation">(</span>Collider other<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">IShand</span><span class="token punctuation">(</span>other<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+           <span class="token comment" spellcheck="true">//handdebug(other, "in");</span>
+           handcount<span class="token operator">++</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">void</span> <span class="token function">OnTriggerExit</span><span class="token punctuation">(</span>Collider other<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">IShand</span><span class="token punctuation">(</span>other<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+           <span class="token comment" spellcheck="true">//handdebug(other, "out");</span>
+           handcount<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">bool</span> <span class="token function">IShand</span><span class="token punctuation">(</span>Collider other<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">string</span> Collidername <span class="token operator">=</span> other<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>name<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Collidername <span class="token operator">==</span> <span class="token string">"thumb"</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>Collidername <span class="token operator">==</span> <span class="token string">"index"</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>Collidername <span class="token operator">==</span> <span class="token string">"middle"</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>Collidername <span class="token operator">==</span> <span class="token string">"thumb"</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>Collidername <span class="token operator">==</span> <span class="token string">"RigidRoundHand_L"</span> <span class="token operator">||</span> Collidername <span class="token operator">==</span> <span class="token string">"RigidRoundHand_R"</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">handdebug</span><span class="token punctuation">(</span>Collider other<span class="token punctuation">,</span> <span class="token keyword">string</span> state<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hand"</span> <span class="token operator">+</span> state<span class="token operator">+</span><span class="token string">" ++++++++++++"</span> <span class="token operator">+</span> Time<span class="token punctuation">.</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">bool</span> <span class="token function">ishold</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//print(" ishold() child ");</span>
+        <span class="token comment" spellcheck="true">//handcounttext.text = " count"+handcount;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>handcount <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//print("is  hold");</span>
+            <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>这个hold的状态也是搞了我很久 没办法处理判断hold和release两个状态<br>最后想到的用碰撞器的数量来判断吧 ，当进入trigger就加加 出去就减减 最后数量为0 那么就是松开状态了 </li>
 <li><p>仅供参考</p>
@@ -437,8 +633,68 @@
 <li><p>状态脚本 </p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">public class HandState : MonoBehaviour &#123;</div><div class="line"></div><div class="line">    public static int HandStateHold = 0 ;</div><div class="line">    public static int HandStateRelease = 1;</div><div class="line"></div><div class="line">    public static int Handstate = HandStateRelease ;</div><div class="line">    public virtual bool ishold()</div><div class="line">    &#123;</div><div class="line">        </div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">    void setvalue()</div><div class="line">    &#123;</div><div class="line">        if (ishold())</div><div class="line">        &#123;</div><div class="line">            Handstate = HandStateHold;</div><div class="line">        &#125;</div><div class="line">        else</div><div class="line">           StartCoroutine(WaitAndPrint(0.5F));</div><div class="line">        </div><div class="line"></div><div class="line">    &#125;</div><div class="line">    IEnumerator WaitAndPrint(float waitTime)</div><div class="line">    &#123;</div><div class="line">        yield return new WaitForSeconds(waitTime);</div><div class="line">        //等待之后执行的动作 </div><div class="line">        Handstate = HandStateRelease;</div><div class="line">    &#125;</div><div class="line">    void Update()</div><div class="line">    &#123;</div><div class="line">        setvalue();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">public class SphereState : MonoBehaviour &#123;</div><div class="line"></div><div class="line">    public static int Spherestateclosed = 0;</div><div class="line">    public static int Spherestatemove = 1;</div><div class="line"></div><div class="line">    public static int Spherestate = Spherestateclosed;</div><div class="line"></div><div class="line">    public virtual bool isclosed()</div><div class="line">    &#123;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    void setvalue()</div><div class="line">    &#123;</div><div class="line">        if (isclosed())</div><div class="line">        &#123;</div><div class="line">            Spherestate = Spherestateclosed;</div><div class="line">        &#125;</div><div class="line">        else</div><div class="line">        &#123;</div><div class="line">            Spherestate = Spherestatemove;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    void Update()</div><div class="line">    &#123;</div><div class="line">        setvalue();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HandState</span> <span class="token punctuation">:</span> MonoBehaviour <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> HandStateHold <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> HandStateRelease <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> Handstate <span class="token operator">=</span> HandStateRelease <span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">virtual</span> <span class="token keyword">bool</span> <span class="token function">ishold</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+
+        <span class="token keyword">return</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">setvalue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">ishold</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Handstate <span class="token operator">=</span> HandStateHold<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+           <span class="token function">StartCoroutine</span><span class="token punctuation">(</span><span class="token function">WaitAndPrint</span><span class="token punctuation">(</span><span class="token number">0.5F</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    <span class="token punctuation">}</span>
+    IEnumerator <span class="token function">WaitAndPrint</span><span class="token punctuation">(</span><span class="token keyword">float</span> waitTime<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">yield</span> <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">WaitForSeconds</span><span class="token punctuation">(</span>waitTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//等待之后执行的动作 </span>
+        Handstate <span class="token operator">=</span> HandStateRelease<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">setvalue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-csharp"><code class="language-csharp"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SphereState</span> <span class="token punctuation">:</span> MonoBehaviour <span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> Spherestateclosed <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> Spherestatemove <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> Spherestate <span class="token operator">=</span> Spherestateclosed<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">virtual</span> <span class="token keyword">bool</span> <span class="token function">isclosed</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">setvalue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isclosed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Spherestate <span class="token operator">=</span> Spherestateclosed<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+        <span class="token punctuation">{</span>
+            Spherestate <span class="token operator">=</span> Spherestatemove<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">void</span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">setvalue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>这个就比较简单了 也就不多解释了 有想要源码的，可以留言联系我 。 </li>
 <li>好了 ，今天就将怎么多啦 ，祝自己新年快乐。 </li>
@@ -459,11 +715,11 @@
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -485,19 +741,37 @@
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -509,11 +783,11 @@
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/27/leapmotion/unity实现3d摇杆结合leapmotion控制实现VR场景移动/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/27/leapmotion/unity实现3d摇杆结合leapmotion控制实现VR场景移动/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/27/leapmotion/unity实现3d摇杆结合leapmotion控制实现VR场景移动/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -533,6 +807,7 @@
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -853,9 +1128,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -880,7 +1160,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -895,10 +1177,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -911,6 +1190,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

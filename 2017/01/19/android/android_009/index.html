@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
     <meta name="keywords" content="miccall,android">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查询全部数据"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">查询全部数据</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#通讯卫士界面展示"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">通讯卫士界面展示</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#listview复用缓存-重点"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">listview复用缓存#  (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除黑名单号码"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">删除黑名单号码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加黑名单-重点-RadioGroup"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">添加黑名单#  (重点 : RadioGroup)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分批加载-重点"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">分批加载#  (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#短信拦截"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">短信拦截</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#电话拦截-建议-看看反射"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">电话拦截#  (建议:看看反射)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#删除通话记录-重点-内容观察者"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">删除通话记录#  (重点:内容观察者)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取系统应用程序信息-重点"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">获取系统应用程序信息#  (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#软件管理界面"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">软件管理界面</span></a></li></ol></li></ol>
 
         <!--
@@ -259,7 +275,8 @@
             <script>
     var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 </script>
 
         
@@ -370,6 +387,12 @@
     
 
     <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/19/android/android_009/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
     
 
     <!-- Share LinkedIn -->
@@ -500,37 +523,37 @@ public List&lt;BlackNumInfo&gt; queryAllBlackNum(){
 4.使用,可以直接使用复用的控件的容器中存放已经findviewbyid过的控件,就是在使用已已经findviewbyid过的控件
         //设置显示数据
         viewHolder.tv_itemcallsmssafe_blacknum.setText(blackNumInfo.getBlacknum());
-</code></pre><h2 id="删除黑名单号码"><a href="#删除黑名单号码" class="headerlink" title="删除黑名单号码"></a>删除黑名单号码</h2><pre><code>/**
- * 删除黑名单
- */
-viewHolder.iv_itemcallsmssafe_delete.setOnClickListener(new OnClickListener() {
-
-    @Override
-    public void onClick(View v) {
-        //删除黑名单操作
-        AlertDialog.Builder builder = new Builder(CallSmsSafeActivity.this);
-        builder.setMessage(&quot;您确认要删除黑名单号码:&quot;+blackNumInfo.getBlacknum()+&quot;?&quot;);
-        //设置确定和取消按钮
-        builder.setPositiveButton(&quot;确定&quot;, new DialogInterface.OnClickListener(){
+</code></pre><h2 id="删除黑名单号码"><a href="#删除黑名单号码" class="headerlink" title="删除黑名单号码"></a>删除黑名单号码</h2><pre><code>        /**
+         * 删除黑名单
+         */
+        viewHolder.iv_itemcallsmssafe_delete.setOnClickListener(new OnClickListener() {
 
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(View v) {
                 //删除黑名单操作
-                //1.删除数据库中的黑名单号码
-                blackNumDao.deleteBlackNum(blackNumInfo.getBlacknum());
-                //2.删除界面中已经显示黑名单号码
-                //2.1从存放有所有数据的list集合中删除相应的数据
-                list.remove(position);//删除条目对应位置的相应的数据
-                //2.2更新界面
-                myAdapter.notifyDataSetChanged();//更新界面
-                //3.隐藏对话框
-                dialog.dismiss();
+                AlertDialog.Builder builder = new Builder(CallSmsSafeActivity.this);
+                builder.setMessage(&quot;您确认要删除黑名单号码:&quot;+blackNumInfo.getBlacknum()+&quot;?&quot;);
+                //设置确定和取消按钮
+                builder.setPositiveButton(&quot;确定&quot;, new DialogInterface.OnClickListener(){
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //删除黑名单操作
+                        //1.删除数据库中的黑名单号码
+                        blackNumDao.deleteBlackNum(blackNumInfo.getBlacknum());
+                        //2.删除界面中已经显示黑名单号码
+                        //2.1从存放有所有数据的list集合中删除相应的数据
+                        list.remove(position);//删除条目对应位置的相应的数据
+                        //2.2更新界面
+                        myAdapter.notifyDataSetChanged();//更新界面
+                        //3.隐藏对话框
+                        dialog.dismiss();
+                    }
+                });
+                builder.setNegativeButton(&quot;取消&quot;, null);
+                builder.show();
             }
         });
-        builder.setNegativeButton(&quot;取消&quot;, null);
-        builder.show();
-    }
-});
 </code></pre><h2 id="添加黑名单-重点-RadioGroup"><a href="#添加黑名单-重点-RadioGroup" class="headerlink" title="添加黑名单#  (重点 : RadioGroup)"></a>添加黑名单#  (重点 : RadioGroup)</h2><pre><code>1.添加黑名单操作
     /**
      * 添加黑名单点击事件
@@ -788,27 +811,27 @@ select blacknum from info order by _id desc limit 0,20
     }
 3.权限
     &lt;uses-permission android:name=&quot;android.permission.CALL_PHONE&quot;/&gt;
-</code></pre><h2 id="删除通话记录-重点-内容观察者"><a href="#删除通话记录-重点-内容观察者" class="headerlink" title="删除通话记录#  (重点:内容观察者)"></a>删除通话记录#  (重点:内容观察者)</h2><pre><code>//删除通话记录
-//1.获取内容解析者
-final ContentResolver resolver = getContentResolver();
-//2.获取内容提供者地址  call_log   calls表的地址:calls
-//3.获取执行操作路径
-final Uri uri = Uri.parse(&quot;content://call_log/calls&quot;);
-//4.删除操作
-//resolver.delete(uri, &quot;number=?&quot;, new String[]{incomingNumber});
-//通过内容观察者观察内容提供者内容,如果变化,就去执行删除操作
-//notifyForDescendents : 匹配规则,true : 精确匹配   false:模糊匹配
-resolver.registerContentObserver(uri, true, new ContentObserver(new Handler()) {
-    //内容提供者内容变化的时候调用
-    @Override
-    public void onChange(boolean selfChange) {
-        super.onChange(selfChange);
-        //删除通话记录
-        resolver.delete(uri, &quot;number=?&quot;, new String[]{incomingNumber});
-        //注销内容观察者
-        resolver.unregisterContentObserver(this);
-    }
-});
+</code></pre><h2 id="删除通话记录-重点-内容观察者"><a href="#删除通话记录-重点-内容观察者" class="headerlink" title="删除通话记录#  (重点:内容观察者)"></a>删除通话记录#  (重点:内容观察者)</h2><pre><code>                //删除通话记录
+                //1.获取内容解析者
+                final ContentResolver resolver = getContentResolver();
+                //2.获取内容提供者地址  call_log   calls表的地址:calls
+                //3.获取执行操作路径
+                final Uri uri = Uri.parse(&quot;content://call_log/calls&quot;);
+                //4.删除操作
+                //resolver.delete(uri, &quot;number=?&quot;, new String[]{incomingNumber});
+                //通过内容观察者观察内容提供者内容,如果变化,就去执行删除操作
+                //notifyForDescendents : 匹配规则,true : 精确匹配   false:模糊匹配
+                resolver.registerContentObserver(uri, true, new ContentObserver(new Handler()) {
+                    //内容提供者内容变化的时候调用
+                    @Override
+                    public void onChange(boolean selfChange) {
+                        super.onChange(selfChange);
+                        //删除通话记录
+                        resolver.delete(uri, &quot;number=?&quot;, new String[]{incomingNumber});
+                        //注销内容观察者
+                        resolver.unregisterContentObserver(this);
+                    }
+                });
 </code></pre><h2 id="获取系统应用程序信息-重点"><a href="#获取系统应用程序信息-重点" class="headerlink" title="获取系统应用程序信息#  (重点)"></a>获取系统应用程序信息#  (重点)</h2><pre><code>/**
  * 获取系统中所有应用程序的信息
  */
@@ -935,11 +958,11 @@ public static List&lt;AppInfo&gt; getAppInfos(Context context){
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -961,19 +984,37 @@ public static List&lt;AppInfo&gt; getAppInfos(Context context){
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -985,11 +1026,11 @@ public static List&lt;AppInfo&gt; getAppInfos(Context context){
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/19/android/android_009/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/19/android/android_009/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/19/android/android_009/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -1009,6 +1050,7 @@ public static List&lt;AppInfo&gt; getAppInfos(Context context){
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -1329,9 +1371,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -1356,7 +1403,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -1371,10 +1420,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -1387,6 +1433,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

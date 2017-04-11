@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
     <meta name="keywords" content="miccall,unity 3d">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unity-3d-文章迁移"><span class="post-toc-number">1.</span> <span class="post-toc-text">Unity 3d 文章迁移</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Collected-by-miccall-（内容均来自于网络）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Collected by miccall  （内容均来自于网络）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#c-脚本的生命周期"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">c#脚本的生命周期</span></a></li></ol></li></ol>
 
         <!--
@@ -259,7 +275,8 @@
             <script>
     var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 </script>
 
         
@@ -371,6 +388,12 @@
 
     <!-- Share Google+ -->
     
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/17/unity3d/unity3d文章迁移/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
     <!-- Share LinkedIn -->
     
@@ -419,7 +442,64 @@
 <li><p>可以通过如下示例：对脚本进行验证（两个脚本添加到同一个游戏对象上）：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">//脚本 c# ：</div><div class="line">void OnBecameInvisible()</div><div class="line">    &#123;</div><div class="line">        Debug.Log(&quot;invisible&quot;);</div><div class="line">        MonsterController mc1 = this.gameObject.GetComponent&lt;MonsterController&gt;();</div><div class="line">        mc1.enabled = false;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    void OnBecameVisible()</div><div class="line">    &#123;</div><div class="line">        Debug.Log(&quot;visible&quot;);</div><div class="line">        MonsterController mc1 = this.gameObject.GetComponent&lt;MonsterController&gt;();</div><div class="line">        mc1.enabled = true;</div><div class="line">    &#125;</div><div class="line">//脚本2 MonsterController：</div><div class="line">    void Awake()</div><div class="line">    &#123;</div><div class="line">        Debug.Log(&quot;awake&quot;);</div><div class="line">        this.enabled = false;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    void OnEnable()</div><div class="line">    &#123;</div><div class="line">        Debug.Log(&quot;enable&quot;);</div><div class="line">        this.enabled = true;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    void Start()</div><div class="line">    &#123;</div><div class="line">        Debug.Log(&quot;start&quot;);</div><div class="line">        //this.gameObject.SetActive(false);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    void Update()</div><div class="line">    &#123;</div><div class="line">        Debug.Log(&quot;update&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    void OnGUI()</div><div class="line">    &#123;</div><div class="line">        Debug.Log(&quot;gui&quot;);</div><div class="line">    &#125;</div><div class="line">    void OnDisable()</div><div class="line">    &#123;</div><div class="line">        Debug.Log(&quot;disable&quot;);</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">    void OnDestroy()</div><div class="line">    &#123;</div><div class="line">        Debug.Log(&quot;destroy&quot;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<pre><code>//脚本 c# ：
+void OnBecameInvisible()
+    {
+        Debug.Log(&quot;invisible&quot;);
+        MonsterController mc1 = this.gameObject.GetComponent&lt;MonsterController&gt;();
+        mc1.enabled = false;
+    }
+
+
+    void OnBecameVisible()
+    {
+        Debug.Log(&quot;visible&quot;);
+        MonsterController mc1 = this.gameObject.GetComponent&lt;MonsterController&gt;();
+        mc1.enabled = true;
+    }
+//脚本2 MonsterController：
+    void Awake()
+    {
+        Debug.Log(&quot;awake&quot;);
+        this.enabled = false;
+    }
+
+
+    void OnEnable()
+    {
+        Debug.Log(&quot;enable&quot;);
+        this.enabled = true;
+    }
+
+
+    void Start()
+    {
+        Debug.Log(&quot;start&quot;);
+        //this.gameObject.SetActive(false);
+    }
+
+
+    void Update()
+    {
+        Debug.Log(&quot;update&quot;);
+    }
+
+
+    void OnGUI()
+    {
+        Debug.Log(&quot;gui&quot;);
+    }
+    void OnDisable()
+    {
+        Debug.Log(&quot;disable&quot;);
+    }
+
+
+    void OnDestroy()
+    {
+        Debug.Log(&quot;destroy&quot;);
+    }
+</code></pre>
     
 
     
@@ -435,11 +515,11 @@
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -461,19 +541,37 @@
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -485,11 +583,11 @@
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/17/unity3d/unity3d文章迁移/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/17/unity3d/unity3d文章迁移/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/17/unity3d/unity3d文章迁移/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -509,6 +607,7 @@
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -821,9 +920,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -848,7 +952,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -863,10 +969,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -879,6 +982,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
     <meta name="keywords" content="miccall,android">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运行进程个数以及剩余总内存-重点-sdk版本"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">运行进程个数以及剩余总内存#  (重点:sdk版本)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#桌面小控件"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">桌面小控件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#桌面小控件生命周期"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">桌面小控件生命周期</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#桌面小控件移植到手机卫士-重点-反编译-如何找资源控件"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">桌面小控件移植到手机卫士# (重点:反编译+如何找资源控件)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#更新widget中textview"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">更新widget中textview</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一键清理-重点-发送自定义广播-接受自定义广播-pendingIntente"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">一键清理# (重点:发送自定义广播+接受自定义广播+pendingIntente)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#隐藏显示系统进程"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">隐藏显示系统进程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#锁屏和解锁的操作-重点"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">锁屏和解锁的操作#  (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#widgetBug解决"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">widgetBug解决</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#屏幕适配-重点"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">屏幕适配# (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建快捷方式-重点"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">创建快捷方式#  (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#监听用户代开应用程序-重点"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">监听用户代开应用程序#  (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#看门狗数据库操作-重点"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">看门狗数据库操作# (重点)</span></a></li></ol></li></ol>
 
         <!--
@@ -259,7 +275,8 @@
             <script>
     var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
 </script>
 
         
@@ -371,6 +388,12 @@
 
     <!-- Share Google+ -->
     
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/19/android/android_011/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
     <!-- Share LinkedIn -->
     
@@ -453,7 +476,7 @@
                 //获取数字
                 char[] charArray = readLine.toCharArray();
                 for (char c : charArray) {
-                    if (c&gt;=&apos;0&apos; &amp;&amp; c&lt;=&apos;9&apos;) {
+                    if (c&gt;=&#39;0&#39; &amp;&amp; c&lt;=&#39;9&#39;) {
                         sb.append(c);
                     }
                 }
@@ -478,7 +501,7 @@
     // 获取运行的进程个数
     processCount = TaskUtil.getProcessCount(getApplicationContext());
     tv_taskmanager_processes.setText(&quot;运行中进程:\n&quot; + processCount + &quot;个&quot;);
-    // 获取剩余,总内存&apos;
+    // 获取剩余,总内存&#39;
     long availableRam = TaskUtil.getAvailableRam(getApplicationContext());
     // 数据转化
     String availaRam = Formatter.formatFileSize(getApplicationContext(),
@@ -504,7 +527,7 @@
     tv_taskmanager_processes.setText(&quot;运行中进程:\n&quot; + processCount + &quot;个&quot;);
 
     // 更改剩余总内存,重新获取剩余总内存
-    // 获取剩余,总内存&apos;
+    // 获取剩余,总内存&#39;
     long availableRam = TaskUtil.getAvailableRam(getApplicationContext());
     // 数据转化
     String availaRam = Formatter.formatFileSize(getApplicationContext(),
@@ -961,11 +984,11 @@ private void shortcut() {
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -987,19 +1010,37 @@ private void shortcut() {
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -1011,11 +1052,11 @@ private void shortcut() {
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/19/android/android_011/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/19/android/android_011/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/19/android/android_011/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -1035,6 +1076,7 @@ private void shortcut() {
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -1355,9 +1397,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -1382,7 +1429,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -1397,10 +1446,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -1413,6 +1459,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

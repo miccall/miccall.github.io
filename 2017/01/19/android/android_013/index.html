@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
     <meta name="keywords" content="miccall,android">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#病毒"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">病毒</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手机杀毒界面"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">手机杀毒界面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扫描操作-重点-动画"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">扫描操作#  (重点:动画)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取签名信息-重点-指定信息的标签"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">获取签名信息# (重点:指定信息的标签)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手机杀毒"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">手机杀毒</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#缓存清理框架-重点"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">缓存清理框架# (重点!!!!!!)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#缓存清理扫描操作"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">缓存清理扫描操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取缓存-重点-反射-源码查看"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">获取缓存#  (重点:反射+源码查看)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#展示缓存应用"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">展示缓存应用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#清理缓存"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">清理缓存</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异常捕获-重点"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">异常捕获#  (重点)</span></a></li></ol></li></ol>
 
         <!--
@@ -363,6 +379,12 @@
 
     <!-- Share Google+ -->
     
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/19/android/android_013/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
     <!-- Share LinkedIn -->
     
@@ -401,55 +423,498 @@
 </code></pre><h2 id="手机杀毒界面"><a href="#手机杀毒界面" class="headerlink" title="手机杀毒界面"></a>手机杀毒界面</h2><pre><code>layer-list : 图层,帧布局framlayout,可以将图片一层叠一层展示,布局文件中最下面的控件,显示的时候在最上面
 
 1.布局
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">    &lt;RelativeLayout </div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    &gt;</div><div class="line">    &lt;ImageView </div><div class="line">        android:id=&quot;@+id/iv_antivirus_anitimageview&quot;</div><div class="line">        android:layout_width=&quot;80dp&quot;</div><div class="line">        android:layout_height=&quot;80dp&quot;</div><div class="line">        android:src=&quot;@drawable/ic_scanner_malware&quot;</div><div class="line">        android:layout_margin=&quot;10dp&quot;</div><div class="line">        /&gt;</div><div class="line">    &lt;ImageView </div><div class="line">        android:id=&quot;@+id/iv_antivirus_scanner&quot;</div><div class="line">        android:layout_width=&quot;80dp&quot;</div><div class="line">        android:layout_height=&quot;80dp&quot;</div><div class="line">        android:src=&quot;@drawable/act_scanning_03&quot;</div><div class="line">        android:layout_margin=&quot;10dp&quot;</div><div class="line">        /&gt;</div><div class="line">    &lt;TextView </div><div class="line">        android:id=&quot;@+id/tv_antivirus_text&quot;</div><div class="line">        android:layout_width=&quot;match_parent&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:text=&quot;正在扫描...&quot;</div><div class="line">        android:layout_toRightOf=&quot;@id/iv_antivirus_anitimageview&quot;</div><div class="line">        android:layout_marginTop=&quot;25dp&quot;</div><div class="line">        android:textSize=&quot;18sp&quot;</div><div class="line">        android:layout_marginRight=&quot;15dp&quot;</div><div class="line">        /&gt;</div><div class="line">    &lt;!-- progress : 设置进度条当前进度 --&gt;</div><div class="line">    &lt;ProgressBar</div><div class="line">        android:id=&quot;@+id/pb_antivirus_progressbar&quot;</div><div class="line">        style=&quot;?android:attr/progressBarStyleHorizontal&quot;</div><div class="line">        android:layout_width=&quot;match_parent&quot;</div><div class="line">        android:layout_height=&quot;wrap_content&quot;</div><div class="line">        android:layout_below=&quot;@id/tv_antivirus_text&quot;</div><div class="line">        android:layout_toRightOf=&quot;@id/iv_antivirus_anitimageview&quot;</div><div class="line">        android:layout_marginTop=&quot;5dp&quot;</div><div class="line">        android:layout_marginRight=&quot;15dp&quot;</div><div class="line">        android:progressDrawable=&quot;@drawable/progerssbar_antivirus_bg&quot;</div><div class="line">        android:progress=&quot;30&quot;</div><div class="line">        /&gt;</div><div class="line">    </div><div class="line">&lt;/RelativeLayout&gt;</div></pre></td></tr></table></figure>
-<pre><code>2.图层  res-&gt;drawable -&gt; xxx.xml
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</div><div class="line">     &lt;item android:id=&quot;@android:id/background&quot;&gt;</div><div class="line">       &lt;bitmap android:src=&quot;@drawable/security_progress_bg&quot;</div><div class="line">         android:gravity=&quot;center&quot; /&gt;</div><div class="line">     &lt;/item&gt;</div><div class="line">     &lt;item android:id=&quot;@android:id/secondaryProgress&quot;&gt;</div><div class="line">       &lt;bitmap android:src=&quot;@drawable/security_progress&quot;</div><div class="line">         android:gravity=&quot;center&quot; /&gt;</div><div class="line">     &lt;/item&gt;</div><div class="line">     &lt;item android:id=&quot;@android:id/progress&quot;&gt;</div><div class="line">       &lt;bitmap android:src=&quot;@drawable/security_progress&quot;</div><div class="line">         android:gravity=&quot;center&quot; /&gt;</div><div class="line">     &lt;/item&gt;</div><div class="line"> &lt;/layer-list&gt;</div></pre></td></tr></table></figure>
-<pre><code>3.更改样式,progressbar的属性
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">android:progressDrawable=&quot;@drawable/progerssbar_antivirus_bg&quot;</div></pre></td></tr></table></figure>
-<h2 id="扫描操作-重点-动画"><a href="#扫描操作-重点-动画" class="headerlink" title="扫描操作#  (重点:动画)"></a>扫描操作#  (重点:动画)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//设置旋转动画</div><div class="line">//fromDegrees : 旋转开始的角度</div><div class="line">//toDegrees : 结束的角度</div><div class="line">//后面四个:是以自身变化还是以父控件变化</div><div class="line">//Animation.RELATIVE_TO_SELF : 以自身旋转</div><div class="line">//Animation.RELATIVE_TO_PARENT : 以父控件旋转</div><div class="line">RotateAnimation rotateAnimation = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);</div><div class="line">rotateAnimation.setDuration(1000);//持续时间</div><div class="line">rotateAnimation.setRepeatCount(Animation.INFINITE);//设置旋转的次数,INFINITE:一直旋转</div><div class="line"></div><div class="line">//设置动画插补器</div><div class="line">LinearInterpolator linearInterpolator = new LinearInterpolator();</div><div class="line">rotateAnimation.setInterpolator(linearInterpolator);</div><div class="line">iv_antivirus_scanner.startAnimation(rotateAnimation);</div></pre></td></tr></table></figure>
-<pre><code>展示软件列表  1.listview   2.linearlayout添加textview
-</code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">     <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">scanner</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line">     * 扫描程序</div><div class="line">     */</div><div class="line">        <span class="comment">//1.获取包的管理者</span></div><div class="line">        <span class="keyword">final</span> PackageManager pm = getPackageManager();</div><div class="line">        tv_antivirus_text.setText(<span class="string">"正在初始化64核杀毒引擎...."</span>);</div><div class="line">        <span class="keyword">new</span> Thread()&#123;</div><div class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                <span class="comment">//延迟一秒中扫描程序</span></div><div class="line">                SystemClock.sleep(<span class="number">100</span>);</div><div class="line">                <span class="comment">//2.获取所有安装应用程序信息</span></div><div class="line">                List&lt;PackageInfo&gt; installedPackages = pm.getInstalledPackages(<span class="number">0</span>);</div><div class="line">                </div><div class="line">                <span class="comment">//3.1设置进度条最大进度</span></div><div class="line">                pb_antivirus_progressbar.setMax(installedPackages.size());</div><div class="line">                <span class="comment">//3.2设置当前进度</span></div><div class="line">                <span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">                <span class="keyword">for</span> (PackageInfo packageInfo : installedPackages) &#123;</div><div class="line">                    SystemClock.sleep(<span class="number">100</span>);</div><div class="line">                    <span class="comment">//3.设置进度条的最大进度和当前进度</span></div><div class="line">                    count++;</div><div class="line">                    pb_antivirus_progressbar.setProgress(count);</div><div class="line">                    </div><div class="line">                    <span class="comment">//4.设置扫描显示软件名称</span></div><div class="line">                    <span class="keyword">final</span> String name = packageInfo.applicationInfo.loadLabel(pm).toString();</div><div class="line">                    <span class="comment">//在ui线程(主线程)进行操作</span></div><div class="line">                    runOnUiThread(<span class="keyword">new</span> Runnable() &#123;<span class="comment">//封装了handler</span></div><div class="line">                        </div><div class="line">                        <span class="meta">@Override</span></div><div class="line">                        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                            tv_antivirus_text.setText(<span class="string">"正在扫描:"</span>+name);</div><div class="line">                            </div><div class="line">                            <span class="comment">//6.展示扫描软件的名称信息</span></div><div class="line">                            TextView textView = <span class="keyword">new</span> TextView(getApplicationContext());</div><div class="line">                            textView.setTextColor(Color.BLACK);</div><div class="line">                            textView.setText(name);</div><div class="line">                            <span class="comment">//textview添加到线性布局中</span></div><div class="line">                            <span class="comment">//ll_antivirus_safeapks.addView(textView);</span></div><div class="line">                            ll_antivirus_safeapks.addView(textView, <span class="number">0</span>);<span class="comment">//index:将textview添加到线性布局的哪个位置</span></div><div class="line">                        &#125;</div><div class="line">                    &#125;);</div><div class="line">                &#125;;</div><div class="line">                <span class="comment">//5.扫描完成,显示扫描完成信息,同时旋转动画停止</span></div><div class="line">                runOnUiThread(<span class="keyword">new</span> Runnable() &#123;</div><div class="line">                    </div><div class="line">                    <span class="meta">@Override</span></div><div class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">                        <span class="comment">//设置显示信息以及停止动画</span></div><div class="line">                        tv_antivirus_text.setText(<span class="string">"扫描完成,未发现病毒"</span>);</div><div class="line">                        iv_antivirus_scanner.clearAnimation();</div><div class="line">                        <span class="comment">//移出动画</span></div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">            &#125;;</div><div class="line">        &#125;.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</code></pre><pre><code>            &lt;RelativeLayout 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            &gt;
+            &lt;ImageView 
+                android:id=&quot;@+id/iv_antivirus_anitimageview&quot;
+                android:layout_width=&quot;80dp&quot;
+                android:layout_height=&quot;80dp&quot;
+                android:src=&quot;@drawable/ic_scanner_malware&quot;
+                android:layout_margin=&quot;10dp&quot;
+                /&gt;
+            &lt;ImageView 
+                android:id=&quot;@+id/iv_antivirus_scanner&quot;
+                android:layout_width=&quot;80dp&quot;
+                android:layout_height=&quot;80dp&quot;
+                android:src=&quot;@drawable/act_scanning_03&quot;
+                android:layout_margin=&quot;10dp&quot;
+                /&gt;
+            &lt;TextView 
+                android:id=&quot;@+id/tv_antivirus_text&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;正在扫描...&quot;
+                android:layout_toRightOf=&quot;@id/iv_antivirus_anitimageview&quot;
+                android:layout_marginTop=&quot;25dp&quot;
+                android:textSize=&quot;18sp&quot;
+                android:layout_marginRight=&quot;15dp&quot;
+                /&gt;
+            &lt;!-- progress : 设置进度条当前进度 --&gt;
+            &lt;ProgressBar
+                android:id=&quot;@+id/pb_antivirus_progressbar&quot;
+                style=&quot;?android:attr/progressBarStyleHorizontal&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:layout_below=&quot;@id/tv_antivirus_text&quot;
+                android:layout_toRightOf=&quot;@id/iv_antivirus_anitimageview&quot;
+                android:layout_marginTop=&quot;5dp&quot;
+                android:layout_marginRight=&quot;15dp&quot;
+                android:progressDrawable=&quot;@drawable/progerssbar_antivirus_bg&quot;
+                android:progress=&quot;30&quot;
+                /&gt;
+
+        &lt;/RelativeLayout&gt;
+</code></pre><pre><code>2.图层  res-&gt;drawable -&gt; xxx.xml
+</code></pre><pre><code>       &lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+            &lt;item android:id=&quot;@android:id/background&quot;&gt;
+              &lt;bitmap android:src=&quot;@drawable/security_progress_bg&quot;
+                android:gravity=&quot;center&quot; /&gt;
+            &lt;/item&gt;
+            &lt;item android:id=&quot;@android:id/secondaryProgress&quot;&gt;
+              &lt;bitmap android:src=&quot;@drawable/security_progress&quot;
+                android:gravity=&quot;center&quot; /&gt;
+            &lt;/item&gt;
+            &lt;item android:id=&quot;@android:id/progress&quot;&gt;
+              &lt;bitmap android:src=&quot;@drawable/security_progress&quot;
+                android:gravity=&quot;center&quot; /&gt;
+            &lt;/item&gt;
+        &lt;/layer-list&gt;
+</code></pre><pre><code>3.更改样式,progressbar的属性
+</code></pre><pre><code>        android:progressDrawable=&quot;@drawable/progerssbar_antivirus_bg&quot;
+</code></pre><h2 id="扫描操作-重点-动画"><a href="#扫描操作-重点-动画" class="headerlink" title="扫描操作#  (重点:动画)"></a>扫描操作#  (重点:动画)</h2><pre><code>        //设置旋转动画
+        //fromDegrees : 旋转开始的角度
+        //toDegrees : 结束的角度
+        //后面四个:是以自身变化还是以父控件变化
+        //Animation.RELATIVE_TO_SELF : 以自身旋转
+        //Animation.RELATIVE_TO_PARENT : 以父控件旋转
+        RotateAnimation rotateAnimation = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotateAnimation.setDuration(1000);//持续时间
+        rotateAnimation.setRepeatCount(Animation.INFINITE);//设置旋转的次数,INFINITE:一直旋转
+
+        //设置动画插补器
+        LinearInterpolator linearInterpolator = new LinearInterpolator();
+        rotateAnimation.setInterpolator(linearInterpolator);
+        iv_antivirus_scanner.startAnimation(rotateAnimation);
+</code></pre><pre><code>展示软件列表  1.listview   2.linearlayout添加textview
+</code></pre><pre class="line-numbers language-java"><code class="language-java">     <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">scanner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 扫描程序
+     */</span>
+        <span class="token comment" spellcheck="true">//1.获取包的管理者</span>
+        <span class="token keyword">final</span> PackageManager pm <span class="token operator">=</span> <span class="token function">getPackageManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tv_antivirus_text<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"正在初始化64核杀毒引擎...."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//延迟一秒中扫描程序</span>
+                SystemClock<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//2.获取所有安装应用程序信息</span>
+                List<span class="token operator">&lt;</span>PackageInfo<span class="token operator">></span> installedPackages <span class="token operator">=</span> pm<span class="token punctuation">.</span><span class="token function">getInstalledPackages</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token comment" spellcheck="true">//3.1设置进度条最大进度</span>
+                pb_antivirus_progressbar<span class="token punctuation">.</span><span class="token function">setMax</span><span class="token punctuation">(</span>installedPackages<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//3.2设置当前进度</span>
+                <span class="token keyword">int</span> count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>PackageInfo packageInfo <span class="token operator">:</span> installedPackages<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    SystemClock<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//3.设置进度条的最大进度和当前进度</span>
+                    count<span class="token operator">++</span><span class="token punctuation">;</span>
+                    pb_antivirus_progressbar<span class="token punctuation">.</span><span class="token function">setProgress</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token comment" spellcheck="true">//4.设置扫描显示软件名称</span>
+                    <span class="token keyword">final</span> String name <span class="token operator">=</span> packageInfo<span class="token punctuation">.</span>applicationInfo<span class="token punctuation">.</span><span class="token function">loadLabel</span><span class="token punctuation">(</span>pm<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//在ui线程(主线程)进行操作</span>
+                    <span class="token function">runOnUiThread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//封装了handler</span>
+
+                        <span class="token annotation punctuation">@Override</span>
+                        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            tv_antivirus_text<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"正在扫描:"</span><span class="token operator">+</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                            <span class="token comment" spellcheck="true">//6.展示扫描软件的名称信息</span>
+                            TextView textView <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TextView</span><span class="token punctuation">(</span><span class="token function">getApplicationContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            textView<span class="token punctuation">.</span><span class="token function">setTextColor</span><span class="token punctuation">(</span>Color<span class="token punctuation">.</span>BLACK<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            textView<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token comment" spellcheck="true">//textview添加到线性布局中</span>
+                            <span class="token comment" spellcheck="true">//ll_antivirus_safeapks.addView(textView);</span>
+                            ll_antivirus_safeapks<span class="token punctuation">.</span><span class="token function">addView</span><span class="token punctuation">(</span>textView<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//index:将textview添加到线性布局的哪个位置</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//5.扫描完成,显示扫描完成信息,同时旋转动画停止</span>
+                <span class="token function">runOnUiThread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                    <span class="token annotation punctuation">@Override</span>
+                    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token comment" spellcheck="true">//设置显示信息以及停止动画</span>
+                        tv_antivirus_text<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"扫描完成,未发现病毒"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        iv_antivirus_scanner<span class="token punctuation">.</span><span class="token function">clearAnimation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token comment" spellcheck="true">//移出动画</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="获取签名信息-重点-指定信息的标签"><a href="#获取签名信息-重点-指定信息的标签" class="headerlink" title="获取签名信息# (重点:指定信息的标签)"></a>获取签名信息# (重点:指定信息的标签)</h2><pre><code>1.指定获取签名信息标签
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">List&lt;PackageInfo&gt; installedPackages = pm.getInstalledPackages(PackageManager.GET_SIGNATURES);</div></pre></td></tr></table></figure>
-<pre><code>2.获取签名信息
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//7.获取应用程序的签名,并进行md5加密</div><div class="line">Signature[] signatures= packageInfo.signatures;//获取应用程序的签名信息,获取签名的数组</div><div class="line">String charsString = signatures[0].toCharsString();</div><div class="line">//对签名信息进行MD5加密</div><div class="line">String signature = MD5Util.passwordMD5(charsString);</div><div class="line">System.out.println(name+&quot;  : &quot;+signature);</div></pre></td></tr></table></figure>
-<h2 id="手机杀毒"><a href="#手机杀毒" class="headerlink" title="手机杀毒"></a>手机杀毒</h2><pre><code>1.将病毒库导入到手机中,参考splashactivity中拷贝数据库操作,增加方法传递参数
+</code></pre><pre><code>        List&lt;PackageInfo&gt; installedPackages = pm.getInstalledPackages(PackageManager.GET_SIGNATURES);
+</code></pre><pre><code>2.获取签名信息
+</code></pre><pre><code>        //7.获取应用程序的签名,并进行md5加密
+        Signature[] signatures= packageInfo.signatures;//获取应用程序的签名信息,获取签名的数组
+        String charsString = signatures[0].toCharsString();
+        //对签名信息进行MD5加密
+        String signature = MD5Util.passwordMD5(charsString);
+        System.out.println(name+&quot;  : &quot;+signature);
+</code></pre><h2 id="手机杀毒"><a href="#手机杀毒" class="headerlink" title="手机杀毒"></a>手机杀毒</h2><pre><code>1.将病毒库导入到手机中,参考splashactivity中拷贝数据库操作,增加方法传递参数
 2.创建查询数据库操作
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//查询Md5值是否在数据库中</div><div class="line">public class AntiVirusDao &#123;</div><div class="line">    /**</div><div class="line">     * 查询Md5值是否在病毒数据库中</div><div class="line">     * @param context</div><div class="line">     * @param md5</div><div class="line">     * @return</div><div class="line">     */</div><div class="line">    public static boolean queryAntiVirus(Context context,String md5)&#123;</div><div class="line">        boolean ishave = false;</div><div class="line">        //1.获取数据库的路径</div><div class="line">        File file = new File(context.getFilesDir(), &quot;antivirus.db&quot;);</div><div class="line">        SQLiteDatabase database = SQLiteDatabase.openDatabase(file.getAbsolutePath(), null, SQLiteDatabase.OPEN_READONLY);</div><div class="line">        Cursor cursor = database.query(&quot;datable&quot;, null, &quot;md5=?&quot;, new String[]&#123;md5&#125;, null, null, null);</div><div class="line">        if (cursor.moveToNext()) &#123;</div><div class="line">            ishave = true;</div><div class="line">        &#125;</div><div class="line">        cursor.close();</div><div class="line">        database.close();</div><div class="line">        return ishave;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>3.使用
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">//8.查询MD5值是否在病毒数据库中</div><div class="line">boolean b = AntiVirusDao.queryAntiVirus(getApplicationContext(), signature);</div></pre></td></tr></table></figure>
-<pre><code>4.根据查询值,设置病毒标示
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">/*6.展示扫描软件的名称信息*/</div><div class="line"> TextView textView = new TextView(getApplicationContext());</div><div class="line">/*9.根据返回的值将病毒标示出来*/</div><div class="line"> if (b) &#123;</div><div class="line">     /*有病毒*/</div><div class="line">     textView.setTextColor(Color.RED);</div><div class="line">     /*将病毒的包名添加到list集合*/</div><div class="line">     list.add(packageInfo.packageName);</div><div class="line"> &#125;else&#123;</div><div class="line">     /*没有病毒*/</div><div class="line">     textView.setTextColor(Color.BLACK);</div><div class="line"> &#125;</div><div class="line"> textView.setText(name);</div></pre></td></tr></table></figure>
-<pre><code>5.对查询到病毒进行处理
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">//10.根据是否有病毒进行显示操作</div><div class="line">if (list.size() &gt; 0) &#123;</div><div class="line">    //有病毒</div><div class="line">    tv_antivirus_text.setText(&quot;扫描完成,发现&quot;+list.size()+&quot;个病毒&quot;);</div><div class="line">    //卸载病毒应用</div><div class="line">    AlertDialog.Builder builder = new Builder(AntivirusActivity.this);</div><div class="line">    builder.setTitle(&quot;提醒!发现&quot;+list.size()+&quot;个病毒&quot;);</div><div class="line">    builder.setIcon(R.drawable.ic_launcher);</div><div class="line">    builder.setMessage(&quot;是否卸载病毒应用!&quot;);</div><div class="line">    builder.setPositiveButton(&quot;卸载&quot;, new DialogInterface.OnClickListener() &#123;</div><div class="line">        </div><div class="line">        @Override</div><div class="line">        public void onClick(DialogInterface dialog, int which) &#123;</div><div class="line">            //卸载操作</div><div class="line">            for (String packagname : list) &#123;</div><div class="line">                Intent intent = new Intent();</div><div class="line">                intent.setAction(&quot;android.intent.action.DELETE&quot;);</div><div class="line">                intent.addCategory(&quot;android.intent.category.DEFAULT&quot;);</div><div class="line">                intent.setData(Uri.parse(&quot;package:&quot;+packagname));</div><div class="line">                startActivity(intent);</div><div class="line">            &#125;</div><div class="line">            dialog.dismiss();</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">    builder.setNegativeButton(&quot;取消&quot;, null);</div><div class="line">    builder.show();</div><div class="line">&#125;else&#123;</div><div class="line">    //设置显示信息以及停止动画</div><div class="line">    tv_antivirus_text.setText(&quot;扫描完成,未发现病毒&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="缓存清理框架-重点"><a href="#缓存清理框架-重点" class="headerlink" title="缓存清理框架# (重点!!!!!!)"></a>缓存清理框架# (重点!!!!!!)</h2><pre><code>1.将activity改为继承fragmentActivity
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//如果要对fragment进行管理操作,activity必须继承fragmentActivity</div><div class="line">public class ClearCacheActivity extends FragmentActivity &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>2.设置布局文件
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"> &lt;!-- fragment替换的控件 --&gt;</div><div class="line"> &lt;FrameLayout </div><div class="line">     android:id=&quot;@+id/fram_clearcache_fragment&quot;</div><div class="line">     android:layout_width=&quot;match_parent&quot;</div><div class="line">     android:layout_height=&quot;match_parent&quot;</div><div class="line">     android:layout_weight=&quot;1&quot;</div><div class="line">     &gt;&lt;/FrameLayout&gt;</div><div class="line">&lt;LinearLayout </div><div class="line">    android:layout_width=&quot;match_parent&quot;</div><div class="line">    android:layout_height=&quot;wrap_content&quot;</div><div class="line">    &gt;</div><div class="line"> </div><div class="line"> &lt;Button </div><div class="line">     android:layout_width=&quot;0dp&quot;</div><div class="line">     android:layout_weight=&quot;1&quot;</div><div class="line">     android:layout_height=&quot;wrap_content&quot;</div><div class="line">     android:text=&quot;缓存清理&quot;</div><div class="line">     android:background=&quot;@drawable/selector_contact_button&quot;</div><div class="line">     android:onClick=&quot;cache&quot;</div><div class="line">     /&gt;</div><div class="line"> </div><div class="line"> &lt;Button </div><div class="line">     android:layout_width=&quot;0dp&quot;</div><div class="line">     android:layout_weight=&quot;1&quot;</div><div class="line">     android:layout_height=&quot;wrap_content&quot;</div><div class="line">     android:text=&quot;SD卡清理&quot;</div><div class="line">      android:background=&quot;@drawable/selector_contact_button&quot;</div><div class="line">      android:onClick=&quot;sd&quot;</div><div class="line">     /&gt;</div><div class="line"> &lt;/LinearLayout&gt;</div></pre></td></tr></table></figure>
-<pre><code>3.创建fragment
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class CacheFragment extends Fragment &#123;</div><div class="line">    /*初始化操作*/</div><div class="line">    @Override</div><div class="line">    public void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">        // TODO Auto-generated method stub</div><div class="line">        super.onCreate(savedInstanceState);</div><div class="line">    &#125;</div><div class="line">    /*设置fragment的布局*/</div><div class="line">    @Override</div><div class="line">    public View onCreateView(LayoutInflater inflater, ViewGroup container,</div><div class="line">            Bundle savedInstanceState) &#123;</div><div class="line">        /*参数1:布局文件*/</div><div class="line">        /*参数2:容器*/</div><div class="line">        /*参数3:自动挂载  ,一律false*/</div><div class="line">        View view= inflater.inflate(R.layout.fragment_cache, container, false);</div><div class="line">        return view;</div><div class="line">    &#125;</div><div class="line">    /*设置填充显示数据*/</div><div class="line">    @Override</div><div class="line">    public void onActivityCreated(Bundle savedInstanceState) &#123;</div><div class="line">        // TODO Auto-generated method stub</div><div class="line">        super.onActivityCreated(savedInstanceState);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>4.创建fragment布局文件,线性布局,背景是红色
+</code></pre><pre><code>            //查询Md5值是否在数据库中
+            public class AntiVirusDao {
+                /**
+                 * 查询Md5值是否在病毒数据库中
+                 * @param context
+                 * @param md5
+                 * @return
+                 */
+                public static boolean queryAntiVirus(Context context,String md5){
+                    boolean ishave = false;
+                    //1.获取数据库的路径
+                    File file = new File(context.getFilesDir(), &quot;antivirus.db&quot;);
+                    SQLiteDatabase database = SQLiteDatabase.openDatabase(file.getAbsolutePath(), null, SQLiteDatabase.OPEN_READONLY);
+                    Cursor cursor = database.query(&quot;datable&quot;, null, &quot;md5=?&quot;, new String[]{md5}, null, null, null);
+                    if (cursor.moveToNext()) {
+                        ishave = true;
+                    }
+                    cursor.close();
+                    database.close();
+                    return ishave;
+                }
+            }
+</code></pre><pre><code>3.使用
+</code></pre><pre><code>
+        //8.查询MD5值是否在病毒数据库中
+        boolean b = AntiVirusDao.queryAntiVirus(getApplicationContext(), signature);
+</code></pre><pre><code>4.根据查询值,设置病毒标示
+</code></pre><pre><code>       /*6.展示扫描软件的名称信息*/
+        TextView textView = new TextView(getApplicationContext());
+       /*9.根据返回的值将病毒标示出来*/
+        if (b) {
+            /*有病毒*/
+            textView.setTextColor(Color.RED);
+            /*将病毒的包名添加到list集合*/
+            list.add(packageInfo.packageName);
+        }else{
+            /*没有病毒*/
+            textView.setTextColor(Color.BLACK);
+        }
+        textView.setText(name);
+</code></pre><pre><code>5.对查询到病毒进行处理
+</code></pre><pre><code>                        //10.根据是否有病毒进行显示操作
+                        if (list.size() &gt; 0) {
+                            //有病毒
+                            tv_antivirus_text.setText(&quot;扫描完成,发现&quot;+list.size()+&quot;个病毒&quot;);
+                            //卸载病毒应用
+                            AlertDialog.Builder builder = new Builder(AntivirusActivity.this);
+                            builder.setTitle(&quot;提醒!发现&quot;+list.size()+&quot;个病毒&quot;);
+                            builder.setIcon(R.drawable.ic_launcher);
+                            builder.setMessage(&quot;是否卸载病毒应用!&quot;);
+                            builder.setPositiveButton(&quot;卸载&quot;, new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //卸载操作
+                                    for (String packagname : list) {
+                                        Intent intent = new Intent();
+                                        intent.setAction(&quot;android.intent.action.DELETE&quot;);
+                                        intent.addCategory(&quot;android.intent.category.DEFAULT&quot;);
+                                        intent.setData(Uri.parse(&quot;package:&quot;+packagname));
+                                        startActivity(intent);
+                                    }
+                                    dialog.dismiss();
+                                }
+                            });
+                            builder.setNegativeButton(&quot;取消&quot;, null);
+                            builder.show();
+                        }else{
+                            //设置显示信息以及停止动画
+                            tv_antivirus_text.setText(&quot;扫描完成,未发现病毒&quot;);
+                        }
+</code></pre><h2 id="缓存清理框架-重点"><a href="#缓存清理框架-重点" class="headerlink" title="缓存清理框架# (重点!!!!!!)"></a>缓存清理框架# (重点!!!!!!)</h2><pre><code>1.将activity改为继承fragmentActivity
+</code></pre><pre><code>        //如果要对fragment进行管理操作,activity必须继承fragmentActivity
+        public class ClearCacheActivity extends FragmentActivity {
+        }
+</code></pre><pre><code>2.设置布局文件
+</code></pre><pre><code>        &lt;!-- fragment替换的控件 --&gt;
+        &lt;FrameLayout 
+            android:id=&quot;@+id/fram_clearcache_fragment&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:layout_weight=&quot;1&quot;
+            &gt;&lt;/FrameLayout&gt;
+       &lt;LinearLayout 
+           android:layout_width=&quot;match_parent&quot;
+           android:layout_height=&quot;wrap_content&quot;
+           &gt;
+
+        &lt;Button 
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;缓存清理&quot;
+            android:background=&quot;@drawable/selector_contact_button&quot;
+            android:onClick=&quot;cache&quot;
+            /&gt;
+
+        &lt;Button 
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;SD卡清理&quot;
+             android:background=&quot;@drawable/selector_contact_button&quot;
+             android:onClick=&quot;sd&quot;
+            /&gt;
+        &lt;/LinearLayout&gt;
+</code></pre><pre><code>3.创建fragment
+</code></pre><pre><code>
+        public class CacheFragment extends Fragment {
+            /*初始化操作*/
+            @Override
+            public void onCreate(Bundle savedInstanceState) {
+                // TODO Auto-generated method stub
+                super.onCreate(savedInstanceState);
+            }
+            /*设置fragment的布局*/
+            @Override
+            public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                    Bundle savedInstanceState) {
+                /*参数1:布局文件*/
+                /*参数2:容器*/
+                /*参数3:自动挂载  ,一律false*/
+                View view= inflater.inflate(R.layout.fragment_cache, container, false);
+                return view;
+            }
+            /*设置填充显示数据*/
+            @Override
+            public void onActivityCreated(Bundle savedInstanceState) {
+                // TODO Auto-generated method stub
+                super.onActivityCreated(savedInstanceState);
+            }
+
+        }
+</code></pre><pre><code>4.创建fragment布局文件,线性布局,背景是红色
 5.在actiivty中添加fragment
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">@Override</div><div class="line">protected void onCreate(Bundle savedInstanceState) &#123;</div><div class="line">            super.onCreate(savedInstanceState);</div><div class="line">            setContentView(R.layout.activity_clearcache);</div><div class="line">            /*挂载fragment*/</div><div class="line">            /*1.获取fragment*/</div><div class="line">            cacheFragment = new CacheFragment();</div><div class="line">            sdFragment = new SDFragment();</div><div class="line">            /*2.加载fragment*/</div><div class="line">            /*2.1获取fragment的管理者*/</div><div class="line">            supportFragmentManager = getSupportFragmentManager();</div><div class="line">            /*2.2开启事务*/</div><div class="line">            FragmentTransaction beginTransaction = supportFragmentManager.beginTransaction();</div><div class="line">            /*2.3添加fragment操作*/</div><div class="line">            /*数据不会重新刷新*/</div><div class="line">            /*参数1:fragment要替换的控件的id*/</div><div class="line">            /*参数2:要替换fragment*/</div><div class="line">            beginTransaction.add(R.id.fram_clearcache_fragment, cacheFragment);</div><div class="line">            /*界面展示以最后一个添加的为准*/</div><div class="line">            beginTransaction.add(R.id.fram_clearcache_fragment, sdFragment);</div><div class="line">            /*隐藏fragment操作*/</div><div class="line">            beginTransaction.hide(sdFragment);</div><div class="line">            /*也可以实现替换操作,数据会重新刷新*/</div><div class="line">            /*beginTransaction.replace(arg0, arg1)*/</div><div class="line">            /*2.4提交事务*/</div><div class="line">            beginTransaction.commit();</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
-<pre><code>6.隐藏显示fragment操作
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public void cache(View v)&#123;</div><div class="line"></div><div class="line">            /*隐藏sdfragment,显示cacheFragment*/</div><div class="line"></div><div class="line">            /*1.获取事务*/</div><div class="line">            FragmentTransaction beginTransaction = supportFragmentManager.beginTransaction();</div><div class="line">            /*2.隐藏显示操作*/</div><div class="line">            beginTransaction.hide(sdFragment);//隐藏fragmnt</div><div class="line">            beginTransaction.show(cacheFragment);//显示fragment操作</div><div class="line">            //3.提交</div><div class="line">            beginTransaction.commit();</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
-<h2 id="缓存清理扫描操作"><a href="#缓存清理扫描操作" class="headerlink" title="缓存清理扫描操作"></a>缓存清理扫描操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 扫描</div><div class="line"> */</div><div class="line">private void scanner() &#123;</div><div class="line">    //1.获取包的管理者</div><div class="line">    //getActivity() : 获取fragment所在的activity</div><div class="line">    final PackageManager pm = getActivity().getPackageManager();</div><div class="line">    tv_cachefragment_text.setText(&quot;正在初始化128核扫描引擎.....&quot;);</div><div class="line">    new Thread()&#123;</div><div class="line">        public void run() &#123;</div><div class="line">            SystemClock.sleep(100);</div><div class="line">            List&lt;PackageInfo&gt; installedPackages = pm.getInstalledPackages(0);</div><div class="line">            //设置进度条最大进度</div><div class="line">            pb_cachefragment_progressbar.setMax(installedPackages.size());</div><div class="line">            int count=0;</div><div class="line">            for (PackageInfo packageInfo : installedPackages) &#123;</div><div class="line">                SystemClock.sleep(100);</div><div class="line">                //设置进度条最大进度和当前进度</div><div class="line">                count++;</div><div class="line">                pb_cachefragment_progressbar.setProgress(count);</div><div class="line">                </div><div class="line">                //设置扫描显示的应用的名称</div><div class="line">                final String name = packageInfo.applicationInfo.loadLabel(pm).toString();</div><div class="line">                if (getActivity() != null) &#123;</div><div class="line">                    getActivity().runOnUiThread(new Runnable() &#123;</div><div class="line">                        </div><div class="line">                        @Override</div><div class="line">                        public void run() &#123;</div><div class="line">                            tv_cachefragment_text.setText(&quot;正在扫描:&quot;+name);</div><div class="line">                        &#125;</div><div class="line">                    &#125;); </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            if (getActivity() != null) &#123;</div><div class="line">                getActivity().runOnUiThread(new Runnable() &#123;</div><div class="line">                    </div><div class="line">                    @Override</div><div class="line">                    public void run() &#123;</div><div class="line">                        tv_cachefragment_text.setVisibility(View.GONE);</div><div class="line">                        pb_cachefragment_progressbar.setVisibility(View.GONE);</div><div class="line">                    &#125;</div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line">        &#125;;</div><div class="line">    &#125;.start();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="获取缓存-重点-反射-源码查看"><a href="#获取缓存-重点-反射-源码查看" class="headerlink" title="获取缓存#  (重点:反射+源码查看)"></a>获取缓存#  (重点:反射+源码查看)</h2><pre><code>1.反射操作
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//反射获取缓存</div><div class="line">try &#123;</div><div class="line">    Class&lt;?&gt; loadClass = getActivity().getClass().getClassLoader().loadClass(&quot;android.content.pm.PackageManager&quot;);</div><div class="line">    Method method = loadClass.getDeclaredMethod(&quot;getPackageSizeInfo&quot;, String.class,IPackageStatsObserver.class);</div><div class="line">    //receiver : 类的实例,隐藏参数,方法不是静态的必须指定</div><div class="line">    method.invoke(pm, packageInfo.packageName,mStatsObserver);</div><div class="line">&#125; catch (Exception e) &#123;</div><div class="line">    // TODO Auto-generated catch block</div><div class="line">    e.printStackTrace();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<pre><code>2.远程服务aidl
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//获取缓存大小</div><div class="line">IPackageStatsObserver.Stub mStatsObserver = new IPackageStatsObserver.Stub() &#123;</div><div class="line">    public void onGetStatsCompleted(PackageStats stats, boolean succeeded) &#123;</div><div class="line">        long cachesize = stats.cacheSize;//缓存大小</div><div class="line">        long codesize = stats.codeSize;//应用程序的大小</div><div class="line">        long datasize = stats.dataSize;//数据大小</div><div class="line">        </div><div class="line">        String cache = Formatter.formatFileSize(getActivity(), cachesize);</div><div class="line">        String code = Formatter.formatFileSize(getActivity(), codesize);</div><div class="line">        String data = Formatter.formatFileSize(getActivity(), datasize);</div><div class="line">        </div><div class="line">        System.out.println(stats.packageName+&quot;cachesize:&quot;+cache +&quot; codesize:&quot;+code+&quot; datasize:&quot;+data);</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<pre><code>3.权限
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;uses-permission android:name=&quot;android.permission.GET_PACKAGE_SIZE&quot; /&gt;</div></pre></td></tr></table></figure>
-<h2 id="展示缓存应用"><a href="#展示缓存应用" class="headerlink" title="展示缓存应用"></a>展示缓存应用</h2><pre><code>1.使用listview进行展示
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">@Override</div><div class="line">public View getView(int position, View convertView, ViewGroup parent) &#123;</div><div class="line">    </div><div class="line">    View cachView;</div><div class="line">    ViewHolder viewHolder;</div><div class="line">    if (convertView == null) &#123;</div><div class="line">         cachView = View.inflate(getActivity(), R.layout.item_cache, null);</div><div class="line">         viewHolder = new ViewHolder();</div><div class="line">         viewHolder.iv_itemcache_icon = (ImageView) cachView.findViewById(R.id.iv_itemcache_icon);</div><div class="line">         viewHolder.tv_itemcache_name = (TextView) cachView.findViewById(R.id.tv_itemcache_name);</div><div class="line">         viewHolder.tv_itemcache_size = (TextView) cachView.findViewById(R.id.tv_itemcache_size);</div><div class="line">         cachView.setTag(viewHolder);</div><div class="line">    &#125;else&#123;</div><div class="line">        cachView = convertView;</div><div class="line">        viewHolder = (ViewHolder) cachView.getTag();</div><div class="line">    &#125;</div><div class="line">    //设置显示数据</div><div class="line">    CachInfo cachInfo = list.get(position);</div><div class="line">    //根据包名获取application信息</div><div class="line">    try &#123;</div><div class="line">        ApplicationInfo applicationInfo = pm.getApplicationInfo(cachInfo.getPackageName(), 0);</div><div class="line">        Drawable icon = applicationInfo.loadIcon(pm);</div><div class="line">        String name = applicationInfo.loadLabel(pm).toString();</div><div class="line">        //设置显示</div><div class="line">         viewHolder.iv_itemcache_icon.setImageDrawable(icon);</div><div class="line">         viewHolder.tv_itemcache_name.setText(name);</div><div class="line">         viewHolder.tv_itemcache_size.setText(cachInfo.getCachesize());</div><div class="line">    &#125; catch (NameNotFoundException e) &#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;</div><div class="line">    return cachView;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="清理缓存"><a href="#清理缓存" class="headerlink" title="清理缓存"></a>清理缓存</h2><pre><code>android中当前程序是不能清理其他程序缓存
+</code></pre><pre><code>@Override
+protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_clearcache);
+            /*挂载fragment*/
+            /*1.获取fragment*/
+            cacheFragment = new CacheFragment();
+            sdFragment = new SDFragment();
+            /*2.加载fragment*/
+            /*2.1获取fragment的管理者*/
+            supportFragmentManager = getSupportFragmentManager();
+            /*2.2开启事务*/
+            FragmentTransaction beginTransaction = supportFragmentManager.beginTransaction();
+            /*2.3添加fragment操作*/
+            /*数据不会重新刷新*/
+            /*参数1:fragment要替换的控件的id*/
+            /*参数2:要替换fragment*/
+            beginTransaction.add(R.id.fram_clearcache_fragment, cacheFragment);
+            /*界面展示以最后一个添加的为准*/
+            beginTransaction.add(R.id.fram_clearcache_fragment, sdFragment);
+            /*隐藏fragment操作*/
+            beginTransaction.hide(sdFragment);
+            /*也可以实现替换操作,数据会重新刷新*/
+            /*beginTransaction.replace(arg0, arg1)*/
+            /*2.4提交事务*/
+            beginTransaction.commit();
+        }
+</code></pre><pre><code>6.隐藏显示fragment操作
+</code></pre><pre><code>
+public void cache(View v){
+
+            /*隐藏sdfragment,显示cacheFragment*/
+
+            /*1.获取事务*/
+            FragmentTransaction beginTransaction = supportFragmentManager.beginTransaction();
+            /*2.隐藏显示操作*/
+            beginTransaction.hide(sdFragment);//隐藏fragmnt
+            beginTransaction.show(cacheFragment);//显示fragment操作
+            //3.提交
+            beginTransaction.commit();
+        }
+</code></pre><h2 id="缓存清理扫描操作"><a href="#缓存清理扫描操作" class="headerlink" title="缓存清理扫描操作"></a>缓存清理扫描操作</h2><pre><code>    /**
+     * 扫描
+     */
+    private void scanner() {
+        //1.获取包的管理者
+        //getActivity() : 获取fragment所在的activity
+        final PackageManager pm = getActivity().getPackageManager();
+        tv_cachefragment_text.setText(&quot;正在初始化128核扫描引擎.....&quot;);
+        new Thread(){
+            public void run() {
+                SystemClock.sleep(100);
+                List&lt;PackageInfo&gt; installedPackages = pm.getInstalledPackages(0);
+                //设置进度条最大进度
+                pb_cachefragment_progressbar.setMax(installedPackages.size());
+                int count=0;
+                for (PackageInfo packageInfo : installedPackages) {
+                    SystemClock.sleep(100);
+                    //设置进度条最大进度和当前进度
+                    count++;
+                    pb_cachefragment_progressbar.setProgress(count);
+
+                    //设置扫描显示的应用的名称
+                    final String name = packageInfo.applicationInfo.loadLabel(pm).toString();
+                    if (getActivity() != null) {
+                        getActivity().runOnUiThread(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                tv_cachefragment_text.setText(&quot;正在扫描:&quot;+name);
+                            }
+                        }); 
+                    }
+                }
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            tv_cachefragment_text.setVisibility(View.GONE);
+                            pb_cachefragment_progressbar.setVisibility(View.GONE);
+                        }
+                    });
+                }
+            };
+        }.start();
+    }
+</code></pre><h2 id="获取缓存-重点-反射-源码查看"><a href="#获取缓存-重点-反射-源码查看" class="headerlink" title="获取缓存#  (重点:反射+源码查看)"></a>获取缓存#  (重点:反射+源码查看)</h2><pre><code>1.反射操作
+</code></pre><pre><code>                    //反射获取缓存
+                    try {
+                        Class&lt;?&gt; loadClass = getActivity().getClass().getClassLoader().loadClass(&quot;android.content.pm.PackageManager&quot;);
+                        Method method = loadClass.getDeclaredMethod(&quot;getPackageSizeInfo&quot;, String.class,IPackageStatsObserver.class);
+                        //receiver : 类的实例,隐藏参数,方法不是静态的必须指定
+                        method.invoke(pm, packageInfo.packageName,mStatsObserver);
+                    } catch (Exception e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+</code></pre><pre><code>2.远程服务aidl
+</code></pre><pre><code>        //获取缓存大小
+        IPackageStatsObserver.Stub mStatsObserver = new IPackageStatsObserver.Stub() {
+            public void onGetStatsCompleted(PackageStats stats, boolean succeeded) {
+                long cachesize = stats.cacheSize;//缓存大小
+                long codesize = stats.codeSize;//应用程序的大小
+                long datasize = stats.dataSize;//数据大小
+
+                String cache = Formatter.formatFileSize(getActivity(), cachesize);
+                String code = Formatter.formatFileSize(getActivity(), codesize);
+                String data = Formatter.formatFileSize(getActivity(), datasize);
+
+                System.out.println(stats.packageName+&quot;cachesize:&quot;+cache +&quot; codesize:&quot;+code+&quot; datasize:&quot;+data);
+            }
+        };
+</code></pre><pre><code>3.权限
+</code></pre><pre><code>
+        &lt;uses-permission android:name=&quot;android.permission.GET_PACKAGE_SIZE&quot; /&gt;
+</code></pre><h2 id="展示缓存应用"><a href="#展示缓存应用" class="headerlink" title="展示缓存应用"></a>展示缓存应用</h2><pre><code>1.使用listview进行展示
+</code></pre><pre><code>
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            View cachView;
+            ViewHolder viewHolder;
+            if (convertView == null) {
+                 cachView = View.inflate(getActivity(), R.layout.item_cache, null);
+                 viewHolder = new ViewHolder();
+                 viewHolder.iv_itemcache_icon = (ImageView) cachView.findViewById(R.id.iv_itemcache_icon);
+                 viewHolder.tv_itemcache_name = (TextView) cachView.findViewById(R.id.tv_itemcache_name);
+                 viewHolder.tv_itemcache_size = (TextView) cachView.findViewById(R.id.tv_itemcache_size);
+                 cachView.setTag(viewHolder);
+            }else{
+                cachView = convertView;
+                viewHolder = (ViewHolder) cachView.getTag();
+            }
+            //设置显示数据
+            CachInfo cachInfo = list.get(position);
+            //根据包名获取application信息
+            try {
+                ApplicationInfo applicationInfo = pm.getApplicationInfo(cachInfo.getPackageName(), 0);
+                Drawable icon = applicationInfo.loadIcon(pm);
+                String name = applicationInfo.loadLabel(pm).toString();
+                //设置显示
+                 viewHolder.iv_itemcache_icon.setImageDrawable(icon);
+                 viewHolder.tv_itemcache_name.setText(name);
+                 viewHolder.tv_itemcache_size.setText(cachInfo.getCachesize());
+            } catch (NameNotFoundException e) {
+                e.printStackTrace();
+            }
+            return cachView;
+        }
+</code></pre><h2 id="清理缓存"><a href="#清理缓存" class="headerlink" title="清理缓存"></a>清理缓存</h2><pre><code>android中当前程序是不能清理其他程序缓存
 
 1.进入详情界面进行清理
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">lv_cachefragment_caches.setOnItemClickListener(new OnItemClickListener() &#123;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onItemClick(AdapterView&lt;?&gt; parent, View view,</div><div class="line">            int position, long id) &#123;</div><div class="line">        //跳转到详情页面</div><div class="line">        Intent intent = new Intent();</div><div class="line">        intent.setAction(&quot;android.settings.APPLICATION_DETAILS_SETTINGS&quot;);</div><div class="line">        intent.setData(Uri.parse(&quot;package:&quot;+list.get(position).getPackageName()));</div><div class="line">        startActivity(intent);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<pre><code>2.通过反射清理所有应用程序的缓存
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">//清理缓存</div><div class="line">btn_cachefragment_clear.setOnClickListener(new OnClickListener() &#123;</div><div class="line">                            </div><div class="line">    @Override</div><div class="line">    public void onClick(View v) &#123;</div><div class="line">                                    </div><div class="line">            //真正的实现清理缓存</div><div class="line">            try &#123;</div><div class="line">                Class&lt;?&gt; loadClass = getActivity().getClass().getClassLoader().loadClass(&quot;android.content.pm.PackageManager&quot;);</div><div class="line">                //Long.class  Long     TYPE  long</div><div class="line">                Method method = loadClass.getDeclaredMethod(&quot;freeStorageAndNotify&quot;, Long.TYPE,IPackageDataObserver.class);</div><div class="line">                method.invoke(pm, Long.MAX_VALUE,new MyIPackageDataObserver());</div><div class="line">            &#125; catch (Exception e) &#123;</div><div class="line">                // TODO Auto-generated catch block</div><div class="line">                e.printStackTrace();</div><div class="line">            &#125;</div><div class="line">            </div><div class="line">            //清理缓存</div><div class="line">            list.clear();</div><div class="line">            //更新界面</div><div class="line">            myadapter.notifyDataSetChanged();</div><div class="line">            //隐藏button按钮</div><div class="line">            btn_cachefragment_clear.setVisibility(View.GONE);</div><div class="line">        &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="异常捕获-重点"><a href="#异常捕获-重点" class="headerlink" title="异常捕获#  (重点)"></a>异常捕获#  (重点)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">public class MyApplication extends Application &#123;</div><div class="line">    //异常捕获</div><div class="line">    //Application : 当前的应用程序,所有的应用最先的执行都是applicaiton</div><div class="line">        @Override</div><div class="line">        public void onCreate() &#123;</div><div class="line">            super.onCreate();</div><div class="line">            System.out.println(&quot;applcation启动了......&quot;);</div><div class="line">            Thread.currentThread().setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());</div><div class="line">        &#125;</div><div class="line">        private class MyUncaughtExceptionHandler implements UncaughtExceptionHandler&#123;</div><div class="line">            //系统中由未捕获的异常的时候调用</div><div class="line">            //Throwable : Error和Exception的父类</div><div class="line">            @Override</div><div class="line">            public void uncaughtException(Thread thread, Throwable ex) &#123;</div><div class="line">                System.out.println(&quot;哥捕获异常了......&quot;);</div><div class="line">                ex.printStackTrace();</div><div class="line">                try &#123;</div><div class="line">                    //将捕获到异常,保存到SD卡中</div><div class="line">                    ex.printStackTrace(new PrintStream(new File(&quot;/mnt/sdcard/log.txt&quot;)));</div><div class="line">                &#125; catch (FileNotFoundException e)</div></pre></td></tr></table></figure>
+</code></pre><pre><code>        lv_cachefragment_caches.setOnItemClickListener(new OnItemClickListener() {
 
+            @Override
+            public void onItemClick(AdapterView&lt;?&gt; parent, View view,
+                    int position, long id) {
+                //跳转到详情页面
+                Intent intent = new Intent();
+                intent.setAction(&quot;android.settings.APPLICATION_DETAILS_SETTINGS&quot;);
+                intent.setData(Uri.parse(&quot;package:&quot;+list.get(position).getPackageName()));
+                startActivity(intent);
+            }
+        });
+</code></pre><pre><code>2.通过反射清理所有应用程序的缓存
+</code></pre><pre><code>        //清理缓存
+        btn_cachefragment_clear.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                    //真正的实现清理缓存
+                    try {
+                        Class&lt;?&gt; loadClass = getActivity().getClass().getClassLoader().loadClass(&quot;android.content.pm.PackageManager&quot;);
+                        //Long.class  Long     TYPE  long
+                        Method method = loadClass.getDeclaredMethod(&quot;freeStorageAndNotify&quot;, Long.TYPE,IPackageDataObserver.class);
+                        method.invoke(pm, Long.MAX_VALUE,new MyIPackageDataObserver());
+                    } catch (Exception e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+
+                    //清理缓存
+                    list.clear();
+                    //更新界面
+                    myadapter.notifyDataSetChanged();
+                    //隐藏button按钮
+                    btn_cachefragment_clear.setVisibility(View.GONE);
+                }
+        });
+</code></pre><h2 id="异常捕获-重点"><a href="#异常捕获-重点" class="headerlink" title="异常捕获#  (重点)"></a>异常捕获#  (重点)</h2><pre><code>
+public class MyApplication extends Application {
+    //异常捕获
+    //Application : 当前的应用程序,所有的应用最先的执行都是applicaiton
+        @Override
+        public void onCreate() {
+            super.onCreate();
+            System.out.println(&quot;applcation启动了......&quot;);
+            Thread.currentThread().setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
+        }
+        private class MyUncaughtExceptionHandler implements UncaughtExceptionHandler{
+            //系统中由未捕获的异常的时候调用
+            //Throwable : Error和Exception的父类
+            @Override
+            public void uncaughtException(Thread thread, Throwable ex) {
+                System.out.println(&quot;哥捕获异常了......&quot;);
+                ex.printStackTrace();
+                try {
+                    //将捕获到异常,保存到SD卡中
+                    ex.printStackTrace(new PrintStream(new File(&quot;/mnt/sdcard/log.txt&quot;)));
+                } catch (FileNotFoundException e)
+</code></pre>
     
 
     
@@ -465,11 +930,11 @@
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -491,19 +956,37 @@
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -515,11 +998,11 @@
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/19/android/android_013/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/19/android/android_013/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/19/android/android_013/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -539,6 +1022,7 @@
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -859,9 +1343,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -886,7 +1375,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -901,10 +1392,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -917,6 +1405,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

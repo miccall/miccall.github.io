@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall,leap motion,unity 3d">
+    <meta name="keywords" content="miccall,unity 3d,leap motion">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -50,7 +62,7 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="LEAPMotion VR 各种手势的判断~ | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
-    <meta property="og:article:tag" content="leap motion"> <meta property="og:article:tag" content="unity 3d"> 
+    <meta property="og:article:tag" content="unity 3d"> <meta property="og:article:tag" content="leap motion"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LEAPMotion-VR-各种手势的判断"><span class="post-toc-number">1.</span> <span class="post-toc-text">LEAPMotion VR 各种手势的判断~ </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-（转载请注明出处）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  （转载请注明出处）</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-手划向左边"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1.手划向左边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-手划向右边"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2.手划向右边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-手划向上边"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">3.手划向上边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-手划向下边"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">4.手划向下边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-手固定不动"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">5.手固定不动</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-是否抓取"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">6.是否抓取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-是否握拳"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">7.是否握拳</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-手掌是否全张开"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">8.手掌是否全张开</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-向量的判断"><span class="post-toc-number">1.0.9.</span> <span class="post-toc-text">9.向量的判断</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-向手掌的方向-移动"><span class="post-toc-number">1.0.10.</span> <span class="post-toc-text">10.向手掌的方向  移动</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#11-手掌是否垂直（掌心水平）"><span class="post-toc-number">1.0.11.</span> <span class="post-toc-text">11.手掌是否垂直（掌心水平）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#12-判断大拇指是否竖直或向下"><span class="post-toc-number">1.0.12.</span> <span class="post-toc-text">12.判断大拇指是否竖直或向下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#13-判断四指是否靠拢掌心"><span class="post-toc-number">1.0.13.</span> <span class="post-toc-text">13.判断四指是否靠拢掌心</span></a></li></ol></li></ol></li></ol>
 
         <!--
@@ -363,6 +379,12 @@
 
     <!-- Share Google+ -->
     
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
     <!-- Share LinkedIn -->
     
@@ -388,24 +410,134 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <hr>
-<h1 id="LEAPMotion-VR-各种手势的判断"><a href="#LEAPMotion-VR-各种手势的判断" class="headerlink" title="LEAPMotion VR 各种手势的判断~ "></a><strong>LEAPMotion VR 各种手势的判断~ </strong></h1><h6 id="Created-by-miccall-（转载请注明出处）"><a href="#Created-by-miccall-（转载请注明出处）" class="headerlink" title="Created by miccall  （转载请注明出处）"></a>Created by miccall  （<a href="http://my.csdn.net/qq_31411825?locationNum=0&amp;fps=1" target="_blank" rel="external">转载请注明出处</a>）</h6><h3 id="1-手划向左边"><a href="#1-手划向左边" class="headerlink" title="1.手划向左边"></a>1.手划向左边</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">protected bool isMoveLeft (Hand hand)   /*手划向左边*/</div><div class="line">&#123;</div><div class="line">   /*  x轴移动的速度   deltaVelocity = 0.7f    isStationary (hand)  判断hand是否禁止 */</div><div class="line">    return hand.PalmVelocity.x &lt; -deltaVelocity &amp;&amp; !isStationary (hand);</div><div class="line">&#125;  </div><div class="line">        </div><div class="line">        [Tooltip (&quot;Velocity (m/s) move toward &quot;)]</div><div class="line">        protected float deltaVelocity = 0.7f;</div></pre></td></tr></table></figure>
-<h3 id="2-手划向右边"><a href="#2-手划向右边" class="headerlink" title="2.手划向右边"></a>2.手划向右边</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">protected bool isMoveRight (Hand hand) /*手划向右边*/</div><div class="line">&#123;</div><div class="line">    return hand.PalmVelocity.x &gt; deltaVelocity &amp;&amp; !isStationary (hand);</div><div class="line">&#125;  </div><div class="line"></div><div class="line">[Tooltip (&quot;Velocity (m/s) move toward &quot;)]</div><div class="line">protected float deltaVelocity = 0.7f;</div></pre></td></tr></table></figure>
-<h3 id="3-手划向上边"><a href="#3-手划向上边" class="headerlink" title="3.手划向上边"></a>3.手划向上边</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">protected bool isMoveUp (Hand hand)   /*手向上 */</div><div class="line">&#123;</div><div class="line">    return hand.PalmVelocity.y &gt; deltaVelocity &amp;&amp; !isStationary (hand);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="4-手划向下边"><a href="#4-手划向下边" class="headerlink" title="4.手划向下边"></a>4.手划向下边</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">protected bool isMoveDown (Hand hand) /*手向下*/  </div><div class="line">&#123;</div><div class="line">    return hand.PalmVelocity.y &lt; -deltaVelocity &amp;&amp; !isStationary (hand);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="5-手固定不动"><a href="#5-手固定不动" class="headerlink" title="5.手固定不动"></a>5.手固定不动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">protected bool isStationary (Hand hand)/* 固定不动的*/ </div><div class="line">&#123;</div><div class="line">    return hand.PalmVelocity.Magnitude &lt; smallestVelocity;</div><div class="line">&#125;  </div><div class="line">[Tooltip (&quot;Velocity (m/s) move toward &quot;)]                   //速度（m/s）走向 </div><div class="line">protected float smallestVelocity = 0.4f;</div></pre></td></tr></table></figure>
-<h3 id="6-是否抓取"><a href="#6-是否抓取" class="headerlink" title="6.是否抓取"></a>6.是否抓取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">protected bool isGrabHand (Hand hand)  /*是否抓取*/</div><div class="line">&#123;</div><div class="line">    return hand.GrabStrength &gt; 0.8f;    /*抓取力*/ </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="7-是否握拳"><a href="#7-是否握拳" class="headerlink" title="7.是否握拳"></a>7.是否握拳</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">protected bool isCloseHand (Hand hand)     /*是否握拳*/ </div><div class="line">&#123;</div><div class="line">    List&lt;Finger&gt; listOfFingers = hand.Fingers;</div><div class="line">    int count = 0;</div><div class="line">    for (int f = 0; f &lt; listOfFingers.Count; f++) &#123; /*循环遍历所有的手*/</div><div class="line">        Finger finger = listOfFingers [f];    </div><div class="line">        if ((finger.TipPosition - hand.PalmPosition).Magnitude &lt; deltaCloseFinger)    /* Magnitude  向量的长度 。是(x*x+y*y+z*z)的平方根。*/</div><div class="line">             /*float deltaCloseFinger = 0.05f;*/</div><div class="line">        &#123;  </div><div class="line">            count++;</div><div class="line">                            //if (finger.Type == Finger.FingerType.TYPE_THUMB)</div><div class="line">                           //Debug.Log ((finger.TipPosition - hand.PalmPosition).Magnitude);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return (count == 5);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="8-手掌是否全张开"><a href="#8-手掌是否全张开" class="headerlink" title="8.手掌是否全张开"></a>8.手掌是否全张开</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">protected bool isOpenFullHand (Hand hand)         /*手掌全展开~*/</div><div class="line">&#123;</div><div class="line">    //Debug.Log (hand.GrabStrength + &quot; &quot; + hand.PalmVelocity + &quot; &quot; + hand.PalmVelocity.Magnitude);</div><div class="line">    return hand.GrabStrength == 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="9-向量的判断"><a href="#9-向量的判断" class="headerlink" title="9.向量的判断"></a>9.向量的判断</h3><p> （1）向量转化成 角度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">protected float angle2LeapVectors (Leap.Vector a, Leap.Vector  b)</div><div class="line">&#123;</div><div class="line">           //向量转化成 角度</div><div class="line">            return Vector3.Angle (UnityVectorExtension.ToVector3 (a), UnityVectorExtension.ToVector3 (b));</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>  （2）判断两个向量是否 相同 方向 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">protected bool isSameDirection (Vector a, Vector b)</div><div class="line">&#123;</div><div class="line">            //判断两个向量是否 相同 方向</div><div class="line">            //Debug.Log (angle2LeapVectors (a, b) + &quot; &quot; + b);</div><div class="line">            return angle2LeapVectors (a, b) &lt; handForwardDegree;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>（3）判断两个向量是否 相反 方向        </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">protected bool isOppositeDirection (Vector a, Vector b      </div><div class="line">&#123;</div><div class="line">//判断两个向量是否 相反 方向</div><div class="line">        return angle2LeapVectors (a, b) &gt; (180 - handForwardDegree);</div><div class="line">&#125;</div><div class="line">```    </div><div class="line">（4）判断手的掌心方向于一个  向量   是否方向相同</div><div class="line">``` </div><div class="line">protected bool isPalmNormalSameDirectionWith (Hand hand, Vector3 dir)</div><div class="line">&#123;</div><div class="line">      //判断手的掌心方向于一个  向量   是否方向相同 </div><div class="line">    return isSameDirection (hand.PalmNormal, UnityVectorExtension.ToVector (dir));</div><div class="line">&#125;  </div><div class="line">    [Tooltip (&quot;Delta degree to check 2 vectors same direction&quot;)]  //三角度检查2个向量的方向相同</div><div class="line">        protected float handForwardDegree = 30;</div></pre></td></tr></table></figure>
-<h3 id="10-向手掌的方向-移动"><a href="#10-向手掌的方向-移动" class="headerlink" title="10.向手掌的方向  移动"></a>10.向手掌的方向  移动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">protected bool isHandMoveForward (Hand hand)</div><div class="line">        &#123;</div><div class="line">            return isSameDirection (hand.PalmNormal, hand.PalmVelocity) &amp;&amp; !isStationary (hand);</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
-<h3 id="11-手掌是否垂直（掌心水平）"><a href="#11-手掌是否垂直（掌心水平）" class="headerlink" title="11.手掌是否垂直（掌心水平）"></a>11.手掌是否垂直（掌心水平）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">protected bool checkPalmNormalInXZPlane (Hand hand)  //   hand.PalmNormal 垂直于掌心的向量 </div><div class="line">&#123;</div><div class="line">    float anglePalmNormal = angle2LeapVectors (hand.PalmNormal, UnityVectorExtension.ToVector (Vector3.up));</div><div class="line">    return (anglePalmNormal &gt; 70 &amp;&amp; anglePalmNormal &lt; 110);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="12-判断大拇指是否竖直或向下"><a href="#12-判断大拇指是否竖直或向下" class="headerlink" title="12.判断大拇指是否竖直或向下"></a>12.判断大拇指是否竖直或向下</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">protected bool isThumbDirection (Hand hand, Vector3 dir)</div><div class="line">       &#123;</div><div class="line">           List&lt;Finger&gt; listOfFingers = hand.Fingers;</div><div class="line">           for (int f = 0; f &lt; listOfFingers.Count; f++) &#123;</div><div class="line">               Finger finger = listOfFingers [f];</div><div class="line">               if (finger.Type == Finger.FingerType.TYPE_THUMB) &#123;</div><div class="line">                   float angleThumbFinger = angle2LeapVectors (finger.Direction, </div><div class="line">                                               UnityVectorExtension.ToVector (dir));</div><div class="line">                   float angleThumbFinger2 = angle2LeapVectors (</div><div class="line">                                                finger.StabilizedTipPosition - hand.PalmPosition, UnityVectorExtension.ToVector (dir));</div><div class="line">                   //Debug.Log (angleThumbFinger + &quot; &quot; + angleThumbFinger2);</div><div class="line">                   if (angleThumbFinger &lt; deltaAngleThumb</div><div class="line">                      || angleThumbFinger2 &lt; deltaAngleThumb)</div><div class="line">                       return true;</div><div class="line">                   else</div><div class="line">                       return false;</div><div class="line">               &#125; </div><div class="line">           &#125;</div><div class="line">           return false;</div><div class="line">       &#125;</div></pre></td></tr></table></figure>
-<h3 id="13-判断四指是否靠拢掌心"><a href="#13-判断四指是否靠拢掌心" class="headerlink" title="13.判断四指是否靠拢掌心"></a>13.判断四指是否靠拢掌心</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">protected bool checkFingerCloseToHand (Hand hand)</div><div class="line">&#123;</div><div class="line">            List&lt;Finger&gt; listOfFingers = hand.Fingers;</div><div class="line">            int count = 0;</div><div class="line">            for (int f = 0; f &lt; listOfFingers.Count; f++) &#123;</div><div class="line">                Finger finger = listOfFingers [f];</div><div class="line">                if ((finger.TipPosition - hand.PalmPosition).Magnitude &lt; deltaCloseFinger) &#123;</div><div class="line">                    if (finger.Type == Finger.FingerType.TYPE_THUMB) &#123;</div><div class="line">                        return false;</div><div class="line">                    &#125; else &#123;</div><div class="line">                        count++;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            //Debug.Log (count);</div><div class="line">            return (count == 4);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="LEAPMotion-VR-各种手势的判断"><a href="#LEAPMotion-VR-各种手势的判断" class="headerlink" title="LEAPMotion VR 各种手势的判断~ "></a><strong>LEAPMotion VR 各种手势的判断~ </strong></h1><h6 id="Created-by-miccall-（转载请注明出处）"><a href="#Created-by-miccall-（转载请注明出处）" class="headerlink" title="Created by miccall  （转载请注明出处）"></a>Created by miccall  （<a href="http://my.csdn.net/qq_31411825?locationNum=0&amp;fps=1" target="_blank" rel="external">转载请注明出处</a>）</h6><h3 id="1-手划向左边"><a href="#1-手划向左边" class="headerlink" title="1.手划向左边"></a>1.手划向左边</h3><pre><code>protected bool isMoveLeft (Hand hand)   /*手划向左边*/
+{
+   /*  x轴移动的速度   deltaVelocity = 0.7f    isStationary (hand)  判断hand是否禁止 */
+    return hand.PalmVelocity.x &lt; -deltaVelocity &amp;&amp; !isStationary (hand);
+}  
 
+        [Tooltip (&quot;Velocity (m/s) move toward &quot;)]
+        protected float deltaVelocity = 0.7f;
+</code></pre><h3 id="2-手划向右边"><a href="#2-手划向右边" class="headerlink" title="2.手划向右边"></a>2.手划向右边</h3><pre><code>        protected bool isMoveRight (Hand hand) /*手划向右边*/
+        {
+            return hand.PalmVelocity.x &gt; deltaVelocity &amp;&amp; !isStationary (hand);
+        }  
+
+        [Tooltip (&quot;Velocity (m/s) move toward &quot;)]
+        protected float deltaVelocity = 0.7f;
+</code></pre><h3 id="3-手划向上边"><a href="#3-手划向上边" class="headerlink" title="3.手划向上边"></a>3.手划向上边</h3><pre><code>        protected bool isMoveUp (Hand hand)   /*手向上 */
+        {
+            return hand.PalmVelocity.y &gt; deltaVelocity &amp;&amp; !isStationary (hand);
+        }
+</code></pre><h3 id="4-手划向下边"><a href="#4-手划向下边" class="headerlink" title="4.手划向下边"></a>4.手划向下边</h3><pre><code>        protected bool isMoveDown (Hand hand) /*手向下*/  
+        {
+            return hand.PalmVelocity.y &lt; -deltaVelocity &amp;&amp; !isStationary (hand);
+        }
+</code></pre><h3 id="5-手固定不动"><a href="#5-手固定不动" class="headerlink" title="5.手固定不动"></a>5.手固定不动</h3><pre><code>        protected bool isStationary (Hand hand)/* 固定不动的*/ 
+        {
+            return hand.PalmVelocity.Magnitude &lt; smallestVelocity;
+        }  
+        [Tooltip (&quot;Velocity (m/s) move toward &quot;)]                   //速度（m/s）走向 
+        protected float smallestVelocity = 0.4f;
+</code></pre><h3 id="6-是否抓取"><a href="#6-是否抓取" class="headerlink" title="6.是否抓取"></a>6.是否抓取</h3><pre><code>        protected bool isGrabHand (Hand hand)  /*是否抓取*/
+        {
+            return hand.GrabStrength &gt; 0.8f;    /*抓取力*/ 
+        }
+</code></pre><h3 id="7-是否握拳"><a href="#7-是否握拳" class="headerlink" title="7.是否握拳"></a>7.是否握拳</h3><pre><code>        protected bool isCloseHand (Hand hand)     /*是否握拳*/ 
+        {
+            List&lt;Finger&gt; listOfFingers = hand.Fingers;
+            int count = 0;
+            for (int f = 0; f &lt; listOfFingers.Count; f++) { /*循环遍历所有的手*/
+                Finger finger = listOfFingers [f];    
+                if ((finger.TipPosition - hand.PalmPosition).Magnitude &lt; deltaCloseFinger)    /* Magnitude  向量的长度 。是(x*x+y*y+z*z)的平方根。*/
+                     /*float deltaCloseFinger = 0.05f;*/
+                {  
+                    count++;
+                                    //if (finger.Type == Finger.FingerType.TYPE_THUMB)
+                                   //Debug.Log ((finger.TipPosition - hand.PalmPosition).Magnitude);
+                }
+            }
+            return (count == 5);
+        }
+</code></pre><h3 id="8-手掌是否全张开"><a href="#8-手掌是否全张开" class="headerlink" title="8.手掌是否全张开"></a>8.手掌是否全张开</h3><pre><code>        protected bool isOpenFullHand (Hand hand)         /*手掌全展开~*/
+        {
+            //Debug.Log (hand.GrabStrength + &quot; &quot; + hand.PalmVelocity + &quot; &quot; + hand.PalmVelocity.Magnitude);
+            return hand.GrabStrength == 0;
+        }
+</code></pre><h3 id="9-向量的判断"><a href="#9-向量的判断" class="headerlink" title="9.向量的判断"></a>9.向量的判断</h3><p> （1）向量转化成 角度</p>
+<pre><code>protected float angle2LeapVectors (Leap.Vector a, Leap.Vector  b)
+{
+           //向量转化成 角度
+            return Vector3.Angle (UnityVectorExtension.ToVector3 (a), UnityVectorExtension.ToVector3 (b));
+}
+</code></pre><p>  （2）判断两个向量是否 相同 方向 </p>
+<pre><code>protected bool isSameDirection (Vector a, Vector b)
+{
+            //判断两个向量是否 相同 方向
+            //Debug.Log (angle2LeapVectors (a, b) + &quot; &quot; + b);
+            return angle2LeapVectors (a, b) &lt; handForwardDegree;
+}
+</code></pre><p>（3）判断两个向量是否 相反 方向        </p>
+<pre><code>protected bool isOppositeDirection (Vector a, Vector b      
+{
+//判断两个向量是否 相反 方向
+        return angle2LeapVectors (a, b) &gt; (180 - handForwardDegree);
+}
+</code></pre><p>（4）判断手的掌心方向于一个  向量   是否方向相同</p>
+<pre><code>protected bool isPalmNormalSameDirectionWith (Hand hand, Vector3 dir)
+{
+      //判断手的掌心方向于一个  向量   是否方向相同 
+    return isSameDirection (hand.PalmNormal, UnityVectorExtension.ToVector (dir));
+}  
+    [Tooltip (&quot;Delta degree to check 2 vectors same direction&quot;)]  //三角度检查2个向量的方向相同
+        protected float handForwardDegree = 30;
+</code></pre><h3 id="10-向手掌的方向-移动"><a href="#10-向手掌的方向-移动" class="headerlink" title="10.向手掌的方向  移动"></a>10.向手掌的方向  移动</h3><pre><code>protected bool isHandMoveForward (Hand hand)
+        {
+            return isSameDirection (hand.PalmNormal, hand.PalmVelocity) &amp;&amp; !isStationary (hand);
+        }
+</code></pre><h3 id="11-手掌是否垂直（掌心水平）"><a href="#11-手掌是否垂直（掌心水平）" class="headerlink" title="11.手掌是否垂直（掌心水平）"></a>11.手掌是否垂直（掌心水平）</h3><pre><code>        protected bool checkPalmNormalInXZPlane (Hand hand)  //   hand.PalmNormal 垂直于掌心的向量 
+        {
+            float anglePalmNormal = angle2LeapVectors (hand.PalmNormal, UnityVectorExtension.ToVector (Vector3.up));
+            return (anglePalmNormal &gt; 70 &amp;&amp; anglePalmNormal &lt; 110);
+        }
+</code></pre><h3 id="12-判断大拇指是否竖直或向下"><a href="#12-判断大拇指是否竖直或向下" class="headerlink" title="12.判断大拇指是否竖直或向下"></a>12.判断大拇指是否竖直或向下</h3><pre><code> protected bool isThumbDirection (Hand hand, Vector3 dir)
+        {
+            List&lt;Finger&gt; listOfFingers = hand.Fingers;
+            for (int f = 0; f &lt; listOfFingers.Count; f++) {
+                Finger finger = listOfFingers [f];
+                if (finger.Type == Finger.FingerType.TYPE_THUMB) {
+                    float angleThumbFinger = angle2LeapVectors (finger.Direction, 
+                                                UnityVectorExtension.ToVector (dir));
+                    float angleThumbFinger2 = angle2LeapVectors (
+                                                 finger.StabilizedTipPosition - hand.PalmPosition, UnityVectorExtension.ToVector (dir));
+                    //Debug.Log (angleThumbFinger + &quot; &quot; + angleThumbFinger2);
+                    if (angleThumbFinger &lt; deltaAngleThumb
+                       || angleThumbFinger2 &lt; deltaAngleThumb)
+                        return true;
+                    else
+                        return false;
+                } 
+            }
+            return false;
+        }
+</code></pre><h3 id="13-判断四指是否靠拢掌心"><a href="#13-判断四指是否靠拢掌心" class="headerlink" title="13.判断四指是否靠拢掌心"></a>13.判断四指是否靠拢掌心</h3><pre><code>protected bool checkFingerCloseToHand (Hand hand)
+{
+            List&lt;Finger&gt; listOfFingers = hand.Fingers;
+            int count = 0;
+            for (int f = 0; f &lt; listOfFingers.Count; f++) {
+                Finger finger = listOfFingers [f];
+                if ((finger.TipPosition - hand.PalmPosition).Magnitude &lt; deltaCloseFinger) {
+                    if (finger.Type == Finger.FingerType.TYPE_THUMB) {
+                        return false;
+                    } else {
+                        count++;
+                    }
+                }
+            }
+            //Debug.Log (count);
+            return (count == 4);
+}
+</code></pre>
     
 
     
@@ -421,11 +553,11 @@
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -447,19 +579,37 @@
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -471,11 +621,11 @@
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -495,6 +645,7 @@
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -815,9 +966,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -842,7 +998,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -857,10 +1015,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -873,6 +1028,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>

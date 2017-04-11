@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh">
     <head>
-    <!-- 
+    <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
+        Version: 1.3.4 -->
 
     <!-- Title -->
     
@@ -15,19 +15,31 @@
         Mr.Metro
     </title>
 
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
     <!-- Meta & Info -->
     <meta charset="utf-8">
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall,leap motion,unity 3d">
+    <meta name="keywords" content="miccall,unity 3d,leap motion">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -50,7 +62,7 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="LEAPMotion猎户座(VR)开发~003~UI | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
-    <meta property="og:article:tag" content="leap motion"> <meta property="og:article:tag" content="unity 3d"> 
+    <meta property="og:article:tag" content="unity 3d"> <meta property="og:article:tag" content="leap motion"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -60,10 +72,11 @@
         
     <![endif]-->
 
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
 
 
 <!-- Other Styles -->
@@ -127,6 +140,7 @@
     color: #00838F;
     text-decoration: underline;
   }
+
 </style>
 
 
@@ -160,9 +174,9 @@
     </style>
 
 
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
 
     <!-- UC Browser Compatible -->
     <script>
@@ -177,12 +191,14 @@
 
     
 
+
     <!-- Bing Background -->
     
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -228,7 +244,7 @@
         <i class="material-icons">format_list_numbered</i>
     </button>
 
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LEAPMotion猎户座-VR-开发-003-UI"><span class="post-toc-number">1.</span> <span class="post-toc-text">LEAPMotion猎户座(VR)开发~003~UI </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-（转载请注明出处）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  （转载请注明出处）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#UI-的添加"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">UI 的添加</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Button"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Button</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#响应的事件"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">响应的事件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Toggle"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Toggle</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Slider"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Slider</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Script-c-for-unity"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Script c# for unity</span></a></li></ol></li></ol>
 
         <!--
@@ -363,6 +379,12 @@
 
     <!-- Share Google+ -->
     
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/02/02/leapmotion/LEAPMotion猎户座(VR)开发-003-UI/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
 
     <!-- Share LinkedIn -->
     
@@ -434,8 +456,9 @@
 <p>最里层Text 显示了button的按钮文字<br>外面一层是button 的 Image<br>最外面一层便是最主要的一层了 </p>
 <p><img src="http://img.blog.csdn.net/20170202190745196?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>Compressible UI   在模块中这是一个小助手工具,允许UI元素扩展和压缩与画布的表面——响应联系和互动。 它也可以控制阴影的不透明度。 这是一个强大的工具向你的UI元素增加了活力。</p>
-<p><img src="http://img.blog.csdn.net/20170202190858845?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unityc#   Event Trigger ： &lt;Component&gt;</div></pre></td></tr></table></figure></p>
-<p><img src="http://img.blog.csdn.net/20170202191038198?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><img src="http://img.blog.csdn.net/20170202190858845?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<pre><code> unityc#   Event Trigger ： &lt;Component&gt;
+</code></pre><p><img src="http://img.blog.csdn.net/20170202191038198?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>它默认挂了两个事件 播放按键声音<br>还有 CompressibleUI 脚本<br>按下执行  Rereact()         弹起执行 Expand() </p>
 <h2 id="响应的事件"><a href="#响应的事件" class="headerlink" title="响应的事件"></a>响应的事件</h2><p>该UI在创立的时候 ，给我们加入了<br>PointerDown 和 PoninterUp 两个事件<br>官方给的事件信息  我们也可以用接口的形式获取对应的事件 </p>
 <table>
@@ -527,19 +550,19 @@
 <h2 id="Slider"><a href="#Slider" class="headerlink" title="Slider"></a>Slider</h2><ul>
 <li>找个组件比其他的复杂一些   </li>
 <li><p>层次 ： </p>
-<pre><code>1.  Hnadle Slide Area ：
-     导航的滑块 是一个Canvas  他的Child 同样是一个 Canvas 里面包含一个Image （滑块） 
-2.  Fill   Area   ：             
-    滑动的填充Canvas  由一个Image和一个 Mask 组成他的child 由Fill 和 HnadleShow 组成  Fill完成大部分的填充任务 而HnadleShadow 细节化了阴影效果 包括它上面挂载一个Slider Shadow 脚本 。用来实时更新位置变化和阴影效果 。
-3.  Background ： 不用说就是背景而已 
+<pre><code>    1.  Hnadle Slide Area ：
+         导航的滑块 是一个Canvas  他的Child 同样是一个 Canvas 里面包含一个Image （滑块） 
+    2.  Fill   Area   ：             
+        滑动的填充Canvas  由一个Image和一个 Mask 组成他的child 由Fill 和 HnadleShow 组成  Fill完成大部分的填充任务 而HnadleShadow 细节化了阴影效果 包括它上面挂载一个Slider Shadow 脚本 。用来实时更新位置变化和阴影效果 。
+    3.  Background ： 不用说就是背景而已 
 </code></pre></li>
 <li><p>功能部分 ： </p>
-<pre><code>1. Slider &lt;Component&gt; 调用OnvalueChange时 ，  调用挂载自身的SliderVolume脚本
-                                      setSliderSoundVolume()；方法  来更新滑块的值 。 
-2. Event Trigger 
-                                     --  BeginDrag           开始拖拽  
-                                     --  PointerDown       点击
-                                     --  Pointer Up           抬起  
+<pre><code>    1. Slider &lt;Component&gt; 调用OnvalueChange时 ，  调用挂载自身的SliderVolume脚本
+                                          setSliderSoundVolume()；方法  来更新滑块的值 。 
+    2. Event Trigger 
+                                         --  BeginDrag           开始拖拽  
+                                         --  PointerDown       点击
+                                         --  Pointer Up           抬起  
 </code></pre></li>
 <li><p>除了BeginDrag方法 播放声音 ，其余的执行都和其他一样   </p>
 </li>
@@ -564,11 +587,11 @@
 
 
 
+
+
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">	
+    <div id="disqus-comment">
         <div id="disqus_thread"></div>
-<!-- include js -->
-<script src="/js/ripple.js"></script>
 
 <!-- add animation -->
 <style>
@@ -590,19 +613,37 @@
                 opacity: 0;
             }
         }
-		.disqus_click_btn {
-            background-color: dodgerblue;
-            color: white;
-            padding: 10px 20px;
-            border:0;
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-size: 14px;
-            cursor: pointer
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
         }
 </style>
 	
 <!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn" data-ripple>阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
 </div>
 	
 <script>
@@ -614,11 +655,11 @@
 </script>
 
 <script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/02/02/leapmotion/LEAPMotion猎户座(VR)开发-003-UI/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/02/02/leapmotion/LEAPMotion猎户座(VR)开发-003-UI/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
     $('.btn_click_load').click(function() {  //click to load comments
-        var disqus_config = function () {
-            this.page.url = 'http://miccall.tech/2017/02/02/leapmotion/LEAPMotion猎户座(VR)开发-003-UI/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
             var s = d.createElement('script');
@@ -638,6 +679,7 @@
             padding: 2pc;
         }
     </style>
+
 
                 
             </div>
@@ -958,9 +1000,14 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
                     <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
 
 <script type="text/javascript">
     NProgress.configure({
@@ -985,7 +1032,9 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    <script src="/js/smoothscroll.js"></script>
+    
+        <script src="/js/smoothscroll.js"></script>
+    
 
 
 
@@ -1000,10 +1049,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Swiftye -->
 
-
-<!-- Local Search-->
 
 
 <!-- Window Load-->
@@ -1016,6 +1062,21 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
 
                 </main>
             </div>
