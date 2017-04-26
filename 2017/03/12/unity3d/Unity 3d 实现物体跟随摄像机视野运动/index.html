@@ -10,7 +10,7 @@
     
     <title>
         
-            Unity 3d 实现物体跟随摄像机视野运动 | 
+            BehaviorDesigner 实现NPC 智能机器人 | 
         
         Mr.Metro
     </title>
@@ -60,7 +60,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://miccall.tech">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Unity 3d 实现物体跟随摄像机视野运动 | Mr.Metro">
+    <meta property="og:title" content="BehaviorDesigner 实现NPC 智能机器人 | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
     <meta property="og:article:tag" content="unity 3d"> 
 
@@ -245,7 +245,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unity-3d-实现物体跟随摄像机视野运动"><span class="post-toc-number">1.</span> <span class="post-toc-text">Unity 3d 实现物体跟随摄像机视野运动 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-（转载请注明出处-miccall-tech-）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall    （转载请注明出处  miccall.tech  ）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-VR实现机器人导航"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">1. VR实现机器人导航</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-问题思考"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2. 问题思考</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-实现以及方法"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">3.实现以及方法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-中途出现的小BUG"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">4.中途出现的小BUG</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#BehaviorDesigner-实现NPC-智能机器人"><span class="post-toc-number">1.</span> <span class="post-toc-text">BehaviorDesigner 实现NPC 智能机器人</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-（转载请注明出处-miccall-tech-）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  （转载请注明出处  miccall.tech  ）</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现物体跟随摄像机视野运动"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">实现物体跟随摄像机视野运动</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-VR实现机器人导航"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1. VR实现机器人导航</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-问题思考"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">2. 问题思考</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-实现以及方法"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">3.实现以及方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-中途出现的小BUG"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">4.中途出现的小BUG</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BehaviorDesigner-介绍以及使用方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">BehaviorDesigner 介绍以及使用方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本任务"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">基本任务</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-判断是否到达目的地"><span class="post-toc-number">1.2.1.1.</span> <span class="post-toc-text">1.判断是否到达目的地</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-移动到target"><span class="post-toc-number">1.2.1.2.</span> <span class="post-toc-text">2.移动到target</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-停止逻辑"><span class="post-toc-number">1.2.1.3.</span> <span class="post-toc-text">3.停止逻辑</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-第一次停止动画"><span class="post-toc-number">1.2.1.4.</span> <span class="post-toc-text">4.第一次停止动画</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-面向摄像机"><span class="post-toc-number">1.2.1.5.</span> <span class="post-toc-text">5.面向摄像机</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-面向UI"><span class="post-toc-number">1.2.1.6.</span> <span class="post-toc-text">6.面向UI</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-面向UI之后的动作"><span class="post-toc-number">1.2.1.7.</span> <span class="post-toc-text">7.面向UI之后的动作</span></a></li></ol></li></ol></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -273,7 +273,7 @@
         <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://img.blog.csdn.net/20170312182308424?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)">
     
             <p class="article-headline-p">
-                Unity 3d 实现物体跟随摄像机视野运动
+                BehaviorDesigner 实现NPC 智能机器人
             </p>
         </div>
 
@@ -352,7 +352,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Unity 3d 实现物体跟随摄像机视野运动&url=http://miccall.tech//2017/03/12/unity3d/Unity 3d 实现物体跟随摄像机视野运动/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=BehaviorDesigner 实现NPC 智能机器人&url=http://miccall.tech//2017/03/12/unity3d/Unity 3d 实现物体跟随摄像机视野运动/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -361,7 +361,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Unity 3d 实现物体跟随摄像机视野运动&url=http://miccall.tech//2017/03/12/unity3d/Unity 3d 实现物体跟随摄像机视野运动/index.html&via=miccall" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=BehaviorDesigner 实现NPC 智能机器人&url=http://miccall.tech//2017/03/12/unity3d/Unity 3d 实现物体跟随摄像机视野运动/index.html&via=miccall" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -391,7 +391,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Unity 3d 实现物体跟随摄像机视野运动&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/03/12/unity3d/Unity 3d 实现物体跟随摄像机视野运动/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=BehaviorDesigner 实现NPC 智能机器人&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/03/12/unity3d/Unity 3d 实现物体跟随摄像机视野运动/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -410,14 +410,14 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <hr>
-<h1 id="Unity-3d-实现物体跟随摄像机视野运动"><a href="#Unity-3d-实现物体跟随摄像机视野运动" class="headerlink" title="Unity 3d 实现物体跟随摄像机视野运动 "></a><strong>Unity 3d 实现物体跟随摄像机视野运动 </strong></h1><h6 id="Created-by-miccall-（转载请注明出处-miccall-tech-）"><a href="#Created-by-miccall-（转载请注明出处-miccall-tech-）" class="headerlink" title="Created by miccall    （转载请注明出处  miccall.tech  ）"></a>Created by miccall    （转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>  ）</h6><h2 id="1-VR实现机器人导航"><a href="#1-VR实现机器人导航" class="headerlink" title="1. VR实现机器人导航"></a>1. VR实现机器人导航</h2><ul>
+<h1 id="BehaviorDesigner-实现NPC-智能机器人"><a href="#BehaviorDesigner-实现NPC-智能机器人" class="headerlink" title="BehaviorDesigner 实现NPC 智能机器人"></a>BehaviorDesigner 实现NPC 智能机器人</h1><h6 id="Created-by-miccall-（转载请注明出处-miccall-tech-）"><a href="#Created-by-miccall-（转载请注明出处-miccall-tech-）" class="headerlink" title="Created by miccall  （转载请注明出处  miccall.tech  ）"></a>Created by miccall  （转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>  ）</h6><h2 id="实现物体跟随摄像机视野运动"><a href="#实现物体跟随摄像机视野运动" class="headerlink" title="实现物体跟随摄像机视野运动"></a>实现物体跟随摄像机视野运动</h2><h3 id="1-VR实现机器人导航"><a href="#1-VR实现机器人导航" class="headerlink" title="1. VR实现机器人导航"></a>1. VR实现机器人导航</h3><ul>
 <li>项目里要求一个机器人跟随在角色旁边，一直飞着，就像一个精灵一样，总在主角的身边，移动，转头，都要移动到合适的位置 。还得让他面向主角，今天就来实现这个样例 。 </li>
 </ul>
-<h2 id="2-问题思考"><a href="#2-问题思考" class="headerlink" title="2. 问题思考"></a>2. 问题思考</h2><pre><code> - 1. 物体移动到某个给定的位置（target）
+<h3 id="2-问题思考"><a href="#2-问题思考" class="headerlink" title="2. 问题思考"></a>2. 问题思考</h3><pre><code> - 1. 物体移动到某个给定的位置（target）
  - 2. 物体转动到面向摄像机 
  - 3. 出现在相机的视野当中 
  - 4. 自定义物体在摄影机的Screen中的位置 
-</code></pre><h2 id="3-实现以及方法"><a href="#3-实现以及方法" class="headerlink" title="3.实现以及方法"></a>3.实现以及方法</h2><ul>
+</code></pre><h3 id="3-实现以及方法"><a href="#3-实现以及方法" class="headerlink" title="3.实现以及方法"></a>3.实现以及方法</h3><ul>
 <li>移动的话 ，本来可以用动画来实现 ，因为动画还没有做好，我就用一个cube当作那个机器人做样例了 。 </li>
 <li>首先有个cube之后 ，给他放一个移动的脚本。这里我给他命名为PlayerTank 。</li>
 <li>我们的目的就是让他运动到某个target ，所以我们得给他指定一个followTransform 。 同时还有他的移动速度和转动速度 。</li>
@@ -533,7 +533,130 @@
 <li>写完我都吓了一跳 ，竟然如此简单。还是简单解释一下 ，RH 是水平偏移量，RV是垂直偏移量，upperDistance是距离摄像机的一个平面位置 。<pre><code>接下来就是运行看效果了 。
 </code></pre></li>
 </ul>
-<h2 id="4-中途出现的小BUG"><a href="#4-中途出现的小BUG" class="headerlink" title="4.中途出现的小BUG"></a>4.中途出现的小BUG</h2><p>-<br>       莫名其妙的做圆周运动 ，然后我分析了线速度，角速度和半径的关系 ，<br>       然后总结出一个基本的规律，他应该是当运动到某个特定的位置 ，正好满足了<br>       圆周运动的关系，然后我们调整movementSpeed 和rotSpeed 的值，让他么尽可能<br>       的和Distance消除乘积关系，这样出现的几率就微乎其微了 。<br>       感想 – 其实unity和现实物理，理论物理 还是有很大的不同。</p>
+<h3 id="4-中途出现的小BUG"><a href="#4-中途出现的小BUG" class="headerlink" title="4.中途出现的小BUG"></a>4.中途出现的小BUG</h3><p>-<br>       莫名其妙的做圆周运动 ，然后我分析了线速度，角速度和半径的关系 ，<br>       然后总结出一个基本的规律，他应该是当运动到某个特定的位置 ，正好满足了<br>       圆周运动的关系，然后我们调整movementSpeed 和rotSpeed 的值，让他么尽可能<br>       的和Distance消除乘积关系，这样出现的几率就微乎其微了 。<br>       感想 – 其实unity和现实物理，理论物理 还是有很大的不同。</p>
+<h2 id="BehaviorDesigner-介绍以及使用方法"><a href="#BehaviorDesigner-介绍以及使用方法" class="headerlink" title="BehaviorDesigner 介绍以及使用方法"></a>BehaviorDesigner 介绍以及使用方法</h2><ul>
+<li><p>Behavior Designer 是一个行为树插件 他提供了可视化编辑器 和强大的 API 可以轻松的创建 tasks（任务）通过决策树的方式判断行为，耦合度更高，更加方便的打造AI系统 。</p>
+</li>
+<li><p>本教程不是入门教程 ，而是通过一个引导来实现我们的主题 。</p>
+</li>
+<li><ol>
+<li>Sequence 队列节点<br>–   表示顺序执行的节点 此节点下属所有节点依次执行直到返回false</li>
+</ol>
+</li>
+<li><ol>
+<li>Selector 选择节点<br>–   表示在此节点下选择一个执行 此节点下属所有节点依次执行直到返回true</li>
+</ol>
+</li>
+<li><p>我们暂且就用这两个 想要了解更多的 ，请参考别的教程 </p>
+</li>
+</ul>
+<h3 id="基本任务"><a href="#基本任务" class="headerlink" title="基本任务"></a>基本任务</h3><ul>
+<li>判断是否到达目的地 </li>
+<li>移动到目的地(包含起飞和停止动画)</li>
+<li>判断是否面向摄像机 </li>
+<li>判断是否执相应的动画( 原地浮动 )</li>
+<li>判断是否要面向UI物体  </li>
+<li>面向UI之后 如果操作 执行相应的动画(点头 摇头 摊手) </li>
+</ul>
+<h4 id="1-判断是否到达目的地"><a href="#1-判断是否到达目的地" class="headerlink" title="1.判断是否到达目的地"></a>1.判断是否到达目的地</h4><ul>
+<li>这个方法在上面的教程已经介绍了解决思路以及代码实现 简单重新陈述一下，首先在摄像机上挂一个脚本 这个脚本用来测量摄像机的范围，在范围内画一个点，让一个target(transform)覆盖这个点 。</li>
+<li>VR中摄像机可以根据头盔的传感器，来旋转第一人称视角 这个target就固定在视角的一个地方随意移动 。</li>
+<li>那么，机器人的z轴 （forward） 就一直面向这个target。然后使用translate移动到这个target附近。</li>
+<li>我们要判断的就是这个target和机器人的distance </li>
+<li>我们自己写一个脚本来实现这个小功能（Task）</li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">using</span> UnityEngine<span class="token punctuation">;</span>
+
+        <span class="token keyword">namespace</span> BehaviorDesigner<span class="token punctuation">.</span>Runtime<span class="token punctuation">.</span>Tasks<span class="token punctuation">.</span>Basic<span class="token punctuation">.</span>UnityVector3
+        <span class="token punctuation">{</span>
+            <span class="token punctuation">[</span><span class="token function">TaskCategory</span><span class="token punctuation">(</span><span class="token string">"Basic/Vector3"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+            <span class="token punctuation">[</span><span class="token function">TaskDescription</span><span class="token punctuation">(</span><span class="token string">"Returns the distance between two Vector3s."</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+
+            <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">dis_tance</span> <span class="token punctuation">:</span> Action
+            <span class="token punctuation">{</span>
+
+                <span class="token punctuation">[</span><span class="token function">Tooltip</span><span class="token punctuation">(</span><span class="token string">"target Vector3"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+                <span class="token keyword">public</span> SharedVector3 firstVector3<span class="token punctuation">;</span>
+                <span class="token punctuation">[</span><span class="token function">Tooltip</span><span class="token punctuation">(</span><span class="token string">"The distance"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+                <span class="token punctuation">[</span>RequiredField<span class="token punctuation">]</span>
+                <span class="token keyword">public</span> SharedFloat storeResult<span class="token punctuation">;</span>
+                <span class="token keyword">public</span> SharedGameObject action<span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//看代码就应该看到 我们需要一个target的位置向量 一个action的GameObject </span>
+                <span class="token comment" spellcheck="true">//还有一个距离的返回值 </span>
+
+
+                <span class="token keyword">public</span> <span class="token keyword">override</span> TaskStatus <span class="token function">OnUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    storeResult<span class="token punctuation">.</span>Value <span class="token operator">=</span> Vector3<span class="token punctuation">.</span><span class="token function">Distance</span><span class="token punctuation">(</span>firstVector3<span class="token punctuation">.</span>Value<span class="token punctuation">,</span> action<span class="token punctuation">.</span>Value<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> TaskStatus<span class="token punctuation">.</span>Success<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">void</span> <span class="token function">OnReset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    storeResult <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>随后，我们就要判断这个距离的值 ，来给定这个机器人 是否是移动，还是静止 </li>
+<li>我们还是来写一个自定义Task 来实现 </li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">;</span>
+        <span class="token keyword">using</span> System<span class="token punctuation">.</span>Collections<span class="token punctuation">.</span>Generic<span class="token punctuation">;</span>
+        <span class="token keyword">using</span> UnityEngine<span class="token punctuation">;</span>
+        <span class="token keyword">namespace</span> BehaviorDesigner<span class="token punctuation">.</span>Runtime<span class="token punctuation">.</span>Tasks<span class="token punctuation">.</span>Basic<span class="token punctuation">.</span>UnityVector3 <span class="token punctuation">{</span> 
+            <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">comparedis</span> <span class="token punctuation">:</span> Action <span class="token punctuation">{</span>
+
+                <span class="token keyword">public</span> SharedFloat distance<span class="token punctuation">;</span>
+                <span class="token keyword">public</span> SharedFloat compare_dis <span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">/*compare_dis 表示一个范围 以distance 减去这个范围 
+                表示以target为圆心 画一个compare_dis的球 只要进入这个球 ，说明已经到达目的地  */</span>
+                <span class="token keyword">public</span> SharedBool storeResult<span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">/*我们返回一个bool值 他的意思是机器人是否静止 
+                  如果和target的计算距离大于0 那么就不是禁止 他就应该移动到target 否则 他是静止的，就应该做相应的动画 
+                */</span>
+                <span class="token keyword">public</span> <span class="token keyword">override</span> TaskStatus <span class="token function">OnUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    storeResult<span class="token punctuation">.</span>Value <span class="token operator">=</span> distance<span class="token punctuation">.</span>Value <span class="token operator">-</span> compare_dis<span class="token punctuation">.</span>Value <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">?</span> <span class="token keyword">false</span> <span class="token punctuation">:</span> <span class="token keyword">true</span> <span class="token punctuation">;</span> 
+                    <span class="token keyword">return</span> TaskStatus<span class="token punctuation">.</span>Success<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token keyword">public</span> <span class="token keyword">override</span> <span class="token keyword">void</span> <span class="token function">OnReset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>好了 我们这两个Task已经写好了 然后用一个Sequence  连接两个任务<br><img src="http://onh0umlhz.bkt.clouddn.com/start.png" alt="start"></li>
+<li>做完了这个，我们又要分情况讨论了 一个是移动 一个是移动结束 </li>
+</ul>
+<h4 id="2-移动到target"><a href="#2-移动到target" class="headerlink" title="2.移动到target"></a>2.移动到target</h4><ul>
+<li><p>移动到target我们要用一个判断来做相应的事件 首先 我们判断第一步的变量 isstop 看看是否静止 如果是false的话，执行下面的步骤 否则的话 ，跳转到面向摄像机 </p>
+</li>
+<li><p>下面一层 我们用一个selector节点 来选择一个节点执行<br>选择是播放起飞动画呢 ，还是move呢 </p>
+</li>
+<li><p>首先播放起飞动画的条件是 isfirstfly 初始值是true 那么开始执行飞行动画 ，执行结束 把这个值设置false false就不进入这个节点 而是去选择执行move 节点 。</p>
+</li>
+<li><p>动画这个也是一个坑 我用比较长的一段详细讲一下。收悉的朋友可以跳过这一段 。</p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/movenew.png" alt="move"></p>
+<p>-looktarget前面也讲过了 movetotarget是封装以后的translate 可以自己动脑去实现一下  </p>
+<h4 id="3-停止逻辑"><a href="#3-停止逻辑" class="headerlink" title="3.停止逻辑"></a>3.停止逻辑</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/stop.png" alt="stop"></p>
+<h4 id="4-第一次停止动画"><a href="#4-第一次停止动画" class="headerlink" title="4.第一次停止动画"></a>4.第一次停止动画</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/firststop.png" alt="firststop"></p>
+<h4 id="5-面向摄像机"><a href="#5-面向摄像机" class="headerlink" title="5.面向摄像机"></a>5.面向摄像机</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/lookcam.png" alt="lookcam"></p>
+<ul>
+<li>面向摄像机以后 要判断是否已经结束 我们要判断向量的方向来决定 </li>
+<li>首先先计算机器人的forward向量 然后机器人位置减摄像机的位置 ，得到一个方向向量 最后判断两个向量的单位向量是否相同 就可以了 </li>
+</ul>
+<h4 id="6-面向UI"><a href="#6-面向UI" class="headerlink" title="6.面向UI"></a>6.面向UI</h4><ul>
+<li>我规定 当外界代码控制修改一个全局变量 就把他设置成true 然后指定一个UI物体 那么下一帧就可以面向UI了 </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/lookUI.png" alt="lookUI"></p>
+<h4 id="7-面向UI之后的动作"><a href="#7-面向UI之后的动作" class="headerlink" title="7.面向UI之后的动作"></a>7.面向UI之后的动作</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/UIaction.png" alt="UIaction"></p>
 
     
 
