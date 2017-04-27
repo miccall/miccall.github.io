@@ -10,7 +10,7 @@
     
     <title>
         
-            Unity 3d 常用脚本 | 
+            Android学习笔记 002 | 
         
         Mr.Metro
     </title>
@@ -34,7 +34,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall,unity 3d">
+    <meta name="keywords" content="miccall,android">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
@@ -60,9 +60,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://miccall.tech">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Unity 3d 常用脚本 | Mr.Metro">
+    <meta property="og:title" content="Android学习笔记 002 | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
-    <meta property="og:article:tag" content="unity 3d"> 
+    <meta property="og:article:tag" content="android"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -245,7 +245,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unity-3d-常用脚本"><span class="post-toc-number">1.</span> <span class="post-toc-text">Unity 3d 常用脚本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Collected-by-miccall-（内容均来自于网络）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Collected by miccall  （内容均来自于网络）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Gridview使用"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Gridview使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Textview滚动效果"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">Textview滚动效果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置中心界面"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">设置中心界面</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义组合控件"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">自定义组合控件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#屏蔽自动更新"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">屏蔽自动更新</span></a></li></ol></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -282,7 +282,7 @@
         
     
             <p class="article-headline-p">
-                Unity 3d 常用脚本
+                Android学习笔记 002
             </p>
         </div>
 
@@ -301,7 +301,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>miccall</strong>
-        <span>1月 18, 2017</span>
+        <span>1月 03, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -322,7 +322,7 @@
         </button>
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
             <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACxUlEQVR42u3aS24CQQwFQO5/6eQAKPBsD8nEXbNCAhpXL7D8eXwd+TywsbGxsbGxsbGxb8l+xM/zt356nZzz+szn0y6IGRsbG3s1+81ff8x+HXTvEpN4opixsbGxD2AnySYJK7+O1ymnlzKxsbGxsXN2L8n1rgMbGxsb+1p20h5KWkKvwbdLYNjY2Ni3Z+dlQFI8JKkrKT+q38LGxsY+kz0pA/7q9a/Ot7GxsbFvzK4+8xFCr3WVJK03kWNjY2MvZeeJIflWdQCQnHbZqBgbGxt7KTtv0OflwRyQD5ILl46NjY29mp0f3UtdvdZ/9bQ3J2NjY2OvZs9XKn/z8xESGxsb+xj2pJU/KSSaSShuSGFjY2Ofw86bO/kqT55yeo3+3ugXGxsbeys7b/HnraVJaqxeWaHIwcbGxl7Kztv3eYh5oHmbqXoCNjY29jnsT6/L9IqK6nUkv4WNjY29m52UEJM1ysm6z2XnYGNjYy9lV8uP+btVav5uedCLjY2NvYidD3qrV9b7rXlU2NjY2OewJwVALxEmSzm9kmbUVMLGxsZewS4vwYyXdQqFxLj5hY2Njb2VPQfniaq6ynPxMig2Njb2UvYjeKorPtVEde3VFJpK2NjY2EvZE8Ak7c2vtTDoxcbGxl7Hnq/F9EKfNImSd7GxsbHPZE/Kg95CT35ONUJsbGzsk9n54k51tJAUOdXENppvY2NjY69jT34sH7vmZUk+xri4qYSNjY39T9jVZzKInYx+8yZXlMCwsbGxF7GbyaAYRD5C7iXUZt7GxsbGXsTujWB7JUSSDgutojjhYWNjY5/Aztdx8tWZfPwwaR5FYwZsbGxs7Hw55g7p6nMJDBsbG3sdexJQdVRQHVpgY2Njn8bOW0XVdHXVADgfLWBjY2Ofxs4DSoas1U/miW00nMbGxsZeyj7nwcbGxsbGxsbGxr7N8w2bCAttOOBJCwAAAABJRU5ErkJggg==">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACX0lEQVR42u3aQXLDIBAEQP//08k1F9kzi4TkVHNKOTba5oCoYV8//3q88PDw8PDw8PDwHsZ7xePDpG+///eTo9mOftXWhoeHh7eHl5R+9OAjwAppqTY8PDy8jbyjDbd9ZLsoCT6pDQ8PD+/5vPfU9pv5ywYPDw/vG3mzQ3MeWODh4eF9C++sLb4NLPKo4vKsBQ8PDy/m5ZdM+//eer+Hh4eHF/DacXJwMAqIP1SIh4eHdzEv34hbcDvn++uxoh48PDy8i3nvy0028Vlja/JiaJu98PDw8J7Am7VJ5RFt+5KIasDDw8O7mJccYVeux9r5k2U9rTMCDw8Pb8Rrg4A20s2P43klH47+eHh4eDfx3l9K5Z8vFTpbdDw8PLwtvHybnh2m8wB3dlWGh4eHt5+3Er/mh+BZ3JDD8PDw8PbwhlFpWUQCXv8tHh4e3k5eft3VLk0eWLRhBB4eHt5dvLzoNvCdNR/MqsLDw8PbyUtihVngmxc9a1PAw8PDu4vXXlDl23S7ZOuHdTw8PLw9vLzRaviwURtW8lqqU2o8PDy8C3jrgcJZR/N8oYsXAx4eHt4FvORgfUI7acxun4uHh4d3Fy+ZNGk5zY/g5y4iHh4e3tW8drSNqrOilyJmPDw8vIt57dbfbuj5tVkeTJzQGYGHh4e3zGsv8tv2ghwwW0o8PDy8u3jJ9VV+0TVrZl0JPvDw8PCezMsjhva/bVV4eHh438KbHZdnTVfJPHh4eHh38ZIwIjn+5vPPLsw+zImHh4e3hddGACtLkH9n2GSAh4eHdzHv/w08PDw8PDw8PLwHjF/gCl3JNadI2AAAAABJRU5ErkJggg==">
         </ul>
     
 
@@ -334,7 +334,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/unity-3d/">unity 3d</a>
+        <a class="post_tag-link" href="/tags/android/">android</a>
     </ul>
     
 
@@ -361,7 +361,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Unity 3d 常用脚本&url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android学习笔记 002&url=http://miccall.tech//2017/01/03/android/android_002/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -370,7 +370,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Unity 3d 常用脚本&url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html&via=miccall" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android学习笔记 002&url=http://miccall.tech//2017/01/03/android/android_002/index.html&via=miccall" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -379,7 +379,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://miccall.tech//2017/01/03/android/android_002/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -388,7 +388,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/03/android/android_002/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -400,7 +400,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Unity 3d 常用脚本&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Android学习笔记 002&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/01/03/android/android_002/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -419,61 +419,299 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <hr>
-<h1 id="Unity-3d-常用脚本"><a href="#Unity-3d-常用脚本" class="headerlink" title="Unity 3d 常用脚本"></a><strong>Unity 3d 常用脚本</strong></h1><h6 id="Collected-by-miccall-（内容均来自于网络）"><a href="#Collected-by-miccall-（内容均来自于网络）" class="headerlink" title="Collected by miccall  （内容均来自于网络）"></a>Collected by miccall  （内容均来自于网络）</h6><p>不定时更新 </p>
-<ul>
-<li>Time.deltaTime  :   <pre class="line-numbers language-csharp"><code class="language-csharp">      <span class="token keyword">void</span> <span class="token function">Update</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          transform<span class="token punctuation">.</span><span class="token function">Translate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Vector3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> Time<span class="token punctuation">.</span>deltaTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token comment" spellcheck="true">// * Time.deltaTime 以后， 物体一秒运动一次 </span>
-      <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transform.Rotate()  都是根据自身坐标<br>LookAt()   可以让对象的正前方 ，朝向设定的坐标方向  。一般用于摄像机跟踪对象<br>平滑过渡 ：  SmoothDamp函数<br>插值  :    Mathf.Lerp(起始值,结束值,比例)   同样的 Vector3 和Color 也有该方法  。 <pre class="line-numbers language-csharp"><code class="language-csharp">  <span class="token function">Instantiate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//用来实例化对象 。。。 返回值是Object 。</span>
-  <span class="token function">Instantiate</span><span class="token punctuation">(</span>Prefab<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//默认(0,0,0)</span>
-  <span class="token comment" spellcheck="true">//以下是指定在某个对象的位置和角度创建 。。</span>
-  <span class="token function">Instantiate</span><span class="token punctuation">(</span>Prefab<span class="token punctuation">,</span>Transform<span class="token punctuation">.</span>position <span class="token punctuation">,</span> Transform<span class="token punctuation">.</span>rotation<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-   Rigidbody   添加力    AddForce()  ;   <pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">AddForce</span><span class="token punctuation">(</span>Transform<span class="token punctuation">.</span>position  <span class="token operator">*</span> 倍数 <span class="token punctuation">,</span>ForceMode mode <span class="token operator">=</span> ForceMode<span class="token punctuation">.</span>Force<span class="token punctuation">)</span> <span class="token punctuation">;</span> 
-   <span class="token function">AddForce</span><span class="token punctuation">(</span>Transform<span class="token punctuation">.</span>position  <span class="token operator">*</span> 倍数 <span class="token punctuation">)</span> <span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-对象的销毁  <pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">Destory</span><span class="token punctuation">(</span>Object gameObject <span class="token punctuation">,</span> Time t <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>Invoke(); 延时调用某函数 。</p>
-<pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  重复调用某函数 
-   <span class="token function">CanceInvoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 结束<span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token punctuation">)</span>的调用 。
-   <span class="token function">Invoke</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">,</span>DelayTime  s <span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">,</span>FirstDelayTime  s1 <span class="token punctuation">,</span> CirclyDelayTime s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token function">CanceInvoke</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>四元数 。。Quaternion ,默认是（0，0，0，0）用Quaternion.identity 表示。<br>Quaternion.identity就是指Quaternion(0,0,0,0),就是每旋转前的初始角度,<br>是一个确切的值,而transform.rotation是指本物体的角度,值是不确定的,<br>比如可以这么设置transform.rotation = Quaternion.identity;<br>一个是值类型,一个是属性变量</p>
-</li>
-<li><p>枚举类型 。。 Enumerations == Enums</p>
-<pre class="line-numbers language-csharp"><code class="language-csharp">  <span class="token keyword">enum</span> Name<span class="token punctuation">{</span>
-        N<span class="token punctuation">,</span>E<span class="token punctuation">,</span>S<span class="token punctuation">,</span>W
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//默认 ： N==0,E==1,S==2,W==3</span>
-  <span class="token comment" spellcheck="true">// enum Name : int{};</span>
-  <span class="token comment" spellcheck="true">//声明 ：  </span>
-   Name name <span class="token punctuation">;</span>
-  name<span class="token punctuation">.</span>N<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>GetComponentsInChildren&lt;组件&gt;();<br>这种方式是 大家经常用到的，这种是获取自己和它的孩子有同样的组件（比如 Rigidbody），返回一个数组，数组包括自己和它的孩子。如果他的孩子里面有的是不活跃SetActive(false);则获取不到。<br>所以就会有第二个参数GetComponentsInChildren&lt;组件&gt;(true);</p>
-</li>
-<li><p>Transform组件<br>Variables<br>position                    Vector3类型，物体位置，相对于世界坐标系的值。就是矩阵的最后一行的值。<br>localPosition             Vector3类型，物体相对于父元素的位置.<br>eulerAngles              Vector3类型，旋转后的欧拉角相对世界坐标的值。简单理解为各向量坐标所转动的值就好了。<br>localEulerAngles      Vector3类型，相对父元素的欧拉角。<br>right                        Vector3类型，表示x轴（U3里红色的轴）方向的单位向量。<br>up                           Vector3类型，表示y轴（U3里绿色的轴）方向的单位向量。<br>forward                   Vector3类型，表示z轴（U3里蓝色的轴）方向的单位向量。<br>rotation                   Quaternion类型(quatermion就是个四维数，比vector3多一个w变量表示旋转角度的)，世界坐标旋转。.<br>localRotation           Quaternion类型，本地坐标的旋转度数（相对父元素）。<br>localScale                Vector3类型，相对本地坐标系缩放（就是矩阵的乘法）<br>parent                      Transform类型，他的父元素。<br>worldToLocalMatrix  Matrix4<em>4类型，把一个点从世界坐标系的位置转换为本地坐标系位置。（终究得用矩阵，哈哈）只读<br>localToWorldMatrix  Matrix4</em>4类型，把一个点从本地坐标系转换为世界坐标系。（只读）<br>root                          Transform类型，返回最上层的那个Transform，就是他父亲的父亲的父亲的。。。（如果有的话）<br>childCount                int型，你子元素的数量<br>lossyScale                Vector3类型，相对世界坐标系缩放</p>
-</li>
-<li><p>这个功能很实用，传入的两个参数分别代表前方盯着的方向以及自己的上方向。它可以让一个GameObject转动脑袋盯着另一个物体。</p>
-</li>
-</ul>
-<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">public</span> Transform target<span class="token punctuation">;</span>
-        <span class="token keyword">void</span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            Vector3 relativePos <span class="token operator">=</span> target<span class="token punctuation">.</span>position <span class="token operator">-</span> transform<span class="token punctuation">.</span>position<span class="token punctuation">;</span>
-            Quaternion rotation <span class="token operator">=</span> Quaternion<span class="token punctuation">.</span><span class="token function">LookRotation</span><span class="token punctuation">(</span>relativePos<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            transform<span class="token punctuation">.</span>rotation <span class="token operator">=</span> rotation<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Android学习笔记"><a href="#Android学习笔记" class="headerlink" title=" Android学习笔记 "></a><strong> Android学习笔记 </strong></h1><h3 id="Gridview使用"><a href="#Gridview使用" class="headerlink" title="Gridview使用"></a>Gridview使用</h3><pre><code>1.布局文件中用法,其实跟listview相似
+</code></pre><pre><code>        &lt;!-- numColumns : 设置每行显示的个数
+            verticalSpacing : 设置每行之间的距离
+         --&gt;
+        &lt;GridView 
+            android:id=&quot;@+id/gv_home_gridview&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:numColumns=&quot;3&quot;
+            android:verticalSpacing=&quot;10dp&quot;
+            android:layout_marginTop=&quot;20dp&quot;
+        &gt;&lt;/GridView&gt;
+</code></pre><pre><code>2.代码中的用法,其实跟listview相似
 
+    a.初始化控件
+</code></pre><pre><code>            gv_home_gridview = (GridView) findViewById(R.id.gv_home_gridview);
+            gv_home_gridview.setAdapter(new Myadapter());
+</code></pre><pre><code>    b.adapter
+</code></pre><pre><code>            // 设置条目的样式
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                 //position代表是条目的位置,从0开始   0-8
+                //将布局文件转化成view对象
+                View view = View.inflate(getApplicationContext(), R.layout.item_home, null);
+                //每个条目的样式都不一样,初始化控件,去设置控件的值
+                //view.findViewById是从item_home布局文件中找控件,findViewById是从activity_home中找控件
+                ImageView iv_itemhome_icon = (ImageView)view.findViewById(R.id.iv_itemhome_icon);
+                TextView tv_itemhome_text = (TextView) view.findViewById(R.id.tv_itemhome_text);
+                //设置控件的值
+                iv_itemhome_icon.setImageResource(imageId[position]);//给imageview设置图片,根据条目的位置从图片数组中获取相应的图片
+                tv_itemhome_text.setText(names[position]);
+                return view;
+            }
+</code></pre><h3 id="Textview滚动效果"><a href="#Textview滚动效果" class="headerlink" title="Textview滚动效果"></a>Textview滚动效果</h3><pre><code>1.第一种方式
+</code></pre><pre><code>        &lt;!-- 
+            singleLine : 一行显示
+            ellipsize  
+                none :省略后面文字
+                start : 隐藏前面的文字
+                middle : 隐藏中间的文字
+                end : 隐藏后面的文字
+                marquee : 滚动
+            focusableInTouchMode : 触摸获取焦点
+            TextView天生是没有点击事件和获取焦点的事件
+            focusable : 是否获取焦点操作,true:可以  false:不可以
+            marqueeRepeatLimit : 设置滚动次数,marquee_forever : -1  一直滚动
+        --&gt;
+        &lt;TextView 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;手机卫士,真64杀毒引擎,超神速度,打开7次可以召唤神龙,辅助杀毒!!!&quot;
+            android:singleLine=&quot;true&quot;
+            android:ellipsize=&quot;marquee&quot;
+            android:focusableInTouchMode=&quot;true&quot;
+            android:focusable=&quot;true&quot;
+            android:marqueeRepeatLimit=&quot;marquee_forever&quot;
+            /&gt;
+</code></pre><pre><code>2.第二种方式,自定义一个textview,让textview自动获取焦点
+
+    a.创建自定义控件,继承textview
+</code></pre><pre><code>            public class HomeTextView extends TextView {
+                //在代码中使用的调用
+                public HomeTextView(Context context) {
+                    super(context);
+                }
+                //在布局文件中使用的时候调用,比两个参数多了样式
+                public HomeTextView(Context context, AttributeSet attrs, int defStyle) {
+                    super(context, attrs, defStyle);
+                    // TODO Auto-generated constructor stub
+                }
+                //在布局文件中使用的时候调用
+                //布局文件中的控件都是可以用代码来表示
+                //AttributeSet : 保存了控件在布局文件中的所有属性
+                public HomeTextView(Context context, AttributeSet attrs) {
+                    super(context, attrs);
+                    // TODO Auto-generated constructor stub
+                }
+                //设置自定义的textview自动获取焦点
+                //是否获取焦点
+                @Override
+                public boolean isFocused() {
+                    //true:获取焦点,false:不获取焦点
+                    return true;
+                }
+            }
+</code></pre><pre><code>    b.再布局文件中使用
+</code></pre><pre><code>            &lt;com.itheima.mobliesafe75.ui.HomeTextView 
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;手机卫士,真64杀毒引擎,超神速度,打开7次可以召唤神龙,辅助杀毒!!!&quot;
+                android:singleLine=&quot;true&quot;
+                android:ellipsize=&quot;marquee&quot;
+                android:focusableInTouchMode=&quot;true&quot;
+                android:marqueeRepeatLimit=&quot;marquee_forever&quot;
+                /&gt;
+</code></pre><h3 id="设置中心界面"><a href="#设置中心界面" class="headerlink" title="设置中心界面"></a>设置中心界面</h3><pre><code>    &lt;RelativeLayout 
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        &gt;
+        &lt;TextView 
+            android:id=&quot;@+id/tv_setting_title&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;提示更新&quot;
+            android:layout_margin=&quot;5dp&quot;
+            android:textSize=&quot;18sp&quot;
+            /&gt;
+        &lt;!-- layout_below : 在某个控件的下方 
+        layout_marginLeft : 距离左边距离
+        --&gt;
+        &lt;TextView 
+            android:id=&quot;@+id/tv_setting_des&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;关闭提示更新&quot;
+            android:textSize=&quot;16sp&quot;
+            android:layout_below=&quot;@+id/tv_setting_title&quot;
+            android:layout_marginLeft=&quot;5dp&quot;
+            android:textColor=&quot;#aa000000&quot;
+            /&gt;
+
+        &lt;CheckBox
+            android:id=&quot;@+id/checkBox1&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_alignParentRight=&quot;true&quot;
+            android:layout_centerVertical=&quot;true&quot;
+            android:layout_marginRight=&quot;17dp&quot;
+            /&gt;
+        &lt;View 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;0.5dp&quot;
+            android:background=&quot;#77000000&quot;
+            android:layout_below=&quot;@+id/tv_setting_des&quot;
+            android:layout_marginTop=&quot;5dp&quot;
+            /&gt;
+
+    &lt;/RelativeLayout&gt;
+</code></pre><h3 id="自定义组合控件"><a href="#自定义组合控件" class="headerlink" title="自定义组合控件"></a>自定义组合控件</h3><pre><code>1.创建自定义控件继承RelativeLayout
+</code></pre><pre><code>        public class SettingView extends RelativeLayout {
+</code></pre><pre><code>2.创建一个init方法,并在每个构造函数中调用
+</code></pre><pre><code>        /**
+         * 添加控件
+         */
+        private void init(){
+            //添加布局文件
+    //        TextView textView = new TextView(getContext());
+    //        textView.setText(&quot;我是自定义组合控件的textview&quot;);
+            //第一种方式
+            //将布局文件转化成view对象
+    //        View view = View.inflate(getContext(), R.layout.settingview, null);//爹有了,去找孩子,亲生
+    //        //添加操作
+    //        this.addView(view);//在自定义组合控件中添加一个textview
+            //第二种方式
+            //获取view对象,同时给veiw对象设置父控件,相当于先创建一个view对象,在把控件放到自定义控件中
+            View.inflate(getContext(), R.layout.settingview, this);//孩子有了,去找爹,喜当爹
+        }
+</code></pre><h3 id="屏蔽自动更新"><a href="#屏蔽自动更新" class="headerlink" title="屏蔽自动更新"></a>屏蔽自动更新</h3><pre><code>1.将自定义组合控件移植到手机卫士中
+2.为了方便修改自定义控件中的控件的值,所以在自定义控件中创建一些方法
+</code></pre><pre><code>
+        //需要添加一些方法,使程序员能方便的去改变自定义控件中的控件的值
+        /**
+         * 设置标题的方法
+         */
+        public void setTitle(String title){
+            tv_setting_title.setText(title);
+        }
+        /**
+         * 设置描述信息的方法
+         */
+        public void setDes(String des){
+            tv_setting_des.setText(des);
+        }
+        /**
+         * 设置checkbox状态
+         */
+        public void setChecked(boolean isChecked){
+            //设置checkbox的状态
+            cb_setting_update.setChecked(isChecked);
+        }
+        /**
+         * 获取checkbox的状态
+         */
+        public boolean isChecked(){
+            return cb_setting_update.isChecked();//获取checkbox的状态
+        }
+</code></pre><pre><code>3.到activity中去使用这些方法
+</code></pre><pre><code>        sv_setting_update = (SettingView) findViewById(R.id.sv_setting_update);
+        //初始化自定义控件中各个控件的值
+        sv_setting_update.setTitle(&quot;提示更新&quot;);
+        sv_setting_update.setDes(&quot;打开提示更新&quot;);
+        sv_setting_update.setChecked(true);    
+
+        //设置自定义组合控件的点击事件
+        //问题1:点击checkbox发现描述信息没有改变,原因:因为checkbox天生是有点击事件和获取焦点事件,当点击checkbox,这个checkbox就会执行他的点击事件
+        //而不会执行条目的点击事件
+        //问题2:没有保存用户点击操作
+        sv_setting_update.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //更改状态
+                //根据checkbox之前的状态来改变checkbox的状态
+                if (sv_setting_update.isChecked()) {
+                    //关闭提示更新
+                    sv_setting_update.setDes(&quot;关闭提示更新&quot;);
+                    sv_setting_update.setChecked(false);
+
+                }else{
+                    //打开提示更新
+                    sv_setting_update.setDes(&quot;打开提示更新&quot;);
+                    sv_setting_update.setChecked(true);
+
+                }
+            }
+        });
+</code></pre><pre><code>4.解决两个问题
+    问题1:点击checkbox发现描述信息没有改变,原因:因为checkbox天生是有点击事件和获取焦点事件,当点击checkbox,这个checkbox就会执行他的点击事件
+</code></pre><pre><code>
+             &lt;!-- 
+                focusable : 是否可以获取焦点,true:可以,false:不可以
+                clickable : 是否可以点击    true:可以,false:不可以 --&gt;
+                &lt;CheckBox
+                    android:id=&quot;@+id/cb_setting_update&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:layout_alignParentRight=&quot;true&quot;
+                    android:layout_centerVertical=&quot;true&quot;
+                    android:layout_marginRight=&quot;17dp&quot; 
+                    android:focusable=&quot;false&quot;
+                    android:clickable=&quot;false&quot;
+                    /&gt;
+</code></pre><pre><code>    问题2:没有保存用户点击操作
+</code></pre><pre><code>
+            //name : 保存信息的文件的名称
+            //mode : 权限
+            sp = getSharedPreferences(&quot;config&quot;, MODE_PRIVATE);
+            sv_setting_update = (SettingView) findViewById(R.id.sv_setting_update);
+            //初始化自定义控件中各个控件的值
+            sv_setting_update.setTitle(&quot;提示更新&quot;);
+            //defValue : 缺省的值
+            if (sp.getBoolean(&quot;update&quot;, true)) {
+                sv_setting_update.setDes(&quot;打开提示更新&quot;);
+                sv_setting_update.setChecked(true);    
+            }else{
+                sv_setting_update.setDes(&quot;关闭提示更新&quot;);
+                sv_setting_update.setChecked(false);    
+            }
+            //设置自定义组合控件的点击事件
+            //问题1:点击checkbox发现描述信息没有改变,原因:因为checkbox天生是有点击事件和获取焦点事件,当点击checkbox,这个checkbox就会执行他的点击事件
+            //而不会执行条目的点击事件
+            //问题2:没有保存用户点击操作
+            sv_setting_update.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    Editor edit = sp.edit();
+                    //更改状态
+                    //根据checkbox之前的状态来改变checkbox的状态
+                    if (sv_setting_update.isChecked()) {
+                        //关闭提示更新
+                        sv_setting_update.setDes(&quot;关闭提示更新&quot;);
+                        sv_setting_update.setChecked(false);
+                        //保存状态
+                        edit.putBoolean(&quot;update&quot;, false);
+                        //edit.apply();//保存到文件中,但是仅限于9版本之上,9版本之下保存到内存中的
+                    }else{
+                        //打开提示更新
+                        sv_setting_update.setDes(&quot;打开提示更新&quot;);
+                        sv_setting_update.setChecked(true);
+                        //保存状态
+                        edit.putBoolean(&quot;update&quot;, true);
+                    }
+                    edit.commit();
+                }
+            });
+        }
+</code></pre><pre><code>5.屏蔽自动更新
+</code></pre><pre><code>
+        if (sp.getBoolean(&quot;update&quot;, true)) {
+           update();
+       }else{
+           //跳转到主界面
+           //不能让主线程去睡两秒钟
+           //主线程是有渲染界面的操作,主线程睡两秒钟就没有办法去渲染界面
+           new Thread(){
+               public void run() {
+                   SystemClock.sleep(2000);
+                   enterHome(); 
+               };
+           }.start();
+       }
+</code></pre>
     
 
     
@@ -558,8 +796,8 @@ Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transf
 
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://miccall.tech/2017/01/03/android/android_002/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/03/android/android_002/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     $('.btn_click_load').click(function() {  //click to load comments
         (function() { // DON'T EDIT BELOW THIS LINE
@@ -590,7 +828,7 @@ Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transf
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/01/18/leapmotion/LEAP Motion 的猎户座  -001-/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/01/04/android/android_003/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -604,7 +842,7 @@ Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transf
 
     <!-- Next Nav -->
     
-        <a href="/2017/01/14/android/android_013/" id="post_nav-older" class="next-content">
+        <a href="/2017/01/02/android/android_001/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

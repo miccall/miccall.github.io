@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            Android学习笔记 013 | 
+        
+        Mr.Metro
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="x9UgYDj9il" />
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="miccall">
+    <meta name="description" content="Blog of miccall is records about my work">
+    <meta name="keywords" content="miccall,android">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Metro">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://miccall.tech">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Android学习笔记 013 | Mr.Metro">
+    <meta property="og:description" content="Blog of miccall is records about my work">
+    <meta property="og:article:tag" content="android"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #7EC0EE !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #7EC0EE !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #7EC0EE !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#病毒"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">病毒</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手机杀毒界面"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">手机杀毒界面</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#扫描操作-重点-动画"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">扫描操作#  (重点:动画)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取签名信息-重点-指定信息的标签"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">获取签名信息# (重点:指定信息的标签)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#手机杀毒"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">手机杀毒</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#缓存清理框架-重点"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">缓存清理框架# (重点!!!!!!)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#缓存清理扫描操作"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">缓存清理扫描操作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取缓存-重点-反射-源码查看"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">获取缓存#  (重点:反射+源码查看)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#展示缓存应用"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">展示缓存应用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#清理缓存"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">清理缓存</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异常捕获-重点"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">异常捕获#  (重点)</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(img/ll.jpg)">
+    
+            <p class="article-headline-p">
+                Android学习笔记 013
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>miccall</strong>
+        <span>1月 14, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACc0lEQVR42u3awW6kMBAE0Pn/n969RsoyqWqMIbOPUxQB48fBbVX3689HXy88PDw8PDw8PLyH8V7x9fX+w1d/u//7U0dvOHoqXxseHh7eTt4PW+3B4tpFv78/+U/0UfDw8PA28tpicPRsu8T8cyRrw8PDw3saLyHlZaP9XTw8PLzfyMth7cd6UN3Dw8PDWxpGJD82i3rbcoKHh4d3L2/WANvz9239PTw8PLwDXnvNPkEe77ax7z/egIeHh3cx7/1SVgHygap8mKAeusLDw8NbxJtt96vig9kYVhHj4uHh4V3Ay7fsWUvs/dafN8zyyBgPDw9vJy9pXLWNrrY85GUADw8P7y5e3s4vtubRKNUsEMHDw8O7i9e2vmaH8pyXr2dZfw8PDw9vxFsVQ7StrzPHbjw8PLz9vDximA2w5rw28MXDw8O7i3dm+24X15afvNjg4eHh7efl4DyqyI/j7QDBghgXDw8P7wSvDSDyMCIpEnnQUBz98fDw8LbwZoWhffZM1FsMyOLh4eFt4eUvOhNbtOw8SsbDw8Pbz5uFC8lhtw0g2sJzqu7h4eHhjXh5MJGMCORDVPlAQB714uHh4e3knRlLbcew2o2+Dnzx8PDwLubl2/1sRPX88NaylBoPDw9vEa+98mZV3h7LD9bDuoeHh4e3lPeKr1mb/4qjOR4eHt4TeHkxaA/TeeRx5tiNh4eHdxev3dzbz3Qmhig+BB4eHt7DePnQansgzocPhjNleHh4eLfy8lg2jzBmx/RLCgMeHh7e0pxzFk+0A6+zj4iHh4e3k3dFA6wdYJ1Furf19/Dw8P5j3uddeHh4eHh4eHh4D7j+An6SupZn/g+8AAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android学习笔记 013&url=http://miccall.tech//2017/01/14/android/android_013/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android学习笔记 013&url=http://miccall.tech//2017/01/14/android/android_013/index.html&via=miccall" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://miccall.tech//2017/01/14/android/android_013/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/14/android/android_013/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Android学习笔记 013&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/01/14/android/android_013/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <hr>
+<h1 id="Android学习笔记"><a href="#Android学习笔记" class="headerlink" title=" Android学习笔记 "></a><strong> Android学习笔记 </strong></h1><h2 id="病毒"><a href="#病毒" class="headerlink" title="病毒"></a>病毒</h2><pre><code>病毒 : 一段带有恶意行为的计算机程序
+恶搞 : 炫耀技术,熊猫烧香,损人不利己
+灰鸽子 : 盗号,qq,游戏账号
+肉机 : 通过一段程序控制的电脑
+
+杀毒软件历史
+    1.黑名单  : 将已有的病毒保存到数据库中,卡巴斯基,江民,瑞星,金山,问题:不能及时发现病毒,蜜罐,云查杀
+    2.白名单  : 360  把查杀过的应用发送数据库中
+
+手机端:黑名单
+</code></pre><h2 id="手机杀毒界面"><a href="#手机杀毒界面" class="headerlink" title="手机杀毒界面"></a>手机杀毒界面</h2><pre><code>layer-list : 图层,帧布局framlayout,可以将图片一层叠一层展示,布局文件中最下面的控件,显示的时候在最上面
+
+1.布局
+</code></pre><pre><code>            &lt;RelativeLayout 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            &gt;
+            &lt;ImageView 
+                android:id=&quot;@+id/iv_antivirus_anitimageview&quot;
+                android:layout_width=&quot;80dp&quot;
+                android:layout_height=&quot;80dp&quot;
+                android:src=&quot;@drawable/ic_scanner_malware&quot;
+                android:layout_margin=&quot;10dp&quot;
+                /&gt;
+            &lt;ImageView 
+                android:id=&quot;@+id/iv_antivirus_scanner&quot;
+                android:layout_width=&quot;80dp&quot;
+                android:layout_height=&quot;80dp&quot;
+                android:src=&quot;@drawable/act_scanning_03&quot;
+                android:layout_margin=&quot;10dp&quot;
+                /&gt;
+            &lt;TextView 
+                android:id=&quot;@+id/tv_antivirus_text&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;正在扫描...&quot;
+                android:layout_toRightOf=&quot;@id/iv_antivirus_anitimageview&quot;
+                android:layout_marginTop=&quot;25dp&quot;
+                android:textSize=&quot;18sp&quot;
+                android:layout_marginRight=&quot;15dp&quot;
+                /&gt;
+            &lt;!-- progress : 设置进度条当前进度 --&gt;
+            &lt;ProgressBar
+                android:id=&quot;@+id/pb_antivirus_progressbar&quot;
+                style=&quot;?android:attr/progressBarStyleHorizontal&quot;
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:layout_below=&quot;@id/tv_antivirus_text&quot;
+                android:layout_toRightOf=&quot;@id/iv_antivirus_anitimageview&quot;
+                android:layout_marginTop=&quot;5dp&quot;
+                android:layout_marginRight=&quot;15dp&quot;
+                android:progressDrawable=&quot;@drawable/progerssbar_antivirus_bg&quot;
+                android:progress=&quot;30&quot;
+                /&gt;
+
+        &lt;/RelativeLayout&gt;
+</code></pre><pre><code>2.图层  res-&gt;drawable -&gt; xxx.xml
+</code></pre><pre><code>       &lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
+            &lt;item android:id=&quot;@android:id/background&quot;&gt;
+              &lt;bitmap android:src=&quot;@drawable/security_progress_bg&quot;
+                android:gravity=&quot;center&quot; /&gt;
+            &lt;/item&gt;
+            &lt;item android:id=&quot;@android:id/secondaryProgress&quot;&gt;
+              &lt;bitmap android:src=&quot;@drawable/security_progress&quot;
+                android:gravity=&quot;center&quot; /&gt;
+            &lt;/item&gt;
+            &lt;item android:id=&quot;@android:id/progress&quot;&gt;
+              &lt;bitmap android:src=&quot;@drawable/security_progress&quot;
+                android:gravity=&quot;center&quot; /&gt;
+            &lt;/item&gt;
+        &lt;/layer-list&gt;
+</code></pre><pre><code>3.更改样式,progressbar的属性
+</code></pre><pre><code>        android:progressDrawable=&quot;@drawable/progerssbar_antivirus_bg&quot;
+</code></pre><h2 id="扫描操作-重点-动画"><a href="#扫描操作-重点-动画" class="headerlink" title="扫描操作#  (重点:动画)"></a>扫描操作#  (重点:动画)</h2><pre><code>        //设置旋转动画
+        //fromDegrees : 旋转开始的角度
+        //toDegrees : 结束的角度
+        //后面四个:是以自身变化还是以父控件变化
+        //Animation.RELATIVE_TO_SELF : 以自身旋转
+        //Animation.RELATIVE_TO_PARENT : 以父控件旋转
+        RotateAnimation rotateAnimation = new RotateAnimation(0, 360, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+        rotateAnimation.setDuration(1000);//持续时间
+        rotateAnimation.setRepeatCount(Animation.INFINITE);//设置旋转的次数,INFINITE:一直旋转
+
+        //设置动画插补器
+        LinearInterpolator linearInterpolator = new LinearInterpolator();
+        rotateAnimation.setInterpolator(linearInterpolator);
+        iv_antivirus_scanner.startAnimation(rotateAnimation);
+</code></pre><pre><code>展示软件列表  1.listview   2.linearlayout添加textview
+</code></pre><pre class="line-numbers language-java"><code class="language-java">     <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">scanner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">/**
+     * 扫描程序
+     */</span>
+        <span class="token comment" spellcheck="true">//1.获取包的管理者</span>
+        <span class="token keyword">final</span> PackageManager pm <span class="token operator">=</span> <span class="token function">getPackageManager</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        tv_antivirus_text<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"正在初始化64核杀毒引擎...."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//延迟一秒中扫描程序</span>
+                SystemClock<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//2.获取所有安装应用程序信息</span>
+                List<span class="token operator">&lt;</span>PackageInfo<span class="token operator">></span> installedPackages <span class="token operator">=</span> pm<span class="token punctuation">.</span><span class="token function">getInstalledPackages</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token comment" spellcheck="true">//3.1设置进度条最大进度</span>
+                pb_antivirus_progressbar<span class="token punctuation">.</span><span class="token function">setMax</span><span class="token punctuation">(</span>installedPackages<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//3.2设置当前进度</span>
+                <span class="token keyword">int</span> count<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span>PackageInfo packageInfo <span class="token operator">:</span> installedPackages<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    SystemClock<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//3.设置进度条的最大进度和当前进度</span>
+                    count<span class="token operator">++</span><span class="token punctuation">;</span>
+                    pb_antivirus_progressbar<span class="token punctuation">.</span><span class="token function">setProgress</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token comment" spellcheck="true">//4.设置扫描显示软件名称</span>
+                    <span class="token keyword">final</span> String name <span class="token operator">=</span> packageInfo<span class="token punctuation">.</span>applicationInfo<span class="token punctuation">.</span><span class="token function">loadLabel</span><span class="token punctuation">(</span>pm<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//在ui线程(主线程)进行操作</span>
+                    <span class="token function">runOnUiThread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//封装了handler</span>
+
+                        <span class="token annotation punctuation">@Override</span>
+                        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                            tv_antivirus_text<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"正在扫描:"</span><span class="token operator">+</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                            <span class="token comment" spellcheck="true">//6.展示扫描软件的名称信息</span>
+                            TextView textView <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TextView</span><span class="token punctuation">(</span><span class="token function">getApplicationContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            textView<span class="token punctuation">.</span><span class="token function">setTextColor</span><span class="token punctuation">(</span>Color<span class="token punctuation">.</span>BLACK<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            textView<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token comment" spellcheck="true">//textview添加到线性布局中</span>
+                            <span class="token comment" spellcheck="true">//ll_antivirus_safeapks.addView(textView);</span>
+                            ll_antivirus_safeapks<span class="token punctuation">.</span><span class="token function">addView</span><span class="token punctuation">(</span>textView<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//index:将textview添加到线性布局的哪个位置</span>
+                        <span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//5.扫描完成,显示扫描完成信息,同时旋转动画停止</span>
+                <span class="token function">runOnUiThread</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                    <span class="token annotation punctuation">@Override</span>
+                    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        <span class="token comment" spellcheck="true">//设置显示信息以及停止动画</span>
+                        tv_antivirus_text<span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span><span class="token string">"扫描完成,未发现病毒"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        iv_antivirus_scanner<span class="token punctuation">.</span><span class="token function">clearAnimation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token comment" spellcheck="true">//移出动画</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="获取签名信息-重点-指定信息的标签"><a href="#获取签名信息-重点-指定信息的标签" class="headerlink" title="获取签名信息# (重点:指定信息的标签)"></a>获取签名信息# (重点:指定信息的标签)</h2><pre><code>1.指定获取签名信息标签
+</code></pre><pre><code>        List&lt;PackageInfo&gt; installedPackages = pm.getInstalledPackages(PackageManager.GET_SIGNATURES);
+</code></pre><pre><code>2.获取签名信息
+</code></pre><pre><code>        //7.获取应用程序的签名,并进行md5加密
+        Signature[] signatures= packageInfo.signatures;//获取应用程序的签名信息,获取签名的数组
+        String charsString = signatures[0].toCharsString();
+        //对签名信息进行MD5加密
+        String signature = MD5Util.passwordMD5(charsString);
+        System.out.println(name+&quot;  : &quot;+signature);
+</code></pre><h2 id="手机杀毒"><a href="#手机杀毒" class="headerlink" title="手机杀毒"></a>手机杀毒</h2><pre><code>1.将病毒库导入到手机中,参考splashactivity中拷贝数据库操作,增加方法传递参数
+2.创建查询数据库操作
+</code></pre><pre><code>            //查询Md5值是否在数据库中
+            public class AntiVirusDao {
+                /**
+                 * 查询Md5值是否在病毒数据库中
+                 * @param context
+                 * @param md5
+                 * @return
+                 */
+                public static boolean queryAntiVirus(Context context,String md5){
+                    boolean ishave = false;
+                    //1.获取数据库的路径
+                    File file = new File(context.getFilesDir(), &quot;antivirus.db&quot;);
+                    SQLiteDatabase database = SQLiteDatabase.openDatabase(file.getAbsolutePath(), null, SQLiteDatabase.OPEN_READONLY);
+                    Cursor cursor = database.query(&quot;datable&quot;, null, &quot;md5=?&quot;, new String[]{md5}, null, null, null);
+                    if (cursor.moveToNext()) {
+                        ishave = true;
+                    }
+                    cursor.close();
+                    database.close();
+                    return ishave;
+                }
+            }
+</code></pre><pre><code>3.使用
+</code></pre><pre><code>
+        //8.查询MD5值是否在病毒数据库中
+        boolean b = AntiVirusDao.queryAntiVirus(getApplicationContext(), signature);
+</code></pre><pre><code>4.根据查询值,设置病毒标示
+</code></pre><pre><code>       /*6.展示扫描软件的名称信息*/
+        TextView textView = new TextView(getApplicationContext());
+       /*9.根据返回的值将病毒标示出来*/
+        if (b) {
+            /*有病毒*/
+            textView.setTextColor(Color.RED);
+            /*将病毒的包名添加到list集合*/
+            list.add(packageInfo.packageName);
+        }else{
+            /*没有病毒*/
+            textView.setTextColor(Color.BLACK);
+        }
+        textView.setText(name);
+</code></pre><pre><code>5.对查询到病毒进行处理
+</code></pre><pre><code>                        //10.根据是否有病毒进行显示操作
+                        if (list.size() &gt; 0) {
+                            //有病毒
+                            tv_antivirus_text.setText(&quot;扫描完成,发现&quot;+list.size()+&quot;个病毒&quot;);
+                            //卸载病毒应用
+                            AlertDialog.Builder builder = new Builder(AntivirusActivity.this);
+                            builder.setTitle(&quot;提醒!发现&quot;+list.size()+&quot;个病毒&quot;);
+                            builder.setIcon(R.drawable.ic_launcher);
+                            builder.setMessage(&quot;是否卸载病毒应用!&quot;);
+                            builder.setPositiveButton(&quot;卸载&quot;, new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //卸载操作
+                                    for (String packagname : list) {
+                                        Intent intent = new Intent();
+                                        intent.setAction(&quot;android.intent.action.DELETE&quot;);
+                                        intent.addCategory(&quot;android.intent.category.DEFAULT&quot;);
+                                        intent.setData(Uri.parse(&quot;package:&quot;+packagname));
+                                        startActivity(intent);
+                                    }
+                                    dialog.dismiss();
+                                }
+                            });
+                            builder.setNegativeButton(&quot;取消&quot;, null);
+                            builder.show();
+                        }else{
+                            //设置显示信息以及停止动画
+                            tv_antivirus_text.setText(&quot;扫描完成,未发现病毒&quot;);
+                        }
+</code></pre><h2 id="缓存清理框架-重点"><a href="#缓存清理框架-重点" class="headerlink" title="缓存清理框架# (重点!!!!!!)"></a>缓存清理框架# (重点!!!!!!)</h2><pre><code>1.将activity改为继承fragmentActivity
+</code></pre><pre><code>        //如果要对fragment进行管理操作,activity必须继承fragmentActivity
+        public class ClearCacheActivity extends FragmentActivity {
+        }
+</code></pre><pre><code>2.设置布局文件
+</code></pre><pre><code>        &lt;!-- fragment替换的控件 --&gt;
+        &lt;FrameLayout 
+            android:id=&quot;@+id/fram_clearcache_fragment&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:layout_weight=&quot;1&quot;
+            &gt;&lt;/FrameLayout&gt;
+       &lt;LinearLayout 
+           android:layout_width=&quot;match_parent&quot;
+           android:layout_height=&quot;wrap_content&quot;
+           &gt;
+
+        &lt;Button 
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;缓存清理&quot;
+            android:background=&quot;@drawable/selector_contact_button&quot;
+            android:onClick=&quot;cache&quot;
+            /&gt;
+
+        &lt;Button 
+            android:layout_width=&quot;0dp&quot;
+            android:layout_weight=&quot;1&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;SD卡清理&quot;
+             android:background=&quot;@drawable/selector_contact_button&quot;
+             android:onClick=&quot;sd&quot;
+            /&gt;
+        &lt;/LinearLayout&gt;
+</code></pre><pre><code>3.创建fragment
+</code></pre><pre><code>
+        public class CacheFragment extends Fragment {
+            /*初始化操作*/
+            @Override
+            public void onCreate(Bundle savedInstanceState) {
+                // TODO Auto-generated method stub
+                super.onCreate(savedInstanceState);
+            }
+            /*设置fragment的布局*/
+            @Override
+            public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                    Bundle savedInstanceState) {
+                /*参数1:布局文件*/
+                /*参数2:容器*/
+                /*参数3:自动挂载  ,一律false*/
+                View view= inflater.inflate(R.layout.fragment_cache, container, false);
+                return view;
+            }
+            /*设置填充显示数据*/
+            @Override
+            public void onActivityCreated(Bundle savedInstanceState) {
+                // TODO Auto-generated method stub
+                super.onActivityCreated(savedInstanceState);
+            }
+
+        }
+</code></pre><pre><code>4.创建fragment布局文件,线性布局,背景是红色
+5.在actiivty中添加fragment
+</code></pre><pre><code>@Override
+protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_clearcache);
+            /*挂载fragment*/
+            /*1.获取fragment*/
+            cacheFragment = new CacheFragment();
+            sdFragment = new SDFragment();
+            /*2.加载fragment*/
+            /*2.1获取fragment的管理者*/
+            supportFragmentManager = getSupportFragmentManager();
+            /*2.2开启事务*/
+            FragmentTransaction beginTransaction = supportFragmentManager.beginTransaction();
+            /*2.3添加fragment操作*/
+            /*数据不会重新刷新*/
+            /*参数1:fragment要替换的控件的id*/
+            /*参数2:要替换fragment*/
+            beginTransaction.add(R.id.fram_clearcache_fragment, cacheFragment);
+            /*界面展示以最后一个添加的为准*/
+            beginTransaction.add(R.id.fram_clearcache_fragment, sdFragment);
+            /*隐藏fragment操作*/
+            beginTransaction.hide(sdFragment);
+            /*也可以实现替换操作,数据会重新刷新*/
+            /*beginTransaction.replace(arg0, arg1)*/
+            /*2.4提交事务*/
+            beginTransaction.commit();
+        }
+</code></pre><pre><code>6.隐藏显示fragment操作
+</code></pre><pre><code>
+public void cache(View v){
+
+            /*隐藏sdfragment,显示cacheFragment*/
+
+            /*1.获取事务*/
+            FragmentTransaction beginTransaction = supportFragmentManager.beginTransaction();
+            /*2.隐藏显示操作*/
+            beginTransaction.hide(sdFragment);//隐藏fragmnt
+            beginTransaction.show(cacheFragment);//显示fragment操作
+            //3.提交
+            beginTransaction.commit();
+        }
+</code></pre><h2 id="缓存清理扫描操作"><a href="#缓存清理扫描操作" class="headerlink" title="缓存清理扫描操作"></a>缓存清理扫描操作</h2><pre><code>    /**
+     * 扫描
+     */
+    private void scanner() {
+        //1.获取包的管理者
+        //getActivity() : 获取fragment所在的activity
+        final PackageManager pm = getActivity().getPackageManager();
+        tv_cachefragment_text.setText(&quot;正在初始化128核扫描引擎.....&quot;);
+        new Thread(){
+            public void run() {
+                SystemClock.sleep(100);
+                List&lt;PackageInfo&gt; installedPackages = pm.getInstalledPackages(0);
+                //设置进度条最大进度
+                pb_cachefragment_progressbar.setMax(installedPackages.size());
+                int count=0;
+                for (PackageInfo packageInfo : installedPackages) {
+                    SystemClock.sleep(100);
+                    //设置进度条最大进度和当前进度
+                    count++;
+                    pb_cachefragment_progressbar.setProgress(count);
+
+                    //设置扫描显示的应用的名称
+                    final String name = packageInfo.applicationInfo.loadLabel(pm).toString();
+                    if (getActivity() != null) {
+                        getActivity().runOnUiThread(new Runnable() {
+
+                            @Override
+                            public void run() {
+                                tv_cachefragment_text.setText(&quot;正在扫描:&quot;+name);
+                            }
+                        }); 
+                    }
+                }
+                if (getActivity() != null) {
+                    getActivity().runOnUiThread(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            tv_cachefragment_text.setVisibility(View.GONE);
+                            pb_cachefragment_progressbar.setVisibility(View.GONE);
+                        }
+                    });
+                }
+            };
+        }.start();
+    }
+</code></pre><h2 id="获取缓存-重点-反射-源码查看"><a href="#获取缓存-重点-反射-源码查看" class="headerlink" title="获取缓存#  (重点:反射+源码查看)"></a>获取缓存#  (重点:反射+源码查看)</h2><pre><code>1.反射操作
+</code></pre><pre><code>                    //反射获取缓存
+                    try {
+                        Class&lt;?&gt; loadClass = getActivity().getClass().getClassLoader().loadClass(&quot;android.content.pm.PackageManager&quot;);
+                        Method method = loadClass.getDeclaredMethod(&quot;getPackageSizeInfo&quot;, String.class,IPackageStatsObserver.class);
+                        //receiver : 类的实例,隐藏参数,方法不是静态的必须指定
+                        method.invoke(pm, packageInfo.packageName,mStatsObserver);
+                    } catch (Exception e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+</code></pre><pre><code>2.远程服务aidl
+</code></pre><pre><code>        //获取缓存大小
+        IPackageStatsObserver.Stub mStatsObserver = new IPackageStatsObserver.Stub() {
+            public void onGetStatsCompleted(PackageStats stats, boolean succeeded) {
+                long cachesize = stats.cacheSize;//缓存大小
+                long codesize = stats.codeSize;//应用程序的大小
+                long datasize = stats.dataSize;//数据大小
+
+                String cache = Formatter.formatFileSize(getActivity(), cachesize);
+                String code = Formatter.formatFileSize(getActivity(), codesize);
+                String data = Formatter.formatFileSize(getActivity(), datasize);
+
+                System.out.println(stats.packageName+&quot;cachesize:&quot;+cache +&quot; codesize:&quot;+code+&quot; datasize:&quot;+data);
+            }
+        };
+</code></pre><pre><code>3.权限
+</code></pre><pre><code>
+        &lt;uses-permission android:name=&quot;android.permission.GET_PACKAGE_SIZE&quot; /&gt;
+</code></pre><h2 id="展示缓存应用"><a href="#展示缓存应用" class="headerlink" title="展示缓存应用"></a>展示缓存应用</h2><pre><code>1.使用listview进行展示
+</code></pre><pre><code>
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+
+            View cachView;
+            ViewHolder viewHolder;
+            if (convertView == null) {
+                 cachView = View.inflate(getActivity(), R.layout.item_cache, null);
+                 viewHolder = new ViewHolder();
+                 viewHolder.iv_itemcache_icon = (ImageView) cachView.findViewById(R.id.iv_itemcache_icon);
+                 viewHolder.tv_itemcache_name = (TextView) cachView.findViewById(R.id.tv_itemcache_name);
+                 viewHolder.tv_itemcache_size = (TextView) cachView.findViewById(R.id.tv_itemcache_size);
+                 cachView.setTag(viewHolder);
+            }else{
+                cachView = convertView;
+                viewHolder = (ViewHolder) cachView.getTag();
+            }
+            //设置显示数据
+            CachInfo cachInfo = list.get(position);
+            //根据包名获取application信息
+            try {
+                ApplicationInfo applicationInfo = pm.getApplicationInfo(cachInfo.getPackageName(), 0);
+                Drawable icon = applicationInfo.loadIcon(pm);
+                String name = applicationInfo.loadLabel(pm).toString();
+                //设置显示
+                 viewHolder.iv_itemcache_icon.setImageDrawable(icon);
+                 viewHolder.tv_itemcache_name.setText(name);
+                 viewHolder.tv_itemcache_size.setText(cachInfo.getCachesize());
+            } catch (NameNotFoundException e) {
+                e.printStackTrace();
+            }
+            return cachView;
+        }
+</code></pre><h2 id="清理缓存"><a href="#清理缓存" class="headerlink" title="清理缓存"></a>清理缓存</h2><pre><code>android中当前程序是不能清理其他程序缓存
+
+1.进入详情界面进行清理
+</code></pre><pre><code>        lv_cachefragment_caches.setOnItemClickListener(new OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView&lt;?&gt; parent, View view,
+                    int position, long id) {
+                //跳转到详情页面
+                Intent intent = new Intent();
+                intent.setAction(&quot;android.settings.APPLICATION_DETAILS_SETTINGS&quot;);
+                intent.setData(Uri.parse(&quot;package:&quot;+list.get(position).getPackageName()));
+                startActivity(intent);
+            }
+        });
+</code></pre><pre><code>2.通过反射清理所有应用程序的缓存
+</code></pre><pre><code>        //清理缓存
+        btn_cachefragment_clear.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                    //真正的实现清理缓存
+                    try {
+                        Class&lt;?&gt; loadClass = getActivity().getClass().getClassLoader().loadClass(&quot;android.content.pm.PackageManager&quot;);
+                        //Long.class  Long     TYPE  long
+                        Method method = loadClass.getDeclaredMethod(&quot;freeStorageAndNotify&quot;, Long.TYPE,IPackageDataObserver.class);
+                        method.invoke(pm, Long.MAX_VALUE,new MyIPackageDataObserver());
+                    } catch (Exception e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+
+                    //清理缓存
+                    list.clear();
+                    //更新界面
+                    myadapter.notifyDataSetChanged();
+                    //隐藏button按钮
+                    btn_cachefragment_clear.setVisibility(View.GONE);
+                }
+        });
+</code></pre><h2 id="异常捕获-重点"><a href="#异常捕获-重点" class="headerlink" title="异常捕获#  (重点)"></a>异常捕获#  (重点)</h2><pre><code>
+public class MyApplication extends Application {
+    //异常捕获
+    //Application : 当前的应用程序,所有的应用最先的执行都是applicaiton
+        @Override
+        public void onCreate() {
+            super.onCreate();
+            System.out.println(&quot;applcation启动了......&quot;);
+            Thread.currentThread().setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
+        }
+        private class MyUncaughtExceptionHandler implements UncaughtExceptionHandler{
+            //系统中由未捕获的异常的时候调用
+            //Throwable : Error和Exception的父类
+            @Override
+            public void uncaughtException(Thread thread, Throwable ex) {
+                System.out.println(&quot;哥捕获异常了......&quot;);
+                ex.printStackTrace();
+                try {
+                    //将捕获到异常,保存到SD卡中
+                    ex.printStackTrace(new PrintStream(new File(&quot;/mnt/sdcard/log.txt&quot;)));
+                } catch (FileNotFoundException e)
+</code></pre>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+    <!-- 使用 DISQUS_CLICK -->
+    <div id="disqus-comment">
+        <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+        .ripple-container {
+        }
+        .ripple-container .ripple{
+            background-color: rgba(255,255,255,0.4);
+            animation: ripple 2s forwards cubic-bezier(0, 0, 0.2, 1);
+        }
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            80% {
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+	
+<!-- add data-ripple attribute -->
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+</div>
+	
+<script>
+    // add effect to elements
+    Array.prototype.forEach.call(document.querySelectorAll('[data-ripple]'), function(element){
+        // find all elements and attach effect
+        new RippleEffect(element); // element is instance of javascript element node
+    });
+</script>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/14/android/android_013/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/14/android/android_013/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
+
+    </div>
+    <style>
+        #disqus-comment{
+            background-color: #eee;
+            padding: 2pc;
+        }
+    </style>
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/01/18/unity3d/Unity 3d 常用脚本/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/01/13/android/android_012/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/preview.gif);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/BA201701210404530018-00-000000.png" alt="miccall's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        316459829@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:316459829@qq.com.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://shang.qq.com/email/stop/email_stop.html?qq=316459829&amp;sig=a1c657365db7e82805ea4b2351081fc3ebcde159f8ae49b1&amp;tttt=1" target="_blank" title="腾讯 QQ">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">phone</i>
+                        
+                        腾讯 QQ
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://blog.csdn.net/qq_31411825" target="_blank" title="CSDN">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">user</i>
+                        
+                        CSDN
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about/" title="About Me">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About Me
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/group/" title="About Group">
+                
+                    <i class="material-icons sidebar-material-icons">group</i>
+                
+                About Group
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery/" title="My Grally">
+                
+                    <i class="material-icons sidebar-material-icons">image</i>
+                
+                My Grally
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tag/" title="Tag">
+                
+                    <i class="material-icons sidebar-material-icons">expore</i>
+                
+                Tag
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Mr.Metro
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script src="/js/smoothscroll.js"></script>
+    
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

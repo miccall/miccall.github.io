@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            Android学习笔记 010 | 
+        
+        Mr.Metro
+    </title>
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta name="baidu-site-verification" content="x9UgYDj9il" />
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="miccall">
+    <meta name="description" content="Blog of miccall is records about my work">
+    <meta name="keywords" content="miccall,android">
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Metro">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://miccall.tech">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Android学习笔记 010 | Mr.Metro">
+    <meta property="og:description" content="Blog of miccall is records about my work">
+    <meta property="og:article:tag" content="android"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS & jQuery -->
+    
+        <link rel="stylesheet" href="/css/material.min.css">
+        <link rel="stylesheet" href="/css/style.min.css">
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #7EC0EE !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #7EC0EE !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #7EC0EE !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/queue.js"></script>
+    
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#系统程序和用户程序拆分"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">系统程序和用户程序拆分</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#浮动显示程序个数"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">浮动显示程序个数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#popuwindow操作-重点"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">popuwindow操作#  (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#popuwindow动画-重点"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">popuwindow动画# (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置控件点击事件"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">设置控件点击事件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#卸载"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">卸载</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#启动"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">启动</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#详情"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">详情</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#分享-重点"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">分享# (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取可用空间"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">获取可用空间</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取系统所有进程信息-重点"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">获取系统所有进程信息# (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#进程管理界面-重点-思路"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">进程管理界面# (重点:思路)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#checkboxBug解决-重点"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">checkboxBug解决#  (重点)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#全选和取消"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">全选和取消</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#清理进程-重点-五个进程"><span class="post-toc-number">1.15.</span> <span class="post-toc-text">清理进程# (重点:五个进程)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#清理细节处理"><span class="post-toc-number">1.16.</span> <span class="post-toc-text">清理细节处理</span></a></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Android学习笔记 010
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>miccall</strong>
+        <span>1月 11, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXElEQVR42u3aQXLCMBAEQP7/6eQBFMqMJMsO1T5RYPA2B2lrVq+fr75eeHh4eHh4eHh4D+O94mv8rff33+9/f/3pnqXa8PDw8I7w/lhqh+V+AoyLyH+nrg0PDw/vIG+83Of3Jwv9eCOZqw0PDw/v+bz1Nrp9Lh4eHt5/57Ut79xGgoeHh/dkXl5iG8K21NuyFjw8PLyYlw+Zzr8+Ot/Dw8PDC3j1kaYyrk2CjHwbiCrEw8PDu5iXL8RtdLv+m/l38fDw8O7lJXHArvigffqGlBoPDw9vmTd3CCBZ3JOItt0kxnXi4eHhneHNxQFzBwLaxvqSkxF4eHh4y7y8UU6CgDauHTNyMB4eHt55XhvU5tvJUqFxsIuHh4d3Fy8PWHe11+ttd5S14OHh4W3lJe1s23DvjRtyGB4eHt4Z3kpou3ds1oYRdYyLh4eHt4m3skC3Q/1dwUc938PDw8PbymuDieRb6wOzdnPCw8PDO8/LG9aEdMWfUhyExcPDw7uYl5TYDqt2sfMWHw8PD+88bxwTJJ8WYcFCRBtVhYeHh3cTL1nW8wH/3J1tHIyHh4d3Fy9/WHvcqigxbtzx8PDwnsBrY9Y26t2F+fg+Hh4e3sW89sojiZVBVx5A4OHh4Z3nteOr9fH/uH1PGBuODuDh4eEt8/YO8vMmuCg6H5vh4eHhHeTlQ698uLUyEmsPhOHh4eE9mZcs5eNy5/5QPDw8vO/gJeOuuTvbYRseHh7eed7c0ag8RJiLLepYGQ8PD+8Ir40A1hvifJOoDxng4eHhXcz7vgsPDw8PDw8PD+8B1y9pUu05PkXRTwAAAABJRU5ErkJggg==">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/android/">android</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android学习笔记 010&url=http://miccall.tech//2017/01/11/android/android_010/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android学习笔记 010&url=http://miccall.tech//2017/01/11/android/android_010/index.html&via=miccall" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://miccall.tech//2017/01/11/android/android_010/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/11/android/android_010/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Android学习笔记 010&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/01/11/android/android_010/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <hr>
+<h1 id="Android学习笔记"><a href="#Android学习笔记" class="headerlink" title=" Android学习笔记 "></a><strong> Android学习笔记 </strong></h1><h2 id="系统程序和用户程序拆分"><a href="#系统程序和用户程序拆分" class="headerlink" title="系统程序和用户程序拆分"></a>系统程序和用户程序拆分</h2><pre><code>1.将集合拆分,分别保存
+        @Override
+        public void doinBack() {
+            list = AppEngine.getAppInfos(getApplicationContext());
+            userappinfo = new ArrayList&lt;AppInfo&gt;();
+            systemappinfo = new ArrayList&lt;AppInfo&gt;();
+            for (AppInfo appinfo : list) {
+                //将数据分别存放到用户程序集合和系统程序集合中
+                if (appinfo.isUser()) {
+                    userappinfo.add(appinfo);
+                }else{
+                    systemappinfo.add(appinfo);
+                }
+            }
+        }
+2.修改adapter的getcount返回值
+        @Override
+        public int getCount() {
+            // TODO Auto-generated method stub
+            //list.size() = userappinfo.size()+systemappinfo.size()
+            return userappinfo.size()+systemappinfo.size()+2;
+        }
+3.在getview中增加条目,并获取数据
+
+    增加条目
+        if (position == 0) {
+            //添加用户程序(...个)textview
+            TextView textView = new TextView(getApplicationContext());
+            textView.setBackgroundColor(Color.GRAY);
+            textView.setTextColor(Color.WHITE);
+            textView.setText(&quot;用户程序(&quot;+userappinfo.size()+&quot;)&quot;);
+            return textView;
+        }else if(position == userappinfo.size()+1){
+            //添加系统程序(....个)textview
+            TextView textView = new TextView(getApplicationContext());
+            textView.setBackgroundColor(Color.GRAY);
+            textView.setTextColor(Color.WHITE);
+            textView.setText(&quot;系统程序(&quot;+systemappinfo.size()+&quot;)&quot;);
+            return textView;
+        }
+    获取数据
+        //1.获取应用程序的信息
+        AppInfo appInfo;
+        //数据就要从userappinfo和systemappinfo中获取
+        if (position &lt;= userappinfo.size()) {
+            //用户程序
+            appInfo = userappinfo.get(position-1);
+        }else{
+            //系统程序
+            appInfo = systemappinfo.get(position - userappinfo.size() - 2);
+        }
+
+    判断缓存复用
+        if (convertView != null &amp;&amp; convertView instanceof RelativeLayout) {
+            view = convertView;
+            viewHolder = (ViewHolder) view.getTag();
+        }else{
+</code></pre><h2 id="浮动显示程序个数"><a href="#浮动显示程序个数" class="headerlink" title="浮动显示程序个数"></a>浮动显示程序个数</h2><pre><code>/**
+ * listview滑动监听事件
+ */
+private void listviewOnscroll() {
+    lv_softmanager_application.setOnScrollListener(new OnScrollListener() {
+        //滑动状态改变的时候调用
+        @Override
+        public void onScrollStateChanged(AbsListView view, int scrollState) {
+            // TODO Auto-generated method stub
+
+        }
+        //滑动的时候调用
+        //view : listview
+        //firstVisibleItem : 界面第一个显示条目
+        //visibleItemCount : 显示条目总个数
+        //totalItemCount : 条目的总个数
+        @Override
+        public void onScroll(AbsListView view, int firstVisibleItem,
+                int visibleItemCount, int totalItemCount) {
+            //为null的原因:listview在初始化的时候就会调用onScroll方法
+            if (userappinfo != null &amp;&amp; systemappinfo != null) {
+                if (firstVisibleItem &gt;= userappinfo.size()+1) {
+                    tv_softmanager_userorsystem.setText(&quot;系统程序(&quot;+systemappinfo.size()+&quot;)&quot;);  
+                }else{
+                    tv_softmanager_userorsystem.setText(&quot;用户程序(&quot;+userappinfo.size()+&quot;)&quot;);    
+                }
+            }
+        }
+    });
+}
+</code></pre><h2 id="popuwindow操作-重点"><a href="#popuwindow操作-重点" class="headerlink" title="popuwindow操作#  (重点)"></a>popuwindow操作#  (重点)</h2><pre><code>/**
+ * 条目点击事件
+ */
+private void listviewItemClick() {
+    lv_softmanager_application.setOnItemClickListener(new OnItemClickListener() {
+
+        //view : 条目的view对象
+        @Override
+        public void onItemClick(AdapterView&lt;?&gt; parent, View view,
+                int position, long id) {
+            //弹出气泡
+            //1.屏蔽用户程序和系统程序(...个)弹出气泡
+            if (position == 0 || position == userappinfo.size()+1) {
+                return;
+            }
+            //2.获取条目所对应的应用程序的信息
+            //数据就要从userappinfo和systemappinfo中获取
+            if (position &lt;= userappinfo.size()) {
+                //用户程序
+                appInfo = userappinfo.get(position-1);
+            }else{
+                //系统程序
+                appInfo = systemappinfo.get(position - userappinfo.size() - 2);
+            }
+            //5.弹出新的气泡之前,删除旧 的气泡
+            hidePopuwindow();
+            //3.弹出气泡
+            /*TextView contentView = new TextView(getApplicationContext());
+            contentView.setText(&quot;我是popuwindow的textview控件&quot;);
+            contentView.setBackgroundColor(Color.RED);*/
+            View contentView = View.inflate(getApplicationContext(), R.layout.popu_window, null);
+            //contentView : 显示view对象
+            //width,height : view宽高
+            popupWindow = new PopupWindow(contentView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            //4.获取条目的位置,让气泡显示在相应的条目
+            int[] location = new int[2];//保存x和y坐标的数组
+            view.getLocationInWindow(location);//获取条目x和y的坐标,同时保存到int[]
+            //获取x和y的坐标
+            int x = location[0];
+            int y = location[1];
+            //parent : 要挂载在那个控件上
+            //gravity,x,y : 控制popuwindow显示的位置
+            popupWindow.showAtLocation(parent, Gravity.LEFT | Gravity.TOP, x+50, y);
+        }
+
+    });
+}
+
+隐藏气泡
+    /**
+     * 隐藏气泡
+     */
+    private void hidePopuwindow() {
+        if (popupWindow != null) {
+            popupWindow.dismiss();//隐藏气泡
+            popupWindow = null;
+        }
+    }
+</code></pre><h2 id="popuwindow动画-重点"><a href="#popuwindow动画-重点" class="headerlink" title="popuwindow动画# (重点)"></a>popuwindow动画# (重点)</h2><pre><code>动画要想执行,执行的控件必须有背景,动画都是基于背景来进行一些计算,没有背景动画是无法执行,popuwindow默认是没有设置背景
+
+//6.设置动画
+            //缩放动画
+            //前四个 :　控制控件由没有变到有   动画 0:没有    1:整个控件
+            //后四个:控制控件是按照自身还是父控件进行变化
+            //RELATIVE_TO_SELF : 以自身变化
+            //RELATIVE_TO_PARENT : 以父控件变化
+            ScaleAnimation scaleAnimation = new ScaleAnimation(0, 1, 0, 1, Animation.RELATIVE_TO_SELF, 0, Animation.RELATIVE_TO_SELF, 0.5f);
+            scaleAnimation.setDuration(500);
+
+            //渐变动画
+            AlphaAnimation alphaAnimation = new AlphaAnimation(0.4f, 1.0f);//由半透明变成不透明
+            alphaAnimation.setDuration(500);
+
+            //组合动画
+            //shareInterpolator : 是否使用相同的动画插补器  true:共享    false:各自使用各自的
+            AnimationSet animationSet = new AnimationSet(true);
+            //添加动画
+            animationSet.addAnimation(scaleAnimation);
+            animationSet.addAnimation(alphaAnimation);
+            //执行动画
+            contentView.startAnimation(animationSet);
+给popuwindow设置背景
+    popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+</code></pre><h2 id="设置控件点击事件"><a href="#设置控件点击事件" class="headerlink" title="设置控件点击事件"></a>设置控件点击事件</h2><pre><code>1.初始化控件
+            //初始化控件
+            LinearLayout ll_popuwindow_uninstall = (LinearLayout) contentView.findViewById(R.id.ll_popuwindow_uninstall);
+            LinearLayout ll_popuwindow_start = (LinearLayout) contentView.findViewById(R.id.ll_popuwindow_start);
+            LinearLayout ll_popuwindow_share = (LinearLayout) contentView.findViewById(R.id.ll_popuwindow_share);
+            LinearLayout ll_popuwindow_detail = (LinearLayout) contentView.findViewById(R.id.ll_popuwindow_detail);
+2.activity实现点击事件接口,并实现相应的点击事件方法,同时设置控件点击事件
+        public class SoftMangaerActivity extends Activity implements OnClickListener {
+
+            //给控件设置点击事件
+            ll_popuwindow_uninstall.setOnClickListener(SoftMangaerActivity.this);
+            ll_popuwindow_start.setOnClickListener(SoftMangaerActivity.this);
+            ll_popuwindow_share.setOnClickListener(SoftMangaerActivity.this);
+            ll_popuwindow_detail.setOnClickListener(SoftMangaerActivity.this);
+
+        @Override
+        public void onClick(View v) {
+            //判断点击是按个按钮
+            //getId() : 获取点击按钮的id
+            switch (v.getId()) {
+            case R.id.ll_popuwindow_uninstall:
+                System.out.println(&quot;卸载&quot;);
+                break;
+            case R.id.ll_popuwindow_start:
+                System.out.println(&quot;启动&quot;);
+                break;
+            case R.id.ll_popuwindow_share:
+                System.out.println(&quot;分享&quot;);
+                break;
+            case R.id.ll_popuwindow_detail:
+                System.out.println(&quot;详情&quot;);
+                break;
+            }
+        }
+</code></pre><h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><pre><code>    /**
+     * 卸载
+     */
+    private void uninstall() {
+        /**
+         * &lt;intent-filter&gt;
+                &lt;action android:name=&quot;android.intent.action.VIEW&quot; /&gt;
+                &lt;action android:name=&quot;android.intent.action.DELETE&quot; /&gt;
+                &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
+                &lt;data android:scheme=&quot;package&quot; /&gt;
+            &lt;/intent-filter&gt;
+         */
+        //判断是否是系统程序
+        if (appInfo.isUser()) {
+            //判断是否是我们自己的应用,是不能卸载
+            if (!appInfo.getPackagName().equals(getPackageName())) {
+                Intent intent = new Intent();
+                intent.setAction(&quot;android.intent.action.DELETE&quot;);
+                intent.addCategory(&quot;android.intent.category.DEFAULT&quot;);
+                intent.setData(Uri.parse(&quot;package:&quot;+appInfo.getPackagName()));//tel:110
+                startActivityForResult(intent,0);
+            }else{
+                Toast.makeText(getApplicationContext(), &quot;文明社会,杜绝自杀&quot;, 0).show();
+            }
+        }else{
+            Toast.makeText(getApplicationContext(), &quot;要想卸载系统程序,请root先&quot;, 0).show();
+        }
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        fillData();
+    }
+</code></pre><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><pre><code>/**
+ * 启动
+ */
+private void start() {
+    PackageManager pm = getPackageManager();
+    //获取应用程序的启动意图
+    Intent intent = pm.getLaunchIntentForPackage(appInfo.getPackagName());
+    if (intent!=null) {
+        startActivity(intent);
+    }else{
+        Toast.makeText(getApplicationContext(), &quot;系统核心程序,无法启动&quot;, 0).show();
+    }
+}
+</code></pre><h2 id="详情"><a href="#详情" class="headerlink" title="详情"></a>详情</h2><pre><code>通过系统log查看跳转操作
+
+/**
+ *详情
+ */
+private void detail() {
+    /**
+     *  Intent 
+        { 
+        act=android.settings.APPLICATION_DETAILS_SETTINGS    action
+        dat=package:com.example.android.apis   data
+        cmp=com.android.settings/.applications.InstalledAppDetails 
+        } from pid 228
+     */
+    Intent intent = new Intent();
+    intent.setAction(&quot;android.settings.APPLICATION_DETAILS_SETTINGS&quot;);
+    intent.setData(Uri.parse(&quot;package:&quot;+appInfo.getPackagName()));
+    startActivity(intent);
+}
+</code></pre><h2 id="分享-重点"><a href="#分享-重点" class="headerlink" title="分享# (重点)"></a>分享# (重点)</h2><pre><code>1.分享
+    /**
+     *  Intent 
+        { 
+            act=android.intent.action.SEND 
+            typ=text/plain 
+            flg=0x3000000 
+            cmp=com.android.mms/.ui.ComposeMessageActivity (has extras)   intent中包含信息
+        } from pid 228
+     */
+    Intent intent = new Intent();
+    intent.setAction(&quot;android.intent.action.SEND&quot;);
+    intent.setType(&quot;text/plain&quot;);
+    intent.putExtra(Intent.EXTRA_TEXT, &quot;发现一个很牛x软件&quot;+appInfo.getName()+&quot;,下载地址:www.baidu.com,自己去搜&quot;);
+    startActivity(intent);
+2.如果是应用能够进行分享操作
+    a.在activity中添加意图
+        &lt;!-- 表名应用程序能够接受分享信息 --&gt;
+        &lt;intent-filter&gt;
+           &lt;action android:name=&quot;android.intent.action.SEND&quot; /&gt;
+           &lt;category android:name=&quot;android.intent.category.DEFAULT&quot; /&gt;
+           &lt;data android:mimeType=&quot;text/plain&quot; /&gt;
+       &lt;/intent-filter&gt;
+    b.接受分享信息
+        Intent intent = getIntent();
+        String stringExtra = intent.getStringExtra(Intent.EXTRA_TEXT);
+        if (!TextUtils.isEmpty(stringExtra)) {
+            iv_share.setText(stringExtra);
+        }
+
+shareSDK
+</code></pre><h2 id="获取可用空间"><a href="#获取可用空间" class="headerlink" title="获取可用空间"></a>获取可用空间</h2><pre><code>1.apputil
+    /**
+     * 获取SD卡可用空间
+     */
+    public static long getAvailableSD(){
+         //获取SD卡路径
+         File path = Environment.getExternalStorageDirectory();
+         //硬盘的API操作
+         StatFs stat = new StatFs(path.getPath());
+         long blockSize = stat.getBlockSize();//获取每块的大小
+         long totalBlocks = stat.getBlockCount();//获取总块数
+         long availableBlocks = stat.getAvailableBlocks();//获取可用的块数
+         return availableBlocks*blockSize;
+    }
+    /**
+     *获取内存可用空间
+     * @return
+     */
+    public static long getAvailableROM(){
+        //获取内存路径
+        File path = Environment.getDataDirectory();
+        //硬盘的API操作
+        StatFs stat = new StatFs(path.getPath());
+        long blockSize = stat.getBlockSize();//获取每块的大小
+        long totalBlocks = stat.getBlockCount();//获取总块数
+        long availableBlocks = stat.getAvailableBlocks();//获取可用的块数
+        return availableBlocks*blockSize;
+    }
+2.使用
+    //获取可用内存,获取都是kb
+    long availableSD = AppUtil.getAvailableSD();
+    long availableROM = AppUtil.getAvailableROM();
+    //数据转化
+    String sdsize = Formatter.formatFileSize(getApplicationContext(), availableSD);
+    String romsize = Formatter.formatFileSize(getApplicationContext(), availableROM);
+    //设置显示
+    tv_softmanager_sd.setText(&quot;SD卡可用:&quot;+sdsize);
+    tv_softmanager_rom.setText(&quot;内存可用:&quot;+romsize);
+</code></pre><h2 id="获取系统所有进程信息-重点"><a href="#获取系统所有进程信息-重点" class="headerlink" title="获取系统所有进程信息# (重点)"></a>获取系统所有进程信息# (重点)</h2><pre><code>/**
+ * 获取系统中所有进程信息
+ * @return
+ */
+public static List&lt;TaskInfo&gt; getTaskAllInfo(Context context){
+    List&lt;TaskInfo&gt; list = new ArrayList&lt;TaskInfo&gt;();
+    //1.进程的管理者
+    ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+    PackageManager pm = context.getPackageManager();
+    //2.获取所有正在运行的进程信息
+    List&lt;RunningAppProcessInfo&gt; runningAppProcesses = activityManager.getRunningAppProcesses();
+    //遍历集合
+    for (RunningAppProcessInfo runningAppProcessInfo : runningAppProcesses) {
+        TaskInfo taskInfo = new TaskInfo();
+        //3.获取相应的信息
+        //获取进程的名称,获取包名
+        String packagName = runningAppProcessInfo.processName;
+        taskInfo.setPackageName(packagName);
+        //获取进程所占的内存空间,int[] pids : 输入几个进程的pid,就会返回几个进程所占的空间
+        MemoryInfo[] memoryInfo = activityManager.getProcessMemoryInfo(new int[]{runningAppProcessInfo.pid});
+        int totalPss = memoryInfo[0].getTotalPss();
+        long ramSize = totalPss*1024;
+        taskInfo.setRamSize(ramSize);
+        try {
+            //获取application信息
+            //packageName : 包名     flags:指定信息标签
+            ApplicationInfo applicationInfo = pm.getApplicationInfo(packagName, 0);
+            //获取图标
+            Drawable icon = applicationInfo.loadIcon(pm);
+            taskInfo.setIcon(icon);
+            //获取名称
+            String name = applicationInfo.loadLabel(pm).toString();
+            taskInfo.setName(name);
+            //获取程序的所有标签信息,是否是系统程序是以标签的形式展示
+            int flags = applicationInfo.flags;
+            boolean isUser;
+            //判断是否是用户程序
+            if ((applicationInfo.FLAG_SYSTEM &amp; flags) == applicationInfo.FLAG_SYSTEM) {
+                //系统程序
+                isUser = false;
+            }else{
+                //用户程序
+                isUser = true;
+            }
+            //保存信息
+            taskInfo.setUser(isUser);
+        } catch (NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        //taskinfo添加到集合
+        list.add(taskInfo);
+    }
+    return list;
+}
+</code></pre><h2 id="进程管理界面-重点-思路"><a href="#进程管理界面-重点-思路" class="headerlink" title="进程管理界面# (重点:思路)"></a>进程管理界面# (重点:思路)</h2><pre><code>按照软件管理思路一步步复制
+</code></pre><h2 id="checkboxBug解决-重点"><a href="#checkboxBug解决-重点" class="headerlink" title="checkboxBug解决#  (重点)"></a>checkboxBug解决#  (重点)</h2><pre><code>问题:checkbox的状态会跟着控件一起复用,
+解决:所以将状态保存到bean类中,根据bean中保存的状态在getview中进行动态设置
+1.将状态设置到bean类中
+    //checkbox是否被选中
+    private boolean isChecked = false;
+2.在getview中进行动态判断设置
+        //因为checkbox的状态会跟着一起复用,所以一般要动态修改的控件的状态,不会跟着去复用,而是将状态保存到bean对象,在每次复用使用控件的时候
+        //根据每个条目对应的bean对象保存的状态,来设置控件显示的相应的状态
+        if (taskinfo.isChecked()) {
+            viewHolder.cb_itemtaskmanager_ischecked.setChecked(true);
+        }else{
+            viewHolder.cb_itemtaskmanager_ischecked.setChecked(false);
+        }
+3.屏蔽checkbox的获取焦点和点击事件
+    &lt;CheckBox 
+        android:id=&quot;@+id/cb_itemtaskmanager_ischecked&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        android:layout_alignParentRight=&quot;true&quot;
+        android:layout_centerVertical=&quot;true&quot;
+        android:layout_marginRight=&quot;15dp&quot;
+        android:focusable=&quot;false&quot;
+        android:clickable=&quot;false&quot;
+        /&gt;
+4.屏蔽之后,发现点击条目无法更改checkbox的状态,所以设置条目点击事件进行更改
+    /**
+     * listview条目点击事件
+     */
+    private void listviewItemClick() {
+        lv_taskmanager_processes.setOnItemClickListener(new OnItemClickListener() {
+            //view : 条目的view对象
+            @Override
+            public void onItemClick(AdapterView&lt;?&gt; parent, View view,
+                    int position, long id) {
+                //动态改变checkbox状态
+                //1.屏蔽用户程序和系统程序(...个)弹出气泡
+                if (position == 0 || position == userappinfo.size()+1) {
+                    return;
+                }
+                //2.获取条目所对应的应用程序的信息
+                //数据就要从userappinfo和systemappinfo中获取
+                if (position &lt;= userappinfo.size()) {
+                    //用户程序
+                    taskInfo = userappinfo.get(position-1);
+                }else{
+                    //系统程序
+                    taskInfo = systemappinfo.get(position - userappinfo.size() - 2);
+                }
+                //3.根据之前保存的checkbox的状态设置点击之后的状态,原先选中,点击之后不选中
+                if (taskInfo.isChecked()) {
+                    taskInfo.setChecked(false);
+                }else{
+                    taskInfo.setChecked(true);
+                }
+                //4.更新界面
+                //myadapter.notifyDataSetChanged();
+                //只更新点击的条目
+                ViewHolder viewHolder = (ViewHolder) view.getTag();
+                viewHolder.cb_itemtaskmanager_ischecked.setChecked(taskInfo.isChecked());
+            }
+        });
+    }
+5.单独更新单个条目
+    因为控件是保存在ViewHolder控件容器中,而容器又是在listview条目展示的时候通过view.settag和view对象进行绑定了,那我们就可以在条目点击事件进行使用处理,因为在条目点击事件中有view参数,这个参数代表就是点击条目的view对象,通过view.gettag获取到和view对象绑定的容器,从容器中获取控件,设置控件的状态了
+</code></pre><h2 id="全选和取消"><a href="#全选和取消" class="headerlink" title="全选和取消"></a>全选和取消</h2><pre><code>    /**
+     * 全选
+     * @param v
+     */
+    public void all(View v){
+        //用户进程
+        for (int i = 0; i &lt; userappinfo.size(); i++) {
+            userappinfo.get(i).setChecked(true);
+        }
+        //系统进程
+        for (int i = 0; i &lt; systemappinfo.size(); i++) {
+            systemappinfo.get(i).setChecked(true);
+        }
+        //更新界面
+        myadapter.notifyDataSetChanged();
+    }
+    /**
+     * 取消
+     * @param v
+     */
+    public void cancel(View v){
+        //用户进程
+        for (int i = 0; i &lt; userappinfo.size(); i++) {
+            userappinfo.get(i).setChecked(false);
+        }
+        //系统进程
+        for (int i = 0; i &lt; systemappinfo.size(); i++) {
+            systemappinfo.get(i).setChecked(false);
+        }
+        //更新界面
+        myadapter.notifyDataSetChanged();
+    }
+</code></pre><h2 id="清理进程-重点-五个进程"><a href="#清理进程-重点-五个进程" class="headerlink" title="清理进程# (重点:五个进程)"></a>清理进程# (重点:五个进程)</h2><pre><code>android进程
+    1.前台进程  正在操作的进程,正在运行进程,不可杀死
+    2.可见进程  没有焦点,但是可见的进程
+    3.服务进程  包含服务的进程,当内存不足的时候,会被杀掉,当内存充足的时候,重新服务进程
+    4.后台进程  点击home键,最小化
+    5.空进程    退出,为了下次能够快速启动
+
+后台进程和空进程是可以通过代码杀死
+
+/**
+ * 清理
+ * @param v
+ */
+public void clear(View v){
+    //1.获取进程的管理者
+    ActivityManager am = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+    //保存杀死进程信息的集合
+    List&lt;TaskInfo&gt; deleteTaskInfos = new ArrayList&lt;TaskInfo&gt;();
+
+    for (int i = 0; i &lt; userappinfo.size(); i++) {
+        if (userappinfo.get(i).isChecked()) {
+            //杀死进程
+            //packageName : 进程的包名
+            //杀死后台进程
+            am.killBackgroundProcesses(userappinfo.get(i).getPackageName());
+            deleteTaskInfos.add(userappinfo.get(i));//将杀死的进程信息保存的集合中
+        }
+    }
+    //系统进程
+    for (int i = 0; i &lt; systemappinfo.size(); i++) {
+        if (systemappinfo.get(i).isChecked()) {
+            //杀死进程
+            //packageName : 进程的包名
+            //杀死后台进程
+            am.killBackgroundProcesses(systemappinfo.get(i).getPackageName());
+            deleteTaskInfos.add(systemappinfo.get(i));//将杀死的进程信息保存的集合中
+        }
+    }
+    //遍历deleteTaskInfos,分别从userappinfo和systemappinfo中删除deleteTaskInfos中的数据
+    for (TaskInfo taskInfo : deleteTaskInfos) {
+        if (taskInfo.isUser()) {
+            userappinfo.remove(taskInfo);
+        }else{
+            systemappinfo.remove(taskInfo);
+        }
+    }
+    //为下次清理进程做准备
+    deleteTaskInfos.clear();
+    deleteTaskInfos=null;
+    //更新界面
+    myadapter.notifyDataSetChanged();
+}
+
+权限
+&lt;uses-permission android:name=&quot;android.permission.KILL_BACKGROUND_PROCESSES&quot;/&gt;
+</code></pre><h2 id="清理细节处理"><a href="#清理细节处理" class="headerlink" title="清理细节处理"></a>清理细节处理</h2><pre><code>1.设置清理显示
+    long memory=0;
+    //遍历deleteTaskInfos,分别从userappinfo和systemappinfo中删除deleteTaskInfos中的数据
+    for (TaskInfo taskInfo : deleteTaskInfos) {
+        if (taskInfo.isUser()) {
+            userappinfo.remove(taskInfo);
+        }else{
+            systemappinfo.remove(taskInfo);
+        }
+        memory+=taskInfo.getRamSize();
+    }
+    //数据转化
+    String deletesize = Formatter.formatFileSize(getApplicationContext(), memory);
+    Toast.makeText(getApplicationContext(), &quot;共清理&quot;+deleteTaskInfos.size()+&quot;个进程,释放&quot;+deletesize+&quot;内存空间&quot;, 0).show();
+2.设置当前应用不能选中
+    在条目中处理
+            //3.根据之前保存的checkbox的状态设置点击之后的状态,原先选中,点击之后不选中
+            if (taskInfo.isChecked()) {
+                taskInfo.setChecked(false);
+            }else{
+                //如果是当前应用不能设置成true
+                if (!taskInfo.getPackageName().equals(getPackageName())) {
+                    taskInfo.setChecked(true);
+                }
+            }
+    在全选中处理
+        //用户进程
+        for (int i = 0; i &lt; userappinfo.size(); i++) {
+            if (!userappinfo.get(i).getPackageName().equals(getPackageName())) {
+                userappinfo.get(i).setChecked(true);
+            }
+        }
+3.设置当前应用的checkbox隐藏
+    //判断如果是我们的应用程序,就把checkbox隐藏,不是的话显示,在getview中有if必须有else
+        if (taskinfo.getPackageName().equals(getPackageName())) {
+            viewHolder.cb_itemtaskmanager_ischecked.setVisibility(View.INVISIBLE);
+        }else{
+            viewHolder.cb_itemtaskmanager_ischecked.setVisibility(View.VISIBLE);
+        }
+</code></pre>
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+    <!-- 使用 DISQUS_CLICK -->
+    <div id="disqus-comment">
+        <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+        .ripple-container {
+        }
+        .ripple-container .ripple{
+            background-color: rgba(255,255,255,0.4);
+            animation: ripple 2s forwards cubic-bezier(0, 0, 0.2, 1);
+        }
+        @keyframes ripple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            80% {
+                transform: scale(1);
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+	
+<!-- add data-ripple attribute -->
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+</div>
+	
+<script>
+    // add effect to elements
+    Array.prototype.forEach.call(document.querySelectorAll('[data-ripple]'), function(element){
+        // find all elements and attach effect
+        new RippleEffect(element); // element is instance of javascript element node
+    });
+</script>
+
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/01/11/android/android_010/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/11/android/android_010/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
+
+    </div>
+    <style>
+        #disqus-comment{
+            background-color: #eee;
+            padding: 2pc;
+        }
+    </style>
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/01/12/android/android_011/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/01/10/android/android_009/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/preview.gif);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/BA201701210404530018-00-000000.png" alt="miccall's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        316459829@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:316459829@qq.com.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://shang.qq.com/email/stop/email_stop.html?qq=316459829&amp;sig=a1c657365db7e82805ea4b2351081fc3ebcde159f8ae49b1&amp;tttt=1" target="_blank" title="腾讯 QQ">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">phone</i>
+                        
+                        腾讯 QQ
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://blog.csdn.net/qq_31411825" target="_blank" title="CSDN">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">user</i>
+                        
+                        CSDN
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about/" title="About Me">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About Me
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/group/" title="About Group">
+                
+                    <i class="material-icons sidebar-material-icons">group</i>
+                
+                About Group
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery/" title="My Grally">
+                
+                    <i class="material-icons sidebar-material-icons">image</i>
+                
+                My Grally
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tag/" title="Tag">
+                
+                    <i class="material-icons sidebar-material-icons">expore</i>
+                
+                Tag
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;Mr.Metro
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+    <script src="/js/lazyload.min.js"></script>
+    <script src="/js/js.min.js"></script>
+
+
+
+    <script src="/js/nprogress.js"></script>
+
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script src="/js/smoothscroll.js"></script>
+    
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script>
+    <!-- Offer LazyLoad -->
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    <!-- Start Queue -->
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

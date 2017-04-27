@@ -10,7 +10,7 @@
     
     <title>
         
-            Unity 3d 常用脚本 | 
+            Android学习笔记 005 | 
         
         Mr.Metro
     </title>
@@ -34,7 +34,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall,unity 3d">
+    <meta name="keywords" content="miccall,android">
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
@@ -60,9 +60,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://miccall.tech">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Unity 3d 常用脚本 | Mr.Metro">
+    <meta property="og:title" content="Android学习笔记 005 | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
-    <meta property="og:article:tag" content="unity 3d"> 
+    <meta property="og:article:tag" content="android"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -245,7 +245,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unity-3d-常用脚本"><span class="post-toc-number">1.</span> <span class="post-toc-text">Unity 3d 常用脚本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Collected-by-miccall-（内容均来自于网络）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Collected by miccall  （内容均来自于网络）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异步加载框架-重点-面试必问"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">异步加载框架# (重点:面试必问)</span></a></li></ol></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -282,7 +282,7 @@
         
     
             <p class="article-headline-p">
-                Unity 3d 常用脚本
+                Android学习笔记 005
             </p>
         </div>
 
@@ -301,7 +301,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>miccall</strong>
-        <span>1月 18, 2017</span>
+        <span>1月 06, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -322,7 +322,7 @@
         </button>
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
             <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACxUlEQVR42u3aS24CQQwFQO5/6eQAKPBsD8nEXbNCAhpXL7D8eXwd+TywsbGxsbGxsbGxb8l+xM/zt356nZzz+szn0y6IGRsbG3s1+81ff8x+HXTvEpN4opixsbGxD2AnySYJK7+O1ymnlzKxsbGxsXN2L8n1rgMbGxsb+1p20h5KWkKvwbdLYNjY2Ni3Z+dlQFI8JKkrKT+q38LGxsY+kz0pA/7q9a/Ot7GxsbFvzK4+8xFCr3WVJK03kWNjY2MvZeeJIflWdQCQnHbZqBgbGxt7KTtv0OflwRyQD5ILl46NjY29mp0f3UtdvdZ/9bQ3J2NjY2OvZs9XKn/z8xESGxsb+xj2pJU/KSSaSShuSGFjY2Ofw86bO/kqT55yeo3+3ugXGxsbeys7b/HnraVJaqxeWaHIwcbGxl7Kztv3eYh5oHmbqXoCNjY29jnsT6/L9IqK6nUkv4WNjY29m52UEJM1ysm6z2XnYGNjYy9lV8uP+btVav5uedCLjY2NvYidD3qrV9b7rXlU2NjY2OewJwVALxEmSzm9kmbUVMLGxsZewS4vwYyXdQqFxLj5hY2Njb2VPQfniaq6ynPxMig2Njb2UvYjeKorPtVEde3VFJpK2NjY2EvZE8Ak7c2vtTDoxcbGxl7Hnq/F9EKfNImSd7GxsbHPZE/Kg95CT35ONUJsbGzsk9n54k51tJAUOdXENppvY2NjY69jT34sH7vmZUk+xri4qYSNjY39T9jVZzKInYx+8yZXlMCwsbGxF7GbyaAYRD5C7iXUZt7GxsbGXsTujWB7JUSSDgutojjhYWNjY5/Aztdx8tWZfPwwaR5FYwZsbGxs7Hw55g7p6nMJDBsbG3sdexJQdVRQHVpgY2Njn8bOW0XVdHXVADgfLWBjY2Ofxs4DSoas1U/miW00nMbGxsZeyj7nwcbGxsbGxsbGxr7N8w2bCAttOOBJCwAAAABJRU5ErkJggg==">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACcklEQVR42u3a0W6DMAwFUP7/p7fXSd3otU0Cqw5P1dRCTibFxvbx9dHXgYeHh4eHh4eH9zDeEV8/v5/89vUpr5//+k5vbXh4eHg7eW+O2lPe/D75X6JNwcPDw9vIS4LBfNGTrUzWhoeHh/c03nk6W02j58/Fw8PDez6vd4jniTgeHh7e/+IVXviLiz7/bS+c4OHh4d3LmzTAVn++ub+Hh4eH98KrXr1GV17erZZ9f7kDHh4e3mLe+VKSUapeclwd1SpsHB4eHt4W3qTBX71Pr6SbFEHw8PDw9vCqhYkkhJzfM39u0vrCw8PDu4t3VYKblxXy0YSkyIuHh4e3k1d9TH7Q52l0ryCCh4eHdxcvOY577a58+KA6aPXmn4GHh4e3hZcnx73Ca7U8kQctPDw8vHt5+YGejw7kvGrBFw8PD+8uXq/RNTm+Jw22qECMh4eHt5hXpU4aVPn46WhYAQ8PD28xL281JdtRLTdUw0mUyuPh4eEt5lUXnQeGagjJQ9RlowN4eHh4Ld5kvCkvE+RLTFpiS+IeHh4eXpE3b25NRlfP11AedMDDw8NbzMtf+/NQUS06VAPPm03Bw8PD28LLX/6r7GqZOB9gLYwO4OHh4V3K6w2k5i2ufAj1fKMvK+Pi4eHhLWiAzdPiHDMpfxTiHh4eHt6lvCO+zgNJbyzgqlQbDw8Pbz+vWtjNm1t522ySduPh4eHdxcsHVSdl1l4ZorAReHh4eA/jJfjeBlWLwn8+HQ8PD+/BvLw11Rt7bW4THh4e3kZenihXl37VlkVrw8PDw9vCmzTAVrTKesMHeHh4eHt4n3fh4eHh4eHh4eE94PoGlnFpBG5VxOoAAAAASUVORK5CYII=">
         </ul>
     
 
@@ -334,7 +334,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/unity-3d/">unity 3d</a>
+        <a class="post_tag-link" href="/tags/android/">android</a>
     </ul>
     
 
@@ -361,7 +361,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Unity 3d 常用脚本&url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android学习笔记 005&url=http://miccall.tech//2017/01/06/android/android_005/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -370,7 +370,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Unity 3d 常用脚本&url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html&via=miccall" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android学习笔记 005&url=http://miccall.tech//2017/01/06/android/android_005/index.html&via=miccall" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -379,7 +379,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://miccall.tech//2017/01/06/android/android_005/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -388,7 +388,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/06/android/android_005/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -400,7 +400,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Unity 3d 常用脚本&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Android学习笔记 005&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/01/06/android/android_005/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -419,61 +419,199 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <hr>
-<h1 id="Unity-3d-常用脚本"><a href="#Unity-3d-常用脚本" class="headerlink" title="Unity 3d 常用脚本"></a><strong>Unity 3d 常用脚本</strong></h1><h6 id="Collected-by-miccall-（内容均来自于网络）"><a href="#Collected-by-miccall-（内容均来自于网络）" class="headerlink" title="Collected by miccall  （内容均来自于网络）"></a>Collected by miccall  （内容均来自于网络）</h6><p>不定时更新 </p>
-<ul>
-<li>Time.deltaTime  :   <pre class="line-numbers language-csharp"><code class="language-csharp">      <span class="token keyword">void</span> <span class="token function">Update</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          transform<span class="token punctuation">.</span><span class="token function">Translate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Vector3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> Time<span class="token punctuation">.</span>deltaTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token comment" spellcheck="true">// * Time.deltaTime 以后， 物体一秒运动一次 </span>
-      <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transform.Rotate()  都是根据自身坐标<br>LookAt()   可以让对象的正前方 ，朝向设定的坐标方向  。一般用于摄像机跟踪对象<br>平滑过渡 ：  SmoothDamp函数<br>插值  :    Mathf.Lerp(起始值,结束值,比例)   同样的 Vector3 和Color 也有该方法  。 <pre class="line-numbers language-csharp"><code class="language-csharp">  <span class="token function">Instantiate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//用来实例化对象 。。。 返回值是Object 。</span>
-  <span class="token function">Instantiate</span><span class="token punctuation">(</span>Prefab<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//默认(0,0,0)</span>
-  <span class="token comment" spellcheck="true">//以下是指定在某个对象的位置和角度创建 。。</span>
-  <span class="token function">Instantiate</span><span class="token punctuation">(</span>Prefab<span class="token punctuation">,</span>Transform<span class="token punctuation">.</span>position <span class="token punctuation">,</span> Transform<span class="token punctuation">.</span>rotation<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-   Rigidbody   添加力    AddForce()  ;   <pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">AddForce</span><span class="token punctuation">(</span>Transform<span class="token punctuation">.</span>position  <span class="token operator">*</span> 倍数 <span class="token punctuation">,</span>ForceMode mode <span class="token operator">=</span> ForceMode<span class="token punctuation">.</span>Force<span class="token punctuation">)</span> <span class="token punctuation">;</span> 
-   <span class="token function">AddForce</span><span class="token punctuation">(</span>Transform<span class="token punctuation">.</span>position  <span class="token operator">*</span> 倍数 <span class="token punctuation">)</span> <span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-对象的销毁  <pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">Destory</span><span class="token punctuation">(</span>Object gameObject <span class="token punctuation">,</span> Time t <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-<li><p>Invoke(); 延时调用某函数 。</p>
-<pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  重复调用某函数 
-   <span class="token function">CanceInvoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 结束<span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token punctuation">)</span>的调用 。
-   <span class="token function">Invoke</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">,</span>DelayTime  s <span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">,</span>FirstDelayTime  s1 <span class="token punctuation">,</span> CirclyDelayTime s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token function">CanceInvoke</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>四元数 。。Quaternion ,默认是（0，0，0，0）用Quaternion.identity 表示。<br>Quaternion.identity就是指Quaternion(0,0,0,0),就是每旋转前的初始角度,<br>是一个确切的值,而transform.rotation是指本物体的角度,值是不确定的,<br>比如可以这么设置transform.rotation = Quaternion.identity;<br>一个是值类型,一个是属性变量</p>
-</li>
-<li><p>枚举类型 。。 Enumerations == Enums</p>
-<pre class="line-numbers language-csharp"><code class="language-csharp">  <span class="token keyword">enum</span> Name<span class="token punctuation">{</span>
-        N<span class="token punctuation">,</span>E<span class="token punctuation">,</span>S<span class="token punctuation">,</span>W
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//默认 ： N==0,E==1,S==2,W==3</span>
-  <span class="token comment" spellcheck="true">// enum Name : int{};</span>
-  <span class="token comment" spellcheck="true">//声明 ：  </span>
-   Name name <span class="token punctuation">;</span>
-  name<span class="token punctuation">.</span>N<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>GetComponentsInChildren&lt;组件&gt;();<br>这种方式是 大家经常用到的，这种是获取自己和它的孩子有同样的组件（比如 Rigidbody），返回一个数组，数组包括自己和它的孩子。如果他的孩子里面有的是不活跃SetActive(false);则获取不到。<br>所以就会有第二个参数GetComponentsInChildren&lt;组件&gt;(true);</p>
-</li>
-<li><p>Transform组件<br>Variables<br>position                    Vector3类型，物体位置，相对于世界坐标系的值。就是矩阵的最后一行的值。<br>localPosition             Vector3类型，物体相对于父元素的位置.<br>eulerAngles              Vector3类型，旋转后的欧拉角相对世界坐标的值。简单理解为各向量坐标所转动的值就好了。<br>localEulerAngles      Vector3类型，相对父元素的欧拉角。<br>right                        Vector3类型，表示x轴（U3里红色的轴）方向的单位向量。<br>up                           Vector3类型，表示y轴（U3里绿色的轴）方向的单位向量。<br>forward                   Vector3类型，表示z轴（U3里蓝色的轴）方向的单位向量。<br>rotation                   Quaternion类型(quatermion就是个四维数，比vector3多一个w变量表示旋转角度的)，世界坐标旋转。.<br>localRotation           Quaternion类型，本地坐标的旋转度数（相对父元素）。<br>localScale                Vector3类型，相对本地坐标系缩放（就是矩阵的乘法）<br>parent                      Transform类型，他的父元素。<br>worldToLocalMatrix  Matrix4<em>4类型，把一个点从世界坐标系的位置转换为本地坐标系位置。（终究得用矩阵，哈哈）只读<br>localToWorldMatrix  Matrix4</em>4类型，把一个点从本地坐标系转换为世界坐标系。（只读）<br>root                          Transform类型，返回最上层的那个Transform，就是他父亲的父亲的父亲的。。。（如果有的话）<br>childCount                int型，你子元素的数量<br>lossyScale                Vector3类型，相对世界坐标系缩放</p>
-</li>
-<li><p>这个功能很实用，传入的两个参数分别代表前方盯着的方向以及自己的上方向。它可以让一个GameObject转动脑袋盯着另一个物体。</p>
-</li>
-</ul>
-<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">public</span> Transform target<span class="token punctuation">;</span>
-        <span class="token keyword">void</span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            Vector3 relativePos <span class="token operator">=</span> target<span class="token punctuation">.</span>position <span class="token operator">-</span> transform<span class="token punctuation">.</span>position<span class="token punctuation">;</span>
-            Quaternion rotation <span class="token operator">=</span> Quaternion<span class="token punctuation">.</span><span class="token function">LookRotation</span><span class="token punctuation">(</span>relativePos<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            transform<span class="token punctuation">.</span>rotation <span class="token operator">=</span> rotation<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="Android学习笔记"><a href="#Android学习笔记" class="headerlink" title=" Android学习笔记 "></a><strong> Android学习笔记 </strong></h1><h3 id="异步加载框架-重点-面试必问"><a href="#异步加载框架-重点-面试必问" class="headerlink" title="异步加载框架# (重点:面试必问)"></a>异步加载框架# (重点:面试必问)</h3><pre><code>handler机制
 
+1.创建异步加载框架
+    public abstract class MyAsycnTaks {
+        private Handler handler = new Handler(){
+            public void handleMessage(android.os.Message msg) {
+                postTask();
+            };
+        };
+        /**
+         * 在子线程之前执行的方法
+         */
+        public abstract void preTask();
+        /**
+         * 在子线程之中执行的方法
+         */
+        public abstract void doinBack();
+        /**
+         * 在子线程之后执行的方法
+         */
+        public abstract void postTask();
+        /**
+         * 执行
+         */
+        public void execute(){
+            preTask();
+            new Thread(){
+                public void run() {
+                    doinBack();
+                    handler.sendEmptyMessage(0);
+                };
+            }.start();
+        }
+    }
+2.使用
+    //异步加载框架
+    new MyAsycnTaks() {
+
+        @Override
+        public void preTask() {
+            //在加载数据之前显示进度条,在子线程之前执行的操作
+            loading.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        public void postTask() {
+            //在子线程之后执行操作
+            lv_contact_contacts.setAdapter(new Myadapter());
+            //数据显示完成,隐藏进度条
+            loading.setVisibility(View.INVISIBLE);
+        }
+
+        @Override
+        public void doinBack() {
+            //获取联系人,在子线程之中执行的操作
+            list = ContactEngine.getAllContactInfo(getApplicationContext());
+        }
+    }.execute();
+</code></pre><p>#修改进度条样式#</p>
+<pre><code>android:indeterminateOnly : 是否显示进度条   true:不显示   false:显示
+
+1.res-&gt;drawable -&gt; xxx.xml
+    &lt;animated-rotate xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;
+        android:drawable=&quot;@drawable/shenmabg&quot;
+        android:pivotX=&quot;50%&quot;
+        android:pivotY=&quot;50%&quot;
+    /&gt;
+2.使用,indeterminateDrawable属性
+    &lt;ProgressBar
+        android:id=&quot;@+id/loading&quot;
+        android:layout_width=&quot;wrap_content&quot;
+        android:layout_height=&quot;wrap_content&quot; 
+        android:layout_gravity=&quot;center&quot;
+        android:indeterminateDrawable=&quot;@drawable/progressbar_drawable&quot;
+        /&gt;
+</code></pre><p>#防盗保护是否开启#</p>
+<pre><code>1.checkbox设置点击事件
+    //根据保存的用户状态进行回显操作
+    if (sp.getBoolean(&quot;protected&quot;, false)) {
+        //开始防盗保护
+        cb_setup4_protected.setText(&quot;您已经开启了防盗保护&quot;);
+        cb_setup4_protected.setChecked(true);//必须要写
+    }else{
+        //关闭防盗保护
+        cb_setup4_protected.setText(&quot;您还没有开启防盗保护&quot;);
+        cb_setup4_protected.setChecked(false);//必须要写
+    }
+    //设置checkbox点击事件
+    //当checkbox状态改变的时候调用
+    cb_setup4_protected.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        //CompoundButton : checkbox
+        //isChecked :　改变之后的值,点击之后的值
+        @Override
+        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+            Editor edit = sp.edit();
+            //根据checkbox的状态设置checkbox的信息
+            if (isChecked) {
+                //开始防盗保护
+                cb_setup4_protected.setText(&quot;您已经开启了防盗保护&quot;);
+                cb_setup4_protected.setChecked(true);//程序严谨性
+                //保存用户选中的状态
+                edit.putBoolean(&quot;protected&quot;, true);
+            }else{
+                //关闭防盗保护
+                cb_setup4_protected.setText(&quot;您还没有开启防盗保护&quot;);
+                cb_setup4_protected.setChecked(false);//程序严谨性
+                edit.putBoolean(&quot;protected&quot;, false);
+            }
+            edit.commit();
+        }
+    });
+2.根据保存的防盗保护是否开启的状态,判断是否应该监听手机重启检测SIM卡是否变化发送报警短信的操作,在bootCompleteReceiver
+    if (sp.getBoolean(&quot;protected&quot;, false)) {
+        //检查SIM卡是否发生变化
+        .......
+    }
+</code></pre><p>#设置手机防盗页面安全号码和防盗保护状态#</p>
+<pre><code>        TextView tv_lostfind_safenum = (TextView) findViewById(R.id.tv_lostfind_safenum);
+        ImageView tv_lostfind_protected = (ImageView) findViewById(R.id.tv_lostfind_protected);
+        //根据保存的安全号码和防盗保护状态进行设置
+        //设置安全号码
+        tv_lostfind_safenum.setText(sp.getString(&quot;safenum&quot;, &quot;&quot;));
+        //设置防盗保护是否开启状态
+        //获取保存的防盗保护状态
+        boolean b = sp.getBoolean(&quot;protected&quot;, false);
+        //根据获取防盗保护状态设置相应显示图片
+        if (b) {
+            //开启防盗保护
+            tv_lostfind_protected.setImageResource(R.drawable.lock);
+        }else{
+            //关闭防盗保护
+            tv_lostfind_protected.setImageResource(R.drawable.unlock);
+        }
+</code></pre><p>#接受指令操作# (重点:广播接受者)</p>
+<pre><code>1.服务器端推送一个指令,客户端接受者指令,叫做消息推送,心跳连接/长连接(费流量,费电),第三方消息推送sdk,极光推送,百度推送,xmpp,局限性:依赖于网络
+2.接受解析短信的操作,解析短信的内容,如果是指令的话,就执行相应的操作,局限性:费钱
+
+1.创建一个广播接受者
+    public class SmsReceiver extends BroadcastReceiver {
+2.清单文件配置
+    &lt;!-- 要想实现拦截操作,优先级必须大于0,小于0是系统先接受到短信,大于0是我们先接受到短信 --&gt;
+    &lt;receiver android:name=&quot;com.itheima.mobliesafe75.receiver.SmsReceiver&quot;&gt;
+        &lt;intent-filter android:priority=&quot;1000&quot;&gt;
+            &lt;action android:name=&quot;android.provider.Telephony.SMS_RECEIVED&quot;/&gt;
+        &lt;/intent-filter&gt;
+    &lt;/receiver&gt;
+3.接受解析短信
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        //接受解析短信
+        //70汉字一条短信,71汉字两条短信
+        Object[] objs = (Object[]) intent.getExtras().get(&quot;pdus&quot;);
+        for(Object obj:objs){
+            //解析成SmsMessage
+            SmsMessage smsMessage = SmsMessage.createFromPdu((byte[]) obj);
+            String body = smsMessage.getMessageBody();//获取短信的内容
+            String sender = smsMessage.getOriginatingAddress();//获取发件人
+            System.out.println(&quot;发件人:&quot;+sender+&quot;  短信内容:&quot;+body);
+            //真机测试,加发件人判断
+            //判断短信是哪个指令
+            if (&quot;#*location*#&quot;.equals(body)) {
+                //GPS追踪
+                System.out.println(&quot;GPS追踪&quot;);
+                //拦截短信
+                abortBroadcast();//拦截操作,原生android系统,国产深度定制系统中屏蔽,比如小米
+            }else if(&quot;#*alarm*#&quot;.equals(body)){
+                //播放报警音乐
+                System.out.println(&quot;播放报警音乐&quot;);
+                abortBroadcast();//拦截操作,原生android系统,国产深度定制系统中屏蔽,比如小米
+            }else if(&quot;#*wipedata*#&quot;.equals(body)){
+                //远程删除数据
+                System.out.println(&quot;远程删除数据&quot;);
+                abortBroadcast();//拦截操作,原生android系统,国产深度定制系统中屏蔽,比如小米
+            }else if(&quot;#*lockscreen*#&quot;.equals(body)){
+                //远程锁屏
+                System.out.println(&quot;远程锁屏&quot;);
+                abortBroadcast();//拦截操作,原生android系统,国产深度定制系统中屏蔽,比如小米
+            }
+
+        }
+        }
+    }
+</code></pre><p>#定位方式#</p>
+<pre><code>gps一种定位方式
+1.wifi定位,IP地址,根据你的IP地址获取你的地理位置,精确度不是特别高了
+2.基站定位,基站就是为电话服务,信号的强弱决定了你离基站的距离,精确度比较高,几十米--几公里,精确度取决于基站的个数
+
+wifi定位和基站定位局限性:不能定位海拔
+3.gps定位,gps定位卫星进行定位,使用最少卫星实现全球定位,去和gps定位卫星进行通讯来获取定位坐标,通过光波进行通讯,必须得到空旷地方才能进行定位,连接至少需要一分钟,耗电,精确度特别高,不需要联网,联网:agps技术,通过联网来修正获取的坐标,特别准确的
+
+百度定位sdk   gps
+高德  sdk
+</code></pre>
     
 
     
@@ -558,8 +696,8 @@ Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transf
 
 <script>
     var disqus_config = function () {
-        this.page.url = 'http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://miccall.tech/2017/01/06/android/android_005/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/01/06/android/android_005/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     $('.btn_click_load').click(function() {  //click to load comments
         (function() { // DON'T EDIT BELOW THIS LINE
@@ -590,7 +728,7 @@ Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transf
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/01/18/leapmotion/LEAP Motion 的猎户座  -001-/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/01/07/android/android_006/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -604,7 +742,7 @@ Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transf
 
     <!-- Next Nav -->
     
-        <a href="/2017/01/14/android/android_013/" id="post_nav-older" class="next-content">
+        <a href="/2017/01/05/android/android_004/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
