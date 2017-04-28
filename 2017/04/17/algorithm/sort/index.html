@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html style="display: none;" lang="zh">
     <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
@@ -15,9 +16,6 @@
         Mr.Metro
     </title>
 
-    <!-- Meta & Info -->
-    <meta charset="utf-8">
-    <meta name="baidu-site-verification" content="x9UgYDj9il" />
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
     
@@ -29,12 +27,15 @@
         <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
     
 
+    <!-- Meta & Info -->
     <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
     <meta name="keywords" content="miccall,Algorithm">
+    
+    
 
     <!-- Favicons -->
     <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
@@ -42,7 +43,6 @@
     <link rel="apple-touch-icon" href="/img/logo_miccall.png">
 
     <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-title" content="Title">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -72,10 +72,13 @@
         
     <![endif]-->
 
+    <!-- Import lsloader -->
+    <script>!function(){var e="http://"+location.host+"/combo?combo=";window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},lsloader.load=function(e,t,s){s=s||function(){};var n;if(n=this.getLS(e),!/\/\*codestartv1\*\//.test(n))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split("/*codestartv1*/")[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split("/*codestartv1*/")[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(e,t,s){var n=this;/\.js?.+$/.test(t)?this.iojs(t,e,function(e,t,s){n.setLS(t,e+"/*codestartv1*/"+s),n.runjs(e,t,s)}):/\.css?.+$/.test(t)&&this.iocss(t,e,function(s){document.getElementById(e).appendChild(document.createTextNode(s)),n.setLS(e,t+"/*codestartv1*/"+s)},s)},lsloader.iojs=function(e,t,s){var n=this;n.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void s(e,t,a.response);n.jsfallback(e,t)}},a.send(null)}catch(s){n.jsfallback(e,t)}},lsloader.iocss=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.iofonts=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs()}else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var u=this,a=document.createElement("script");a.src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),u.jsRunSequence.length>0&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(t){var s="",n={};for(var a in t){var u=this.getLS(t[a].name);if(u)var o=u.split("/*codestartv1*/")[0],c=u.split("/*codestartv1*/")[1];else var o="";o==t[a].path?this.jsRunSequence.push({name:t[a].name,code:c,path:t[a].path}):(this.jsRunSequence.push({name:t[a].name,code:null,path:t[a].path,status:"comboloading"}),n[t[a].name]=!0,s+=(""==s?"":";")+t[a].path)}var i=this;if(s){var r=new XMLHttpRequest;r.open("get",e+s,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void i.runCombo(r.response,n)}else{for(var e in i.jsRunSequence)n[i.jsRunSequence[e].name]&&(i.jsRunSequence[e].status="failed");i.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){e=e.split("/*combojs*/"),e.shift();for(var s in this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+"/*codestartv1*/"+e[0]),e.shift());this.runjs()}}();</script>
+
     <!-- Import CSS & jQuery -->
     
-        <link rel="stylesheet" href="/css/material.min.css">
-        <link rel="stylesheet" href="/css/style.min.css">
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?Vwvi0UKsWZkqwcl1aaIPhg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
         <!-- Config CSS -->
 
 
@@ -84,6 +87,26 @@
   body, html {
     font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   }
+
+
+    @font-face {
+        font-family: 'Material Icons';
+        font-style: normal;
+        font-weight: 400;
+        src: url(/fonts/MaterialIcons-Regular.eot);
+        src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'), url(/fonts/MaterialIcons-Regular.woff) format('woff'), url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+    }
+
+
+
+    @font-face {
+        font-family: 'FontAwesome';
+        src: url(/fonts/fontawesome-webfont.eot?v=4.5.0);
+        src: url(/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont.woff2?v=4.5.0) format('woff2'), url(/fonts/fontawesome-webfont.woff?v=4.5.0) format('woff'), url(/fonts/fontawesome-webfont.ttf?v=4.5.0) format('truetype'), url(/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular) format('svg');
+        font-weight: 400;
+        font-style: normal
+    }
+ 
 
   a {
     color: #00838F;
@@ -174,25 +197,12 @@
     </style>
 
 
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/queue.js"></script>
-    
-
-    <!-- UC Browser Compatible -->
-    <script>
-        var agent = navigator.userAgent.toLowerCase();
-        if(agent.indexOf('ucbrowser')>0) {
-            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
-            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-        }
-    </script>
-
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+        <script>lsloader.load("js/queue.min.js","/js/queue.min.js?FnfjxZSXVYqfU7c7cm3txg==")</script>
     
 
     
 
-
-    <!-- Bing Background -->
     
 
     <!-- Custom Head -->
@@ -877,24 +887,6 @@
 
 <!-- add animation -->
 <style>
-        .ripple-container {
-        }
-        .ripple-container .ripple{
-            background-color: rgba(255,255,255,0.4);
-            animation: ripple 2s forwards cubic-bezier(0, 0, 0.2, 1);
-        }
-        @keyframes ripple {
-            0% {
-                transform: scale(0);
-                opacity: 1;
-            }
-            80% {
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-            }
-        }
 	.disqus_click_btn {
             line-height: 30px;
             margin: 0;
@@ -923,20 +915,11 @@
         }
 </style>
 	
-<!-- add data-ripple attribute -->
 <div class="btn_click_load"> 
-    <button class="disqus_click_btn">阅读评论 「请确保 disq.us &amp; disquscdn.com &amp; disqus.com 可以正常加载」</button>
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
 </div>
-	
-<script>
-    // add effect to elements
-    Array.prototype.forEach.call(document.querySelectorAll('[data-ripple]'), function(element){
-        // find all elements and attach effect
-        new RippleEffect(element); // element is instance of javascript element node
-    });
-</script>
 
-<script>
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
     var disqus_config = function () {
         this.page.url = 'http://miccall.tech/2017/04/17/algorithm/sort/';  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = 'http://miccall.tech/2017/04/17/algorithm/sort/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
@@ -961,6 +944,8 @@
             padding: 2pc;
         }
     </style>
+
+
 
 
                 
@@ -1072,7 +1057,7 @@
     <!-- Homepage -->
     
         <li id="sidebar-first-li">
-            <a href="/" target="_self">
+            <a href="/" rel="nofollow">
                 
                     <i class="material-icons sidebar-material-icons">home</i>
                 
@@ -1102,45 +1087,60 @@
 
     <!-- Categories  -->
     
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Algorithm/">Algorithm<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/Leap-Motion/">Leap Motion<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/unity-3d/">unity 3d<span class="sidebar_archives-count">3</span></a>
+            </ul>
+        </li>
+        
+    
 
     <!-- Pages  -->
     
         <li>
-            <a href="/about/" title="About Me">
+            <a href="/about/" title="简历">
                 
                     <i class="material-icons sidebar-material-icons">person</i>
                 
-                About Me
+                简历
             </a>
         </li>
         
     
         <li>
-            <a href="/group/" title="About Group">
+            <a href="/group/" title="团队">
                 
                     <i class="material-icons sidebar-material-icons">group</i>
                 
-                About Group
+                团队
             </a>
         </li>
         
     
         <li>
-            <a href="/gallery/" title="My Grally">
+            <a href="/gallery/" title="图库">
                 
                     <i class="material-icons sidebar-material-icons">image</i>
                 
-                My Grally
+                图库
             </a>
         </li>
         
     
         <li>
-            <a href="/tag/" title="Tag">
+            <a href="/tag/" title="标签">
                 
-                    <i class="material-icons sidebar-material-icons">expore</i>
+                    <i class="material-icons sidebar-material-icons">dashboard</i>
                 
-                Tag
+                标签
             </a>
         </li>
         
@@ -1203,7 +1203,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
                     
                         <!-- Footer Top Button -->
-                        <div class="toTop-wrap">
+                        <div id="back-to-top" class="toTop-wrap">
     <a href="#top" class="toTop">
         <i class="material-icons footer_top-i">expand_less</i>
     </a>
@@ -1253,12 +1253,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
         <!--Copyright-->
         <div id="copyright">
-            Copyright&nbsp;©&nbsp;
-            <script type="text/javascript">
-                var fd = new Date();
-                document.write(fd.getFullYear());
-            </script>
-            &nbsp;Mr.Metro
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Mr.Metro
         </div>
 
         <!-- Paradox Footer Right Section -->
@@ -1283,15 +1278,16 @@ It will not impact the appearance and can give developers a lot of support :)
 
                     <!-- Import File -->
 
-    <script src="/js/lazyload.min.js"></script>
-    <script src="/js/js.min.js"></script>
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?y3mFBzHggMykAk6nhSWv/A==")</script>
 
 
 
-    <script src="/js/nprogress.js"></script>
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
 
 
-<script type="text/javascript">
+<script type="text/ls-javascript" id="NProgress-script">
     NProgress.configure({
         showSpinner: true
     });
@@ -1315,7 +1311,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
     
-        <script src="/js/smoothscroll.js"></script>
+        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==")</script>
     
 
 
@@ -1334,8 +1330,17 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-<!-- Window Load-->
+<!-- UC Browser Compatible -->
 <script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
     $(window).load(function() {
         // Post_Toc parent position fixed
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
@@ -1344,20 +1349,35 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- MathJax Load-->
 
-<script>
-    <!-- Offer LazyLoad -->
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
     queue.offer(function(){
         $('.lazy').lazyload({
             effect : 'show'
         });
     });
 
-    <!-- Start Queue -->
+    // Start Queue
     $(document).ready(function(){
         setInterval(function(){
             queue.execNext();
         },200);
     });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: canary | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
 </script>
 
                 </main>
