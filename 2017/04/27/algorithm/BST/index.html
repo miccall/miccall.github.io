@@ -441,8 +441,10 @@
 </li>
 <li><p>那么我就知道了 ，我们可以递归的在这两个分开的数组中找我们想要找的元素了。</p>
 </li>
-<li><p>这里我给出非递归的实现方式 有兴趣的可以尝试递归的方式 或者网上一搜一大片。</p>
-</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE01.PNG" alt="erfen"></p>
+<ul>
+<li>这里我给出非递归的实现方式 有兴趣的可以尝试递归的方式 或者网上一搜一大片。</li>
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token comment" spellcheck="true">//首先我们给定有序列arr 长度n 搜索元素 target 返回他的位置 </span>
         <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span>
@@ -475,13 +477,16 @@
         <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="二分搜索树-Binary-Search-Tree"><a href="#二分搜索树-Binary-Search-Tree" class="headerlink" title="二分搜索树  Binary Search Tree"></a>二分搜索树  Binary Search Tree</h3><ul>
-<li><p>树是一个很强大的数据结构  他能高效的解决查找问题 </p>
-</li>
+<li>树是一个很强大的数据结构  他能高效的解决查找问题 </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E4%BA%8C%E5%8F%89%E6%A0%91.PNG" alt="ecs"></p>
+<ul>
 <li><p>二叉树 &amp;&amp; 每个节点的键值都大于左子树 &amp;&amp; 每个节点的键值都小于右孩子 &amp;&amp; 以左右子树为根的子树依然时二分搜索树 </p>
 </li>
 <li><p>BST不一定是一个完全 二叉树 所以我们不能用数组实现BST 我们就只能用指针构建的Node节点来实现 </p>
 </li>
 </ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/BST%E4%B8%8D%E4%B8%80%E5%AE%9A%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.PNG" alt="BST"></p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> Key<span class="token punctuation">,</span><span class="token keyword">typename</span> Value<span class="token operator">></span>
         <span class="token keyword">class</span> <span class="token class-name">BinarySearchTree</span>
         <span class="token punctuation">{</span>
@@ -548,12 +553,9 @@
         <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="二分搜索树-的方法"><a href="#二分搜索树-的方法" class="headerlink" title="二分搜索树 的方法"></a>二分搜索树 的方法</h3><h4 id="插入新的节点-Insert"><a href="#插入新的节点-Insert" class="headerlink" title="插入新的节点 Insert"></a>插入新的节点 Insert</h4><ul>
-<li><p>首先 要插入一个新的节点 我们就要拿这个节点与我们的树作比较 如果比root大 就要根root的右子树的根比较 </p>
-</li>
-<li><p>相反 如果比root大 就要根root的左子树的根比较 ，直到发现root的某个子树的root为NULL 那么这个地方就是他应该所在的位置了 。</p>
-</li>
-<li><p>如果恰好找到了这个值相等的root，那我们就要用新的值 去覆盖原来的值 。 </p>
-</li>
+<li>首先 要插入一个新的节点 我们就要拿这个节点与我们的树作比较 如果比root大 就要根root的右子树的根比较<br><img src="http://onh0umlhz.bkt.clouddn.com/%E6%8F%92%E5%85%A501.PNG" alt="01"></li>
+<li>相反 如果比root大 就要根root的左子树的根比较 ，直到发现root的某个子树的root为NULL 那么这个地方就是他应该所在的位置了 。<br><img src="http://onh0umlhz.bkt.clouddn.com/%E6%8F%92%E5%85%A502.PNG" alt="02"></li>
+<li>如果恰好找到了这个值相等的root，那我们就要用新的值 去覆盖原来的值 。<br><img src="http://onh0umlhz.bkt.clouddn.com/%E6%8F%92%E5%85%A503.PNG" alt="03"></li>
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token keyword">private</span> <span class="token operator">:</span> 
         <span class="token comment" spellcheck="true">//内部实现的递归的插入方法</span>
@@ -743,7 +745,14 @@
         <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
-<li>如何去理解三种遍历方法 我也给出了 一种简单的方法去记 。</li>
+<li><p>如何去理解三种遍历方法 我也给出了 一种简单的方法去记 。</p>
+</li>
+<li><p>每一个节点都被箭头指向三次 第几次被指 就是什么遍历 </p>
+</li>
+<li><p>红箭头指向<br><img src="http://onh0umlhz.bkt.clouddn.com/miccall%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86.jpg" alt="前"></p>
+</li>
+<li>绿箭头指向<br><img src="http://onh0umlhz.bkt.clouddn.com/miccall%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.jpg" alt="中"></li>
+<li>蓝箭头指向<br><img src="http://onh0umlhz.bkt.clouddn.com/miccall%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86.jpg" alt="后"></li>
 </ul>
 <h4 id="BSF-广度优先搜索-levelOrder-层次遍历"><a href="#BSF-广度优先搜索-levelOrder-层次遍历" class="headerlink" title="BSF (广度优先搜索) levelOrder 层次遍历"></a>BSF (广度优先搜索) levelOrder 层次遍历</h4><ul>
 <li><p>层次遍历对比与DFS的重要性和复杂性来说要低很多 但也是非常重要的思想 </p>
@@ -1170,7 +1179,7 @@
                 </li>
             
                 <li>
-                    <a href="http://shang.qq.com/email/stop/email_stop.html?qq=316459829&amp;sig=a1c657365db7e82805ea4b2351081fc3ebcde159f8ae49b1&amp;tttt=1" target="_blank" title="腾讯 QQ">
+                    <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=316459829&amp;site=qq&amp;menu=yes" target="_blank" title="腾讯 QQ">
                         
                             <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">phone</i>
                         
