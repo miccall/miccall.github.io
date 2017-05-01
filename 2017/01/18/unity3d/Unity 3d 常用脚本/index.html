@@ -11,7 +11,7 @@
     
     <title>
         
-            Unity 3d 常用脚本 | 
+            Unity 3d 脚本特性 | 
         
         Mr.Metro
     </title>
@@ -60,7 +60,7 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://miccall.tech">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Unity 3d 常用脚本 | Mr.Metro">
+    <meta property="og:title" content="Unity 3d 脚本特性 | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
     <meta property="og:article:tag" content="unity 3d"> 
 
@@ -255,7 +255,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unity-3d-常用脚本"><span class="post-toc-number">1.</span> <span class="post-toc-text">Unity 3d 常用脚本</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Collected-by-miccall-（内容均来自于网络）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Collected by miccall  （内容均来自于网络）</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Unity-3d-脚本特性"><span class="post-toc-number">1.</span> <span class="post-toc-text">Unity 3d 脚本特性 </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Collected-by-miccall-（内容均来自于网络）"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Collected by miccall  （内容均来自于网络）</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Attribute解释"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">Attribute解释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常用的特性"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">常用的特性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SerializeField-私有变量标识序列化"><span class="post-toc-number">1.0.2.1.</span> <span class="post-toc-text">[SerializeField] 私有变量标识序列化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RequireComponent"><span class="post-toc-number">1.0.2.2.</span> <span class="post-toc-text">[RequireComponent]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Range-0-5"><span class="post-toc-number">1.0.2.3.</span> <span class="post-toc-text">[Range(0, 5)]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Tooltip"><span class="post-toc-number">1.0.2.4.</span> <span class="post-toc-text">[Tooltip]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Space"><span class="post-toc-number">1.0.2.5.</span> <span class="post-toc-text">[Space]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Header"><span class="post-toc-number">1.0.2.6.</span> <span class="post-toc-text">[Header]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Multiline"><span class="post-toc-number">1.0.2.7.</span> <span class="post-toc-text">[Multiline]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#TextArea"><span class="post-toc-number">1.0.2.8.</span> <span class="post-toc-text">[TextArea]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HideInInspector"><span class="post-toc-number">1.0.2.9.</span> <span class="post-toc-text">[HideInInspector]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NonSerializable"><span class="post-toc-number">1.0.2.10.</span> <span class="post-toc-text">[NonSerializable]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#FormerlySerializedAs"><span class="post-toc-number">1.0.2.11.</span> <span class="post-toc-text">[FormerlySerializedAs]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DisallowMultipleComponent"><span class="post-toc-number">1.0.2.12.</span> <span class="post-toc-text">[DisallowMultipleComponent]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ContextMenu"><span class="post-toc-number">1.0.2.13.</span> <span class="post-toc-text">[ContextMenu]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#MonoPInvokeCallback"><span class="post-toc-number">1.0.2.14.</span> <span class="post-toc-text">[MonoPInvokeCallback]</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DLLImport"><span class="post-toc-number">1.0.2.15.</span> <span class="post-toc-text">[DLLImport]</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单而实用的小代码"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">简单而实用的小代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#找到脚本-删除脚本"><span class="post-toc-number">1.0.3.1.</span> <span class="post-toc-text">找到脚本 删除脚本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#生成Perfabs"><span class="post-toc-number">1.0.3.2.</span> <span class="post-toc-text">生成Perfabs</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查找Tag"><span class="post-toc-number">1.0.3.3.</span> <span class="post-toc-text">查找Tag</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加脚本"><span class="post-toc-number">1.0.3.4.</span> <span class="post-toc-text">添加脚本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#提高IOS的fps上限"><span class="post-toc-number">1.0.3.5.</span> <span class="post-toc-text">提高IOS的fps上限</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#在场景切换时必要保存的对象"><span class="post-toc-number">1.0.3.6.</span> <span class="post-toc-text">在场景切换时必要保存的对象</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为Invoke-StartCoroutine-and-Instantiate-定义安全调用方法"><span class="post-toc-number">1.0.3.7.</span> <span class="post-toc-text">为Invoke, StartCoroutine and Instantiate 定义安全调用方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用扩展来让代码书写更便捷"><span class="post-toc-number">1.0.3.8.</span> <span class="post-toc-text">使用扩展来让代码书写更便捷</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改shader"><span class="post-toc-number">1.0.3.9.</span> <span class="post-toc-text">修改shader</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#调整相机效果脚本"><span class="post-toc-number">1.0.3.10.</span> <span class="post-toc-text">调整相机效果脚本</span></a></li></ol></li></ol></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -283,7 +283,7 @@
         <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://onh0umlhz.bkt.clouddn.com/c.png)">
     
             <p class="article-headline-p">
-                Unity 3d 常用脚本
+                Unity 3d 脚本特性
             </p>
         </div>
 
@@ -362,7 +362,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Unity 3d 常用脚本&url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Unity 3d 脚本特性&url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -371,7 +371,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Unity 3d 常用脚本&url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html&via=miccall" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Unity 3d 脚本特性&url=http://miccall.tech//2017/01/18/unity3d/Unity 3d 常用脚本/index.html&via=miccall" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -401,7 +401,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Unity 3d 常用脚本&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Unity 3d 脚本特性&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/01/18/unity3d/Unity 3d 常用脚本/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -420,60 +420,149 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <hr>
-<h1 id="Unity-3d-常用脚本"><a href="#Unity-3d-常用脚本" class="headerlink" title="Unity 3d 常用脚本"></a><strong>Unity 3d 常用脚本</strong></h1><h6 id="Collected-by-miccall-（内容均来自于网络）"><a href="#Collected-by-miccall-（内容均来自于网络）" class="headerlink" title="Collected by miccall  （内容均来自于网络）"></a>Collected by miccall  （内容均来自于网络）</h6><p>不定时更新 </p>
-<ul>
-<li>Time.deltaTime  :   <pre class="line-numbers language-csharp"><code class="language-csharp">      <span class="token keyword">void</span> <span class="token function">Update</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          transform<span class="token punctuation">.</span><span class="token function">Translate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Vector3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">*</span> Time<span class="token punctuation">.</span>deltaTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token comment" spellcheck="true">// * Time.deltaTime 以后， 物体一秒运动一次 </span>
-      <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-Vector3(0,0,1)  相当于  Vector3.forward<br>transform.Translate()  和  transform.Rotate()  都是根据自身坐标<br>LookAt()   可以让对象的正前方 ，朝向设定的坐标方向  。一般用于摄像机跟踪对象<br>平滑过渡 ：  SmoothDamp函数<br>插值  :    Mathf.Lerp(起始值,结束值,比例)   同样的 Vector3 和Color 也有该方法  。 <pre class="line-numbers language-csharp"><code class="language-csharp">  <span class="token function">Instantiate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//用来实例化对象 。。。 返回值是Object 。</span>
-  <span class="token function">Instantiate</span><span class="token punctuation">(</span>Prefab<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//默认(0,0,0)</span>
-  <span class="token comment" spellcheck="true">//以下是指定在某个对象的位置和角度创建 。。</span>
-  <span class="token function">Instantiate</span><span class="token punctuation">(</span>Prefab<span class="token punctuation">,</span>Transform<span class="token punctuation">.</span>position <span class="token punctuation">,</span> Transform<span class="token punctuation">.</span>rotation<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-   Rigidbody   添加力    AddForce()  ;   <pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">AddForce</span><span class="token punctuation">(</span>Transform<span class="token punctuation">.</span>position  <span class="token operator">*</span> 倍数 <span class="token punctuation">,</span>ForceMode mode <span class="token operator">=</span> ForceMode<span class="token punctuation">.</span>Force<span class="token punctuation">)</span> <span class="token punctuation">;</span> 
-   <span class="token function">AddForce</span><span class="token punctuation">(</span>Transform<span class="token punctuation">.</span>position  <span class="token operator">*</span> 倍数 <span class="token punctuation">)</span> <span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-对象的销毁  <pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">Destory</span><span class="token punctuation">(</span>Object gameObject <span class="token punctuation">,</span> Time t <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h1 id="Unity-3d-脚本特性"><a href="#Unity-3d-脚本特性" class="headerlink" title="Unity 3d 脚本特性 "></a><strong>Unity 3d 脚本特性 </strong></h1><h6 id="Collected-by-miccall-（内容均来自于网络）"><a href="#Collected-by-miccall-（内容均来自于网络）" class="headerlink" title="Collected by miccall  （内容均来自于网络）"></a>Collected by miccall  （内容均来自于网络）</h6><ul>
+<li>不定时更新 </li>
+</ul>
+<h3 id="Attribute解释"><a href="#Attribute解释" class="headerlink" title="Attribute解释"></a>Attribute解释</h3><ul>
+<li><p>官方解释(原文略)(翻译也略,反正看不懂 还是我自己总结吧)</p>
 </li>
-<li><p>Invoke(); 延时调用某函数 。</p>
-<pre class="line-numbers language-csharp"><code class="language-csharp">   <span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  重复调用某函数 
-   <span class="token function">CanceInvoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 结束<span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token punctuation">)</span>的调用 。
-   <span class="token function">Invoke</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">,</span>DelayTime  s <span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token function">InvokeRepeating</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">,</span>FirstDelayTime  s1 <span class="token punctuation">,</span> CirclyDelayTime s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-   <span class="token function">CanceInvoke</span><span class="token punctuation">(</span><span class="token string">"FunctionName"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>四元数 。。Quaternion ,默认是（0，0，0，0）用Quaternion.identity 表示。<br>Quaternion.identity就是指Quaternion(0,0,0,0),就是每旋转前的初始角度,<br>是一个确切的值,而transform.rotation是指本物体的角度,值是不确定的,<br>比如可以这么设置transform.rotation = Quaternion.identity;<br>一个是值类型,一个是属性变量</p>
-</li>
-<li><p>枚举类型 。。 Enumerations == Enums</p>
-<pre class="line-numbers language-csharp"><code class="language-csharp">  <span class="token keyword">enum</span> Name<span class="token punctuation">{</span>
-        N<span class="token punctuation">,</span>E<span class="token punctuation">,</span>S<span class="token punctuation">,</span>W
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">//默认 ： N==0,E==1,S==2,W==3</span>
-  <span class="token comment" spellcheck="true">// enum Name : int{};</span>
-  <span class="token comment" spellcheck="true">//声明 ：  </span>
-   Name name <span class="token punctuation">;</span>
-  name<span class="token punctuation">.</span>N<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>GetComponentsInChildren&lt;组件&gt;();<br>这种方式是 大家经常用到的，这种是获取自己和它的孩子有同样的组件（比如 Rigidbody），返回一个数组，数组包括自己和它的孩子。如果他的孩子里面有的是不活跃SetActive(false);则获取不到。<br>所以就会有第二个参数GetComponentsInChildren&lt;组件&gt;(true);</p>
-</li>
-<li><p>Transform组件<br>Variables<br>position                    Vector3类型，物体位置，相对于世界坐标系的值。就是矩阵的最后一行的值。<br>localPosition             Vector3类型，物体相对于父元素的位置.<br>eulerAngles              Vector3类型，旋转后的欧拉角相对世界坐标的值。简单理解为各向量坐标所转动的值就好了。<br>localEulerAngles      Vector3类型，相对父元素的欧拉角。<br>right                        Vector3类型，表示x轴（U3里红色的轴）方向的单位向量。<br>up                           Vector3类型，表示y轴（U3里绿色的轴）方向的单位向量。<br>forward                   Vector3类型，表示z轴（U3里蓝色的轴）方向的单位向量。<br>rotation                   Quaternion类型(quatermion就是个四维数，比vector3多一个w变量表示旋转角度的)，世界坐标旋转。.<br>localRotation           Quaternion类型，本地坐标的旋转度数（相对父元素）。<br>localScale                Vector3类型，相对本地坐标系缩放（就是矩阵的乘法）<br>parent                      Transform类型，他的父元素。<br>worldToLocalMatrix  Matrix4<em>4类型，把一个点从世界坐标系的位置转换为本地坐标系位置。（终究得用矩阵，哈哈）只读<br>localToWorldMatrix  Matrix4</em>4类型，把一个点从本地坐标系转换为世界坐标系。（只读）<br>root                          Transform类型，返回最上层的那个Transform，就是他父亲的父亲的父亲的。。。（如果有的话）<br>childCount                int型，你子元素的数量<br>lossyScale                Vector3类型，相对世界坐标系缩放</p>
-</li>
-<li><p>这个功能很实用，传入的两个参数分别代表前方盯着的方向以及自己的上方向。它可以让一个GameObject转动脑袋盯着另一个物体。</p>
+<li><p>Attribute是一个类 用户可以使用他做很多事，你可以在运行前 调用脚本做一些处理 也可以运行时执行相应的模块 ，等等很多 。 </p>
 </li>
 </ul>
-<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">public</span> Transform target<span class="token punctuation">;</span>
-        <span class="token keyword">void</span> <span class="token function">Update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            Vector3 relativePos <span class="token operator">=</span> target<span class="token punctuation">.</span>position <span class="token operator">-</span> transform<span class="token punctuation">.</span>position<span class="token punctuation">;</span>
-            Quaternion rotation <span class="token operator">=</span> Quaternion<span class="token punctuation">.</span><span class="token function">LookRotation</span><span class="token punctuation">(</span>relativePos<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            transform<span class="token punctuation">.</span>rotation <span class="token operator">=</span> rotation<span class="token punctuation">;</span>
+<h3 id="常用的特性"><a href="#常用的特性" class="headerlink" title="常用的特性"></a>常用的特性</h3><h4 id="SerializeField-私有变量标识序列化"><a href="#SerializeField-私有变量标识序列化" class="headerlink" title="[SerializeField] 私有变量标识序列化"></a>[SerializeField] 私有变量标识序列化</h4><ul>
+<li><p>因为unity仅仅序列化公有域。如果作为附加你也想要Unity去序列化你的一个私有域，你可以添加SerializeField（序列化域）属性给这个域。</p>
+</li>
+<li><p>序列化的值被存储到场景和预制体。因为值存储在meta元数据中，在Inspector检查器中就可以设置值了</p>
+</li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token comment" spellcheck="true">//C# example</span>
+        <span class="token keyword">using</span> UnityEngine<span class="token punctuation">;</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SomePerson</span> <span class="token punctuation">:</span> MonoBehaviour <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//这个领域被序列化的,因为它是public的</span>
+            <span class="token keyword">public</span> <span class="token keyword">string</span> name <span class="token operator">=</span> <span class="token string">"John"</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//这个领域不被序列化的,因为它是private的。</span>
+            <span class="token keyword">private</span> <span class="token keyword">int</span> age <span class="token operator">=</span> <span class="token number">40</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//这个领域被序列化,即使它是 private</span>
+            <span class="token comment" spellcheck="true">//因为它有SerializeField属性</span>
+            <span class="token punctuation">[</span>SerializeField<span class="token punctuation">]</span>
+            <span class="token keyword">private</span> <span class="token keyword">bool</span> hasHealthPotion <span class="token operator">=</span> <span class="token keyword">true</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">void</span> <span class="token function">Update</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="RequireComponent"><a href="#RequireComponent" class="headerlink" title="[RequireComponent]"></a>[RequireComponent]</h4><ul>
+<li><p>可以允许自动添加需要的组件作为一个附属</p>
+</li>
+<li><p>当你添加的一个用了RequireComponent组件的脚本，需要的组件将会自动被添加到game object（游戏物体）。这个可以有效的避免组装错误。举个例子一个脚本可能需要刚体总是被添加在相同的game object（游戏物体）上。用RequireComponent属性的话，这个过程将被自动完成，因此你可以永远不会犯组装错误。</p>
+</li>
+<li><p>[RequireComponent(typeof(<strong> Component_name</strong>))]  </p>
+</li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token punctuation">[</span><span class="token function">RequireComponent</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> <span class="token punctuation">(</span>Rigidbody<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">class</span> <span class="token class-name">PlayerScript</span> <span class="token punctuation">:</span> MonoBehaviour <span class="token punctuation">{</span>
+            <span class="token keyword">void</span> <span class="token function">FixedUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                rigidbody<span class="token punctuation">.</span><span class="token function">AddForce</span><span class="token punctuation">(</span>Vector3<span class="token punctuation">.</span>up<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> 
+        <span class="token comment" spellcheck="true">//当你挂载这个脚本的时候 ，会把Rigidbody一起挂载</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Range-0-5"><a href="#Range-0-5" class="headerlink" title="[Range(0, 5)]"></a>[Range(0, 5)]</h4><ul>
+<li>属性用来制造一个浮点数或int变量在脚本中被限制到一个特定的范围内。当使用这个属性时,浮动或int将显示为一个滑块的滑动条 </li>
+</ul>
+<h4 id="Tooltip"><a href="#Tooltip" class="headerlink" title="[Tooltip]"></a>[Tooltip]</h4><ul>
+<li><p>当用Tooltip属性的变量 会在 Inspector 界面，当你鼠标悬停在当前变量名的时候 显示备注的文字</p>
+</li>
+<li><p>在以下脚本添加一个提示。这提供给用户的信息关于健康变量值的范围。提供的建议范围是TooltipAttribute字符串</p>
+</li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExampleClass</span> <span class="token punctuation">:</span> MonoBehaviour <span class="token punctuation">{</span>
+            <span class="token punctuation">[</span><span class="token function">Tooltip</span><span class="token punctuation">(</span><span class="token string">"Health value between 0 and 100."</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+            <span class="token keyword">public</span> <span class="token keyword">int</span> health <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Space"><a href="#Space" class="headerlink" title="[Space]"></a>[Space]</h4><h4 id="Header"><a href="#Header" class="headerlink" title="[Header]"></a>[Header]</h4><pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExampleClass</span> <span class="token punctuation">:</span> MonoBehaviour <span class="token punctuation">{</span>
+            <span class="token punctuation">[</span><span class="token function">Header</span><span class="token punctuation">(</span><span class="token string">"Health Settings"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+            <span class="token keyword">public</span> <span class="token keyword">int</span> health <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">public</span> <span class="token keyword">int</span> maxHealth <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+            <span class="token punctuation">[</span><span class="token function">Header</span><span class="token punctuation">(</span><span class="token string">"Shield Settings"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+            <span class="token keyword">public</span> <span class="token keyword">int</span> shield <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">public</span> <span class="token keyword">int</span> maxShield <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Multiline"><a href="#Multiline" class="headerlink" title="[Multiline]"></a>[Multiline]</h4><h4 id="TextArea"><a href="#TextArea" class="headerlink" title="[TextArea]"></a>[TextArea]</h4><h4 id="HideInInspector"><a href="#HideInInspector" class="headerlink" title="[HideInInspector]"></a>[HideInInspector]</h4><h4 id="NonSerializable"><a href="#NonSerializable" class="headerlink" title="[NonSerializable]"></a>[NonSerializable]</h4><h4 id="FormerlySerializedAs"><a href="#FormerlySerializedAs" class="headerlink" title="[FormerlySerializedAs]"></a>[FormerlySerializedAs]</h4><h4 id="DisallowMultipleComponent"><a href="#DisallowMultipleComponent" class="headerlink" title="[DisallowMultipleComponent]"></a>[DisallowMultipleComponent]</h4><h4 id="ContextMenu"><a href="#ContextMenu" class="headerlink" title="[ContextMenu]"></a>[ContextMenu]</h4><ul>
+<li><p>允许你去添加命令给上下文菜单 </p>
+</li>
+<li><p>在附加脚本的inspector（检视面板）。当用户选择环境菜单时，这个方法将会被执行 </p>
+</li>
+<li><p>这是非常有用的对于自动设置场景数据通过脚本。方法必须是非静态的 </p>
+</li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">class</span> <span class="token class-name">ContextTesting</span> <span class="token punctuation">:</span> MonoBehaviour <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">/// Add a context menu named "Do Something" in the inspector</span>
+            <span class="token comment" spellcheck="true">/// of the attached script.</span>
+            <span class="token comment" spellcheck="true">///添加一个环境菜单名叫"Do Something"在添加了脚本的inspector（检视面板）</span>
+            <span class="token punctuation">[</span><span class="token function">ContextMenu</span> <span class="token punctuation">(</span><span class="token string">"Do Something"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+            <span class="token keyword">void</span> <span class="token function">DoSomething</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                Debug<span class="token punctuation">.</span><span class="token function">Log</span> <span class="token punctuation">(</span><span class="token string">"Perform operation"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="MonoPInvokeCallback"><a href="#MonoPInvokeCallback" class="headerlink" title="[MonoPInvokeCallback]"></a>[MonoPInvokeCallback]</h4><h4 id="DLLImport"><a href="#DLLImport" class="headerlink" title="[DLLImport]"></a>[DLLImport]</h4><h3 id="简单而实用的小代码"><a href="#简单而实用的小代码" class="headerlink" title="简单而实用的小代码"></a>简单而实用的小代码</h3><h4 id="找到脚本-删除脚本"><a href="#找到脚本-删除脚本" class="headerlink" title="找到脚本 删除脚本"></a>找到脚本 删除脚本</h4><pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">if</span><span class="token punctuation">(</span>gameObject<span class="token punctuation">.</span><span class="token generic-method function">GetComponent<span class="token punctuation">&lt;</span>MouseDrag<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">Destroy</span><span class="token punctuation">(</span>gameObject<span class="token punctuation">.</span><span class="token generic-method function">GetComponent<span class="token punctuation">&lt;</span>MouseDrag<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="生成Perfabs"><a href="#生成Perfabs" class="headerlink" title="生成Perfabs"></a>生成Perfabs</h4><pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">public</span> GameObject Perfabs<span class="token punctuation">;</span>
+
+        Object prefab <span class="token operator">=</span> PrefabUtility<span class="token punctuation">.</span><span class="token function">CreateEmptyPrefab</span><span class="token punctuation">(</span><span class="token string">"Assets/预制体.prefab"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                PrefabUtility<span class="token punctuation">.</span><span class="token function">ReplacePrefab</span><span class="token punctuation">(</span>Perfabs<span class="token punctuation">,</span>prefab<span class="token punctuation">,</span>ReplacePrefabOptions<span class="token punctuation">.</span>ConnectToPrefab<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="查找Tag"><a href="#查找Tag" class="headerlink" title="查找Tag"></a>查找Tag</h4><pre class="line-numbers language-csharp"><code class="language-csharp">         GameObject<span class="token punctuation">[</span><span class="token punctuation">]</span> GG<span class="token operator">=</span> GameObject<span class="token punctuation">.</span><span class="token function">FindGameObjectsWithTag</span><span class="token punctuation">(</span><span class="token string">"Tag"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="添加脚本"><a href="#添加脚本" class="headerlink" title="添加脚本"></a>添加脚本</h4><pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>gameObject<span class="token punctuation">.</span><span class="token generic-method function">GetComponent<span class="token punctuation">&lt;</span>添加脚本名字<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            gameObject<span class="token punctuation">.</span><span class="token generic-method function">AddComponent<span class="token punctuation">&lt;</span>添加脚本名字<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="提高IOS的fps上限"><a href="#提高IOS的fps上限" class="headerlink" title="提高IOS的fps上限"></a>提高IOS的fps上限</h4><p>提示：ios默认的fps上限是30，在第一个界面任何物体加上</p>
+<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">void</span> <span class="token function">Awake</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Application<span class="token punctuation">.</span>targetFrameRate <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="在场景切换时必要保存的对象"><a href="#在场景切换时必要保存的对象" class="headerlink" title="在场景切换时必要保存的对象"></a>在场景切换时必要保存的对象</h4><pre class="line-numbers language-csharp"><code class="language-csharp">        MyObject <span class="token operator">=</span> <span class="token function">FindMyObjectInScene</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>MyObjet <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+           MyObject <span class="token operator">=</span> <span class="token function">SpawnMyObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="为Invoke-StartCoroutine-and-Instantiate-定义安全调用方法"><a href="#为Invoke-StartCoroutine-and-Instantiate-定义安全调用方法" class="headerlink" title="为Invoke, StartCoroutine and Instantiate 定义安全调用方法"></a>为Invoke, StartCoroutine and Instantiate 定义安全调用方法</h4><p>提示：定义一个委托任务（delegate Task），用它来定义需要调用的方法，而不要使用字符串属性方法名称。</p>
+<pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Invoke</span><span class="token punctuation">(</span>Task task<span class="token punctuation">,</span> <span class="token keyword">float</span> time<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+           <span class="token function">Invoke</span><span class="token punctuation">(</span>task<span class="token punctuation">.</span>Method<span class="token punctuation">.</span>Name<span class="token punctuation">,</span> time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="使用扩展来让代码书写更便捷"><a href="#使用扩展来让代码书写更便捷" class="headerlink" title="使用扩展来让代码书写更便捷"></a>使用扩展来让代码书写更便捷</h4><pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">CSTransform</span> 
+        <span class="token punctuation">{</span>
+          <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">SetX</span><span class="token punctuation">(</span><span class="token keyword">this</span> Transform transform<span class="token punctuation">,</span> <span class="token keyword">float</span> x<span class="token punctuation">)</span>
+          <span class="token punctuation">{</span>
+            Vector3 newPosition <span class="token operator">=</span>
+              <span class="token keyword">new</span> <span class="token class-name">Vector3</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> transform<span class="token punctuation">.</span>position<span class="token punctuation">.</span>y<span class="token punctuation">,</span> transform<span class="token punctuation">.</span>position<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            transform<span class="token punctuation">.</span>position <span class="token operator">=</span> newPosition<span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+          <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="修改shader"><a href="#修改shader" class="headerlink" title="修改shader"></a>修改shader</h4><pre class="line-numbers language-csharp"><code class="language-csharp">        <span class="token generic-method function">GetComponent<span class="token punctuation">&lt;</span>Renderer<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>material<span class="token punctuation">.</span><span class="token function">SetFloat</span><span class="token punctuation">(</span><span class="token string">"_WaveScale"</span><span class="token punctuation">,</span> <span class="token number">0.5f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="调整相机效果脚本"><a href="#调整相机效果脚本" class="headerlink" title="调整相机效果脚本"></a>调整相机效果脚本</h4><pre class="line-numbers language-csharp"><code class="language-csharp">        Cam<span class="token punctuation">.</span><span class="token generic-method function">GetComponent<span class="token punctuation">&lt;</span>UnityStandardAssets<span class="token punctuation">.</span>ImageEffects<span class="token punctuation">.</span>DepthOfFieldDeprecated<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>focalZDistance <span class="token operator">=</span> focalDistance<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
     
 
