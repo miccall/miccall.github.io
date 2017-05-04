@@ -11,7 +11,7 @@
     
     <title>
         
-            Android学习笔记 006 | 
+            Shader Forge 应用教程 | 
         
         Mr.Metro
     </title>
@@ -33,7 +33,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
     <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall,android">
+    <meta name="keywords" content="miccall,unity 3d">
     
     
 
@@ -60,9 +60,9 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="http://miccall.tech">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Android学习笔记 006 | Mr.Metro">
+    <meta property="og:title" content="Shader Forge 应用教程 | Mr.Metro">
     <meta property="og:description" content="Blog of miccall is records about my work">
-    <meta property="og:article:tag" content="android"> 
+    <meta property="og:article:tag" content="unity 3d"> 
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -255,7 +255,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android学习笔记"><span class="post-toc-number">1.</span> <span class="post-toc-text"> Android学习笔记 </span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Shader-Forge-应用教程"><span class="post-toc-number">1.</span> <span class="post-toc-text">Shader Forge 应用教程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-转载请注明出处-miccall-tech"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  (转载请注明出处  miccall.tech)</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-shader-基础材质"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">一.shader 基础材质</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建diffuse（漫反射）"><span class="post-toc-number">1.0.1.1.</span> <span class="post-toc-text">创建diffuse（漫反射）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加diffuse-color（漫反射颜色）"><span class="post-toc-number">1.0.1.2.</span> <span class="post-toc-text">添加diffuse-color（漫反射颜色）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建specular-（镜面反射）"><span class="post-toc-number">1.0.1.3.</span> <span class="post-toc-text">创建specular （镜面反射）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建gloss-（光泽）"><span class="post-toc-number">1.0.1.4.</span> <span class="post-toc-text">- 创建gloss （光泽）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建法线贴图"><span class="post-toc-number">1.0.1.5.</span> <span class="post-toc-text">- 创建法线贴图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建高光贴图"><span class="post-toc-number">1.0.1.6.</span> <span class="post-toc-text">- 创建高光贴图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#加和乘的区别"><span class="post-toc-number">1.0.1.7.</span> <span class="post-toc-text">- 加和乘的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-shader-基础光源"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">一.shader 基础光源</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#默认的光照系统"><span class="post-toc-number">1.0.2.1.</span> <span class="post-toc-text">默认的光照系统</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#漫反射光照模型"><span class="post-toc-number">1.0.2.2.</span> <span class="post-toc-text">漫反射光照模型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#光衰减和阴影"><span class="post-toc-number">1.0.2.3.</span> <span class="post-toc-text">光衰减和阴影</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#颜色光"><span class="post-toc-number">1.0.2.4.</span> <span class="post-toc-text">颜色光</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#反射光"><span class="post-toc-number">1.0.2.5.</span> <span class="post-toc-text">反射光</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加法线贴图"><span class="post-toc-number">1.0.2.6.</span> <span class="post-toc-text">添加法线贴图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#高光反射范围"><span class="post-toc-number">1.0.2.7.</span> <span class="post-toc-text">高光反射范围</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#高光反射和镜面反射"><span class="post-toc-number">1.0.2.8.</span> <span class="post-toc-text">高光反射和镜面反射</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加材质贴图"><span class="post-toc-number">1.0.2.9.</span> <span class="post-toc-text">添加材质贴图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#更改材质颜色"><span class="post-toc-number">1.0.2.10.</span> <span class="post-toc-text">更改材质颜色</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#添加菲涅尔边缘光"><span class="post-toc-number">1.0.2.11.</span> <span class="post-toc-text">添加菲涅尔边缘光</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#做完了-来个大合照"><span class="post-toc-number">1.0.2.12.</span> <span class="post-toc-text">做完了 来个大合照</span></a></li></ol></li></ol></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -279,20 +279,11 @@
                 
     <!-- Paradox Post Header -->
     
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script type="text/ls-javascript" id="post-thumbnail-script">
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
-    $('.post_thumbnail-random').addClass('lazy');
-</script>
-
-        
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://onh0umlhz.bkt.clouddn.com/miccall0504shadrJC_header.jpg)">
     
             <p class="article-headline-p">
-                Android学习笔记 006
+                Shader Forge 应用教程
             </p>
         </div>
 
@@ -311,7 +302,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>miccall</strong>
-        <span>1月 07, 2017</span>
+        <span>4月 01, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -332,7 +323,7 @@
         </button>
         <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
             <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWElEQVR42u3aS5LCMAwFQO5/6ZkDUDhP8ieB6qwoSGI3C1v15NffT18vPDw8PDw8PDy8h/Fe8TV+6v379/vfP3+6Z2pueHh4eEd4F0vtcLqf7p8hTc0NDw8P7yBvvNznQyYL/Xgj6c0NDw8P78m8VWV0b1w8PDy8b+T1IoYk4HjQvoeHh4e3KIwYB6nJrwn1tqwFDw8PL+blTabzn4/29/Dw8PACXvlI09rgoBUQX8wQDw8PbzMvX4irza3eO3vzwcPDwzvJqzb+k6lXo43eiFEYgYeHh7eBN8/IY9ykNE8YF2/Gw8PD28zLF9zqQt/D5621wr6Hh4eHt5TXW8Qv4oA4rh0zcjAeHh7eSV6vqb9qY8gj4MLWgoeHh7eZVy1t88K6uj30yu4oa8HDw8NbyqvGtTNFcC9uyGF4eHh4d/H2xbv5htF7Fg8PD+8Mb23jv1p8z4QReHh4eHfxqsV08tRMkDETduDh4eGd4VU3g2qskEy6dxgLDw8P715edbAcPF92l7cZPDw8vCO8VQeh8r+gF9GOjx3g4eHhneTlr1gVtiZ3XhwRqJbUeHh4eBt4eQt/pvytFuvlQh8PDw/vAbxe6LAb8/F7PDw8vM286pUXyjN/x1SJj4eHh7eZN3NwKo8YeiV7Xu7j4eHhnefNN/JnmmfVRtrF1oKHh4d3kJdPPT98MNMSSw5v4eHh4X0Lb366q0bEw8PD+xbeuPhee+gqHx0PDw/vPC8JI6qHqPJne4U1Hh4e3l28XgTQu7+6nZQPGeDh4eFt5v3ehYeHh4eHh4eH94DrH9aTr1ucn74qAAAAAElFTkSuQmCC">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2ElEQVR42u3aS3LqUAwFQPa/6WQBKcyRZCqg2x6lXsC+7UHO0+fxc+T1wMbGxsbGxsbGxv5I9iO+rj//7J7X//L3W08PHZzhxamwsbGxV7Nf/Om/PG7yOvJDXz+9d2ZsbGzsc9jJoZNPJoD8ntffLZwZGxsbG7tVMLwvArGxsbGx7w2wJLqScMpjEhsbGxt70qCpRs5kDFANUWxsbOwz2dVB7yf8/A/zbWxsbOyPZFevpJBIFn2u758XOYWTY2NjYy9lJyuS+Qpm9bj5SDhf3CwvX2JjY2N/ObsaMNUmfq+FlDePCoNkbGxs7NXsXvlxPbjthVAeTvlAAhsbG3s3O1m1ufcQd72C8ggZGxsbeyl7zus1ifJGUrXtVW4qYWNjY69gTw43bzNVoy5CYmNjYx/D7o1se4VHHoHVhlFUVmFjY2MvZfcGq3khkUdR/pqqwwlsbGzs3ezeA3qNoWqjKn96tB6EjY2NvZrdW9PpjXXn96+WMdjY2Ni72cnh5vGTj3LvWhXCxsbGPo2dPCxvzfdKhbzMaEYpNjY29jHsyVC2uqZTLT/yYXM5wLCxsbG/lp38pz+Pk14g3VWcvIhGbGxs7KXsagtp8sleEXLXghE2Njb2VnYSV5PXlJQK1fDrxRg2Njb2VvZ83DspY6pjhutXU17ZwcbGxl7Erj4saTONhrLxyOG2TSVsbGzsRezJcavfnYwf8kECNjY29m52r/DIl3sm6z7z4gQbGxv7BHav3d87aG8pM39NN/TSsLGxsb+cnbeQ7lq+qZYohbjCxsbGPob9iK9kWFuIk7jIqX4+CjBsbGzsdezeWsxk7Sa5Q/VFv1BgY2NjH8CeL9ZUBw+FQ8dBhY2NjY1dHfE+i5keO4mrvETBxsbGxs4bOjm1Wook7KhAwsbGxj6A3RvcTn7bizpsbGxs7HcMepNgm49+J2GGjY2NvZV9zoWNjY2NjY2NjY39MdcvJd0qXJqPkicAAAAASUVORK5CYII=">
         </ul>
     
 
@@ -344,7 +335,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/android/">android</a>
+        <a class="post_tag-link" href="/tags/unity-3d/">unity 3d</a>
     </ul>
     
 
@@ -371,7 +362,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android学习笔记 006&url=http://miccall.tech//2017/01/07/android/android_006/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Shader Forge 应用教程&url=http://miccall.tech//2017/04/01/unity3d/Shader Forge 应用教程/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -380,7 +371,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android学习笔记 006&url=http://miccall.tech//2017/01/07/android/android_006/index.html&via=miccall" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Shader Forge 应用教程&url=http://miccall.tech//2017/04/01/unity3d/Shader Forge 应用教程/index.html&via=miccall" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -389,7 +380,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://miccall.tech//2017/01/07/android/android_006/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://miccall.tech//2017/04/01/unity3d/Shader Forge 应用教程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -398,7 +389,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/07/android/android_006/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/04/01/unity3d/Shader Forge 应用教程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -410,7 +401,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Android学习笔记 006&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/01/07/android/android_006/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=Shader Forge 应用教程&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/04/01/unity3d/Shader Forge 应用教程/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -429,367 +420,312 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <hr>
-<h1 id="Android学习笔记"><a href="#Android学习笔记" class="headerlink" title=" Android学习笔记 "></a><strong> Android学习笔记 </strong></h1><p>#定位的具体代码#</p>
-<pre><code>android.permission.ACCESS_MOCK_LOCATION : 模拟位置的权限,模拟器中必须加的,真机可加可不加
-android.permission.ACCESS_FINE_LOCATION : 精确位置的权限,真机必须添加
-android.permission.ACCESS_COARSE_LOCATION : 大概位置的权限,真机必须添加
+<h1 id="Shader-Forge-应用教程"><a href="#Shader-Forge-应用教程" class="headerlink" title="Shader Forge 应用教程"></a>Shader Forge 应用教程</h1><h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><p><a href="https://pan.baidu.com/s/1slNhftz" target="_blank" rel="external">文章所用的模型</a>  密码:  rry8 </p>
+<ul>
+<li><p>基本的.使用方法.不讲 </p>
+</li>
+<li><p>基本的界面.布局.不讲 </p>
+</li>
+<li><p>基本的创建.连接.不讲 </p>
+</li>
+</ul>
+<h3 id="一-shader-基础材质"><a href="#一-shader-基础材质" class="headerlink" title="一.shader 基础材质"></a>一.shader 基础材质</h3><h4 id="创建diffuse（漫反射）"><a href="#创建diffuse（漫反射）" class="headerlink" title="创建diffuse（漫反射）"></a>创建diffuse（漫反射）</h4><ul>
+<li><p>新建一个Texture节点 (按住键盘的T键 选择Texture) 然后吧我们需要的材质选择进去 </p>
+</li>
+<li><p>顺便给这个节点七个名字 方便在Inspector面板中方便找到对应的贴图  </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E5%88%9B%E5%BB%BAdiffuse.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>然后我们选择我们创建好的shader 他的材质就变成了这样 </p>
+</li>
+<li><p>如果没有图的话 还得自己去选择图片贴过来 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E5%88%9B%E5%BB%BAdiffuse_shader.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>然后给模型附上这个material 模型就有了我们的贴图了 </p>
+</li>
+<li><p>但是这样 他是不受任何光照的影响 他只有一个影子 没有反光 没有高光 甚至有些时候看不出他的材质 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E5%88%9B%E5%BB%BAdiffuse_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="添加diffuse-color（漫反射颜色）"><a href="#添加diffuse-color（漫反射颜色）" class="headerlink" title="添加diffuse-color（漫反射颜色）"></a>添加diffuse-color（漫反射颜色）</h4><ul>
+<li><p>如果你觉得材质贴图的颜色不好看的话 想要动态的改变颜色 也是可以的</p>
+</li>
+<li><p>新建一个Color节点 (按住c键 选择Color节点) </p>
+</li>
+<li><p>新建一个乘法节点 (按住M键 选择Multiply节点) </p>
+</li>
+<li><p>然后如图的方式连接好 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E5%88%9B%E5%BB%BAdiffuse-color.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>然后在Inspector中 你就发现 他多了一个颜色选择框 </p>
+</li>
+<li><p>我把它设置浅绿色 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E5%88%9B%E5%BB%BAdiffuse-color_shader.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>然后看看模型 他的颜色就变了 </p>
+</li>
+<li><p>你也可以自己试着更改逻辑 让他的混合强度变化更明显或者不明显</p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E5%88%9B%E5%BB%BAdiffuse-color_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="创建specular-（镜面反射）"><a href="#创建specular-（镜面反射）" class="headerlink" title="创建specular （镜面反射）"></a>创建specular （镜面反射）</h4><ul>
+<li><p>这是着色器镜面高光的颜色。值越高就越明亮，黑色完全不受着色器影响 </p>
+</li>
+<li><p>那我们这里先直接创建一个Slider(你还没学会 ？按键盘首字母) </p>
+</li>
+<li><p>然后这样连接  </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E5%88%9B%E5%BB%BAspecular.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>他是个滑动条 你可以设置他的取值范围 </p>
+</li>
+<li><p>亲手试试 ，不要只看教程不动手 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E5%88%9B%E5%BB%BAspecular_shader.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>然后自己拖动看看 他的反射效果已经很明显了</p>
+</li>
+<li><p>看图片没发现吗? 你可以仔细观察对比两个图  </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E5%88%9B%E5%BB%BAspecular_obj.PNG" width="1000" alt="
+图片名称" align="center"></p>
+<h4 id="创建gloss-（光泽）"><a href="#创建gloss-（光泽）" class="headerlink" title="- 创建gloss （光泽）"></a>- 创建gloss （光泽）</h4><ul>
+<li><p>这是镜面高光的指数。值越高光泽度越高，值趋近于 0 时将变得没有光泽。请注意，如果您取消选中光泽重映射，则应避免使用低于 1 的光泽值。</p>
+</li>
+<li><p>结合镜面反射 我们同样给他一个Slider </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E5%88%9B%E5%BB%BAglossPNG.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>当slider值很小时</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/gloss_less.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>当slider值很大时</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/gloss_more.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>当slider值适中时</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/gloss_normal.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="创建法线贴图"><a href="#创建法线贴图" class="headerlink" title="- 创建法线贴图"></a>- 创建法线贴图</h4><ul>
+<li><p>法线贴图 能让一个低端模型 看起来有高端模型的效果 </p>
+</li>
+<li><p>创建一个Texture节点 把他的类型改成Normal_map </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E6%B3%95%E7%BA%BF%E8%B4%B4%E5%9B%BE.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>法线贴图都是蓝紫色的 </p>
+</li>
+<li><p>如果这里没图片 重新选择一下 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E6%B3%95%E7%BA%BF%E8%B4%B4%E5%9B%BE_shader.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>然后看看模型 是不是有了更好的纹理质感 </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E6%B3%95%E7%BA%BF%E8%B4%B4%E5%9B%BE_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="创建高光贴图"><a href="#创建高光贴图" class="headerlink" title="- 创建高光贴图"></a>- 创建高光贴图</h4><ul>
+<li><p>高光不能满足我们对不地方的反射光强度 我们就用一张高光贴图来解决</p>
+</li>
+<li><p>原理是什么 我们用一张黑白灰的图 乘以一个slider 他会让黑色更黑 白色更白 </p>
+</li>
+<li><p>我们说高光的地方 就是白色反光 黑色不反光 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E9%AB%98%E5%85%89%E8%8C%83%E5%9B%B4.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>同样 选择图片 </p>
+</li>
+<li><p>更改值 看看效果 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E9%AB%98%E5%85%89%E8%8C%83%E5%9B%B4_sahder.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>也许你对效果不是很敏感 没事以后用到的时候 你会有一个思路就行了 </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/%E9%AB%98%E5%85%89%E8%8C%83%E5%9B%B4_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="加和乘的区别"><a href="#加和乘的区别" class="headerlink" title="- 加和乘的区别"></a>- 加和乘的区别</h4><ul>
+<li><p>为了加深一下刚刚的理解 我对加法和乘法做了一个对比 </p>
+</li>
+<li><p>当一张图与黑色做运算 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/add%E5%92%8Cmult_black.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>当一张图与白色做运算 </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/add%E5%92%8Cmult_white.PNG" width="1000" alt="图片名称" align="center"></p>
+<h3 id="一-shader-基础光源"><a href="#一-shader-基础光源" class="headerlink" title="一.shader 基础光源"></a>一.shader 基础光源</h3><h4 id="默认的光照系统"><a href="#默认的光照系统" class="headerlink" title="默认的光照系统"></a>默认的光照系统</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503%E9%BB%98%E8%AE%A4%E7%9A%84%E5%85%89%E7%85%A7%E7%B3%BB%E7%BB%9F.png" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>然后我们要自己来建立自己的光照系统 首先可以先把默认的全部删除 </p>
+</li>
+<li><p>得到一片黑 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503deleteAll.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>然后我们一点一点的重建光照系统 </li>
+</ul>
+<h4 id="漫反射光照模型"><a href="#漫反射光照模型" class="headerlink" title="漫反射光照模型"></a>漫反射光照模型</h4><ul>
+<li><p>以下讲一点小理论 不想看可以略过直接看图片 </p>
+</li>
+<li><p>它不包括任何镜面属性，对粗糙物体来说，这项属性是非常有用的，它不会反射出周围的环境。</p>
+</li>
+<li><p>它多用于不光滑的表面，是一种自然材质，常用来表现自然界的物体材质，如：木头、岩石等。</p>
+</li>
+<li><p>漫反射光的强度近似地服从于Lambert定律，即漫反射光的光强仅与入射光的方向和反射点处表面法向夹角的余弦成正比。</p>
+</li>
+<li><p>我们也使用的就是这个Lambert光照模型 </p>
+</li>
+<li><p>原理公式：</p>
+</li>
+</ul>
+<pre><code>        diffuse = I * cosθ(N,L);
+</code></pre><p><img src="http://images2015.cnblogs.com/blog/810648/201510/810648-20151017170107804-1752879028.jpg" alt=""></p>
+<ul>
+<li><p>diffuse：反射光线的的光强 </p>
+</li>
+<li><p>L : 入射光线的方向向量 </p>
+</li>
+<li><p>I : 入射光线的光强，方向如上图所示</p>
+</li>
+<li><p>N : 物体的顶点法线向量 </p>
+</li>
+<li><p>cosθ：入射光线和该顶点法线的余弦，如上图所示；cosθ = L * N </p>
+</li>
+<li><p>这里的cos是要用点乘(dot product) 才能计算的 </p>
+</li>
+<li><p>所以，最后的我们要的表达式为：diffuse = I <em> Dot( L </em> N ) ;</p>
+</li>
+<li><p>Dot运算:本质上; 对于两个标准化向量，它输出它们相互远离的距离。 如果它们指向相同的方向，则它输出1，如果它们彼此垂直，则它输出0，如果它们指向相反方向，则输出-1。</p>
+</li>
+<li><p>我们勾选 positive属性 使所有负值为0 。图片是之前截图的 属性还是标准的没改过来 </p>
+</li>
+<li><p>注意 <a href="http://acegikmo.com/shaderforge/nodes/?search=Dot" target="_blank" rel="external">Dot</a> </p>
+</li>
+<li><p>说了一大堆理论 还是实际的简单 来看看</p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503light.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>当我么画写完这个图形 我们可以去看看shader的源码</li>
+</ul>
+<pre class="line-numbers language-shader"><code class="language-shader">        float node_2771 = dot(i.normalDir,lightDirection);
+        float3 finalColor = float3(node_2771,node_2771,node_2771);
+        fixed4 finalRGBA = fixed4(finalColor,1);
+        UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
+        return finalRGBA;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>内部实现也跟预想的类似 如果你学过shader lab 的话 就非常面熟了 </p>
+</li>
+<li><p>这里简单讲解 深层的东西就不提了 </p>
+</li>
+<li><p>然后看看效果 简简单单 基础几何体</p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503light_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="光衰减和阴影"><a href="#光衰减和阴影" class="headerlink" title="光衰减和阴影"></a>光衰减和阴影</h4><ul>
+<li><p>基础的做完了 但是效果也就只能骗骗婴儿了吧 来我们一步步完善</p>
+</li>
+<li><p>还有那些不足 光影效果 灯光衰减 影子叠加  </p>
+</li>
+<li><p>很简单 直接告诉你 这样达到了效果 至于原理 – 这里我就不讲了(其实我也不大懂了 以后慢慢研究) </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503lightAttenion.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>这样，光线照射的影子就可以投射上去了 阴影的强弱也变化明显了 </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503lightAttenion_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="颜色光"><a href="#颜色光" class="headerlink" title="颜色光"></a>颜色光</h4><ul>
+<li><p>来我们继续讲 要物体反射光的颜色 </p>
+</li>
+<li><p>我们得先创建一个点光源在他旁边 然后改一个颜色 看到物体并没有受到这个光的影响</p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addpointLight.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>创建color节点 </p>
+</li>
+<li><p>连接</p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addlightcolor.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>我们就可以看到他反射的颜色了</p>
+</li>
+<li></li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addlightcolor_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="反射光"><a href="#反射光" class="headerlink" title="反射光"></a>反射光</h4><ul>
+<li><p>Phong和Blinn-Phong是计算镜面反射光的两种光照模型，两者仅仅有很小的不同之处。 </p>
+</li>
+<li><p>我们这里使用简单的Phong 而官方的是Blinn-Phong </p>
+</li>
+</ul>
+<p><img src="http://images2015.cnblogs.com/blog/746883/201603/746883-20160320192427568-1484192994.png" alt="Phong"></p>
+<pre><code>        specular = K * lightColor * power( dot( V , R ) , shininess )
+</code></pre><ul>
+<li><p>使用一个几何数据 反射角度 </p>
+</li>
+<li><p>反射考虑灯光的效果 我们还需要一个光线方向 </p>
+</li>
+<li><p>高光叠加 不能使用乘法节点 </p>
+</li>
+<li><p>乘法节点 会保留白色区域 黑色区域将会衰减 变暗 </p>
+</li>
+<li><p>加法节点 会让颜色变得更亮</p>
+</li>
+<li><p>课外知识 <a href="http://www.cnblogs.com/bluebean/p/5299358.html" target="_blank" rel="external">两种模型的比较</a></p>
+</li>
+<li><p>具体来看看这个的连接方法 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addviewRefl.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>这个反射模型的效果就出来了 我们再来慢慢改进</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addviewRefl_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="添加法线贴图"><a href="#添加法线贴图" class="headerlink" title="添加法线贴图"></a>添加法线贴图</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addnormalmap.PNG" width="1000" alt="图片名称" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addnormalmap_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="高光反射范围"><a href="#高光反射范围" class="headerlink" title="高光反射范围"></a>高光反射范围</h4><ul>
+<li><p>防止颜色过曝 </p>
+</li>
+<li><p>接着上面的模型，我们把他完善 先在他的左前方添加一个蓝色的点光源</p>
+</li>
+<li><p>按照公式 我们这样连接 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503add%E9%AB%98%E5%85%89%E5%8C%BA%E5%9F%9F.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>感觉有点油腻 ? </p>
+</li>
+<li><p>我们试着改一下参数 看看效果 一步步来改进他  </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503add%E9%AB%98%E5%85%89%E5%8C%BA%E5%9F%9F_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="高光反射和镜面反射"><a href="#高光反射和镜面反射" class="headerlink" title="高光反射和镜面反射"></a>高光反射和镜面反射</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302add%E9%AB%98%E5%85%89%E5%8C%BA%E5%9F%9F_02.PNG" width="1000" alt="图片名称" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302add%E9%AB%98%E5%85%89%E5%8C%BA%E5%9F%9F_02_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="添加材质贴图"><a href="#添加材质贴图" class="headerlink" title="添加材质贴图"></a>添加材质贴图</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302addnormal.PNG" width="1000" alt="图片名称" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302addnormal_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="更改材质颜色"><a href="#更改材质颜色" class="headerlink" title="更改材质颜色"></a>更改材质颜色</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302addnormal_color.PNG" width="1000" alt="图片名称" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302addnormal_color_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="添加菲涅尔边缘光"><a href="#添加菲涅尔边缘光" class="headerlink" title="添加菲涅尔边缘光"></a>添加菲涅尔边缘光</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302feinier.PNG" width="1000" alt="图片名称" align="center"><br><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302feinier_obj.PNG" width="1000" alt="图片名称" align="center"></p>
+<h4 id="做完了-来个大合照"><a href="#做完了-来个大合照" class="headerlink" title="做完了 来个大合照"></a>做完了 来个大合照</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302sf_mylighting_532017.png" width="1000" alt="图片名称" align="center"></p>
 
-passive :　被动，基站定位
-gps : gps定位
-
-定位的步骤
-1.获取位置的管理者
-    //1.获取位置的管理者
-    locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-2.获取定位方式
-    //2.获取定位方式
-    //2.1获取所有的定位方式
-    //enabledOnly : true : 返回所有可用的定位方式
-    List&lt;String&gt; providers = locationManager.getProviders(true);
-    for (String string : providers) {
-        System.out.println(string);
-    }
-    //2.2获取最佳的定位方式
-    Criteria criteria = new Criteria();
-    criteria.setAltitudeRequired(true);//设置是否可以定位海拔,true:可以定位海拔,一定返回gps定位
-    //criteria : 设置定位的属性,决定使用什么定位方式的
-    //enabledOnly : true : 定位可用的就返回
-    String bestProvider = locationManager.getBestProvider(criteria, true);
-    System.out.println(&quot;最佳的定位方式:&quot;+bestProvider);
-3.定位操作
-    a.定位
-        //provider : 定位方式
-        //minTime : 定位的最小时间间隔
-        //minDistance : 定位的最小距离间隔
-        //listener : LocationListener
-        locationManager.requestLocationUpdates(bestProvider, 0, 0, myLocationListener);
-    b.LocationListener
-        private class MyLocationListener implements LocationListener{
-            //当定位位置改变的时候调用
-            //location : 当前的位置
-            @Override
-            public void onLocationChanged(Location location) {
-                double latitude = location.getLatitude();//获取纬度,平行
-                double longitude = location.getLongitude();//获取经度
-                textview.setText(&quot;longitude:&quot;+longitude+&quot;   latitude:&quot;+latitude);
-            }
-            //当定位状态改变的时候调用
-            @Override
-            public void onStatusChanged(String provider, int status, Bundle extras) {
-                // TODO Auto-generated method stub
-
-            }
-            //当定位可用的时候调用
-            @Override
-            public void onProviderEnabled(String provider) {
-                // TODO Auto-generated method stub
-
-            }
-            //当定位不可用的时候调用
-            @Override
-            public void onProviderDisabled(String provider) {
-                // TODO Auto-generated method stub
-
-            }
-
-        }
-4.关闭gps定位
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        //关闭gps定位,高版本中已经不能这么做了,高版本中规定关闭和开启gps必须交由用户自己去实现
-        locationManager.removeUpdates(myLocationListener);
-    }
-</code></pre><p>#火星坐标#</p>
-<pre><code>116.29028943
-40.04306343
-
-火星坐标
-116.2963848402697
-40.04433174242044
-</code></pre><p>#定位操作移植到手机卫士# (重点:服务器service)</p>
-<pre><code>1.创建一个服务GPSService
-    public class GPSService extends Service {
-    }
-2.清单文件配置
-    &lt;service android:name=&quot;com.itheima.mobliesafe75.service.GPSService&quot;&gt;&lt;/service&gt;
-3.将定位的操作移植到服务中
-    复制到定位的代码到服务中
-4.开启服务
-    //开启一个服务
-    Intent intent_gps = new Intent(context,GPSService.class);
-    context.startService(intent_gps);
-5.定位成功之后,发送短信,并且关闭服务
-    //当定位位置改变的时候调用
-    //location : 当前的位置
-    @Override
-    public void onLocationChanged(Location location) {
-        double latitude = location.getLatitude();//获取纬度,平行
-        double longitude = location.getLongitude();//获取经度
-        //给安全号码发送一个包含经纬度坐标的短信
-        SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(sp.getString(&quot;safenum&quot;, &quot;5556&quot;), null, &quot;longitude:&quot;+longitude+&quot;  latitude:&quot;+latitude, null, null);
-        //停止服务
-        stopSelf();
-    }
-</code></pre><p>#播放报警音乐#  (重点)<br>        1.播放报警音乐</p>
-<pre><code>            //在播放报警音乐之前,将系统音量设置成最大
-            //声音的管理者
-            AudioManager audioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-            //设置系统音量的大小
-            //streamType : 声音的类型
-            //index : 声音的大小   0最小    15最大
-            //flags : 指定信息的标签
-            //getStreamMaxVolume : 获取系统最大音量,streamType:声音的类型
-            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 0);
-
-            //判断是否在播放报警音乐
-            if (mediaPlayer!=null) {
-                mediaPlayer.release();//释放资源
-            }
-            mediaPlayer = MediaPlayer.create(context, R.raw.ylzs);
-            //mediaPlayer.setVolume(1.0f, 1.0f);//设置最大音量,音量比例
-            //mediaPlayer.setLooping(true);
-            mediaPlayer.start();
-    2.解决同时播放两首报警音乐问题
-            //广播接受者在每接收到一个广播事件,重新new广播接受者
-            private static MediaPlayer mediaPlayer;
-</code></pre><p>#超级管理员权限#</p>
-<pre><code>Caused by: java.lang.SecurityException: No active admin owned by uid 10047 for policy #3//缺少超级管理员权限
-
-root:Linux系统中的最高权限,android是以liunx内核进行开发,root权限也是android的最高权限
-超级管理员:只是能做一些比较危险的事情,比如锁屏,删除数据,root也可以做,但是root权限能做的事情,超级管理员就不一定能做
-
-步骤
-1.创建创建一类继承DeviceAdminReceiver
-    public class Admin extends DeviceAdminReceiver {
-
-    }
-2.清单文件配置
-     &lt;receiver
-        android:name=&quot;com.example.locknow.Admin&quot;
-        android:description=&quot;@string/sample_device_admin_description&quot;
-        android:label=&quot;@string/sample_device_admin&quot;
-        android:permission=&quot;android.permission.BIND_DEVICE_ADMIN&quot; &gt;
-        &lt;meta-data
-            android:name=&quot;android.app.device_admin&quot;
-            android:resource=&quot;@xml/device_admin_sample&quot; /&gt;
-
-        &lt;intent-filter&gt;
-            &lt;action android:name=&quot;android.app.action.DEVICE_ADMIN_ENABLED&quot; /&gt;
-        &lt;/intent-filter&gt;
-    &lt;/receiver&gt;
-3.在res-&gt;xml-&gt;device_admin_sample.xml,同时修改描述信息,标题等信息
-    &lt;device-admin xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;
-      &lt;uses-policies&gt;
-        &lt;limit-password /&gt;
-        &lt;watch-login /&gt;
-        &lt;reset-password /&gt;
-        &lt;force-lock /&gt;
-        &lt;wipe-data /&gt;
-        &lt;expire-password /&gt;
-        &lt;encrypted-storage /&gt;
-        &lt;disable-camera /&gt;
-      &lt;/uses-policies&gt;
-    &lt;/device-admin&gt;
-4.激活  setting -&gt; security -&gt; device admin...
-5.代码激活超级管理员
-    public void register(View v){
-         //代码激活超级管理员
-         //设置激活超级管理员
-         Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
-         //设置激活那个超级管理员
-         //mDeviceAdminSample : 超级管理员的标示
-         intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, componentName);
-         //设置描述信息
-         intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION,&quot;一键锁屏,非常好用&quot;);
-         startActivity(intent);
-    }
-6.代码注销超级管理员
-    public void delete(View v){
-        //注销超级管理员
-        //判断超级管理员是否激活
-        if (devicePolicyManager.isAdminActive(componentName)) {
-            //注销超级管理员
-            devicePolicyManager.removeActiveAdmin(componentName);
-        }
-    }
-7.锁屏操作
-    public void locknow(View v){
-        //锁屏的操作
-        devicePolicyManager.lockNow();//锁屏
-    }
-</code></pre><p>#远程删除数据&amp;远程锁屏的功能#</p>
-<pre><code>1.将超级管理员操作移植到手机卫士中
-2.远程删除数据
-    if (devicePolicyManager.isAdminActive(componentName)) {
-        devicePolicyManager.wipeData(0);//远程删除数据
-    }
-3.远程锁屏
-    //判断超级管理员是否激活
-    if (devicePolicyManager.isAdminActive(componentName)) {
-        devicePolicyManager.lockNow();
-    }
-</code></pre><p>#查询号码归属地之数据库优化#</p>
-<pre><code>通过号码去查询这个号码属于哪个地区   13333333333  河北秦皇岛  02年  200万  
-号码
-    第一位:1
-    第二位:34578
-    第三位:0-9
-号码前三位:可以确定运营商    131联通   133电信    134移动
-往后4位:可以确定号码归属地
-一个号码的前7位可以确定一个号码归属地
-
-select location,areacode from mob_location group by location,areacode
-
-select outkey from data1 where id=1300001
-select location from data2 where id=496
-
-select location from data2 where id=(select outkey from data1 where id=1300001)
-</code></pre><p>#拷贝数据库#  (重点)</p>
-<pre><code>/**
- * 拷贝数据库
- */
-private void copyDb() {
-    File file = new File(getFilesDir(), &quot;address.db&quot;);
-    //判断文件是否存在
-    if (!file.exists()) {
-        //从assets目录中将数据库读取出来
-        //1.获取assets的管理者
-        AssetManager am = getAssets();
-        InputStream in = null;
-        FileOutputStream out = null;
-        try {
-            //2.读取数据库
-            in = am.open(&quot;address.db&quot;);
-            //写入流
-            //getCacheDir : 获取缓存的路径
-            //getFilesDir : 获取文件的路径
-            out = new FileOutputStream(file);
-            //3.读写操作
-            //设置缓冲区
-            byte[] b = new byte[1024];
-            int len = -1;
-            while((len=in.read(b)) != -1){
-                out.write(b, 0, len);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally{
-</code></pre><p>//              in.close();<br>//              out.close();<br>                IOUtils.closeQuietly(in);<br>                IOUtils.closeQuietly(out);<br>            }<br>        }<br>    }</p>
-<p>#打开数据库,查询号码归属地# (重点)</p>
-<pre><code>/**
- * 打开数据库,查询号码归属地
- * @return
- */
-public static String queryAddress(String num,Context context){
-    String location = &quot;&quot;;
-    //1.获取数据库的路径
-    File file = new File(context.getFilesDir(), &quot;address.db&quot;);
-    //2.打开数据库
-    //getAbsolutePath : 获取文件的绝对路径
-    //factory : 游标工厂
-    SQLiteDatabase database = SQLiteDatabase.openDatabase(file.getAbsolutePath(), null, SQLiteDatabase.OPEN_READONLY);
-    //3.查询号码归属地
-    //sql : sql语句
-    //selectionArgs :查询条件的参数
-    //substring : 包含头不包含尾
-    Cursor cursor = database.rawQuery(&quot;select location from data2 where id=(select outkey from data1 where id=?)&quot;, new String[]{num.substring(0, 7)});
-    //4.解析cursor
-    //因为每个号码对应一个号码归属地,所以查询出来的是一个号码归属地,没有必要用whlie,用if就可以了
-    if (cursor.moveToNext()) {
-        location = cursor.getString(0);
-    }
-    //5.关闭数据库
-    cursor.close();
-    database.close();
-    return location;
-}
-</code></pre><p>#查询号码归属地界面#</p>
-<pre><code>1.创建高级工具activity,在其中增加按钮,点击进入查询号码归属地activity
-2.创建查询号码归属地的activity,在其中增加号码输入框,查询按钮,归属地显示textview
-3.查询操作
-    /**
-     * 查询号码归属地操作
-     * @param v
-     */
-    public void query(View v){
-        //1.获取输入的号码
-        String phone = et_address_queryphone.getText().toString().trim();
-        //2.判断号码是否为空
-        if (TextUtils.isEmpty(phone)) {
-            Toast.makeText(getApplicationContext(), &quot;请输入要查询号码&quot;, 0).show();
-            return;
-        }
-        //3.根据号码查询号码归属地
-        String queryAddress = AddressDao.queryAddress(phone, getApplicationContext());
-        //4.判断查询的号码归属地是否为空
-        if (!TextUtils.isEmpty(queryAddress)) {
-            tv_address_queryaddress.setText(queryAddress);
-        }
-    }
-</code></pre><p>#查询号码归属地细节处理#  (重点:逻辑)</p>
-<pre><code>    //使用正则表达式进行判断
-    //^1[34578]\d{9}$
-    //身份证   ^[0-9]{17}[0-9x]$
-    //前六位:出生地   往后8位:出生年月日  剩下4位:前两位:出生编号   剩下2位:前一位:性别  奇数男  偶数女    最后一位:前17位的校验   x
-    if (num.matches(&quot;^1[34578]\\d{9}$&quot;)) {
-        Cursor cursor = database.rawQuery(&quot;select location from data2 where id=(select outkey from data1 where id=?)&quot;, new String[]{num.substring(0, 7)});
-        //4.解析cursor
-        //因为每个号码对应一个号码归属地,所以查询出来的是一个号码归属地,没有必要用whlie,用if就可以了
-        if (cursor.moveToNext()) {
-            location = cursor.getString(0);
-        }
-        //5.关闭数据库
-        cursor.close();
-    }else{
-        //对特殊电话做出来
-        switch (num.length()) {
-        case 3://110  120  119  911
-            location = &quot;特殊电话&quot;;
-            break;
-        case 4://5554   5556
-            location = &quot;虚拟电话&quot;;
-            break;
-        case 5://10086  10010  10000
-            location =&quot;客服电话&quot;;
-            break;
-        case 7://座机,本地电话
-        case 8:
-            location=&quot;本地电话&quot;;
-            break;
-
-        default:// 010 1234567   10位    010 12345678  11位     0372  12345678  12位
-            //长途电话
-            if (num.length() &gt;= 10  &amp;&amp;  num.startsWith(&quot;0&quot;)) {
-                //根据区号查询号码归属
-                //1.获取号码的区号
-                //3位,4位
-                //3位
-                String result = num.substring(1, 3);//010   10
-                //2.根据区号查询号码归属地
-                Cursor cursor = database.rawQuery(&quot;select location from data2 where area=?&quot;, new String[]{result});
-                //3.解析cursor
-                if (cursor.moveToNext()) {
-                    location = cursor.getString(0);
-                    //截取数据
-                    location = location.substring(0, location.length()-2);
-                    cursor.close();
-                }else{
-                    //3位没有查询到,直接查询4位
-                    //获取4位的区号
-                    result = num.substring(1, 4);//0372    372
-                    cursor = database.rawQuery(&quot;select location from data2 where area=?&quot;, new String[]{result});
-                    if (cursor.moveToNext()) {
-                        location = cursor.getString(0);
-                        location = location.substring(0, location.length()-2);
-                        cursor.close();
-                    }
-                }
-            }
-            break;
-        }
-</code></pre>
     
 
     
@@ -847,8 +783,8 @@ public static String queryAddress(String num,Context context){
 
 <script type="text/ls-javascript" id="disqus-lazy-load-script">
     var disqus_config = function () {
-        this.page.url = 'http://miccall.tech/2017/01/07/android/android_006/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://miccall.tech/2017/01/07/android/android_006/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://miccall.tech/2017/04/01/unity3d/Shader Forge 应用教程/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/04/01/unity3d/Shader Forge 应用教程/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     $('.btn_click_load').click(function() {  //click to load comments
         (function() { // DON'T EDIT BELOW THIS LINE
@@ -881,7 +817,7 @@ public static String queryAddress(String num,Context context){
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/01/08/android/android_008/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/04/17/algorithm/sort/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -895,7 +831,7 @@ public static String queryAddress(String num,Context context){
 
     <!-- Next Nav -->
     
-        <a href="/2017/01/06/android/android_005/" id="post_nav-older" class="next-content">
+        <a href="/2017/03/14/unity3d/shader forge 插件笔记/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
