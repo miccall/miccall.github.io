@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.4 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            我的算法之路 -- Union 并查集 | 
+        
+        Mr.Metro
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="miccall">
+    <meta name="description" content="Blog of miccall is records about my work">
+    <meta name="keywords" content="miccall,Algorithm">
+    
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
+    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
+    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Mr.Metro">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://miccall.tech">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="我的算法之路 -- Union 并查集 | Mr.Metro">
+    <meta property="og:description" content="Blog of miccall is records about my work">
+    <meta property="og:article:tag" content="Algorithm"> 
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>!function(){var e="http://"+location.host+"/combo?combo=";window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},lsloader.load=function(e,t,s){s=s||function(){};var n;if(n=this.getLS(e),!/\/\*codestartv1\*\//.test(n))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split("/*codestartv1*/")[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split("/*codestartv1*/")[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(e,t,s){var n=this;/\.js?.+$/.test(t)?this.iojs(t,e,function(e,t,s){n.setLS(t,e+"/*codestartv1*/"+s),n.runjs(e,t,s)}):/\.css?.+$/.test(t)&&this.iocss(t,e,function(s){document.getElementById(e).appendChild(document.createTextNode(s)),n.setLS(e,t+"/*codestartv1*/"+s)},s)},lsloader.iojs=function(e,t,s){var n=this;n.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void s(e,t,a.response);n.jsfallback(e,t)}},a.send(null)}catch(s){n.jsfallback(e,t)}},lsloader.iocss=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.iofonts=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs()}else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var u=this,a=document.createElement("script");a.src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),u.jsRunSequence.length>0&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(t){var s="",n={};for(var a in t){var u=this.getLS(t[a].name);if(u)var o=u.split("/*codestartv1*/")[0],c=u.split("/*codestartv1*/")[1];else var o="";o==t[a].path?this.jsRunSequence.push({name:t[a].name,code:c,path:t[a].path}):(this.jsRunSequence.push({name:t[a].name,code:null,path:t[a].path,status:"comboloading"}),n[t[a].name]=!0,s+=(""==s?"":";")+t[a].path)}var i=this;if(s){var r=new XMLHttpRequest;r.open("get",e+s,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void i.runCombo(r.response,n)}else{for(var e in i.jsRunSequence)n[i.jsRunSequence[e].name]&&(i.jsRunSequence[e].status="failed");i.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){e=e.split("/*combojs*/"),e.shift();for(var s in this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+"/*codestartv1*/"+e[0]),e.shift());this.runjs()}}();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?Vwvi0UKsWZkqwcl1aaIPhg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+
+    @font-face {
+        font-family: 'Material Icons';
+        font-style: normal;
+        font-weight: 400;
+        src: url(/fonts/MaterialIcons-Regular.eot);
+        src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'), url(/fonts/MaterialIcons-Regular.woff) format('woff'), url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
+    }
+
+
+
+    @font-face {
+        font-family: 'FontAwesome';
+        src: url(/fonts/fontawesome-webfont.eot?v=4.5.0);
+        src: url(/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont.woff2?v=4.5.0) format('woff2'), url(/fonts/fontawesome-webfont.woff?v=4.5.0) format('woff'), url(/fonts/fontawesome-webfont.ttf?v=4.5.0) format('truetype'), url(/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular) format('svg');
+        font-weight: 400;
+        font-style: normal
+    }
+ 
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #7EC0EE !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #7EC0EE !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #7EC0EE !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/bg.png);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+        <script>lsloader.load("js/queue.min.js","/js/queue.min.js?FnfjxZSXVYqfU7c7cm3txg==")</script>
+    
+
+    
+
+    
+
+    <!-- Custom Head -->
+    
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#我的算法之路-–-Union-并查集"><span class="post-toc-number">1.</span> <span class="post-toc-text">我的算法之路 – Union 并查集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-转载请注明出处"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall   (转载请注明出处)</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-连接问题"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">一.连接问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-Union-基本操作"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">二.Union 基本操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-union-p-q"><span class="post-toc-number">1.0.2.1.</span> <span class="post-toc-text">1.  union(p,q)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-find-p"><span class="post-toc-number">1.0.2.2.</span> <span class="post-toc-text">2.  find(p)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-isConnected-p-q"><span class="post-toc-number">1.0.2.3.</span> <span class="post-toc-text">3.  isConnected(p,q)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-最简单的并查集-Union-Find"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">三.最简单的并查集 Union Find</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-写测试"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">四.写测试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五-第一次优化-QuickUnion"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">五.第一次优化 QuickUnion</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六-第二次优化-QuickUnion-02"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">六.第二次优化 QuickUnion_02</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#七-第三次优化-rank"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">七.第三次优化 rank</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#八-第四次优化-路径压缩-Path-Compression"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">八.第四次优化 路径压缩 Path Compression</span></a></li></ol></li></ol></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        <!-- Custom Thumbnail -->
+        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://onh0umlhz.bkt.clouddn.com/miccall0504Union_view.jpg)">
+    
+            <p class="article-headline-p">
+                我的算法之路 -- Union 并查集
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>miccall</strong>
+        <span>5月 04, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+            <i class="material-icons" role="presentation">devices other</i>
+            <span class="visuallyhidden">devices other</span>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACW0lEQVR42u3aO3LDMAwFQN3/0kmbIpYfQBL+zLLyeGSJq4KEH3j9fPW48PDw8PDw8PDw3ox3xeOfG8Xf//2m+qvq3PDw8PBmeE+W2uXp3j/l0ZXNueHh4eEN8h4tuL3P9wv9/ZW9ueHh4eG9M+/ExpA/Fw8PD+8TefnG0NsG8PDw8D6Fl4cF61tFD3w8a8HDw8OLeXmTaf7zaH8PDw8PL+BVx8rxgvuiOd8MnswQDw8P7zAvX4ir8UH1nvfFejIfPDw8vHle3vi/v6bXDKu+rGbWgoeHh7fMS36WH1ddDzKqT4n+MeDh4eEd4OUbQ94Gq+ITarmkxsPDwzvMq8YBe19EPocnLxQPDw9vhJcvuyvhQr6FVENhPDw8vHneShBQXeJPxBl4eHh487xe8Jos3NXyvbep4OHh4c3z8ughL4J7AUQvvMDDw8Ob560ceErCi+qd8yfi4eHhvZa3cvgpn3QPvPlMGR4eHt5WXlLarhTH1efmrS88PDy8GV71gFQeGeQR7a4AFw8PD2+S12vwJ4Vy71jA0jd4eHh4I7wkTq1ikjuUm1vVQ1d4eHh4h3m95tNpWB5Y4OHh4c3z8iK4d7B1HbO5pMbDw8Nr8aojb30121et4wt4eHh4k7wrHrtK3mrJnocmeHh4eJO8fDNIJl1d4tfLbjw8PLxX8fKg4b5oXn8p1eOzeHh4eO/PywOIvOzOX+jxjQEPDw/v2MaQF8fVAwpJ6PBwm8HDw8Mb5PWaXtVG17Vp4OHh4b2W14sA8vh1Fzh66Xh4eHiHed838PDw8PDw8PDw3mD8AuheXclV26u0AAAAAElFTkSuQmCC">
+        </ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Algorithm/">Algorithm</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=我的算法之路 -- Union 并查集&url=http://miccall.tech//2017/05/04/algorithm/Union/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=我的算法之路 -- Union 并查集&url=http://miccall.tech//2017/05/04/algorithm/Union/index.html&via=miccall" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://miccall.tech//2017/05/04/algorithm/Union/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/05/04/algorithm/Union/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=我的算法之路 -- Union 并查集&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/05/04/algorithm/Union/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <hr>
+<h1 id="我的算法之路-–-Union-并查集"><a href="#我的算法之路-–-Union-并查集" class="headerlink" title="我的算法之路 – Union 并查集"></a>我的算法之路 – Union 并查集</h1><h6 id="Created-by-miccall-转载请注明出处"><a href="#Created-by-miccall-转载请注明出处" class="headerlink" title="Created by miccall   (转载请注明出处)"></a>Created by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><ul>
+<li><p>按理说这类文章首先应该讲一些鸡汤啊 鼓励学习什么的话    但是没有</p>
+</li>
+<li><p>按理说这类文章应该有一些推荐路径或者学习方法           但是没有 </p>
+</li>
+<li><p>按理说这个文章应该和其他的类似 讲些算法之坑            但是没有 </p>
+</li>
+<li><p>那这篇文章出现的意义是什么 没什么 就是我的学习之路  你爱看就看看 </p>
+</li>
+</ul>
+<h3 id="一-连接问题"><a href="#一-连接问题" class="headerlink" title="一.连接问题"></a>一.连接问题</h3><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050402%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>网络节点间的连接状态 </p>
+</li>
+<li><p>用户直接的关系</p>
+</li>
+<li><p>多媒体 网页 之间的网络关系</p>
+</li>
+<li><p>实现数学中集合类的实现 </p>
+</li>
+<li><p>路径和连接[图论 更深层的问题]</p>
+</li>
+</ul>
+<h3 id="二-Union-基本操作"><a href="#二-Union-基本操作" class="headerlink" title="二.Union 基本操作"></a>二.Union 基本操作</h3><h4 id="1-union-p-q"><a href="#1-union-p-q" class="headerlink" title="1.  union(p,q)"></a>1.  union(p,q)</h4><ul>
+<li>把p和q两个元素连接起来 </li>
+</ul>
+<h4 id="2-find-p"><a href="#2-find-p" class="headerlink" title="2.  find(p)"></a>2.  find(p)</h4><ul>
+<li>找到p元素在的那个组 </li>
+</ul>
+<h4 id="3-isConnected-p-q"><a href="#3-isConnected-p-q" class="headerlink" title="3.  isConnected(p,q)"></a>3.  isConnected(p,q)</h4><ul>
+<li>判断p和q是否连接 </li>
+</ul>
+<h3 id="三-最简单的并查集-Union-Find"><a href="#三-最简单的并查集-Union-Find" class="headerlink" title="三.最简单的并查集 Union Find"></a>三.最简单的并查集 Union Find</h3><ul>
+<li>我们可以用简单的数组来表示并查集关系 </li>
+</ul>
+<div style="text-align:center; width:1000; "><img src="http://onh0umlhz.bkt.clouddn.com/miccall050402%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA.PNG" width="400" alt="node" align="center"></div>
+
+<ul>
+<li><p>数组的索引我们可以看作一个元素 那么他们的关系我们怎么确定呢 </p>
+</li>
+<li><p>我们根据他的值 如果相同 我们可以表示他们是有连接关系的 </p>
+</li>
+<li><p>我们暂且给他一个名字 id 意思可以理解为 具有相同id号的元素 他们是互相连接的 </p>
+</li>
+</ul>
+<div style="text-align:center; width:1000; "><img src="http://onh0umlhz.bkt.clouddn.com/miccall050402%E5%A5%87%E5%81%B6%E5%B9%B6%E6%9F%A5%E9%9B%86.PNG" width="400" alt="node" align="center"></div>
+
+<ul>
+<li><p>这个表示 奇数是相互连接的 偶数是互相连接的 </p>
+</li>
+<li><p>下面我们用代码来实现一下这个数据结构 </p>
+</li>
+<li><p>首先我们定义一个类 他有一个数组来表示数据 我们声明一个int指针</p>
+</li>
+<li><p>第二我们用一个变量来记录他的总数 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">class</span> <span class="token class-name">UnionFind</span>
+        <span class="token punctuation">{</span>
+        <span class="token keyword">private</span><span class="token operator">:</span>
+            <span class="token keyword">int</span><span class="token operator">*</span> id <span class="token punctuation">;</span>
+            <span class="token keyword">int</span> count <span class="token punctuation">;</span>
+        <span class="token keyword">public</span><span class="token operator">:</span>
+            <span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+            <span class="token operator">~</span><span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//找到这个元素</span>
+            <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//判断两个元素是否连接 </span>
+            <span class="token keyword">bool</span> <span class="token function">isConnected</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//连接两个元素</span>
+            <span class="token keyword">void</span> <span class="token function">unionElements</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>这是我们刚刚分析的基本框架 下面我们一个函数一个函数来讲解 </p>
+</li>
+<li><p>首先是构造和析构 他们要解决的问题就是 构造这个数组和回收这个数组 很好理解 </p>
+</li>
+<li><p>为了让数据独立 我们让他的id都等于他自身 说明自己和自己是相连的 与其他的不相连 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count <span class="token operator">=</span> n <span class="token punctuation">;</span>
+            id <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+                id<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span>
+
+        <span class="token operator">~</span><span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> id<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>我们来写这个find函数  我们传入一个元素p 返回他的id </p>
+</li>
+<li><p>这样我们就知道 他是属于哪一个组别了 因为实现find特别快 时间复杂度O(1) </p>
+</li>
+<li><p>所以一般称它为Quick Find </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>p<span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span> p<span class="token operator">&lt;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//保证数据不越界 </span>
+            <span class="token keyword">return</span> id<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>接下来是判断两个元素是否连接 </p>
+</li>
+<li><p>传入两个元素p和q 返回一个bool来判断是否相连  </p>
+</li>
+<li><p>有了上面的理解 这个就很简单了 </p>
+</li>
+<li><p>我们只要分别判断他们的组别 就可以判断他们是否相连了 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token keyword">bool</span> <span class="token function">isConnected</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>最后我们要做的，就是如何把两个元素并到一起呢 </p>
+</li>
+<li><p>我们就要遍历一遍数组 把 第一个元素 的组别赋值给另一个 这样才能实现两个元素的连接 </p>
+</li>
+<li><p>这样的话 时间复杂度为O(n)</p>
+</li>
+<li><p>我们来写代码加深理解 我们要传入两个元素p和q 来连接他们两个 </p>
+</li>
+<li><p>首先找到他们两个的组别 </p>
+</li>
+<li><p>如果组别相等 说明已经连接在一起了 </p>
+</li>
+<li><p>否则的话 我们来遍历数组 </p>
+</li>
+<li><p>如果我们发现id[i] == pID 那么直接把id[i] = qID; 就好了</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">//连接两个元素</span>
+        <span class="token keyword">void</span> <span class="token function">unionElements</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> pID <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> qID <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pID <span class="token operator">==</span> qID<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>id<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pID<span class="token punctuation">)</span>
+                    id<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> qID<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="四-写测试"><a href="#四-写测试" class="headerlink" title="四.写测试"></a>四.写测试</h3><ul>
+<li><p>如果还没有理顺 那只好用个笨办法啦 那个笔和纸 自己写写了 </p>
+</li>
+<li><p>好了 我们第一个最简单的UnionFind就写完啦 </p>
+</li>
+<li><p>我们把他放到一个 .h 文件中 给他一个namespace 将来方便测试 </p>
+</li>
+<li><p>然后我们再来写一个测试文件 同样放到一个命名空间中 </p>
+</li>
+<li><p>导入第一文件 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><p>然后我们在主函数中 调用这个test1 我们得到的结果就是 一万的数量级 0.4s </p>
+</li>
+<li><p>但是我们测试 十万数量级的数据 我们竟然用了 39s的时间 这个效率就非常的慢了 </p>
+</li>
+<li><p>其实我们简单的分析一下就可以直到 我们查找的时候是O(1) 但是连接的时候 就会花费O(n)级别的时间 那我们执行n个数的连接 就会花费O(n^2)级别的时间 </p>
+</li>
+<li><p>这样的话 我们是有必要换个思路去重新实现这个算法了 </p>
+</li>
+</ul>
+<h3 id="五-第一次优化-QuickUnion"><a href="#五-第一次优化-QuickUnion" class="headerlink" title="五.第一次优化 QuickUnion"></a>五.第一次优化 QuickUnion</h3><ul>
+<li><p>前面我们讲了如何快速Find 现在我们要将Union提高速度 </p>
+</li>
+<li><p>其实我们这里可以借鉴树的表示思路 把一个元素都看成一个节点 (和树还是有些不同)</p>
+</li>
+</ul>
+<div style="text-align:center; width:1000; "><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505node.PNG" width="400" alt="node" align="center"></div>
+
+<ul>
+<li><p>这里我们简单的有个印象就好了 只要了解他们都有一个指针 是指向他的父亲节点</p>
+</li>
+<li><p>根节点没有父亲 就指向他自己 </p>
+</li>
+<li><p>我们使用这种思路 会使得Union会非常的快 其实不需要构建树 同样使用数组就可以搞定 </p>
+</li>
+</ul>
+<p><div style="text-align:center; width:1000; "><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505quickUnion.PNG" width="400" alt="node" align="center"></div></p>
+<ul>
+<li><p>parent[i] 就是他的父亲节点 </p>
+</li>
+<li><p>下面的图 ，新开了一个数组 他们都是独立的节点 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%871.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>union ( 4 , 3 )  然后 parent[4] = 3 ;</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%872.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>union ( 3 , 8 )  然后 parent[3] = 8 ;</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%873.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>union ( 6 , 5 )  然后 parent[6] = 5 ;</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%874.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>我们要连接两个数 其中一个已经有父节点了 我们就要循环的找他的根节点 </p>
+</li>
+<li><p>然后把这个数连接到他的根节点上 根节点怎么找呢 我们循环的去找他的父节点 </p>
+</li>
+<li><p>直到parent[i] == i 这样就说明 i这个就是根节点了 </p>
+</li>
+<li><p>那我们如何去看两个数是否连接呢 很简单 就看看他们是不是有共同的根</p>
+</li>
+<li><p>union ( 9, 4 )  然后 parent[9] = parent[…parent[parent[4]]] ;</p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%875.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>同样的方法 找2的根节点 和 1的根节点  </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%876.PNG" width="1000" alt="图片名称" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%877.PNG" width="1000" alt="图片名称" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%878.PNG" width="1000" alt="图片名称" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%879.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>看了这些 我们还是得写代码 来更好的去掌握这种思想 </p>
+</li>
+<li><p>同样的，我们还是用先前的那个架构 我们主要还是改写方法 </p>
+</li>
+<li><p>构造函数和析构函数几乎是没有变化的 只是改了一个名字</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count <span class="token operator">=</span> n <span class="token punctuation">;</span>
+            parent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+                parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span>
+
+        <span class="token operator">~</span><span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> parent<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>查找还是有一点点的不同的 我们要循环 一直找到它的根节点 </p>
+</li>
+<li><p>我们先前讨论过 根节点就是自身指向自身的节点 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">//找到这个元素</span>
+        <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>p<span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span> p<span class="token operator">&lt;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">!=</span>parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//如果p不是根节点 </span>
+            <span class="token punctuation">{</span>
+                p<span class="token operator">=</span> parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//就让他指向他的父亲 </span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>是否连接函数是没有变化的  </p>
+</li>
+<li><p>我们来看连接操作 说了是快速连接 </p>
+</li>
+<li><p>其实还是很简单的 只要看看他们的根节点 然后让一个元素的指针 指向另一个元素的根节点就可以了</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token comment" spellcheck="true">//连接两个元素</span>
+        <span class="token keyword">void</span> <span class="token function">unionElements</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> pRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> qRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pRoot <span class="token operator">==</span> qRoot<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 如果已经是连接的就返回 </span>
+                <span class="token keyword">return</span> <span class="token punctuation">;</span>
+
+            parent<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">=</span> qRoot <span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//连接两个元素 </span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>我们来继续测试这个算法 一万的数量级 先前的算法用了0.4s 优化后的算法用了0.1s</p>
+</li>
+<li><p>我们改用十万数据 先前的算法用了40s 优化后的算法用了23s 快了一倍</p>
+</li>
+<li><p>虽然快了很多 但是以我们的经验来看 23s这个时间 还是不满意的 </p>
+</li>
+</ul>
+<h3 id="六-第二次优化-QuickUnion-02"><a href="#六-第二次优化-QuickUnion-02" class="headerlink" title="六.第二次优化 QuickUnion_02"></a>六.第二次优化 QuickUnion_02</h3><ul>
+<li><p>那我么就来继续优化 </p>
+</li>
+<li><p>我们先来分析一下前面这个优化 </p>
+</li>
+<li><p>我们在合并过程中 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8710.PNG" width="1000" alt="0201" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8711.PNG" width="1000" alt="0202" align="center"></p>
+<ul>
+<li><p>我们理论上讲 两种情况应该是一样的 但是 我们的代码逻辑会让树变得更高 这样就降低了我们查找的时间 </p>
+</li>
+<li><p>怎么解决这个问题呢 很简单 </p>
+</li>
+<li><p>我们不应该固定的将一个元素的根节点 指向另一个元素的根节点 </p>
+</li>
+<li><p>应该在进行连接的时候 判断一下 </p>
+</li>
+<li><p>具体怎么判断呢 我们重构一下代码 我们可以记录一棵树中有几个元素 </p>
+</li>
+<li><p>每次连接的时候 让少的那个指向那个多的树 </p>
+</li>
+<li><p>这样，更高概率的形成一个层树比较低的树 </p>
+</li>
+<li><p>同样 重构一个算法 架构和之前一样 同样只改写函数 </p>
+</li>
+<li><p>我们用空间换取时间 新开一个数组 来记录这个以i为根的树 有几个节点 </p>
+</li>
+<li><p>sz[i] = 1 ; 互相独立的元素 他的节点个数为 1  </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count <span class="token operator">=</span> n <span class="token punctuation">;</span>
+            sz <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token punctuation">;</span>
+            parent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+                sz<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>    
+
+        <span class="token punctuation">}</span>
+
+        <span class="token operator">~</span><span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> parent<span class="token punctuation">;</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> sz <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>find 和 isConnected 都不需要去维护</p>
+</li>
+<li><p>我们来看连接操作 其实也特别简单 判断一下sz[i]的个数就行</p>
+</li>
+<li><p>我们总是将小的那颗树 连接到大的那颗树 然后 sz的总数进行相加</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token comment" spellcheck="true">//连接两个元素</span>
+        <span class="token keyword">void</span> <span class="token function">unionElements</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> pRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> qRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pRoot <span class="token operator">==</span> qRoot<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token operator">&lt;</span> sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>    
+
+                parent<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">=</span> qRoot <span class="token punctuation">;</span>
+                sz<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+
+                parent<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span> <span class="token operator">=</span> pRoot <span class="token punctuation">;</span>
+                sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> sz<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>最后，我们再来测试一下最小的一万数量级 第一个0.4s 第一次优化的0.1s 第二次优化的只用了0.002s 可见提高了不少啊 </p>
+</li>
+<li><p>十万数量级的 我们不比较第一个了 比较第一次和第二次优化的 第一次的用了24s ，第二次的只用了0.03s 之间相差是非常大的 </p>
+</li>
+<li><p>我们在测试更大的数据 一百万的数据量 我们只看第二次优化的 他只用了 0.7s </p>
+</li>
+<li><p>我们一般的并查集 用到这里就非常不错了 </p>
+</li>
+<li><p>但是还是会有极端的测试数据 会让算法退化 </p>
+</li>
+</ul>
+<h3 id="七-第三次优化-rank"><a href="#七-第三次优化-rank" class="headerlink" title="七.第三次优化 rank"></a>七.第三次优化 rank</h3><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8712.PNG" width="1000" alt="0301" align="center"></p>
+<ul>
+<li>上一个算法告诉我们 这样 把节点数少的放到节点数多的下面 </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8713.PNG" width="1000" alt="0302" align="center"></p>
+<ul>
+<li>直觉告诉我们 这样才是最优的</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8714.PNG" width="1000" alt="0303" align="center"></p>
+<ul>
+<li><p>所以 我们不能根据元素的多少来判断谁连接谁 </p>
+</li>
+<li><p>更准确的是 我们得根据树的层数 来决定谁连接谁 </p>
+</li>
+<li><p>基于rank的优化 rank[i] 表示根节点为i的树的高度 </p>
+</li>
+<li><p>同样 重构代码 我们还是只写函数 </p>
+</li>
+<li><p>改一个名字 使他更具有意义 (改哪里？自己看)</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count <span class="token operator">=</span> n <span class="token punctuation">;</span>
+            rank <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token punctuation">;</span>
+            parent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+                rank<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>    
+
+        <span class="token punctuation">}</span>
+        <span class="token operator">~</span><span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> parent<span class="token punctuation">;</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> rank <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>同样 find 和 isConnected 都不需要去维护 </p>
+</li>
+<li><p>只看连接操作 当层数不一样的时候 我们是不去维护这个树的高度的 </p>
+</li>
+<li><p>当rank[qRoot] == rank[pRoot] 的情况下 parent[pRoot] = qRoot </p>
+</li>
+<li><p>我们才来维护 rank[qRoot] += 1 </p>
+</li>
+<li><p>原本在第一层的 qRoot 到了第二层 所以就要加上 1  </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token comment" spellcheck="true">//连接两个元素</span>
+        <span class="token keyword">void</span> <span class="token function">unionElements</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> pRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> qRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pRoot <span class="token operator">==</span> qRoot<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token operator">&lt;</span> rank<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>    
+                parent<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">=</span> qRoot <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span><span class="token operator">&lt;</span> rank<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                parent<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span> <span class="token operator">=</span> pRoot <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span><span class="token punctuation">{</span>
+
+                parent<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">=</span> qRoot <span class="token punctuation">;</span>
+                rank<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>测试呢 百万数据用了 0.7s 可能优化并不明显 是因为 这样的情况并不多见 </p>
+</li>
+<li><p>甚至有些时候 会比上一个算法要慢那么一点点 </p>
+</li>
+<li><p>但是还是推荐用这个方法的 </p>
+</li>
+</ul>
+<h3 id="八-第四次优化-路径压缩-Path-Compression"><a href="#八-第四次优化-路径压缩-Path-Compression" class="headerlink" title="八.第四次优化 路径压缩 Path Compression"></a>八.第四次优化 路径压缩 Path Compression</h3><pre class="line-numbers language-cpp"><code class="language-cpp">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+
+
+    <!-- 使用 DISQUS_CLICK -->
+    <div id="disqus-comment">
+        <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/05/04/algorithm/Union/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/05/04/algorithm/Union/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
+
+    </div>
+    <style>
+        #disqus-comment{
+            background-color: #eee;
+            padding: 2pc;
+        }
+    </style>
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/04/27/algorithm/BST/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/preview.gif);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/BA201701210404530018-00-000000.png" alt="miccall's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        316459829@qq.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:316459829@qq.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=316459829&amp;site=qq&amp;menu=yes" target="_blank" title="腾讯 QQ">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">phone</i>
+                        
+                        腾讯 QQ
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="http://blog.csdn.net/qq_31411825" target="_blank" title="CSDN">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">user</i>
+                        
+                        CSDN
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" rel="nofollow">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Algorithm/">Algorithm<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/Leap-Motion/">Leap Motion<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/unity-3d/">unity 3d<span class="sidebar_archives-count">4</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/about/" title="简历">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                简历
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/group/" title="团队">
+                
+                    <i class="material-icons sidebar-material-icons">group</i>
+                
+                团队
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery/" title="图库">
+                
+                    <i class="material-icons sidebar-material-icons">image</i>
+                
+                图库
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/tag/" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">dashboard</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Mr.Metro
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?y3mFBzHggMykAk6nhSWv/A==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FF4081'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF4081',
+        'border-left-color': '#FF4081'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==")</script>
+    
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: canary | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
