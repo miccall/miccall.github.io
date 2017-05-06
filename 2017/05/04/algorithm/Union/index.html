@@ -946,7 +946,7 @@
 <h3 id="八-第四次优化-路径压缩-Path-Compression"><a href="#八-第四次优化-路径压缩-Path-Compression" class="headerlink" title="八.第四次优化 路径压缩 Path Compression"></a>八.第四次优化 路径压缩 Path Compression</h3><ul>
 <li>我们刚刚优化了很多Union操作，回过头来 想一下find操作 也是还可以优化的</li>
 </ul>
-<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8714.PNG" width="1000" alt="001" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0506%E5%B9%BB%E7%81%AF%E7%89%871.PNG" width="1000" alt="001" align="center"></p>
 <ul>
 <li><p>我们找他的根节点的时候 不断地找他的parent节点 这个时候 可以看成 我们把这个数组全部遍历了一次 </p>
 </li>
@@ -955,7 +955,7 @@
 <li><p>4 的 parent 不是他自己 说明4不是根节点 我们要继续向上找 这时 我们可以让 4 连接到他父亲的父亲 这样 这个树就变矮了 </p>
 </li>
 </ul>
-<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8714.PNG" width="1000" alt="002" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0506%E5%B9%BB%E7%81%AF%E7%89%872.PNG" width="1000" alt="002" align="center"></p>
 <ul>
 <li><p>那假如说 他的父亲就是根节点呢 那也没关系 因为根的父亲还是他自己 那就直接连到根节点了 是不会遇到无效的情况的 </p>
 </li>
@@ -964,7 +964,7 @@
 <li><p>同样的 我们考察 2 的时候 也使用这个方法</p>
 </li>
 </ul>
-<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8714.PNG" width="1000" alt="003" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0506%E5%B9%BB%E7%81%AF%E7%89%873.PNG" width="1000" alt="003" align="center"></p>
 <ul>
 <li><p>这样 我们又跳了一个节点 我们很快的找到了他的根节点 </p>
 </li>
@@ -994,7 +994,7 @@
 <li><p>那我们的问题又来了 这是最优的解吗 直觉告诉我们 不是 最优的应该化成这样的形式 </p>
 </li>
 </ul>
-<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8714.PNG" width="1000" alt="004" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0506%E5%B9%BB%E7%81%AF%E7%89%874.PNG" width="1000" alt="004" align="center"></p>
 <ul>
 <li><p>其实我们是可以做到的 只是比较绕一些 </p>
 </li>
