@@ -943,13 +943,89 @@
 <li><p>但是还是推荐用这个方法的 </p>
 </li>
 </ul>
-<h3 id="八-第四次优化-路径压缩-Path-Compression"><a href="#八-第四次优化-路径压缩-Path-Compression" class="headerlink" title="八.第四次优化 路径压缩 Path Compression"></a>八.第四次优化 路径压缩 Path Compression</h3><pre class="line-numbers language-cpp"><code class="language-cpp">
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="八-第四次优化-路径压缩-Path-Compression"><a href="#八-第四次优化-路径压缩-Path-Compression" class="headerlink" title="八.第四次优化 路径压缩 Path Compression"></a>八.第四次优化 路径压缩 Path Compression</h3><ul>
+<li>我们刚刚优化了很多Union操作，回过头来 想一下find操作 也是还可以优化的</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8714.PNG" width="1000" alt="001" align="center"></p>
+<ul>
+<li><p>我们找他的根节点的时候 不断地找他的parent节点 这个时候 可以看成 我们把这个数组全部遍历了一次 </p>
+</li>
+<li><p>我们其实可以用一种方法 来减少这个遍历节点个数 比如说 我们执行  find(4) </p>
+</li>
+<li><p>4 的 parent 不是他自己 说明4不是根节点 我们要继续向上找 这时 我们可以让 4 连接到他父亲的父亲 这样 这个树就变矮了 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8714.PNG" width="1000" alt="002" align="center"></p>
+<ul>
+<li><p>那假如说 他的父亲就是根节点呢 那也没关系 因为根的父亲还是他自己 那就直接连到根节点了 是不会遇到无效的情况的 </p>
+</li>
+<li><p>那么下一步 我们要找的就是 find(2) 了 这样 我们就实现了路径压缩 跳过了 3 这个节点 </p>
+</li>
+<li><p>同样的 我们考察 2 的时候 也使用这个方法</p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8714.PNG" width="1000" alt="003" align="center"></p>
+<ul>
+<li><p>这样 我们又跳了一个节点 我们很快的找到了他的根节点 </p>
+</li>
+<li><p>这个树的层数就大大减少了 </p>
+</li>
+<li><p>其实原理讲了这么多 代码写起来 也就一行代码的事  同样 我们只给出find的写法 其他的保持不变 </p>
+</li>
+</ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-cpp"><code class="language-cpp">
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+        <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>p<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> p<span class="token operator">&lt;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">!=</span>parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> parent<span class="token punctuation">[</span>pRoot<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                p <span class="token operator">=</span> parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
 
+            <span class="token keyword">return</span> p <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>这样，我们来测试一下 直接使用一百万的数据 没有使用路径压缩的rank方法 使用了0.7s 的时间 </p>
+</li>
+<li><p>而我们优化之后 使用了0.5s的时间 性能上是有所提升的 </p>
+</li>
+<li><p>那我们的问题又来了 这是最优的解吗 直觉告诉我们 不是 最优的应该化成这样的形式 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8714.PNG" width="1000" alt="004" align="center"></p>
+<ul>
+<li><p>其实我们是可以做到的 只是比较绕一些 </p>
+</li>
+<li><p>我们要写一个递归函数来实现 </p>
+</li>
+<li><p>我们知道 find(x) 返回的 就是x节点所在树的根节点 </p>
+</li>
+<li><p>那我们就好理解了 就让 x的parent 直接指向 find(x) 返回的结果就可以了 </p>
+</li>
+<li><p>find(x) 的结果也是 find(parent[x]) 的结果 这两者的根是一样的 </p>
+</li>
+<li><p>这样一直递归 我们就可以一直连上父亲节点的结果 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">//找到这个元素</span>
+        <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>p<span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span> p<span class="token operator">&lt;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span> p <span class="token operator">!=</span> parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token punctuation">)</span>
+                parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span> parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">return</span> parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>这样的话 我们还可以再测试一下 其实 这样的写法 时间上会稍微慢那么一点点 可想而知 时间是递归所消耗的时间</li>
+</ul>
+<pre><code>    总结 : 并查集的操作 时间复杂度 近乎  是 O(1) 的
+</code></pre>
     
 
     
