@@ -5,7 +5,8 @@
     <!--
         © Material Theme
         https://github.com/viosey/hexo-theme-material
-        Version: 1.3.4 -->
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
 
     <!-- Title -->
     
@@ -24,7 +25,11 @@
     
     
     
+    
         <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+    
+    
+    
     
 
     <!-- Meta & Info -->
@@ -32,7 +37,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
-    <meta name="description" content="Blog of miccall is records about my work">
+
+    
+        <meta name="description" content="Blog of miccall is records about my work">
+    
+    
     <meta name="keywords" content="miccall,Algorithm">
     
     
@@ -61,8 +70,14 @@
     <meta property="og:url" content="http://miccall.tech">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="我的算法之路 -- Graph 图论 | Mr.Metro">
-    <meta property="og:description" content="Blog of miccall is records about my work">
+    <meta property="og:image" content="/img/logo_miccall.png" />
+    
+    
+        <meta property="og:description" content="Blog of miccall is records about my work">
+    
+    
     <meta property="og:article:tag" content="Algorithm"> 
+
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -73,40 +88,23 @@
     <![endif]-->
 
     <!-- Import lsloader -->
-    <script>!function(){var e="http://"+location.host+"/combo?combo=";window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},lsloader.load=function(e,t,s){s=s||function(){};var n;if(n=this.getLS(e),!/\/\*codestartv1\*\//.test(n))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split("/*codestartv1*/")[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split("/*codestartv1*/")[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(e,t,s){var n=this;/\.js?.+$/.test(t)?this.iojs(t,e,function(e,t,s){n.setLS(t,e+"/*codestartv1*/"+s),n.runjs(e,t,s)}):/\.css?.+$/.test(t)&&this.iocss(t,e,function(s){document.getElementById(e).appendChild(document.createTextNode(s)),n.setLS(e,t+"/*codestartv1*/"+s)},s)},lsloader.iojs=function(e,t,s){var n=this;n.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void s(e,t,a.response);n.jsfallback(e,t)}},a.send(null)}catch(s){n.jsfallback(e,t)}},lsloader.iocss=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.iofonts=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs()}else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var u=this,a=document.createElement("script");a.src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),u.jsRunSequence.length>0&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(t){var s="",n={};for(var a in t){var u=this.getLS(t[a].name);if(u)var o=u.split("/*codestartv1*/")[0],c=u.split("/*codestartv1*/")[1];else var o="";o==t[a].path?this.jsRunSequence.push({name:t[a].name,code:c,path:t[a].path}):(this.jsRunSequence.push({name:t[a].name,code:null,path:t[a].path,status:"comboloading"}),n[t[a].name]=!0,s+=(""==s?"":";")+t[a].path)}var i=this;if(s){var r=new XMLHttpRequest;r.open("get",e+s,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void i.runCombo(r.response,n)}else{for(var e in i.jsRunSequence)n[i.jsRunSequence[e].name]&&(i.jsRunSequence[e].status="failed");i.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){e=e.split("/*combojs*/"),e.shift();for(var s in this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+"/*codestartv1*/"+e[0]),e.shift());this.runjs()}}();</script>
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
 
     <!-- Import CSS & jQuery -->
     
         <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?Vwvi0UKsWZkqwcl1aaIPhg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?QpGx/zU1zEpWHOf37TWl5w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style id="css/footer-sns.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/footer-sns.css","/css/footer-sns.css?YcqV7uITs9u4bFzrFb8+Zg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
         <!-- Config CSS -->
-
 
 <!-- Other Styles -->
 <style>
   body, html {
-    font-family: FZLTCXHJW, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "FZLTCXHJW", Arial, sans-serif;
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   }
-
-
-    @font-face {
-        font-family: 'Material Icons';
-        font-style: normal;
-        font-weight: 400;
-        src: url(/fonts/MaterialIcons-Regular.eot);
-        src: url(/fonts/MaterialIcons-Regular.woff2) format('woff2'), url(/fonts/MaterialIcons-Regular.woff) format('woff'), url(/fonts/MaterialIcons-Regular.ttf) format('truetype')
-    }
-
-
-
-    @font-face {
-        font-family: 'FontAwesome';
-        src: url(/fonts/fontawesome-webfont.eot?v=4.5.0);
-        src: url(/fonts/fontawesome-webfont.eot?#iefix&v=4.5.0) format('embedded-opentype'), url(/fonts/fontawesome-webfont.woff2?v=4.5.0) format('woff2'), url(/fonts/fontawesome-webfont.woff?v=4.5.0) format('woff'), url(/fonts/fontawesome-webfont.ttf?v=4.5.0) format('truetype'), url(/fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular) format('svg');
-        font-weight: 400;
-        font-style: normal
-    }
- 
 
   a {
     color: #00838F;
@@ -197,12 +195,17 @@
     </style>
 
 
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+
         <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
         <script>lsloader.load("js/queue.min.js","/js/queue.min.js?FnfjxZSXVYqfU7c7cm3txg==")</script>
     
-
     
-
+    <!-- Analytics -->
     
 
     <!-- Custom Head -->
@@ -259,7 +262,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#我的算法之路-–-Graph-图论"><span class="post-toc-number">1.</span> <span class="post-toc-text">我的算法之路 – Graph 图论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-转载请注明出处"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall   (转载请注明出处)</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#我的算法之路-–-Graph-图论"><span class="post-toc-number">1.</span> <span class="post-toc-text">我的算法之路 – Graph 图论</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-转载请注明出处"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall   (转载请注明出处)</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-互联问题"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">一.互联问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-代码架构"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">二.代码架构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-邻接矩阵-表示-稠密图"><span class="post-toc-number">1.0.2.1.</span> <span class="post-toc-text">1.邻接矩阵 表示 稠密图</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-邻接矩阵-表示-稠密图"><span class="post-toc-number">1.0.2.2.</span> <span class="post-toc-text">2.邻接矩阵 表示 稠密图</span></a></li></ol></li></ol></li></ol></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -320,15 +323,6 @@
     -->
 
     <!-- Qrcode -->
-    
-        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-            <i class="material-icons" role="presentation">devices other</i>
-            <span class="visuallyhidden">devices other</span>
-        </button>
-        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
-            <li class="mdl-menu__item">在其它设备中阅读本文章</li>
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACX0lEQVR42u3ay27CQBAEQP7/p5NrJAR076wfQeUTMo7lcqTZoWcfP199PPDw8PDw8PDw8G7Ge8THq+ufz/898/y5PZM/Gx4eHt6ZvA+lNniUV8hX1Pd3GD0bHh4e3om890U/BydLy/xKPDw8vP/Ca0v8pNDj4eHhfTcvb6ZzPB4eHt79eXmxbl9E+4iXZS14eHh4Ma8dgJ35+YL5Hh4eHt5bXr2labAk5HfbtukKDw8P7wBePsIvSnN5ZbtQbfjFgIeHh7eJNynu7ehr0qx/GLzh4eHhHczbFbPmEUa+eOTjNDw8PLzzeW2BzsdRbYN+SNaCh4eHd3DOmWxIzcPcZEtr/qKjV4yHh4d3Ii9vo3NwvpC0YQQeHh7etbzJNtNJjDuJNoqUGg8PD+8A3t5YYe3bHD/6xYCHh4c35rXNbhtbJNHtWohcz/fw8PDwNvHa7QIJLIoMyk0DRTSMh4eHdzAviQ/aYf8R4GK5wsPDwzuYN7ndhq2l5fltLTUeHh7eJl5b1tsr29e6NgbDw8PDu4rXFutJE5wHuKOWGg8PD28TLy/f7dhsre2eb1rFw8PDu4q31i6vBbs5crQzAg8PD28Tb207aVSgyyP/Kzw8PLxree0xf+i8Bc8XLTw8PLwzeWsPOnkFyYLURhV4eHh45/PacHbeUq8tDItbB/Dw8PAO460V6yS8SOKGNox4+c/Aw8PDuxkvWRjWtiDko7UP98HDw8O7PS9ppltA3pTj4eHhXctrw4i2rOfBRNtG4+Hh4Z3P2zsAm4cO7SKEh4eHdybv+w48PDw8PDw8PLwbHL9xDXfL3dZ15gAAAABJRU5ErkJggg==">
-        </ul>
     
 
     <!-- Tags (bookmark) -->
@@ -434,6 +428,288 @@
 <li><p>那这篇文章出现的意义是什么 没什么 就是我的学习之路  你爱看就看看 </p>
 </li>
 </ul>
+<h3 id="一-互联问题"><a href="#一-互联问题" class="headerlink" title="一.互联问题"></a>一.互联问题</h3><ul>
+<li><p>构成 : 节点(Vertex)   边(Edge)</p>
+</li>
+<li><p>解决问题 : 交通运输  社交网络 互联网 工作安排  程序执行状态 </p>
+</li>
+<li><p>分类 : 无向图(Undirected Graph) 有向图(Directed Graph) 无权图(Unweighted Graph) 有权图(Weighted Graph)</p>
+</li>
+<li><p>联通性 自环边 平行边 </p>
+</li>
+<li><p>图的表示方式 :  </p>
+</li>
+<li><p>邻接矩阵 (Adjacency Matrix)  适合表示稠密图(Dense) 近似于完全图 所有的点和所有的点都有一个边 </p>
+</li>
+<li><p>邻接表 (Adjacency Lists)  适合表示稀疏图(Sparse)   一个节点边的个数 远小于整个图所能有的最大边的个数 </p>
+</li>
+</ul>
+<h3 id="二-代码架构"><a href="#二-代码架构" class="headerlink" title="二.代码架构"></a>二.代码架构</h3><h4 id="1-邻接矩阵-表示-稠密图"><a href="#1-邻接矩阵-表示-稠密图" class="headerlink" title="1.邻接矩阵 表示 稠密图"></a>1.邻接矩阵 表示 稠密图</h4><pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+        <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;vector></span></span>
+        <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;cassert></span></span>
+        <span class="token keyword">using</span> <span class="token keyword">namespace</span> std <span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>vector 我们引入vector 二维数组来存取 具体用法另行参考 </li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">// 稠密图 邻接矩阵 </span>
+        <span class="token keyword">class</span> <span class="token class-name">DenseGraph</span>
+        <span class="token punctuation">{</span>
+        <span class="token keyword">private</span><span class="token operator">:</span>
+            <span class="token keyword">int</span> m<span class="token punctuation">,</span>n<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//点数和边数</span>
+            <span class="token keyword">bool</span> directed<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//是否为 有向图</span>
+            vector<span class="token operator">&lt;</span> vector<span class="token operator">&lt;</span><span class="token keyword">bool</span><span class="token operator">></span> <span class="token operator">></span> g<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 一个二维的矩阵</span>
+
+        <span class="token keyword">public</span><span class="token operator">:</span>
+
+            <span class="token comment" spellcheck="true">//构造一个稠密图 </span>
+            <span class="token function">DenseGraph</span><span class="token punctuation">(</span><span class="token keyword">int</span> n <span class="token punctuation">,</span><span class="token keyword">bool</span> directed<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">//析构</span>
+            <span class="token operator">~</span><span class="token function">DenseGraph</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">//返回点数</span>
+            <span class="token keyword">int</span> <span class="token function">V</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span> 
+                <span class="token keyword">return</span> n <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">//返回边数</span>
+            <span class="token keyword">int</span> <span class="token function">E</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
+                <span class="token keyword">return</span> m <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//给两个点添加一条边</span>
+            <span class="token keyword">void</span>  <span class="token function">addEdge</span><span class="token punctuation">(</span><span class="token keyword">int</span> v <span class="token punctuation">,</span><span class="token keyword">int</span> w <span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//判断两个点是否有边</span>
+            <span class="token keyword">bool</span> <span class="token function">hasEdge</span><span class="token punctuation">(</span><span class="token keyword">int</span> v <span class="token punctuation">,</span><span class="token keyword">int</span> w<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//打印这个矩阵</span>
+            <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//迭代器 来遍历整个图</span>
+            <span class="token keyword">class</span> <span class="token class-name">adjIterator</span><span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>构造函数 </li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">//我们传入一个图的大小 和是否为有向图 </span>
+        <span class="token function">DenseGraph</span><span class="token punctuation">(</span><span class="token keyword">int</span> n <span class="token punctuation">,</span> <span class="token keyword">bool</span> directed<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>n <span class="token operator">=</span> n <span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//初始化为 0 条边</span>
+            <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>m <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>
+
+            <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>directed <span class="token operator">=</span> directed <span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//初始化这个矩阵 </span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                g<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">bool</span><span class="token operator">></span><span class="token punctuation">(</span>n<span class="token punctuation">,</span><span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//初始化形成一个 n*n 的 bool 矩阵</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>析构函数为空 因为我们没有开辟新的空间 </p>
+</li>
+<li><p>给两个点添加一条边</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">void</span>  <span class="token function">addEdge</span><span class="token punctuation">(</span><span class="token keyword">int</span> v <span class="token punctuation">,</span><span class="token keyword">int</span> w <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//判断不越界</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span> v<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> v <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span> w<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> w <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//如果两个点有一条边了 就直接返回</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">hasEdge</span><span class="token punctuation">(</span>v<span class="token punctuation">,</span>w<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//添加一个标识 说明有一条边了</span>
+            g<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">[</span>w<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//如果是无向图  那么相反的方向也得加一条边</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>directed<span class="token punctuation">)</span>
+                g<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">true</span> <span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//边数++</span>
+            m<span class="token operator">++</span> <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>判断两个点是否有边</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">bool</span> <span class="token function">hasEdge</span><span class="token punctuation">(</span><span class="token keyword">int</span> v <span class="token punctuation">,</span><span class="token keyword">int</span> w<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span> v<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> v <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span> w<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> w <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//直接返回v和w标识是否为true</span>
+            <span class="token keyword">return</span> g<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>打印这个矩阵 </li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    cout<span class="token operator">&lt;&lt;</span>g<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token string">"\t"</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>迭代器我们暂时先放一放 </p>
+</li>
+<li><p>先来看系数图</p>
+</li>
+</ul>
+<h4 id="2-邻接矩阵-表示-稠密图"><a href="#2-邻接矩阵-表示-稠密图" class="headerlink" title="2.邻接矩阵 表示 稠密图"></a>2.邻接矩阵 表示 稠密图</h4><ul>
+<li>头文件是一样的 </li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">// 稀疏图 邻接表 </span>
+        <span class="token keyword">class</span> <span class="token class-name">SparseGraph</span>
+        <span class="token punctuation">{</span>
+        <span class="token keyword">private</span><span class="token operator">:</span>
+            <span class="token keyword">int</span> n <span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//图的节点数 </span>
+            <span class="token keyword">int</span> m <span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//图的边数 </span>
+            <span class="token keyword">bool</span> directed <span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//是否为 有向图</span>
+            vector<span class="token operator">&lt;</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token operator">></span> g<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 邻接表</span>
+
+        <span class="token keyword">public</span><span class="token operator">:</span>
+            <span class="token comment" spellcheck="true">//构造一个节点的图 </span>
+            <span class="token function">SparseGraph</span><span class="token punctuation">(</span><span class="token keyword">int</span> n <span class="token punctuation">,</span> <span class="token keyword">bool</span> directed<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token punctuation">}</span>
+            <span class="token operator">~</span><span class="token function">SparseGraph</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//返回点的个数  </span>
+            <span class="token keyword">int</span> <span class="token function">V</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">return</span> n <span class="token punctuation">;</span><span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">//返回边的个数 </span>
+            <span class="token keyword">int</span> <span class="token function">E</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">return</span> m <span class="token punctuation">;</span><span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//给两个点  添加一个边  </span>
+            <span class="token keyword">void</span>  <span class="token function">addEdge</span><span class="token punctuation">(</span><span class="token keyword">int</span> v <span class="token punctuation">,</span><span class="token keyword">int</span> w <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//判断两个点是否有 边 </span>
+            <span class="token keyword">bool</span> <span class="token function">hasEdge</span><span class="token punctuation">(</span><span class="token keyword">int</span> v <span class="token punctuation">,</span><span class="token keyword">int</span> w <span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//迭代器 来遍历整个图</span>
+            <span class="token keyword">class</span> <span class="token class-name">adjIterator</span><span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>构造函数 </li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">//我们传入一个图的大小 和是否为有向图 </span>
+        <span class="token function">SparseGraph</span><span class="token punctuation">(</span><span class="token keyword">int</span> n <span class="token punctuation">,</span> <span class="token keyword">bool</span> directed<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>n <span class="token operator">=</span> n <span class="token punctuation">;</span>
+            <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>m <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>
+
+            <span class="token keyword">this</span><span class="token operator">-</span><span class="token operator">></span>directed <span class="token operator">=</span> directed <span class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                g<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span> vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//动态建立的邻接表</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>析构函数为空 因为我们没有开辟新的空间 </p>
+</li>
+<li><p>给两个点添加一条边</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">void</span>  <span class="token function">addEdge</span><span class="token punctuation">(</span><span class="token keyword">int</span> v <span class="token punctuation">,</span><span class="token keyword">int</span> w <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+            <span class="token comment" spellcheck="true">//判断不越界 </span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>v <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> v <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>w <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> w <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            g<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>w<span class="token punctuation">)</span> <span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//给第v个点 动态建立的邻接表 </span>
+
+            <span class="token comment" spellcheck="true">//如果是无向图的话 反过来也得建立一个边 </span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>v <span class="token operator">!=</span> w <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span> directed <span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">//自环边 如果v==w的话 只要运行一次 push_back就可以了</span>
+                g<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+            m<span class="token operator">++</span> <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>判断两个点是否有边</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">bool</span> <span class="token function">hasEdge</span><span class="token punctuation">(</span><span class="token keyword">int</span> v <span class="token punctuation">,</span><span class="token keyword">int</span> w <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span> v <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> v <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>w <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> w <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//遍历动态的表  循环他的长度 看看里面是有一个是我们要找的边   最坏的话 O(n)</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> g<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span> g<span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> w <span class="token punctuation">)</span>
+                    <span class="token keyword">return</span> <span class="token boolean">true</span> <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">return</span> <span class="token boolean">false</span> <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>打印这个矩阵 </li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                cout<span class="token operator">&lt;&lt;</span><span class="token string">"vertex "</span><span class="token operator">&lt;&lt;</span>i<span class="token operator">&lt;&lt;</span><span class="token string">":\t"</span> <span class="token punctuation">;</span>
+                <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> g<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    cout<span class="token operator">&lt;&lt;</span>g<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;&lt;</span><span class="token string">"\t"</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
     
 
@@ -446,15 +722,9 @@
                 <!-- Post Comments -->
                 
                     
-
-
-
-
-
-
     <!-- 使用 DISQUS_CLICK -->
-    <div id="disqus-comment">
-        <div id="disqus_thread"></div>
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
 
 <!-- add animation -->
 <style>
@@ -490,11 +760,14 @@
     <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
 </div>
 
-<script type="text/ls-javascript" id="disqus-lazy-load-script">
+<script type="text/javascript">
     var disqus_config = function () {
         this.page.url = 'http://miccall.tech/2017/05/05/algorithm/Graph/';  // Replace PAGE_URL with your page's canonical URL variable
         this.page.identifier = 'http://miccall.tech/2017/05/05/algorithm/Graph/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
     $('.btn_click_load').click(function() {  //click to load comments
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
@@ -508,16 +781,13 @@
 </script>
   	
 
-    </div>
-    <style>
-        #disqus-comment{
-            background-color: #eee;
-            padding: 2pc;
-        }
-    </style>
-
-
-
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
 
                 
             </div>
@@ -620,7 +890,7 @@
     <!-- Homepage -->
     
         <li id="sidebar-first-li">
-            <a href="/" rel="nofollow">
+            <a href="/">
                 
                     <i class="material-icons sidebar-material-icons">home</i>
                 
@@ -843,7 +1113,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
     <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
-    <script>lsloader.load("js/js.min.js","/js/js.min.js?y3mFBzHggMykAk6nhSWv/A==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
 
 
 
@@ -873,10 +1143,6 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-    
-        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==")</script>
-    
-
 
 
 
@@ -886,7 +1152,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
 
 
-
+   <!-- 使用 DISQUS js 代码 -->
 
 
 
@@ -940,7 +1206,7 @@ It will not impact the appearance and can give developers a lot of support :)
             lsloader.runInlineScript(item.id,item.id);
         }
     })()
-console.log('\n %c © Material Theme | Version: canary | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
 </script>
 
                 </main>
