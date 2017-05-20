@@ -1,47 +1,43 @@
-<!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
+<!DOCTYPE HTML>
+<html>
+	
+	<head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.4.0 -->
-    <script>window.materialVersion = "1.4.0"</script>
+        © Miccall Theme
+        
+        http://miccall.tech
+        
+        Version: 1.0.0 
 
+    -->
+    
+    
     <!-- Title -->
-    
-    <title>
-        
+        <title>
+            
             Gallery | 
-        
-        Mr.Metro
-    </title>
+            
+            Mr.Metro
+        </title>
 
-    <!-- dns prefetch -->
+
+<!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
+
     
+
     
-    
-    
-    
-    
+
     
         <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-    
-    
-    
     
 
     <!-- Meta & Info -->
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
-
-    
-        <meta name="description" content="Blog of miccall is records about my work">
-    
-    
+    <meta name="description" content="Blog of miccall is records about my work">
     <meta name="keywords" content="miccall">
     
     
@@ -70,14 +66,8 @@
     <meta property="og:url" content="http://miccall.tech">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="Gallery | Mr.Metro">
-    <meta property="og:image" content="/img/logo_miccall.png" />
+    <meta property="og:description" content="Blog of miccall is records about my work">
     
-    
-        <meta property="og:description" content="Blog of miccall is records about my work">
-    
-    
-    
-
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -88,27 +78,19 @@
     <![endif]-->
 
     <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+    <script>!function(){var e="http://"+location.host+"/combo?combo=";window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},lsloader.load=function(e,t,s){s=s||function(){};var n;if(n=this.getLS(e),!/\/\*codestartv1\*\//.test(n))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split("/*codestartv1*/")[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split("/*codestartv1*/")[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(e,t,s){var n=this;/\.js?.+$/.test(t)?this.iojs(t,e,function(e,t,s){n.setLS(t,e+"/*codestartv1*/"+s),n.runjs(e,t,s)}):/\.css?.+$/.test(t)&&this.iocss(t,e,function(s){document.getElementById(e).appendChild(document.createTextNode(s)),n.setLS(e,t+"/*codestartv1*/"+s)},s)},lsloader.iojs=function(e,t,s){var n=this;n.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void s(e,t,a.response);n.jsfallback(e,t)}},a.send(null)}catch(s){n.jsfallback(e,t)}},lsloader.iocss=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.iofonts=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs()}else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var u=this,a=document.createElement("script");a.src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),u.jsRunSequence.length>0&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(t){var s="",n={};for(var a in t){var u=this.getLS(t[a].name);if(u)var o=u.split("/*codestartv1*/")[0],c=u.split("/*codestartv1*/")[1];else var o="";o==t[a].path?this.jsRunSequence.push({name:t[a].name,code:c,path:t[a].path}):(this.jsRunSequence.push({name:t[a].name,code:null,path:t[a].path,status:"comboloading"}),n[t[a].name]=!0,s+=(""==s?"":";")+t[a].path)}var i=this;if(s){var r=new XMLHttpRequest;r.open("get",e+s,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void i.runCombo(r.response,n)}else{for(var e in i.jsRunSequence)n[i.jsRunSequence[e].name]&&(i.jsRunSequence[e].status="failed");i.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){e=e.split("/*combojs*/"),e.shift();for(var s in this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+"/*codestartv1*/"+e[0]),e.shift());this.runjs()}}();</script>
 
     <!-- Import CSS & jQuery -->
-    
-        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?QpGx/zU1zEpWHOf37TWl5w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        
-        
-            <style id="css/footer-sns.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/footer-sns.css","/css/footer-sns.css?YcqV7uITs9u4bFzrFb8+Zg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?Vwvi0UKsWZkqwcl1aaIPhg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
         <!-- Config CSS -->
+
 
 <!-- Other Styles -->
 <style>
   body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    font-family: FZLTCXHJW, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "FZLTCXHJW", Arial, sans-serif;
   }
 
-  a {
-    color: #00838F;
-  }
 
   .mdl-card__media,
   #search-label,
@@ -140,73 +122,36 @@
   }
 
   .toTop {
-    background: #757575 !important;
+    background: #7EC0EE !important;
   }
 
   .material-layout .material-post>.material-nav,
   .material-layout .material-index>.material-nav,
   .material-nav a {
-    color: #757575;
+    color: #7EC0EE;
   }
 
   #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
+    background-color: #7EC0EE;
   }
 
   #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
+    color: #7EC0EE;
   }
 
   .post-toc a:hover {
-    color: #00838F;
+    color: #7EC0EE;
     text-decoration: underline;
   }
 
 </style>
 
 
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-image: url(/img/bg.png);
-      }
-    </style>
 
 
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-
-
-        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?iVMj7S9yWK9PrixzjIrqSQ==")</script>
         <script>lsloader.load("js/queue.min.js","/js/queue.min.js?FnfjxZSXVYqfU7c7cm3txg==")</script>
-    
-    
-    <!-- Analytics -->
-    
+   
 
     <!-- Custom Head -->
     
@@ -214,163 +159,159 @@
             <link href="/fonts/FZLTCXHJW.TTF">
         
     
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="/css/miccall_dropdownMenu.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+        
 <link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-
+	
 
     
         <!-- Single Gallery Page -->
-        
-    <link rel="stylesheet" href="/css/gallery.min.css">
+        <link rel="stylesheet" href="/css/gallery.min.css">
+<link rel="stylesheet" href="/css/gallery.css">
 
+<body class="is-loading-0 is-loading-1 is-loading-2" >
+    <div id="myDiv2" style="width: 100%;height: 100%; text-align: center;background-color: #000;" >
+        loading...
+    </div>
+    <div id="myDiv" style="display:none">     
 
-<body>
-    <!-- Wrapper -->
-    <div id="wrapper">
-
+            <!-- Main -->
+      <div id="gallery_main">
         <!-- Header -->
-        <header id="header">
+          <header id="gallery_header">
             <h1>
                 <a href="/"><strong>Mr.Metro</strong></a> - Gallery
             </h1>
-            <nav>
+            <nav>                
                 <ul>
-                    <li>
-                        <a href="#footer" class="icon fa-info-circle">
+                    <li style="list-style-type:none;">
+                        <a  style="text-decoration: none;" href="#" class="gallery_icon">
                             ©&nbsp;miccall
                         </a>
                     </li>
                 </ul>
             </nav>
-        </header>
+            <ul class="gallery_icons">
+              <li><a href="#" class="gallery_icon fa-twitter"><span class="label">Twitter</span></a></li>
+              <li><a href="#" class="gallery_icon fa-instagram"><span class="label">Instagram</span></a></li>
+              <li><a href="#" class="gallery_icon fa-github"><span class="label">Github</span></a></li>
+              <li><a href="#" class="gallery_icon fa-envelope-o"><span class="label">Email</span></a></li>
+            </ul>
+          </header>
 
-        <!-- Main -->
-        <div id="main">
+        <!-- Thumbnail -->
+          <section id="gallery_thumbnails">
             
+           
                 
-                    <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100" class="image lazy" data-original="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100"><img class="lazy" data-original="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100" alt="给自己一个绿色" /></a>
-                        <h2>给自己一个绿色</h2>
-                        <p>keep learning</p>
-                    </article>
+            <article>
+              <a class="thumbnail" href="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100" data-position="left center">
+                <img src="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100" alt="" />
+              </a>
+              <h2>给自己一个绿色</h2>
+              <p>keep learning</p>
+            </article>
                 
-                    <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" class="image lazy" data-original="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2"><img class="lazy" data-original="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" alt="圣诞快乐" /></a>
-                        <h2>圣诞快乐</h2>
-                        <p>要热爱这个世界</p>
-                    </article>
+            <article>
+              <a class="thumbnail" href="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" data-position="left center">
+                <img src="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" alt="" />
+              </a>
+              <h2>圣诞快乐</h2>
+              <p>要热爱这个世界</p>
+            </article>
                 
-                    <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9" class="image lazy" data-original="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9"><img class="lazy" data-original="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9" alt="想念自己的世界" /></a>
-                        <h2>想念自己的世界</h2>
-                        <p>做一个充满爱的人</p>
-                    </article>
+            <article>
+              <a class="thumbnail" href="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9" data-position="left center">
+                <img src="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9" alt="" />
+              </a>
+              <h2>想念自己的世界</h2>
+              <p>做一个充满爱的人</p>
+            </article>
                 
-                    <article class="thumb">
-                        <a href="http://www.dujin.org/sys/bing/1366.php" class="image lazy" data-original="http://www.dujin.org/sys/bing/1366.php"><img class="lazy" data-original="http://www.dujin.org/sys/bing/1366.php" alt="静谧的世界" /></a>
-                        <h2>静谧的世界</h2>
-                        <p>lala in my heart</p>
-                    </article>
+            <article>
+              <a class="thumbnail" href="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" data-position="left center">
+                <img src="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" alt="" />
+              </a>
+              <h2>asd</h2>
+              <p>要热爱这个世界</p>
+            </article>
                 
-                    <article class="thumb">
-                        <a href="http://tu.ihuan.me/api/me_all_pic" class="image lazy" data-original="http://tu.ihuan.me/api/me_all_pic_go"><img class="lazy" data-original="http://tu.ihuan.me/api/me_all_pic_go" alt="神奇的图片" /></a>
-                        <h2>神奇的图片</h2>
-                        <p>每次点击都会出现不同的照片 </p>
-                    </article>
+            <article>
+              <a class="thumbnail" href="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795" data-position="left center">
+                <img src="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795" alt="" />
+              </a>
+              <h2>background</h2>
+              <p>love lonely</p>
+            </article>
                 
-                    <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795" class="image lazy" data-original="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795"><img class="lazy" data-original="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795" alt="background" /></a>
-                        <h2>background</h2>
-                        <p>love lonely</p>
-                    </article>
+            <article>
+              <a class="thumbnail" href="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8" data-position="left center">
+                <img src="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8" alt="" />
+              </a>
+              <h2>background2</h2>
+              <p>low poly design </p>
+            </article>
                 
-                    <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8" class="image lazy" data-original="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8"><img class="lazy" data-original="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8" alt="background2" /></a>
-                        <h2>background2</h2>
-                        <p>low poly design </p>
-                    </article>
+            <article>
+              <a class="thumbnail" href="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" data-position="left center">
+                <img src="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" alt="" />
+              </a>
+              <h2>Samoye</h2>
+              <p>love life like samoye</p>
+            </article>
                 
-                    <article class="thumb">
-                        <a href="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" class="image lazy" data-original="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb"><img class="lazy" data-original="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" alt="Samoye" /></a>
-                        <h2>Samoye</h2>
-                        <p>love life like samoye</p>
-                    </article>
+            <article>
+              <a class="thumbnail" href="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" data-position="left center">
+                <img src="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" alt="" />
+              </a>
+              <h2>gfd</h2>
+              <p>love life like samoye</p>
+            </article>
+                
+            <article>
+              <a class="thumbnail" href="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" data-position="left center">
+                <img src="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" alt="" />
+              </a>
+              <h2>ada</h2>
+              <p>love life like samoye</p>
+            </article>
                 
             
-        </div>
+
+          </section>
+
         <!-- Footer -->
-        <!--
-        <footer id="footer" class="panel">
-          <div class="inner split">
-            <div>
-              <section>
-                <h2>Magna feugiat sed adipiscing</h2>
-                <p>Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum eget quis orci mattis aliquet. Maecenas fringilla et ante at lorem et ipsum. Dolor nulla eu bibendum sapien. Donec non pharetra dui. Nulla consequat, ex ut suscipit rutrum, mi dolor tincidunt erat, et scelerisque turpis ipsum.</p>
-              </section>
-              <section>
-                <h2>Follow me on ...</h2>
-                <ul class="icons">
-                  <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                  <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                  <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                  <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-                  <li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-                  <li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                  <li><a href="#" class="icon fa-telegram"><span class="label">Telegram</span></a></li>
-                </ul>
-              </section>
-              <p class="copyright">
-                &copy; Design: <a href="#">Gallery</a>.
-              </p>
-            </div>
-            <div>
-              <section>
-                <h2>Get in touch</h2>
-                <form method="post" action="#">
-                  <div class="field half first">
-                    <input type="text" name="name" id="name" placeholder="Name" />
-                  </div>
-                  <div class="field half">
-                    <input type="text" name="email" id="email" placeholder="Email" />
-                  </div>
-                  <div class="field">
-                    <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
-                  </div>
-                  <ul class="actions">
-                    <li><input type="submit" value="Send" class="special" /></li>
-                    <li><input type="reset" value="Reset" /></li>
-                  </ul>
-                </form>
-              </section>
-            </div>
-          </div>
-        </footer>
-        -->
+          <footer >
+            <ul style="background-color: #000">
+            </ul>
+          </footer>
 
+      </div>
     </div>
 
     <!-- Scripts -->
-    
         <script src="/js/jquery.min.js"></script>
         <script src="/js/gallery/gallery.js"></script>
         <script src="/js/lazyload.min.js"></script>
-    
-
-    <script>
-        queue.offer(function(){
-            $('.lazy').lazyload({
-              effect: 'fadeIn',
-              event: 'scrollstop'
-            });
-        })
-        <!-- Start Queue -->
-        $(document).ready(function(){
-            setInterval(function(){
-                queue.execNext();
-            },200);
-        });
-    </script>
+      <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+      <script src="/js/gallery_main.js"></script>
+          <script>
+    function show()
+    {
+        document.getElementById("myDiv").style.display="";
+        document.getElementById("myDiv2").style.display="none";   
+    }
+     
+    setTimeout("show()",5000);    //设置页面加载后1秒显示内容层
+ 
+</script>
 </body>
 
+        
     
 </html>

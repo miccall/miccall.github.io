@@ -1,47 +1,43 @@
-<!DOCTYPE html>
-<html style="display: none;" lang="zh">
-    <head>
+<!DOCTYPE HTML>
+<html>
+	
+	<head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <!--
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.4.0 -->
-    <script>window.materialVersion = "1.4.0"</script>
+        © Miccall Theme
+        
+        http://miccall.tech
+        
+        Version: 1.0.0 
 
+    -->
+    
+    
     <!-- Title -->
-    
-    <title>
-        
+        <title>
+            
             LEAPMotion VR 各种手势的判断~ | 
-        
-        Mr.Metro
-    </title>
+            
+            Mr.Metro
+        </title>
 
-    <!-- dns prefetch -->
+
+<!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
+
     
+
     
-    
-    
-    
-    
+
     
         <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-    
-    
-    
     
 
     <!-- Meta & Info -->
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="theme-color" content="#0097A7">
     <meta name="author" content="miccall">
-
-    
-        <meta name="description" content="Blog of miccall is records about my work">
-    
-    
+    <meta name="description" content="Blog of miccall is records about my work">
     <meta name="keywords" content="miccall,leap motion,unity 3d">
     
     
@@ -70,14 +66,8 @@
     <meta property="og:url" content="http://miccall.tech">
     <meta property="og:type" content="blog">
     <meta property="og:title" content="LEAPMotion VR 各种手势的判断~ | Mr.Metro">
-    <meta property="og:image" content="/img/logo_miccall.png" />
-    
-    
-        <meta property="og:description" content="Blog of miccall is records about my work">
-    
-    
+    <meta property="og:description" content="Blog of miccall is records about my work">
     <meta property="og:article:tag" content="leap motion"> <meta property="og:article:tag" content="unity 3d"> 
-
 
     <!--[if lte IE 9]>
         <link rel="stylesheet" href="/css/ie-blocker.css">
@@ -88,27 +78,19 @@
     <![endif]-->
 
     <!-- Import lsloader -->
-    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+    <script>!function(){var e="http://"+location.host+"/combo?combo=";window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},lsloader.load=function(e,t,s){s=s||function(){};var n;if(n=this.getLS(e),!/\/\*codestartv1\*\//.test(n))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split("/*codestartv1*/")[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split("/*codestartv1*/")[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(e,t,s){var n=this;/\.js?.+$/.test(t)?this.iojs(t,e,function(e,t,s){n.setLS(t,e+"/*codestartv1*/"+s),n.runjs(e,t,s)}):/\.css?.+$/.test(t)&&this.iocss(t,e,function(s){document.getElementById(e).appendChild(document.createTextNode(s)),n.setLS(e,t+"/*codestartv1*/"+s)},s)},lsloader.iojs=function(e,t,s){var n=this;n.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void s(e,t,a.response);n.jsfallback(e,t)}},a.send(null)}catch(s){n.jsfallback(e,t)}},lsloader.iocss=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.iofonts=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs()}else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var u=this,a=document.createElement("script");a.src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),u.jsRunSequence.length>0&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(t){var s="",n={};for(var a in t){var u=this.getLS(t[a].name);if(u)var o=u.split("/*codestartv1*/")[0],c=u.split("/*codestartv1*/")[1];else var o="";o==t[a].path?this.jsRunSequence.push({name:t[a].name,code:c,path:t[a].path}):(this.jsRunSequence.push({name:t[a].name,code:null,path:t[a].path,status:"comboloading"}),n[t[a].name]=!0,s+=(""==s?"":";")+t[a].path)}var i=this;if(s){var r=new XMLHttpRequest;r.open("get",e+s,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void i.runCombo(r.response,n)}else{for(var e in i.jsRunSequence)n[i.jsRunSequence[e].name]&&(i.jsRunSequence[e].status="failed");i.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){e=e.split("/*combojs*/"),e.shift();for(var s in this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+"/*codestartv1*/"+e[0]),e.shift());this.runjs()}}();</script>
 
     <!-- Import CSS & jQuery -->
-    
-        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?QpGx/zU1zEpWHOf37TWl5w==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        
-        
-            <style id="css/footer-sns.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/footer-sns.css","/css/footer-sns.css?YcqV7uITs9u4bFzrFb8+Zg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?Vwvi0UKsWZkqwcl1aaIPhg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
         <!-- Config CSS -->
+
 
 <!-- Other Styles -->
 <style>
   body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    font-family: FZLTCXHJW, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "FZLTCXHJW", Arial, sans-serif;
   }
 
-  a {
-    color: #00838F;
-  }
 
   .mdl-card__media,
   #search-label,
@@ -140,73 +122,36 @@
   }
 
   .toTop {
-    background: #757575 !important;
+    background: #7EC0EE !important;
   }
 
   .material-layout .material-post>.material-nav,
   .material-layout .material-index>.material-nav,
   .material-nav a {
-    color: #757575;
+    color: #7EC0EE;
   }
 
   #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
+    background-color: #7EC0EE;
   }
 
   #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
+    color: #7EC0EE;
   }
 
   .post-toc a:hover {
-    color: #00838F;
+    color: #7EC0EE;
     text-decoration: underline;
   }
 
 </style>
 
 
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-image: url(/img/bg.png);
-      }
-    </style>
 
 
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-<!-- Import Font -->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
-
-
-        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?iVMj7S9yWK9PrixzjIrqSQ==")</script>
         <script>lsloader.load("js/queue.min.js","/js/queue.min.js?FnfjxZSXVYqfU7c7cm3txg==")</script>
-    
-    
-    <!-- Analytics -->
-    
+   
 
     <!-- Custom Head -->
     
@@ -214,210 +159,132 @@
             <link href="/fonts/FZLTCXHJW.TTF">
         
     
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="/css/miccall_dropdownMenu.css" />
+        <link rel="stylesheet" href="/css/main.css" />
+        <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+        
 <link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Post TOC -->
+	
 
     
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
 
-    <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LEAPMotion-VR-各种手势的判断"><span class="post-toc-number">1.</span> <span class="post-toc-text">LEAPMotion VR 各种手势的判断~ </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-转载请注明出处-miccall-tech"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  (转载请注明出处  miccall.tech)</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-手划向左边"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1.手划向左边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-手划向右边"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2.手划向右边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-手划向上边"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">3.手划向上边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-手划向下边"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">4.手划向下边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-手固定不动"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">5.手固定不动</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-是否抓取"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">6.是否抓取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-是否握拳"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">7.是否握拳</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-手掌是否全张开"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">8.手掌是否全张开</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-向量的判断"><span class="post-toc-number">1.0.9.</span> <span class="post-toc-text">9.向量的判断</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-向手掌的方向-移动"><span class="post-toc-number">1.0.10.</span> <span class="post-toc-text">10.向手掌的方向  移动</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#11-手掌是否垂直（掌心水平）"><span class="post-toc-number">1.0.11.</span> <span class="post-toc-text">11.手掌是否垂直（掌心水平）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#12-判断大拇指是否竖直或向下"><span class="post-toc-number">1.0.12.</span> <span class="post-toc-text">12.判断大拇指是否竖直或向下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#13-判断四指是否靠拢掌心"><span class="post-toc-number">1.0.13.</span> <span class="post-toc-text">13.判断四指是否靠拢掌心</span></a></li></ol></li></ol></li></ol>
-
-        <!--
-        <li class="mdl-menu__item">
-            Some Action
-        </li>
-        -->
-    </ul>
-
-
-
-
+    	
+	
+	<body class="is-loading">
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+				<!-- Intro -->
+				<div id="intro">
+	<h1>THIS IS<br />
+		MICCALL
+	</h1>
+	<p> Whatever is worth doing is worth doing well <br/> I'll think of you every step of the way
+	</p>
+	<ul class="actions">
+		<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+	</ul>
+</div>
+				<!-- Header -->
+				<header id="header">
+	<a href="/" class="logo">MICCALL</a>
+</header>
+				<!-- Main -->
+					<section id="main" class="container">
+					<!-- article -->
+						
 <!-- Layouts -->
 
-    <!-- Post Module -->
-    <div class="material-post_container">
 
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        <!-- Custom Thumbnail -->
-        <div class="post_thumbnail-custom mdl-card__media mdl-color-text--grey-50" style="background-image:url(http://onh0umlhz.bkt.clouddn.com/unity-hero-2.jpg)">
-    
-            <p class="article-headline-p">
-                LEAPMotion VR 各种手势的判断~
-            </p>
-        </div>
+<!-- Nav -->
+<nav id="nav" class="special">
+	<ul class="menu links">
 
 
 
+		<!-- Homepage --> 
+		<li >
+            <a href="/" rel="nofollow">主页</a>
+        </li>
 
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/BA201701210404530018-00-000000.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>miccall</strong>
-        <span>1月 29, 2017</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/leap-motion/">leap motion</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/unity-3d/">unity 3d</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-
-    
         
-            <!-- Busuanzi Views -->
-            <a class="post_share-link" href="#">
-                <li class="mdl-menu__item">
-                    <span id="busuanzi_container_page_pv">
-                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
-                    </span>
-                </li>
+        <li class="active">
+            <a href="#s1">分类</a>
+                    <ul class="submenu">
+                        <li>
+                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Leap-Motion/">Leap Motion</a></li><li><a class="category-link" href="/categories/unity-3d/">unity 3d</a>
+                    </ul>
+        </li>
+        
+
+        
+
+        <!-- Pages  -->
+        
+        <li>
+            <a href="/about/" title="简历">
+                简历
             </a>
+        </li>
         
-    
+        <li>
+            <a href="/group/" title="团队">
+                团队
+            </a>
+        </li>
+        
+        <li>
+            <a href="/gallery/" title="图库">
+                图库
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tag/" title="标签">
+                标签
+            </a>
+        </li>
+        
 
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=LEAPMotion VR 各种手势的判断~&url=http://miccall.tech//2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
+        
 
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=LEAPMotion VR 各种手势的判断~&url=http://miccall.tech//2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/index.html&via=miccall" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://miccall.tech//2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://miccall.tech//2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=Mr.Metro&title=LEAPMotion VR 各种手势的判断~&summary=Blog of miccall is records about my work&pics=http://miccall.tech/img/logo_miccall.png&url=http://miccall.tech/2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 QQ
-            </li>
-        </a>
-    
-
-    <!-- Share Telegram -->
-    
+        <ul class="menu">
+<li class="active" >
+    <a href="#" rel="nofollow">mulu</a>
+    <ul class="submenu">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#LEAPMotion-VR-各种手势的判断"><span class="post-toc-number">1.</span> <span class="post-toc-text">LEAPMotion VR 各种手势的判断~ </span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-转载请注明出处-miccall-tech"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall  (转载请注明出处  miccall.tech)</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-手划向左边"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">1.手划向左边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-手划向右边"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">2.手划向右边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-手划向上边"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">3.手划向上边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-手划向下边"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">4.手划向下边</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-手固定不动"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">5.手固定不动</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-是否抓取"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">6.是否抓取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-是否握拳"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">7.是否握拳</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-手掌是否全张开"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">8.手掌是否全张开</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#9-向量的判断"><span class="post-toc-number">1.0.9.</span> <span class="post-toc-text">9.向量的判断</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#10-向手掌的方向-移动"><span class="post-toc-number">1.0.10.</span> <span class="post-toc-text">10.向手掌的方向  移动</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#11-手掌是否垂直（掌心水平）"><span class="post-toc-number">1.0.11.</span> <span class="post-toc-text">11.手掌是否垂直（掌心水平）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#12-判断大拇指是否竖直或向下"><span class="post-toc-number">1.0.12.</span> <span class="post-toc-text">12.判断大拇指是否竖直或向下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#13-判断四指是否靠拢掌心"><span class="post-toc-number">1.0.13.</span> <span class="post-toc-text">13.判断四指是否靠拢掌心</span></a></li></ol></li></ol></li></ol>
+    </ul >
+</li>    
 </ul>
 
-</div>
+        
+        
 
-                
+	</ul>
+	<ul class="icons">
+            
+                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+            
+            
+            
+            
+	</ul>
+</nav>
 
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <hr>
+	<section class="box">
+					<header class="major">
+					<div class="post-title-img" src="http://onh0umlhz.bkt.clouddn.com/unity-hero-2.jpg" style="background-image: url(http://onh0umlhz.bkt.clouddn.com/unity-hero-2.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover; ">
+					</div>
+						<div class="post-meta">
+			    			<span class="post-time">2017-01-29</span>
+			  			</div>
+					</header>
+
+					<div class="box">
+						<div class="post-content">
+			    				<hr>
 <h1 id="LEAPMotion-VR-各种手势的判断"><a href="#LEAPMotion-VR-各种手势的判断" class="headerlink" title="LEAPMotion VR 各种手势的判断~ "></a><strong>LEAPMotion VR 各种手势的判断~ </strong></h1><h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><h3 id="1-手划向左边"><a href="#1-手划向左边" class="headerlink" title="1.手划向左边"></a>1.手划向左边</h3><pre class="line-numbers language-c#"><code class="language-c#">        protected bool isMoveLeft (Hand hand)   /*手划向左边*/
         {
            /*  x轴移动的速度   deltaVelocity = 0.7f    isStationary (hand)  判断hand是否禁止 */
@@ -562,17 +429,10 @@
         }
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
+			  			</div>
+					</div>
+			<!-- Post Comments -->
+			
     <!-- 使用 DISQUS_CLICK -->
 <div id="disqus-comment">
     <div id="disqus_thread"></div>
@@ -602,15 +462,32 @@
             background: rgba(158, 158, 158, .2);
             box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
             color: #fff;
-            background-color: #757575;
+            background-color: #7EC0EE;
             text-shadow: 0
         }
 </style>
 	
-<div class="btn_click_load"> 
-    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
 </div>
 
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
 <script type="text/javascript">
     var disqus_config = function () {
         this.page.url = 'http://miccall.tech/2017/01/29/leapmotion/LEAPMotion VR 各种手势的判断/';  // Replace PAGE_URL with your page's canonical URL variable
@@ -618,7 +495,7 @@
     };
 </script>
 
-<script type="text/ls-javascript" id="disqus-lazy-load-script">
+<script type="text/javascript">
     $('.btn_click_load').click(function() {  //click to load comments
         (function() { // DON'T EDIT BELOW THIS LINE
             var d = document;
@@ -630,8 +507,6 @@
         $('.btn_click_load').css('display','none');
     });
 </script>
-  	
-
 </div>
 <style>
     #disqus-comment{
@@ -640,383 +515,25 @@
     }
 </style>
 
-                
-            </div>
+</section>
 
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2017/02/02/leapmotion/LEAPMotion猎户座(VR)开发-003-UI/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2017/01/27/leapmotion/unity实现3d摇杆结合leapmotion控制实现VR场景移动/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/preview.gif);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/BA201701210404530018-00-000000.png" alt="miccall's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        316459829@qq.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="mailto : 316459829@qq.com" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=316459829&amp;site=qq&amp;menu=yes" target="_blank" title="腾讯 QQ">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">phone</i>
-                        
-                        腾讯 QQ
-                    </a>
-                </li>
-            
-                <li>
-                    <a href="http://blog.csdn.net/qq_31411825" target="_blank" title="CSDN">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">user</i>
-                        
-                        CSDN
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/01/">一月 2017<span class="sidebar_archives-count">18</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
-                
-                分类
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-                <li>
-                <a class="sidebar_archives-link" href="/categories/Algorithm/">Algorithm<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/Design/">Design<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Leap-Motion/">Leap Motion<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/unity-3d/">unity 3d<span class="sidebar_archives-count">4</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/about/" title="简历">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                简历
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/group/" title="团队">
-                
-                    <i class="material-icons sidebar-material-icons">group</i>
-                
-                团队
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/gallery/" title="图库">
-                
-                    <i class="material-icons sidebar-material-icons">image</i>
-                
-                图库
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/tag/" title="标签">
-                
-                    <i class="material-icons sidebar-material-icons">dashboard</i>
-                
-                标签
-            </a>
-        </li>
-        
-    
-
-    <!-- Article Number  -->
-    
-</ul>
-
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
-    </div>
-
-    <!-- Sidebar Image -->
-    
-
-</aside>
-
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div id="back-to-top" class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-
-    <!-- Weibo -->
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Mr.Metro
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
+					</section>
+					<!-- footer -->
+				<footer class="page_num_custom">
+  
 </footer>
-
-
-                    <!-- Import File -->
-
-
-    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
-    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
-
-
-
-    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
-
-
-<script type="text/ls-javascript" id="NProgress-script">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#FF4081'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #FF4081, 0 0 15px #FF4081'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#FF4081',
-        'border-left-color': '#FF4081'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-
-
-    <!-- Busuanzi -->
-    <script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-   <!-- 使用 DISQUS js 代码 -->
-
-
-
-
-
+				<!-- Copyright -->
+				<div id="copyright">
+	<ul><li> power by <a href="https://hexo.io/zh-cn/">hexo</a></li><li>Design: <a href="miccall.tech">Miccall</a></li>
+		<br />
+	</ul>
+	
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<span id="busuanzi_container_site_pv">Copyright &copy;2017访问量<span id="busuanzi_value_site_pv"></span>次</span>
+	
+</div>
+				
+				<!-- Import File -->
 
 <!-- UC Browser Compatible -->
 <script>
@@ -1053,23 +570,19 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 </script>
 
-<!-- Bing Background -->
 
 
-<script>
-    (function(){
-        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+			</div>
 
-        for (var i = 0; i < scriptList.length; ++i) {
-            var item = scriptList[i];
-            lsloader.runInlineScript(item.id,item.id);
-        }
-    })()
-console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
-</script>
+		<!-- Scripts -->
+			<script src="/js/jquery.min.js"></script>
+			<script src="/js/jquery.scrollex.min.js"></script>
+			<script src="/js/jquery.scrolly.min.js"></script>
+			<script src="/js/skel.min.js"></script>
+			<script src="/js/util.js"></script>
+			<script src="/js/main.js"></script>
 
-                </main>
-            </div>
-        </body>
-    
+	</body>
+ 
+
 </html>

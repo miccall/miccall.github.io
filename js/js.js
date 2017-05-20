@@ -2,7 +2,7 @@
 /*global $, jQuery, alert*/
 
 // Custom_js
-// Back_to_top_js
+// Active_Toc_js
 // Material_js
 // Bootstrap_js
 // Sidebar_js
@@ -92,26 +92,10 @@ $(document).ready(function() {
 
 //**********************************
 //**********************************
-//**********************************   Back_to_top_js
+//**********************************   Active_Toc_js
 //**********************************
 //**********************************
 
-$(window).scroll(function (event) {
-    var scroll = $(window).scrollTop();
-	if (scroll > 300) {
-		$('#back-to-top').addClass('btt-visible');
-	} else {
-		$('#back-to-top').removeClass('btt-visible');
-	}
-
-	var footerOffset = $('.mdl-mini-footer').offset().top;
-	var windowHeight = $( window ).height();
-	if (scroll > footerOffset - windowHeight + 42) {
-		$('#back-to-top').addClass('btt-docked');
-	} else {
-		$('#back-to-top').removeClass('btt-docked');
-	}
-});
 
 //**********************************
 //**********************************
