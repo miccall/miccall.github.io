@@ -1,317 +1,129 @@
 <!DOCTYPE HTML>
 <html>
+
+<head>
+
+    <title>Mr.Metro</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	
-	<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <!--
-        © Miccall Theme
-        
-        http://miccall.tech
-        
-        Version: 1.0.0 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
 
-    -->
-    
-    
-    <!-- Title -->
-        <title>
-            
-            Gallery | 
-            
-            Mr.Metro
-        </title>
-
-
-<!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-    
-
-    
-
-    
-        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-    
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="author" content="miccall">
-    <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall">
-    
-    
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
-    <!--iOS -->
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Mr.Metro">
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://miccall.tech">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="Gallery | Mr.Metro">
-    <meta property="og:description" content="Blog of miccall is records about my work">
-    
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>!function(){var e="http://"+location.host+"/combo?combo=";window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},lsloader.load=function(e,t,s){s=s||function(){};var n;if(n=this.getLS(e),!/\/\*codestartv1\*\//.test(n))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split("/*codestartv1*/")[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split("/*codestartv1*/")[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(e,t,s){var n=this;/\.js?.+$/.test(t)?this.iojs(t,e,function(e,t,s){n.setLS(t,e+"/*codestartv1*/"+s),n.runjs(e,t,s)}):/\.css?.+$/.test(t)&&this.iocss(t,e,function(s){document.getElementById(e).appendChild(document.createTextNode(s)),n.setLS(e,t+"/*codestartv1*/"+s)},s)},lsloader.iojs=function(e,t,s){var n=this;n.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void s(e,t,a.response);n.jsfallback(e,t)}},a.send(null)}catch(s){n.jsfallback(e,t)}},lsloader.iocss=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.iofonts=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs()}else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var u=this,a=document.createElement("script");a.src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),u.jsRunSequence.length>0&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(t){var s="",n={};for(var a in t){var u=this.getLS(t[a].name);if(u)var o=u.split("/*codestartv1*/")[0],c=u.split("/*codestartv1*/")[1];else var o="";o==t[a].path?this.jsRunSequence.push({name:t[a].name,code:c,path:t[a].path}):(this.jsRunSequence.push({name:t[a].name,code:null,path:t[a].path,status:"comboloading"}),n[t[a].name]=!0,s+=(""==s?"":";")+t[a].path)}var i=this;if(s){var r=new XMLHttpRequest;r.open("get",e+s,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void i.runCombo(r.response,n)}else{for(var e in i.jsRunSequence)n[i.jsRunSequence[e].name]&&(i.jsRunSequence[e].status="failed");i.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){e=e.split("/*combojs*/"),e.shift();for(var s in this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+"/*codestartv1*/"+e[0]),e.shift());this.runjs()}}();</script>
-
-    <!-- Import CSS & jQuery -->
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?Vwvi0UKsWZkqwcl1aaIPhg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <!-- Config CSS -->
-
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: FZLTCXHJW, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "FZLTCXHJW", Arial, sans-serif;
-  }
-
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #7EC0EE !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #7EC0EE !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #7EC0EE !important;
-  }
-
-  .toTop {
-    background: #7EC0EE !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #7EC0EE;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #7EC0EE;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #7EC0EE;
-  }
-
-  .post-toc a:hover {
-    color: #7EC0EE;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-
-
-        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?iVMj7S9yWK9PrixzjIrqSQ==")</script>
-        <script>lsloader.load("js/queue.min.js","/js/queue.min.js?FnfjxZSXVYqfU7c7cm3txg==")</script>
-   
-
-    <!-- Custom Head -->
-    
-        
-            <link href="/fonts/FZLTCXHJW.TTF">
-        
-    
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="/css/miccall_dropdownMenu.css" />
-        <link rel="stylesheet" href="/css/main.css" />
-        <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
-        
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
 <link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-	
 
-    
-        <!-- Single Gallery Page -->
-        <link rel="stylesheet" href="/css/gallery.min.css">
-<link rel="stylesheet" href="/css/gallery.css">
 
-<body class="is-loading-0 is-loading-1 is-loading-2" >
-    <div id="myDiv2" style="width: 100%;height: 100%; text-align: center;background-color: #000;" >
-        loading...
-    </div>
-    <div id="myDiv" style="display:none">     
+<!-- Layouts -->
 
-            <!-- Main -->
-      <div id="gallery_main">
-        <!-- Header -->
-          <header id="gallery_header">
-            <h1>
-                <a href="/"><strong>Mr.Metro</strong></a> - Gallery
-            </h1>
-            <nav>                
-                <ul>
-                    <li style="list-style-type:none;">
-                        <a  style="text-decoration: none;" href="#" class="gallery_icon">
-                            ©&nbsp;miccall
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <ul class="gallery_icons">
-              <li><a href="#" class="gallery_icon fa-twitter"><span class="label">Twitter</span></a></li>
-              <li><a href="#" class="gallery_icon fa-instagram"><span class="label">Instagram</span></a></li>
-              <li><a href="#" class="gallery_icon fa-github"><span class="label">Github</span></a></li>
-              <li><a href="#" class="gallery_icon fa-envelope-o"><span class="label">Email</span></a></li>
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/ok_prism.css" />
+
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Miccall</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Leap-Motion/">Leap Motion</a></li><li><a class="category-link" href="/categories/unity-3d/">unity 3d</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+
+
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
             </ul>
-          </header>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
 
-        <!-- Thumbnail -->
-          <section id="gallery_thumbnails">
-            
-           
+        <div id="main">
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(undefined);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#"><h2 >Gallery</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="post-content">
                 
-            <article>
-              <a class="thumbnail" href="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100" data-position="left center">
-                <img src="https://drscdn.500px.org/photo/143759331/q%3D80_h%3D450/770a4b915cc9adbc83cb84da9644a100" alt="" />
-              </a>
-              <h2>给自己一个绿色</h2>
-              <p>keep learning</p>
-            </article>
-                
-            <article>
-              <a class="thumbnail" href="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" data-position="left center">
-                <img src="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" alt="" />
-              </a>
-              <h2>圣诞快乐</h2>
-              <p>要热爱这个世界</p>
-            </article>
-                
-            <article>
-              <a class="thumbnail" href="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9" data-position="left center">
-                <img src="https://drscdn.500px.org/photo/156780667/q%3D80_h%3D450/767186d65ed96b4fe4521a1fbca440a9" alt="" />
-              </a>
-              <h2>想念自己的世界</h2>
-              <p>做一个充满爱的人</p>
-            </article>
-                
-            <article>
-              <a class="thumbnail" href="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" data-position="left center">
-                <img src="https://drscdn.500px.org/photo/100285869/q%3D80_h%3D450/84402a448703e9c211ab31fef5b013a2" alt="" />
-              </a>
-              <h2>asd</h2>
-              <p>要热爱这个世界</p>
-            </article>
-                
-            <article>
-              <a class="thumbnail" href="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795" data-position="left center">
-                <img src="https://drscdn.500px.org/photo/156607653/q%3D80_m%3D2000/fbc39c0a583c7b58074ab8ec5a292795" alt="" />
-              </a>
-              <h2>background</h2>
-              <p>love lonely</p>
-            </article>
-                
-            <article>
-              <a class="thumbnail" href="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8" data-position="left center">
-                <img src="https://drscdn.500px.org/photo/136839531/q%3D80_m%3D1500_k%3D1/0a807e0c95f9cb6edd9291e836f2ecf8" alt="" />
-              </a>
-              <h2>background2</h2>
-              <p>low poly design </p>
-            </article>
-                
-            <article>
-              <a class="thumbnail" href="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" data-position="left center">
-                <img src="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" alt="" />
-              </a>
-              <h2>Samoye</h2>
-              <p>love life like samoye</p>
-            </article>
-                
-            <article>
-              <a class="thumbnail" href="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" data-position="left center">
-                <img src="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" alt="" />
-              </a>
-              <h2>gfd</h2>
-              <p>love life like samoye</p>
-            </article>
-                
-            <article>
-              <a class="thumbnail" href="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" data-position="left center">
-                <img src="https://drscdn.500px.org/photo/81630363/q%3D80_m%3D2000/c30ddd2b35518235b7036830e0bbd3bb" alt="" />
-              </a>
-              <h2>ada</h2>
-              <p>love life like samoye</p>
-            </article>
-                
-            
-
-          </section>
-
-        <!-- Footer -->
-          <footer >
-            <ul style="background-color: #000">
+             </div>
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
             </ul>
-          </footer>
+            <span id="busuanzi_container_site_pv">2017总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 
-      </div>
+        </div>
     </div>
-
-    <!-- Scripts -->
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/gallery/gallery.js"></script>
-        <script src="/js/lazyload.min.js"></script>
-      <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-      <script src="/js/gallery_main.js"></script>
-          <script>
-    function show()
-    {
-        document.getElementById("myDiv").style.display="";
-        document.getElementById("myDiv2").style.display="none";   
-    }
-     
-    setTimeout("show()",5000);    //设置页面加载后1秒显示内容层
- 
-</script>
 </body>
 
-        
-    
+
+
 </html>

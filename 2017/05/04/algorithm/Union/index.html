@@ -1,290 +1,115 @@
 <!DOCTYPE HTML>
 <html>
+
+<head>
+
+    <title>Mr.Metro</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	
-	<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <!--
-        © Miccall Theme
-        
-        http://miccall.tech
-        
-        Version: 1.0.0 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
 
-    -->
-    
-    
-    <!-- Title -->
-        <title>
-            
-            我的算法之路 -- Union 并查集 | 
-            
-            Mr.Metro
-        </title>
-
-
-<!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-    
-
-    
-
-    
-        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-    
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="author" content="miccall">
-    <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall,Algorithm">
-    
-    
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
-    <!--iOS -->
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Mr.Metro">
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://miccall.tech">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="我的算法之路 -- Union 并查集 | Mr.Metro">
-    <meta property="og:description" content="Blog of miccall is records about my work">
-    <meta property="og:article:tag" content="Algorithm"> 
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>!function(){var e="http://"+location.host+"/combo?combo=";window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},lsloader.load=function(e,t,s){s=s||function(){};var n;if(n=this.getLS(e),!/\/\*codestartv1\*\//.test(n))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split("/*codestartv1*/")[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split("/*codestartv1*/")[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(e,t,s){var n=this;/\.js?.+$/.test(t)?this.iojs(t,e,function(e,t,s){n.setLS(t,e+"/*codestartv1*/"+s),n.runjs(e,t,s)}):/\.css?.+$/.test(t)&&this.iocss(t,e,function(s){document.getElementById(e).appendChild(document.createTextNode(s)),n.setLS(e,t+"/*codestartv1*/"+s)},s)},lsloader.iojs=function(e,t,s){var n=this;n.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void s(e,t,a.response);n.jsfallback(e,t)}},a.send(null)}catch(s){n.jsfallback(e,t)}},lsloader.iocss=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.iofonts=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs()}else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var u=this,a=document.createElement("script");a.src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),u.jsRunSequence.length>0&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(t){var s="",n={};for(var a in t){var u=this.getLS(t[a].name);if(u)var o=u.split("/*codestartv1*/")[0],c=u.split("/*codestartv1*/")[1];else var o="";o==t[a].path?this.jsRunSequence.push({name:t[a].name,code:c,path:t[a].path}):(this.jsRunSequence.push({name:t[a].name,code:null,path:t[a].path,status:"comboloading"}),n[t[a].name]=!0,s+=(""==s?"":";")+t[a].path)}var i=this;if(s){var r=new XMLHttpRequest;r.open("get",e+s,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void i.runCombo(r.response,n)}else{for(var e in i.jsRunSequence)n[i.jsRunSequence[e].name]&&(i.jsRunSequence[e].status="failed");i.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){e=e.split("/*combojs*/"),e.shift();for(var s in this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+"/*codestartv1*/"+e[0]),e.shift());this.runjs()}}();</script>
-
-    <!-- Import CSS & jQuery -->
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?Vwvi0UKsWZkqwcl1aaIPhg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <!-- Config CSS -->
-
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: FZLTCXHJW, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "FZLTCXHJW", Arial, sans-serif;
-  }
-
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #7EC0EE !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #7EC0EE !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #7EC0EE !important;
-  }
-
-  .toTop {
-    background: #7EC0EE !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #7EC0EE;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #7EC0EE;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #7EC0EE;
-  }
-
-  .post-toc a:hover {
-    color: #7EC0EE;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-
-
-        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?iVMj7S9yWK9PrixzjIrqSQ==")</script>
-        <script>lsloader.load("js/queue.min.js","/js/queue.min.js?FnfjxZSXVYqfU7c7cm3txg==")</script>
-   
-
-    <!-- Custom Head -->
-    
-        
-            <link href="/fonts/FZLTCXHJW.TTF">
-        
-    
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="/css/miccall_dropdownMenu.css" />
-        <link rel="stylesheet" href="/css/main.css" />
-        <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
-        
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
 <link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-	
 
-    
 
-    	
-	
-	<body class="is-loading">
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-				<!-- Intro -->
-				<div id="intro">
-	<h1>THIS IS<br />
-		MICCALL
-	</h1>
-	<p> Whatever is worth doing is worth doing well <br/> I'll think of you every step of the way
-	</p>
-	<ul class="actions">
-		<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-	</ul>
-</div>
-				<!-- Header -->
-				<header id="header">
-	<a href="/" class="logo">MICCALL</a>
-</header>
-				<!-- Main -->
-					<section id="main" class="container">
-					<!-- article -->
-						
 <!-- Layouts -->
 
 
-<!-- Nav -->
-<nav id="nav" class="special">
-	<ul class="menu links">
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/ok_prism.css" />
+
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Miccall</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Leap-Motion/">Leap Motion</a></li><li><a class="category-link" href="/categories/unity-3d/">unity 3d</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
 
 
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
 
-		<!-- Homepage --> 
-		<li >
-            <a href="/" rel="nofollow">主页</a>
-        </li>
 
-        
-        <li class="active">
-            <a href="#s1">分类</a>
-                    <ul class="submenu">
-                        <li>
-                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Leap-Motion/">Leap Motion</a></li><li><a class="category-link" href="/categories/unity-3d/">unity 3d</a>
-                    </ul>
-        </li>
-        
-
-        
-
-        <!-- Pages  -->
-        
-        <li>
-            <a href="/about/" title="简历">
-                简历
-            </a>
-        </li>
-        
-        <li>
-            <a href="/group/" title="团队">
-                团队
-            </a>
-        </li>
-        
-        <li>
-            <a href="/gallery/" title="图库">
-                图库
-            </a>
-        </li>
-        
-        <li>
-            <a href="/tag/" title="标签">
-                标签
-            </a>
-        </li>
-        
-
-        
-
-        <ul class="menu">
-<li class="active" >
-    <a href="#" rel="nofollow">mulu</a>
-    <ul class="submenu">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#我的算法之路-–-Union-并查集"><span class="post-toc-number">1.</span> <span class="post-toc-text">我的算法之路 – Union 并查集</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#Created-by-miccall-转载请注明出处"><span class="post-toc-number">1.0.0.0.0.1.</span> <span class="post-toc-text">Created by miccall   (转载请注明出处)</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-连接问题"><span class="post-toc-number">1.0.1.</span> <span class="post-toc-text">一.连接问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二-Union-基本操作"><span class="post-toc-number">1.0.2.</span> <span class="post-toc-text">二.Union 基本操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-union-p-q"><span class="post-toc-number">1.0.2.1.</span> <span class="post-toc-text">1.  union(p,q)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-find-p"><span class="post-toc-number">1.0.2.2.</span> <span class="post-toc-text">2.  find(p)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-isConnected-p-q"><span class="post-toc-number">1.0.2.3.</span> <span class="post-toc-text">3.  isConnected(p,q)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三-最简单的并查集-Union-Find"><span class="post-toc-number">1.0.3.</span> <span class="post-toc-text">三.最简单的并查集 Union Find</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四-写测试"><span class="post-toc-number">1.0.4.</span> <span class="post-toc-text">四.写测试</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五-第一次优化-QuickUnion"><span class="post-toc-number">1.0.5.</span> <span class="post-toc-text">五.第一次优化 QuickUnion</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六-第二次优化-QuickUnion-02"><span class="post-toc-number">1.0.6.</span> <span class="post-toc-text">六.第二次优化 QuickUnion_02</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#七-第三次优化-rank"><span class="post-toc-number">1.0.7.</span> <span class="post-toc-text">七.第三次优化 rank</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#八-第四次优化-路径压缩-Path-Compression"><span class="post-toc-number">1.0.8.</span> <span class="post-toc-text">八.第四次优化 路径压缩 Path Compression</span></a></li></ol></li></ol></li></ol>
-    </ul >
-</li>    
-</ul>
-
-        
-        
-
-	</ul>
-	<ul class="icons">
-            
-                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
-            
-            
-            
-            
-	</ul>
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
 </nav>
 
-	<section class="box">
-					<header class="major">
-					<div class="post-title-img" src="http://onh0umlhz.bkt.clouddn.com/miccall0504Union_view.jpg" style="background-image: url(http://onh0umlhz.bkt.clouddn.com/miccall0504Union_view.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover; ">
-					</div>
-						<div class="post-meta">
-			    			<span class="post-time">2017-05-04</span>
-			  			</div>
-					</header>
-
-					<div class="box">
-						<div class="post-content">
-			    				<hr>
+        <div id="main">
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://onh0umlhz.bkt.clouddn.com/miccall0504Union_view.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#"><h2 >我的算法之路 -- Union 并查集</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="post-content">
+                <hr>
 <h1 id="我的算法之路-–-Union-并查集"><a href="#我的算法之路-–-Union-并查集" class="headerlink" title="我的算法之路 – Union 并查集"></a>我的算法之路 – Union 并查集</h1><h6 id="Created-by-miccall-转载请注明出处"><a href="#Created-by-miccall-转载请注明出处" class="headerlink" title="Created by miccall   (转载请注明出处)"></a>Created by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><ul>
 <li><p>按理说这类文章首先应该讲一些鸡汤啊 鼓励学习什么的话    但是没有</p>
 </li>
@@ -891,160 +716,20 @@
 </ul>
 <pre><code>    总结 : 并查集的操作 时间复杂度 近乎  是 O(1) 的
 </code></pre>
-			  			</div>
-					</div>
-			<!-- Post Comments -->
-			
-    <!-- 使用 DISQUS_CLICK -->
-<div id="disqus-comment">
-    <div id="disqus_thread"></div>
+             </div>
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            <span id="busuanzi_container_site_pv">2017总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 
-<!-- add animation -->
-<style>
-	.disqus_click_btn {
-            line-height: 30px;
-            margin: 0;
-            min-width: 50px;
-            padding: 0 14px;
-            display: inline-block;
-            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-            font-size: 14px;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0;
-            overflow: hidden;
-            will-change: box-shadow;
-            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
-            outline: 0;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            vertical-align: middle;
-            border: 0;
-            background: rgba(158, 158, 158, .2);
-            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
-            color: #fff;
-            background-color: #7EC0EE;
-            text-shadow: 0
-        }
-</style>
-	
-<div class="btn_click_load" id="disqus_bt"> 
-    <button class="disqus_click_btn">点击查看评论</button>
-</div>
-
-<!--
-<script type="text/javascript">
-$('.btn_click_load').click(function() {
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-
-    document.getElementById('disqus_bt').style.display = "none";
-});
-</script>
--->
-<script type="text/javascript">
-    var disqus_config = function () {
-        this.page.url = 'http://miccall.tech/2017/05/04/algorithm/Union/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://miccall.tech/2017/05/04/algorithm/Union/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-</script>
-
-<script type="text/javascript">
-    $('.btn_click_load').click(function() {  //click to load comments
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document;
-            var s = d.createElement('script');
-            s.src = '//http-miccall-tech.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', + new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-        $('.btn_click_load').css('display','none');
-    });
-</script>
-</div>
-<style>
-    #disqus-comment{
-        background-color: #eee;
-        padding: 2pc;
-    }
-</style>
-
-</section>
-
-					</section>
-					<!-- footer -->
-				<footer class="page_num_custom">
-  
-</footer>
-				<!-- Copyright -->
-				<div id="copyright">
-	<ul><li> power by <a href="https://hexo.io/zh-cn/">hexo</a></li><li>Design: <a href="miccall.tech">Miccall</a></li>
-		<br />
-	</ul>
-	
-	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	<span id="busuanzi_container_site_pv">Copyright &copy;2017访问量<span id="busuanzi_value_site_pv"></span>次</span>
-	
-</div>
-				
-				<!-- Import File -->
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Window Load-->
-<script type="text/ls-javascript" id="window-load">
-    $(window).load(function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-</script>
-
-<!-- MathJax Load-->
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
+        </div>
+    </div>
+</body>
 
 
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="/js/jquery.min.js"></script>
-			<script src="/js/jquery.scrollex.min.js"></script>
-			<script src="/js/jquery.scrolly.min.js"></script>
-			<script src="/js/skel.min.js"></script>
-			<script src="/js/util.js"></script>
-			<script src="/js/main.js"></script>
-
-	</body>
- 
 
 </html>

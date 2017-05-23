@@ -1,804 +1,203 @@
 <!DOCTYPE HTML>
 <html>
+
+<head>
+
+    <title>Mr.Metro</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 	
-	<head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <!--
-        © Miccall Theme
-        
-        http://miccall.tech
-        
-        Version: 1.0.0 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
 
-    -->
-    
-    
-    <!-- Title -->
-        <title>
-            
-            group | 
-            
-            Mr.Metro
-        </title>
-
-
-<!-- dns prefetch -->
-    <meta http-equiv="x-dns-prefetch-control" content="on">
-
-    
-
-    
-
-    
-        <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
-    
-
-    <!-- Meta & Info -->
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="author" content="miccall">
-    <meta name="description" content="Blog of miccall is records about my work">
-    <meta name="keywords" content="miccall">
-    
-    
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/logo_miccall.png">
-    <link rel="icon" sizes="192x192" href="/img/logo_miccall.png">
-    <link rel="apple-touch-icon" href="/img/logo_miccall.png">
-
-    <!--iOS -->
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Mr.Metro">
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://miccall.tech">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="group | Mr.Metro">
-    <meta property="og:description" content="Blog of miccall is records about my work">
-    
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import lsloader -->
-    <script>!function(){var e="http://"+location.host+"/combo?combo=";window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}},lsloader.removeLS=function(e){try{localStorage.removeItem(e)}catch(e){}},lsloader.setLS=function(e,t){try{localStorage.setItem(e,t)}catch(e){}},lsloader.getLS=function(e){var t="";try{t=localStorage.getItem(e)}catch(e){t=""}return t},lsloader.load=function(e,t,s){s=s||function(){};var n;if(n=this.getLS(e),!/\/\*codestartv1\*\//.test(n))return this.removeLS(e),void this.requestResource(e,t,s);if(n){var a=n.split("/*codestartv1*/")[0];if(a!=t)return console.log("reload:"+t),this.removeLS(e),void this.requestResource(e,t,s);n=n.split("/*codestartv1*/")[1],/\.js?.+$/.test(a)?(this.jsRunSequence.push({name:e,code:n}),this.runjs(t,e,n)):(document.getElementById(e).appendChild(document.createTextNode(n)),s())}else this.requestResource(e,t,s)},lsloader.requestResource=function(e,t,s){var n=this;/\.js?.+$/.test(t)?this.iojs(t,e,function(e,t,s){n.setLS(t,e+"/*codestartv1*/"+s),n.runjs(e,t,s)}):/\.css?.+$/.test(t)&&this.iocss(t,e,function(s){document.getElementById(e).appendChild(document.createTextNode(s)),n.setLS(e,t+"/*codestartv1*/"+s)},s)},lsloader.iojs=function(e,t,s){var n=this;n.jsRunSequence.push({name:t,code:""});try{var a=new XMLHttpRequest;a.open("get",e,!0),a.onreadystatechange=function(){if(4==a.readyState){if((a.status>=200&&a.status<300||304==a.status)&&""!=a.response)return void s(e,t,a.response);n.jsfallback(e,t)}},a.send(null)}catch(s){n.jsfallback(e,t)}},lsloader.iocss=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.iofonts=function(e,t,s,n){var a=this;try{var u=new XMLHttpRequest;u.open("get",e,!0),u.onreadystatechange=function(){if(4==u.readyState){if((u.status>=200&&u.status<300||304==u.status)&&""!=u.response)return s(u.response),void n();a.cssfallback(e,t,n)}},u.send(null)}catch(s){a.cssfallback(e,t,n)}},lsloader.runjs=function(e,t,s){if(t&&s)for(var n in this.jsRunSequence)this.jsRunSequence[n].name==t&&(this.jsRunSequence[n].code=s);if(this.jsRunSequence[0]&&this.jsRunSequence[0].code&&"failed"!=this.jsRunSequence[0].status){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code)),a.type="text/javascript",document.getElementsByTagName("head")[0].appendChild(a),this.jsRunSequence.shift(),this.jsRunSequence.length>0&&this.runjs()}else if(this.jsRunSequence[0]&&"failed"==this.jsRunSequence[0].status){var u=this,a=document.createElement("script");a.src=this.jsRunSequence[0].path,a.type="text/javascript",this.jsRunSequence[0].status="loading",a.onload=function(){u.jsRunSequence.shift(),u.jsRunSequence.length>0&&u.runjs()},document.body.appendChild(a)}},lsloader.tagLoad=function(e,t){this.jsRunSequence.push({name:t,code:"",path:e,status:"failed"}),this.runjs()},lsloader.jsfallback=function(e,t){if(!this.jsnamemap[t]){this.jsnamemap[t]=t;for(var s in this.jsRunSequence)this.jsRunSequence[s].name==t&&(this.jsRunSequence[s].code="",this.jsRunSequence[s].status="failed",this.jsRunSequence[s].path=e);this.runjs()}},lsloader.cssfallback=function(e,t,s){if(!this.cssnamemap[t]){this.cssnamemap[t]=1;var n=document.createElement("link");n.type="text/css",n.href=e,n.rel="stylesheet",n.onload=n.onerror=s;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a)}},lsloader.runInlineScript=function(e,t){var s=document.getElementById(t).innerText;this.jsRunSequence.push({name:e,code:s}),this.runjs()},lsloader.loadCombo=function(t){var s="",n={};for(var a in t){var u=this.getLS(t[a].name);if(u)var o=u.split("/*codestartv1*/")[0],c=u.split("/*codestartv1*/")[1];else var o="";o==t[a].path?this.jsRunSequence.push({name:t[a].name,code:c,path:t[a].path}):(this.jsRunSequence.push({name:t[a].name,code:null,path:t[a].path,status:"comboloading"}),n[t[a].name]=!0,s+=(""==s?"":";")+t[a].path)}var i=this;if(s){var r=new XMLHttpRequest;r.open("get",e+s,!0),r.onreadystatechange=function(){if(4==r.readyState)if(r.status>=200&&r.status<300||304==r.status){if(""!=r.response)return void i.runCombo(r.response,n)}else{for(var e in i.jsRunSequence)n[i.jsRunSequence[e].name]&&(i.jsRunSequence[e].status="failed");i.runjs()}},r.send(null)}this.runjs()},lsloader.runCombo=function(e,t){e=e.split("/*combojs*/"),e.shift();for(var s in this.jsRunSequence)t[this.jsRunSequence[s].name]&&e[0]&&(this.jsRunSequence[s].status="comboJS",this.jsRunSequence[s].code=e[0],this.setLS(this.jsRunSequence[s].name,this.jsRunSequence[s].path+"/*codestartv1*/"+e[0]),e.shift());this.runjs()}}();</script>
-
-    <!-- Import CSS & jQuery -->
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?Vwvi0UKsWZkqwcl1aaIPhg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <!-- Config CSS -->
-
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: FZLTCXHJW, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "FZLTCXHJW", Arial, sans-serif;
-  }
-
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #7EC0EE !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #7EC0EE !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #7EC0EE !important;
-  }
-
-  .toTop {
-    background: #7EC0EE !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #7EC0EE;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #7EC0EE;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #7EC0EE;
-  }
-
-  .post-toc a:hover {
-    color: #7EC0EE;
-    text-decoration: underline;
-  }
-
-</style>
-
-
-
-
-        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?iVMj7S9yWK9PrixzjIrqSQ==")</script>
-        <script>lsloader.load("js/queue.min.js","/js/queue.min.js?FnfjxZSXVYqfU7c7cm3txg==")</script>
-   
-
-    <!-- Custom Head -->
-    
-        
-            <link href="/fonts/FZLTCXHJW.TTF">
-        
-    
-
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="/css/miccall_dropdownMenu.css" />
-        <link rel="stylesheet" href="/css/main.css" />
-        <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
-        
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
 <link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
-	
 
+
+<!-- Layouts -->
+
+    <!-- Single Links Page -->
     
+<link rel="stylesheet" href="/css/item.css" />
 
-    	
-
-    		    <!-- Single Links Page --> 
-    			
-    		<style>
-
-.cover-name-link{
-    text-decoration:none;
-    border-bottom:0px;
-    text-align: center;
-}
-.cover-name a{
-	text-decoration:none;
-    font-size: 18px;
-}
-.grid-site,
-{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%
-}
-
-.cfix {
-    zoom: 1;
-}
-
-.cfix:after {
-    clear: both;
-    content: '.';
-    display: block;
-    height: 0;
-    line-height: 0;
-    overflow: hidden;
-    visibility: hidden
-}
-
-.project-cover {
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    float: left;
-    margin: 0 22px 22px 0;
-    position: relative;
-    width: 202px
-}
-
-.project-cover,
-.project-cover * {
-    box-sizing: border-box
-}
-
-.project-cover .cover-img-el {
-    transform: translate(0, 0);
-    transition: opacity .15s linear
-}
-
-.project-cover .cover-img,
-.project-cover .cover-img-el {
-    width: 202px;
-    height: 158px;
-    border-radius: 3px 3px 0 0
-}
-
-.project-cover .cover-img {
-    display: block;
-    overflow: hidden;
-    position: relative
-}
-
-.project-cover .cover-info {
-    background: #fff;
-    padding: 6px 10px 28px
-}
-
-.project-cover .cover-name {
-    font-weight: bold;
-    height: 32px;
-    margin: 12px;
-    overflow: hidden;
-    text-align: center;
-}
-
-.project-cover .cover-name-link {
-    color: #2b2b2b
-}
-
-.project-cover .cover-fields a:hover,
-.project-cover .cover-fields span:hover {
-    color: #171717;
-    text-decoration: none
-}
-
-
-.cover-by-link {
-    text-align: center;
-    margin-bottom: 12px;
-}
-
-.cover-by {
-    color: dimgray;
-    margin-right: 5px
-}
-
-.cover-by-link {
-    color: #2b2b2b;
-}
-
-.cover-by-link a {
-    color: #2b2b2b;
-    text-align: center;
-}
-
-#content {
-    margin: 46px auto 0;
-    max-width: 1546px;
-    padding-bottom: 115px
-}
-
-.project-cover {
-    float: left
-}
-
-
-@media (min-width: 1638px) {
-    #content,
-    #filter-crumbs {
-        width: 1546px
-    }
-    .project-cover:nth-child(7n) {
-        margin-right: 0
-    }
-}
-
-
-
-@media (min-width: 1414px) and (max-width: 1637px) {
-    #content,
-    #filter-crumbs {
-        width: 1322px
-    }
-    .project-cover:nth-child(6n) {
-        margin-right: 0
-    }
-}
-
-
-@media (min-width: 1190px) and (max-width: 1413px) {
-    #content,
-    #filter-crumbs {
-        width: 1098px
-    }
-    .project-cover:nth-child(5n) {
-        margin-right: 0
-    }
-}
-
-
-@media (min-width: 966px) and (max-width: 1189px) {
-    #content,
-    #filter-crumbs {
-        width: 874px
-    }
-    .project-cover:nth-child(4n) {
-        margin-right: 0
-    }
-}
-
-@media (min-width: 742px) and (max-width: 965px) {
-    #content,
-    #filter-crumbs {
-        width: 650px
-    }
-    .project-cover:nth-child(3n) {
-        margin-right: 0
-    }
-}
-
-
-@media (min-width: 518px) and (max-width: 741px) {
-
-    #content,
-    #filter-crumbs
-    {
-        width: 426px
-    }
-    .project-cover:nth-child(2n) {
-        margin-right: 0
-    }
-}
-
-
-@media (min-width: 604px) and (max-width: 1024px) {
-    .grid-site,
-    .project-view {
-        max-width: none
-    }
-    .ie9 .basement-open-animate-in #top-panel {
-        padding-left: 34.5161%
-    }
-}
-
-
-@media (max-width: 517px) {
-    .project-cover {
-        border-radius: 0;
-        float: none;
-        margin: 0 auto 8px;
-        padding: 0;
-        position: relative;
-        width: 100%
-    }
-    .project-cover .cover-img,
-    .project-cover .cover-info-stats {
-        float: left
-    }
-    .project-cover .cover-img,
-    .project-cover .cover-img-el {
-        border-radius: 0;
-        vertical-align: bottom
-    }
-    .project-cover .cover-img {
-        height: auto;
-        min-height: 100px;
-        width: 45%
-    }
-    .project-cover .cover-info-stats {
-        width: 55%
-    }
-
-    .project-cover .cover-img-el {
-        height: auto;
-        width: 100%
-    }
-    .project-cover .cover-name {
-        height: auto;
-        margin-bottom: 0;
-        max-height: 32px
-    }
-    .project-cover .cover-by,
-    .project-cover .cover-name-link {
-        color: #3c3c3c
-    }
-    .project-cover .cover-by-link {
-        max-width: 80%;
-        overflow: hidden;
-        text-align: center;
-    }
-    .project-cover .cover-info {
-        font-size: 12px;
-        height: auto
-    }
-    #content-container,
-    #filter-crumbs {
-        padding: 0 15px
-    }
-}
-
-@media (min-width: 300px) and (max-width: 517px) {
-
-    .cover-info-stats{
-        text-align: center;
-        margin-top: 40px;
-    }
-    .cover-name a{
-        font-size: 17px;
-    }
-    .cover-info-stats.cover-by-link a{
-        text-align: center;
-    }
-    .project-cover .cover-name {
-        margin-bottom: 5px
-    }
-}
-</style>
-
-
-<body>
-
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-				<!-- Intro -->
-				<div id="intro">
-	<h1>THIS IS<br />
-		MICCALL
-	</h1>
-	<p> Whatever is worth doing is worth doing well <br/> I'll think of you every step of the way
-	</p>
-	<ul class="actions">
-		<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
-	</ul>
-</div>
-				<!-- Header -->
-				<header id="header">
-	<a href="/" class="logo">MICCALL</a>
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">Miccall</a>
 </header>
-				<!-- Main -->
-					<section id="main" class="container">
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Leap-Motion/">Leap Motion</a></li><li><a class="category-link" href="/categories/unity-3d/">unity 3d</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
 
-					<!-- Nav -->
-					<nav id="nav" class="special">
-	<ul class="menu links">
+
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
 
 
-
-		<!-- Homepage --> 
-		<li >
-            <a href="/" rel="nofollow">主页</a>
-        </li>
-
-        
-        <li class="active">
-            <a href="#s1">分类</a>
-                    <ul class="submenu">
-                        <li>
-                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Leap-Motion/">Leap Motion</a></li><li><a class="category-link" href="/categories/unity-3d/">unity 3d</a>
-                    </ul>
-        </li>
-        
-
-        
-
-        <!-- Pages  -->
-        
-        <li>
-            <a href="/about/" title="简历">
-                简历
-            </a>
-        </li>
-        
-        <li>
-            <a href="/group/" title="团队">
-                团队
-            </a>
-        </li>
-        
-        <li>
-            <a href="/gallery/" title="图库">
-                图库
-            </a>
-        </li>
-        
-        <li>
-            <a href="/tag/" title="标签">
-                标签
-            </a>
-        </li>
-        
-
-        
-
-	</ul>
-	<ul class="icons">
-            
-                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
-            
-            
-            
-            
-	</ul>
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
 </nav>
-					
-					<!-- Main-first -->
-					 <div class="Main-first">
-    <article id="me" class="panel">
-								<header>
-									<h1>Miccall Metro</h1>
-									<p>Welcome to my Blog</p>
-								</header>
-                                <h5>
-                                    <a href="" class="jumplink pic">
-                                        <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
-                                        <img src="/images/me.jpg" alt="" />
-                                    </a>
-         </h5>
+                <div id="main">
+            <!-- Main first s-->
+            <article id="me" class="panel">
+                <header>
+                    <h1>Miccall Metro </h1>
+                    <p>Senior Astral Projectionist</p>
+                </header>
+                <a href="#work" class="jumplink pic">
+                    <span class="arrow icon fa-chevron-right"><span>See my work</span></span>
+                    <img src="/images/me.jpg" alt="" />
+                </a>
+            </article>
+            <!-- Main first e-->
+        </div>
 
-	</article>
-</div>
-					
-							<div id="content-container" class="grid-site cfix">
-							    <div id="content" class="border-box cfix">
-							      
-							        
-							    	<!--post-->
-							        <div class="project-cover  cfix ">
-							            <div class="cover-img">
-							                <a href="http://winshare.tech/"> <img src="/img/twx.jpg" class="cover-img-el"> </a>
-							            </div>
-							            <div class="cover-info-stats">
-							      
-							                    <div class="cover-name"> 
-							                    	<a href="http://winshare.tech/" class="cover-name-link">谭文轩 winshare</a> 
-							                    </div>
-							                    
-							                    <div class="cover-by-link">
-							                        <a href="http://winshare.tech/" class="cover-name-link" >He is my first boss</a>
-							                    </div>
-							                
-							                <!-- .cover-info -->
-							            </div>
-							            <!-- #cover-stat-fields-wrap -->
-							        </div>
-							        
-							    	<!--post-->
-							        <div class="project-cover  cfix ">
-							            <div class="cover-img">
-							                <a href="http://my.csdn.net/wallelhw?locationNum=0&amp;fps=1"> <img src="/img/wallelhw.jpg" class="cover-img-el"> </a>
-							            </div>
-							            <div class="cover-info-stats">
-							      
-							                    <div class="cover-name"> 
-							                    	<a href="http://my.csdn.net/wallelhw?locationNum=0&amp;fps=1" class="cover-name-link">李宏伟 wallelhw</a> 
-							                    </div>
-							                    
-							                    <div class="cover-by-link">
-							                        <a href="http://my.csdn.net/wallelhw?locationNum=0&amp;fps=1" class="cover-name-link" >The Great people </a>
-							                    </div>
-							                
-							                <!-- .cover-info -->
-							            </div>
-							            <!-- #cover-stat-fields-wrap -->
-							        </div>
-							        
-							    	<!--post-->
-							        <div class="project-cover  cfix ">
-							            <div class="cover-img">
-							                <a href="null"> <img src="/img/TMX.jpg" class="cover-img-el"> </a>
-							            </div>
-							            <div class="cover-info-stats">
-							      
-							                    <div class="cover-name"> 
-							                    	<a href="null" class="cover-name-link">田孟潇</a> 
-							                    </div>
-							                    
-							                    <div class="cover-by-link">
-							                        <a href="null" class="cover-name-link" >Big Data </a>
-							                    </div>
-							                
-							                <!-- .cover-info -->
-							            </div>
-							            <!-- #cover-stat-fields-wrap -->
-							        </div>
-							        
-							    	<!--post-->
-							        <div class="project-cover  cfix ">
-							            <div class="cover-img">
-							                <a href="null"> <img src="/img/lxk.jpg" class="cover-img-el"> </a>
-							            </div>
-							            <div class="cover-info-stats">
-							      
-							                    <div class="cover-name"> 
-							                    	<a href="null" class="cover-name-link">廖小凯</a> 
-							                    </div>
-							                    
-							                    <div class="cover-by-link">
-							                        <a href="null" class="cover-name-link" >UI and 3dMod</a>
-							                    </div>
-							                
-							                <!-- .cover-info -->
-							            </div>
-							            <!-- #cover-stat-fields-wrap -->
-							        </div>
-							        
-							    	<!--post-->
-							        <div class="project-cover  cfix ">
-							            <div class="cover-img">
-							                <a href="null"> <img src="/img/cpj.jpg" class="cover-img-el"> </a>
-							            </div>
-							            <div class="cover-info-stats">
-							      
-							                    <div class="cover-name"> 
-							                    	<a href="null" class="cover-name-link">陈品军</a> 
-							                    </div>
-							                    
-							                    <div class="cover-by-link">
-							                        <a href="null" class="cover-name-link" >UI and 3dMod</a>
-							                    </div>
-							                
-							                <!-- .cover-info -->
-							            </div>
-							            <!-- #cover-stat-fields-wrap -->
-							        </div>
-							        
-							    	<!--post-->
-							        <div class="project-cover  cfix ">
-							            <div class="cover-img">
-							                <a href="http://miccall.tech"> <img src="/img/wjz.jpg" class="cover-img-el"> </a>
-							            </div>
-							            <div class="cover-info-stats">
-							      
-							                    <div class="cover-name"> 
-							                    	<a href="http://miccall.tech" class="cover-name-link">王金铮 miccall</a> 
-							                    </div>
-							                    
-							                    <div class="cover-by-link">
-							                        <a href="http://miccall.tech" class="cover-name-link" >This is me </a>
-							                    </div>
-							                
-							                <!-- .cover-info -->
-							            </div>
-							            <!-- #cover-stat-fields-wrap -->
-							        </div>
-							        
-							    	<!--post-->
-							        <div class="project-cover  cfix ">
-							            <div class="cover-img">
-							                <a href="http://www.crazer.cn"> <img src="/img/ljj.png" class="cover-img-el"> </a>
-							            </div>
-							            <div class="cover-info-stats">
-							      
-							                    <div class="cover-name"> 
-							                    	<a href="http://www.crazer.cn" class="cover-name-link">刘进吉 kevinliu</a> 
-							                    </div>
-							                    
-							                    <div class="cover-by-link">
-							                        <a href="http://www.crazer.cn" class="cover-name-link" >It`s my smart friend </a>
-							                    </div>
-							                
-							                <!-- .cover-info -->
-							            </div>
-							            <!-- #cover-stat-fields-wrap -->
-							        </div>
-							        
-							    	<!--post-->
-							        <div class="project-cover  cfix ">
-							            <div class="cover-img">
-							                <a href="http://www.timberwolves.tech"> <img src="/img/lxf.jpg" class="cover-img-el"> </a>
-							            </div>
-							            <div class="cover-info-stats">
-							      
-							                    <div class="cover-name"> 
-							                    	<a href="http://www.timberwolves.tech" class="cover-name-link">卢肖风 timberwolves</a> 
-							                    </div>
-							                    
-							                    <div class="cover-by-link">
-							                        <a href="http://www.timberwolves.tech" class="cover-name-link" >It`s my smart friend </a>
-							                    </div>
-							                
-							                <!-- .cover-info -->
-							            </div>
-							            <!-- #cover-stat-fields-wrap -->
-							        </div>
-							        
-							    
-							    </div>
-							</div>
+        <section class="special">
+                            <div class="row">
+                                
+        
+                                <section class="4u 6u(medium) 12u$(xsmall) item">
+                                <div class="item">
+                                    <div><img src="/img/twx.jpg" ; width="150px"  ; height="150px" ; /></div>
+                                    <h3>谭文轩 winshare</h3>
+                                    <p style="text-align: center; margin-top: -1rem;">He is my first boss</p>
+                                </div>
+                                </section>
+        
+                                <section class="4u 6u(medium) 12u$(xsmall) item">
+                                <div class="item">
+                                    <div><img src="/img/wallelhw.jpg" ; width="150px"  ; height="150px" ; /></div>
+                                    <h3>李宏伟 wallelhw</h3>
+                                    <p style="text-align: center; margin-top: -1rem;">The Great people </p>
+                                </div>
+                                </section>
+        
+                                <section class="4u 6u(medium) 12u$(xsmall) item">
+                                <div class="item">
+                                    <div><img src="/img/TMX.jpg" ; width="150px"  ; height="150px" ; /></div>
+                                    <h3>田孟潇</h3>
+                                    <p style="text-align: center; margin-top: -1rem;">Big Data </p>
+                                </div>
+                                </section>
+        
+                                <section class="4u 6u(medium) 12u$(xsmall) item">
+                                <div class="item">
+                                    <div><img src="/img/lxk.jpg" ; width="150px"  ; height="150px" ; /></div>
+                                    <h3>廖小凯</h3>
+                                    <p style="text-align: center; margin-top: -1rem;">UI and 3dMod</p>
+                                </div>
+                                </section>
+        
+                                <section class="4u 6u(medium) 12u$(xsmall) item">
+                                <div class="item">
+                                    <div><img src="/img/cpj.jpg" ; width="150px"  ; height="150px" ; /></div>
+                                    <h3>陈品军</h3>
+                                    <p style="text-align: center; margin-top: -1rem;">UI and 3dMod</p>
+                                </div>
+                                </section>
+        
+                                <section class="4u 6u(medium) 12u$(xsmall) item">
+                                <div class="item">
+                                    <div><img src="/img/wjz.jpg" ; width="150px"  ; height="150px" ; /></div>
+                                    <h3>王金铮 miccall</h3>
+                                    <p style="text-align: center; margin-top: -1rem;">This is me </p>
+                                </div>
+                                </section>
+        
+                                <section class="4u 6u(medium) 12u$(xsmall) item">
+                                <div class="item">
+                                    <div><img src="/img/ljj.png" ; width="150px"  ; height="150px" ; /></div>
+                                    <h3>刘进吉 kevinliu</h3>
+                                    <p style="text-align: center; margin-top: -1rem;">It`s my smart friend </p>
+                                </div>
+                                </section>
+        
+                                <section class="4u 6u(medium) 12u$(xsmall) item">
+                                <div class="item">
+                                    <div><img src="/img/lxf.jpg" ; width="150px"  ; height="150px" ; /></div>
+                                    <h3>卢肖风 timberwolves</h3>
+                                    <p style="text-align: center; margin-top: -1rem;">It`s my smart friend </p>
+                                </div>
+                                </section>
+        
+    
+                            </div>
+                    
+        </section>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            <span id="busuanzi_container_site_pv">2017总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 
-					</section>
-
-
-					<!-- footer -->
-				<footer class="page_num_custom">
-  
-</footer>
-				<!-- Copyright -->
-				<div id="copyright">
-	<ul><li> power by <a href="https://hexo.io/zh-cn/">hexo</a></li><li>Design: <a href="miccall.tech">Miccall</a></li>
-		<br />
-	</ul>
-	
-	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	<span id="busuanzi_container_site_pv">Copyright &copy;2017访问量<span id="busuanzi_value_site_pv"></span>次</span>
-	
-</div>
-				
-				<!-- Import File -->
-
-<!-- UC Browser Compatible -->
-<script>
-	var agent = navigator.userAgent.toLowerCase();
-	if(agent.indexOf('ucbrowser')>0) {
-		document.write('<link rel="stylesheet" href="/css/uc.css">');
-	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-	}
-</script>
-
-<!-- Window Load-->
-<script type="text/ls-javascript" id="window-load">
-    $(window).load(function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-</script>
-
-<!-- MathJax Load-->
-
-<script type="text/ls-javascript" id="lazy-load">
-    // Offer LazyLoad
-    queue.offer(function(){
-        $('.lazy').lazyload({
-            effect : 'show'
-        });
-    });
-
-    // Start Queue
-    $(document).ready(function(){
-        setInterval(function(){
-            queue.execNext();
-        },200);
-    });
-</script>
-
-
-
-
-
-		</div>
-		<!-- Scripts -->
-			<script src="/js/jquery.min.js"></script>
-			<script src="/js/jquery.scrollex.min.js"></script>
-			<script src="/js/jquery.scrolly.min.js"></script>
-			<script src="/js/skel.min.js"></script>
-			<script src="/js/util.js"></script>
-			<script src="/js/main.js"></script>
+        </div>
+    </div>
 </body>
 
-
-<script type="text/ls-javascript" id="page-links-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
-    $(document).ready(function() {
-        adjustFooter();
-    });
-</script>
-
-		
 
 </html>
