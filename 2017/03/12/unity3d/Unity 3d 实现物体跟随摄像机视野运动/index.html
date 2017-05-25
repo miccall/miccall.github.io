@@ -106,12 +106,12 @@
 			</ul>
 </nav>
 
-        <div id="main">
+        <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://onh0umlhz.bkt.clouddn.com/robot.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#"><h2 >BehaviorDesigner 实现NPC 智能机器人</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >BehaviorDesigner 实现NPC 智能机器人</h2></a>
             </div>
             <!-- Post -->
-            <div class="post-content">
+            <div class="post-content" style="padding: 4rem 4rem 2rem 4rem ;" >
                 <hr>
 <h1 id="BehaviorDesigner-实现NPC-智能机器人"><a href="#BehaviorDesigner-实现NPC-智能机器人" class="headerlink" title="BehaviorDesigner 实现NPC 智能机器人"></a>BehaviorDesigner 实现NPC 智能机器人</h1><h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><h2 id="实现物体跟随摄像机视野运动"><a href="#实现物体跟随摄像机视野运动" class="headerlink" title="实现物体跟随摄像机视野运动"></a>实现物体跟随摄像机视野运动</h2><h3 id="1-VR实现机器人导航"><a href="#1-VR实现机器人导航" class="headerlink" title="1. VR实现机器人导航"></a>1. VR实现机器人导航</h3><ul>
 <li>项目里要求一个机器人跟随在角色旁边，一直飞着，就像一个精灵一样，总在主角的身边，移动，转头，都要移动到合适的位置 。还得让他面向主角，今天就来实现这个样例 。 </li>
@@ -362,6 +362,92 @@
 <h4 id="7-面向UI之后的动作"><a href="#7-面向UI之后的动作" class="headerlink" title="7.面向UI之后的动作"></a>7.面向UI之后的动作</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/UIaction.png" alt="UIaction"></p>
 
              </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/03/12/unity3d/Unity 3d 实现物体跟随摄像机视野运动/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/03/12/unity3d/Unity 3d 实现物体跟随摄像机视野运动/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
         </div>
         <!-- Copyright 版权 start -->
                 <div id="copyright">
