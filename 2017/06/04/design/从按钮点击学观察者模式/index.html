@@ -36,7 +36,7 @@
 
 
 <!--  代码渲染  -->
-<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/prism_solarized.css" />
 <link rel="stylesheet" href="/css/typo.css" />
 <!-- 文章页 -->
 <body class="is-loading">
@@ -61,7 +61,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Leap-Motion/">Leap Motion</a></li><li><a class="category-link" href="/categories/unity-3d/">unity 3d</a>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Leap-Motion/">Leap Motion</a></li><li><a class="category-link" href="/categories/design/">design</a></li><li><a class="category-link" href="/categories/unity-3d/">unity 3d</a>
 	                    </ul>
 	        </li>
 	        
@@ -350,7 +350,151 @@
 <li><p>可不可以直接写为myButton类的成员方法 ？ </p>
 </li>
 </ul>
-<h2 id="unity中的观察者模式"><a href="#unity中的观察者模式" class="headerlink" title="unity中的观察者模式"></a>unity中的观察者模式</h2>
+<h2 id="unity中的观察者模式"><a href="#unity中的观察者模式" class="headerlink" title="unity中的观察者模式"></a>unity中的观察者模式</h2><ul>
+<li><p>unity给我们封装集成了很多好用的类和方法来更好的使用按钮的点击事件 </p>
+</li>
+<li><p>当然 我们即使不用这些类，也可以完成很多点击方法的调用 </p>
+</li>
+<li><p>一般的方法就是 ，UI层添加一个Button 在Button的onclick面板中 拖入执行的GameObject，在其后选择下面的组件，进而完成组件中方法的调用。</p>
+</li>
+<li><p>当然这种是unity自带最直接，最简单的方法</p>
+</li>
+<li><p>它也提供了代码的方法，来监听我们自定义的方法</p>
+</li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">
+    <span class="token comment" spellcheck="true">//首先，我们需要这两个对象 </span>
+    <span class="token keyword">public</span> UnityAction action<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> UnityEvent myEvent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UnityEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>这两个是什么呢 我们稍后会细细讲解的</p>
+</li>
+<li><p>然后在 Start () 方法中 </p>
+</li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">
+    <span class="token keyword">void</span> <span class="token function">Start</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">//给action添加方法 参数里面的方法就是我们自定义的方法名</span>
+        action <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UnityAction</span><span class="token punctuation">(</span>OnClick<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//获取组件</span>
+        Button btn <span class="token operator">=</span> gameObject<span class="token punctuation">.</span><span class="token generic-method function">GetComponent<span class="token punctuation">&lt;</span>Button<span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//添加监听</span>
+        btn<span class="token punctuation">.</span>onClick<span class="token punctuation">.</span><span class="token function">AddListener</span><span class="token punctuation">(</span>
+            action
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//自定义方法</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">OnClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Debug<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>这个过程的流程是什么呢 在开始的时候 做了一些绑定准备</p>
+</li>
+<li><p>程序运行的时候 ，每当我们按下button 就会调用action所指定的方法。</p>
+</li>
+<li><p>当然action不仅仅智能指定一个方法 他可以通过订阅来指定很多方法。</p>
+</li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">
+    <span class="token keyword">void</span> <span class="token function">Start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">//让action 添加一个MyFunction2()的订阅</span>
+        action <span class="token operator">+</span><span class="token operator">=</span> MyFunction2<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">MyFunction2</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Debug<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>这样做之后 ，我们再让btn添加监听action</p>
+</li>
+<li><p>此时的action有两个订阅 一个是初始的OnClick() 一个是后来添加的MyFunction2()</p>
+</li>
+<li><p>当我们按下Button时 就会同时调用这两个方法了 是不是很方便了 </p>
+</li>
+<li><p>这样我们就可以通过代码的方式，来指定不同的GameObject的点击方法了。</p>
+</li>
+<li><p>好 ，我们继续 刚用的是unity为我们自带的Button 那我么怎么自己写按钮呢</p>
+</li>
+<li><p>首先 我们还是先用Unity封装的UnityEvent 也就是刚刚我们提前定义的。</p>
+</li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">
+    <span class="token keyword">void</span> <span class="token function">Start</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token comment" spellcheck="true">//一个新的action 并初始化一个订阅 </span>
+        UnityAction action2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UnityAction</span><span class="token punctuation">(</span>MyFunction3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//添加监听</span>
+        myEvent<span class="token punctuation">.</span><span class="token function">AddListener</span><span class="token punctuation">(</span>action2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//订阅方法 </span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">MyFunction3</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello3: "</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">//执行 </span>
+    <span class="token keyword">void</span> <span class="token function">Update</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>Input<span class="token punctuation">.</span><span class="token function">GetKeyDown</span><span class="token punctuation">(</span>KeyCode<span class="token punctuation">.</span>P<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            myEvent<span class="token punctuation">.</span><span class="token function">Invoke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>同样的道理 这是我们自定义的执行 每当我们按下P键 就会调用myEvent.Invoke()方法 。</p>
+</li>
+<li><p>Invoke()会有一个回调 ，回调给Listener 也就是action2 此时的action2订阅的是MyFunction3()</p>
+</li>
+<li><p>也就是我们自定义的方法。</p>
+</li>
+<li><p>这样一看，貌似会有点清晰了 。</p>
+</li>
+<li><p>但是细细看一下 好像和我理解的java的方式还是不同 action到底是什么 </p>
+</li>
+</ul>
+<h2 id="C-的委托"><a href="#C-的委托" class="headerlink" title="C#的委托"></a>C#的委托</h2><ul>
+<li><p>如果我们要把方法当作参数传递的话 就是用到委托 。委托是一个类型，他相当于一些赋值方法的引用。</p>
+</li>
+<li><p>类型声明变量 。</p>
+</li>
+<li><p>在我反查了源码之后 我了解到 UnityAction 就是</p>
+</li>
+</ul>
+<pre class="line-numbers language-csharp"><code class="language-csharp">
+    <span class="token keyword">public</span> <span class="token keyword">delegate</span> <span class="token keyword">void</span> <span class="token function">UnityAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li><p>这样他就可以指定一个参数为空的返回值为void的方法 。</p>
+</li>
+<li><p>也就是说 我么后来定义的几个测试方法 都是可以接收的 。</p>
+</li>
+<li><p>但是别忘了 我们还有另一个类 UnityEvent 那这个是干什么的呢 ？</p>
+</li>
+<li><p>我的猜想 ，他有两个方法 ，一个addlistener 一个Invoke 。</p>
+</li>
+<li><p>感觉这样和java就很像了 。</p>
+</li>
+<li><p>在addlistener传入一个action委托后 ，通过UnityEvent 的 Invoke来调用 action委托的Invoke。</p>
+</li>
+<li><p>进而达到调用所有action所引用的方法 。为什么？这就是Invoke()用法吧 。</p>
+</li>
+</ul>
+
             </div>
 
             <!-- Post Comments -->
@@ -412,8 +556,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://miccall.tech/2017/06/04/android/从按钮点击学观察者模式/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://miccall.tech/2017/06/04/android/从按钮点击学观察者模式/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://miccall.tech/2017/06/04/design/从按钮点击学观察者模式/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/06/04/design/从按钮点击学观察者模式/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

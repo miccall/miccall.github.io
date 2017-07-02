@@ -36,7 +36,7 @@
 
 
 <!--  代码渲染  -->
-<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/prism_solarized.css" />
 <link rel="stylesheet" href="/css/typo.css" />
 <!-- 文章页 -->
 <body class="is-loading">
@@ -61,7 +61,7 @@
 	            <a href="#s1">分类</a>
 	                    <ul class="submenu">
 	                        <li>
-	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Leap-Motion/">Leap Motion</a></li><li><a class="category-link" href="/categories/unity-3d/">unity 3d</a>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Android/">Android</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Leap-Motion/">Leap Motion</a></li><li><a class="category-link" href="/categories/design/">design</a></li><li><a class="category-link" href="/categories/unity-3d/">unity 3d</a>
 	                    </ul>
 	        </li>
 	        
@@ -116,30 +116,35 @@
             <div class="typo" style="padding: 3rem;">
                 <hr>
 <h1 id="我的算法之路-–-BST二叉搜索树"><a href="#我的算法之路-–-BST二叉搜索树" class="headerlink" title=" 我的算法之路 – BST二叉搜索树  "></a><strong> 我的算法之路 – BST二叉搜索树  </strong></h1><h6 id="Created-by-miccall-转载请注明出处"><a href="#Created-by-miccall-转载请注明出处" class="headerlink" title="Created by miccall   (转载请注明出处)"></a>Created by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><ul>
-<li><p>按理说这类文章首先应该讲一些鸡汤啊 鼓励学习什么的话    但是没有</p>
+<li><p>按理说这类文章首先应该讲一些鸡汤啊 鼓励学习什么的话 &nbsp; &nbsp; &nbsp; 但是没有</p>
 </li>
-<li><p>按理说这类文章应该有一些推荐路径或者学习方法           但是没有 </p>
+<li><p>按理说这类文章应该有一些推荐路径或者学习方法 &nbsp; &nbsp; &nbsp;  但是没有 </p>
 </li>
-<li><p>按理说这个文章应该和其他的类似 讲些算法之坑            但是没有 </p>
+<li><p>按理说这个文章应该和其他的类似 讲些算法之坑  &nbsp; &nbsp; &nbsp;  但是没有 </p>
 </li>
-<li><p>那这篇文章出现的意义是什么 没什么 就是我的学习之路  你爱看就看看 </p>
+<li><p>那这篇文章出现的意义是什么 没什么 就是我的学习之路  &nbsp; &nbsp; &nbsp;你爱看就看看 </p>
 </li>
 </ul>
 <h3 id="二分查找-Binary-Search"><a href="#二分查找-Binary-Search" class="headerlink" title="二分查找 Binary Search"></a>二分查找 Binary Search</h3><ul>
-<li><p>对于有序列 才能使用二分查找法 </p>
+<li><p>首先 必须是有序列 才能使用二分查找法 </p>
 </li>
-<li><p>对于有序列 先比较数组中间的元素 ‘v’ 与 我们想要查找元素的大小 </p>
+<li><p>对于有序列来说 要先比较数组中间的元素 &nbsp; ‘v’ &nbsp; 与 我们想要查找元素 他俩的大小 </p>
 </li>
-<li><p>如果正好相等，那么很幸运 我们找到了这个元素 </p>
+<li><p>如果正好相等，那么很幸运 我们找到了这个元素 如果不是的话 </p>
 </li>
-<li><p>此时 ，数组就被 ‘v’ 分成了两半 一半全部小于’v’ ，另一半则大于 ‘v’。</p>
+<li><p>那么此时 ，数组就被 ‘v’ 分成了两半 一半全部小于’v’ ，另一半则大于 ‘v’。(所以要求是有序的)</p>
 </li>
-<li><p>那么我就知道了 ，我们可以递归的在这两个分开的数组中找我们想要找的元素了。</p>
+<li><p>那么我就可以想 ，可以用递归的方法 ，在这两个分开的数组中 找我们想要找的元素了。</p>
+</li>
+<li><p>[ 不知道递归？？ 那我也没办法 硬着头皮往下看呗 ]</p>
 </li>
 </ul>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE01.PNG" alt="erfen"></p>
 <ul>
-<li>这里我给出非递归的实现方式 有兴趣的可以尝试递归的方式 或者网上一搜一大片。</li>
+<li><p>非常人性化的 这里我给出非递归的实现方式 </p>
+</li>
+<li><p>有兴趣的可以尝试递归的方式 或者网上一搜一大片。</p>
+</li>
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token comment" spellcheck="true">//首先我们给定有序列arr 长度n 搜索元素 target 返回他的位置 </span>
         <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span>
@@ -155,6 +160,7 @@
                  <span class="token comment" spellcheck="true">//为了避免int不越值 我们重新换一种写法 </span>
                  <span class="token keyword">int</span> mid <span class="token operator">=</span> l <span class="token operator">+</span> <span class="token punctuation">(</span> r <span class="token operator">-</span> l <span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span> <span class="token punctuation">;</span>
 
+                 <span class="token comment" spellcheck="true">//很幸运的找到了 那么直接返回就好了</span>
                  <span class="token keyword">if</span><span class="token punctuation">(</span> arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span> <span class="token operator">==</span> target <span class="token punctuation">)</span>
                      <span class="token keyword">return</span> mid <span class="token punctuation">;</span>
 
@@ -170,16 +176,22 @@
              <span class="token comment" spellcheck="true">//没找到返回-1 </span>
              <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span> <span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="二分搜索树-Binary-Search-Tree"><a href="#二分搜索树-Binary-Search-Tree" class="headerlink" title="二分搜索树  Binary Search Tree"></a>二分搜索树  Binary Search Tree</h3><ul>
-<li>树是一个很强大的数据结构  他能高效的解决查找问题 </li>
+<li>是一个很强大的数据结构  他能高效的解决查找问题树 </li>
 </ul>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/%E4%BA%8C%E5%8F%89%E6%A0%91.PNG" alt="ecs"></p>
 <ul>
-<li><p>二叉树 &amp;&amp; 每个节点的键值都大于左子树 &amp;&amp; 每个节点的键值都小于右孩子 &amp;&amp; 以左右子树为根的子树依然时二分搜索树 </p>
-</li>
-<li><p>BST不一定是一个完全 二叉树 所以我们不能用数组实现BST 我们就只能用指针构建的Node节点来实现 </p>
-</li>
+<li>构成二分搜索树的条件 :</li>
+<li>&nbsp;&nbsp;二叉树 &nbsp; &nbsp; &amp;&amp; </li>
+<li>&nbsp;&nbsp;每个节点的键值都大于左子树 &nbsp; &nbsp; &amp;&amp; </li>
+<li>&nbsp;&nbsp;每个节点的键值都小于右子树 &nbsp; &nbsp; &amp;&amp; </li>
+<li>&nbsp;&nbsp;以左右子树为根的子树依然要满足 二分搜索树 </li>
+</ul>
+<ul>
+<li>BST不一定是一个 完全二叉树</li>
+<li>所以我们不能用数组实现BST </li>
+<li>我们就只能用指针构建的Node节点来实现 </li>
 </ul>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/BST%E4%B8%8D%E4%B8%80%E5%AE%9A%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.PNG" alt="BST"></p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> Key<span class="token punctuation">,</span><span class="token keyword">typename</span> Value<span class="token operator">></span>
@@ -447,7 +459,22 @@
 <li><p>红箭头指向<br><img src="http://onh0umlhz.bkt.clouddn.com/miccall%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86.jpg" alt="前"></p>
 </li>
 <li>绿箭头指向<br><img src="http://onh0umlhz.bkt.clouddn.com/miccall%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86.jpg" alt="中"></li>
-<li>蓝箭头指向<br><img src="http://onh0umlhz.bkt.clouddn.com/miccall%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86.jpg" alt="后"></li>
+<li><p>蓝箭头指向<br><img src="http://onh0umlhz.bkt.clouddn.com/miccall%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86.jpg" alt="后"></p>
+</li>
+<li><p>还不理解？那么看动画吧 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0621shu_1.gif" alt="前"></p>
+<ul>
+<li>前序遍历：按从上到下，先左后右的原则。</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0621shu_2.gif" alt="中"></p>
+<ul>
+<li>中序遍历：按从左向上，先下后上的原则。    </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0621shu_3.gif" alt="后"></p>
+<ul>
+<li>后序遍历：按从左到右，先下后上的原则。</li>
 </ul>
 <h4 id="BSF-广度优先搜索-levelOrder-层次遍历"><a href="#BSF-广度优先搜索-levelOrder-层次遍历" class="headerlink" title="BSF (广度优先搜索) levelOrder 层次遍历"></a>BSF (广度优先搜索) levelOrder 层次遍历</h4><ul>
 <li><p>层次遍历对比与DFS的重要性和复杂性来说要低很多 但也是非常重要的思想 </p>
