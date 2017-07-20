@@ -36,7 +36,7 @@
 
 
 <!--  代码渲染  -->
-<link rel="stylesheet" href="/css/prism_solarized.css" />
+<link rel="stylesheet" href="/css/prism_coy.css" />
 <link rel="stylesheet" href="/css/typo.css" />
 <!-- 文章页 -->
 <body class="is-loading">
@@ -287,26 +287,35 @@
 <li><p>原理公式：</p>
 </li>
 </ul>
-<pre><code>        diffuse = I * cosθ(N,L);
-</code></pre><p><img src="http://images2015.cnblogs.com/blog/810648/201510/810648-20151017170107804-1752879028.jpg" alt=""></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        diffuse <span class="token operator">=</span> I <span class="token operator">*</span> <span class="token function">cos</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span>L<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p><img src="http://images2015.cnblogs.com/blog/810648/201510/810648-20151017170107804-1752879028.jpg" width="300" alt="图片名称" align="center"></p>
 <ul>
 <li><p>diffuse：反射光线的的光强 </p>
 </li>
 <li><p>L : 入射光线的方向向量 </p>
 </li>
-<li><p>I : 入射光线的光强，方向如上图所示</p>
+<li><p>I : 入射光线的光强，方向和L相同 </p>
 </li>
 <li><p>N : 物体的顶点法线向量 </p>
 </li>
-<li><p>cosθ：入射光线和该顶点法线的余弦，如上图所示；cosθ = L * N </p>
+<li><p>cosθ：入射光线和该顶点法线的余弦，如上图所示；cosθ = L · N </p>
 </li>
 <li><p>这里的cos是要用点乘(dot product) 才能计算的 </p>
 </li>
-<li><p>所以，最后的我们要的表达式为：diffuse = I <em> Dot( L </em> N ) ;</p>
+<li><p>所以，最后的我们要的表达式为：diffuse = I · Dot( L , N ) ;</p>
 </li>
-<li><p>Dot运算:本质上; 对于两个标准化向量，它输出它们相互远离的距离。 如果它们指向相同的方向，则它输出1，如果它们彼此垂直，则它输出0，如果它们指向相反方向，则输出-1。</p>
+<li><p>Dot运算:本质上,对于两个标准化向量，它输出它们相互远离的距离。 如果它们指向相同的方向，则它输出1，如果它们彼此垂直，则它输出0，如果它们指向相反方向，则输出-1。</p>
 </li>
-<li><p>我们勾选 positive属性 使所有负值为0 。图片是之前截图的 属性还是标准的没改过来 </p>
+<li><p>我们勾选 positive属性 使所有负值都等于0 ，这是要避免被后面射入的光照亮。</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        diffuse <span class="token operator">=</span> I <span class="token operator">*</span>  <span class="token function">max</span> <span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">cos</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span>L<span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//把小于0的部分都置为0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li><p>图片是之前截图的 属性还是标准的没改过来 </p>
 </li>
 <li><p>注意 <a href="http://acegikmo.com/shaderforge/nodes/?search=Dot" target="_blank" rel="external">Dot</a> </p>
 </li>
@@ -317,12 +326,13 @@
 <ul>
 <li>当我么画写完这个图形 我们可以去看看shader的源码</li>
 </ul>
-<pre class="line-numbers language-shader"><code class="language-shader">        float node_2771 = dot(i.normalDir,lightDirection);
-        float3 finalColor = float3(node_2771,node_2771,node_2771);
-        fixed4 finalRGBA = fixed4(finalColor,1);
-        UNITY_APPLY_FOG(i.fogCoord, finalRGBA);
-        return finalRGBA;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">float</span> node_2771 <span class="token operator">=</span> <span class="token function">dot</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>normalDir<span class="token punctuation">,</span>lightDirection<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        float3 finalColor <span class="token operator">=</span> <span class="token function">float3</span><span class="token punctuation">(</span>node_2771<span class="token punctuation">,</span>node_2771<span class="token punctuation">,</span>node_2771<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        fixed4 finalRGBA <span class="token operator">=</span> <span class="token function">fixed4</span><span class="token punctuation">(</span>finalColor<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">UNITY_APPLY_FOG</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>fogCoord<span class="token punctuation">,</span> finalRGBA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> finalRGBA<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>内部实现也跟预想的类似 如果你学过shader lab 的话 就非常面熟了 </p>
 </li>
@@ -362,7 +372,18 @@
 <ul>
 <li><p>我们就可以看到他反射的颜色了</p>
 </li>
-<li></li>
+<li><p>这里还可以再提一个理论 就是色光 </p>
+</li>
+<li><p>上一个地方我们提到的 入射光线的光强 I 具体的计算方式为 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    I <span class="token operator">=</span> Cl <span class="token operator">*</span> Cm
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><p>Cl 表示的是 光源的颜色</p>
+</li>
+<li><p>Cm 则是 材质的漫反射颜色  </p>
+</li>
 </ul>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addlightcolor_obj.PNG" width="1000" alt="图片名称" align="center"></p>
 <h4 id="反射光"><a href="#反射光" class="headerlink" title="反射光"></a>反射光</h4><ul>
@@ -370,23 +391,35 @@
 </li>
 <li><p>我们这里使用简单的Phong 而官方的是Blinn-Phong </p>
 </li>
-</ul>
-<p><img src="http://images2015.cnblogs.com/blog/746883/201603/746883-20160320192427568-1484192994.png" alt="Phong"></p>
-<pre><code>        specular = K * lightColor * power( dot( V , R ) , shininess )
-</code></pre><ul>
-<li><p>使用一个几何数据 反射角度 </p>
-</li>
-<li><p>反射考虑灯光的效果 我们还需要一个光线方向 </p>
-</li>
-<li><p>高光叠加 不能使用乘法节点 </p>
-</li>
-<li><p>乘法节点 会保留白色区域 黑色区域将会衰减 变暗 </p>
-</li>
-<li><p>加法节点 会让颜色变得更亮</p>
-</li>
 <li><p>课外知识 <a href="http://www.cnblogs.com/bluebean/p/5299358.html" target="_blank" rel="external">两种模型的比较</a></p>
 </li>
+<li><p>这两种都是经验模型 就是说 他不代表的真实情况 。</p>
+</li>
+</ul>
+<p><img src="http://images2015.cnblogs.com/blog/746883/201603/746883-20160320192427568-1484192994.png" width="600" alt="图片名称" align="center"></p>
+<ul>
+<li>如图所示 ，计算高光反射 ，我们需要知道的信息也比较多  </li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        specular <span class="token operator">=</span> I · <span class="token function">power</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span> V <span class="token punctuation">,</span> R <span class="token punctuation">)</span> <span class="token punctuation">,</span> gloss <span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li><p>I 不多说了 ，上面已经提到过 但不同的是 这里的 I 表示的是高光反射光强 </p>
+</li>
+<li><p>v 视角方向 ， R 反射方向</p>
+</li>
+<li><p>gloss 我们要调整的光泽度 </p>
+</li>
+<li><p>同样我们避免负值 需要做一些调整 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        specular <span class="token operator">=</span> I · <span class="token function">power</span><span class="token punctuation">(</span> <span class="token function">max</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token function">dot</span><span class="token punctuation">(</span> V <span class="token punctuation">,</span> R <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> gloss <span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
 <li><p>具体来看看这个的连接方法 </p>
+</li>
+<li><p>跟公式有所不同 我们需要在原有的基础上 添加高光反射 </p>
 </li>
 </ul>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addviewRefl.PNG" width="1000" alt="图片名称" align="center"></p>
@@ -394,9 +427,12 @@
 <li>这个反射模型的效果就出来了 我们再来慢慢改进</li>
 </ul>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addviewRefl_obj.PNG" width="1000" alt="图片名称" align="center"></p>
-<h4 id="添加法线贴图"><a href="#添加法线贴图" class="headerlink" title="添加法线贴图"></a>添加法线贴图</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addnormalmap.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>先添加法线贴图 </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addnormalmap.PNG" width="1000" alt="图片名称" align="center"></p>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503addnormalmap_obj.PNG" width="1000" alt="图片名称" align="center"></p>
-<h4 id="高光反射范围"><a href="#高光反射范围" class="headerlink" title="高光反射范围"></a>高光反射范围</h4><ul>
+<ul>
 <li><p>防止颜色过曝 </p>
 </li>
 <li><p>接着上面的模型，我们把他完善 先在他的左前方添加一个蓝色的点光源</p>
@@ -412,7 +448,10 @@
 </li>
 </ul>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0503add%E9%AB%98%E5%85%89%E5%8C%BA%E5%9F%9F_obj.PNG" width="1000" alt="图片名称" align="center"></p>
-<h4 id="高光反射和镜面反射"><a href="#高光反射和镜面反射" class="headerlink" title="高光反射和镜面反射"></a>高光反射和镜面反射</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302add%E9%AB%98%E5%85%89%E5%8C%BA%E5%9F%9F_02.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>高光反射结合镜面反射 </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302add%E9%AB%98%E5%85%89%E5%8C%BA%E5%9F%9F_02.PNG" width="1000" alt="图片名称" align="center"></p>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302add%E9%AB%98%E5%85%89%E5%8C%BA%E5%9F%9F_02_obj.PNG" width="1000" alt="图片名称" align="center"></p>
 <h4 id="添加材质贴图"><a href="#添加材质贴图" class="headerlink" title="添加材质贴图"></a>添加材质贴图</h4><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302addnormal.PNG" width="1000" alt="图片名称" align="center"></p>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050302addnormal_obj.PNG" width="1000" alt="图片名称" align="center"></p>
