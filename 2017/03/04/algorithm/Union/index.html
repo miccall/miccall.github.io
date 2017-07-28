@@ -1,0 +1,828 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	 <link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			
+    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Unity-3D/">Unity 3D</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://onh0umlhz.bkt.clouddn.com/miccall0504Union_view.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >我的算法之路 -- Union 并查集</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<h1 id="我的算法之路-–-Union-并查集"><a href="#我的算法之路-–-Union-并查集" class="headerlink" title="我的算法之路 – Union 并查集"></a>我的算法之路 – Union 并查集</h1><h6 id="Created-by-miccall-转载请注明出处"><a href="#Created-by-miccall-转载请注明出处" class="headerlink" title="Created by miccall   (转载请注明出处)"></a>Created by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><ul>
+<li><p>按理说这类文章首先应该讲一些鸡汤啊 鼓励学习什么的话 &nbsp; &nbsp; &nbsp; 但是没有</p>
+</li>
+<li><p>按理说这类文章应该有一些推荐路径或者学习方法 &nbsp; &nbsp; &nbsp;  但是没有 </p>
+</li>
+<li><p>按理说这个文章应该和其他的类似 讲些算法之坑  &nbsp; &nbsp; &nbsp;  但是没有 </p>
+</li>
+<li><p>那这篇文章出现的意义是什么 没什么 就是我的学习之路  &nbsp; &nbsp; &nbsp;你爱看就看看 </p>
+</li>
+</ul>
+<h3 id="一-连接问题"><a href="#一-连接问题" class="headerlink" title="一.连接问题"></a>一.连接问题</h3><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall050402%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>网络节点间的连接状态 </p>
+</li>
+<li><p>用户直接的关系</p>
+</li>
+<li><p>多媒体 网页 之间的网络关系</p>
+</li>
+<li><p>实现数学中集合类的实现 </p>
+</li>
+<li><p>路径和连接[图论 更深层的问题]</p>
+</li>
+</ul>
+<h3 id="二-Union-基本操作"><a href="#二-Union-基本操作" class="headerlink" title="二.Union 基本操作"></a>二.Union 基本操作</h3><h4 id="1-union-p-q"><a href="#1-union-p-q" class="headerlink" title="1.  union(p,q)"></a>1.  union(p,q)</h4><ul>
+<li>把p和q两个元素连接起来 </li>
+</ul>
+<h4 id="2-find-p"><a href="#2-find-p" class="headerlink" title="2.  find(p)"></a>2.  find(p)</h4><ul>
+<li>找到p元素在的那个组 </li>
+</ul>
+<h4 id="3-isConnected-p-q"><a href="#3-isConnected-p-q" class="headerlink" title="3.  isConnected(p,q)"></a>3.  isConnected(p,q)</h4><ul>
+<li>判断p和q是否连接 </li>
+</ul>
+<h3 id="三-最简单的并查集-Union-Find"><a href="#三-最简单的并查集-Union-Find" class="headerlink" title="三.最简单的并查集 Union Find"></a>三.最简单的并查集 Union Find</h3><ul>
+<li>我们可以用简单的数组来表示并查集关系 </li>
+</ul>
+<div style="text-align:center; width:1000; "><img src="http://onh0umlhz.bkt.clouddn.com/miccall050402%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%A4%BA.PNG" width="400" alt="node" align="center"></div>
+
+<ul>
+<li><p>数组的索引我们可以看作一个元素 那么他们的关系我们怎么确定呢 </p>
+</li>
+<li><p>我们根据他的值 如果相同 我们可以表示他们是有连接关系的 </p>
+</li>
+<li><p>我们暂且给他一个名字 id 意思可以理解为 具有相同id号的元素 他们是互相连接的 </p>
+</li>
+</ul>
+<div style="text-align:center; width:1000; "><img src="http://onh0umlhz.bkt.clouddn.com/miccall050402%E5%A5%87%E5%81%B6%E5%B9%B6%E6%9F%A5%E9%9B%86.PNG" width="400" alt="node" align="center"></div>
+
+<ul>
+<li><p>这个表示 奇数是相互连接的 偶数是互相连接的 </p>
+</li>
+<li><p>下面我们用代码来实现一下这个数据结构 </p>
+</li>
+<li><p>首先我们定义一个类 他有一个数组来表示数据 我们声明一个int指针</p>
+</li>
+<li><p>第二我们用一个变量来记录他的总数 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">class</span> <span class="token class-name">UnionFind</span>
+        <span class="token punctuation">{</span>
+        <span class="token keyword">private</span><span class="token operator">:</span>
+            <span class="token keyword">int</span><span class="token operator">*</span> id <span class="token punctuation">;</span>
+            <span class="token keyword">int</span> count <span class="token punctuation">;</span>
+        <span class="token keyword">public</span><span class="token operator">:</span>
+            <span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+            <span class="token operator">~</span><span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//找到这个元素</span>
+            <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//判断两个元素是否连接 </span>
+            <span class="token keyword">bool</span> <span class="token function">isConnected</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//连接两个元素</span>
+            <span class="token keyword">void</span> <span class="token function">unionElements</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>这是我们刚刚分析的基本框架 下面我们一个函数一个函数来讲解 </p>
+</li>
+<li><p>首先是构造和析构 他们要解决的问题就是 构造这个数组和回收这个数组 很好理解 </p>
+</li>
+<li><p>为了让数据独立 我们让他的id都等于他自身 说明自己和自己是相连的 与其他的不相连 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count <span class="token operator">=</span> n <span class="token punctuation">;</span>
+            id <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+                id<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span>
+
+        <span class="token operator">~</span><span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> id<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>我们来写这个find函数  我们传入一个元素p 返回他的id </p>
+</li>
+<li><p>这样我们就知道 他是属于哪一个组别了 因为实现find特别快 时间复杂度O(1) </p>
+</li>
+<li><p>所以一般称它为Quick Find </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>p<span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span> p<span class="token operator">&lt;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//保证数据不越界 </span>
+            <span class="token keyword">return</span> id<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>接下来是判断两个元素是否连接 </p>
+</li>
+<li><p>传入两个元素p和q 返回一个bool来判断是否相连  </p>
+</li>
+<li><p>有了上面的理解 这个就很简单了 </p>
+</li>
+<li><p>我们只要分别判断他们的组别 就可以判断他们是否相连了 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token keyword">bool</span> <span class="token function">isConnected</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>最后我们要做的，就是如何把两个元素并到一起呢 </p>
+</li>
+<li><p>我们就要遍历一遍数组 把 第一个元素 的组别赋值给另一个 这样才能实现两个元素的连接 </p>
+</li>
+<li><p>这样的话 时间复杂度为O(n)</p>
+</li>
+<li><p>我们来写代码加深理解 我们要传入两个元素p和q 来连接他们两个 </p>
+</li>
+<li><p>首先找到他们两个的组别 </p>
+</li>
+<li><p>如果组别相等 说明已经连接在一起了 </p>
+</li>
+<li><p>否则的话 我们来遍历数组 </p>
+</li>
+<li><p>如果我们发现id[i] == pID 那么直接把id[i] = qID; 就好了</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">//连接两个元素</span>
+        <span class="token keyword">void</span> <span class="token function">unionElements</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> pID <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> qID <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pID <span class="token operator">==</span> qID<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token punctuation">;</span>
+
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>id<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> pID<span class="token punctuation">)</span>
+                    id<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> qID<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="四-写测试"><a href="#四-写测试" class="headerlink" title="四.写测试"></a>四.写测试</h3><ul>
+<li><p>如果还没有理顺 那只好用个笨办法啦 那个笔和纸 自己写写了 </p>
+</li>
+<li><p>好了 我们第一个最简单的UnionFind就写完啦 </p>
+</li>
+<li><p>我们把他放到一个 .h 文件中 给他一个namespace 将来方便测试 </p>
+</li>
+<li><p>然后我们再来写一个测试文件 同样放到一个命名空间中 </p>
+</li>
+<li><p>导入第一文件 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token keyword">namespace</span> UnionFindTestHelper<span class="token punctuation">{</span>
+
+            <span class="token keyword">void</span> <span class="token function">testUF1</span><span class="token punctuation">(</span> <span class="token keyword">int</span> n <span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+                <span class="token function">srand</span><span class="token punctuation">(</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                UF1<span class="token operator">::</span>UnionFind uf <span class="token operator">=</span> UF1<span class="token operator">::</span><span class="token function">UnionFind</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>   
+
+                time_t startTime <span class="token operator">=</span> <span class="token function">clock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">%</span>n<span class="token punctuation">;</span>
+                    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">%</span>n<span class="token punctuation">;</span>
+                    uf<span class="token punctuation">.</span><span class="token function">unionElements</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">%</span>n<span class="token punctuation">;</span>
+                    <span class="token keyword">int</span> b <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">%</span>n<span class="token punctuation">;</span>
+                    uf<span class="token punctuation">.</span><span class="token function">isConnected</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+                time_t endTime <span class="token operator">=</span> <span class="token function">clock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                cout<span class="token operator">&lt;&lt;</span><span class="token string">"UF1, "</span><span class="token operator">&lt;&lt;</span><span class="token number">2</span><span class="token operator">*</span>n<span class="token operator">&lt;&lt;</span><span class="token string">" ops, "</span><span class="token operator">&lt;&lt;</span><span class="token keyword">double</span><span class="token punctuation">(</span>endTime<span class="token operator">-</span>startTime<span class="token punctuation">)</span><span class="token operator">/</span>CLOCKS_PER_SEC<span class="token operator">&lt;&lt;</span><span class="token string">" s"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>然后我们在主函数中 调用这个test1 我们得到的结果就是 一万的数量级 0.4s </p>
+</li>
+<li><p>但是我们测试 十万数量级的数据 我们竟然用了 39s的时间 这个效率就非常的慢了 </p>
+</li>
+<li><p>其实我们简单的分析一下就可以直到 我们查找的时候是O(1) 但是连接的时候 就会花费O(n)级别的时间 那我们执行n个数的连接 就会花费O(n^2)级别的时间 </p>
+</li>
+<li><p>这样的话 我们是有必要换个思路去重新实现这个算法了 </p>
+</li>
+</ul>
+<h3 id="五-第一次优化-QuickUnion"><a href="#五-第一次优化-QuickUnion" class="headerlink" title="五.第一次优化 QuickUnion"></a>五.第一次优化 QuickUnion</h3><ul>
+<li><p>前面我们讲了如何快速Find 现在我们要将Union提高速度 </p>
+</li>
+<li><p>其实我们这里可以借鉴树的表示思路 把一个元素都看成一个节点 (和树还是有些不同)</p>
+</li>
+</ul>
+<div style="text-align:center; width:1000; "><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505node.PNG" width="400" alt="node" align="center"></div>
+
+<ul>
+<li><p>这里我们简单的有个印象就好了 只要了解他们都有一个指针 是指向他的父亲节点</p>
+</li>
+<li><p>根节点没有父亲 就指向他自己 </p>
+</li>
+<li><p>我们使用这种思路 会使得Union会非常的快 其实不需要构建树 同样使用数组就可以搞定 </p>
+</li>
+</ul>
+<p><div style="text-align:center; width:1000; "><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505quickUnion.PNG" width="400" alt="node" align="center"></div></p>
+<ul>
+<li><p>parent[i] 就是他的父亲节点 </p>
+</li>
+<li><p>下面的图 ，新开了一个数组 他们都是独立的节点 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%871.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>union ( 4 , 3 )  然后 parent[4] = 3 ;</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%872.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>union ( 3 , 8 )  然后 parent[3] = 8 ;</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%873.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>union ( 6 , 5 )  然后 parent[6] = 5 ;</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%874.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>我们要连接两个数 其中一个已经有父节点了 我们就要循环的找他的根节点 </p>
+</li>
+<li><p>然后把这个数连接到他的根节点上 根节点怎么找呢 我们循环的去找他的父节点 </p>
+</li>
+<li><p>直到parent[i] == i 这样就说明 i这个就是根节点了 </p>
+</li>
+<li><p>那我们如何去看两个数是否连接呢 很简单 就看看他们是不是有共同的根</p>
+</li>
+<li><p>union ( 9, 4 )  然后 parent[9] = parent[…parent[parent[4]]] ;</p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%875.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li>同样的方法 找2的根节点 和 1的根节点  </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%876.PNG" width="1000" alt="图片名称" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%877.PNG" width="1000" alt="图片名称" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%878.PNG" width="1000" alt="图片名称" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%879.PNG" width="1000" alt="图片名称" align="center"></p>
+<ul>
+<li><p>看了这些 我们还是得写代码 来更好的去掌握这种思想 </p>
+</li>
+<li><p>同样的，我们还是用先前的那个架构 我们主要还是改写方法 </p>
+</li>
+<li><p>构造函数和析构函数几乎是没有变化的 只是改了一个名字</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count <span class="token operator">=</span> n <span class="token punctuation">;</span>
+            parent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+                parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+
+        <span class="token punctuation">}</span>
+
+        <span class="token operator">~</span><span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> parent<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>查找还是有一点点的不同的 我们要循环 一直找到它的根节点 </p>
+</li>
+<li><p>我们先前讨论过 根节点就是自身指向自身的节点 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">//找到这个元素</span>
+        <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>p<span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span> p<span class="token operator">&lt;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">!=</span>parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//如果p不是根节点 </span>
+            <span class="token punctuation">{</span>
+                p<span class="token operator">=</span> parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//就让他指向他的父亲 </span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>是否连接函数是没有变化的  </p>
+</li>
+<li><p>我们来看连接操作 说了是快速连接 </p>
+</li>
+<li><p>其实还是很简单的 只要看看他们的根节点 然后让一个元素的指针 指向另一个元素的根节点就可以了</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token comment" spellcheck="true">//连接两个元素</span>
+        <span class="token keyword">void</span> <span class="token function">unionElements</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> pRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> qRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pRoot <span class="token operator">==</span> qRoot<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 如果已经是连接的就返回 </span>
+                <span class="token keyword">return</span> <span class="token punctuation">;</span>
+
+            parent<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">=</span> qRoot <span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">//连接两个元素 </span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>我们来继续测试这个算法 一万的数量级 先前的算法用了0.4s 优化后的算法用了0.1s</p>
+</li>
+<li><p>我们改用十万数据 先前的算法用了40s 优化后的算法用了23s 快了一倍</p>
+</li>
+<li><p>虽然快了很多 但是以我们的经验来看 23s这个时间 还是不满意的 </p>
+</li>
+</ul>
+<h3 id="六-第二次优化-QuickUnion-02"><a href="#六-第二次优化-QuickUnion-02" class="headerlink" title="六.第二次优化 QuickUnion_02"></a>六.第二次优化 QuickUnion_02</h3><ul>
+<li><p>那我么就来继续优化 </p>
+</li>
+<li><p>我们先来分析一下前面这个优化 </p>
+</li>
+<li><p>我们在合并过程中 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8710.PNG" width="1000" alt="0201" align="center"></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8711.PNG" width="1000" alt="0202" align="center"></p>
+<ul>
+<li><p>我们理论上讲 两种情况应该是一样的 但是 我们的代码逻辑会让树变得更高 这样就降低了我们查找的时间 </p>
+</li>
+<li><p>怎么解决这个问题呢 很简单 </p>
+</li>
+<li><p>我们不应该固定的将一个元素的根节点 指向另一个元素的根节点 </p>
+</li>
+<li><p>应该在进行连接的时候 判断一下 </p>
+</li>
+<li><p>具体怎么判断呢 我们重构一下代码 我们可以记录一棵树中有几个元素 </p>
+</li>
+<li><p>每次连接的时候 让少的那个指向那个多的树 </p>
+</li>
+<li><p>这样，更高概率的形成一个层树比较低的树 </p>
+</li>
+<li><p>同样 重构一个算法 架构和之前一样 同样只改写函数 </p>
+</li>
+<li><p>我们用空间换取时间 新开一个数组 来记录这个以i为根的树 有几个节点 </p>
+</li>
+<li><p>sz[i] = 1 ; 互相独立的元素 他的节点个数为 1  </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count <span class="token operator">=</span> n <span class="token punctuation">;</span>
+            sz <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token punctuation">;</span>
+            parent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+                sz<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>    
+
+        <span class="token punctuation">}</span>
+
+        <span class="token operator">~</span><span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> parent<span class="token punctuation">;</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> sz <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>find 和 isConnected 都不需要去维护</p>
+</li>
+<li><p>我们来看连接操作 其实也特别简单 判断一下sz[i]的个数就行</p>
+</li>
+<li><p>我们总是将小的那颗树 连接到大的那颗树 然后 sz的总数进行相加</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token comment" spellcheck="true">//连接两个元素</span>
+        <span class="token keyword">void</span> <span class="token function">unionElements</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> pRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> qRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pRoot <span class="token operator">==</span> qRoot<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token operator">&lt;</span> sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>    
+
+                parent<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">=</span> qRoot <span class="token punctuation">;</span>
+                sz<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+
+                parent<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span> <span class="token operator">=</span> pRoot <span class="token punctuation">;</span>
+                sz<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> sz<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>最后，我们再来测试一下最小的一万数量级 第一个0.4s 第一次优化的0.1s 第二次优化的只用了0.002s 可见提高了不少啊 </p>
+</li>
+<li><p>十万数量级的 我们不比较第一个了 比较第一次和第二次优化的 第一次的用了24s ，第二次的只用了0.03s 之间相差是非常大的 </p>
+</li>
+<li><p>我们在测试更大的数据 一百万的数据量 我们只看第二次优化的 他只用了 0.7s </p>
+</li>
+<li><p>我们一般的并查集 用到这里就非常不错了 </p>
+</li>
+<li><p>但是还是会有极端的测试数据 会让算法退化 </p>
+</li>
+</ul>
+<h3 id="七-第三次优化-rank"><a href="#七-第三次优化-rank" class="headerlink" title="七.第三次优化 rank"></a>七.第三次优化 rank</h3><p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8712.PNG" width="1000" alt="0301" align="center"></p>
+<ul>
+<li>上一个算法告诉我们 这样 把节点数少的放到节点数多的下面 </li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8713.PNG" width="1000" alt="0302" align="center"></p>
+<ul>
+<li>直觉告诉我们 这样才是最优的</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/miccall0505%E5%B9%BB%E7%81%AF%E7%89%8714.PNG" width="1000" alt="0303" align="center"></p>
+<ul>
+<li><p>所以 我们不能根据元素的多少来判断谁连接谁 </p>
+</li>
+<li><p>更准确的是 我们得根据树的层数 来决定谁连接谁 </p>
+</li>
+<li><p>基于rank的优化 rank[i] 表示根节点为i的树的高度 </p>
+</li>
+<li><p>同样 重构代码 我们还是只写函数 </p>
+</li>
+<li><p>改一个名字 使他更具有意义 (改哪里？自己看)</p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token keyword">int</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count <span class="token operator">=</span> n <span class="token punctuation">;</span>
+            rank <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token punctuation">;</span>
+            parent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                parent<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+                rank<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>    
+
+        <span class="token punctuation">}</span>
+        <span class="token operator">~</span><span class="token function">UnionFind</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> parent<span class="token punctuation">;</span>
+            <span class="token keyword">delete</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> rank <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>同样 find 和 isConnected 都不需要去维护 </p>
+</li>
+<li><p>只看连接操作 当层数不一样的时候 我们是不去维护这个树的高度的 </p>
+</li>
+<li><p>当rank[qRoot] == rank[pRoot] 的情况下 parent[pRoot] = qRoot </p>
+</li>
+<li><p>我们才来维护 rank[qRoot] += 1 </p>
+</li>
+<li><p>原本在第一层的 qRoot 到了第二层 所以就要加上 1  </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token comment" spellcheck="true">//连接两个元素</span>
+        <span class="token keyword">void</span> <span class="token function">unionElements</span><span class="token punctuation">(</span><span class="token keyword">int</span> p <span class="token punctuation">,</span><span class="token keyword">int</span> q<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">int</span> pRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> qRoot <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span>q<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>pRoot <span class="token operator">==</span> qRoot<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token operator">&lt;</span> rank<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>    
+                parent<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">=</span> qRoot <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>rank<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span><span class="token operator">&lt;</span> rank<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                parent<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span> <span class="token operator">=</span> pRoot <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span><span class="token punctuation">{</span>
+
+                parent<span class="token punctuation">[</span>pRoot<span class="token punctuation">]</span> <span class="token operator">=</span> qRoot <span class="token punctuation">;</span>
+                rank<span class="token punctuation">[</span>qRoot<span class="token punctuation">]</span> <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>测试呢 百万数据用了 0.7s 可能优化并不明显 是因为 这样的情况并不多见 </p>
+</li>
+<li><p>甚至有些时候 会比上一个算法要慢那么一点点 </p>
+</li>
+<li><p>但是还是推荐用这个方法的 </p>
+</li>
+</ul>
+<h3 id="八-第四次优化-路径压缩-Path-Compression"><a href="#八-第四次优化-路径压缩-Path-Compression" class="headerlink" title="八.第四次优化 路径压缩 Path Compression"></a>八.第四次优化 路径压缩 Path Compression</h3><ul>
+<li>我们刚刚优化了很多Union操作，回过头来 想一下find操作 也是还可以优化的</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0506%E5%B9%BB%E7%81%AF%E7%89%871.PNG" width="1000" alt="001" align="center"></p>
+<ul>
+<li><p>我们找他的根节点的时候 不断地找他的parent节点 这个时候 可以看成 我们把这个数组全部遍历了一次 </p>
+</li>
+<li><p>我们其实可以用一种方法 来减少这个遍历节点个数 比如说 我们执行  find(4) </p>
+</li>
+<li><p>4 的 parent 不是他自己 说明4不是根节点 我们要继续向上找 这时 我们可以让 4 连接到他父亲的父亲 这样 这个树就变矮了 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0506%E5%B9%BB%E7%81%AF%E7%89%872.PNG" width="1000" alt="002" align="center"></p>
+<ul>
+<li><p>那假如说 他的父亲就是根节点呢 那也没关系 因为根的父亲还是他自己 那就直接连到根节点了 是不会遇到无效的情况的 </p>
+</li>
+<li><p>那么下一步 我们要找的就是 find(2) 了 这样 我们就实现了路径压缩 跳过了 3 这个节点 </p>
+</li>
+<li><p>同样的 我们考察 2 的时候 也使用这个方法</p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0506%E5%B9%BB%E7%81%AF%E7%89%873.PNG" width="1000" alt="003" align="center"></p>
+<ul>
+<li><p>这样 我们又跳了一个节点 我们很快的找到了他的根节点 </p>
+</li>
+<li><p>这个树的层数就大大减少了 </p>
+</li>
+<li><p>其实原理讲了这么多 代码写起来 也就一行代码的事  同样 我们只给出find的写法 其他的保持不变 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>p<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">&amp;&amp;</span> p<span class="token operator">&lt;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">while</span><span class="token punctuation">(</span>p<span class="token operator">!=</span>parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> parent<span class="token punctuation">[</span>pRoot<span class="token punctuation">[</span>p<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+                p <span class="token operator">=</span> parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token keyword">return</span> p <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>这样，我们来测试一下 直接使用一百万的数据 没有使用路径压缩的rank方法 使用了0.7s 的时间 </p>
+</li>
+<li><p>而我们优化之后 使用了0.5s的时间 性能上是有所提升的 </p>
+</li>
+<li><p>那我们的问题又来了 这是最优的解吗 直觉告诉我们 不是 最优的应该化成这样的形式 </p>
+</li>
+</ul>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/0506%E5%B9%BB%E7%81%AF%E7%89%874.PNG" width="1000" alt="004" align="center"></p>
+<ul>
+<li><p>其实我们是可以做到的 只是比较绕一些 </p>
+</li>
+<li><p>我们要写一个递归函数来实现 </p>
+</li>
+<li><p>我们知道 find(x) 返回的 就是x节点所在树的根节点 </p>
+</li>
+<li><p>那我们就好理解了 就让 x的parent 直接指向 find(x) 返回的结果就可以了 </p>
+</li>
+<li><p>find(x) 的结果也是 find(parent[x]) 的结果 这两者的根是一样的 </p>
+</li>
+<li><p>这样一直递归 我们就可以一直连上父亲节点的结果 </p>
+</li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">//找到这个元素</span>
+        <span class="token keyword">int</span> <span class="token function">find</span><span class="token punctuation">(</span><span class="token keyword">int</span> p<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token function">assert</span><span class="token punctuation">(</span>p<span class="token operator">>=</span><span class="token number">0</span><span class="token operator">&amp;&amp;</span> p<span class="token operator">&lt;</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">if</span><span class="token punctuation">(</span> p <span class="token operator">!=</span> parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token punctuation">)</span>
+                parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">find</span><span class="token punctuation">(</span> parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">return</span> parent<span class="token punctuation">[</span>p<span class="token punctuation">]</span> <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>这样的话 我们还可以再测试一下 其实 这样的写法 时间上会稍微慢那么一点点 可想而知 时间是递归所消耗的时间</li>
+</ul>
+<pre><code>    总结 : 并查集的操作 时间复杂度 近乎  是 O(1) 的
+</code></pre>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/03/04/algorithm/Union/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/03/04/algorithm/Union/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2017总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

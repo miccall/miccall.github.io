@@ -1,0 +1,443 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	 <link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			
+    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Unity-3D/">Unity 3D</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://onh0umlhz.bkt.clouddn.com/unity-hero.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >LEAPMotion猎户座(VR)开发~001~</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<h1 id="LEAPMotion猎户座-VR-开发-001"><a href="#LEAPMotion猎户座-VR-开发-001" class="headerlink" title="LEAPMotion猎户座(VR)开发~001~ "></a><strong>LEAPMotion猎户座(VR)开发~001~ </strong></h1><h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><h2 id="Leap-Motion-介绍"><a href="#Leap-Motion-介绍" class="headerlink" title="Leap Motion 介绍"></a>Leap Motion 介绍</h2><ul>
+<li>( <a href="http://winshare.tech/2016/10/12/leap-unity-develop%EF%BC%881%EF%BC%89/" target="_blank" rel="external">转载自我们老大的博客</a>  - 和- <a href="http://blog.csdn.net/admintan/article/category/5972691" target="_blank" rel="external">他的csdn</a>)<h3 id="引用："><a href="#引用：" class="headerlink" title="引用： "></a><strong>引用： </strong></h3>  （当然，我是给他打过招呼的） </li>
+<li><p>首先，关于leapmotion 我想会看此类文章的应该都知道这是什么，无关将来这个产品的发展会如何，它作为虚拟现实或现实增强开发的练手是非常合适的。因为他有着非常舒适的开发环境，简单而成熟的SDK。最最重要的是结合unity/unreal，更是一种让你能在短时间之内通过引擎完成高质量手势识别应用的方法。</p>
+</li>
+<li><p>关于原理，和底层算法，因为代码封装完善，你根本不可能窥探到什么（当然肯定有人可以）。所以我的评价仅仅从实际效果出发先对leapmotion做出一个评价。</p>
+</li>
+<li><p>下图为leapmotion传感器的识别区域：<br><img src="https://developer-china-cdn.leapmotion.com/documentation/images/Leap_horizontalViewAngle.png" alt="这里写图片描述"></p>
+</li>
+<li><p>我们可以看到在y轴也就是高度上 leapmotion的识别距离真的是小的可怜（根据我实际测试不会超过50cm）也就是说如果不和其他硬件搭配<br>leapmotion的使用范围很窄</p>
+</li>
+<li><p>单单的桌面使用的话，基本没有什么实用价值原因有二：</p>
+</li>
+</ul>
+<ol>
+<li><p>桌面使用场景下，手势识别很累低效</p>
+</li>
+<li><p>leap仅仅依靠景深画面和算法得出的手势识别精度高，但是精确度差。也就是说可以识别你手势动作很微小的变化，但是对这些变化的呈现又表现出很大的偏差。</p>
+</li>
+</ol>
+<ul>
+<li><p>在和oculus dk2结合之后，leapmotion的实用性总算提高了一些，但是效果仍然不理想。</p>
+</li>
+<li><p>因此，后续leap在不推出新硬件的条件下，我十分不看好这个传感器的发展，未来的leap，要么被OVR等厂家收购，要么倒闭。</p>
+</li>
+<li><p>ok 有点跑题，绕回来。虽然他这不好那不好，但这是我们在市场上能获取到的最优秀的性价比最高的手势识别设备。以他和oculus来学习虚拟现实开发，是最合适不过的了</p>
+</li>
+<li>那废话说够了，开始吧</li>
+</ul>
+<h2 id="Leap-版本-："><a href="#Leap-版本-：" class="headerlink" title="Leap 版本 ： "></a><strong>Leap 版本 ： </strong></h2><ul>
+<li>当然 我是希望你们看完他的所有关于leap的介绍再来看我的 ，毕竟我也是看他的博客 一步步学来的 。</li>
+<li>但是呢 ，他的leap 版本是 v2 ， leap最近用于 VR 的 版本是 猎户座。 </li>
+<li>之前的版本我就不介绍了 ，我们从 orion 这个版本开始 。<br><em>（请一定看完老大的博客再来看我的 ，不然初学者会看不懂我讲的是啥）</em><h2 id="Leap-Orion-正文-源码分析篇-较难-初学者可以先绕过去看下一篇文章-："><a href="#Leap-Orion-正文-源码分析篇-较难-初学者可以先绕过去看下一篇文章-：" class="headerlink" title="Leap Orion 正文(源码分析篇 较难 初学者可以先绕过去看下一篇文章)  ： "></a><strong>Leap Orion 正文(源码分析篇 较难 初学者可以先绕过去看下一篇文章)  ： </strong></h2></li>
+<li>打开unity 3d 导入4.1的leap资产包 。找一个官方场景打开看看  </li>
+<li>猎户座取消了HandController 获取 Frame的信息 ，而是在 LeapHandController上添加了其他两个脚本。。<br><img src="http://img.blog.csdn.net/20170118155606037?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMzE0MTE4MjU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><h3 id="第一个脚本LeapHandController"><a href="#第一个脚本LeapHandController" class="headerlink" title="第一个脚本LeapHandController"></a>第一个脚本LeapHandController</h3></li>
+<li>我们一个个看一看  ，第一个脚本LeapHandController 有些面熟~~<br>v2版本的leap使用的是HandController 这次在前面加了一个Leap 感觉怪怪的<br>来看看里面有些什么鬼 ：<br>打开这个脚本</li>
+<li><p>1 . 它定义了两个脚本的实例 分别是LeapProvider和HandFactory</p>
+<pre class="line-numbers language-c#"><code class="language-c#">    protected LeapProvider  provider = requireComponent<LeapProvider>();
+    protected HandFactory    factory = requireComponent<HandFactory>();
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>2 . 然后就是两个字典列表 一个图形手的列表（graphicsReps），一个物理手的列表（physicsReps）</p>
+<pre class="line-numbers language-c#"><code class="language-c#">protected Dictionary<int, HandRepresentation> graphicsReps = 
+  new Dictionary<int, HandRepresentation>();
+protected Dictionary<int, HandRepresentation> physicsReps = 
+  new Dictionary<int, HandRepresentation>();
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>3 . GIZMO_SCALE 从拇指底至小指底的参考距离，单位为mm 。<pre><code>protected const float GIZMO_SCALE = 5.0f;
+</code></pre></li>
+<li><p>4 . 图形手和物理手模型的开关状态 并且写了一个方法来获取他们的bool值 </p>
+<pre class="line-numbers language-c#"><code class="language-c#">protected bool graphicsEnabled = true;
+protected bool physicsEnabled = true;
+
+public bool GraphicsEnabled {
+  get {
+    return graphicsEnabled;
+  }
+  set {
+    graphicsEnabled = value;
+  }
+}
+
+public bool PhysicsEnabled {
+  get {
+    return physicsEnabled;
+  }
+  set {
+    physicsEnabled = value;
+  }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>5 . 重要的来了 ： OnEnable 和 OnDisable  </p>
+</li>
+<li><p>执行回调的时候 provider维持了一个frame帧的事件 。<br>  当OnEnable的时候，向providr的frame中，添加OnUpdateFrame事件和OnFixedFrame事件。他们在不同的循环中 ，我们知道unity的update()和fixedupdate().他们也维持在不同的循环之中，就是这个道理。</p>
+<p>  相反的，当OnDisable时,又从provider里面的frame移除这个事件。</p>
+<pre class="line-numbers language-c#"><code class="language-c#">protected virtual void OnEnable() {
+  provider = requireComponent<LeapProvider>();
+  factory = requireComponent<HandFactory>();
+
+  provider.OnUpdateFrame += OnUpdateFrame;
+  provider.OnFixedFrame += OnFixedFrame;
+}
+protected virtual void OnDisable() {
+  provider.OnUpdateFrame -= OnUpdateFrame;
+  provider.OnFixedFrame -= OnFixedFrame;
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>那么 ，这个事件时干什么的呢 ？ </p>
+<pre><code>他们在一定条件下执行一个UpdatesHandRepresentations()方法 
+这个方法基于指定的HandRepresentation字典。如果它们所表示的手仍存在于provider的currentFrame（当前帧）中，则更新活动HandRepresentation实例;否则，HandRepresentation被移除。如果新的Leap Hand对象存在于Leap HandRepresentation
+的Dictionary中，则新的HandRepresentations创建并添加到字典。
+</code></pre><pre class="line-numbers language-c#"><code class="language-c#">  /** Updates the graphics HandRepresentations. */
+  protected virtual void OnUpdateFrame(Frame frame) {
+    if (frame != null && graphicsEnabled) {
+      UpdateHandRepresentations(graphicsReps, ModelType.Graphics, frame);
+    }
+  }
+
+  /** Updates the physics HandRepresentations. */
+  protected virtual void OnFixedFrame(Frame frame) {
+    if (frame != null && physicsEnabled) {
+      UpdateHandRepresentations(physicsReps, ModelType.Physics, frame);
+    }
+  }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>而在frame对象里面 存放的并不是手的实例 而是hand的id<br>根据hand的id，由factory对象来分配到这个可以从LeapHandController接收更新的手表示对象。一一存放在HandRepresentation组成的字典当中。<pre class="line-numbers language-c#"><code class="language-c#">HandRepresentation rep;
+rep = factory.MakeHandRepresentation(curHand, modelType);
+        if (rep != null) {
+          all_hand_reps.Add(curHand.Id, rep);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>估计有人会问 HandRepresentation 对象到底是个啥 ，其实也很简单，他只是由一些基本信息组成的抽象类 。包含{handid 上一次更新时间，是否存放在字典中等等 }。</p>
+</li>
+<li><p>最后呢 我大概总结成一句话<br><strong> LeapHandController 通过使用 Factory 去创建且基于Provider收到的帧数据去 更新手部模型 </strong> </p>
+</li>
+<li>这样就很清楚了 我们要得到手的数据 就可以从  provider 中获取当前帧 然后从Frame帧对象中得到想要的手的数据了 .</li>
+</ul>
+<h3 id="第二个脚本LeapServiceProvider"><a href="#第二个脚本LeapServiceProvider" class="headerlink" title="第二个脚本LeapServiceProvider"></a>第二个脚本LeapServiceProvider</h3><p>第二个脚本主要涉及到与硬件的链接~<br>也许也是我们将来用到最多的一个关联脚本了 。<br>同样我们打开它 来看看他有写什么  </p>
+<ul>
+<li>先来看看他的属性 ，其实也没啥用 贴出来让大家偶一个直观的认识<pre class="line-numbers language-c#"><code class="language-c#">[Tooltip("如果Leap Motion硬件安装在头戴设备上，则设置为true; 否则，设置为false")]
+  [SerializeField]
+  protected bool _isHeadMounted = false;
+  [AutoFind]
+  [SerializeField]
+  protected LeapVRTemporalWarping _temporalWarping;
+  [Tooltip("当为true时，更新帧将重新用于物理。这是一种优化, 因为需要计算的帧的总数减半 " +
+           "然而，这会在物理帧中引入额外的延迟和不准确性。 " +
+           " ")]
+  [SerializeField]
+  protected bool _reuseFramesForPhysics = false;
+  [Header("Device Type")]
+  [SerializeField]
+  protected bool _overrideDeviceType = false;
+  [Tooltip("如果启用了覆盖设备类型，手动控制器将返回此类型的设备.")]
+  [SerializeField]
+  protected LeapDeviceType _overrideDeviceTypeWith = LeapDeviceType.Peripheral;
+  [Header("Interpolation")]
+  [Tooltip("插值帧以提供更平滑的体验。 目前试验.")]
+  [SerializeField]
+  protected bool _useInterpolation = false;
+  [Tooltip("应该将多少延迟添加到插值。 需要非零量来防止外推伪影.")]
+  [SerializeField]
+  protected long _interpolationDelay = 15;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>其次就是方法了 首先 最重要的一个方法 CurrentFrame(); 它提供了一个get方法来获取当前的Frame对象 。<br>```c#<br>public override Frame CurrentFrame {<pre><code>get {
+  return _transformedUpdateFrame;
+}
+</code></pre>}</li>
+</ul>
+<p>public override Frame CurrentFixedFrame {<br>      get {<br>        if (_reuseFramesForPhysics) {<br>          return _transformedUpdateFrame;<br>        } else {<br>          return _transformedFixedFrame;<br>        }<br>      }<br>}</p>
+<pre><code>- 是否使用插值 和设置参数 
+```c#
+public bool UseInterpolation {
+      get {
+        return _useInterpolation;
+      }
+      set {
+        _useInterpolation = value;
+      }
+    }
+public long InterpolationDelay {
+      get {
+        return _interpolationDelay;
+      }
+      set {
+        _interpolationDelay = value;
+      }
+}
+</code></pre><ul>
+<li>获取当前的Controller实例<pre class="line-numbers language-c#"><code class="language-c#">  /** Returns the Leap Controller instance. */
+  public Controller GetLeapController() {
+#if UNITY_EDITOR
+    //Null check to deal with hot reloading
+    if (leap_controller_ == null) {
+      createController();
+    }
+#endif
+    return leap_controller_;
+  }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>还有一些项目必须要的重要方法</li>
+<li>判断是否链接<pre class="line-numbers language-c#"><code class="language-c#">  /** True, if the Leap Motion hardware is plugged in and this application is connected to the Leap Motion service. */
+  public bool IsConnected() {
+    return GetLeapController().IsConnected;
+  }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li>获取设备信息<pre class="line-numbers language-c#"><code class="language-c#"> /** Returns information describing the device hardware. */
+ public LeapDeviceInfo GetDeviceInfo() {
+   if (_overrideDeviceType) {
+     return new LeapDeviceInfo(_overrideDeviceTypeWith);
+   }
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>刷新所有的Frame </p>
+<pre class="line-numbers language-c#"><code class="language-c#">public void ReTransformFrames() {
+    transformFrame(_untransformedUpdateFrame, _transformedUpdateFrame);
+    transformFrame(_untransformedFixedFrame, _transformedFixedFrame);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>很显然 ，这些方法都是public的 我们在自己的脚本那就可以直接调出来用了 。。。</p>
+<h3 id="最后一个脚本Hand-pool"><a href="#最后一个脚本Hand-pool" class="headerlink" title="最后一个脚本Hand pool"></a>最后一个脚本Hand pool</h3><p>顾名思义 猜猜是干什么的 作为一个程序员 我看到名字大概可以猜到他是干什么的了</p>
+</li>
+<li><p>HandPool拥有一个IHandModels池，并使HandProxys</p>
+<pre><code>当给出一个Hand和模型类型的图形模型或物理模型。
+当创建一个HandProxy时，从池中删除一个IHandModel。
+当HandProxy完成后，其IHandModel返回到池中。
+</code></pre></li>
+<li>官方解释跟屎一样 简单一点说 ，这个就是管理手的碰撞器和模型网格</li>
+<li>这里我不细讲这个池的原理了 算法复杂非常人理解 ，与其研究这个，不如去看看更实用的线程池的原理 。<br>不过呢 还是简单说一下怎么用吧 </li>
+<li><strong> ModelsParent </strong> 一个Transform 它的子物体存放手的模型和碰撞器 这个我们以后还会细说到 工程要求我改变模型 。 </li>
+<li><strong> Hand Pool </strong><br>   size里面写数量 然后把ModelsParent下面的模型按要求拖进去就ok啦<br>先讲这么多啦 。看第二篇吧</li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/03/15/leapmotion/LEAP Motion 的猎户座  -001-/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/03/15/leapmotion/LEAP Motion 的猎户座  -001-/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2017总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

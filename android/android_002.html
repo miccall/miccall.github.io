@@ -1,0 +1,515 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	 <link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			
+    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Unity-3D/">Unity 3D</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(undefined);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Android学习笔记 002</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <hr>
+<h1 id="Android学习笔记"><a href="#Android学习笔记" class="headerlink" title=" Android学习笔记 "></a><strong> Android学习笔记 </strong></h1><h3 id="Gridview使用"><a href="#Gridview使用" class="headerlink" title="Gridview使用"></a>Gridview使用</h3><pre><code>1.布局文件中用法,其实跟listview相似
+</code></pre><pre><code>        &lt;!-- numColumns : 设置每行显示的个数
+            verticalSpacing : 设置每行之间的距离
+         --&gt;
+        &lt;GridView 
+            android:id=&quot;@+id/gv_home_gridview&quot;
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;match_parent&quot;
+            android:numColumns=&quot;3&quot;
+            android:verticalSpacing=&quot;10dp&quot;
+            android:layout_marginTop=&quot;20dp&quot;
+        &gt;&lt;/GridView&gt;
+</code></pre><pre><code>2.代码中的用法,其实跟listview相似
+
+    a.初始化控件
+</code></pre><pre><code>            gv_home_gridview = (GridView) findViewById(R.id.gv_home_gridview);
+            gv_home_gridview.setAdapter(new Myadapter());
+</code></pre><pre><code>    b.adapter
+</code></pre><pre><code>            // 设置条目的样式
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                 //position代表是条目的位置,从0开始   0-8
+                //将布局文件转化成view对象
+                View view = View.inflate(getApplicationContext(), R.layout.item_home, null);
+                //每个条目的样式都不一样,初始化控件,去设置控件的值
+                //view.findViewById是从item_home布局文件中找控件,findViewById是从activity_home中找控件
+                ImageView iv_itemhome_icon = (ImageView)view.findViewById(R.id.iv_itemhome_icon);
+                TextView tv_itemhome_text = (TextView) view.findViewById(R.id.tv_itemhome_text);
+                //设置控件的值
+                iv_itemhome_icon.setImageResource(imageId[position]);//给imageview设置图片,根据条目的位置从图片数组中获取相应的图片
+                tv_itemhome_text.setText(names[position]);
+                return view;
+            }
+</code></pre><h3 id="Textview滚动效果"><a href="#Textview滚动效果" class="headerlink" title="Textview滚动效果"></a>Textview滚动效果</h3><pre><code>1.第一种方式
+</code></pre><pre><code>        &lt;!-- 
+            singleLine : 一行显示
+            ellipsize  
+                none :省略后面文字
+                start : 隐藏前面的文字
+                middle : 隐藏中间的文字
+                end : 隐藏后面的文字
+                marquee : 滚动
+            focusableInTouchMode : 触摸获取焦点
+            TextView天生是没有点击事件和获取焦点的事件
+            focusable : 是否获取焦点操作,true:可以  false:不可以
+            marqueeRepeatLimit : 设置滚动次数,marquee_forever : -1  一直滚动
+        --&gt;
+        &lt;TextView 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;手机卫士,真64杀毒引擎,超神速度,打开7次可以召唤神龙,辅助杀毒!!!&quot;
+            android:singleLine=&quot;true&quot;
+            android:ellipsize=&quot;marquee&quot;
+            android:focusableInTouchMode=&quot;true&quot;
+            android:focusable=&quot;true&quot;
+            android:marqueeRepeatLimit=&quot;marquee_forever&quot;
+            /&gt;
+</code></pre><pre><code>2.第二种方式,自定义一个textview,让textview自动获取焦点
+
+    a.创建自定义控件,继承textview
+</code></pre><pre><code>            public class HomeTextView extends TextView {
+                //在代码中使用的调用
+                public HomeTextView(Context context) {
+                    super(context);
+                }
+                //在布局文件中使用的时候调用,比两个参数多了样式
+                public HomeTextView(Context context, AttributeSet attrs, int defStyle) {
+                    super(context, attrs, defStyle);
+                    // TODO Auto-generated constructor stub
+                }
+                //在布局文件中使用的时候调用
+                //布局文件中的控件都是可以用代码来表示
+                //AttributeSet : 保存了控件在布局文件中的所有属性
+                public HomeTextView(Context context, AttributeSet attrs) {
+                    super(context, attrs);
+                    // TODO Auto-generated constructor stub
+                }
+                //设置自定义的textview自动获取焦点
+                //是否获取焦点
+                @Override
+                public boolean isFocused() {
+                    //true:获取焦点,false:不获取焦点
+                    return true;
+                }
+            }
+</code></pre><pre><code>    b.再布局文件中使用
+</code></pre><pre><code>            &lt;com.itheima.mobliesafe75.ui.HomeTextView 
+                android:layout_width=&quot;match_parent&quot;
+                android:layout_height=&quot;wrap_content&quot;
+                android:text=&quot;手机卫士,真64杀毒引擎,超神速度,打开7次可以召唤神龙,辅助杀毒!!!&quot;
+                android:singleLine=&quot;true&quot;
+                android:ellipsize=&quot;marquee&quot;
+                android:focusableInTouchMode=&quot;true&quot;
+                android:marqueeRepeatLimit=&quot;marquee_forever&quot;
+                /&gt;
+</code></pre><h3 id="设置中心界面"><a href="#设置中心界面" class="headerlink" title="设置中心界面"></a>设置中心界面</h3><pre><code>    &lt;RelativeLayout 
+        android:layout_width=&quot;match_parent&quot;
+        android:layout_height=&quot;wrap_content&quot;
+        &gt;
+        &lt;TextView 
+            android:id=&quot;@+id/tv_setting_title&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;提示更新&quot;
+            android:layout_margin=&quot;5dp&quot;
+            android:textSize=&quot;18sp&quot;
+            /&gt;
+        &lt;!-- layout_below : 在某个控件的下方 
+        layout_marginLeft : 距离左边距离
+        --&gt;
+        &lt;TextView 
+            android:id=&quot;@+id/tv_setting_des&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:text=&quot;关闭提示更新&quot;
+            android:textSize=&quot;16sp&quot;
+            android:layout_below=&quot;@+id/tv_setting_title&quot;
+            android:layout_marginLeft=&quot;5dp&quot;
+            android:textColor=&quot;#aa000000&quot;
+            /&gt;
+
+        &lt;CheckBox
+            android:id=&quot;@+id/checkBox1&quot;
+            android:layout_width=&quot;wrap_content&quot;
+            android:layout_height=&quot;wrap_content&quot;
+            android:layout_alignParentRight=&quot;true&quot;
+            android:layout_centerVertical=&quot;true&quot;
+            android:layout_marginRight=&quot;17dp&quot;
+            /&gt;
+        &lt;View 
+            android:layout_width=&quot;match_parent&quot;
+            android:layout_height=&quot;0.5dp&quot;
+            android:background=&quot;#77000000&quot;
+            android:layout_below=&quot;@+id/tv_setting_des&quot;
+            android:layout_marginTop=&quot;5dp&quot;
+            /&gt;
+
+    &lt;/RelativeLayout&gt;
+</code></pre><h3 id="自定义组合控件"><a href="#自定义组合控件" class="headerlink" title="自定义组合控件"></a>自定义组合控件</h3><pre><code>1.创建自定义控件继承RelativeLayout
+</code></pre><pre><code>        public class SettingView extends RelativeLayout {
+</code></pre><pre><code>2.创建一个init方法,并在每个构造函数中调用
+</code></pre><pre><code>        /**
+         * 添加控件
+         */
+        private void init(){
+            //添加布局文件
+    //        TextView textView = new TextView(getContext());
+    //        textView.setText(&quot;我是自定义组合控件的textview&quot;);
+            //第一种方式
+            //将布局文件转化成view对象
+    //        View view = View.inflate(getContext(), R.layout.settingview, null);//爹有了,去找孩子,亲生
+    //        //添加操作
+    //        this.addView(view);//在自定义组合控件中添加一个textview
+            //第二种方式
+            //获取view对象,同时给veiw对象设置父控件,相当于先创建一个view对象,在把控件放到自定义控件中
+            View.inflate(getContext(), R.layout.settingview, this);//孩子有了,去找爹,喜当爹
+        }
+</code></pre><h3 id="屏蔽自动更新"><a href="#屏蔽自动更新" class="headerlink" title="屏蔽自动更新"></a>屏蔽自动更新</h3><pre><code>1.将自定义组合控件移植到手机卫士中
+2.为了方便修改自定义控件中的控件的值,所以在自定义控件中创建一些方法
+</code></pre><pre><code>
+        //需要添加一些方法,使程序员能方便的去改变自定义控件中的控件的值
+        /**
+         * 设置标题的方法
+         */
+        public void setTitle(String title){
+            tv_setting_title.setText(title);
+        }
+        /**
+         * 设置描述信息的方法
+         */
+        public void setDes(String des){
+            tv_setting_des.setText(des);
+        }
+        /**
+         * 设置checkbox状态
+         */
+        public void setChecked(boolean isChecked){
+            //设置checkbox的状态
+            cb_setting_update.setChecked(isChecked);
+        }
+        /**
+         * 获取checkbox的状态
+         */
+        public boolean isChecked(){
+            return cb_setting_update.isChecked();//获取checkbox的状态
+        }
+</code></pre><pre><code>3.到activity中去使用这些方法
+</code></pre><pre><code>        sv_setting_update = (SettingView) findViewById(R.id.sv_setting_update);
+        //初始化自定义控件中各个控件的值
+        sv_setting_update.setTitle(&quot;提示更新&quot;);
+        sv_setting_update.setDes(&quot;打开提示更新&quot;);
+        sv_setting_update.setChecked(true);    
+
+        //设置自定义组合控件的点击事件
+        //问题1:点击checkbox发现描述信息没有改变,原因:因为checkbox天生是有点击事件和获取焦点事件,当点击checkbox,这个checkbox就会执行他的点击事件
+        //而不会执行条目的点击事件
+        //问题2:没有保存用户点击操作
+        sv_setting_update.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                //更改状态
+                //根据checkbox之前的状态来改变checkbox的状态
+                if (sv_setting_update.isChecked()) {
+                    //关闭提示更新
+                    sv_setting_update.setDes(&quot;关闭提示更新&quot;);
+                    sv_setting_update.setChecked(false);
+
+                }else{
+                    //打开提示更新
+                    sv_setting_update.setDes(&quot;打开提示更新&quot;);
+                    sv_setting_update.setChecked(true);
+
+                }
+            }
+        });
+</code></pre><pre><code>4.解决两个问题
+    问题1:点击checkbox发现描述信息没有改变,原因:因为checkbox天生是有点击事件和获取焦点事件,当点击checkbox,这个checkbox就会执行他的点击事件
+</code></pre><pre><code>
+             &lt;!-- 
+                focusable : 是否可以获取焦点,true:可以,false:不可以
+                clickable : 是否可以点击    true:可以,false:不可以 --&gt;
+                &lt;CheckBox
+                    android:id=&quot;@+id/cb_setting_update&quot;
+                    android:layout_width=&quot;wrap_content&quot;
+                    android:layout_height=&quot;wrap_content&quot;
+                    android:layout_alignParentRight=&quot;true&quot;
+                    android:layout_centerVertical=&quot;true&quot;
+                    android:layout_marginRight=&quot;17dp&quot; 
+                    android:focusable=&quot;false&quot;
+                    android:clickable=&quot;false&quot;
+                    /&gt;
+</code></pre><pre><code>    问题2:没有保存用户点击操作
+</code></pre><pre><code>
+            //name : 保存信息的文件的名称
+            //mode : 权限
+            sp = getSharedPreferences(&quot;config&quot;, MODE_PRIVATE);
+            sv_setting_update = (SettingView) findViewById(R.id.sv_setting_update);
+            //初始化自定义控件中各个控件的值
+            sv_setting_update.setTitle(&quot;提示更新&quot;);
+            //defValue : 缺省的值
+            if (sp.getBoolean(&quot;update&quot;, true)) {
+                sv_setting_update.setDes(&quot;打开提示更新&quot;);
+                sv_setting_update.setChecked(true);    
+            }else{
+                sv_setting_update.setDes(&quot;关闭提示更新&quot;);
+                sv_setting_update.setChecked(false);    
+            }
+            //设置自定义组合控件的点击事件
+            //问题1:点击checkbox发现描述信息没有改变,原因:因为checkbox天生是有点击事件和获取焦点事件,当点击checkbox,这个checkbox就会执行他的点击事件
+            //而不会执行条目的点击事件
+            //问题2:没有保存用户点击操作
+            sv_setting_update.setOnClickListener(new OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    Editor edit = sp.edit();
+                    //更改状态
+                    //根据checkbox之前的状态来改变checkbox的状态
+                    if (sv_setting_update.isChecked()) {
+                        //关闭提示更新
+                        sv_setting_update.setDes(&quot;关闭提示更新&quot;);
+                        sv_setting_update.setChecked(false);
+                        //保存状态
+                        edit.putBoolean(&quot;update&quot;, false);
+                        //edit.apply();//保存到文件中,但是仅限于9版本之上,9版本之下保存到内存中的
+                    }else{
+                        //打开提示更新
+                        sv_setting_update.setDes(&quot;打开提示更新&quot;);
+                        sv_setting_update.setChecked(true);
+                        //保存状态
+                        edit.putBoolean(&quot;update&quot;, true);
+                    }
+                    edit.commit();
+                }
+            });
+        }
+</code></pre><pre><code>5.屏蔽自动更新
+</code></pre><pre><code>
+        if (sp.getBoolean(&quot;update&quot;, true)) {
+           update();
+       }else{
+           //跳转到主界面
+           //不能让主线程去睡两秒钟
+           //主线程是有渲染界面的操作,主线程睡两秒钟就没有办法去渲染界面
+           new Thread(){
+               public void run() {
+                   SystemClock.sleep(2000);
+                   enterHome(); 
+               };
+           }.start();
+       }
+</code></pre>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/android/android_002.html';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/android/android_002.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2017总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
