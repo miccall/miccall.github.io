@@ -109,7 +109,7 @@
 </nav>
 
         <div id="main" >
-            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://drscdn.500px.org/photo/148605535/q%3D80_m%3D2000/v2?webp=true&amp;sig=56497b808315ba37eb0cfae48212c3ce12e06735b5fe2909fe5359dcaecead23);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://mg.soupingguo.com/attchment2/ArticleImg/600/100/148/886/100400957.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
                 <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >hololens 开发实录</h2></a>
             </div>
             <!-- Post -->
@@ -130,8 +130,8 @@
          包含 Windows SDK (10.0.10586.0) (可选)
      Game Development with Unity  (使用 Unity 的游戏开发) 
         包含 Unity 5.6 编辑器 (可选)
-</code></pre><p><img src="https://az835927.vo.msecnd.net/sites/mixed-reality/Resources/images/VSMRSetup-SelectUnityNoPlayer.PNG" alt="安装界面"></p>
-<h6 id="HoloLens-Emulator"><a href="#HoloLens-Emulator" class="headerlink" title="HoloLens Emulator"></a>HoloLens Emulator</h6><p><a href="https://go.microsoft.com/fwlink/?linkid=852626" target="_blank" rel="external">模拟器下载地址</a></p>
+</code></pre><pre><code>![安装界面](https://az835927.vo.msecnd.net/sites/mixed-reality/Resources/images/VSMRSetup-SelectUnityNoPlayer.PNG)
+</code></pre><h6 id="HoloLens-Emulator"><a href="#HoloLens-Emulator" class="headerlink" title="HoloLens Emulator"></a>HoloLens Emulator</h6><p><a href="https://go.microsoft.com/fwlink/?linkid=852626" target="_blank" rel="external">模拟器下载地址</a></p>
 <pre><code>您的系统必须支持Hyper-V才能使仿真器安装成功。
 请参考其他教程开启功能
 </code></pre><h6 id="Unity-5-6"><a href="#Unity-5-6" class="headerlink" title="Unity 5.6"></a>Unity 5.6</h6><p><a href="https://store.unity.com/download" target="_blank" rel="external">Unity下载地址</a></p>
@@ -140,48 +140,56 @@
 </code></pre><h3 id="二-构建方法"><a href="#二-构建方法" class="headerlink" title="二 . 构建方法"></a>二 . 构建方法</h3><ul>
 <li>这一步开始  默认情况为一切准备就绪。</li>
 </ul>
-<h4 id="Create-a-New-Project"><a href="#Create-a-New-Project" class="headerlink" title="Create a New Project"></a>Create a New Project</h4><pre><code>要使用Unity构建应用程序，您首先需要创建一个项目。 
+<h4 id="新建一个工程"><a href="#新建一个工程" class="headerlink" title="新建一个工程"></a>新建一个工程</h4><pre><code>要使用Unity构建应用程序，您首先需要创建一个项目。 
 该项目组织成几个文件夹，其中最重要的是您的资产文件夹。 
 这是保存从数字内容创建工具（如Maya，Max Cinema 4D或Photoshop）
 导入的所有资源的文件夹，您使用Visual Studio或您最喜爱的代码编辑器创建的所有代码，
 以及Unity创建的任何数量的内容文件 编辑器中的场景，动画和其他Unity资产类型。
 
-要构建和部署UWP应用程序，Unity可以将该项目导出为包含所有必需的资源和代码文件的Visual Studio解决方案。
-
-    启动Unity
-    选择新建
+在hololens运行。要构建和部署UWP应用程序。
+Unity可以将该项目导出为包含所有必需的资源
+和代码文件的Visual Studio解决方案。
+</code></pre><ul>
+<li>上面一堆废话 我们要做的 只有 : </li>
+</ul>
+<pre><code>    启动Unity
+    选择 新建( new )
     输入项目名称（例如“MixedRealityIntroduction”）
-    输入保存项目的位置
-    确保选择3D切换
-    选择创建项目
-恭喜，您现在都可以开始使用混合现实的自定义。
-</code></pre><h4 id="Setup-the-Camera"><a href="#Setup-the-Camera" class="headerlink" title="Setup the Camera"></a>Setup the Camera</h4><pre><code>       Unity主相机(Main Camera)可以处理头跟踪和立体渲染。对主要相机进行一些更改以将其与混合现实配合使用。
-选择 文件(File)&gt;新建场景(new Sene)
+    输入 保存项目的位置
+    确保 选择3D切换
+    选择 创建项目(create project)
+</code></pre><h4 id="设置主摄像机"><a href="#设置主摄像机" class="headerlink" title="设置主摄像机"></a>设置主摄像机</h4><pre><code>选择 文件(File)&gt;新建场景(new Sene)
 
-首先，如果您将用户的起始位置设为（X：0，Y：0，Z：0），则更容易布局应用程序。
-由于主摄像机正在跟踪用户头部的移动，所以可以通过设置主摄像头的起始位置来设置用户的起始位置。
+首先，由于主摄像机跟踪用户头部的移动
+所以可以通过设置主摄像头的起始位置来设置用户的起始位置。
+
     在“层次结构(Hierarchy)”面板中选择主摄像头(Main Camera)
     在“检查器(Inspector)”面板中，找到“变换(Transform)”组件，
     并将位置从（X : 0 , Y : 1 , Z : -10）更改为（X：0，Y：0，Z：0）
 
-其次，默认的Camera背景需要一些调整。
-对于HoloLens应用程序，真实世界应该出现在相机呈现的所有内容之后，而不是Skybox纹理。
-    在“层次结构(Hierarchy)”面板中仍然选择“主要”摄像机(Main Camera)
-    请在“检查器(Inspector)”面板中找到“相机 Camera”组件
-    然后将“清除标志(Clear Flag)”从“天空(Skybox)”下拉列表更改为“纯色(Solid Color )”。
+其次，默认的Camera背景也需要一些调整。
+对于 HoloLens 应用程序，真实世界应该出现在相机呈现的所有内容之后，而不是Skybox纹理。
+
+    在“层次结构(Hierarchy)”面板中仍然选择主摄像机(Main Camera)
+    请在“检查器(Inspector)”面板中找到 “Camera” 组件
+    然后将“ 清除标志(Clear Flag) ”从“天空(Skybox)”
+    下拉列表更改为“纯色(Solid Color )”。
     选择背景颜色(Background)选择器并将RGBA值更改为（0,0,0,0）
-对于针对沉浸式耳机的混合现实应用，我们可以使用Unity提供的默认Skybox纹理。
 
-第三，让我们考虑Unity中的近剪辑平面，并防止当用户接近对象或对象接近用户时，使对象被渲染得太靠近用户的眼睛。
+第三，让我们考虑Unity中的近剪辑平面，
+并防止当用户接近对象或对象接近用户时，
+使对象被渲染得太靠近用户的眼睛。
 对于HoloLens应用，近剪切平面可以设置为HoloLens推荐的0.85米。
-    在“层次结构(Hierarchy)”面板中仍然选择“主”摄像头(Main Camera)，
-    请在“检查器(Inspector)”面板中找到“相机Camera”组件
-    将“近剪切平面(Near Clip Plane )”字段从默认值0.3更改为HoloLens推荐的0.85。
-对于针对沉浸式耳机的混合现实应用，我们可以使用Unity提供的默认设置。
+    在“层次结构(Hierarchy)”面板中仍然选择主摄像头(Main Camera)，
+    在“检查器(Inspector)”面板中找到“Camera”组件
+    将“近剪切平面(Near Clip Plane )”
+    字段从默认值0.3更改为HoloLens推荐的0.85。
 
-最后，让我们保存到目前为止的进步。要保存场景更改，
-请选择“文件(File)”&gt;“将场景另存为(Save Sence As)”，将场景命名为Main，然后选择保存(Saves)。
-</code></pre><h4 id="Setup-the-Project-Settings"><a href="#Setup-the-Project-Settings" class="headerlink" title="Setup the Project Settings"></a>Setup the Project Settings</h4><pre><code>   我们还将设置一些Unity项目设置帮助我们定位Windows Holographic SDK进行开发
+最后，让我们保存场景更改。
+请选择“文件(File)”&gt;“将场景另存为(Save Sence As)”，
+将场景命名为Main，然后选择保存(Saves)。
+</code></pre><h4 id="项目设置"><a href="#项目设置" class="headerlink" title="项目设置"></a>项目设置</h4><pre><code>   我们还将设置一些Unity项目设置
+   帮助我们定位Windows Holographic SDK进行开发
    我们还将为我们的应用设置一些质量设置
    最后，我们将确保我们的构建目标设置为Windows Store
 
@@ -192,35 +200,43 @@ Unity 性能和质量设置
 
     选择编辑(Edit)&gt;项目设置(Project Setting)&gt;质量(Quality)
     选择Windows Store徽标下的下拉列表，然后选择最快(Fastest)。
-    当Windows Store列和最快行中的框为绿色时，您将会知道该设置正确应用。
+
+    当WindowsStore列和最快行中的框为绿色时，
+    您将会知道该设置正确应用。
     对于针对遮挡显示的混合现实应用，您可以将质量设置保留为默认值。
 
 我们需要让Unity知道我们试图导出的应用程序应该创建一个全息视图而不是2D视图
+
 我们通过在面向Windows 10 SDK的Unity上启用虚拟现实支持来实现此目的。
     选择编辑(Edit)&gt;项目设置(Project Setting)&gt;播放器(Player)
     在“检查器(Inspector)”面板中，单击“Windows Store”选项卡
     展开“其他设置(other)”组。
-    在“渲染(Rendering)”部分中，检查虚拟现实支持的复选框(Virtual Reality Supported)
-    以添加新的虚拟现实SDK列表(Virtual Reality SDKs)，并确认“Windows混合现实”被列为支持的SDK。
+    在“渲染(Rendering)”部分中，
+    检查虚拟现实支持的复选框(Virtual Reality Supported)
+    以添加新的虚拟现实SDK列表(Virtual Reality SDKs)，
+
+    并确认“Windows混合现实”被列为支持的SDK。
 获取所有项目设置的真棒工作。接下来，让我们添加一个全息图！
-</code></pre><h4 id="Create-a-cube"><a href="#Create-a-cube" class="headerlink" title="Create a cube"></a>Create a cube</h4><pre><code>在Unity项目中创建多维数据集就像在Unity中创建任何其他对象一样。 将立方体放置在用户面前很容易，因为Unity的坐标系映射到现实世界 
+</code></pre><h4 id="创建简单物体"><a href="#创建简单物体" class="headerlink" title="创建简单物体"></a>创建简单物体</h4><pre><code>在Unity项目中创建多维数据集就像在Unity中创建任何其他对象一样。
+将立方体放置在用户面前很容易，因为Unity的坐标系映射到现实世界 
 Unity中的一米在现实世界中大约为一米。
-    In the top left corner of the Hierarchy panel, select the Create dropdown and choose 3D Object &gt; Cube.
+    在Hierarchy面板中, 右键 选择 create &gt; 3D Object &gt; Cube.
+    在Hierarchy面板中，选中刚刚创建的cube 
+    在Inspector面板中，找到Transform组件并且改变Position属性为
+    (X: 0, Y: 0, Z: 2). 
+    这个位置表示 在摄像机前 也就是用户眼睛前方两米处的位置。
 
-    Select the newly created Cube in the Hierarchy panel
+    还是在Transform组件中,更改Rotation属性为 (X: 45, Y: 45, Z: 45)
 
-    In the Inspector find the Transform component and change Position to (X: 0, Y: 0, Z: 2). 
-    This positions the cube 2 meters in front of the user&#39;s starting position.
+    更改Scale属性为(X: 0.25, Y: 0.25, Z: 0.25).
+    缩放的cube边长为0.25米 
 
-    In the Transform component, change Rotation to (X: 45, Y: 45, Z: 45) and 
-    change Scale to (X: 0.25, Y: 0.25, Z: 0.25). This scales the cube to 0.25 meters.
-
-    To save the scene changes, select File &gt; Save Scene.
-</code></pre><h4 id="Verify-on-device-from-Unity-editor"><a href="#Verify-on-device-from-Unity-editor" class="headerlink" title="Verify on device from Unity editor"></a>Verify on device from Unity editor</h4><pre><code>对于HoloLens使用Unity 远程处理
-
-在您的HoloLens上，安装并运行可从Windows Store 下载安装获得的Holographic Remoting Player。
-    在设备上启动应用程序，它将进入等待状态并显示设备的IP地址。记下IP。
-    在您的开发PC上，在Unity中，打开Window&gt;Holographic Emulation。
+最后保存我们的场景, 选择 File &gt; Save Scene.
+</code></pre><h4 id="HoloLens-使用-Unity-远程处理"><a href="#HoloLens-使用-Unity-远程处理" class="headerlink" title="HoloLens 使用 Unity 远程处理"></a>HoloLens 使用 Unity 远程处理</h4><pre><code>在您的HoloLens上
+从Windows Store 下载安装Holographic Remoting Player。
+在设备上启动应用程序，它将进入等待状态并显示设备的IP地址。
+记下IP。
+    在Unity中，打开Window&gt;Holographic Emulation。
     将 Emulation Mode 从无(None)到更改为( Romote to Device )。
     在 Remote Machine 中，输入前面提到的HoloLens的IP地址。
     单击连接Connect。
@@ -229,31 +245,27 @@ Unity中的一米在现实世界中大约为一米。
 
 您现在将可以在设备和编辑器中查看多维数据集。
 您可以像在编辑器中运行应用程序一样暂停，检查对象和调试，
-因为这基本上是发生了什么，但是通过主机和设备之间的网络来回传输视频，音频和设备输入。
 
 对于其他混合现实支持的设备
 使用USB电缆和HDMI或显示器端口电缆将耳机连接到开发PC。
-启动混合现实门户，确保您已经完成了第一次运行的体验。
-从Unity，您现在可以按播放按钮。
-
-现在，您可以在混合现实耳机和编辑器中查看多维数据集渲染。
-</code></pre><h4 id="Build-and-deploy-to-device-from-Visual-Studio"><a href="#Build-and-deploy-to-device-from-Visual-Studio" class="headerlink" title="Build and deploy to device from Visual Studio"></a>Build and deploy to device from Visual Studio</h4><pre><code>我们现在准备将我们的项目编译到Visual Studio并部署到我们的目标设备。
+</code></pre><h4 id="从-Visual-Studio-构建和部署"><a href="#从-Visual-Studio-构建和部署" class="headerlink" title="从 Visual Studio 构建和部署"></a>从 Visual Studio 构建和部署</h4><pre><code>我们现在准备将我们的项目编译到Visual Studio并部署到我们的目标设备。
 
 导出到Visual Studio解决方案
-            打开文件(File)&gt;构建设置窗口(Build Settings)。
-            单击添加打开场景(Add Open Scenes )以添加场景。
-            将平台(Platform)更改为Windows Store，然后单击开关平台(Swith Platform)。
-            在Windows Store设置中，确保SDK是Universal 10。
-            对于目标设备，请留下任何设备进行遮挡显示或切换到HoloLens。
-            UWP构建类型(Build type)应为D3D。
-            UWP SDK可以留在最新安装(Latest installed)。
-            在调试下检查Unity C＃项目。
-            单击构建(Build)。
-            在文件资源管理器中，单击新建文件夹(New Folder )并命名文件夹“应用程序”。
-            选择“应用”文件夹后，单击“选择文件夹”按钮。
-            当Unity完成后，将出现Windows文件浏览器窗口。
-            在文件浏览器中打开App文件夹。
-            打开生成的Visual Studio解决方案（本例中为MixedRealityIntroduction.sln）
+        打开文件(File)&gt;构建设置窗口(Build Settings)。
+        单击添加打开场景(Add Open Scenes )以添加场景。
+        将平台(Platform)更改为Windows Store，然后单击开关平台(Swith Platform)。
+        在Windows Store设置中，确保SDK是Universal 10。                
+        对于目标设备，请留下任何设备进行遮挡显示或切换到HoloLens。
+        UWP构建类型(Build type)应为D3D。
+        UWP SDK可以留在最新安装(Latest installed)。                
+        在调试下检查Unity C＃项目。
+        单击构建(Build)。
+        在文件资源管理器中，单击新建文件夹(New Folder )并命名文件夹“应用程序”。                
+        选择“应用”文件夹后，单击“选择文件夹”按钮。
+        当Unity完成后，将出现Windows文件浏览器窗口。
+        在文件浏览器中打开App文件夹。                
+        打开生成的VisualStudio解决方案
+        （本例中为MixedRealityIntroduction.sln）
 
 编译Visual Studio解决方案
         最后，我们将编译导出的Visual Studio解决方案，部署它，并在设备上尝试。
@@ -282,8 +294,9 @@ Unity中的一米在现实世界中大约为一米。
 </code></pre><h2 id="示例教程"><a href="#示例教程" class="headerlink" title="示例教程"></a>示例教程</h2><ul>
 <li>配置有安装正确工具的Windows 10 PC。</li>
 <li>配置用于开发的HoloLens设备。</li>
-<li>下载示例 (Unity 5.6.2 以上)<br><a href="https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip" target="_blank" rel="external">Holograms下载地址</a></li>
+<li>下载示例 (Unity 5.6.2 以上)</li>
 </ul>
+<p><a href="https://github.com/Microsoft/HolographicAcademy/archive/Holograms-101.zip" target="_blank" rel="external">Holograms下载地址</a></p>
 <h3 id="开启模拟器"><a href="#开启模拟器" class="headerlink" title="开启模拟器"></a>开启模拟器</h3><pre><code>说明
     启动Unity
     选择打开(open)。
@@ -339,7 +352,7 @@ Unity中的一米在现实世界中大约为一米。
     右键单击“Project”面板中的“Scripts”文件夹。
     单击创建子菜单。
     选择C＃脚本。
-    将脚本命名为WorldCursor。注意：该名称区分大小写。您不需要添加.cs扩展名。
+    将脚本命名为 WorldCursor。注意：该名称区分大小写。您不需要添加.cs扩展名。
     在“Hierarchy”面板中选择“cursor”对象。
     将WorldCursor脚本拖放到“Inspector”面板中。
     双击WorldCursor脚本在Visual Studio中打开它。
@@ -362,19 +375,19 @@ Unity中的一米在现实世界中大约为一米。
 
             <span class="token comment" spellcheck="true">// Update is called once per frame</span>
             <span class="token keyword">void</span> <span class="token function">Update</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    <span class="token keyword">var</span> headPosition <span class="token operator">=</span> Camera<span class="token punctuation">.</span>main<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>position<span class="token punctuation">;</span>
-                    <span class="token keyword">var</span> gazeDirection <span class="token operator">=</span> Camera<span class="token punctuation">.</span>main<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>forward<span class="token punctuation">;</span>
+                Vector3 headPosition <span class="token operator">=</span> Camera<span class="token punctuation">.</span>main<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>position<span class="token punctuation">;</span>
+                Vector3 gazeDirection <span class="token operator">=</span> Camera<span class="token punctuation">.</span>main<span class="token punctuation">.</span>transform<span class="token punctuation">.</span>forward<span class="token punctuation">;</span>
 
-            RaycastHit hitinfo <span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>Physics<span class="token punctuation">.</span><span class="token function">Raycast</span><span class="token punctuation">(</span>headPosition<span class="token punctuation">,</span>gazeDirection<span class="token punctuation">,</span><span class="token keyword">out</span> hitinfo<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token punctuation">{</span>
-                    meshRenderer<span class="token punctuation">.</span>enabled <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">;</span>
-                    <span class="token keyword">this</span><span class="token punctuation">.</span>transform<span class="token punctuation">.</span>position <span class="token operator">=</span> hitinfo<span class="token punctuation">.</span>point <span class="token punctuation">;</span>
-                    <span class="token keyword">this</span><span class="token punctuation">.</span>transform<span class="token punctuation">.</span>rotation <span class="token operator">=</span> Quaternion<span class="token punctuation">.</span><span class="token function">FromToRotation</span><span class="token punctuation">(</span>Vector3<span class="token punctuation">.</span>up <span class="token punctuation">,</span>hitinfo<span class="token punctuation">.</span>normal<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token keyword">else</span><span class="token punctuation">{</span>
-                    meshRenderer<span class="token punctuation">.</span>enabled <span class="token operator">=</span> <span class="token keyword">false</span> <span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
+                RaycastHit hitinfo <span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>Physics<span class="token punctuation">.</span><span class="token function">Raycast</span><span class="token punctuation">(</span>headPosition<span class="token punctuation">,</span>gazeDirection<span class="token punctuation">,</span><span class="token keyword">out</span> hitinfo<span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                        meshRenderer<span class="token punctuation">.</span>enabled <span class="token operator">=</span> <span class="token keyword">true</span> <span class="token punctuation">;</span>
+                        <span class="token keyword">this</span><span class="token punctuation">.</span>transform<span class="token punctuation">.</span>position <span class="token operator">=</span> hitinfo<span class="token punctuation">.</span>point <span class="token punctuation">;</span>
+                        <span class="token keyword">this</span><span class="token punctuation">.</span>transform<span class="token punctuation">.</span>rotation <span class="token operator">=</span> Quaternion<span class="token punctuation">.</span><span class="token function">FromToRotation</span><span class="token punctuation">(</span>Vector3<span class="token punctuation">.</span>up <span class="token punctuation">,</span>hitinfo<span class="token punctuation">.</span>normal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">else</span><span class="token punctuation">{</span>
+                        meshRenderer<span class="token punctuation">.</span>enabled <span class="token operator">=</span> <span class="token keyword">false</span> <span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
             <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -383,7 +396,8 @@ Unity中的一米在现实世界中大约为一米。
 出现提示时选择“全部重新加载”。
 单击调试 - &gt;启动不调试或按Ctrl + F5。
 使用Xbox控制器来查看场景。注意光标如何与对象的形状相互作用。
-</code></pre><h3 id="手势"><a href="#手势" class="headerlink" title="手势"></a>手势</h3><pre><code>在本章中，我们将添加对手势的支持。当用户选择纸球时，我们将通过使用Unity的物理引擎打开重力来使球体落下。
+</code></pre><h3 id="手势"><a href="#手势" class="headerlink" title="手势"></a>手势</h3><pre><code>在本章中，我们将添加对手势的支持。
+当用户选择纸球时，我们将通过使用Unity的物理引擎打开重力来使球体落下。
 目标
     使用选择手势控制全息图。
 说明
@@ -402,7 +416,7 @@ Unity中的一米在现实世界中大约为一米。
 
     <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">GazeGestureManager</span> <span class="token punctuation">:</span> MonoBehaviour <span class="token punctuation">{</span>
 
-            <span class="token keyword">public</span> <span class="token keyword">static</span> GazeGestureManager Instance <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">private</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> GazeGestureManager Instance <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">private</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 
         <span class="token comment" spellcheck="true">// 目前指向的那个全息物体 </span>
         <span class="token keyword">public</span> GameObject FocusedObject <span class="token punctuation">{</span> <span class="token keyword">get</span><span class="token punctuation">;</span> <span class="token keyword">private</span> <span class="token keyword">set</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
