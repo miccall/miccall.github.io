@@ -1,0 +1,312 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	 <link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			
+    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Unity-3D/">Unity 3D</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://cdn.assetstore.unity3d.com/package-screenshot/c9d4780c-918c-4805-8b45-65a86d343804_scaled.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >后期</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h6 id="Translation-by-miccall-转载请注明出处"><a href="#Translation-by-miccall-转载请注明出处" class="headerlink" title="Translation by miccall   (转载请注明出处)"></a>Translation by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><h2 id="Quick-Start-快速开始"><a href="#Quick-Start-快速开始" class="headerlink" title="Quick Start 快速开始"></a>Quick Start 快速开始</h2><blockquote>
+<p>为了最大限度的发挥效果 ，我们建议您使用Linear + HDR。虽然他仍然可以在Gamma + LDR中使用，但是效果不会很好。</p>
+</blockquote>
+<p>首先 ，在您导入该资产包后 ，您要向应用后处理的摄像机 添加一个 <strong>Post Process Layer</strong>  组件 </p>
+<p><img src="https://github.com/Unity-Technologies/PostProcessing/wiki/images/quickstart-1.png" alt=""></p>
+<p>来看一些重要的设置 ：</p>
+<ul>
+<li><p><strong>Trigger</strong>: 在默认情况下，主摄像机将被赋值到这里。这是将驱动音量混合功能 (volume blending feature )的 transform。在某些情况下，您可能需要使用相机以外的transform ，例如，对于 上帝视角 的游戏，您需要 pleyer 角色来驱动动画 而不是相机 。</p>
+</li>
+<li><p><strong>Layer</strong>: 要考虑 mask 层的 volume blending 。它允许您进行卷过滤 (volume filtering )，特别适用于优化卷遍历。您应该始终将您的卷放在专用图层中( custom layers)，而不是默认的卷，以获得最佳性能。默认情况下，它设置为 <code>Nothing</code> 使用时记得更改它，否则本地卷将不会有任何影响。</p>
+</li>
+<li><p><strong>Anti-aliasing</strong>: 设置本相机的抗锯齿方法。</p>
+</li>
+<li><p><strong>Stop NaN Propagation</strong>: 将杀死任何无效/ NaN像素，并在应用后处理之前将其替换为黑色。</p>
+</li>
+</ul>
+<p>这个 <code>Rendering Features</code> 部分保留与相机相关的照明效果，如延迟雾(Deferred Fog)，环境遮挡(Ambient Occlusion)或屏幕空间反射(Screen-space reflections)。</p>
+<h2 id="Post-process-Volume-后期处理集"><a href="#Post-process-Volume-后期处理集" class="headerlink" title="Post-process Volume 后期处理集"></a>Post-process Volume 后期处理集</h2><p>后期处理在此框架中的工作方式是使用本地和全局Volume。它允许您给每个Volume一个优先级和一组效果的覆盖，以自动混合场景中的后处理设置。<br>例如，您可以在全局设置一个轻微的晕影效果，但是当玩家进入洞穴时，您只会覆盖 <code>intensity</code> 小的设置，使其更强大，同时保持其余的设置不变。</p>
+<p>该 <code>Post Process Volume</code> 组件可以添加到任何游戏对象上，也包括相机本身。但是，通常为每个 Volume 创建一个专用对象。我们从创建一个全局的 <code>Post Process Volume</code> 开始。创建一个空的游戏对象并添加该组件。<br>不要忘记将相机组件中 <code>Post Process Layer</code> 所使用的图层 设置为 该组件可见的layer层 。</p>
+<p><img src="https://github.com/Unity-Technologies/PostProcessing/wiki/images/quickstart-2.png" alt=""></p>
+<p>默认情况下它是完全空的。从那里我们可以做两种类型的Volume:</p>
+<ul>
+<li><p><strong>Global</strong>: 全局卷没有任何边界，他将被应用于整个场景。你当然可以在你的场景中使用其中几个。</p>
+</li>
+<li><p><strong>Local</strong>:  本地卷需要一个与之相关联的碰撞器或触发器组件来定义其边界。任何类型的3D碰撞器都可以工作，从立方体到复杂的凸形网格，但是我们建议您尽可能使用简单的碰撞器，因为网格可能花费相当昂贵。本地卷也可以有一个     <code>Blend Distance</code> 属性 ，来表示从混合开始的 volume 表面的 外部距离 。</p>
+</li>
+</ul>
+<p>我们希望使用全局设置 (global volume) , 所以要勾选 <code>Is Global</code>.</p>
+<p><code>Weight</code> 可以用来减少全球设置的占用比重，0没有任何效果到1是全部效果。</p>
+<p><code>Priority</code> 字段定义堆栈中的 volume 顺序。这个数字越高，质量越高。</p>
+<p>我们还需要为此卷创建配置文件（或重新使用现有的配置文件）。我们通过点击 <code>New</code> 按钮创建一个。它将创建一个项目中的资产文件。要编辑他的内容，您可以选择此资产，也可以转到volume 检查器面板 ，并将其复制以便于访问。一旦配置文件被分配，您将看到一个新的按钮出现 <code>Clone</code> 。这将复制当前分配的配置文件，并自动将其设置在volume上。当您想要创建相同配置文件的快速变体时，这可以很方便（尽管如果可能，您应该真正使用覆盖系统）。</p>
+<p>我们现在可以开始向堆栈添加效果覆盖。</p>
+<p><img src="https://github.com/Unity-Technologies/PostProcessing/wiki/images/quickstart-3.png" alt=""></p>
+<p>每个字段在其左侧都有一个覆盖复选框，您需要切换要为此卷覆盖的设置，然后才能对其进行编辑。您可以使用左上角的小 <code>All</code> 和 <code>None</code> 快捷方式快速切换所有打开或关闭它们。</p>
+<p>左上角的 <code>On/Off</code> 切换用于覆盖效果本身的活动状态。</p>
+<p>最后，您可以右键单击并执行标题来显示快速菜单。</p>
+<p>从那里，您可以开始添加具有各种优先级的本地卷，并将距离与场景混合，并查看所有这些卷自动进行混合。</p>
+<h2 id="常见效果预设"><a href="#常见效果预设" class="headerlink" title="常见效果预设"></a>常见效果预设</h2><p><strong>1. Antialiasing (抗锯齿)</strong> </p>
+<ul>
+<li><p>抗锯齿是用来减少锯齿状的 - 类似阶梯的线应该是平滑的。</p>
+</li>
+<li><p><strong>一. FXAA (Fast Approximate Anti-Aliasing)</strong><br>快速近似抗锯齿,一个非常便宜但质量低的方法，应该在每个平台上快速运行，包括移动。</p>
+</li>
+<li><p><strong>二. TAA (Temporal Anti-Aliasing)</strong>时间抗锯齿,更高质量，更昂贵的桌面和控制台平台（无移动支持）</p>
+</li>
+<li><p>三. <strong>SMAA (Subpixel Morphological Anti-Aliasing)</strong></p>
+</li>
+</ul>
+<p><img src="https://camo.githubusercontent.com/29d59bdb7e1c193268fe935f6ce7cdeb4603a9f5/687474703a2f2f692e696d6775722e636f6d2f533536485648562e676966" alt=""></p>
+<p><strong>2. Ambient Occlusion(环境光遮蔽)</strong></p>
+<ul>
+<li><p>屏幕空间环境遮挡实时近似环境遮挡。它依赖于深度和法线缓冲区来使彼此靠近的折痕，孔和表面变暗。在现实生活中，这些区域往往会阻挡或遮挡环境光，因此它们显得更暗。</p>
+</li>
+<li><p>请注意，这种效果可能相当昂贵，特别是当非常接近相机时。 因此，建议始终启用 Downsampling，并有利于低半径设置。</p>
+</li>
+<li><p>当使用延迟渲染路径时，您可以将环境遮挡直接渲染到环境G缓冲区，以便在照明通过期间由Unity考虑。 请注意，此设置要求相机启用HDR。</p>
+</li>
+<li><p>使用前向渲染路径时，可能会遇到深度精度方面的一些质量问题。您可以通过切换 High Precision  来克服这些问题，但只有在实际需要时才能实现，因为它会降低性能。</p>
+</li>
+</ul>
+<p><img src="https://camo.githubusercontent.com/7b5e60a4c86890eae3412e1df18fadbee681240e/687474703a2f2f692e696d6775722e636f6d2f3271676a4262732e676966" alt=""></p>
+<p><strong>3. Screen Space Reflection (屏幕空间反射)</strong>    </p>
+<ul>
+<li>该效果基于表面粗糙度计算屏幕空间中的反射。目前有非常高的性能代价，并且有一些质量问题。SSR需要使用延迟渲染路径。</li>
+</ul>
+<p><img src="https://camo.githubusercontent.com/c666bf3ba7b131a23e2348933acf5599fa39839b/687474703a2f2f692e696d6775722e636f6d2f6a703070536d6a2e676966" alt=""></p>
+<p><strong>4. Depth of Field 景深</strong> </p>
+<p>该效果模拟相机镜头的属性。 在现实生活中，相机只能在特定的距离处锐化对象物体; 距离相机更近或更远的物体将会有点偏离焦点。 模糊不仅给出了物体距离的视觉提示，还引入了散景，这是在图像的明亮区域脱离焦点时出现的令人愉快的视觉伪影的术语。<br>Kernel Size 指定散景滤波器的卷积核大小，其确定最大散景半径。它也会影响性能（内核越大，需要GPU时间越长）。</p>
+<p><img src="https://camo.githubusercontent.com/930ecfd62666575fd3860167157388fa23115b19/687474703a2f2f692e696d6775722e636f6d2f6869584b4461492e676966" alt=""></p>
+<p><strong>5. Motion Blur（运动模糊）</strong>  </p>
+<p>这个效果模拟了一个事实，即大多数相机系统的光线随着时间的推移而累积（而不是仅仅取出离散的快照）。因此，快速的相机或物体运动将产生模糊的图像。</p>
+<p>一般来说，您只能使用 Shutter Speed Simulation 快门速度模拟 设置。 多框架混合 Multiple Frame Blending 可以像老式运动模糊效果那样进行帧累积，主要用于赛车游戏或“醉酒效果”中的高速效果。 两个功能可以同时激活。</p>
+<p>Sample Count 会对性能产生负面影响。<br>Shutter Speed Simulation 在移动平台上不可用。</p>
+<p><img src="https://camo.githubusercontent.com/e9632436f81c00372730168f9013f1d2dd2a83ef/687474703a2f2f692e696d6775722e636f6d2f394c6d634269542e706e67" alt=""></p>
+<p><strong>6.Eye Adaptation 眼适应</strong></p>
+<p>该效果根据其包含的亮度范围来动态地调整图像的曝光。调整在一段时间内逐渐进行，所以当黑暗的隧道出现时，玩家可以被明亮的户外灯轻轻地炫耀。同样地，当从明亮的场景移动到黑暗的场景时，“眼睛”需要一些时间来调整。</p>
+<p>在内部，这种效果在每个帧上产生直方图，并对其进行滤波以找到平均亮度值。</p>
+<p>这些Histogram Log Min/Max 值用于以日志单位设置可用的直方图范围。范围越大，其精度越低。默认值在大多数情况下应该正常工作，但是如果您使用的是非常黑暗的场景，则可能需要将这两个值都放在更暗的区域上。</p>
+<p>使用Filter范围来排除图像中最暗和最亮的部分。为了计算平均亮度，您通常不希望非常暗和非常亮的像素对结果贡献太多。价值以百分比表示。</p>
+<p>Min/Max Luminance 值将计算出的平均亮度钳制到给定的范围内。</p>
+<p>调整Exposure Compensation（也称为Key Value）调整亮度偏移。</p>
+<p>您还可以设置Adaptation Type到Fixed，如果你不需要眼睛适应效果，它会像自动曝光设置。</p>
+<p>此效果需要计算着色器支持。</p>
+<p>使用眼睛适应调试视图更容易调整。</p>
+<p><img src="http://i.imgur.com/Q9u74G0.gifv" alt="video"></p>
+<p><strong>7.Bloom</strong><br><img src="https://camo.githubusercontent.com/670646d049ea8d9fea014bb94fe2f983760b5589/687474703a2f2f692e696d6775722e636f6d2f4f776d555377712e676966" alt=""></p>
+<p><strong>8.Color Grading</strong><br><img src="https://camo.githubusercontent.com/4ff70a9655a6b6823985bbceb410abc75f94e541/687474703a2f2f692e696d6775722e636f6d2f6f6271774378702e706e67" alt=""><br><strong>9.User Lut</strong></p>
+<p><strong>10.Chromatic Aberration</strong></p>
+<p><img src="https://camo.githubusercontent.com/454753d0f26e892c84ce8070825cc32927a72ce1/687474703a2f2f692e696d6775722e636f6d2f5136774e6866502e676966" alt=""></p>
+<p><strong>11.Grain</strong><br><img src="" alt=""><br><strong>12.vignette</strong><br><img src="" alt=""><br><strong>13.Debug Views</strong><br><img src="" alt=""><br><strong>14.Monitors</strong><br><img src="" alt=""><br><strong>15.Histogram</strong><br><img src="https://camo.githubusercontent.com/7fbde3d83e36e073f21596d47e29e0b45d9a8c97/687474703a2f2f692e696d6775722e636f6d2f764771796179682e706e67" alt=""><br><strong>16.Waveform</strong><br><img src="https://camo.githubusercontent.com/772619b0407901f400e09d5ea819c3d4d6d6f48b/687474703a2f2f692e696d6775722e636f6d2f6c6537314357692e706e67" alt=""><br><strong>17.Parade</strong><br><img src="https://camo.githubusercontent.com/408fdbd1da70211d1a0af0d63d18b0817004107d/687474703a2f2f692e696d6775722e636f6d2f41694e644b55732e706e67" alt=""><br><strong>18.Vectorscope</strong><br><img src="https://camo.githubusercontent.com/fd097443eac7dec755b5c8167a3c442920dec2ec/687474703a2f2f692e696d6775722e636f6d2f684c47386965562e706e67" alt=""></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2017/09/15/unity3d/(v1)-Quickstart/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/09/15/unity3d/(v1)-Quickstart/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2017总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
