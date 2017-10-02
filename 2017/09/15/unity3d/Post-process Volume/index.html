@@ -110,12 +110,15 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://cdn.assetstore.unity3d.com/package-screenshot/c9d4780c-918c-4805-8b45-65a86d343804_scaled.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >后期</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >unity 相机后期处理</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h6 id="Translation-by-miccall-转载请注明出处"><a href="#Translation-by-miccall-转载请注明出处" class="headerlink" title="Translation by miccall   (转载请注明出处)"></a>Translation by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><h2 id="Quick-Start-快速开始"><a href="#Quick-Start-快速开始" class="headerlink" title="Quick Start 快速开始"></a>Quick Start 快速开始</h2><blockquote>
-<p>为了最大限度的发挥效果 ，我们建议您使用Linear + HDR。虽然他仍然可以在Gamma + LDR中使用，但是效果不会很好。</p>
+                <h6 id="Translation-by-miccall-转载请注明出处"><a href="#Translation-by-miccall-转载请注明出处" class="headerlink" title="Translation by miccall   (转载请注明出处)"></a>Translation by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><h3 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h3><blockquote>
+<p> 俗话说，场景搭的好，50%靠材质，50%靠特效。当然，这是建立在物品摆放+打光基本没问题的基础之上。这篇文章就来讲讲特效这些东西。</p>
+</blockquote>
+<h2 id="Quick-Start-快速开始"><a href="#Quick-Start-快速开始" class="headerlink" title="Quick Start 快速开始"></a>Quick Start 快速开始</h2><blockquote>
+<p>为了最大限度的发挥效果 ，建议您使用Linear + HDR。虽然他仍然可以在Gamma + LDR中使用，但是效果不会很好。</p>
 </blockquote>
 <p>首先 ，在您导入该资产包后 ，您要向应用后处理的摄像机 添加一个 <strong>Post Process Layer</strong>  组件 </p>
 <p><img src="https://github.com/Unity-Technologies/PostProcessing/wiki/images/quickstart-1.png" alt=""></p>
@@ -151,37 +154,44 @@
 <p>左上角的 <code>On/Off</code> 切换用于覆盖效果本身的活动状态。</p>
 <p>最后，您可以右键单击并执行标题来显示快速菜单。</p>
 <p>从那里，您可以开始添加具有各种优先级的本地卷，并将距离与场景混合，并查看所有这些卷自动进行混合。</p>
-<h2 id="常见效果预设"><a href="#常见效果预设" class="headerlink" title="常见效果预设"></a>常见效果预设</h2><p><strong>1. Antialiasing (抗锯齿)</strong> </p>
+<h2 id="常见效果预设"><a href="#常见效果预设" class="headerlink" title="常见效果预设"></a>常见效果预设</h2><p><strong>1. Anti-Aliasing (抗锯齿)</strong> </p>
 <ul>
-<li><p>抗锯齿是用来减少锯齿状的 - 类似阶梯的线应该是平滑的。</p>
+<li>抗锯齿是用来减少锯齿状的 - 类似阶梯的线应该是平滑的。在游戏渲染中,由于分辨率的问题,渲染就会把巨大的数据减缩到符合分辨率,就会以较少的数据代替,中间部分就会出现的失真现象,类似于锯齿样的效果。<br><img src="https://pic4.zhimg.com/50/660fad8aa9b8606230c2bd084ad7e4b7_hd.jpg" alt=""></li>
+</ul>
+<p>也可以看看英伟达官方的解释 : </p>
+<p><a href="http://v.youku.com/4903b4e0-f504-4057-aafd-a14bd4c30489" target="_blank" rel="external">http://v.youku.com/4903b4e0-f504-4057-aafd-a14bd4c30489</a></p>
+<p>SSAA    (超级采样)  《地铁归来》《最后的曙光》<br>MSAA    (多重采样)  《GTA 5》<br>CSAA    (覆盖采样)  《科南时代》<br>CFAA    (可编程过滤)<br>FXAA    (快速近似)  《刺客信条枭雄》<br>TXAA    (时间)<br>MFAA    (多帧采样) </p>
+<p>等。我们推荐使用的下面几种AA </p>
+<ul>
+<li><p><strong>一. FXAA (Fast Approximate Anti-Aliasing)</strong><br>快速近似抗锯齿,一个非常高效，质量高 的方法，可以在每个平台上快速运行，完全兼容各种不同的显卡。</p>
 </li>
-<li><p><strong>一. FXAA (Fast Approximate Anti-Aliasing)</strong><br>快速近似抗锯齿,一个非常便宜但质量低的方法，应该在每个平台上快速运行，包括移动。</p>
+<li><p><strong>二. TAA (Temporal Anti-Aliasing)</strong><br>时间抗锯齿,业界说可以达到电影级别的更高质量，但是付出的是的桌面级显卡和控制台平台（不支持移动平台） 《巫师3》(xbox版)</p>
 </li>
-<li><p><strong>二. TAA (Temporal Anti-Aliasing)</strong>时间抗锯齿,更高质量，更昂贵的桌面和控制台平台（无移动支持）</p>
-</li>
-<li><p>三. <strong>SMAA (Subpixel Morphological Anti-Aliasing)</strong></p>
-</li>
+</ul>
+<p><a href="http://international.download.nvidia.com/geforce-com/international/comparisons/the-witcher-3-wild-hunt/the-witcher-3-wild-hunt-anti-aliasing-interactive-comparison-1-on-vs-off-3840x2160.html" target="_blank" rel="external">英伟达官方给出了一个使用效果的4K截图的对比图 点击进入</a></p>
+<ul>
+<li><strong>三. SMAA (Subpixel Morphological Anti-Aliasing)</strong><br>子像素形态学反锯齿 , 效果好，仅次于TXAA，资源占用低，速度快，性价比高. 《看门狗》</li>
 </ul>
 <p><img src="https://camo.githubusercontent.com/29d59bdb7e1c193268fe935f6ce7cdeb4603a9f5/687474703a2f2f692e696d6775722e636f6d2f533536485648562e676966" alt=""></p>
 <p><strong>2. Ambient Occlusion(环境光遮蔽)</strong></p>
 <ul>
-<li><p>屏幕空间环境遮挡实时近似环境遮挡。它依赖于深度和法线缓冲区来使彼此靠近的折痕，孔和表面变暗。在现实生活中，这些区域往往会阻挡或遮挡环境光，因此它们显得更暗。</p>
+<li><p>环境光遮蔽，增加光源照射在表面上增加阴影感，可以解决或改善漏光、飘和阴影不实等问题，让物体更加立体。在现实生活中，这些区域往往会阻挡或遮挡环境光，因此它们显得更暗。如果不使用AO，物体看起来会较为平面不真实。</p>
 </li>
-<li><p>请注意，这种效果可能相当昂贵，特别是当非常接近相机时。 因此，建议始终启用 Downsampling，并有利于低半径设置。</p>
+<li><p>要注意的是，这种效果可能相当消耗资源，特别是当物体非常接近相机时。 因此，建议始终启用 Downsampling，有利于低半径设置。网上给出测评，降低了大概4-8个fps 。</p>
 </li>
-<li><p>当使用延迟渲染路径时，您可以将环境遮挡直接渲染到环境G缓冲区，以便在照明通过期间由Unity考虑。 请注意，此设置要求相机启用HDR。</p>
+<li><p>当使用延迟渲染路径时，可以将环境遮挡直接渲染到环境G缓冲区，以便在照明通过期间由Unity考虑。这时要注意，设置要求相机启用HDR。</p>
 </li>
-<li><p>使用前向渲染路径时，可能会遇到深度精度方面的一些质量问题。您可以通过切换 High Precision  来克服这些问题，但只有在实际需要时才能实现，因为它会降低性能。</p>
+<li><p>当使用前向渲染路径时，可能会遇到深度信息精度方面的一些质量问题。您可以通过切换 High Precision  来克服这些问题，但只有在实际需要时才能实现，因为它会降低性能。</p>
 </li>
 </ul>
 <p><img src="https://camo.githubusercontent.com/7b5e60a4c86890eae3412e1df18fadbee681240e/687474703a2f2f692e696d6775722e636f6d2f3271676a4262732e676966" alt=""></p>
 <p><strong>3. Screen Space Reflection (屏幕空间反射)</strong>    </p>
 <ul>
-<li>该效果基于表面粗糙度计算屏幕空间中的反射。目前有非常高的性能代价，并且有一些质量问题。SSR需要使用延迟渲染路径。</li>
+<li>这个特效是给场景的物体添加反射，用特效取代实际的渲染，而获得廉价但是效果十分不错的反射效果。目前有非常高的性能代价，并且有一些质量问题。SSR需要使用延迟渲染路径。</li>
 </ul>
 <p><img src="https://camo.githubusercontent.com/c666bf3ba7b131a23e2348933acf5599fa39839b/687474703a2f2f692e696d6775722e636f6d2f6a703070536d6a2e676966" alt=""></p>
 <p><strong>4. Depth of Field 景深</strong> </p>
-<p>该效果模拟相机镜头的属性。 在现实生活中，相机只能在特定的距离处锐化对象物体; 距离相机更近或更远的物体将会有点偏离焦点。 模糊不仅给出了物体距离的视觉提示，还引入了散景，这是在图像的明亮区域脱离焦点时出现的令人愉快的视觉伪影的术语。<br>Kernel Size 指定散景滤波器的卷积核大小，其确定最大散景半径。它也会影响性能（内核越大，需要GPU时间越长）。</p>
+<p>该效果模拟相机镜头的属性。 在现实生活中，相机只能在特定的距离处锐化对象物体 (俗称焦距); 距离相机更近或更远的物体将会有点偏离焦点，变得模糊。 景深模糊的效果不仅给出了物体距离的视觉提示，还引入了散景。<br>Kernel Size 指定散景滤波器的卷积核大小，他确定一个最大散景半径，也会影响性能（内核越大，需要GPU时间越长）。</p>
 <p><img src="https://camo.githubusercontent.com/930ecfd62666575fd3860167157388fa23115b19/687474703a2f2f692e696d6775722e636f6d2f6869584b4461492e676966" alt=""></p>
 <p><strong>5. Motion Blur（运动模糊）</strong>  </p>
 <p>这个效果模拟了一个事实，即大多数相机系统的光线随着时间的推移而累积（而不是仅仅取出离散的快照）。因此，快速的相机或物体运动将产生模糊的图像。</p>
@@ -199,11 +209,56 @@
 <p>此效果需要计算着色器支持。</p>
 <p>使用眼睛适应调试视图更容易调整。</p>
 <p><img src="http://i.imgur.com/Q9u74G0.gifv" alt="video"></p>
-<p><strong>7.Bloom</strong><br><img src="https://camo.githubusercontent.com/670646d049ea8d9fea014bb94fe2f983760b5589/687474703a2f2f692e696d6775722e636f6d2f4f776d555377712e676966" alt=""></p>
-<p><strong>8.Color Grading</strong><br><img src="https://camo.githubusercontent.com/4ff70a9655a6b6823985bbceb410abc75f94e541/687474703a2f2f692e696d6775722e636f6d2f6f6271774378702e706e67" alt=""><br><strong>9.User Lut</strong></p>
+<p><strong>7.Bloom</strong><br>是来自亮源（如闪光）的光似乎泄漏到周围物体中的光学效应。这是一个非常独特的效果，可以对场景产生很大的影响，可能会建议一个神奇或梦幻般的环境，特别是与HDR渲染结合使用时。另一方面，给定适当的设置，也可以使用这种效果来增强照片写实感。在非常明亮的物体上发光是在电影和摄影中观察到的常见现象，其中亮度值差异很大。</p>
+<p>使用适当暴露的HDR场景，Threshold应设置为~1只将具有值的像素1泄漏到周围的对象中。在LDR中工作时，您可能希望删除此值，否则效果将不可见。</p>
+<p>Anti Flicker通过预先在图像上运行附加的滤镜来减少闪烁的噪音。这将影响性能，并且在启用时间抗锯齿时应禁用此功能。</p>
+<p>您还可以添加一个Dirt Texture模拟脏镜头效果并影响光线如何衍射。你会发现一组样品透镜污垢纹理/PostProcessing/Textures/Lens Dirt/。</p>
+<p>这种效果在LDR中起作用，但是要获得良好，平滑和大的半径模糊，您需要确保使用HDR相机。强烈建议使用线性色彩空间，以获得良好的效果。</p>
+<p><img src="https://camo.githubusercontent.com/670646d049ea8d9fea014bb94fe2f983760b5589/687474703a2f2f692e696d6775722e636f6d2f4f776d555377712e676966" alt=""></p>
+<p><strong>8.Color Grading</strong></p>
+<p>这种效果提供了基于行业标准和电影业知名软件的完全实时HDR色彩分级管道。内部处理在ACES色彩空间中完成，以获得最佳效果。 </p>
+<p>几种效果模式选用 ：<br>None ： 不做任何效果调整，应在LDR工作时使用。<br>Neutral  :  仅对范围重新映射，对色彩和饱和度的影响最小，通常是广泛的颜色分级的一个很好的起点。<br>Filmic (ACES)  : 使用参考ACES输出设备变换曲线的近似来获得更多的电影外观。 因此，它比Neutral更加对比，并且对实际的色彩和饱和度有影响 </p>
+<p>大多数其他设置是一目了然的的和艺术家调制的。 轨迹球(Trackballs )通常在具有HDR数据的日志中工作得更好，但线性控制也易于使用，因为它们倾向于在LDR中做出更好的反应。</p>
+<p>提示：您可以右键点击轨迹球重设。 </p>
+<p>除了标准的R，G，B和亮度（Y）曲线，您还可以访问一组Versus曲线（二次色彩校正工具）<br>    Hue VS Hue    根据输出色调（Y轴）移动输入色调（X轴）<br>    Hue VS Sat      根据输入色调（X轴）调整饱和度（Y轴）<br>    Sat VS Sat       根据输入饱和度（X轴）调整饱和度（Y轴）。<br>    Lum VS Sat     根据输入亮度（X轴）调整饱和度（Y轴）</p>
+<p>以下是曲线编辑器的快速备忘录：<br>    [Del] or [Backspace] 删除所选的键。<br>    [Ctrl] 断开 a tangent handle.<br>    [Shift] 对齐 tangent handles.<br>    [Double click] 在鼠标位置创建一个关键曲线。<br>[Alt] + [Double click] 在给定的时间在曲线上创建一个键。</p>
+<p><img src="https://camo.githubusercontent.com/4ff70a9655a6b6823985bbceb410abc75f94e541/687474703a2f2f692e696d6775722e636f6d2f6f6271774378702e706e67" alt=""><br><strong>9.User Lut</strong></p>
+<p>Lut代表查找纹理。这是在后期效果中执行颜色分级的优化方法。将使用原始图像颜色作为用于寻址查找纹理的向量来执行查找。</p>
+<p>使用此效果可以让您在Photoshop，Gimp，Paint.NET 或任何其他图形编辑程序中进行所有颜色调整，并将结果应用于Unity非常简单。</p>
+<p>例子：</p>
+<pre><code>- 拍摄您的游戏的屏幕截图（在Play 模式），并将其导入到您的图形编辑程序(PhotoShop 或者其他 )。
+- 应用所需的所有颜色调整。 记住，每个像素的颜色不能依赖于其他像素（例如，模糊或锐化将不起作用）。
+- 一旦你对结果满意，在你的图形编辑程序中打开一个中性Lut的副本。
+- 执行与Lut的屏幕截图相同的调整步骤，或者如果您使用调整层以非破坏性的方式进行复制。
+- 保存Lut并将其放入配置文件中的Lut字段。
+</code></pre><p>根据您需要的精度和目标平台（优选移动设备上的较小尺寸），可以使用/ PostProcessing / Textures / LUT中的中性线。<br>这种效应在色调映射后应用于LDR。</p>
 <p><strong>10.Chromatic Aberration</strong></p>
+<p>滤镜模拟屏幕边缘和拐角处的快速折射色差。看起来很酷，不应该过度使用。</p>
+<p>如果光谱纹理 ( Spectral Texture ) 未设置，则会自动为您生成。一组采样光谱纹理可用于/ PostProcessing / Textures / Spectral LUTs /。它们是用于定制色差颜色的查找纹理。<br>性能取决于强度值 Intensity （越高，渲染速度越慢，因为需要更多样品来渲染平滑色差）。</p>
 <p><img src="https://camo.githubusercontent.com/454753d0f26e892c84ce8070825cc32927a72ce1/687474703a2f2f692e696d6775722e636f6d2f5136774e6866502e676966" alt=""></p>
-<p><strong>11.Grain</strong><br><img src="" alt=""><br><strong>12.vignette</strong><br><img src="" alt=""><br><strong>13.Debug Views</strong><br><img src="" alt=""><br><strong>14.Monitors</strong><br><img src="" alt=""><br><strong>15.Histogram</strong><br><img src="https://camo.githubusercontent.com/7fbde3d83e36e073f21596d47e29e0b45d9a8c97/687474703a2f2f692e696d6775722e636f6d2f764771796179682e706e67" alt=""><br><strong>16.Waveform</strong><br><img src="https://camo.githubusercontent.com/772619b0407901f400e09d5ea819c3d4d6d6f48b/687474703a2f2f692e696d6775722e636f6d2f6c6537314357692e706e67" alt=""><br><strong>17.Parade</strong><br><img src="https://camo.githubusercontent.com/408fdbd1da70211d1a0af0d63d18b0817004107d/687474703a2f2f692e696d6775722e636f6d2f41694e644b55732e706e67" alt=""><br><strong>18.Vectorscope</strong><br><img src="https://camo.githubusercontent.com/fd097443eac7dec755b5c8167a3c442920dec2ec/687474703a2f2f692e696d6775722e636f6d2f684c47386965562e706e67" alt=""></p>
+<p><strong>11.Grain</strong></p>
+<p>这种效果为渲染添加了一层薄薄的纹理，以模拟“电影”噪音。<br>您可以使用亮度贡献(Luminance Contribution)来控制基于场景亮度的噪声响应曲线。如果您不需要彩色噪音，您可以取消选中Colored ，因为它会使效果更快。</p>
+<p><img src="" alt=""><br><strong>12.vignette</strong></p>
+<p>此效果会在图像的边缘和角落引入变暗。这通常用于通过相机镜头模拟视图，但也可用于创建抽象效果。<br>如果您需要标准的镜头式小插件，请使用Round 模式。Classic 和 Masked 是针对更多的艺术晕影。<br>请注意，应用Vignette之前确保 tonemapping开启 。</p>
+<p><img src="" alt=""><br><strong>13.Debug Views</strong></p>
+<p>在配置文件检查器的顶部有一个调试视图的折叠，这些允许调试特定效果和像深度，法线，运动矢量(Depth, Normals, Motion Vectors)等各种传递。</p>
+<p><img src="" alt=""></p>
+<p><strong>14.Monitors</strong></p>
+<p>为了帮助艺术家控制场景的整体外观和风格，配置文件带有一套行业标准的显示器。 您可以在inspector的预览区域找到它们。 与inspector 中的任何其他预览区域一样，您可以通过点击它来显示/隐藏它，并通过右键单击它的标题将其取消停靠。</p>
+<p>每个显示器可以在play模式下启用，通过点击标题栏中的play 图标进行实时更新。 请注意，这可能会极大地影响编辑器中场景的性能，因此请谨慎使用。</p>
+<p>此功能仅在 compute-shader enabled 的平台上可用</p>
+<p><img src="" alt=""><br><strong>15.Histogram</strong></p>
+<p>一个标准的gamma直方图，类似于普通图形编辑软件中的一个。 直方图说明了通过绘制每个颜色强度级别的像素数量来分析图像中的像素。 它可以帮助您确定图像是否正确曝光。</p>
+<p><img src="https://camo.githubusercontent.com/7fbde3d83e36e073f21596d47e29e0b45d9a8c97/687474703a2f2f692e696d6775722e636f6d2f764771796179682e706e67" alt=""><br><strong>16.Waveform</strong></p>
+<p>该显示器在渲染中显示亮度信息的全部范围。 图的横轴对应于渲染（从左到右），垂直轴是亮度。 您可以将其视为改进的直方图，每个图像的一列垂直直方图。</p>
+<p><img src="https://camo.githubusercontent.com/772619b0407901f400e09d5ea819c3d4d6d6f48b/687474703a2f2f692e696d6775722e636f6d2f6c6537314357692e706e67" alt=""><br><strong>17.Parade</strong></p>
+<p>游行监视器类似于波形，它只能将图像分成红色，绿色和蓝色。</p>
+<p>例如，如果在一个特定通道中存在明显的偏移，并确保镜头中的对象和元素应该是黑色，或者白色是真正的黑色或真正的白色，那么在查看图像中的整体RGB平衡是有用的。 真正的黑色，白色（或灰色的东西）将在所有渠道中具有相同的价值。</p>
+<p><img src="https://camo.githubusercontent.com/408fdbd1da70211d1a0af0d63d18b0817004107d/687474703a2f2f692e696d6775722e636f6d2f41694e644b55732e706e67" alt=""><br><strong>18.Vectorscope</strong></p>
+<p>该显示器测量图像中的色调（标记为黄色，红色，品红色，蓝色，青色和绿色）和饱和度的整体范围。 测量是相对于范围的中心。</p>
+<p>帧中更饱和的颜色使图形的这些部分朝向边缘延伸，而较少饱和的颜色保持更接近于表示绝对零饱和度的矢量图的中心。 通过判断“矢量图”图形中有多少部分以不同的角度出现，您可以看到图像中有多少色调。 此外，通过判断“矢量图”中间相对于绝对中心的中心位置，您可以了解图像中是否存在颜色不平衡。 如果“矢量图”图形偏离中心，则倾斜的方向可以让您知道渲染中有一个色调（色调）。</p>
+<p><img src="https://camo.githubusercontent.com/fd097443eac7dec755b5c8167a3c442920dec2ec/687474703a2f2f692e696d6775722e636f6d2f684c47386965562e706e67" alt=""></p>
+<p>注意 ：<br>以下功能不能在VR中使用<br>Temporal Anti-aliasing<br>Motion Blur<br>Screen Space Reflections<br>由于Uber着色器中的关键字组合数量，较慢的计算机上的“第一次构建”时间可能需要长达15分钟。</p>
 
             </div>
 
@@ -266,8 +321,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://miccall.tech/2017/09/15/unity3d/(v1)-Quickstart/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://miccall.tech/2017/09/15/unity3d/(v1)-Quickstart/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://miccall.tech/2017/09/15/unity3d/Post-process Volume/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2017/09/15/unity3d/Post-process Volume/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
