@@ -114,42 +114,32 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="Hololens-开发实录"><a href="#Hololens-开发实录" class="headerlink" title="Hololens 开发实录"></a>Hololens 开发实录</h1><h6 id="Created-by-miccall-转载请注明出处"><a href="#Created-by-miccall-转载请注明出处" class="headerlink" title="Created by miccall   (转载请注明出处)"></a>Created by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><h2 id="前奏"><a href="#前奏" class="headerlink" title="前奏"></a>前奏</h2><h3 id="一-安装必要文件"><a href="#一-安装必要文件" class="headerlink" title="一 . 安装必要文件"></a>一 . 安装必要文件</h3><h6 id="windows-10-开发者版本"><a href="#windows-10-开发者版本" class="headerlink" title="windows 10  开发者版本"></a>windows 10  开发者版本</h6><pre><code>需要成为Windows内部人员并注册开发者
-    转到设置 &gt; 更新和安全 &gt; Windows预览版
-    选择 Windows Insider Fast 
-    转到设置 &gt; 更新和安全 &gt; 检查更新
-    继续检查更新，直到您看到您的设备是最新的。
-启用开发者模式
-    转到设置&gt;更新和安全&gt;针对开发人员
-    切换为开发者模式
-</code></pre><h6 id="Visual-Studio-2017"><a href="#Visual-Studio-2017" class="headerlink" title="Visual Studio 2017"></a>Visual Studio 2017</h6><p><a href="https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&amp;rel=15&amp;campaign=WinDevCenter&amp;ocid=wdgcx-windevcenter-community-download" target="_blank" rel="external">Visual Studio 2017 下载地址</a></p>
-<pre><code>下载安装 Visual Studio 2017 和 Windows 10 SDK
-选择安装选项 
-    Universal Windows Platform development (通用Windows平台开发)
-         包含 Windows SDK (10.0.14393.0)
-         包含 Windows SDK (10.0.10586.0) (可选)
-     Game Development with Unity  (使用 Unity 的游戏开发) 
-        包含 Unity 5.6 编辑器 (可选)
-</code></pre><pre><code>![安装界面](https://az835927.vo.msecnd.net/sites/mixed-reality/Resources/images/VSMRSetup-SelectUnityNoPlayer.PNG)
-</code></pre><h6 id="HoloLens-Emulator"><a href="#HoloLens-Emulator" class="headerlink" title="HoloLens Emulator"></a>HoloLens Emulator</h6><p><a href="https://go.microsoft.com/fwlink/?linkid=852626" target="_blank" rel="external">模拟器下载地址</a></p>
-<pre><code>您的系统必须支持Hyper-V才能使仿真器安装成功。
-请参考其他教程开启功能
-</code></pre><h6 id="Unity-5-6"><a href="#Unity-5-6" class="headerlink" title="Unity 5.6"></a>Unity 5.6</h6><p><a href="https://store.unity.com/download" target="_blank" rel="external">Unity下载地址</a></p>
-<pre><code>如果以前没有安装 或者vs里没选选择Unity 5.6 编辑器
-下载安装Unity
-</code></pre><h3 id="二-构建方法"><a href="#二-构建方法" class="headerlink" title="二 . 构建方法"></a>二 . 构建方法</h3><ul>
-<li>这一步开始  默认情况为一切准备就绪。</li>
+                <h1 id="Hololens-开发实录"><a href="#Hololens-开发实录" class="headerlink" title="Hololens 开发实录"></a>Hololens 开发实录</h1><h6 id="Created-by-miccall-转载请注明出处"><a href="#Created-by-miccall-转载请注明出处" class="headerlink" title="Created by miccall   (转载请注明出处)"></a>Created by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><h2 id="前奏"><a href="#前奏" class="headerlink" title="前奏"></a>前奏</h2><h3 id="一-安装必要文件"><a href="#一-安装必要文件" class="headerlink" title="一 . 安装必要文件"></a>一 . 安装必要文件</h3><h6 id="1-windows-10-开发者版本"><a href="#1-windows-10-开发者版本" class="headerlink" title="1. windows 10  开发者版本"></a>1. windows 10  开发者版本</h6><p>需要成为 Windows 内部的注册开发者</p>
+<ul>
+<li>转到windows 设置 &gt; 更新和安全 &gt; Windows预览版</li>
+<li>选择 Windows Insider Fast </li>
+<li>转到windows 设置 &gt; 更新和安全 &gt; 检查更新</li>
+<li>继续 检查更新，直到您看到您的设备是最新的。</li>
 </ul>
-<h4 id="新建一个工程"><a href="#新建一个工程" class="headerlink" title="新建一个工程"></a>新建一个工程</h4><pre><code>要使用Unity构建应用程序，您首先需要创建一个项目。 
-该项目组织成几个文件夹，其中最重要的是您的资产文件夹。 
-这是保存从数字内容创建工具（如Maya，Max Cinema 4D或Photoshop）
-导入的所有资源的文件夹，您使用Visual Studio或您最喜爱的代码编辑器创建的所有代码，
-以及Unity创建的任何数量的内容文件 编辑器中的场景，动画和其他Unity资产类型。
-
-在hololens运行。要构建和部署UWP应用程序。
-Unity可以将该项目导出为包含所有必需的资源
-和代码文件的Visual Studio解决方案。
-</code></pre><ul>
+<p>成为开发者版本以后 ，并启用开发者模式</p>
+<ul>
+<li>转到设置 &gt; 更新和安全 &gt; 针对开发人员</li>
+<li>切换为 开发者模式</li>
+</ul>
+<h6 id="2-Visual-Studio-2017"><a href="#2-Visual-Studio-2017" class="headerlink" title="2. Visual Studio 2017"></a>2. Visual Studio 2017</h6><p><a href="https://www.visualstudio.com/thank-you-downloading-visual-studio/?sku=Community&amp;rel=15&amp;campaign=WinDevCenter&amp;ocid=wdgcx-windevcenter-community-download" target="_blank" rel="external">Visual Studio 2017 下载地址</a></p>
+<p>下载安装 Visual Studio 2017 和 Windows 10 SDK<br>选择安装选项 </p>
+<ul>
+<li>Universal Windows Platform development (通用Windows平台开发)<br>  包含 Windows SDK (10.0.14393.0)<br>  包含 Windows SDK (10.0.10586.0) (可选)<br>  Game Development with Unity  (使用 Unity 的游戏开发)<br>  包含 Unity 5.6 编辑器 (可选)</li>
+</ul>
+<p><img src="https://az835927.vo.msecnd.net/sites/mixed-reality/Resources/images/VSMRSetup-SelectUnityNoPlayer.PNG" alt="安装界面"></p>
+<h6 id="3-HoloLens-Emulator-模拟器-可选"><a href="#3-HoloLens-Emulator-模拟器-可选" class="headerlink" title="3. HoloLens Emulator 模拟器 (可选)"></a>3. HoloLens Emulator 模拟器 (可选)</h6><p><a href="https://go.microsoft.com/fwlink/?linkid=852626" target="_blank" rel="external">模拟器下载地址</a></p>
+<p>系统以及硬件必须支持Hyper-V才能使仿真器安装成功。请参考其他教程开启功能。    </p>
+<h6 id="4-Unity-5-6-或者更高-可选"><a href="#4-Unity-5-6-或者更高-可选" class="headerlink" title="4. Unity 5.6 或者更高 (可选)"></a>4. Unity 5.6 或者更高 (可选)</h6><p><a href="https://store.unity.com/download" target="_blank" rel="external">Unity下载地址</a></p>
+<p>如果以前没有安装 或者 安装vs时, 没选选择Unity 5.6 编辑器<br>    下载安装Unity  暂时使用5.6版本。2017版本的API会有所不同。</p>
+<h3 id="二-构建方法"><a href="#二-构建方法" class="headerlink" title="二 . 构建方法"></a>二 . 构建方法</h3><p>前面的过程如果顺利 ，那么就可以卡死hi构建一个简单的项目了 。</p>
+<h4 id="1-新建一个工程"><a href="#1-新建一个工程" class="headerlink" title="1. 新建一个工程"></a>1. 新建一个工程</h4><p>要使用Unity构建应用程序，您首先需要创建一个项目。<br>该项目组织成几个文件夹，其中最重要的是您的资产文件夹。<br>这是保存从数字内容创建工具（如Maya，Max Cinema 4D或Photoshop）<br>导入的所有资源的文件夹，您使用Visual Studio或您最喜爱的代码编辑器创建的所有代码，<br>以及Unity创建的任何数量的内容文件 编辑器中的场景，动画和其他Unity资产类型。</p>
+<p>在hololens运行。要构建和部署UWP应用程序。<br>Unity可以将该项目导出为包含所有必需的资源<br>和代码文件的Visual Studio解决方案。</p>
+<ul>
 <li>上面一堆废话 我们要做的 只有 : </li>
 </ul>
 <pre><code>    启动Unity
