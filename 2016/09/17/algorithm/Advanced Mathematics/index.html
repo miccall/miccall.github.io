@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	 <link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			
+    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Unity-3D/">Unity 3D</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://onh0umlhz.bkt.clouddn.com/20171006AM.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >高等数学引言</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h6 id="Created-by-miccall-转载请注明出处"><a href="#Created-by-miccall-转载请注明出处" class="headerlink" title="Created by miccall   (转载请注明出处)"></a>Created by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><blockquote>
+<p>程序员离不开数学 ，高等数学的重要性不在于他的数学严谨，而是他有更细分的思维，供程序员思考。当初没好好学，是因为没能理解他的各种定义已经方法。这个文章来抛开数学，来讲解怎么去理解数学的方法。 </p>
+</blockquote>
+<h2 id="一-函数和映射"><a href="#一-函数和映射" class="headerlink" title="一.函数和映射"></a>一.函数和映射</h2><p>高中数学讲映射，也讲函数。程序里面也用函数，也称方法。你还听说过算子？了不起。他们究竟是什么关系？ 为什么这么多名字？</p>
+<ol>
+<li>函数是一种特殊的映射，它要求两个集合中的元素必须是实数R，而映射中两个集合的元素是任意的数学对象。</li>
+<li>函数要求每个值域都有相应的定义域与其对应，也就是说，值域这个集合不能有剩余元素，而映射可以有剩余。</li>
+<li>程序中的函数, 与算子类似,为了解决某一个问题，而抽象出来的一种对应关系。而方法，更多的是在Java这样的语言中，供类所使用的。</li>
+</ol>
+<h2 id="二-如何理解数列的极限的定义"><a href="#二-如何理解数列的极限的定义" class="headerlink" title="二.如何理解数列的极限的定义"></a>二.如何理解数列的<strong>极限</strong>的定义</h2><p>设 { Xn } 为实数数列 ，a 为一个定数．若对任给的正数 ε，总存在正整数N，(当n无限增大 Xn 无线接近于 a ) , 使得当 n &gt; N   时 有<br><img src="http://onh0umlhz.bkt.clouddn.com/20171006math001.JPG" alt=""><br>则称数列 { Xn }  收敛于 a，定数  a  称为数列 { Xn } 的 极限。<br><img src="http://onh0umlhz.bkt.clouddn.com/20171006math002.JPG" alt=""></p>
+<ul>
+<li><p>当我读完这个定义是一头雾水的，就跟很多程序员一样，变量一下子定义太多，都不知道他是干什么用的，就知道a是极限，ε是啥，N 是啥 。<br>这个满足的关系有什么用？后来题做多了，慢慢才能理解，都怪当初老师讲的不彻底。</p>
+</li>
+<li><p><code>ε</code> 表示的是一个, 人为给定的标准值, 衡量当<code>n</code>无限增大时, 数列 与 他的极限<code>a</code> 的接近程度。</p>
+</li>
+<li>也就是说，当 <code>n</code> 增大到 <code>N</code> 以后 ，数列接近 极限值 <code>a</code> 的 程度比给定的 <code>ε</code> 还要小，说明 <code>a</code> 就是他的极限了 。  </li>
+<li>为什么这么说呢 ？ 这是因为 ，这个标准值 <code>ε</code> 是任取的 ， 也就是说有普遍性。</li>
+<li>只要你给我一个标准，我就会就会有一个 <code>N</code> 来满足这个条件。无论如何，都会在一个标准内 ，数列是与<code>a</code>接近的 。<br><img src="http://www.zgjsks.com/uploadfile/2016/0121/20160121121937994.jpg" alt="">    </li>
+<li>所以说为什么 <code>ε</code> 要大于 0 也就清楚了吧 ， <code>N</code> 是 正整数 也理所当然 ， 极限就是无限接近的那个值 。</li>
+</ul>
+<h2 id="三-正确使用两个重要极限"><a href="#三-正确使用两个重要极限" class="headerlink" title="三. 正确使用两个重要极限"></a>三. 正确使用两个重要极限</h2><p><img src="http://onh0umlhz.bkt.clouddn.com/20171007math001.JPG" alt=""></p>
+<p>要明白的是，这个是函数的极限，跟上一个问题，数列的极限还是有一点点不一样的。<br>首先，数列找的 N 要求时正整数 那是因为他是一个个的点，而函数相对而言是连续的。<br>再有，数列的x 趋向于无穷 ，但是函数就要复杂一点，他可以趋向于无穷大，无穷小，也可以趋向于某个定值。<br>更要注意一点，函数的左极限和有极限也是不一样的。这个慢慢来考虑他。</p>
+<p>那么这两个重要极限就是入门的变化极限式子，虽说看他不是很复杂，但是由他们引出的式子确实千奇百怪</p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/20171007math002.JPG" alt=""></p>
+<p>解决这些问题，当然，可以不用动脑。为什么我不喜欢学这些东西，千方百计套公式真的很烦。<br>但是学习，还得这样，运用三角函数的相关公式，套路出跟第一个重要极限相似的就行，要想分母配出与sin函数的参数一样的，就要不断地拆分，拼凑，乘一个数的同时除以一个数，保持数值不变的情况下，出现与公式相似的等式。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2016/09/17/algorithm/Advanced Mathematics/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2016/09/17/algorithm/Advanced Mathematics/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2017总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
