@@ -29,6 +29,7 @@
 		-webkit-text-size-adjust: none;
 	}
 
+
 /* Wrapper */
 
 	#wrapper {
@@ -4348,6 +4349,10 @@
 	}
 
 /* post-contant */
+.typo a{
+	border-bottom: 0;
+	color: red;
+}
 		@media screen and (max-width: 480px) {
 			.post-content{
 				padding: -10rem;

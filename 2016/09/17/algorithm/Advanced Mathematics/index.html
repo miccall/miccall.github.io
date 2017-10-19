@@ -142,27 +142,27 @@
 <h2 id="四-导数与微分"><a href="#四-导数与微分" class="headerlink" title="四. 导数与微分"></a>四. <strong>导数与微分</strong></h2><p>我当时脑袋一片混乱，到底<strong>dx</strong>或者说<strong>du</strong>、<strong>dv</strong>是什么东西？为什么有的地方可以消去，有的地方不可以？<br>首先，我想尝试说一下微积分发展的历史和数学思想，主要针对 <strong>y=f(x)</strong> 这样的一元函数。</p>
 <p>我们见过的这些数学符号<br><strong>△x</strong> ： 差分<br><strong>dx</strong> ： 微分<br><strong>f`(x)</strong> : 倒数 </p>
 <p>倒数是最先出现的。之前数学家已经在对曲线的切线进行研究，因为曲线下的面积在微积分出现之前是一个很复杂的问题。我们在曲线上取两点，连接起来，就称为曲线的割线。</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4YA4QdlQ0VGlYXPcbazKIEvw8BOeXndXxDwLVBWqmQUibcTkHyNsSJdfw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/201710141.JPG" alt=""></p>
 <p>割线可以反应曲线的平均变化率，也就是说这一段大概总的趋势是上升还是下降，上升了多少，但是并不精确。</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4Yp2CXubWyc3oFSP8fPcLFfVAmtDGE7iaVb2gEvEebicib5l5FuaQwiafCLw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/201710142.JPG" alt=""></p>
 <p>有了切线之后我们进一步去定义导数</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4YjWG9EOsiaDxU5ExTWrmMDnAWce6xXA6eJtyaKHVptP9Ce9vyo5WXGibg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/201710143.JPG" alt=""></p>
 <p>我们可以这样理解<strong>dx</strong>和<strong>dy</strong> ，但是问题依然存在 </p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4YiaQ1RwZWvVOhiciakJ2ibZZQ8F5X8V7ZJyWM2cqHGbaadUqSwH3Y5eBH2A/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""> </p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/201710144.JPG" alt=""> </p>
 <p>所以就切线的定义而言，微积分的基础就是不牢固的。<br>我们先看一个例子，x平方 的导数是这样计算的</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4YTd1b5MnQRHH1hIJEd9enkYnQEOwOG375MtcjWDV7saMpibc8ic1eUFGw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/201710145.JPG" alt=""></p>
 <p>仔细看看运算过程，<strong>dx</strong>先是在第三行约分中被约掉，然后又在倒数第二行加法中被忽略。<br>就是说，先被当作了非0的量，又被当作了0，一会是0，一会又不是0 。<br>一边是看起来没有错的微积分，一边是有严重缺陷的无穷小量，这就是第二次数学危机。</p>
 <p>总结一下刚刚说了什么<br>切线：通过无穷小量定义了切线<br>导数：导数就是切线的斜率<br>微分：微分是微小的增量，即无穷小量</p>
 <p>后来 ， 莱布尼兹、欧拉等都认识到了无穷小量导致的麻烦，一直拼命想要修补，但是这个问题要等到200年后，19世纪<strong>极限概念</strong>的清晰之后才得到解决。因为极限的描述并没有用到什么无穷小量。</p>
-<p>用极限定义的倒数 , 此时，导数应该被看成一个整体<br><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4YdJIycSM3jJz1hugCxxZ6O0KrqzxG4eV4FltAXZdRgQxwKbHMgfXCOg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
-<p>有了倒数 ,自然微分的定义也被重写<br><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4YKtwLYvt0sIPicfrLdpaUoQCCXZZJriaj4GzM2lnSY2f5V10SK9g8jTPw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>用极限定义的倒数 , 此时，导数应该被看成一个整体<br><img src="http://onh0umlhz.bkt.clouddn.com/201710146.JPG" alt=""></p>
+<p>有了倒数 ,自然微分的定义也被重写<br><img src="http://onh0umlhz.bkt.clouddn.com/201710147.JPG" alt=""></p>
 <p>来看重要的一步 </p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4YuReibBdnnJ9KOYp2KYN7jRJZkdX4eFfQbV3F3DbJWkQYgdMQrVg88Pg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/201710148.JPG" alt=""></p>
 <p>等式的右边有两部分构成 ,来看图 </p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4YccIx0SXIfCCZu1BpYoy1IwMkcicQQg8DGibTicxQicich8XtKr6gBqEqKGQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
-<p>这才是<strong>dy</strong>的定义 :<br><img src="https://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4Yj7GVgcPApwvI4TvtXcUzW7wpC0p255rib1a4lYKWQ8p5lJbkRPak1rg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;retryload=1" alt=""></p>
-<p>假设<br><strong>y = x</strong><br>=&gt;<br><strong>dy = 1 △x</strong><br>=&gt;<br><strong>dx = △x</strong><br>=&gt;<br><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4YiaKRR39CvGdxEib8ib4ibWTbicBRGXJrQr2JhniaZiaFyicDTnTszxxEbPImBA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvAJScr6QBy5Ilg6FwxrA4YfFMXQKxAAqglicVDkhCkJrU2ibs0g2q3xVRAk8Q0Q79Hicr5LQxkuNXicg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/201710149.JPG" alt=""></p>
+<p>这才是<strong>dy</strong>的定义 :<br><img src="http://onh0umlhz.bkt.clouddn.com/2017101410.JPG" alt=""></p>
+<p>假设<br><strong>y = x</strong><br>=&gt;<br><strong>dy = 1 △x</strong><br>=&gt;<br><strong>dx = △x</strong><br>=&gt;<br><img src="http://onh0umlhz.bkt.clouddn.com/2017101411.JPG" alt=""></p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/2017101412.JPG" alt=""></p>
 <p>总结一下刚刚说了什么<br>导数：被定义为一个极限，其意义就是变化率<br>微分：是一个线性函数，其意义就是变化的具体数值<br>切线：有了导数之后就可以被确定下来了</p>
 <p>微积分实际上被发明了两次，古典微积分和极限微积分可以说是两个东西。我们再来比较一下古典微积分和极限微积分。<br>古典微积分的微分是无穷小量，极限微积分的微分是一个线性函数。<br>古典微积分的定积分是求无穷小矩形面积的和，极限微积分的定积分是求黎曼和。<br>古典微积分的切线是可以画出来的，极限微积分的切线是算出来的。<br>古典微积分的建立过程很直观，极限微积分的建立过程更抽象。</p>
 <p>古典微积分最大的好处就是很直观，不过也是因为太直观了，所以我们一直都无法忘记它带来的印象，也对我们理解极限微积分造成了障碍。也让我们在实际应用中造成了错误的理解</p>
@@ -172,24 +172,24 @@
     (2)在(a,b)内可导
     (3)f(a)=f(b)，则至少存在一个ε ∈(a,b) 使
     f&#39;(ε) = 0
-</code></pre><p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWtr0jltIZ4nXcibxicbLao2ZaNFVTwDQceLtTic74g0Ud4icJzhWjkVh99OF2asartWQfO3IuenjU2c9A/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+</code></pre><p><img src="http://onh0umlhz.bkt.clouddn.com/20171014001.JPG" alt=""></p>
 <p>拉格朗日中值定理</p>
 <pre><code>    如果函数f(x)满足以下条件，
     (1)在闭区间［a,b］上连续 
     (2)在(a,b)内可导
     (3)那么存在一点ε ∈(a,b) ,使等式 f&#39;(ε)  =( f(b) - f(a) ) / (b - a)  成立
-</code></pre><p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWtr0jltIZ4nXcibxicbLao2Za3CPI0RlMlibMXulh4pOgAB9EjNIia6C9gC6Vy2PNwGNxiaQfgIvMZUsrA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+</code></pre><p><img src="http://onh0umlhz.bkt.clouddn.com/20171014002.JPG" alt=""></p>
 <p> 柯西中值定理</p>
 <pre><code>     如果函数f(x)与g(x)满足以下条件，
      (1)在闭区间［a,b］上连续
      (2)在(a,b)内可导
      (3)对任意 x∈(a,b)且 g&#39;(x) ≠ 0  则在(a,b)内至少存在一点 ε, 
      使 f(b) - f(a) / g(b) - g(a)   =   f&#39;(ε) / f&#39;(ε)
-</code></pre><p><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWtr0jltIZ4nXcibxicbLao2ZaE353oUYNWGlGT5dMsicLhONx4bic3zOkoXa4LSYq2KOUO7JudJWU48Nw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+</code></pre><p><img src="http://onh0umlhz.bkt.clouddn.com/20171014003.JPG" alt=""></p>
 <p>先来讲讲三者都有的条件：在［a,b］连续，在(a,b)可导。这就不用说了 ,我们研究的是初等函数图像 ,为了更形象,我们选用位移时间图像来看看跑步的情况 .</p>
-<p>罗尔首先提出 在往返跑时，一定有一 <strong>时间点</strong> 瞬时速度为0。那就是 ,在转向的瞬间 .<br><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWtr0jltIZ4nXcibxicbLao2Za7dNIkrPj08F0lnPvrJGJO9yhVg0aLZY79rTbewSiaRpecE2kaotQfIA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>罗尔首先提出 在往返跑时，一定有一 <strong>时间点</strong> 瞬时速度为0。那就是 ,在转向的瞬间 .<br><img src="http://onh0umlhz.bkt.clouddn.com/20171014004.JPG" alt=""></p>
 <p>后来,拉格朗日又发现 ,等于0的 这个情况比较特殊. 其实,往返跑时，一定存在一点瞬时速度为0,而平均速度也为0.<br>往返跑时某时刻瞬时速度等于平均速度。也就是说 拉格朗日发现在跑步时，一定存在一个时间点，该点的瞬时速度等于平均速度 </p>
-<p>拉格朗日把研究模型改成百米跑 不同的速度通过相同的位移.<br><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWtr0jltIZ4nXcibxicbLao2ZaicXoF6TP7FCOl8FhIYACQsymexjQmKqOicgicTRT5egcCl93CLIia1MxKg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
+<p>拉格朗日把研究模型改成百米跑 不同的速度通过相同的位移.<br><img src="http://onh0umlhz.bkt.clouddn.com/20171014005.JPG" alt=""></p>
 <p>再后来 , 柯西将研究从一个人跑步拓展到了两个人跑步。他使用了模型 定时跑<br>两个人同时出发，直线跑1分钟 。 如果跑的距离相同 ,那么他们必定有一点 , 瞬时速度是相同的 平均速度也是相同的.<br>如果距离不一样了,那么平均速度也就不一样了 ,那么瞬时速度会有怎么样的关系呢 ?<br>柯西证明了存在这样的点，使甲乙瞬时速度之比等于平均速度之比.也就是说,拉格朗日说的情况太特殊 , 平均速度不同的情况下，也有一点，瞬时速度的比值等于平均速度的比值 “</p>
 <h2 id="六-怎么理解洛必达法则"><a href="#六-怎么理解洛必达法则" class="headerlink" title="六.怎么理解洛必达法则 ?"></a>六.怎么理解洛必达法则 ?</h2><p>洛必达法则 是利用<strong>导数</strong>来计算具有<strong>不定型的极限</strong> 的方法。他规定 0 比 0 型 或者 ∞比∞ 型的求极限方法 .大大简化了极限运算.<br><img src="http://mmbiz.qpic.cn/mmbiz_png/7ibFSuc91QWvpt4NbJicjWyJMg22c9Aog6PjkSKO2yJKthRaJKQ2GuWvhj48kTJ0Qic0RBRYSpuibzSy1aB1FPTkDg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1" alt=""></p>
 
