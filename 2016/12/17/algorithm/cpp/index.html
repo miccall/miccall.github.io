@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	 <link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			
+    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+
+			    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Design/">Design</a></li><li><a class="category-link" href="/categories/Unity-3D/">Unity 3D</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/miccall" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://onh0umlhz.bkt.clouddn.com/c++.JPG);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >C++ 11 14 17</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h6 id="Created-by-miccall-转载请注明出处"><a href="#Created-by-miccall-转载请注明出处" class="headerlink" title="Created by miccall   (转载请注明出处)"></a>Created by miccall   (<a href="http://miccall.tech">转载请注明出处</a>)</h6><h3 id="一-类型选择"><a href="#一-类型选择" class="headerlink" title="一.类型选择"></a>一.类型选择</h3><h4 id="1-auto关键字"><a href="#1-auto关键字" class="headerlink" title="1.auto关键字"></a>1.auto关键字</h4><p>auto 关键字声明变量代替了类型 编译器在编译时，会自动替换为推导出来的类型。<br>推导规则一般是初始化赋值的返回值类型。这个应用场景就可以避免过多的已知类型</p>
+<p>比如 迭代器的声明 ,明明可以从 begin() 的返回值判断类型 还有重复声明 iter的类型 显得繁杂。用auto代替。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    std<span class="token operator">::</span>map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> m_map<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// map&lt;int,int>::iterator iter =  m_map.begin();</span>
+    <span class="token keyword">auto</span> iter <span class="token operator">=</span> multimap1<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果觉得不过瘾，还可以看看 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    std<span class="token operator">::</span>pair<span class="token operator">&lt;</span>
+            std<span class="token operator">::</span>unordered_multimap<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">::</span>iterator<span class="token punctuation">,</span>
+            std<span class="token operator">::</span>unordered_multimap<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">::</span>iterator
+            <span class="token operator">></span> 
+         range <span class="token operator">=</span> multimap1<span class="token punctuation">.</span><span class="token function">equal_range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">auto</span> range2 <span class="token operator">=</span> multimap1<span class="token punctuation">.</span><span class="token function">equal_range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>auto有时候会简化我们的书写。</p>
+<p>因为是编译过程中，编译器为我们替换，而免去了我们自己写，所以用auto声明的变量必须初始化 。</p>
+<p>说到这里，突然想到参数传递，又想到函数模板，恰恰他们俩的作用是相似的。而我试过，auto不能用于函数的参数类型，还是得写模板。</p>
+<p>还有auto不能的为 不能声明非静态成员，数组，还有范型。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">struct</span><span class="token punctuation">{</span>
+        <span class="token keyword">auto</span> v <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误</span>
+        <span class="token keyword">static</span> <span class="token keyword">const</span> <span class="token keyword">auto</span> v2 <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">auto</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误 </span>
+
+    std<span class="token operator">::</span>map<span class="token operator">&lt;</span><span class="token keyword">auto</span><span class="token punctuation">,</span><span class="token keyword">auto</span><span class="token operator">></span> m_map<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>auto还可以用于我们不知道定义类型的时候 ，比如使用函数模板，传入的typeanme可以是任意类型的，我们就可以使用auto自动接入。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token operator">></span>
+<span class="token keyword">void</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">auto</span> var <span class="token operator">=</span> A<span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="2-decltype-获取类型"><a href="#2-decltype-获取类型" class="headerlink" title="2.decltype() 获取类型"></a>2.decltype() 获取类型</h4><p>auto是编译器推导类型，那么decltype()可以看作是编译器计算类型。<br>比如说 int a = 1+1 。那么a的类型就可以表示为 decltype(1+1) ，此时 它与int就是等价的。<br>这样做就可以解决auto声明变量必须初始化的问题。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span>
+    <span class="token keyword">decltype</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> y <span class="token punctuation">;</span><span class="token comment" spellcheck="true">// y的类型也是int</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>看到 decltype(1+1) 就会感觉  decltype()的参数应该不简单，是的没错，他的参数是一个表达式，用来计算类型。<br>这里讲一下 纯右值 , 在此之前看一下左值和右值，通常来说有名字的变量就是左值 , 有名字的常量就是右值，而由运算操作(加减乘除，函数调用返回值等)所产生的中间结果(没有名字)就是纯右值。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token comment" spellcheck="true">// 左值 a ,b, p</span>
+    <span class="token keyword">int</span> a <span class="token punctuation">;</span>
+    <span class="token keyword">int</span><span class="token operator">&amp;</span> b <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span> 
+    <span class="token keyword">int</span><span class="token operator">*</span> p <span class="token operator">=</span> <span class="token operator">&amp;</span>a <span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 右值</span>
+    <span class="token keyword">const</span> a <span class="token punctuation">;</span>  
+    <span class="token number">2</span> <span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//纯右值</span>
+    <span class="token keyword">int</span> <span class="token operator">&amp;</span>a <span class="token operator">=</span> b <span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>他的实际用处呢 ，就在于包含的对象的计算</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">T</span><span class="token operator">></span>
+<span class="token keyword">void</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">typename</span> T<span class="token operator">::</span>iterator t1 <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样貌似没什么问题 ，但是实际使用起来，难免会有问题 ，因为T::iterator不包含所有的迭代器类型，还包括const类型的。<br>所以我们改一下</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">T</span><span class="token operator">></span>
+    <span class="token keyword">void</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">decltype</span><span class="token punctuation">(</span>T<span class="token operator">::</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> t1 <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>通过T::begin() 方法返回的类型，就可以让编译器推出他自己的迭代器类型了。</p>
+<h4 id="3-auto-和-decltype-的混合使用"><a href="#3-auto-和-decltype-的混合使用" class="headerlink" title="3.auto 和 decltype() 的混合使用"></a>3.auto 和 decltype() 的混合使用</h4><p>使用场景 我们范型编程，需要返回值为范型的推导，我们就得使用一个巧妙的设计方式了</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token punctuation">,</span><span class="token keyword">typename</span> U<span class="token punctuation">,</span><span class="token keyword">typename</span> R<span class="token operator">></span>
+    R <span class="token function">add</span><span class="token punctuation">(</span>T t<span class="token punctuation">,</span>U u<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> t<span class="token operator">+</span>u<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个怎么使用呢？emmm 写 auto 吗</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token keyword">auto</span> a <span class="token operator">=</span> add<span class="token operator">&lt;</span><span class="token keyword">decltype</span><span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token punctuation">)</span><span class="token operator">></span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>仿佛也可以，但是问题是，外界调用怎么知道范型的类型是x+y呢？ 不行，这个还得交给函数做。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token punctuation">,</span><span class="token keyword">typename</span> U<span class="token operator">></span>
+    <span class="token keyword">decltype</span><span class="token punctuation">(</span> t<span class="token operator">+</span>u <span class="token punctuation">)</span> <span class="token function">add</span><span class="token punctuation">(</span>T t<span class="token punctuation">,</span>U u<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> t<span class="token operator">+</span>u<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>但是这样的写法是错误的 ，t和u使用之前必须定义。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token punctuation">,</span><span class="token keyword">typename</span> U<span class="token operator">></span>
+    <span class="token keyword">decltype</span><span class="token punctuation">(</span><span class="token function">T</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">U</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token function">add</span><span class="token punctuation">(</span>T t<span class="token punctuation">,</span>U u<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> t<span class="token operator">+</span>u<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样解决了函数外部范型问题，但是T()和U() ,都需要一个构造函数，没有怎么办？我们还得继续改</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token punctuation">,</span><span class="token keyword">typename</span> U<span class="token operator">></span>
+    <span class="token keyword">decltype</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span>T<span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span>U<span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token function">add2</span><span class="token punctuation">(</span>T t<span class="token punctuation">,</span>U u<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// T* 是指针 ，用0表示</span>
+        <span class="token comment" spellcheck="true">// *0 表示的是0所指向的原数据</span>
+        <span class="token keyword">return</span> t<span class="token operator">+</span>u <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样大概就清晰了 ，但是复杂的写法也让阅读成为障碍 。c++ 11 引入了新的语法，返回值后置写法</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token punctuation">,</span><span class="token keyword">typename</span> U<span class="token operator">></span>
+    <span class="token keyword">auto</span> <span class="token function">add3</span><span class="token punctuation">(</span>T t<span class="token punctuation">,</span>U u<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">decltype</span><span class="token punctuation">(</span> t<span class="token operator">+</span>u<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> t<span class="token operator">+</span>u <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样的写法，完美的解决了我们的问题 。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">int</span><span class="token operator">&amp;</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">&amp;</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token operator">&amp;</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token operator">></span>
+    <span class="token keyword">auto</span> <span class="token function">func</span><span class="token punctuation">(</span>T<span class="token operator">&amp;</span> val<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token keyword">decltype</span><span class="token punctuation">(</span><span class="token function">foo</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">foo</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>实际使用中 ，我们可以通过这样的书写，来避开各种类型的困扰。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2016/12/17/algorithm/cpp/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2016/12/17/algorithm/cpp/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2017总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
