@@ -110,7 +110,7 @@
 
         <div id="main" >
             <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://onh0umlhz.bkt.clouddn.com/20180202light.JPG);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
-                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >UnityShader光照</h2></a>
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Shader 光照</h2></a>
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
@@ -118,7 +118,7 @@
 <ul>
 <li>基础光照 : 漫反射 , 高光反射 </li>
 <li>光照叠加 : 衰减渐变 , 阴影 , 使用unity内置实现的衰减和阴影</li>
-<li>结合贴图的光照 : 折射, 反射 , Fresnel反射 </li>
+<li>结合贴图的光照 : 基础，法线，渐变，遮罩纹理，折射, 反射 , Fresnel反射 </li>
 <li>卡通: 反射, 高光 </li>
 <li>PBR基础</li>
 <li>理论深入</li>
@@ -1179,6 +1179,109 @@ Shader <span class="token string">"miccall/Lighting/Specular_pre_pixel_Blinn_pho
     Fallback <span class="token string">"Specular"</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>法线贴图中，他存储的向量范围是-1 到 1 ，而在shader中，贴图的颜色一般也是（0,1）区间，所以，我们在计算时只需要把从法线贴图中采样得到的法线值进行映射，将其从（0,1）区间转化到（-1,1）区间。<br>计算公式就是 </p>
+<pre class="line-numbers language-txt"><code class="language-txt">pixel = (normal + 1 ) / 2 ;  或者 
+nomarl = pixel * 2 - 1 ;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>但这个公式被unity封装了一下，使用UnpackNormal函数就可以得到法线向量信息。</p>
+<pre class="line-numbers language-glsl"><code class="language-glsl"><span class="token comment" spellcheck="true">// UnityCG.cginc</span>
+<span class="token keyword">inline</span> fixed3 <span class="token function">UnpackNormalDXT5nm</span> <span class="token punctuation">(</span>fixed4 packednormal<span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+    fixed3 normal<span class="token punctuation">;</span>  
+    normal<span class="token punctuation">.</span>xy <span class="token operator">=</span> packednormal<span class="token punctuation">.</span>wy <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>  
+    normal<span class="token punctuation">.</span>z <span class="token operator">=</span> <span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> <span class="token function">saturate</span><span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>normal<span class="token punctuation">.</span>xy<span class="token punctuation">,</span> normal<span class="token punctuation">.</span>xy<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token keyword">return</span> normal<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span>  
+
+<span class="token keyword">inline</span> fixed3 <span class="token function">UnpackNormal</span><span class="token punctuation">(</span>fixed4 packednormal<span class="token punctuation">)</span>  
+<span class="token punctuation">{</span>  
+<span class="token preprocessor builtin">#if</span> <span class="token function">defined</span><span class="token punctuation">(</span>UNITY_NO_DXT5nm<span class="token punctuation">)</span>  
+    <span class="token keyword">return</span> packednormal<span class="token punctuation">.</span>xyz <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>  
+<span class="token preprocessor builtin">#else</span>  
+    <span class="token keyword">return</span> <span class="token function">UnpackNormalDXT5nm</span><span class="token punctuation">(</span>packednormal<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+<span class="token preprocessor builtin">#endif</span>  
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="3-渐变纹理控制漫反射强度"><a href="#3-渐变纹理控制漫反射强度" class="headerlink" title="3.渐变纹理控制漫反射强度"></a>3.渐变纹理控制漫反射强度</h4><pre class="line-numbers language-glsl"><code class="language-glsl">Shader <span class="token string">"miccall/Lighting2/LightwithRamp"</span>
+<span class="token punctuation">{</span>
+    Properties
+    <span class="token punctuation">{</span>
+        <span class="token function">_Color</span> <span class="token punctuation">(</span><span class="token string">"color"</span> <span class="token punctuation">,</span>Color<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token function">_RampTex</span> <span class="token punctuation">(</span><span class="token string">"Ramp Tex"</span><span class="token punctuation">,</span> 2D<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">"white"</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        <span class="token function">_Specular</span><span class="token punctuation">(</span><span class="token string">"Specular"</span><span class="token punctuation">,</span>Color<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token function">_Gloss</span><span class="token punctuation">(</span><span class="token string">"Specular_Gloss"</span> <span class="token punctuation">,</span> <span class="token function">Range</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">256</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">20</span> 
+    <span class="token punctuation">}</span>
+    SubShader
+    <span class="token punctuation">{</span>
+        Tags <span class="token punctuation">{</span> <span class="token string">"RenderType"</span><span class="token operator">=</span><span class="token string">"Opaque"</span> <span class="token punctuation">}</span>  
+        LOD <span class="token number">300</span>  
+        Pass
+        <span class="token punctuation">{</span>
+            Tags <span class="token punctuation">{</span> <span class="token string">"LightMode"</span><span class="token operator">=</span><span class="token string">"ForwardBase"</span><span class="token punctuation">}</span>
+            CGPROGRAM
+            <span class="token preprocessor builtin">#pragma</span> vertex vert
+            <span class="token preprocessor builtin">#pragma</span> fragment frag
+            <span class="token preprocessor builtin">#</span>include <span class="token string">"UnityCG.cginc"</span>
+            <span class="token preprocessor builtin">#</span>include <span class="token string">"Lighting.cginc"</span>
+
+            <span class="token keyword">struct</span> appdata <span class="token punctuation">{</span>
+                float4 vertex <span class="token punctuation">:</span> POSITION <span class="token punctuation">;</span>
+                float3 normal <span class="token punctuation">:</span> NORMAL<span class="token punctuation">;</span>
+                float4 UVcoord <span class="token punctuation">:</span>  TEXCOORD0 <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">struct</span> v2f<span class="token punctuation">{</span>
+                float4 pos <span class="token punctuation">:</span> SV_POSITION <span class="token punctuation">;</span>
+                float2 uv <span class="token punctuation">:</span> TEXCOORD0<span class="token punctuation">;</span>
+                fixed3 worldPos <span class="token punctuation">:</span> TEXCOORD1 <span class="token punctuation">;</span>
+                fixed3 worldNormal <span class="token punctuation">:</span> TEXCOORD2 <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+            <span class="token keyword">sampler2D</span> _RampTex<span class="token punctuation">;</span>
+            float4 _RampTex_ST<span class="token punctuation">;</span>
+            fixed4 _Color <span class="token punctuation">;</span> 
+            fixed4 _Specular <span class="token punctuation">;</span>
+            <span class="token keyword">float</span> _Gloss <span class="token punctuation">;</span>
+
+            <span class="token keyword">inline</span> fixed4 <span class="token function">UnityObjectToWorldPos</span><span class="token punctuation">(</span> float4 vertex <span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token function">mul</span><span class="token punctuation">(</span>unity_ObjectToWorld <span class="token punctuation">,</span> vertex <span class="token punctuation">)</span> <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            v2f <span class="token function">vert</span> <span class="token punctuation">(</span>appdata v <span class="token punctuation">)</span> 
+            <span class="token punctuation">{</span>
+                v2f o <span class="token punctuation">;</span>
+                o<span class="token punctuation">.</span>pos  <span class="token operator">=</span> <span class="token function">UnityObjectToClipPos</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>vertex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                o<span class="token punctuation">.</span>worldPos <span class="token operator">=</span> <span class="token function">UnityObjectToWorldPos</span><span class="token punctuation">(</span> v<span class="token punctuation">.</span>vertex <span class="token punctuation">)</span><span class="token punctuation">.</span>xyz<span class="token punctuation">;</span>  
+                o<span class="token punctuation">.</span>worldNormal <span class="token operator">=</span> <span class="token function">UnityObjectToWorldNormal</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>normal<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                o<span class="token punctuation">.</span>uv <span class="token operator">=</span> <span class="token function">TRANSFORM_TEX</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>UVcoord<span class="token punctuation">,</span> _RampTex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> o <span class="token punctuation">;</span> 
+            <span class="token punctuation">}</span>
+
+            fixed4 <span class="token function">frag</span> <span class="token punctuation">(</span>v2f i<span class="token punctuation">)</span> <span class="token punctuation">:</span> SV_Target
+            <span class="token punctuation">{</span>
+                float3 worldPos <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>worldPos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                fixed3 worldLight <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token function">UnityWorldSpaceLightDir</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                fixed3 viewDir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> <span class="token function">UnityWorldSpaceViewDir</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                fixed3 worldNormal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>worldNormal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                fixed3 half_lv <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> worldLight<span class="token operator">+</span>viewDir <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+
+                fixed3 ambient <span class="token operator">=</span> UNITY_LIGHTMODEL_AMBIENT<span class="token punctuation">.</span>xyz <span class="token punctuation">;</span>
+
+                <span class="token keyword">fixed</span>  halflambert <span class="token operator">=</span> <span class="token number">0.5</span> <span class="token operator">*</span> <span class="token function">dot</span><span class="token punctuation">(</span> worldNormal <span class="token punctuation">,</span> worldLight <span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0.5</span> <span class="token punctuation">;</span>
+                fixed3 RampColor <span class="token operator">=</span> _LightColor0<span class="token punctuation">.</span>rgb <span class="token operator">*</span> _Color<span class="token punctuation">.</span>rgb <span class="token operator">*</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_RampTex<span class="token punctuation">,</span><span class="token function">fixed2</span><span class="token punctuation">(</span> halflambert <span class="token punctuation">,</span> halflambert <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">.</span>rgb <span class="token punctuation">;</span>
+                fixed3 Specular <span class="token operator">=</span> _LightColor0<span class="token punctuation">.</span>rgb <span class="token operator">*</span> _Specular<span class="token punctuation">.</span>rgb <span class="token operator">*</span> <span class="token function">pow</span><span class="token punctuation">(</span><span class="token function">saturate</span><span class="token punctuation">(</span><span class="token function">dot</span> <span class="token punctuation">(</span> worldNormal <span class="token punctuation">,</span> half_lv <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>_Gloss<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                fixed4 color <span class="token operator">=</span> <span class="token function">fixed4</span><span class="token punctuation">(</span> ambient <span class="token operator">+</span> <span class="token punctuation">(</span> RampColor <span class="token operator">+</span> Specular <span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.5</span> <span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> color <span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            ENDCG
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    Fallback <span class="token string">"Specular"</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="4-遮罩纹理控制高光反射"><a href="#4-遮罩纹理控制高光反射" class="headerlink" title="4. 遮罩纹理控制高光反射"></a>4. 遮罩纹理控制高光反射</h4><pre class="line-numbers language-glsl"><code class="language-glsl">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
             </div>
 
