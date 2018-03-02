@@ -1,159 +1,84 @@
 /*
-	Massively by HTML5 UP
+	Helios by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 (function($) {
 
-	skel.breakpoints({
-		xlarge:	'(max-width: 1680px)',
-		large:	'(max-width: 1280px)',
-		medium:	'(max-width: 980px)',
-		small:	'(max-width: 736px)',
-		xsmall:	'(max-width: 480px)',
-		xxsmall: '(max-width: 360px)'
-	});
+	var settings = {
 
-	/**
-	 * Applies parallax scrolling to an element's background image.
-	 * @return {jQuery} jQuery object.
-	 */
-	$.fn._parallax = function(intensity) {
-
-		var	$window = $(window),
-			$this = $(this);
-
-		if (this.length == 0 || intensity === 0)
-			return $this;
-
-		if (this.length > 1) {
-
-			for (var i=0; i < this.length; i++)
-				$(this[i])._parallax(intensity);
-
-			return $this;
-
-		}
-
-		if (!intensity)
-			intensity = 0.25;
-
-		$this.each(function() {
-
-			var $t = $(this),
-				$bg = $('<div class="bg"></div>').appendTo($t),
-				on, off;
-
-			on = function() {
-
-				$bg
-					.removeClass('fixed')
-					.css('transform', 'none');
-
-				$window
-					.on('scroll._parallax', function() {
-
-						$bg.css('transform', 'none');
-
-					});
-
-			};
-
-			off = function() {
-
-				$bg
-					.addClass('fixed')
-					.css('transform', 'none');
-
-				$window
-					.off('scroll._parallax');
-
-			};
-
-			// Disable parallax on ..
-				if (skel.vars.browser == 'ie'		// IE
-				||	skel.vars.browser == 'edge'		// Edge
-				||	window.devicePixelRatio > 1		// Retina/HiDPI (= poor performance)
-				||	skel.vars.mobile)				// Mobile devices
-					off();
-
-			// Enable everywhere else.
-				else {
-
-					skel.on('!large -large', on);
-					skel.on('+large', off);
-
-				}
-
-		});
-
-		$window
-			.off('load._parallax resize._parallax')
-			.on('load._parallax resize._parallax', function() {
-				$window.trigger('scroll');
-			});
-
-		return $(this);
+		// Carousels
+			carousels: {
+				speed: 4,
+				fadeIn: true,
+				fadeDelay: 250
+			},
 
 	};
+
+	skel.breakpoints({
+		wide: '(max-width: 1680px)',
+		normal: '(max-width: 1280px)',
+		narrow: '(max-width: 960px)',
+		narrower: '(max-width: 840px)',
+		mobile: '(max-width: 736px)'
+	});
 
 	$(function() {
 
 		var	$window = $(window),
-			$body = $('body'),
-			$wrapper = $('#wrapper'),
-			$header = $('#header'),
-			$nav = $('#nav'),
-			$main = $('#main'),
-			$navPanelToggle, $navPanel, $navPanelInner;
+			$body = $('body');
 
 		// Disable animations/transitions until the page has loaded.
+			$body.addClass('is-loading');
+
 			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
+				$body.removeClass('is-loading');
 			});
 
-		// Prioritize "important" elements on medium.
-			skel.on('+medium -medium', function() {
+		// CSS polyfills (IE<9).
+			if (skel.vars.IEVersion < 9)
+				$(':last-child').addClass('last-child');
+
+		// Fix: Placeholder polyfill.
+			$('form').placeholder();
+
+		// Prioritize "important" elements on mobile.
+			skel.on('+mobile -mobile', function() {
 				$.prioritize(
-					'.important\\28 medium\\29',
-					skel.breakpoint('medium').active
+					'.important\\28 mobile\\29',
+					skel.breakpoint('mobile').active
 				);
 			});
 
-		// Scrolly.
+		// Dropdowns.
+			$('#nav > ul').dropotron({
+				mode: 'fade',
+				speed: 350,
+				noOpenerFade: true,
+				alignment: 'center'
+			});
+
+		// Scrolly links.
 			$('.scrolly').scrolly();
 
-		// Background.
-			$wrapper._parallax(0.925);
+		// Off-Canvas Navigation.
 
-		// Nav Panel.
-
-			// Toggle.
-				$navPanelToggle = $(
-					'<a href="#navPanel" id="navPanelToggle">Menu</a>'
+			// Navigation Button.
+				$(
+					'<div id="navButton">' +
+						'<a href="#navPanel" class="toggle"></a>' +
+					'</div>'
 				)
-					.appendTo($wrapper);
+					.appendTo($body);
 
-				// Change toggle styling once we've scrolled past the header.
-					$header.scrollex({
-						bottom: '5vh',
-						enter: function() {
-							$navPanelToggle.removeClass('alt');
-						},
-						leave: function() {
-							$navPanelToggle.addClass('alt');
-						}
-					});
-
-			// Panel.
-				$navPanel = $(
+			// Navigation Panel.
+				$(
 					'<div id="navPanel">' +
 						'<nav>' +
+							$('#nav').navList() +
 						'</nav>' +
-						'<a href="#navPanel" class="close"></a>' +
 					'</div>'
 				)
 					.appendTo($body)
@@ -163,103 +88,161 @@
 						hideOnSwipe: true,
 						resetScroll: true,
 						resetForms: true,
-						side: 'right',
 						target: $body,
-						visibleClass: 'is-navPanel-visible'
+						visibleClass: 'navPanel-visible'
 					});
 
-				// Get inner.
-					$navPanelInner = $navPanel.children('nav');
+			// Fix: Remove navPanel transitions on WP<10 (poor/buggy performance).
+				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
+					$('#navButton, #navPanel, #page-wrapper')
+						.css('transition', 'none');
 
-				// Move nav content on breakpoint change.
-					var $navContent = $nav.children();
+		// Carousels.
+			$('.carousel').each(function() {
 
-					skel.on('!medium -medium', function() {
+				var	$t = $(this),
+					$forward = $('<span class="forward"></span>'),
+					$backward = $('<span class="backward"></span>'),
+					$reel = $t.children('.reel'),
+					$items = $reel.children('article');
 
-						// NavPanel -> Nav.
-							$navContent.appendTo($nav);
+				var	pos = 0,
+					leftLimit,
+					rightLimit,
+					itemWidth,
+					reelWidth,
+					timerId;
 
-						// Flip icon classes.
-							$nav.find('.icons, .icon')
-								.removeClass('alt');
+				// Items.
+					if (settings.carousels.fadeIn) {
 
-					});
+						$items.addClass('loading');
 
-					skel.on('+medium', function() {
+						$t.onVisible(function() {
+							var	timerId,
+								limit = $items.length - Math.ceil($window.width() / itemWidth);
 
-						// Nav -> NavPanel.
-						$navContent.appendTo($navPanelInner);
+							timerId = window.setInterval(function() {
+								var x = $items.filter('.loading'), xf = x.first();
 
-						// Flip icon classes.
-							$navPanelInner.find('.icons, .icon')
-								.addClass('alt');
+								if (x.length <= limit) {
 
-					});
+									window.clearInterval(timerId);
+									$items.removeClass('loading');
+									return;
 
-				// Hack: Disable transitions on WP.
-					if (skel.vars.os == 'wp'
-					&&	skel.vars.osVersion < 10)
-						$navPanel
-							.css('transition', 'none');
+								}
 
-		// Intro.
-			var $intro = $('#intro');
+								if (skel.vars.IEVersion < 10) {
 
-			if ($intro.length > 0) {
+									xf.fadeTo(750, 1.0);
+									window.setTimeout(function() {
+										xf.removeClass('loading');
+									}, 50);
 
-				// Hack: Fix flex min-height on IE.
-					if (skel.vars.browser == 'ie') {
-						$window.on('resize.ie-intro-fix', function() {
+								}
+								else
+									xf.removeClass('loading');
 
-							var h = $intro.height();
-
-							if (h > $window.height())
-								$intro.css('height', 'auto');
-							else
-								$intro.css('height', h);
-
-						}).trigger('resize.ie-intro-fix');
+							}, settings.carousels.fadeDelay);
+						}, 50);
 					}
 
-				// Hide intro on scroll (> small).
-					skel.on('!small -small', function() {
+				// Main.
+					$t._update = function() {
+						pos = 0;
+						rightLimit = (-1 * reelWidth) + $window.width();
+						leftLimit = 0;
+						$t._updatePos();
+					};
 
-						$main.unscrollex();
+					if (skel.vars.IEVersion < 9)
+						$t._updatePos = function() { $reel.css('left', pos); };
+					else
+						$t._updatePos = function() { $reel.css('transform', 'translate(' + pos + 'px, 0)'); };
 
-						$main.scrollex({
-							mode: 'bottom',
-							top: '25vh',
-							bottom: '-50vh',
-							enter: function() {
-								$intro.addClass('hidden');
-							},
-							leave: function() {
-								$intro.removeClass('hidden');
-							}
+				// Forward.
+					$forward
+						.appendTo($t)
+						.hide()
+						.mouseenter(function(e) {
+							timerId = window.setInterval(function() {
+								pos -= settings.carousels.speed;
+
+								if (pos <= rightLimit)
+								{
+									window.clearInterval(timerId);
+									pos = rightLimit;
+								}
+
+								$t._updatePos();
+							}, 10);
+						})
+						.mouseleave(function(e) {
+							window.clearInterval(timerId);
 						});
+
+				// Backward.
+					$backward
+						.appendTo($t)
+						.hide()
+						.mouseenter(function(e) {
+							timerId = window.setInterval(function() {
+								pos += settings.carousels.speed;
+
+								if (pos >= leftLimit) {
+
+									window.clearInterval(timerId);
+									pos = leftLimit;
+
+								}
+
+								$t._updatePos();
+							}, 10);
+						})
+						.mouseleave(function(e) {
+							window.clearInterval(timerId);
+						});
+
+				// Init.
+					$window.load(function() {
+
+						reelWidth = $reel[0].scrollWidth;
+
+						skel.on('change', function() {
+
+							if (skel.vars.mobile) {
+
+								$reel
+									.css('overflow-y', 'hidden')
+									.css('overflow-x', 'scroll')
+									.scrollLeft(0);
+								$forward.hide();
+								$backward.hide();
+
+							}
+							else {
+
+								$reel
+									.css('overflow', 'visible')
+									.scrollLeft(0);
+								$forward.show();
+								$backward.show();
+
+							}
+
+							$t._update();
+
+						});
+
+						$window.resize(function() {
+							reelWidth = $reel[0].scrollWidth;
+							$t._update();
+						}).trigger('resize');
 
 					});
 
-				// Hide intro on scroll (<= small).
-					skel.on('+small', function() {
-
-						$main.unscrollex();
-
-						$main.scrollex({
-							mode: 'middle',
-							top: '15vh',
-							bottom: '-15vh',
-							enter: function() {
-								$intro.addClass('hidden');
-							},
-							leave: function() {
-								$intro.removeClass('hidden');
-							}
-						});
-
-				});
-
-			}
+			});
 
 	});
 

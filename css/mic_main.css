@@ -9,7 +9,6 @@
 		border: 0;
 		font-size: 100%;
 		font: inherit;
-		background-color: transparent;
 		vertical-align: baseline;
 	}
 
@@ -29,6 +28,85 @@
 	body {
 		-webkit-text-size-adjust: none;
 	}
+
+html,body{
+    margin: 0;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.55em;
+    -webkit-margin-start: 10px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+/* Basic */
+
+body.is-loading *,
+body.is-loading *:after,
+body.is-loading *:before {
+    -moz-transition: none !important;
+    -webkit-transition: none !important;
+    -ms-transition: none !important;
+    transition: none !important;
+    -moz-animation: none !important;
+    -webkit-animation: none !important;
+    -ms-animation: none !important;
+    animation: none !important;
+}
+
+
+/* Header */
+
+#backgroundcon {
+
+	position: relative;
+    background-size: auto;
+    background-position: center center;
+    background-attachment: fixed;
+    height:100%;
+    text-align: center;
+    cursor: default;
+    background-repeat:no-repeat;
+    padding: 0em 0 0em 0;
+    min-height: 40em;
+
+}
+
+
+#backgroundcon:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+#backgroundcon:after {
+    content: '';
+    background: #1C0920;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -moz-transition: opacity 2.5s ease-in-out;
+    -webkit-transition: opacity 2.5s ease-in-out;
+    -ms-transition: opacity 2.5s ease-in-out;
+    transition: opacity 2.5s ease-in-out;
+    -moz-transition-delay: 0.5s;
+    -webkit-transition-delay: 0.5s;
+    -ms-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+}
+
+body.is-loading #backgroundcon:after {
+    opacity: 1;
+}
 
 /* Intro */
 
