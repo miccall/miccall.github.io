@@ -30,7 +30,20 @@
 <link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
     
-		<body class="is-loading" style="background: url('../../images/bg.jpg') center 0 no-repeat;">
+		<style type="text/css">
+    body:before {
+      content: ' ';
+      position: fixed;
+      z-index: -1;
+      top: 0;
+      background: url('../../images/bg.jpg') center 0 no-repeat;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-size: cover; 
+    }
+</style>
+<body class="is-loading">
     <!-- Wrapper 外包 s-->
     <div id="wrapper" class="fade-in overlay">
         <!-- Intro 头部显示 s -->
