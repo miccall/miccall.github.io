@@ -29,84 +29,78 @@
 		-webkit-text-size-adjust: none;
 	}
 
-html,body{
-    margin: 0;
-}
+	body:before {
+	  content: ' ';
+	  position: fixed;
+	  z-index: -1;
+	  top: 0;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  background: url("../../images/bg.jpg") center 0 no-repeat;
+	  background-size: cover; 
+	}
 
-h1 {
-    display: block;
-    font-size: 2em;
-    -webkit-margin-before: 0.67em;
-    -webkit-margin-after: 0.55em;
-    -webkit-margin-start: 10px;
-    -webkit-margin-end: 0px;
-    font-weight: bold;
-}
+/* Wrapper */
 
-/* Basic */
+	#wrapper {
+		transform: none;
+		padding: 0;
+		-moz-transition: opacity 0.5s ease;
+		-webkit-transition: opacity 0.5s ease;
+		-ms-transition: opacity 0.5s ease;
+		transition: opacity 0.5s ease;
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+	}
 
-body.is-loading *,
-body.is-loading *:after,
-body.is-loading *:before {
-    -moz-transition: none !important;
-    -webkit-transition: none !important;
-    -ms-transition: none !important;
-    transition: none !important;
-    -moz-animation: none !important;
-    -webkit-animation: none !important;
-    -ms-animation: none !important;
-    animation: none !important;
-}
+		#wrapper > .bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: transparent;
+			-webkit-background-size: cover;/* 兼容Webkit内核浏览器如 Chrome和Safari */ 
+			-o-background-size: cover;/* 兼容Opera */ 
+			zoom: 1; 
+			z-index: -1;
+		}
+		#wrapper.fade-in:before {
+			-moz-pointer-events: none;
+			-webkit-pointer-events: none;
+			-ms-pointer-events: none;
+			pointer-events: none;
+			-moz-transition: opacity 1s ease-in-out;
+			-webkit-transition: opacity 1s ease-in-out;
+			-ms-transition: opacity 1s ease-in-out;
+			transition: opacity 1s ease-in-out;
+			-moz-transition-delay: 0.75s;
+			-webkit-transition-delay: 0.75s;
+			-ms-transition-delay: 0.75s;
+			transition-delay: 0.75s;
+			background: #1e252d;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
 
+		body.is-loading #wrapper.fade-in:before {
+			opacity: 1;
+		}
 
-/* Header */
+		@media screen and (orientation: portrait) {
 
-#backgroundcon {
-
-	position: relative;
-    background-size: auto;
-    background-position: center center;
-    background-attachment: fixed;
-    height:100%;
-    text-align: center;
-    cursor: default;
-    background-repeat:no-repeat;
-    padding: 0em 0 0em 0;
-    min-height: 40em;
-
-}
-
-
-#backgroundcon:before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-}
-
-#backgroundcon:after {
-    content: '';
-    background: #1C0920;
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    -moz-transition: opacity 2.5s ease-in-out;
-    -webkit-transition: opacity 2.5s ease-in-out;
-    -ms-transition: opacity 2.5s ease-in-out;
-    transition: opacity 2.5s ease-in-out;
-    -moz-transition-delay: 0.5s;
-    -webkit-transition-delay: 0.5s;
-    -ms-transition-delay: 0.5s;
-    transition-delay: 0.5s;
-}
-
-body.is-loading #backgroundcon:after {
-    opacity: 1;
-}
+			body:before {
+			  background-size: auto 100% ;
+			}
+		}
 
 /* Intro */
 
@@ -268,6 +262,21 @@ body.is-loading #backgroundcon:after {
 				visibility: visible;
 			}
 
+		body.is-loading #intro {
+			-moz-transform: translateY(2rem);
+			-webkit-transform: translateY(2rem);
+			-ms-transform: translateY(2rem);
+			transform: translateY(2rem);
+			opacity: 0;
+		}
+
+			body.is-loading #intro:not(.hidden) + #header + #nav {
+				-moz-transform: translateY(4rem);
+				-webkit-transform: translateY(4rem);
+				-ms-transform: translateY(4rem);
+				transform: translateY(4rem);
+				opacity: 0;
+			}
 		@media screen and (max-width: 1620px){
 			#intro{
 				margin-top: -2rem;
@@ -343,6 +352,21 @@ body.is-loading #backgroundcon:after {
 
 	}
 
+	body {
+		background-color: #1e252d;
+	}
+
+		body.is-loading *, body.is-loading *:before, body.is-loading *:after {
+			-moz-animation: none !important;
+			-webkit-animation: none !important;
+			-ms-animation: none !important;
+			animation: none !important;
+			-moz-transition: none !important;
+			-webkit-transition: none !important;
+			-ms-transition: none !important;
+			transition: none !important;
+		}
+
 /* Type */
 
 	html {
@@ -373,6 +397,9 @@ body.is-loading #backgroundcon:after {
 
 		}
 
+	body {
+		color: #212931;
+	}
 
 	body, input, select, textarea {
 		font-family: "Merriweather", Georgia, serif;
@@ -390,7 +417,7 @@ body.is-loading #backgroundcon:after {
 		text-decoration: none;
 	}
 
-	a:hover {
+		a:hover {
 			border-bottom-color: transparent;
 		}
 
@@ -1371,15 +1398,16 @@ body.is-loading #backgroundcon:after {
 
 	#main {
 		border-radius:5px;
+		background-color: #ffffff;
 		position: relative;
 		margin: 0 auto;
 		width: 100%;
 		max-width: 72rem;
-		background-color: #fff;
 		z-index: 2;
 	}
 
 		#main > * {
+			
 			border-top: solid 2px #eeeeee;
 			margin: 0;
 		}
@@ -1394,6 +1422,7 @@ body.is-loading #backgroundcon:after {
 		@media screen and (max-width: 736px) {
 
 			#main > * {
+				background-color: #ffffff;
 				padding: 0.5rem 1rem 0.1rem 1rem ;
 			}
 
@@ -1402,6 +1431,7 @@ body.is-loading #backgroundcon:after {
 		@media screen and (max-width: 480px) {
 
 			#main {
+				background-color: #ffffff;
 				width: 100%;
 			}
 		}
@@ -2246,10 +2276,12 @@ body.is-loading #backgroundcon:after {
 
 			#main {
 				width: 100%;
+				background-color: #fff;
 			}
 
 			.panel {
 				width: 100%;
+				background-color: transparent;
 			}
 
 		/* Me */
@@ -4317,16 +4349,15 @@ body.is-loading #backgroundcon:after {
 	}
 
 /* post-contant */
-
-	.typo a{
-		border-bottom: 0;
-		color: red;
-	}
-			@media screen and (max-width: 480px) {
-				.post-content{
-					padding: -10rem;
-				}
+.typo a{
+	border-bottom: 0;
+	color: red;
+}
+		@media screen and (max-width: 480px) {
+			.post-content{
+				padding: -10rem;
 			}
+		}
 	.post-content {
 		padding: 4rem 4rem 2rem 4rem ;
 	}
