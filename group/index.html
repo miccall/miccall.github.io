@@ -3,22 +3,34 @@
 
 <head>
 	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
-	 <link rel="shortcut icon" href="/img/logo_miccall.png">
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
 	
-			
-    <title>
+			    <title>
     Mr.Metro
     </title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/css/mic_main.css" />
     <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
     
     	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	
+	 
     <noscript>
         <link rel="stylesheet" href="/css/noscript.css" />
     </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
 
 			    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
@@ -34,8 +46,128 @@
 <!-- Layouts -->
 
     <!-- Single Links Page -->
-    
-<link rel="stylesheet" href="/css/item.css" />
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/demo.css">
+<style type="text/css">
+    .our-team {
+        padding: 30px 0 40px;
+        background: #f7f5ec;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .our-team .pic {
+        display: inline-block;
+        width: 130px;
+        height: 130px;
+        margin-bottom: 50px;
+        z-index: 1;
+        position: relative;
+    }
+
+    .our-team .pic:before {
+        content: "";
+        width: 100%;
+        height: 0;
+        border-radius: 50%;
+        background: #000000;
+        position: absolute;
+        bottom: 135%;
+        right: 0;
+        left: 0;
+        opacity: 0.2;
+        transform: scale(3);
+        transition: all 0.3s linear 0s;
+    }
+
+    .our-team:hover .pic:before {
+        height: 100%;
+    }
+
+    .our-team .pic:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: #000000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    .our-team .pic img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        transform: scale(1);
+        transition: all 0.9s ease 0s;
+    }
+
+    .our-team:hover .pic img {
+        box-shadow: 0 0 0 14px #f7f5ec;
+        transform: scale(0.7);
+    }
+
+    .our-team .team-content {
+        margin-bottom: 30px;
+    }
+
+    .our-team .title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #4e5052;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        margin-bottom: 5px;
+    }
+
+    .our-team .post {
+        display: block;
+        font-size: 15px;
+        color: #4e5052;
+        text-transform: capitalize;
+    }
+
+    .our-team .social {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        background: #000;
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        transition: all 0.5s ease 0s;
+    }
+
+    .our-team:hover .social {
+        bottom: 0;
+    }
+
+    .our-team .social li {
+        display: inline-block;
+    }
+
+    .our-team .social li a {
+        display: block;
+        padding: 10px;
+        font-size: 17px;
+        color: #fff;
+        transition: all 0.3s ease 0s;
+    }
+
+    .our-team .social li a:hover {
+        color: #110;
+        background: #f7f5ec;
+    }
+
+    @media only screen and (max-width: 990px) {
+        .our-team {
+            margin-bottom: 30px;
+        }
+    }</style>
 
 <body class="is-loading">
     <!-- Wrapper 外包 s-->
@@ -46,8 +178,8 @@
         <header id="header">
     <a href="/" class="logo">MICCALL</a>
 </header>
-        <!-- Nav 导航条 start -->
-        <nav id="nav" class="special" >
+            <!-- Nav 导航条 start -->
+            <nav id="nav" class="special" >
             <ul class="menu links" >
 			<!-- Homepage  主页  --> 
 			<li >
@@ -105,10 +237,10 @@
 		            
 			</ul>
 </nav>
-                <div id="main">
+                        <div id="main">
             <!-- Main first s-->
             <article id="me" class="panel">
-                <header>
+                <header style="color: #000000">
                     <h1>Miccall Metro</h1>
                     <p>Technical  Artist  of  Games</p>
                 </header>
@@ -119,81 +251,161 @@
             </article>
             <!-- Main first e-->
         </div>
-
-        <section class="special">
+                    <div class="demo">
+                        <div class="container">
                             <div class="row">
                                 
-        
-                                <section class="4u 6u(medium) 12u$(xsmall) item">
-                                <div class="item">
-                                    <div><img src="/img/twx.jpg" ; width="150px"  ; height="150px" ; /></div>
-                                    <a href="http://winshare.tech/"><h3>谭文轩 winshare</h3></a>
-                                    <a style="text-align: center; margin-top: -1rem;">He is my first boss</a>
-                                </div>
-                                </section>
-        
-                                <section class="4u 6u(medium) 12u$(xsmall) item">
-                                <div class="item">
-                                    <div><img src="/img/wallelhw.jpg" ; width="150px"  ; height="150px" ; /></div>
-                                    <a href="http://my.csdn.net/wallelhw?locationNum=0&amp;fps=1"><h3>李宏伟 wallelhw</h3></a>
-                                    <a style="text-align: center; margin-top: -1rem;">The Great people </a>
-                                </div>
-                                </section>
-        
-                                <section class="4u 6u(medium) 12u$(xsmall) item">
-                                <div class="item">
-                                    <div><img src="/img/TMX.jpg" ; width="150px"  ; height="150px" ; /></div>
-                                    <a href="null"><h3>田孟潇</h3></a>
-                                    <a style="text-align: center; margin-top: -1rem;">Big Data </a>
-                                </div>
-                                </section>
-        
-                                <section class="4u 6u(medium) 12u$(xsmall) item">
-                                <div class="item">
-                                    <div><img src="/img/lxk.jpg" ; width="150px"  ; height="150px" ; /></div>
-                                    <a href="null"><h3>廖小凯</h3></a>
-                                    <a style="text-align: center; margin-top: -1rem;">UI and 3dMod</a>
-                                </div>
-                                </section>
-        
-                                <section class="4u 6u(medium) 12u$(xsmall) item">
-                                <div class="item">
-                                    <div><img src="/img/cpj.jpg" ; width="150px"  ; height="150px" ; /></div>
-                                    <a href="null"><h3>陈品军</h3></a>
-                                    <a style="text-align: center; margin-top: -1rem;">UI and 3dMod</a>
-                                </div>
-                                </section>
-        
-                                <section class="4u 6u(medium) 12u$(xsmall) item">
-                                <div class="item">
-                                    <div><img src="/img/wjz.jpg" ; width="150px"  ; height="150px" ; /></div>
-                                    <a href="http://miccall.tech"><h3>王金铮 miccall</h3></a>
-                                    <a style="text-align: center; margin-top: -1rem;">This is me </a>
-                                </div>
-                                </section>
-        
-                                <section class="4u 6u(medium) 12u$(xsmall) item">
-                                <div class="item">
-                                    <div><img src="/img/ljj.png" ; width="150px"  ; height="150px" ; /></div>
-                                    <a href="http://www.crazer.cn"><h3>刘进吉 kevinliu</h3></a>
-                                    <a style="text-align: center; margin-top: -1rem;">It`s my smart friend </a>
-                                </div>
-                                </section>
-        
-                                <section class="4u 6u(medium) 12u$(xsmall) item">
-                                <div class="item">
-                                    <div><img src="/img/lxf.jpg" ; width="150px"  ; height="150px" ; /></div>
-                                    <a href="http://www.timberwolves.tech"><h3>卢肖风 timberwolves</h3></a>
-                                    <a style="text-align: center; margin-top: -1rem;">It`s my smart friend </a>
-                                </div>
-                                </section>
-        
-    
+                                    
+                                        <div class="col-md-3 col-sm-6" style="margin-top: 30px">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <img src="/img/twx.jpg">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="title">谭文轩 winshare</h3>
+                                                    <Span class="post">He is my first boss</Span>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="http://winshare.tech/" class="fa fa-link"></a></li>
+                                                    <li><a href="null" class="fa fa-qq"></a></li>
+                                                    <li><a href="undefined" class="fa fa-wechat"></a></li>
+                                                    <li><a href="null" class="fa fa-weibo"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-sm-6" style="margin-top: 30px">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <img src="/img/wallelhw.jpg">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="title">李宏伟 wallelhw</h3>
+                                                    <Span class="post">The Great people </Span>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="http://my.csdn.net/wallelhw?locationNum=0&amp;fps=1" class="fa fa-link"></a></li>
+                                                    <li><a href="null" class="fa fa-qq"></a></li>
+                                                    <li><a href="undefined" class="fa fa-wechat"></a></li>
+                                                    <li><a href="null" class="fa fa-weibo"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-sm-6" style="margin-top: 30px">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <img src="/img/TMX.jpg">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="title">田孟潇</h3>
+                                                    <Span class="post">Big Data </Span>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="null" class="fa fa-link"></a></li>
+                                                    <li><a href="null" class="fa fa-qq"></a></li>
+                                                    <li><a href="undefined" class="fa fa-wechat"></a></li>
+                                                    <li><a href="null" class="fa fa-weibo"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-sm-6" style="margin-top: 30px">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <img src="/img/lxk.jpg">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="title">廖小凯</h3>
+                                                    <Span class="post">UI and 3dMod</Span>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="null" class="fa fa-link"></a></li>
+                                                    <li><a href="null" class="fa fa-qq"></a></li>
+                                                    <li><a href="undefined" class="fa fa-wechat"></a></li>
+                                                    <li><a href="null" class="fa fa-weibo"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-sm-6" style="margin-top: 30px">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <img src="/img/cpj.jpg">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="title">陈品军</h3>
+                                                    <Span class="post">UI and 3dMod</Span>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="null" class="fa fa-link"></a></li>
+                                                    <li><a href="null" class="fa fa-qq"></a></li>
+                                                    <li><a href="undefined" class="fa fa-wechat"></a></li>
+                                                    <li><a href="null" class="fa fa-weibo"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-sm-6" style="margin-top: 30px">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <img src="/img/wjz.jpg">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="title">王金铮 miccall</h3>
+                                                    <Span class="post">This is me </Span>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="http://miccall.tech" class="fa fa-link"></a></li>
+                                                    <li><a href="null" class="fa fa-qq"></a></li>
+                                                    <li><a href="undefined" class="fa fa-wechat"></a></li>
+                                                    <li><a href="null" class="fa fa-weibo"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-sm-6" style="margin-top: 30px">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <img src="/img/ljj.png">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="title">刘进吉 kevinliu</h3>
+                                                    <Span class="post">It`s my smart friend </Span>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="http://www.crazer.cn" class="fa fa-link"></a></li>
+                                                    <li><a href="null" class="fa fa-qq"></a></li>
+                                                    <li><a href="undefined" class="fa fa-wechat"></a></li>
+                                                    <li><a href="null" class="fa fa-weibo"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-md-3 col-sm-6" style="margin-top: 30px">
+                                            <div class="our-team">
+                                                <div class="pic">
+                                                    <img src="/img/lxf.jpg">
+                                                </div>
+                                                <div class="team-content">
+                                                    <h3 class="title">卢肖风 timberwolves</h3>
+                                                    <Span class="post">It`s my smart friend </Span>
+                                                </div>
+                                                <ul class="social">
+                                                    <li><a href="http://www.timberwolves.tech" class="fa fa-link"></a></li>
+                                                    <li><a href="null" class="fa fa-qq"></a></li>
+                                                    <li><a href="undefined" class="fa fa-wechat"></a></li>
+                                                    <li><a href="null" class="fa fa-weibo"></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                            
                             </div>
-                    
-        </section>
-        <!-- Copyright 版权 start -->
-                <div id="copyright">
+                        </div>
+                    </div>
+                    <!-- Copyright 版权 start -->
+                            <div id="copyright">
             <ul>
                 <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
                 <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
