@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -147,7 +171,8 @@
                 Quaternion tarRot <span class="token operator">=</span> Quaternion<span class="token punctuation">.</span><span class="token function">LookRotation</span><span class="token punctuation">(</span>dirRot<span class="token punctuation">)</span><span class="token punctuation">;</span>
                 transform<span class="token punctuation">.</span>rotation <span class="token operator">=</span> Quaternion<span class="token punctuation">.</span><span class="token function">Slerp</span><span class="token punctuation">(</span>transform<span class="token punctuation">.</span>rotation<span class="token punctuation">,</span> tarRot<span class="token punctuation">,</span> rotSpeed <span class="token operator">*</span> Time<span class="token punctuation">.</span>deltaTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>简单解释一下，就是先确定物体的位置，然后求出指向他的方向，并用插值的方法，<br>让物体转动到面向指定的物体 。<br>好了，既然有了朝向的运动方向，那么走到这方向，就很简单了。</li>
 </ul>
@@ -157,7 +182,8 @@
 <li>那么什么时候停止运动呢 ，我想了一下，决定用位置的差来判断<br>就是</li>
 </ul>
 <pre class="line-numbers language-csharp"><code class="language-csharp">        Vector3<span class="token punctuation">.</span><span class="token function">Distance</span><span class="token punctuation">(</span>transform<span class="token punctuation">.</span>position<span class="token punctuation">,</span> followTransform<span class="token punctuation">.</span>position<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>好了，既然停止的方法也有了，最后要解决的问题就是朝向摄像机了。<br>   突然一想，这是问题么，对，这不是问题 ，哈哈，刚刚写的那个算法，给一个摄像机就解决了嘛 。<br>   然后给出具体的判断逻辑 。</li>
 </ul>

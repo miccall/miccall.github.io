@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -126,10 +150,21 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><h2 id="一-OpenGL-对象"><a href="#一-OpenGL-对象" class="headerlink" title="一. OpenGL 对象"></a>一. OpenGL 对象</h2><ol>
-<li>VBO,VAO,EBOd的关系</li>
-</ol>
-
+                <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><h2 id="一-OpenGL-环境搭建"><a href="#一-OpenGL-环境搭建" class="headerlink" title="一. OpenGL 环境搭建"></a>一. OpenGL 环境搭建</h2><h3 id="1-GLUT"><a href="#1-GLUT" class="headerlink" title="1. GLUT"></a>1. GLUT</h3><ul>
+<li><strong>包含目录</strong> <pre class="line-numbers language-c"><code class="language-c">$<span class="token punctuation">(</span>VC_IncludePath<span class="token punctuation">)</span><span class="token punctuation">;</span>$<span class="token punctuation">(</span>WindowsSDK_IncludePath<span class="token punctuation">)</span><span class="token punctuation">;</span>E<span class="token punctuation">:</span>\miccall\VSproject<span class="token number">-2018</span>\GlutGL\GLUT_37
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><strong>引用目录</strong> <pre class="line-numbers language-c"><code class="language-c">$<span class="token punctuation">(</span>VC_ReferencesPath_x86<span class="token punctuation">)</span><span class="token punctuation">;</span>E<span class="token punctuation">:</span>\miccall\VSproject<span class="token number">-2018</span>\GlutGL\GLUT_37
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><strong>库目录</strong>  <pre class="line-numbers language-c"><code class="language-c">$<span class="token punctuation">(</span>VC_LibraryPath_x86<span class="token punctuation">)</span><span class="token punctuation">;</span>$<span class="token punctuation">(</span>WindowsSDK_LibraryPath_x86<span class="token punctuation">)</span><span class="token punctuation">;</span>$<span class="token punctuation">(</span>NETFXKitsDir<span class="token punctuation">)</span>Lib\um\x86<span class="token punctuation">;</span>E<span class="token punctuation">:</span>\miccall\VSproject<span class="token number">-2018</span>\GlutGL\GLUT_37
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><strong>链接器/输入</strong> <pre class="line-numbers language-c"><code class="language-c"><span class="token operator">%</span><span class="token punctuation">(</span>AdditionalDependencies<span class="token punctuation">)</span><span class="token punctuation">;</span>glut32<span class="token punctuation">.</span>lib<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+</ul>
+<h3 id="2-GLFW"><a href="#2-GLFW" class="headerlink" title="2. GLFW"></a>2. GLFW</h3>
             </div>
 
             <!-- Post Comments -->
@@ -191,8 +226,8 @@ $('.btn_click_load').click(function() {
 -->
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://miccall.tech/2017/10/11/algorithm/openGL/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://miccall.tech/2017/10/11/algorithm/openGL/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://miccall.tech/openGL.html';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/openGL.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 

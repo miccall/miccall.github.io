@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -272,7 +296,8 @@
             <span class="token punctuation">}</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="获取签名信息-重点-指定信息的标签"><a href="#获取签名信息-重点-指定信息的标签" class="headerlink" title="获取签名信息# (重点:指定信息的标签)"></a>获取签名信息# (重点:指定信息的标签)</h2><pre><code>1.指定获取签名信息标签
 </code></pre><pre><code>        List&lt;PackageInfo&gt; installedPackages = pm.getInstalledPackages(PackageManager.GET_SIGNATURES);
 </code></pre><pre><code>2.获取签名信息
@@ -355,6 +380,7 @@
                             //设置显示信息以及停止动画
                             tv_antivirus_text.setText(&quot;扫描完成,未发现病毒&quot;);
                         }
+
 </code></pre><h2 id="缓存清理框架-重点"><a href="#缓存清理框架-重点" class="headerlink" title="缓存清理框架# (重点!!!!!!)"></a>缓存清理框架# (重点!!!!!!)</h2><pre><code>1.将activity改为继承fragmentActivity
 </code></pre><pre><code>        //如果要对fragment进行管理操作,activity必须继承fragmentActivity
         public class ClearCacheActivity extends FragmentActivity {
@@ -630,7 +656,7 @@ public class MyApplication extends Application {
                 try {
                     //将捕获到异常,保存到SD卡中
                     ex.printStackTrace(new PrintStream(new File(&quot;/mnt/sdcard/log.txt&quot;)));
-                } catch (FileNotFoundException e)
+                } catch (FileNotFoundException e) 
 </code></pre>
             </div>
 

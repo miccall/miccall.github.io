@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -153,7 +177,8 @@
 
     <span class="token comment" spellcheck="true">//为按钮控件设置点击监听 </span>
     bt<span class="token punctuation">.</span><span class="token function">setOnClickListener</span><span class="token punctuation">(</span>clickListener <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>当然这样做的目的是为了更好的理解观察者模式 </p>
 </li>
@@ -188,7 +213,8 @@
     <span class="token keyword">interface</span> <span class="token class-name">ViewButton</span> <span class="token punctuation">{</span>
         <span class="token keyword">void</span> <span class="token function">setListener</span><span class="token punctuation">(</span>MyListener ls<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>这个方法要有一个 MyListener  </p>
 </li>
@@ -217,7 +243,8 @@
         <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setListener</span><span class="token punctuation">(</span>MyListener ls<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             currentLS  <span class="token operator">=</span> ls<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>回过头来再来看 MyListener </p>
 </li>
@@ -229,7 +256,8 @@
 <pre class="line-numbers language-java"><code class="language-java">    <span class="token keyword">interface</span> <span class="token class-name">MyListener</span> <span class="token punctuation">{</span>
         <span class="token keyword">void</span> <span class="token function">onClick</span><span class="token punctuation">(</span>ViewButton vb<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>写完这些 感觉上基本架构都打好了 </p>
 </li>
@@ -242,7 +270,8 @@
 </ul>
 <pre class="line-numbers language-java"><code class="language-java">
      myButton bt1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">myButton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>他会实例化一个bt1 这个就是具体的 被观察者 了 </p>
 </li>
@@ -256,7 +285,8 @@
 
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>下一步，就是监听了 </p>
 </li>
@@ -265,7 +295,8 @@
 </ul>
 <pre class="line-numbers language-java"><code class="language-java">
         bt1<span class="token punctuation">.</span><span class="token function">setListener</span><span class="token punctuation">(</span>myListener<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>这样，好像就完成了我们所需要的模型了 </p>
 </li>
@@ -281,7 +312,8 @@
 
             currentLS<span class="token punctuation">.</span><span class="token function">onClick</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>还记的 currentLS 吗 就是我们刚刚传入的myListener</p>
 </li>
@@ -303,7 +335,8 @@
 <pre class="line-numbers language-java"><code class="language-java">
         <span class="token comment" spellcheck="true">//事件模拟</span>
         bt1<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>这样 我们就模拟了一次点击 </p>
 </li>
@@ -340,8 +373,9 @@
             <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onClick</span><span class="token punctuation">(</span>ViewButton vb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
                 Log<span class="token punctuation">.</span><span class="token function">d</span><span class="token punctuation">(</span><span class="token string">"miccall"</span><span class="token punctuation">,</span><span class="token string">"Click_end"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span> 
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>为了测试 我们再加入一个log </p>
 </li>
@@ -378,7 +412,8 @@
     <span class="token comment" spellcheck="true">//首先，我们需要这两个对象 </span>
     <span class="token keyword">public</span> UnityAction action<span class="token punctuation">;</span>
     <span class="token keyword">public</span> UnityEvent myEvent <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UnityEvent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>这两个是什么呢 我们稍后会细细讲解的</p>
 </li>
@@ -406,7 +441,8 @@
     <span class="token punctuation">{</span>
         Debug<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>这个过程的流程是什么呢 在开始的时候 做了一些绑定准备</p>
 </li>
@@ -426,7 +462,8 @@
     <span class="token punctuation">{</span>
         Debug<span class="token punctuation">.</span><span class="token function">Log</span><span class="token punctuation">(</span><span class="token string">"click"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>这样做之后 ，我们再让btn添加监听action</p>
 </li>
@@ -466,7 +503,8 @@
         <span class="token punctuation">}</span>
 
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>同样的道理 这是我们自定义的执行 每当我们按下P键 就会调用myEvent.Invoke()方法 。</p>
 </li>
@@ -488,7 +526,7 @@
 </li>
 </ul>
 <pre class="line-numbers language-csharp"><code class="language-csharp">
-    <span class="token keyword">public</span> <span class="token keyword">delegate</span> <span class="token keyword">void</span> <span class="token function">UnityAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">delegate</span> <span class="token keyword">void</span> <span class="token function">UnityAction</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li><p>这样他就可以指定一个参数为空的返回值为void的方法 。</p>

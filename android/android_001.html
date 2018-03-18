@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -207,7 +231,7 @@
     <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong> 权限: </strong></p>
-<pre><code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
+<pre><code>&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt; 
 </code></pre><h3 id="数据封装形式-重点"><a href="#数据封装形式-重点" class="headerlink" title="数据封装形式(重点)"></a>数据封装形式(重点)</h3><pre><code>1.xml
 2.json
 json封装形式:{&quot;code&quot;:&quot;2.0&quot;,&quot;apkurl&quot;:&quot;xxxxx&quot;,&quot;des&quot;:&quot;新版本上线了,快来下载吧!!!!&quot;}
@@ -235,12 +259,13 @@ public class StreamUtil {
         br.close();
         return sw.toString();
     }    
-}
+}        
 </code></pre><pre><code>3.解析json数据
 </code></pre><pre><code>//将获取到的流信息转化成字符串
 String json = StreamUtil.parserStreamUtil(in);
 //解析json数据
 JSONObject jsonObject = new JSONObject(json);
+
 </code></pre><pre><code>4.获取数据
 </code></pre><pre><code>//获取数据
 code = jsonObject.getString(&quot;code&quot;);
@@ -289,6 +314,7 @@ protected void showdialog() {
         enterHome();
     }
 });
+
 </code></pre><pre><code>2.处理了在跳转到主界面,从主界面点击返回键返回的时候,返回splash界面的问题,解决:在跳转的是将splash界面移出
 </code></pre><pre><code>/**
 * 跳转到主界面
@@ -299,6 +325,7 @@ protected void enterHome() {
     /*移出splash界面*/
     finish();
 }
+
 </code></pre><pre><code>3.处理对话框延迟显示的问题
 </code></pre><pre><code>        //处理连接外网连接时间的问题
         //在连接成功之后在去获取一个时间

@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -300,8 +324,9 @@
 </li>
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
-        diffuse <span class="token operator">=</span> I <span class="token operator">*</span> <span class="token function">cos</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span>L<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+        diffuse <span class="token operator">=</span> I <span class="token operator">*</span> <span class="token function">cos</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span>L<span class="token punctuation">)</span> 
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://images2015.cnblogs.com/blog/810648/201510/810648-20151017170107804-1752879028.jpg" width="300" alt="图片名称" align="center"></p>
 <ul>
 <li><p>diffuse：反射光线的的光强 </p>
@@ -325,7 +350,8 @@
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
         diffuse <span class="token operator">=</span> I <span class="token operator">*</span>  <span class="token function">max</span> <span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">cos</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span>L<span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//把小于0的部分都置为0</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>图片是之前截图的 属性还是标准的没改过来 </p>
 </li>
@@ -344,7 +370,8 @@
         fixed4 finalRGBA <span class="token operator">=</span> <span class="token function">fixed4</span><span class="token punctuation">(</span>finalColor<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">UNITY_APPLY_FOG</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>fogCoord<span class="token punctuation">,</span> finalRGBA<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token keyword">return</span> finalRGBA<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>内部实现也跟预想的类似 如果你学过shader lab 的话 就非常面熟了 </p>
 </li>
@@ -389,7 +416,7 @@
 <li><p>上一个地方我们提到的 入射光线的光强 I 具体的计算方式为 </p>
 </li>
 </ul>
-<pre class="line-numbers language-cpp"><code class="language-cpp">    I <span class="token operator">=</span> Cl <span class="token operator">*</span> Cm
+<pre class="line-numbers language-cpp"><code class="language-cpp">    I <span class="token operator">=</span> Cl <span class="token operator">*</span> Cm 
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <ul>
 <li><p>Cl 表示的是 光源的颜色</p>
@@ -414,7 +441,8 @@
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
         specular <span class="token operator">=</span> I · <span class="token function">power</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span> V <span class="token punctuation">,</span> R <span class="token punctuation">)</span> <span class="token punctuation">,</span> gloss <span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>I 不多说了 ，上面已经提到过 但不同的是 这里的 I 表示的是高光反射光强 </p>
 </li>
@@ -427,7 +455,8 @@
 </ul>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
         specular <span class="token operator">=</span> I · <span class="token function">power</span><span class="token punctuation">(</span> <span class="token function">max</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token function">dot</span><span class="token punctuation">(</span> V <span class="token punctuation">,</span> R <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">,</span> gloss <span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li><p>具体来看看这个的连接方法 </p>
 </li>

@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -209,7 +233,8 @@
             <span class="token punctuation">}</span>
             <span class="token keyword">return</span> arr <span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="生成n个元素的近乎有序的数组"><a href="#生成n个元素的近乎有序的数组" class="headerlink" title="生成n个元素的近乎有序的数组"></a>生成n个元素的近乎有序的数组</h3><ul>
 <li><p>@param ： 生成包含 n个元素 的随机数组 , 但这些数组几乎是有序的 只有有参数swapTimes 个值是随机的 。</p>
 </li>
@@ -251,7 +276,8 @@
             cout<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
             <span class="token keyword">return</span> <span class="token punctuation">;</span> 
         <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="是否有序"><a href="#是否有序" class="headerlink" title="是否有序"></a>是否有序</h3><ul>
 <li><p>@param ： 判断包含 n个元素 的数组 T 是否是有序的 。</p>
 </li>
@@ -294,8 +320,9 @@
             <span class="token function">assert</span><span class="token punctuation">(</span> <span class="token function">issorted</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span>n<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
             cout<span class="token operator">&lt;&lt;</span> sortName <span class="token operator">&lt;&lt;</span> <span class="token string">" : "</span> <span class="token operator">&lt;&lt;</span> <span class="token keyword">double</span><span class="token punctuation">(</span>endtime <span class="token operator">-</span> starttime<span class="token punctuation">)</span> <span class="token operator">/</span> CLOCKS_PER_SEC <span class="token operator">&lt;&lt;</span> <span class="token string">" s "</span> <span class="token operator">&lt;&lt;</span> endl<span class="token punctuation">;</span>
             <span class="token keyword">return</span> <span class="token punctuation">;</span>   
-        <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        <span class="token punctuation">}</span>    
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="复制数组"><a href="#复制数组" class="headerlink" title="复制数组"></a>复制数组</h3><ul>
 <li>@param ： 复制一个包含 n个元素 的数组 T 的数组到一个新的空间 并返回其指针 </li>
 </ul>
@@ -364,7 +391,8 @@
                  <span class="token punctuation">}</span>    
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="选择-SelectionSort"><a href="#选择-SelectionSort" class="headerlink" title="选择 SelectionSort"></a>选择 SelectionSort</h3><ul>
 <li><p>首先在整个数组里面 找出大小是第一名的位置</p>
 </li>
@@ -392,7 +420,8 @@
                 <span class="token function">swap</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>arr<span class="token punctuation">[</span>minIndex<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             <span class="token punctuation">}</span>
         <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ul>
 <li>选择排序法 是对 定位比较交换法（也就是冒泡排序法） 的一种改进。</li>
 </ul>
@@ -670,7 +699,8 @@
             <span class="token comment" spellcheck="true">//对 数组的 0 到 n-1 进行排序 </span>
             <span class="token function">__quickSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>n<span class="token number">-1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="三路快速-QuickSort3Ways"><a href="#三路快速-QuickSort3Ways" class="headerlink" title="三路快速 QuickSort3Ways"></a>三路快速 QuickSort3Ways</h3><pre class="line-numbers language-cpp"><code class="language-cpp">
         <span class="token comment" spellcheck="true">/*三路快速排序 对arr[l...r] 的部分快速排序  
         * 将arr[l...r]分为 &lt; v   ==v    >v  三部分 

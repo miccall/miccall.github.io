@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -149,23 +173,23 @@
                 
                 <div class="6u 12u(narrower)">
                     <section class="link_box special">
-                       <a href="/2018/02/12/design/光学的艺术/">
-                        <div class="page_title" style="background-image: url(http://onh0umlhz.bkt.clouddn.com/20180211design.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                       <a href="/2018/03/11/algorithm/RayTracing/">
+                        <div class="page_title" style="background-image: url(http://onh0umlhz.bkt.clouddn.com/201803182018-03-18%2005_47_54.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
                             <!--标题-->
-                            <h2 class="page_title_text"> 光学的艺术 </h2>
+                            <h2 class="page_title_text"> 光线追踪渲染器 </h2>
                             <!--段落-->
                         </div>
                         </a>
                         <div class="home-post-info">
                             <!-- Author Avatar -->
                             <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2018-02-12</span></h6>
+                                <h6><span class="home-post-info-data">2018-03-11</span></h6>
                                 <div class="home-post-info-Category">
                                     <!-- Category -->
                                     <span>
                             <h6>
                             <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/Design/">Design</a></a>
+                                <a class="post_category-link" href="/categories/Algorithm/">Algorithm</a></a>
                             </h6>
                         </span>
                                 </div>
@@ -233,34 +257,6 @@
             
                 <div class="6u 12u(narrower)">
                     <section class="link_box special">
-                       <a href="/2017/10/11/algorithm/openGL/">
-                        <div class="page_title" style="background-image: url(http://img.zcool.cn/community/01a94a58483cada801219c770a5906.png@2o.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
-                            <!--标题-->
-                            <h2 class="page_title_text"> OpenGL 剖析 </h2>
-                            <!--段落-->
-                        </div>
-                        </a>
-                        <div class="home-post-info">
-                            <!-- Author Avatar -->
-                            <div class="home-post-info-author-avatar">
-                                <h6><span class="home-post-info-data">2017-10-11</span></h6>
-                                <div class="home-post-info-Category">
-                                    <!-- Category -->
-                                    <span>
-                            <h6>
-                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
-                                <a class="post_category-link" href="/categories/Algorithm/">Algorithm</a></a>
-                            </h6>
-                        </span>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-                <!-- 文章sample  e-->
-            
-                <div class="6u 12u(narrower)">
-                    <section class="link_box special">
                        <a href="/2017/09/15/unity3d/Post-process Volume/">
                         <div class="page_title" style="background-image: url(https://cdn.assetstore.unity3d.com/package-screenshot/c9d4780c-918c-4805-8b45-65a86d343804_scaled.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
                             <!--标题-->
@@ -315,6 +311,146 @@
                 </div>
                 <!-- 文章sample  e-->
             
+                <div class="6u 12u(narrower)">
+                    <section class="link_box special">
+                       <a href="/2017/06/04/design/从按钮点击学观察者模式/">
+                        <div class="page_title" style="background-image: url(https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2773536678,1217537978&amp;fm=27&amp;gp=0.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                            <!--标题-->
+                            <h2 class="page_title_text"> 从按钮点击学观察者模式 </h2>
+                            <!--段落-->
+                        </div>
+                        </a>
+                        <div class="home-post-info">
+                            <!-- Author Avatar -->
+                            <div class="home-post-info-author-avatar">
+                                <h6><span class="home-post-info-data">2017-06-04</span></h6>
+                                <div class="home-post-info-Category">
+                                    <!-- Category -->
+                                    <span>
+                            <h6>
+                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
+                                <a class="post_category-link" href="/categories/Design/">Design</a></a>
+                            </h6>
+                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- 文章sample  e-->
+            
+                <div class="6u 12u(narrower)">
+                    <section class="link_box special">
+                       <a href="/2017/05/20/design/PPT_design/">
+                        <div class="page_title" style="background-image: url(http://onh0umlhz.bkt.clouddn.com/0730pptdesign.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                            <!--标题-->
+                            <h2 class="page_title_text"> PPT设计讲座 </h2>
+                            <!--段落-->
+                        </div>
+                        </a>
+                        <div class="home-post-info">
+                            <!-- Author Avatar -->
+                            <div class="home-post-info-author-avatar">
+                                <h6><span class="home-post-info-data">2017-05-20</span></h6>
+                                <div class="home-post-info-Category">
+                                    <!-- Category -->
+                                    <span>
+                            <h6>
+                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
+                                <a class="post_category-link" href="/categories/Design/">Design</a></a>
+                            </h6>
+                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- 文章sample  e-->
+            
+                <div class="6u 12u(narrower)">
+                    <section class="link_box special">
+                       <a href="/2017/05/12/unity3d/Unity 3d 实现物体跟随摄像机视野运动/">
+                        <div class="page_title" style="background-image: url(http://onh0umlhz.bkt.clouddn.com/robot.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                            <!--标题-->
+                            <h2 class="page_title_text"> BehaviorDesigner 实现智能机器人 </h2>
+                            <!--段落-->
+                        </div>
+                        </a>
+                        <div class="home-post-info">
+                            <!-- Author Avatar -->
+                            <div class="home-post-info-author-avatar">
+                                <h6><span class="home-post-info-data">2017-05-12</span></h6>
+                                <div class="home-post-info-Category">
+                                    <!-- Category -->
+                                    <span>
+                            <h6>
+                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
+                                <a class="post_category-link" href="/categories/Unity-3D/">Unity 3D</a></a>
+                            </h6>
+                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- 文章sample  e-->
+            
+                <div class="6u 12u(narrower)">
+                    <section class="link_box special">
+                       <a href="/2017/05/01/unity3d/Shader Forge 应用教程/">
+                        <div class="page_title" style="background-image: url(http://onh0umlhz.bkt.clouddn.com/miccall0504shadrJC_header.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                            <!--标题-->
+                            <h2 class="page_title_text"> Shader Forge 应用教程 </h2>
+                            <!--段落-->
+                        </div>
+                        </a>
+                        <div class="home-post-info">
+                            <!-- Author Avatar -->
+                            <div class="home-post-info-author-avatar">
+                                <h6><span class="home-post-info-data">2017-05-01</span></h6>
+                                <div class="home-post-info-Category">
+                                    <!-- Category -->
+                                    <span>
+                            <h6>
+                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
+                                <a class="post_category-link" href="/categories/Unity-3D/">Unity 3D</a></a>
+                            </h6>
+                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- 文章sample  e-->
+            
+                <div class="6u 12u(narrower)">
+                    <section class="link_box special">
+                       <a href="/2017/04/18/unity3d/Unity 3d 常用脚本/">
+                        <div class="page_title" style="background-image: url(http://onh0umlhz.bkt.clouddn.com/c.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;">
+                            <!--标题-->
+                            <h2 class="page_title_text"> Unity 3d 脚本特性 </h2>
+                            <!--段落-->
+                        </div>
+                        </a>
+                        <div class="home-post-info">
+                            <!-- Author Avatar -->
+                            <div class="home-post-info-author-avatar">
+                                <h6><span class="home-post-info-data">2017-04-18</span></h6>
+                                <div class="home-post-info-Category">
+                                    <!-- Category -->
+                                    <span>
+                            <h6>
+                            <a class="post_category-link" href="http://localhost:4000/categories/Algorithm/">
+                                <a class="post_category-link" href="/categories/Unity-3D/">Unity 3D</a></a>
+                            </h6>
+                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- 文章sample  e-->
+            
             </div>
         </section>
         </div>
@@ -324,7 +460,7 @@
         <footer style="text-align: center; padding-top: 2em;">
   
     <div class="pagination" >
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">nex</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">nex</a>
     </div>  
     
 </footer>

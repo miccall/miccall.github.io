@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -196,7 +220,8 @@ Shader <span class="token string">"miccall/Lighting/lambert_pre_vert"</span>
     <span class="token punctuation">}</span>
     Fallback <span class="token string">"Diffuse"</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-glsl"><code class="language-glsl"><span class="token comment" spellcheck="true">//逐像素lambert</span>
 Shader <span class="token string">"miccall/Lighting/lambert_pre_pixel"</span>
 <span class="token punctuation">{</span>
@@ -249,7 +274,8 @@ Shader <span class="token string">"miccall/Lighting/lambert_pre_pixel"</span>
     <span class="token punctuation">}</span>
     Fallback <span class="token string">"Diffuse"</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/20180202lambertCom.jpg" alt=""></p>
 <p>可以看到，lambert 模型有一半的值为0 所以背部都是黑色，而半lambert只映射了一半，他就显得更加渐变光滑。</p>
 <pre class="line-numbers language-glsl"><code class="language-glsl"><span class="token comment" spellcheck="true">//逐像素的 lambert_half</span>
@@ -303,7 +329,8 @@ Shader <span class="token string">"miccall/Lighting/lambert_half"</span>
     <span class="token punctuation">}</span>
     Fallback <span class="token string">"Diffuse"</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="2-高光反射"><a href="#2-高光反射" class="headerlink" title="2. 高光反射"></a>2. 高光反射</h3><p><img src="http://onh0umlhz.bkt.clouddn.com/20180202specular.jpg" alt=""></p>
 <p>phong和blinn phong的计算方式，只是把VR 换成了NH<br>R的计算方法相对H来说比较复杂。</p>
 <pre class="line-numbers language-glsl"><code class="language-glsl"><span class="token comment" spellcheck="true">//Phong 高光模型 逐顶点</span>
@@ -368,7 +395,8 @@ Shader <span class="token string">"miccall/Lighting/Specular_pre_vert"</span>
     <span class="token punctuation">}</span>
     Fallback <span class="token string">"Diffuse"</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-glsl"><code class="language-glsl"><span class="token comment" spellcheck="true">//逐像素</span>
 Shader <span class="token string">"miccall/Lighting/Specular_pre_pixel_phong"</span>
 <span class="token punctuation">{</span>
@@ -434,7 +462,8 @@ Shader <span class="token string">"miccall/Lighting/Specular_pre_pixel_phong"</s
     <span class="token punctuation">}</span>
     Fallback <span class="token string">"Diffuse"</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <pre class="line-numbers language-glsl"><code class="language-glsl"><span class="token comment" spellcheck="true">//Blinn-Phong 高光模型</span>
 Shader <span class="token string">"miccall/Lighting/Specular_pre_pixel_Blinn_phong"</span>
 <span class="token punctuation">{</span>
@@ -1190,11 +1219,13 @@ Shader <span class="token string">"miccall/Lighting/Specular_pre_pixel_Blinn_pho
     <span class="token punctuation">}</span>
     Fallback <span class="token string">"Specular"</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>法线贴图中，他存储的向量范围是-1 到 1 ，而在shader中，贴图的颜色一般也是（0,1）区间，所以，我们在计算时只需要把从法线贴图中采样得到的法线值进行映射，将其从（0,1）区间转化到（-1,1）区间。<br>计算公式就是 </p>
 <pre class="line-numbers language-txt"><code class="language-txt">pixel = (normal + 1 ) / 2 ;  或者 
 nomarl = pixel * 2 - 1 ;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>但这个公式被unity封装了一下，使用UnpackNormal函数就可以得到法线向量信息。</p>
 <pre class="line-numbers language-glsl"><code class="language-glsl"><span class="token comment" spellcheck="true">// UnityCG.cginc</span>
 <span class="token keyword">inline</span> fixed3 <span class="token function">UnpackNormalDXT5nm</span> <span class="token punctuation">(</span>fixed4 packednormal<span class="token punctuation">)</span>  
@@ -1212,7 +1243,7 @@ nomarl = pixel * 2 - 1 ;
 <span class="token preprocessor builtin">#else</span>  
     <span class="token keyword">return</span> <span class="token function">UnpackNormalDXT5nm</span><span class="token punctuation">(</span>packednormal<span class="token punctuation">)</span><span class="token punctuation">;</span>  
 <span class="token preprocessor builtin">#endif</span>  
-<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>  
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="3-渐变纹理控制漫反射强度"><a href="#3-渐变纹理控制漫反射强度" class="headerlink" title="3.渐变纹理控制漫反射强度"></a>3.渐变纹理控制漫反射强度</h4><pre class="line-numbers language-glsl"><code class="language-glsl">Shader <span class="token string">"miccall/Lighting2/LightwithRamp"</span>
 <span class="token punctuation">{</span>

@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -142,29 +166,31 @@
         }  
 
         [Tooltip ("Velocity (m/s) move toward ")]
-        protected float deltaVelocity = 0.7f;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        protected float deltaVelocity = 0.7f;   
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="3-手划向上边"><a href="#3-手划向上边" class="headerlink" title="3.手划向上边"></a>3.手划向上边</h3><pre class="line-numbers language-c#"><code class="language-c#">        protected bool isMoveUp (Hand hand)   /*手向上 */
         {
             return hand.PalmVelocity.y > deltaVelocity && !isStationary (hand);
-        }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+        } 
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="4-手划向下边"><a href="#4-手划向下边" class="headerlink" title="4.手划向下边"></a>4.手划向下边</h3><pre class="line-numbers language-c#"><code class="language-c#">        protected bool isMoveDown (Hand hand) /*手向下*/  
         {
             return hand.PalmVelocity.y < -deltaVelocity && !isStationary (hand);
-        }
+        } 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="5-手固定不动"><a href="#5-手固定不动" class="headerlink" title="5.手固定不动"></a>5.手固定不动</h3><pre class="line-numbers language-c#"><code class="language-c#">        protected bool isStationary (Hand hand)/* 固定不动的*/ 
         {
             return hand.PalmVelocity.Magnitude < smallestVelocity;
         }  
         [Tooltip ("Velocity (m/s) move toward ")]                   //速度（m/s）走向 
-        protected float smallestVelocity = 0.4f;
+        protected float smallestVelocity = 0.4f;   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="6-是否抓取"><a href="#6-是否抓取" class="headerlink" title="6.是否抓取"></a>6.是否抓取</h3><pre class="line-numbers language-c#"><code class="language-c#">        protected bool isGrabHand (Hand hand)  /*是否抓取*/
         {
             return hand.GrabStrength > 0.8f;    /*抓取力*/ 
-        }
+        }   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="7-是否握拳"><a href="#7-是否握拳" class="headerlink" title="7.是否握拳"></a>7.是否握拳</h3><pre class="line-numbers language-c#"><code class="language-c#">        protected bool isCloseHand (Hand hand)     /*是否握拳*/ 
         {
@@ -181,7 +207,7 @@
                 }
             }
             return (count == 5);
-        }
+        }   
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="8-手掌是否全张开"><a href="#8-手掌是否全张开" class="headerlink" title="8.手掌是否全张开"></a>8.手掌是否全张开</h3><pre class="line-numbers language-c#"><code class="language-c#">        protected bool isOpenFullHand (Hand hand)         /*手掌全展开~*/
         {
@@ -195,7 +221,8 @@
                    //向量转化成 角度
                     return Vector3.Angle (UnityVectorExtension.ToVector3 (a), UnityVectorExtension.ToVector3 (b));
         }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>  （2）判断两个向量是否 相同 方向 </p>
 <pre class="line-numbers language-c#"><code class="language-c#">        protected bool isSameDirection (Vector a, Vector b)
         {
@@ -203,7 +230,8 @@
                     //Debug.Log (angle2LeapVectors (a, b) + " " + b);
                     return angle2LeapVectors (a, b) < handForwardDegree;
         }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（3）判断两个向量是否 相反 方向        </p>
 <pre class="line-numbers language-c#"><code class="language-c#">        protected bool isOppositeDirection (Vector a, Vector b      
         {
@@ -229,8 +257,9 @@
         {
             float anglePalmNormal = angle2LeapVectors (hand.PalmNormal, UnityVectorExtension.ToVector (Vector3.up));
             return (anglePalmNormal > 70 && anglePalmNormal < 110);
-        }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        } 
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="12-判断大拇指是否竖直或向下"><a href="#12-判断大拇指是否竖直或向下" class="headerlink" title="12.判断大拇指是否竖直或向下"></a>12.判断大拇指是否竖直或向下</h3><pre class="line-numbers language-c#"><code class="language-c#">         protected bool isThumbDirection (Hand hand, Vector3 dir)
         {
             List<Finger> listOfFingers = hand.Fingers;
@@ -269,7 +298,8 @@
                     //Debug.Log (count);
                     return (count == 4);
         }
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
 

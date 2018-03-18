@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -183,7 +207,7 @@
     (1)在闭区间［a,b］上连续
     (2)在(a,b)内可导
     (3)f(a)=f(b)，则至少存在一个ε ∈(a,b) 使
-    f&#39;(ε) = 0
+    f&#39;(ε) = 0 
 </code></pre><p><img src="http://onh0umlhz.bkt.clouddn.com/20171014001.JPG" alt=""></p>
 <p>拉格朗日中值定理</p>
 <pre><code>    如果函数f(x)满足以下条件，
@@ -197,6 +221,7 @@
      (2)在(a,b)内可导
      (3)对任意 x∈(a,b)且 g&#39;(x) ≠ 0  则在(a,b)内至少存在一点 ε, 
      使 f(b) - f(a) / g(b) - g(a)   =   f&#39;(ε) / f&#39;(ε)
+
 </code></pre><p><img src="http://onh0umlhz.bkt.clouddn.com/20171014003.JPG" alt=""></p>
 <p>先来讲讲三者都有的条件：在［a,b］连续，在(a,b)可导。这就不用说了 ,我们研究的是初等函数图像 ,为了更形象,我们选用位移时间图像来看看跑步的情况 .</p>
 <p>罗尔首先提出 在往返跑时，一定有一 <strong>时间点</strong> 瞬时速度为0。那就是 ,在转向的瞬间 .<br><img src="http://onh0umlhz.bkt.clouddn.com/20171014004.JPG" alt=""></p>

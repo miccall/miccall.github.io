@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -132,7 +156,8 @@
     std<span class="token operator">::</span>map<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token punctuation">,</span><span class="token keyword">int</span><span class="token operator">></span> m_map<span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// map&lt;int,int>::iterator iter =  m_map.begin();</span>
     <span class="token keyword">auto</span> iter <span class="token operator">=</span> multimap1<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果觉得不过瘾，还可以看看 </p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
     std<span class="token operator">::</span>pair<span class="token operator">&lt;</span>
@@ -142,7 +167,8 @@
          range <span class="token operator">=</span> multimap1<span class="token punctuation">.</span><span class="token function">equal_range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
     <span class="token keyword">auto</span> range2 <span class="token operator">=</span> multimap1<span class="token punctuation">.</span><span class="token function">equal_range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>auto有时候会简化我们的书写。</p>
 <p>因为是编译过程中，编译器为我们替换，而免去了我们自己写，所以用auto声明的变量必须初始化 。</p>
 <p>说到这里，突然想到参数传递，又想到函数模板，恰恰他们俩的作用是相似的。而我试过，auto不能用于函数的参数类型，还是得写模板。</p>
@@ -154,7 +180,7 @@
 
     <span class="token keyword">auto</span> arr<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误 </span>
 
-    std<span class="token operator">::</span>map<span class="token operator">&lt;</span><span class="token keyword">auto</span><span class="token punctuation">,</span><span class="token keyword">auto</span><span class="token operator">></span> m_map<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误</span>
+    std<span class="token operator">::</span>map<span class="token operator">&lt;</span><span class="token keyword">auto</span><span class="token punctuation">,</span><span class="token keyword">auto</span><span class="token operator">></span> m_map<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//错误 </span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>auto还可以用于我们不知道定义类型的时候 ，比如使用函数模板，传入的typeanme可以是任意类型的，我们就可以使用auto自动接入。</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
@@ -163,7 +189,8 @@
 <span class="token punctuation">{</span>
     <span class="token keyword">auto</span> var <span class="token operator">=</span> A<span class="token operator">::</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="2-decltype-获取类型"><a href="#2-decltype-获取类型" class="headerlink" title="2.decltype() 获取类型"></a>2.decltype() 获取类型</h4><p>auto是编译器推导类型，那么decltype()可以看作是编译器计算类型。<br>比如说 int a = 1+1 。那么a的类型就可以表示为 decltype(1+1) ，此时 它与int就是等价的。<br>这样做就可以解决auto声明变量必须初始化的问题。</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">1</span> <span class="token punctuation">;</span>
     <span class="token keyword">decltype</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> y <span class="token punctuation">;</span><span class="token comment" spellcheck="true">// y的类型也是int</span>
@@ -188,7 +215,8 @@
 <span class="token punctuation">{</span>
     <span class="token keyword">typename</span> T<span class="token operator">::</span>iterator t1 <span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这样貌似没什么问题 ，但是实际使用起来，难免会有问题 ，因为T::iterator不包含所有的迭代器类型，还包括const类型的。<br>所以我们改一下</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
     <span class="token keyword">template</span><span class="token operator">&lt;</span><span class="token keyword">class</span> <span class="token class-name">T</span><span class="token operator">></span>
@@ -196,7 +224,8 @@
     <span class="token punctuation">{</span>
         <span class="token keyword">decltype</span><span class="token punctuation">(</span>T<span class="token operator">::</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> t1 <span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>通过T::begin() 方法返回的类型，就可以让编译器推出他自己的迭代器类型了。</p>
 <h4 id="3-auto-和-decltype-的混合使用"><a href="#3-auto-和-decltype-的混合使用" class="headerlink" title="3.auto 和 decltype() 的混合使用"></a>3.auto 和 decltype() 的混合使用</h4><p>使用场景 我们范型编程，需要返回值为范型的推导，我们就得使用一个巧妙的设计方式了</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
@@ -205,25 +234,29 @@
     <span class="token punctuation">{</span>
         <span class="token keyword">return</span> t<span class="token operator">+</span>u<span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这个怎么使用呢？emmm 写 auto 吗</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
     <span class="token keyword">auto</span> a <span class="token operator">=</span> add<span class="token operator">&lt;</span><span class="token keyword">decltype</span><span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token punctuation">)</span><span class="token operator">></span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>仿佛也可以，但是问题是，外界调用怎么知道范型的类型是x+y呢？ 不行，这个还得交给函数做。</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token punctuation">,</span><span class="token keyword">typename</span> U<span class="token operator">></span>
     <span class="token keyword">decltype</span><span class="token punctuation">(</span> t<span class="token operator">+</span>u <span class="token punctuation">)</span> <span class="token function">add</span><span class="token punctuation">(</span>T t<span class="token punctuation">,</span>U u<span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
         <span class="token keyword">return</span> t<span class="token operator">+</span>u<span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>但是这样的写法是错误的 ，t和u使用之前必须定义。</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token punctuation">,</span><span class="token keyword">typename</span> U<span class="token operator">></span>
     <span class="token keyword">decltype</span><span class="token punctuation">(</span><span class="token function">T</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token function">U</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token function">add</span><span class="token punctuation">(</span>T t<span class="token punctuation">,</span>U u<span class="token punctuation">)</span>
     <span class="token punctuation">{</span>
         <span class="token keyword">return</span> t<span class="token operator">+</span>u<span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这样解决了函数外部范型问题，但是T()和U() ,都需要一个构造函数，没有怎么办？我们还得继续改</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token punctuation">,</span><span class="token keyword">typename</span> U<span class="token operator">></span>
     <span class="token keyword">decltype</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span>T<span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span>U<span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token function">add2</span><span class="token punctuation">(</span>T t<span class="token punctuation">,</span>U u<span class="token punctuation">)</span>
@@ -232,7 +265,8 @@
         <span class="token comment" spellcheck="true">// *0 表示的是0所指向的原数据</span>
         <span class="token keyword">return</span> t<span class="token operator">+</span>u <span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这样大概就清晰了 ，但是复杂的写法也让阅读成为障碍 。c++ 11 引入了新的语法，返回值后置写法</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
     <span class="token keyword">template</span> <span class="token operator">&lt;</span><span class="token keyword">typename</span> T<span class="token punctuation">,</span><span class="token keyword">typename</span> U<span class="token operator">></span>
@@ -240,7 +274,8 @@
     <span class="token punctuation">{</span>
         <span class="token keyword">return</span> t<span class="token operator">+</span>u <span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>这样的写法，完美的解决了我们的问题 。</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">int</span><span class="token operator">&amp;</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">&amp;</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">float</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token operator">&amp;</span> b<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -250,7 +285,8 @@
     <span class="token punctuation">{</span>
         <span class="token keyword">return</span> <span class="token function">foo</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>实际使用中 ，我们可以通过这样的书写，来避开各种类型的困扰。</p>
 
             </div>

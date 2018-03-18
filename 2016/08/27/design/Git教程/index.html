@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -136,8 +160,8 @@
 <h2 id="二-使用-git"><a href="#二-使用-git" class="headerlink" title="二.使用 git"></a>二.使用 git</h2><p><a href="https://git-for-windows.github.io/" target="_blank" rel="external">下载git</a></p>
 <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b10000_10000&amp;sec=1507906959&amp;di=b999dd0454f494f11fff5d9c5172ee56&amp;src=http://www.treelib.com/Uploads/Home/Ucenter/save_editor_image/2014-12-20/54945a1bde216.png" alt=""></p>
 <p>git和github是两个不一样的东西 , git是一个控制器 ，github是一个平台 我们使用git来对电脑与GitHub进行控制 。<br>下载安装结束之后 右键菜单会有 git gui here和 git bash here 两个选项<br>在桌面点击 git bash here ，会弹出一个类似与命令控制行一样的面板 。</p>
-<p>我们就用这个东西来写一份ssh ，输入以下命令，后面的your_email@youremail.com改为你在github上注册的邮箱</p>
-<pre class="line-numbers language-git"><code class="language-git">    ssh-keygen -t rsa -C <span class="token string">"your_email@youremail.com"</span>
+<p>我们就用这个东西来写一份ssh ，输入以下命令，后面的<a href="mailto:your_email@youremail.com" target="_blank" rel="external">your_email@youremail.com</a>改为你在github上注册的邮箱</p>
+<pre class="line-numbers language-git"><code class="language-git">    ssh-keygen -t rsa -C <span class="token string">"your_email@youremail.com"</span> 
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。<br><img src="http://onh0umlhz.bkt.clouddn.com/20171013002.JPG" alt=""></p>
 <p>成功的话会在上一层目录下生成.ssh文件夹，我们打开 C:\Users\用户名.ssh 目录<br>会有三个文件 ，用记事本打开id_rsa.pub，复制里面的key。</p>
@@ -162,7 +186,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>好了 ，如果没有错误信息，我们就成功把这个目录和github的仓库链接到一起了 。下面我们就可以在该目录创建文件了 。<br>创建完之后。</p>
 <pre class="line-numbers language-git"><code class="language-git">    git pull origin master
-    git add *
+    git add * 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>这两句的意思就是 ，先把仓库里面的东西pull到该本地目录，然后把本地目录里面所有的文件全部添加，添加到哪里呢？不是仓库里面，这个等一会解释。<br>然后 </p>
 <pre class="line-numbers language-git"><code class="language-git">    git commit -m <span class="token string">"提交信息"</span>
@@ -184,7 +208,8 @@
     git branch -d feature_x
     除非你将分支推送到远端仓库，不然该分支就是 不为他人所见的：
     git push origin &lt;branch>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="2-更新与合并"><a href="#2-更新与合并" class="headerlink" title="2.更新与合并"></a>2.更新与合并</h4><pre class="line-numbers language-git"><code class="language-git">
     要更新你的本地仓库至最新改动，执行：
     git pull
@@ -198,7 +223,8 @@
     git add &lt;filename>
     在合并改动之前，你可以使用如下命令预览差异：
     git diff &lt;source_branch> &lt;target_branch>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="3-替换本地改动"><a href="#3-替换本地改动" class="headerlink" title="3.替换本地改动"></a>3.替换本地改动</h4><pre class="line-numbers language-git"><code class="language-git">
     假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：
     git checkout -- &lt;filename>
@@ -206,7 +232,8 @@
     假如你想丢弃你在本地的所有改动与提交，可以到服务器上获取最新的版本历史，并将你本地主分支指向它：
     git fetch origin
     git reset --hard origin/master
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="4-多人协作"><a href="#4-多人协作" class="headerlink" title="4.多人协作"></a>4.多人协作</h4><pre class="line-numbers language-git"><code class="language-git">    首先将项目库forl到自己的目录下，
     然后从git服务器上克隆到本地。giturl为开发项目的链接
     git clone giturl.git

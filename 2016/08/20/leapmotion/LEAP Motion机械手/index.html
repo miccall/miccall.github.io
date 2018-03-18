@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -136,7 +160,7 @@
 <p>他是由上一帧的平滑向量和当前帧的实时向量同时决定的<br>参数a的计算方法:</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"> a <span class="token operator">=</span> <span class="token number">1</span><span class="token operator">/</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token operator">+</span>t<span class="token operator">/</span>T<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 其中 t = 1 / 2Πf </span>
 
- f <span class="token operator">=</span> fc <span class="token operator">+</span> B<span class="token operator">|</span> V <span class="token operator">|</span>
+ f <span class="token operator">=</span> fc <span class="token operator">+</span> B<span class="token operator">|</span> V <span class="token operator">|</span> 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>a的范围是[ 0 , 1 ] ,它由周期 T 时间常数 t 计算,f为截止频率。 V 是 H 的导数 。<br>代表手掌运动的线性速度 。<br>B 是一个系数 ，取0.5 ， fc = 1Hz   。</p>
 <p>部分代码如下 </p>
@@ -188,7 +212,8 @@
     <span class="token keyword">private</span><span class="token operator">:</span>
         ros<span class="token operator">::</span>Publisher hand_info_pub<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>主函数中 ，只有新生成一个LeapROSListener ，用于监听数据，就可以了。</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
     LeapROSListener <span class="token function">listener</span><span class="token punctuation">(</span>nh<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -202,7 +227,8 @@
         ros<span class="token operator">::</span><span class="token function">spinOnce</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         loop_rate<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="2-API映射"><a href="#2-API映射" class="headerlink" title="2. API映射"></a>2. API映射</h4><p>用户手部姿态的的变化将映射到实体，从而驱动模型再6个自由度运动。ros控制器接口传入手指以及方向信息</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">Public <span class="token operator">:</span>
   <span class="token keyword">float</span>   Period <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token number">1f</span>
@@ -231,7 +257,8 @@ Quaternion  <span class="token function">BoneRotation</span> <span class="token 
 <span class="token keyword">float</span>   <span class="token function">BoneWidth</span> <span class="token punctuation">(</span><span class="token keyword">int</span> bone_type<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">float</span>   <span class="token function">FingerJointStretchMecanim</span> <span class="token punctuation">(</span><span class="token keyword">int</span> joint_type<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">float</span>   <span class="token function">FingerJointSpreadMecanim</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="4-性能分析"><a href="#4-性能分析" class="headerlink" title="4. 性能分析"></a>4. 性能分析</h4><h3 id="二-ROS机械系统"><a href="#二-ROS机械系统" class="headerlink" title="二. ROS机械系统"></a>二. ROS机械系统</h3><h4 id="1-模型"><a href="#1-模型" class="headerlink" title="1. 模型"></a>1. 模型</h4><h4 id="2-运动描述"><a href="#2-运动描述" class="headerlink" title="2. 运动描述"></a>2. 运动描述</h4><p>用户手部姿态的变化将映射到体数据,从而驱动体数据在虚拟空间做6个自由度运动。<br>空间态和位置解算是3维交互中非常重要的部分,准确的姿态解算能为下出个交互阶段提供可靠输入。<br>利用用户手部运动数据对体数据进行6个自由度交互映身射,位置信息由掌心点归一化坐标可以得到,而手掌姿态则需要通过计算旋转矩阵获得。<br>为了获得稳定的手掌姿态信息,采用基手四元数的姿态弹法从手外科学关节活动度来看,<br>用户手学旋转组厦非精有限料本文采用非同构的旋转探制大角度旋转.</p>
 <h4 id="3-算法："><a href="#3-算法：" class="headerlink" title="3. 算法："></a>3. 算法：</h4><p>步骤1 通过Leap motion传感器获得当前跟踪的指尖向量d1,d2,d3,d4,d5以及手掌法向量Ni,<br>并计算指尖向量的和在向量Ni的垂面上的投影分量,记为Di<br>步骤2 通过向量Ni和上一帧的手掌法向量Ni-1,计算相应的旋转四元数QNi<br>步骤3 按照QNi 计算相应的旋转矩阵CNi,并通过CNi将上一帧向量Di-1旋转至向量Di-1,若Di-1与 D 不重合则计算它们之间的旋转四元数QDi<br>步驟4 将四元数QDi左乘QNi 得第i-1 和 i 的四数△Q ,通过公式更新当元数Q.。在公式中,引入控制比例因子 K ，调节k改变帧间四元数△Q<br>在计算Q时的计算权重,从而实现非同构的3D旋转,本文根据Leviral的操控需求取经验值k=25<br>步骤5 根据当前四元数Q=(q0 q1 q2 g3 )来确定手掌姿态矩阵C</p>
 <h4 id="3-模块配置"><a href="#3-模块配置" class="headerlink" title="3. 模块配置"></a>3. 模块配置</h4><h4 id="4-控制器接口"><a href="#4-控制器接口" class="headerlink" title="4. 控制器接口"></a>4. 控制器接口</h4><h4 id="5-人机交互"><a href="#5-人机交互" class="headerlink" title="5. 人机交互"></a>5. 人机交互</h4><h3 id="三-Arduino控制器"><a href="#三-Arduino控制器" class="headerlink" title="三. Arduino控制器"></a>三. Arduino控制器</h3><h3 id="四-多传感器数据整合"><a href="#四-多传感器数据整合" class="headerlink" title="四. 多传感器数据整合"></a>四. 多传感器数据整合</h3><h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 . 介绍"></a>1 . 介绍</h4><p>我们在仿生手的五个手指尖端，贴合感应传感器 FSR 。</p>
@@ -269,7 +296,8 @@ Quaternion  <span class="token function">BoneRotation</span> <span class="token 
   <span class="token punctuation">}</span>
   <span class="token function">delay</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="6-操作逻辑图"><a href="#6-操作逻辑图" class="headerlink" title="6. 操作逻辑图"></a>6. 操作逻辑图</h4><h4 id="7-测试结果"><a href="#7-测试结果" class="headerlink" title="7. 测试结果"></a>7. 测试结果</h4><h3 id="五-参考文献"><a href="#五-参考文献" class="headerlink" title="五.参考文献"></a>五.参考文献</h3><p><a href="https://pan.baidu.com/s/1o8iMtfG" target="_blank" rel="external">https://pan.baidu.com/s/1o8iMtfG</a>   密码 : y4km</p>
 <ol>
 <li>基于多传感器数据融合的机械手研究</li>

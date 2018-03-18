@@ -32,7 +32,31 @@
         }
     </style>
 
-			    <script src="/js/jquery.min.js"></script>
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/jquery.scrollex.min.js"></script>
     <script src="/js/jquery.scrolly.min.js"></script>
     <script src="/js/skel.min.js"></script>
@@ -237,6 +261,7 @@
         } catch (NameNotFoundException e) {
             e.printStackTrace();
         }
+
 </code></pre><pre><code>3.解决,点击home最小,打开其他加锁程序,显示上一个加锁程序的图片和名称的bug
 </code></pre><pre><code>        @Override
         protected void onStop() {
@@ -272,6 +297,7 @@
                     unlockcurrentPackagname = intent.getStringExtra(&quot;packagename&quot;);
                 }
             }
+
 </code></pre><pre><code>    解锁操作
 </code></pre><pre><code>            //通过查询数据库,如果数据库中有,弹出解锁界面,没有不作处理
             if (watchDogDao.queryLockApp(packageName)) {
@@ -300,15 +326,13 @@
                 }
             }
 </code></pre><h2 id="两个bug解决方案-重点-启动模式"><a href="#两个bug解决方案-重点-启动模式" class="headerlink" title="两个bug解决方案#  (重点:启动模式)"></a>两个bug解决方案#  (重点:启动模式)</h2><pre><code>1.启动模式
-</code></pre><p>```        &lt;activity android:name=”.WatchDogActivity”<br>            android:launchMode=”singleInstance”</p>
-<pre><code>        &gt;&lt;/activity&gt;
-    &lt;!-- 
-        standard : 标准的启动模式
-        singleTop : 如果activity在栈顶,直接使用
-        singleTask : 如果任务栈中有activity的,之前的activity删除,将activity置顶
-        singleInstance : 将activity单独存放一个任务栈中
-     --&gt;
-</code></pre><pre><code>
+</code></pre><p><code>`</code>        <activity android:name=".WatchDogActivity" android:launchmode="singleInstance"></activity><br>        <!-- 
+            standard : 标准的启动模式
+            singleTop : 如果activity在栈顶,直接使用
+            singleTask : 如果任务栈中有activity的,之前的activity删除,将activity置顶
+            singleInstance : 将activity单独存放一个任务栈中
+         --></p>
+<pre><code>
     2.从最近列表中删除手机卫士应用
 </code></pre><pre><code>    android:excludeFromRecents=&quot;true&quot;
     excludeFromRecents : 是否在最近列表中显示    true:不显示      false:显示,只有设置这个属性的activity运行了,这个属性才会生效
@@ -324,6 +348,7 @@
         contentResolver.notifyChange(uri, null);
 </code></pre><pre><code>
     2.使用内容观察者进行数据更新操作
+
 </code></pre><pre><code>            //先将数据库中的数据,查询存放到内存,然后再把数据从内存中获取出来进行操作
 
             //当数据库变化的时候重新更新内存中的数据,当数据库变化的时候通知内容观察者数据库变化了,然后在内容观察者中去更新最新的数据
@@ -465,6 +490,7 @@ public static void getAllSMS(Context context){
     */progressDialog.show();
 </code></pre><pre><code>
     2.使用progerssbar
+
 </code></pre><pre><code>    progerssbar.setMax(max);//设置最大进度
     progerssbar.setProgress(value)
 </code></pre><pre><code>
@@ -477,6 +503,7 @@ public static void getAllSMS(Context context){
             public void setProgress(int progerss);
         }
 </code></pre><pre><code>        2.媳妇儿给你刷子
+
 </code></pre><pre><code>        public static void getAllSMS(Context context,ShowProgress showProgress){
 
             //设置最大进度
@@ -676,7 +703,7 @@ public void restoresms(View v){
 </code></pre><pre><code>
     代码中使用
 </code></pre><pre><code>    DrawerLayout dl = (DrawerLayout) findViewById(R.id.dl);
-</code></pre><p>//      dl.openDrawer(Gravity.RIGHT);//表示默认打开哪个方向布局<br>        dl.openDrawer(Gravity.LEFT);<br>```</p>
+</code></pre><p>//      dl.openDrawer(Gravity.RIGHT);//表示默认打开哪个方向布局<br>        dl.openDrawer(Gravity.LEFT);<br><code>`</code></p>
 
             </div>
 
