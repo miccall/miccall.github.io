@@ -158,6 +158,10 @@
 <li>使用OpenGL承载</li>
 <li>法线的计算</li>
 <li>为了以后方便，我们重构一下代码架构</li>
+<li>使用摄像机类 </li>
+<li>抗锯齿</li>
+<li>漫反射</li>
+<li>伽马 gamma 矫正</li>
 </ul>
 <h2 id="一-基本的向量数学基础"><a href="#一-基本的向量数学基础" class="headerlink" title="一. 基本的向量数学基础"></a>一. 基本的向量数学基础</h2><p>我们只 使用一个Vec3类表示一个三维向量 包括xyz位置矢量和rgb颜色矢量<br>代码还包括他的性质和一些代数运算规则</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">pragma</span> once</span>
@@ -746,6 +750,158 @@ GLbyte <span class="token operator">*</span> PixelData<span class="token punctua
 <pre class="line-numbers language-cpp"><code class="language-cpp">Vec3 col <span class="token operator">=</span> <span class="token function">color</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span>world<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/2018031904.JPG" width="100%"></p>
+<h2 id="八-使用摄像机类"><a href="#八-使用摄像机类" class="headerlink" title="八 .使用摄像机类"></a>八 .使用摄像机类</h2><p>现在呢 ,同样的为了减少主函数的代码整洁。也为了以后方便，我们新增一个Camera类 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Ray.h"</span> </span>
+<span class="token keyword">class</span> <span class="token class-name">Camera</span>
+<span class="token punctuation">{</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    Vec3 origin<span class="token punctuation">;</span>
+    Vec3 lower_left_corner<span class="token punctuation">;</span>
+    Vec3 horizontal<span class="token punctuation">;</span>
+    Vec3 vertical<span class="token punctuation">;</span>
+<span class="token keyword">public</span><span class="token operator">:</span>
+    <span class="token function">Camera</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Ray <span class="token function">getRay</span><span class="token punctuation">(</span><span class="token keyword">float</span> u<span class="token punctuation">,</span><span class="token keyword">float</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+Camera<span class="token operator">::</span><span class="token function">Camera</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    lower_left_corner <span class="token operator">=</span> <span class="token function">Vec3</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">2.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    horizontal <span class="token operator">=</span> <span class="token function">Vec3</span><span class="token punctuation">(</span><span class="token number">4.0</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vertical <span class="token operator">=</span> <span class="token function">Vec3</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">2.0</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    origin <span class="token operator">=</span> <span class="token function">Vec3</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">inline</span> Ray Camera<span class="token operator">::</span><span class="token function">getRay</span><span class="token punctuation">(</span><span class="token keyword">float</span> u<span class="token punctuation">,</span> <span class="token keyword">float</span> v<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">Ray</span><span class="token punctuation">(</span>origin <span class="token punctuation">,</span> lower_left_corner <span class="token operator">+</span> u<span class="token operator">*</span>horizontal <span class="token operator">+</span> v <span class="token operator">*</span> vertical <span class="token operator">-</span> origin <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>gerRay 方法要再细说一下 ，对比之前的方法 ，我们的光线仅仅获取到了 lower_left_corner + u<em>horizontal + v </em> vertical 方向 ，这里我们在减去一个 orgin 方向 。<br>当然，之前的理解也当然没问题了，只不过我们现在的摄像机类使用了一个坐标，光线的发射就要以摄像机的位置考虑。</p>
+<p>好了，我们就可以在主方法里面使用了 。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token comment" spellcheck="true">// 声明</span>
+    Camera cam<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 渲染循环 </span>
+    Ray r <span class="token operator">=</span> cam<span class="token punctuation">.</span><span class="token function">getRay</span><span class="token punctuation">(</span>u<span class="token punctuation">,</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="九-抗锯齿"><a href="#九-抗锯齿" class="headerlink" title="九 . 抗锯齿"></a>九 . 抗锯齿</h2><p>如果我们放大我们的渲染图片，其实还是可以看到一个明显的锯齿的。<br>因为我们的渲染器分别渲染了不同的物体，以至于他不知道他们之间的交接处应该是什么，直接把最前面的物体覆盖了上去，就显得和突兀。</p>
+<p>那么我们怎么来处理他呢，首先我们想到的就是增加一个采样率，使他获得更多的信息 。</p>
+<p>采样率的算法很简单，对于每一个像素，随机产生一个数，利用这个数作为我们新的uv值进行重计算，这样得到的结果就会融合各个角度得到的信息 。</p>
+<p>随机函数</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">static</span> <span class="token keyword">unsigned</span> <span class="token keyword">long</span> <span class="token keyword">long</span> seed <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+<span class="token keyword">float</span> <span class="token function">drand48</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token keyword">long</span> <span class="token keyword">long</span>  m <span class="token operator">=</span> <span class="token number">0x100000000LL</span> <span class="token punctuation">,</span> ra  <span class="token operator">=</span> <span class="token number">0x5DEECE66DLL</span> <span class="token punctuation">;</span>
+    <span class="token keyword">int</span> rc <span class="token operator">=</span> <span class="token number">0xB16</span><span class="token punctuation">;</span>
+    seed <span class="token operator">=</span> <span class="token punctuation">(</span>ra <span class="token operator">*</span> seed <span class="token operator">+</span> rc<span class="token punctuation">)</span> <span class="token operator">&amp;</span> <span class="token number">0xFFFFFFFFFFFFLL</span><span class="token punctuation">;</span>
+    <span class="token keyword">unsigned</span> <span class="token keyword">int</span> x <span class="token operator">=</span> seed <span class="token operator">>></span> <span class="token number">16</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span>x <span class="token operator">/</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>增加采样率 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">const</span> GLint SamplingRate <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> ImageHeight <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">;</span> j <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">,</span> k <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> rgbwidth<span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> k<span class="token operator">++</span> <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            Vec3 <span class="token function">col</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> s <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> s <span class="token operator">&lt;</span> SamplingRate <span class="token punctuation">;</span> s<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token keyword">float</span> u <span class="token operator">=</span> <span class="token keyword">float</span><span class="token punctuation">(</span>k <span class="token operator">+</span> <span class="token function">drand48</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">float</span><span class="token punctuation">(</span>ImageWidth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">float</span> v <span class="token operator">=</span> <span class="token keyword">float</span><span class="token punctuation">(</span>j <span class="token operator">+</span> <span class="token function">drand48</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">float</span><span class="token punctuation">(</span>ImageHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                Ray r <span class="token operator">=</span> cam<span class="token punctuation">.</span><span class="token function">getRay</span><span class="token punctuation">(</span>u<span class="token punctuation">,</span> v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                Vec3 p <span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">point_at_parameter</span><span class="token punctuation">(</span><span class="token number">2.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                col <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">color</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> world<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            col <span class="token operator">/</span><span class="token operator">=</span> <span class="token keyword">float</span><span class="token punctuation">(</span>SamplingRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 像素数据 </span>
+            PixelData<span class="token punctuation">[</span> j <span class="token operator">*</span><span class="token punctuation">(</span>rgbwidth<span class="token punctuation">)</span><span class="token operator">+</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>GLbyte<span class="token punctuation">)</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">255.99</span> <span class="token operator">*</span> col<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// R</span>
+            PixelData<span class="token punctuation">[</span> j <span class="token operator">*</span><span class="token punctuation">(</span>rgbwidth<span class="token punctuation">)</span><span class="token operator">+</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>GLbyte<span class="token punctuation">)</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">255.99</span> <span class="token operator">*</span> col<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// G</span>
+            PixelData<span class="token punctuation">[</span> j <span class="token operator">*</span><span class="token punctuation">(</span>rgbwidth<span class="token punctuation">)</span><span class="token operator">+</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">2</span> <span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>GLbyte<span class="token punctuation">)</span> <span class="token keyword">int</span><span class="token punctuation">(</span><span class="token number">255.99</span> <span class="token operator">*</span> col<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// B</span>
+
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到，我们使用一个drand48()函数对uv做了更改。并且增加了一层循环 。<br>这样就会导致运算量得指数增加 。原来几秒算完的结果，此时就变得以分钟衡量 。</p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/20180320QQ%E5%9B%BE%E7%89%8720180320224457.png" alt=""></p>
+<p>放大来看，似乎还是有锯齿，但是我们已经混合了背景色，看出来了吗 ？</p>
+<p>真实得照片很难有锯齿，就是因为他的边缘混杂得是背景的颜色，缩放之后就很难发掘。</p>
+<h2 id="十-漫反射"><a href="#十-漫反射" class="headerlink" title="十. 漫反射"></a>十. 漫反射</h2><p>好了，到了我们真正大展身手得时候了，前面铺垫太多，都很难做下去了。今天鼓足了力气，把这部分搞完了。</p>
+<p>之前得光线我们只要一次发射，然后就得到颜色，而现在，我们有两个物体，他们之间得空隙，肯定是有光线来回反射的，然而，光线的反射往往不是固定的，就像之前我们所做的那样，来一些随机数是必不可少的。</p>
+<p>为了研究方便，我们假设光线在碰到物体之后，有50%的光被吸收，而剩下的光线被反射。我们现在考虑的就是这个反射光线的方向。</p>
+<p>那么这个方向到底怎么算呢 ？ 查了查网上通用的算法，总结了一个比较简单的方案。<br>我们假设有一个单位球和一个单位立方体，我们随机生成一个点，要满足这个点在球之外，还必须在立方体之内，否则的话，我们就放弃这个点 。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+Vec3 <span class="token function">Random_in_unitt_cube</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    Vec3 p<span class="token punctuation">;</span>
+    <span class="token keyword">do</span>
+    <span class="token punctuation">{</span>
+        p <span class="token operator">=</span> <span class="token number">2.0</span> <span class="token operator">*</span> <span class="token function">Vec3</span><span class="token punctuation">(</span><span class="token function">drand48</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">drand48</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">drand48</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token function">Vec3</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span> <span class="token keyword">while</span> <span class="token punctuation">(</span>p<span class="token punctuation">.</span><span class="token function">squared_length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> p<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个点还不能直接用，我们还得考虑法线位置和原始点的位置 。</p>
+<p>我们先这样来</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    Vec3 target <span class="token operator">=</span> rec<span class="token punctuation">.</span>p <span class="token operator">+</span> rec<span class="token punctuation">.</span>normal <span class="token operator">+</span> <span class="token function">Random_in_unitt_cube</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>好了， 目标点有了 ，我们的光线就可以按这个点拐弯了 。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>world<span class="token operator">-</span><span class="token operator">></span><span class="token function">hit</span><span class="token punctuation">(</span>r<span class="token punctuation">,</span> <span class="token number">0.001</span><span class="token punctuation">,</span> FLT_MAX<span class="token punctuation">,</span> rec<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        Vec3 target <span class="token operator">=</span> rec<span class="token punctuation">.</span>p <span class="token operator">+</span> rec<span class="token punctuation">.</span>normal <span class="token operator">+</span> <span class="token function">Random_in_unitt_cube</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">0.5</span> <span class="token operator">*</span> <span class="token function">color</span><span class="token punctuation">(</span><span class="token function">Ray</span><span class="token punctuation">(</span>rec<span class="token punctuation">.</span>p<span class="token punctuation">,</span> target <span class="token operator">-</span> rec<span class="token punctuation">.</span>p<span class="token punctuation">)</span><span class="token punctuation">,</span> world<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>emmmm , 应该不错的吧 ，跑一个试试 。</p>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/100.JPG" width="100%"></p>
+<p>emmmm , 跑了不知道多久，反着等的我不耐烦了 。 我们先来写一个方法记录一下过程，不然死等还真烦 。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">void</span> <span class="token function">showProgress</span><span class="token punctuation">(</span><span class="token keyword">int</span> num <span class="token punctuation">,</span> <span class="token keyword">int</span> sum <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">system</span><span class="token punctuation">(</span><span class="token string">"cls"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    std<span class="token operator">::</span>cout <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>sum <span class="token operator">-</span> num<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">/</span> sum <span class="token operator">&lt;&lt;</span> <span class="token string">"%"</span> <span class="token operator">&lt;&lt;</span> std<span class="token operator">::</span>endl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> ImageHeight <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">;</span> j <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token function">showProgress</span><span class="token punctuation">(</span>j<span class="token punctuation">,</span>ImageHeight<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">,</span> k <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> rgbwidth<span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> k<span class="token operator">++</span> <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// code </span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>好了，再来一次 。emmm 不多，我的电脑也就跑了两分半钟吧 。。。。</p>
+<h2 id="十一-伽马-gamma-矫正"><a href="#十一-伽马-gamma-矫正" class="headerlink" title="十一 . 伽马 gamma 矫正"></a>十一 . 伽马 gamma 矫正</h2><p>由于我们使用的RGB显示方式,当然界外的值我们就不好表示了,画面就会偏黑或者偏白.<br>这里我们使用gamma矫正的方法来使得画面更加美观一些 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+Vec3 <span class="token function">Gamma_Correct</span><span class="token punctuation">(</span>Vec3 col<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">float</span> gammafactor <span class="token operator">=</span> <span class="token keyword">float</span><span class="token punctuation">(</span>SamplingRate<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    col <span class="token operator">/</span><span class="token operator">=</span> gammafactor <span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">Vec3</span><span class="token punctuation">(</span><span class="token function">sqrt</span><span class="token punctuation">(</span>col<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>col<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>col<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+col <span class="token operator">=</span> <span class="token function">Gamma_Correct</span><span class="token punctuation">(</span>col<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="http://onh0umlhz.bkt.clouddn.com/gamma100.JPG" width="100%"></p>
+<p>可以对比一些两幅图 ~ 今天的内容很少,我先休息了 ..</p>
 
             </div>
 
