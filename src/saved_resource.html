@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GLSL Editor</title>
+
+    
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body style="background-color: rgb(39, 40, 34);">
+    <div id="glsl_editor">
+        <div class="ge_canvas_container" style="top: 53px; cursor: ew-resize;">
+            <canvas class="ge_canvas" width="500" height="500" data-fragment="// Author:
+                // Title:
+
+                #ifdef GL_ES
+                precision mediump float;
+                #endif
+
+                uniform vec2 u_resolution;
+                uniform vec2 u_mouse;
+                uniform float u_time;
+
+                void main() {
+                    vec2 st = gl_FragCoord.xy/u_resolution.xy;
+                    st.x *= u_resolution.x/u_resolution.y;
+
+                    vec3 color = vec3(0.);
+                    color = vec3(st.x,st.y,abs(sin(u_time)));
+
+                    gl_FragColor = vec4(color,1.0);
+                }" style="background-color: rgb(1, 1, 1);"></canvas>
+        </div>
+
+        <div class="ge_editor" style="padding-top: 53px;">
+            <div class="CodeMirror cm-s-monokai CodeMirror-wrap CodeMirror-focused" style="height: auto;">
+                <div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 119.2px; left: 53px;">
+                    <textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea>
+                </div>
+                <div class="CodeMirror-vscrollbar" cm-not-content="true" style="min-width: 18px; bottom: 0px;">
+                    <div style="min-width: 1px; height: 0px;"></div>
+                </div>
+                <div class="CodeMirror-hscrollbar" cm-not-content="true" style="min-height: 18px;">
+                    <div style="height: 100%; min-height: 1px; width: 0px;"></div>
+                </div>
+                <div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div>
+                <div class="CodeMirror-gutter-filler" cm-not-content="true"></div>
+                <div class="CodeMirror-scroll" tabindex="-1">
+                    <div class="CodeMirror-sizer" style="margin-left: 45px; margin-bottom: 0px; border-right-width: 30px; min-height: 392px; padding-right: 0px; padding-bottom: 0px;">
+                        <div style="position: relative; top: 0px;">
+                            <div class="CodeMirror-lines">
+                                <div style="position: relative; outline: none;">
+                                    <div class="CodeMirror-measure"></div>
+                                    <div class="CodeMirror-measure"></div>
+                                    <div style="position: relative; z-index: 1;"></div>
+                                    <div class="CodeMirror-cursors" style="">
+                                        <div class="CodeMirror-cursor" style="left: 8px; top: 115.2px; height: 19.2px;">&nbsp;</div>
+                                    </div>
+                                    <div class="CodeMirror-code" style="">
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">1</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">// Author:miccall</span></span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">2</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-comment">// Title:learn01</span></span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">3</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">4</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-meta">#ifdef GL_ES</span></span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">5</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-variable">precision</span> <span class="cm-variable">mediump</span> <span class="cm-variable-3">float</span>;</span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">6</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-meta">#endif</span></span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">7</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">8</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">uniform</span> <span class="cm-variable-3">vec2</span> <span class="cm-variable">u_resolution</span>;</span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">9</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">uniform</span> <span class="cm-variable-3">vec2</span> <span class="cm-variable">u_mouse</span>;</span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">10</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-keyword">uniform</span> <span class="cm-variable-3">float</span> <span class="cm-variable">u_time</span>;</span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">11</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">12</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span class="cm-variable-3">void</span> <span class="cm-variable">main</span>() {</span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">13</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  <span class="cm-variable-3">vec2</span> <span class="cm-variable">st</span> <span class="cm-operator">=</span> <span class="cm-atom">gl_FragCoord</span>.<span class="cm-variable">xy</span><span class="cm-operator">/</span><span class="cm-variable">u_resolution</span>.<span class="cm-variable">xy</span>;</span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">14</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  <span class="cm-variable">st</span>.<span class="cm-variable">x</span> <span class="cm-operator">*=</span> <span class="cm-variable">u_resolution</span>.<span class="cm-variable">x</span><span class="cm-operator">/</span><span class="cm-variable">u_resolution</span>.<span class="cm-variable">y</span>;</span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">15</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">16</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  <span class="cm-variable-3">vec3</span> <span class="cm-variable">color</span> <span class="cm-operator">=</span> <span class="cm-variable-3">vec3</span>(<span class="cm-number">0.</span>);</span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">17</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  <span class="cm-variable">color</span> <span class="cm-operator">=</span> <span class="cm-variable-3">vec3</span>(<span class="cm-variable">st</span>.<span class="cm-variable">x</span>,<span class="cm-variable">st</span>.<span class="cm-variable">y</span>,<span class="cm-builtin">abs</span>(<span class="cm-builtin">sin</span>(<span class="cm-variable">u_time</span>)));</span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">18</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">19</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"> &nbsp;  <span class="cm-atom">gl_FragColor</span> <span class="cm-operator">=</span> <span class="cm-variable-3">vec4</span>(<span class="cm-variable">color</span>,<span class="cm-number">1.0</span>);</span></pre></div>
+                                        <div style="position: relative;">
+                                            <div class="CodeMirror-gutter-wrapper" style="left: -45px;">
+                                                <div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 21px;">20</div>
+                                            </div><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;">}</span></pre></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="position: absolute; height: 30px; width: 1px; top: 392px;"></div>
+                    <div class="CodeMirror-gutters" style="height: 422px;">
+                        <div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 29px;"></div>
+                        <div class="CodeMirror-gutter breakpoints"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link type="text/css" rel="stylesheet" href="./glslEditor.css">
+    <script async="" src="./analytics.js"></script>
+    <script type="text/javascript" src="./glslEditor.js"></script>
+    <script type="text/javascript">
+    window.glslEditor = new GlslEditor('#glsl_editor', {
+        canvas_size: 500,
+        canvas_draggable: true,
+        canvas_resizable: true,
+        theme: 'monokai',
+        watchHash: true,
+        fileDrops: true,
+        menu: true
+    });
+    </script>
+</body>
+
+</html>
