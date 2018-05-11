@@ -153,9 +153,11 @@
                 <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ul>
 <li>1.uv动画</li>
 <li>2.简单描边</li>
-<li>shadertoy初探 : <br> 3.画一个笑脸</li>
-<li>4.画一个矩形</li>
-<li>5.完善一个新的笑脸</li>
+<li>shadertoy初探 : <br> </li>
+<li>3.shader中的函数</li>
+<li>4.画一个笑脸</li>
+<li>5.画一个矩形</li>
+<li>6.完善一个新的笑脸</li>
 </ul>
 <h2 id="1-UV-动画"><a href="#1-UV-动画" class="headerlink" title="1. UV 动画"></a>1. UV 动画</h2><p><img src="http://onh0umlhz.bkt.clouddn.com/20180202UVanim.JPG" alt=""><br>把一张九宫格图片。切成单附图，然后轮播出来~</p>
 <p><img src="http://onh0umlhz.bkt.clouddn.com/20180202UV_tech.jpg" alt=""></p>
@@ -334,29 +336,89 @@
 <span class="token punctuation">}</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-shadertoy初探-画一个笑脸"><a href="#3-shadertoy初探-画一个笑脸" class="headerlink" title="3. shadertoy初探 : 画一个笑脸"></a>3. shadertoy初探 : 画一个笑脸</h2><p>前奏 : 环境搭建<br>1.可以是网站直接编写预览 : <a href="https://www.shadertoy.com/new" target="_blank" rel="external">shadertoy</a><br>2.使用vs-code + shadertoy 插件 <a href="https://github.com/stevensona/shader-toy" target="_blank" rel="external">github : shadertoy for vscode</a></p>
-<p>我这里采用第二种编写<br>基本框架 ：</p>
-<pre class="line-numbers language-glsl"><code class="language-glsl">
-<span class="token keyword">vec4</span> <span class="token function">mainImage</span><span class="token punctuation">(</span> <span class="token keyword">vec4</span> fragColor <span class="token punctuation">,</span> <span class="token keyword">vec4</span> fragCoord<span class="token punctuation">)</span>
-<span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">//初始化屏幕颜色 </span>
-    fragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">.</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//根据分辨率 计算uv </span>
-    <span class="token keyword">vec2</span> uv <span class="token operator">=</span> fragCoord<span class="token punctuation">.</span>xy <span class="token operator">/</span> iResolution<span class="token punctuation">.</span>xy <span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 用于shadertoy网站的颜色</span>
-    fragColor <span class="token operator">=</span> <span class="token keyword">vec4</span> <span class="token punctuation">(</span> custom_vec3<span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// 用于shadertoy插件的颜色  </span>
-    <span class="token keyword">return</span> fragColor<span class="token punctuation">;</span>
+<h2 id="3-shader中的函数"><a href="#3-shader中的函数" class="headerlink" title="3. shader中的函数"></a>3. shader中的函数</h2><p>我们使用我最近搭建的一个在线glsl编辑器 ：</p>
+<pre class="line-numbers language-glsl"><code class="language-glsl"><span class="token preprocessor builtin">#ifdef</span> GL_ES
+<span class="token keyword">precision</span> <span class="token keyword">mediump</span> <span class="token keyword">float</span><span class="token punctuation">;</span>
+<span class="token preprocessor builtin">#endif</span>
+
+<span class="token keyword">uniform</span> <span class="token keyword">vec2</span> u_resolution<span class="token punctuation">;</span>
+<span class="token keyword">uniform</span> <span class="token keyword">vec2</span> u_mouse<span class="token punctuation">;</span>
+<span class="token keyword">uniform</span> <span class="token keyword">float</span> u_time<span class="token punctuation">;</span>
+<span class="token keyword">float</span> <span class="token function">plot</span><span class="token punctuation">(</span><span class="token keyword">vec2</span> st<span class="token punctuation">,</span> <span class="token keyword">float</span> pct<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">return</span>  <span class="token function">smoothstep</span><span class="token punctuation">(</span> pct<span class="token operator">-</span><span class="token number">0.02</span><span class="token punctuation">,</span> pct<span class="token punctuation">,</span> st<span class="token punctuation">.</span>y<span class="token punctuation">)</span> <span class="token operator">-</span>
+          <span class="token function">smoothstep</span><span class="token punctuation">(</span> pct<span class="token punctuation">,</span> pct<span class="token operator">+</span><span class="token number">0.02</span><span class="token punctuation">,</span> st<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
 <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token comment" spellcheck="true">// 因为shadertoy插件把 fragColor和fragCoord用gl_FragColor和gl_FragCoord代替。所以我们做这个框架</span>
-    gl_FragColor <span class="token operator">=</span> <span class="token function">mainImage</span><span class="token punctuation">(</span> gl_FragColor <span class="token punctuation">,</span> gl_FragCoord <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">vec2</span> uv <span class="token operator">=</span> gl_FragCoord<span class="token punctuation">.</span>xy<span class="token operator">/</span>u_resolution<span class="token punctuation">.</span>xy<span class="token punctuation">;</span>
+    <span class="token keyword">vec2</span> sm <span class="token operator">=</span> u_mouse<span class="token punctuation">.</span>xy <span class="token operator">/</span> u_resolution<span class="token punctuation">.</span>xy <span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//float x =  0.4 * sin( 15.0 * st.x +  7.0 * u_time) + 0.5 ;</span>
+    <span class="token keyword">float</span> x <span class="token operator">=</span> uv<span class="token punctuation">.</span>x <span class="token punctuation">;</span>
+    <span class="token keyword">float</span> y <span class="token operator">=</span> x <span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//y = pow(x,5.0);</span>
+    <span class="token comment" spellcheck="true">//y = mod(x,0.1);</span>
+    <span class="token comment" spellcheck="true">//y = log(x) + 1.5 ;</span>
+    <span class="token comment" spellcheck="true">//y = fract(x); // 仅仅返回数的小数部分</span>
+     <span class="token comment" spellcheck="true">//y = ceil(x);  // 向正无穷取整</span>
+     <span class="token comment" spellcheck="true">//y = floor(x); // 向负无穷取整</span>
+     <span class="token comment" spellcheck="true">//y = sign(x);  // 提取 x 的正负号</span>
+     <span class="token comment" spellcheck="true">//y = abs(x-0.5);   // 返回 x 的绝对值</span>
+    <span class="token comment" spellcheck="true">// y = clamp( 3.0 * x -1.0 ,0.0 , 1.0); // 把 x 的值限制在 0.0 到 1.0</span>
+     <span class="token comment" spellcheck="true">// y = min(0.0,x);   // 返回 x 和 0.0 中的较小值</span>
+     <span class="token comment" spellcheck="true">// y = max(0.0,x);   // 返回 x 和 0.0 中的较大值 </span>
+
+    <span class="token keyword">float</span> d <span class="token operator">=</span> <span class="token function">plot</span><span class="token punctuation">(</span>uv <span class="token punctuation">,</span> y <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">vec3</span> color <span class="token operator">=</span> <span class="token keyword">vec3</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    color <span class="token operator">=</span> d <span class="token operator">*</span> color <span class="token punctuation">;</span>
+
+    gl_FragColor <span class="token operator">=</span> <span class="token keyword">vec4</span><span class="token punctuation">(</span>color<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
 <span class="token punctuation">}</span>
 
+试试看 ；
 
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>然后我们来看一下最后我们要做的结果 :<br><img src="http://onh0umlhz.bkt.clouddn.com/20180221smile.JPG" alt=""></p>
+``` cpp
+<span class="token comment" spellcheck="true">//时间从 0 - 1 </span>
+<span class="token comment" spellcheck="true">//时间从 1 - 0 </span>
+
+    <span class="token keyword">float</span> t <span class="token operator">=</span> u_time <span class="token punctuation">;</span>
+    <span class="token keyword">float</span> t_zto <span class="token operator">=</span> <span class="token function">fract</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> t_otz <span class="token operator">=</span> <span class="token function">abs</span><span class="token punctuation">(</span><span class="token function">fract</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>## 4. shadertoy初探 : 画一个笑脸
+
+前奏 : 环境搭建
+1.可以是网站直接编写预览 : [shadertoy](https://www.shadertoy.com/new) 
+2.使用vs-code + shadertoy 插件 [github : shadertoy for vscode](https://github.com/stevensona/shader-toy)
+
+我这里采用第二种编写 
+基本框架 ：
+``` glsl 
+
+vec4 mainImage( vec4 fragColor , vec4 fragCoord)
+{
+    //初始化屏幕颜色 
+    fragColor = vec4(0.,0.,0.,1.0);
+    //根据分辨率 计算uv 
+    vec2 uv = fragCoord.xy / iResolution.xy ;
+    // 用于shadertoy网站的颜色
+    fragColor = vec4 ( custom_vec3, 1.0 );
+    // 用于shadertoy插件的颜色  
+    return fragColor;
+}
+
+void main() {
+    // 因为shadertoy插件把 fragColor和fragCoord用gl_FragColor和gl_FragCoord代替。所以我们做这个框架
+    gl_FragColor = mainImage( gl_FragColor , gl_FragCoord );
+}
+
+
+</code></pre><p>然后我们来看一下最后我们要做的结果 :<br><img src="http://onh0umlhz.bkt.clouddn.com/20180221smile.JPG" alt=""></p>
 <p>简单思路就是画圆，脸是圆，眼睛也是圆。嘴巴可以看做是两个圆相切得到的。<br>第一步，拿shader画一个圆 ：<br>画圆之前，我们要知道一个函数 length() : 计算一个点，到(0,0)的距离 </p>
 <pre class="line-numbers language-glsl"><code class="language-glsl">
     <span class="token keyword">float</span> d <span class="token operator">=</span> <span class="token function">length</span><span class="token punctuation">(</span>uv<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -433,7 +495,7 @@
 <pre class="line-numbers language-glsl"><code class="language-glsl">     <span class="token keyword">float</span> mask <span class="token operator">=</span> face <span class="token operator">-</span> mouth <span class="token operator">-</span> eye1 <span class="token operator">-</span> eye2 <span class="token punctuation">;</span> 
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这样，我们的笑脸就做完了 。</p>
-<h2 id="4-画一个矩形"><a href="#4-画一个矩形" class="headerlink" title="4.画一个矩形"></a>4.画一个矩形</h2><p>继续使用shadertoy的平台，画一个矩形，我们分两种来画，一种是遮罩加，一种遮罩减。得到的效果就是，一个是白色的矩形，一个是黑色的矩形。<br>这里就不细讲了，直接代码</p>
+<h2 id="5-画一个矩形"><a href="#5-画一个矩形" class="headerlink" title="5.画一个矩形"></a>5.画一个矩形</h2><p>继续使用shadertoy的平台，画一个矩形，我们分两种来画，一种是遮罩加，一种遮罩减。得到的效果就是，一个是白色的矩形，一个是黑色的矩形。<br>这里就不细讲了，直接代码</p>
 <pre class="line-numbers language-glsl"><code class="language-glsl"><span class="token comment" spellcheck="true">// 画一个黑色的矩形 </span>
 <span class="token keyword">float</span> <span class="token function">RectB</span><span class="token punctuation">(</span><span class="token keyword">vec2</span> uv <span class="token punctuation">,</span> <span class="token keyword">vec2</span> offset <span class="token punctuation">,</span> <span class="token keyword">float</span> top <span class="token punctuation">,</span><span class="token keyword">float</span> bottom <span class="token punctuation">,</span><span class="token keyword">float</span> left <span class="token punctuation">,</span><span class="token keyword">float</span> right <span class="token punctuation">,</span><span class="token keyword">float</span> blur <span class="token punctuation">,</span><span class="token keyword">float</span> size <span class="token punctuation">)</span><span class="token punctuation">{</span>
 
@@ -519,7 +581,7 @@
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>把 uv 值 限定在 一个rect的矩形中。</p>
-<h2 id="5-完善一个新的笑脸"><a href="#5-完善一个新的笑脸" class="headerlink" title="5.完善一个新的笑脸"></a>5.完善一个新的笑脸</h2><p><img src="http://onh0umlhz.bkt.clouddn.com/20180227smile.JPG" alt=""></p>
+<h2 id="6-完善一个新的笑脸"><a href="#6-完善一个新的笑脸" class="headerlink" title="6.完善一个新的笑脸"></a>6.完善一个新的笑脸</h2><p><img src="http://onh0umlhz.bkt.clouddn.com/20180227smile.JPG" alt=""></p>
 <pre class="line-numbers language-glsl"><code class="language-glsl"><span class="token keyword">vec4</span> <span class="token function">cricle</span><span class="token punctuation">(</span><span class="token keyword">vec2</span> uv<span class="token punctuation">,</span><span class="token keyword">float</span> r <span class="token punctuation">,</span> <span class="token keyword">float</span> blur<span class="token punctuation">)</span>
 <span class="token punctuation">{</span>
     <span class="token keyword">vec4</span> col <span class="token operator">=</span> <span class="token keyword">vec4</span> <span class="token punctuation">(</span> <span class="token number">0.9</span> <span class="token punctuation">,</span>  <span class="token number">0.65</span> <span class="token punctuation">,</span> <span class="token number">0.1</span> <span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span> 
