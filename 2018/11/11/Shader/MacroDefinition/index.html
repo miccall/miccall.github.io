@@ -1,0 +1,520 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Shader/">Shader</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://onh0umlhz.bkt.clouddn.com/20180211design.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >The fundamental of Unity Shader</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><h2 id="MacroDefinition-宏定义-："><a href="#MacroDefinition-宏定义-：" class="headerlink" title="MacroDefinition 宏定义 ："></a>MacroDefinition 宏定义 ：</h2><p>define命令是C类语言中的一个宏定义命令，它用来将一个标识符定义为一个字符串，该标识符被称为宏名，被定义的字符串称为替换文本</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token comment" spellcheck="true">// #define &lt;宏名> &lt;字符串>  例：</span>
+    <span class="token macro property">#<span class="token directive keyword">define</span> PI 3.1415926</span>
+    <span class="token comment" spellcheck="true">// #define &lt;宏名> (&lt;参数表>) &lt;宏体>  例： </span>
+    <span class="token macro property">#<span class="token directive keyword">define</span> A(x) x</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>解出定义：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token macro property">#<span class="token directive keyword">undef</span> &lt;宏名> </span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="条件编译-："><a href="#条件编译-：" class="headerlink" title="条件编译 ："></a>条件编译 ：</h2><p>当标识符已经被定义过(一般是用#define命令定义)，<br>则对程序段1进行编译，否则编译程序段2。：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token macro property">#<span class="token directive keyword">ifdef</span> 标识符</span>
+            程序段<span class="token number">1</span>
+    <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            程序段<span class="token number">2</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>其中#else部分也可以没有，即：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token macro property">#<span class="token directive keyword">ifdef</span></span>
+            程序段<span class="token number">1</span>
+    <span class="token macro property">#denif</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>这里的“程序段”可以是语句组，也可以是命令行。</p>
+<p>例子：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token comment" spellcheck="true">// 我们有一个数据类型，在Windows平台中，应该使用long类型表示，而在其他平台应该使用float表示</span>
+    <span class="token macro property">#<span class="token directive keyword">ifdef</span> WINDOWS</span>
+            <span class="token macro property">#<span class="token directive keyword">define</span> MYTYPE long</span>
+    <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            <span class="token macro property">#<span class="token directive keyword">define</span> MYTYPE float</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+    <span class="token comment" spellcheck="true">// 调试模式下才输出一些 </span>
+    <span class="token macro property">#<span class="token directive keyword">ifdef</span> DEBUG</span>
+            <span class="token function">print</span> <span class="token punctuation">(</span><span class="token string">"device_open(%p)\n"</span><span class="token punctuation">,</span> file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>还有另一种方式：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token macro property">#<span class="token directive keyword">ifndef</span> 标识符</span>
+            程序段<span class="token number">1</span>
+    <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            程序段<span class="token number">2</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>将“ifdef”改为“ifndef”。它的作用是：若标识符未被定义则编译程序段1，<br>否则编译程序段2。这种形式与第一种形式的作用相反。</p>
+<p>还有这种：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token macro property">#<span class="token directive keyword">if</span> 表达式</span>
+            程序段<span class="token number">1</span>
+    <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            程序段<span class="token number">2</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当指定的表达式值为真（非零）时就编译程序段1，否则编译程序段2。<br>可以事先给定一定条件，使程序在不同的条件下执行不同的功能。</p>
+<p>复杂表达式用法：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token macro property">#<span class="token directive keyword">if</span> defined (表达式1) || defined (表达式2) ||  !defined(表达式3)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>else if 判断 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token macro property">#<span class="token directive keyword">if</span>　条件1</span>
+    　  代码段<span class="token number">1</span>
+    <span class="token macro property">#<span class="token directive keyword">elif</span> 条件2</span>
+       代码段<span class="token number">2</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+    <span class="token macro property">#<span class="token directive keyword">elif</span> 条件n</span>
+     代码段n
+
+    <span class="token macro property">#<span class="token directive keyword">else</span></span>
+     代码段 n<span class="token operator">+</span><span class="token number">1</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="shader-预定义着色器预处理器宏"><a href="#shader-预定义着色器预处理器宏" class="headerlink" title="shader 预定义着色器预处理器宏"></a>shader 预定义着色器预处理器宏</h2><ol>
+<li>目标平台 </li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    SHADER_API_D3D11    <span class="token comment" spellcheck="true">// Direct3D 11</span>
+    SHADER_API_GLCORE    <span class="token comment" spellcheck="true">// 桌面OpenGL“核心”（GL 3/4）</span>
+    SHADER_API_GLES        <span class="token comment" spellcheck="true">// OpenGL ES 2.0</span>
+    SHADER_API_GLES3    <span class="token comment" spellcheck="true">// OpenGL ES 3.0 / 3.1</span>
+    SHADER_API_METAL    <span class="token comment" spellcheck="true">// iOS / Mac Metal</span>
+    SHADER_API_VULKAN    <span class="token comment" spellcheck="true">// 福尔康</span>
+    SHADER_API_D3D11_9X    <span class="token comment" spellcheck="true">// 通用Windows平台 Direct3D 11“功能级别9.x”目标</span>
+    SHADER_API_PS4        <span class="token comment" spellcheck="true">// PlayStation 4. SHADER_API_PSSL也是定义的。</span>
+    SHADER_API_XBOXONE    <span class="token comment" spellcheck="true">// Xbox One</span>
+    SHADER_API_PSP2        <span class="token comment" spellcheck="true">// PlayStation Vita</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>目标模型 </li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token macro property">#<span class="token directive keyword">if</span> SHADER_TARGET &lt; 30</span>
+        <span class="token comment" spellcheck="true">// less than Shader model 3.0:</span>
+        <span class="token comment" spellcheck="true">// very limited Shader capabilities, do some approximation</span>
+    <span class="token macro property">#<span class="token directive keyword">else</span></span>
+        <span class="token comment" spellcheck="true">// decent capabilities, do a better thing</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>Unity版本</li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    UNITY_VERSION
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>包含Unity版本的数值。例如，UNITY_VERSION适用501于Unity 5.0.1。<br>如果您需要编写使用不同内置着色器功能的着色器，则可以将其用于版本比较。<br>例如，</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token macro property">#<span class="token directive keyword">if</span> UNITY_VERSION >= 500</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>预处理程序检查仅传递版本5.0.0或更高版本。</p>
+<ol>
+<li>正在编译着色器阶段</li>
+</ol>
+<p>预处理宏</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    SHADER_STAGE_VERTEX，
+    SHADER_STAGE_FRAGMENT，
+    SHADER_STAGE_DOMAIN，
+    SHADER_STAGE_HULL，
+    SHADER_STAGE_GEOMETRY，
+    SHADER_STAGE_COMPUTE
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>正在编制每个着色阶段时定义。通常，在像素<br>之间共享着色器代码时，它们很有用着色器和计算着色器，以处理某些事情必须略有不同的情况。</p>
+<ol>
+<li>阴影贴图宏</li>
+<li>常量缓冲区宏</li>
+<li>纹理/采样器声明宏</li>
+</ol>
+<h2 id="预编译"><a href="#预编译" class="headerlink" title="预编译:"></a>预编译:</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">pragma</span> vertex name    </span>
+<span class="token comment" spellcheck="true">// 编译name函数为顶点着色器</span>
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> fragment name    </span>
+<span class="token comment" spellcheck="true">// 编译name函数为片元着色器</span>
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> geometry name    </span>
+<span class="token comment" spellcheck="true">// 编译name函数为DX10的几何着色器</span>
+<span class="token comment" spellcheck="true">// 注：会自动开启#pragma target 4.0</span>
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> hull name    </span>
+<span class="token comment" spellcheck="true">// 编译name函数为DX10的壳着色器</span>
+<span class="token comment" spellcheck="true">// 注：会自动开启#pragma target 5.0</span>
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> domain name    </span>
+<span class="token comment" spellcheck="true">// 编译name函数为DX10的域着色器</span>
+<span class="token comment" spellcheck="true">// 注：会自动开启#pragma target 5.0</span>
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> target name    </span>
+<span class="token comment" spellcheck="true">// 表明编译目标</span>
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> only_renderers space_separated_names    </span>
+<span class="token comment" spellcheck="true">// 只为指定的渲染平台渲染着色器</span>
+<span class="token comment" spellcheck="true">/*    
+    包括下列值：
+    d3d9:Direct3D 9
+    d3d11:Direct3D 11/12
+    glcore:OpenGL 3.x/4.x
+    gles:OpenGL ES 2.0
+    gles:OpenGL ES 3.x
+    metal:IOS&amp;Mac Metal
+    d3d11_9x:Direct3D 11 9.x特性等级一般用于WSA平台
+    xbox360:Xbox 360
+    xboxone:Xbox One
+    ps4:PlayStation 4
+    psp2:PlayStation Vita
+    n3ds:Nintendo 3DS
+    wiiu:Nintendo Wii U
+*/</span> 
+
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> exclude_renderers space_separated_names    </span>
+<span class="token comment" spellcheck="true">// 排除指定的渲染平台 </span>
+<span class="token comment" spellcheck="true">/*    
+    参数同上
+*/</span> 
+
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> multi_compile ...    </span>
+<span class="token comment" spellcheck="true">// 为shader创建多个稍微有点区别的shader变体。这个Shader被称为宏着色器（mega shader）或者超着色器（uber shader）。实现原理：根据不同的情况，使用不同的预处理器指令，来多次编译Shader代码</span>
+<span class="token comment" spellcheck="true">// https://blog.csdn.net/ecidevilin/article/details/52882400</span>
+
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> enable_d3d11_debug_symbols    </span>
+<span class="token comment" spellcheck="true">// 生成d3d11的调试信息</span>
+<span class="token comment" spellcheck="true">// 可以在VS2012（或以上）使用图形调试器调试 shader</span>
+
+
+<span class="token macro property">#<span class="token directive keyword">pragma</span> hardware_tier_variants renderer_name    </span>
+<span class="token comment" spellcheck="true">// 针对所选渲染器的每个硬件层级</span>
+<span class="token comment" spellcheck="true">// 生成每个已编译的Shader的多重Shader硬件变体</span>
+<span class="token comment" spellcheck="true">// Unity官方文档：多重着色器变体[https://docs.unity3d.com/Manual/SL-MultipleProgramVariants.html]</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Unity-Lighting-Model"><a href="#Unity-Lighting-Model" class="headerlink" title="Unity Lighting Model"></a>Unity Lighting Model</h2><p>form : Lighting.cginc </p>
+<blockquote>
+<p>该文件包含了一个 SurfaceOutput 结构体 ，并给出了 Lambert 和 BlinnPhong 光照模型 在 前向渲染 和 延迟渲染中的渲染 ，以及在GI作用下，传统路径下的渲染 </p>
+</blockquote>
+<p>Diffuse ： </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">inline</span> fixed4 <span class="token function">UnityLambertLight</span> <span class="token punctuation">(</span>SurfaceOutput s<span class="token punctuation">,</span> UnityLight light<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    fixed diff <span class="token operator">=</span> <span class="token function">max</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">dot</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span>Normal<span class="token punctuation">,</span> light<span class="token punctuation">.</span>dir<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    fixed4 c<span class="token punctuation">;</span>
+    c<span class="token punctuation">.</span>rgb <span class="token operator">=</span> s<span class="token punctuation">.</span>Albedo <span class="token operator">*</span> light<span class="token punctuation">.</span>color <span class="token operator">*</span> diff<span class="token punctuation">;</span>
+    c<span class="token punctuation">.</span>a <span class="token operator">=</span> s<span class="token punctuation">.</span>Alpha<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Specular ： </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">inline</span> fixed4 <span class="token function">UnityBlinnPhongLight</span> <span class="token punctuation">(</span>SurfaceOutput s<span class="token punctuation">,</span> half3 viewDir<span class="token punctuation">,</span> UnityLight light<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    half3 h <span class="token operator">=</span> <span class="token function">normalize</span> <span class="token punctuation">(</span>light<span class="token punctuation">.</span>dir <span class="token operator">+</span> viewDir<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    fixed diff <span class="token operator">=</span> <span class="token function">max</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">dot</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span>Normal<span class="token punctuation">,</span> light<span class="token punctuation">.</span>dir<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">float</span> nh <span class="token operator">=</span> <span class="token function">max</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">dot</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span>Normal<span class="token punctuation">,</span> h<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> spec <span class="token operator">=</span> <span class="token function">pow</span> <span class="token punctuation">(</span>nh<span class="token punctuation">,</span> s<span class="token punctuation">.</span>Specular<span class="token operator">*</span><span class="token number">128.0</span><span class="token punctuation">)</span> <span class="token operator">*</span> s<span class="token punctuation">.</span>Gloss<span class="token punctuation">;</span>
+
+    fixed4 c<span class="token punctuation">;</span>
+    c<span class="token punctuation">.</span>rgb <span class="token operator">=</span> s<span class="token punctuation">.</span>Albedo <span class="token operator">*</span> light<span class="token punctuation">.</span>color <span class="token operator">*</span> diff <span class="token operator">+</span> light<span class="token punctuation">.</span>color <span class="token operator">*</span> _SpecColor<span class="token punctuation">.</span>rgb <span class="token operator">*</span> spec<span class="token punctuation">;</span>
+    c<span class="token punctuation">.</span>a <span class="token operator">=</span> s<span class="token punctuation">.</span>Alpha<span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> c<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>自定义光照模型：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    half4 Lighting<span class="token operator">&lt;</span>Name<span class="token operator">></span> <span class="token punctuation">(</span>SurfaceOutput s<span class="token punctuation">,</span> UnityGI gi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 在前向渲染中使用此路径，了解不依赖于视图方向的灯光模型。</span>
+
+    half4 Lighting<span class="token operator">&lt;</span>Name<span class="token operator">></span> <span class="token punctuation">(</span>SurfaceOutput s<span class="token punctuation">,</span> half3 viewDir<span class="token punctuation">,</span> UnityGI gi<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment" spellcheck="true">// 在前向渲染中使用此选项用于光模式，路径是依赖于观察方向。</span>
+
+    half4 Lighting<span class="token operator">&lt;</span>Name<span class="token operator">></span><span class="token function">_Deferred</span> <span class="token punctuation">(</span>SurfaceOutput s<span class="token punctuation">,</span> UnityGI gi<span class="token punctuation">,</span> out half4 outDiffuseOcclusion<span class="token punctuation">,</span> out half4 outSpecSmoothness<span class="token punctuation">,</span> out half4 outNormal<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment" spellcheck="true">// 在延迟光照路径中使用它。</span>
+
+    half4 Lighting<span class="token operator">&lt;</span>Name<span class="token operator">></span><span class="token function">_PrePass</span> <span class="token punctuation">(</span>SurfaceOutput s<span class="token punctuation">,</span> half4 light<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+    <span class="token comment" spellcheck="true">// 在光预通过（传统延迟）光照路径中使用此功能。</span>
+
+    half4 Lighting<span class="token operator">&lt;</span>Name<span class="token operator">></span><span class="token function">_GI</span> <span class="token punctuation">(</span>SurfaceOutput s<span class="token punctuation">,</span> UnityGIInput data<span class="token punctuation">,</span> inout UnityGI gi<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 自定义解码光照贴图数据和探针</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="其余的一些重要内置文件"><a href="#其余的一些重要内置文件" class="headerlink" title="其余的一些重要内置文件"></a>其余的一些重要内置文件</h2><p>HLSLSupport.cginc- （自动包含）帮助程序宏和跨平台着色器的定义编译。<br>UnityShaderVariables.cginc- （自动包含）常用的全局变量。<br>UnityCG.cginc- 常用的辅助函数。<br>AutoLight.cginc- 照明和阴影功能，例如表面着色器内部使用此文件。<br>Lighting.cginc- 标准表面着色器照明模型; 在您编写表面着色器时自动包含。<br>TerrainEngine.cginc- 地形辅助功能和植被着色器。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2018/11/11/Shader/MacroDefinition/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2018/11/11/Shader/MacroDefinition/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
