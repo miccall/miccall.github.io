@@ -218,6 +218,55 @@ fixed Alpha<span class="token punctuation">;</span> <span class="token comment" 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>最终结果  =<br>UNITY_BRDF_PBS </p>
 <p>其余基本一样 </p>
+<p>最后 ，根据unity的提高 ，写一个最简单的 PBS shader ：</p>
+<p>首先 ，定义的两个变量 ，选用metallic 工作流 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token punctuation">[</span>Gamma<span class="token punctuation">]</span> <span class="token function">_Metallic</span> <span class="token punctuation">(</span><span class="token string">"Metallic"</span><span class="token punctuation">,</span> <span class="token function">Range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token function">_Smoothness</span> <span class="token punctuation">(</span><span class="token string">"Smoothness"</span><span class="token punctuation">,</span> <span class="token function">Range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0.1</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>metallic 前面加 【Gamma】，是因为一个细节是金属滑块本身应该处于伽马空间。<br>但是，在线性空间中渲染时，Unity不会自动对单个值进行伽马校正。<br>我们可以使用该Gamma属性告诉Unity它还应该对我们的金属滑块应用伽马校正。</p>
+<p>其次 ，我们还有一张 Albedo 贴图 ，以及一个颜色</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token function">_Tint</span> <span class="token punctuation">(</span><span class="token string">"Tint"</span><span class="token punctuation">,</span> Color<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token function">_MainTex</span> <span class="token punctuation">(</span><span class="token string">"Albedo"</span><span class="token punctuation">,</span> 2D<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token string">"white"</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在vertshader中计算 clip Pos ， wordpos ，normal 和 uv ，然后传入 fragmentshader </p>
+<p>fragmentshader 中 ，计算 lightdir ，viewdir 。</p>
+<p>然后我们先将颜色计算到 albedo</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+                float3 specularTint<span class="token punctuation">;</span>
+                <span class="token keyword">float</span> oneMinusReflectivity<span class="token punctuation">;</span>
+
+                albedo <span class="token operator">=</span> <span class="token function">DiffuseAndSpecularFromMetallic</span><span class="token punctuation">(</span>
+                    albedo<span class="token punctuation">,</span> _Metallic<span class="token punctuation">,</span> specularTint<span class="token punctuation">,</span> oneMinusReflectivity
+                <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后，我们计算 直接光和间接光 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+                UnityLight light<span class="token punctuation">;</span>
+                light<span class="token punctuation">.</span>color <span class="token operator">=</span> lightColor<span class="token punctuation">;</span>
+                light<span class="token punctuation">.</span>dir <span class="token operator">=</span> lightDir<span class="token punctuation">;</span>
+                light<span class="token punctuation">.</span>ndotl <span class="token operator">=</span> <span class="token function">DotClamped</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>normal<span class="token punctuation">,</span> lightDir<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                UnityIndirect indirectLight<span class="token punctuation">;</span>
+                indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最后 ，我们用这些信息 ，计算最后的PBS ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+                <span class="token keyword">return</span> <span class="token function">UNITY_BRDF_PBS</span><span class="token punctuation">(</span>
+                    albedo<span class="token punctuation">,</span> specularTint<span class="token punctuation">,</span>
+                    oneMinusReflectivity<span class="token punctuation">,</span> _Smoothness<span class="token punctuation">,</span>
+                    i<span class="token punctuation">.</span>normal<span class="token punctuation">,</span> viewDir<span class="token punctuation">,</span>
+                    light<span class="token punctuation">,</span> indirectLight
+                <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
 
