@@ -158,7 +158,7 @@
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
                 <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><p>unity PBS 分为 metallic 和 specular 两种</p>
-<h2 id="Metallic-workflow-："><a href="#Metallic-workflow-：" class="headerlink" title="Metallic workflow ："></a>Metallic workflow ：</h2><pre class="line-numbers language-cpp"><code class="language-cpp">fixed3 Albedo<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// base (diffuse or specular) color</span>
+<h2 id="一-Metallic-workflow-："><a href="#一-Metallic-workflow-：" class="headerlink" title="一. Metallic workflow ："></a>一. Metallic workflow ：</h2><pre class="line-numbers language-cpp"><code class="language-cpp">fixed3 Albedo<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// base (diffuse or specular) color</span>
 float3 Normal<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// tangent space normal, if written</span>
 half3 Emission<span class="token punctuation">;</span>
 half Metallic<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 0 = 0  non-metal ,  1 = 1 metal </span>
@@ -198,7 +198,7 @@ fixed Alpha<span class="token punctuation">;</span>     <span class="token comme
     UnityGlobalIllumination
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="Specular-workflow"><a href="#Specular-workflow" class="headerlink" title="Specular workflow"></a>Specular workflow</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+<h2 id="二-Specular-workflow"><a href="#二-Specular-workflow" class="headerlink" title="二. Specular workflow"></a>二. Specular workflow</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
 fixed3 Albedo<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// diffuse color</span>
 fixed3 Specular<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// specular color</span>
 float3 Normal<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// tangent space normal, if written</span>
@@ -218,7 +218,7 @@ fixed Alpha<span class="token punctuation">;</span> <span class="token comment" 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>最终结果  =<br>UNITY_BRDF_PBS </p>
 <p>其余基本一样 </p>
-<p>最后 ，根据unity的提高 ，写一个最简单的 PBS shader ：</p>
+<h2 id="三-写一个最简单的-PBS-shader"><a href="#三-写一个最简单的-PBS-shader" class="headerlink" title="三. 写一个最简单的 PBS shader"></a>三. 写一个最简单的 PBS shader</h2><p>最后 ，根据unity的提高 ，写一个最简单的 PBS shader ：</p>
 <p>首先 ，定义的两个变量 ，选用metallic 工作流 ：</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
         <span class="token punctuation">[</span>Gamma<span class="token punctuation">]</span> <span class="token function">_Metallic</span> <span class="token punctuation">(</span><span class="token string">"Metallic"</span><span class="token punctuation">,</span> <span class="token function">Range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span>
