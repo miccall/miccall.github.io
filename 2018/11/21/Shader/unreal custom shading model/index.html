@@ -1,0 +1,498 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Shader/">Shader</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://miccall.oss-cn-beijing.aliyuncs.com/18-11-21/74069374.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Unreal custom shading model</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><blockquote>
+<p>基于substance painter 2018.2.3 </p>
+</blockquote>
+<h2 id="1-EngineTypes-h"><a href="#1-EngineTypes-h" class="headerlink" title="1. EngineTypes.h"></a>1. EngineTypes.h</h2><pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token comment" spellcheck="true">//452 line    </span>
+    <span class="token function">UENUM</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">enum</span> EMaterialShadingModel
+        <span class="token punctuation">{</span>
+                MSM_Unlit                <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Unlit"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                MSM_DefaultLit            <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Default Lit"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                MSM_Subsurface            <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Subsurface"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                MSM_PreintegratedSkin          <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Preintegrated Skin"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                MSM_ClearCoat            <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Clear Coat"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                MSM_SubsurfaceProfile          <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Subsurface Profile"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                MSM_TwoSidedFoliage        <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Two Sided Foliage"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                MSM_Hair                <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Hair"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                MSM_Cloth                <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Cloth"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                MSM_Eye                <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Eye"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                MSM_MAX<span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>此枚举确定在“材质编辑器”内的“shading model ”下拉列表中显示的内容 </p>
+<p>添加自己的 shading model ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        MSM_Eye                <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Eye"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        MSM_StylizedShadow        <span class="token function">UMETA</span><span class="token punctuation">(</span>DisplayName<span class="token operator">=</span><span class="token string">"Stylized Shadow"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        MSM_MAX<span class="token punctuation">,</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-Material-cpp"><a href="#2-Material-cpp" class="headerlink" title="2. Material.cpp"></a>2. Material.cpp</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token comment" spellcheck="true">// 5621     </span>
+    <span class="token keyword">bool</span> UMaterial<span class="token operator">::</span><span class="token function">IsPropertyActive</span><span class="token punctuation">(</span>EMaterialProperty InProperty<span class="token punctuation">)</span> <span class="token keyword">const</span> 
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>UE 对 material 上的每个可能的 shading model 引脚 调用此函数 。<br>我们添加一个 Custonm 引脚 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token keyword">switch</span> <span class="token punctuation">(</span>InProperty<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 。。。</span>
+                <span class="token keyword">case</span> MP_CustomData0 <span class="token operator">:</span>
+                        Active <span class="token operator">=</span> ShadingModel <span class="token operator">==</span> MSM_ClearCoat <span class="token operator">||</span> ShadingModel <span class="token operator">==</span> MSM_Hair <span class="token operator">||</span> ShadingModel <span class="token operator">==</span> MSM_Cloth <span class="token operator">||</span> ShadingModel <span class="token operator">==</span> MSM_Eye <span class="token operator">||</span> ShadingModel <span class="token operator">==</span> MSM_StylizedShadow <span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">// 。。。 </span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>此代码仅更改材质编辑器中的UI 。 Custom Data 0 和 Custom Data 1 都是单通道 float 属性 。 </p>
+<p>一旦我们修改了材质编辑器以便能够选择我们的新着色模型，我们需要确保我们的着色器知道它们何时被设置为使用我们的着色模型。</p>
+<h2 id="3-MaterialShared-cpp"><a href="#3-MaterialShared-cpp" class="headerlink" title="3. MaterialShared.cpp"></a>3. MaterialShared.cpp</h2><pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token comment" spellcheck="true">// 1255    </span>
+    <span class="token keyword">void</span> FMaterial<span class="token operator">::</span><span class="token function">SetupMaterialEnvironment</span><span class="token punctuation">(</span>
+                EShaderPlatform Platform<span class="token punctuation">,</span>
+                <span class="token keyword">const</span> FUniformExpressionSet<span class="token operator">&amp;</span> InUniformExpressionSet<span class="token punctuation">,</span>
+                FShaderCompilerEnvironment<span class="token operator">&amp;</span> OutEnvironment
+        <span class="token punctuation">)</span> <span class="token keyword">const</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>此方法 允许你查看各种配置因素（例如 material 上的属性）。 OutEnvironment通过添加其他定义来修改变量</p>
+<p>GetShadingModel()  并添加我们的 MSM_StylizedShadow 案例 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token comment" spellcheck="true">//1445    </span>
+
+    <span class="token keyword">switch</span><span class="token punctuation">(</span><span class="token function">GetShadingModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+                <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+                <span class="token keyword">case</span> MSM_Eye<span class="token operator">:</span>            OutEnvironment<span class="token punctuation">.</span><span class="token function">SetDefine</span><span class="token punctuation">(</span><span class="token function">TEXT</span><span class="token punctuation">(</span><span class="token string">"MATERIAL_SHADINGMODEL_EYE"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>                                    <span class="token function">TEXT</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+                <span class="token keyword">case</span> MSM_StylizedShadow<span class="token operator">:</span>    OutEnvironment<span class="token punctuation">.</span><span class="token function">SetDefine</span><span class="token punctuation">(</span><span class="token function">TEXT</span><span class="token punctuation">(</span><span class="token string">"MATERIAL_SHADINGMODEL_STYLIZEDSHADOW"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>                              <span class="token function">TEXT</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+                <span class="token keyword">default</span><span class="token operator">:</span>
+
+                <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当材质的Shading Model设置为MSM_StylizedShadowHLSL编译器时，将设置MATERIAL_SHADINGMODEL_STYLIZED_SHADOW为预处理器定义.</p>
+<h2 id="4-更新-GBuffer着色模型-ID"><a href="#4-更新-GBuffer着色模型-ID" class="headerlink" title="4. 更新 GBuffer着色模型 ID"></a>4. 更新 GBuffer着色模型 ID</h2><p>通过MATERIAL_SHADINGMODEL_STYLIZED_SHADOW我们可以开始对着色器进行更改。我们需要做的第一件事是将新的着色模型ID写入GBuffer这允许DeferredLightPixelShader知道在运行光照计算时要尝试使用的着色模型。</p>
+<p>DeferredShadingCommon.ush </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token comment" spellcheck="true">//269    </span>
+
+        <span class="token macro property">#<span class="token directive keyword">define</span> SHADINGMODELID_UNLIT                0</span>
+        <span class="token macro property">#<span class="token directive keyword">define</span> SHADINGMODELID_DEFAULT_LIT            1</span>
+
+         <span class="token punctuation">.</span> <span class="token punctuation">.</span> <span class="token punctuation">.</span>
+
+        <span class="token macro property">#<span class="token directive keyword">define</span> SHADINGMODELID_EYE                    9</span>
+        <span class="token macro property">#<span class="token directive keyword">define</span> SHADINGMODELID_STYLIZED_SHADOW        10 </span>
+        <span class="token macro property">#<span class="token directive keyword">define</span> SHADINGMODELID_NUM                    11</span>
+        <span class="token macro property">#<span class="token directive keyword">define</span> SHADINGMODELID_MASK                    0xF    </span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们需要告诉着色器将此着色模型ID写入Gbuffer . 然后 ，</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token comment" spellcheck="true">// 731    </span>
+        float3 <span class="token function">GetShadingModelColor</span><span class="token punctuation">(</span>uint ShadingModelID<span class="token punctuation">)</span> 
+        <span class="token punctuation">{</span>
+                <span class="token macro property">#<span class="token directive keyword">if</span> PS4_PROFILE</span>
+                        … 
+
+                        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>ShadingModelID <span class="token operator">==</span> SHADINGMODELID_EYE<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">float3</span><span class="token punctuation">(</span><span class="token number">0.3f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>ShadingModelID <span class="token operator">==</span> SHADINGMODELID_STYLIZED_SHADOW <span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token function">float3</span><span class="token punctuation">(</span><span class="token number">0.4f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.8f</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Purple</span>
+                        <span class="token keyword">else</span> <span class="token keyword">return</span> <span class="token function">float3</span><span class="token punctuation">(</span><span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// White</span>
+                <span class="token macro property">#<span class="token directive keyword">else</span></span>
+                        <span class="token keyword">switch</span><span class="token punctuation">(</span>ShadingModelID<span class="token punctuation">)</span>
+                        <span class="token punctuation">{</span>
+                                …
+
+                                <span class="token keyword">case</span> SHADINGMODELID_EYE<span class="token operator">:</span> <span class="token keyword">return</span> <span class="token function">float3</span><span class="token punctuation">(</span><span class="token number">0.3f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                         <span class="token keyword">case</span> SHADINGMODELID_STYLIZED_SHADOW<span class="token operator">:</span> <span class="token keyword">return</span> <span class="token function">float3</span><span class="token punctuation">(</span><span class="token number">0.4f</span><span class="token punctuation">,</span> <span class="token number">0.0f</span><span class="token punctuation">,</span> <span class="token number">0.8f</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Purple</span>
+                        <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">return</span> <span class="token function">float3</span><span class="token punctuation">(</span><span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">,</span> <span class="token number">1.0f</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// White</span>
+                        <span class="token punctuation">}</span>
+                <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>现在我们需要告诉BasePassPixelShader将正确的ID写入Shading Model ID纹理.</p>
+<p>ShadingModelsMaterial.ush </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token comment" spellcheck="true">//11</span>
+        <span class="token keyword">void</span> <span class="token function">SetGBufferForShadingModel</span><span class="token punctuation">(</span>
+                in out FGBufferData GBuffer<span class="token punctuation">,</span> 
+                in <span class="token keyword">const</span> FMaterialPixelParameters MaterialParameters<span class="token punctuation">,</span>
+                <span class="token keyword">const</span> <span class="token keyword">float</span> Opacity<span class="token punctuation">,</span>
+                <span class="token keyword">const</span> half3 BaseColor<span class="token punctuation">,</span>
+                <span class="token keyword">const</span> half  Metallic<span class="token punctuation">,</span>
+                <span class="token keyword">const</span> half  Specular<span class="token punctuation">,</span>
+                <span class="token keyword">const</span> <span class="token keyword">float</span> Roughness<span class="token punctuation">,</span>
+                <span class="token keyword">const</span> float3 SubsurfaceColor<span class="token punctuation">,</span>
+                <span class="token keyword">const</span> <span class="token keyword">float</span> SubsurfaceProfile
+        <span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>此函数允许每个着色模型选择如何将各种PBR数据通道写入FGBufferData结构。<br>唯一需要做的就是确保分配了GBuffer.ShadingModelID。如果我们希望使用Custom Data 0材质编辑器中的通道，就可以在此处查询该值并将其写入GBuffer。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token comment" spellcheck="true">//128</span>
+        <span class="token macro property">#<span class="token directive keyword">elif</span> MATERIAL_SHADINGMODEL_EYE</span>
+                GBuffer<span class="token punctuation">.</span>ShadingModelID <span class="token operator">=</span> SHADINGMODELID_EYE<span class="token punctuation">;</span>
+                GBuffer<span class="token punctuation">.</span>CustomData<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token function">EncodeSubsurfaceProfile</span><span class="token punctuation">(</span>SubsurfaceProfile<span class="token punctuation">)</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+                GBuffer<span class="token punctuation">.</span>CustomData<span class="token punctuation">.</span>w <span class="token operator">=</span> <span class="token number">1.0f</span> <span class="token operator">-</span> <span class="token function">saturate</span><span class="token punctuation">(</span><span class="token function">GetMaterialCustomData0</span><span class="token punctuation">(</span>MaterialParameters<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// Opacity = 1.0 - Iris Mask</span>
+        <span class="token macro property">#<span class="token directive keyword">elif</span> MATERIAL_SHADINGMODEL_STYLIZED_SHADOW</span>
+                GBuffer<span class="token punctuation">.</span>ShadingModelID <span class="token operator">=</span> SHADINGMODELID_STYLIZED_SHADOW<span class="token punctuation">;</span> 
+                GBuffer<span class="token punctuation">.</span>CustomData<span class="token punctuation">.</span>x <span class="token operator">=</span> GetMaterialCustomData0（MaterialParameters）<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">if</span> IRIS_NORMAL</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>BasePassCommon.ush</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token comment" spellcheck="true">//40</span>
+        <span class="token comment" spellcheck="true">// Only some shader models actually need custom data.</span>
+        <span class="token macro property">#<span class="token directive keyword">define</span> WRITES_CUSTOMDATA_TO_GBUFFER        (USES_GBUFFER &amp;&amp; (MATERIAL_SHADINGMODEL_SUBSURFACE || MATERIAL_SHADINGMODEL_PREINTEGRATED_SKIN || MATERIAL_SHADINGMODEL_SUBSURFACE_PROFILE || MATERIAL_SHADINGMODEL_CLEAR_COAT || MATERIAL_SHADINGMODEL_TWOSIDED_FOLIAGE || MATERIAL_SHADINGMODEL_HAIR || MATERIAL_SHADINGMODEL_CLOTH || MATERIAL_SHADINGMODEL_EYE || MATERIAL_SHADINGMODEL_STYLIZED_SHADOW ))</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-改变衰减计算"><a href="#5-改变衰减计算" class="headerlink" title="5. 改变衰减计算"></a>5. 改变衰减计算</h2><p>DeferredLightingCommon.ush</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token comment" spellcheck="true">//256</span>
+        float4 <span class="token function">GetDynamicLighting</span><span class="token punctuation">(</span>float3 WorldPosition<span class="token punctuation">,</span> float3 CameraVector<span class="token punctuation">,</span> FGBufferData GBuffer<span class="token punctuation">,</span> <span class="token keyword">float</span> AmbientOcclusion<span class="token punctuation">,</span> uint ShadingModelID<span class="token punctuation">,</span> FDeferredLightData LightData<span class="token punctuation">,</span> float4 LightAttenuation<span class="token punctuation">,</span> <span class="token keyword">float</span> Dither<span class="token punctuation">,</span> uint2 SVPos<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>虚幻使用以下计算来确定最终光倍数：LightColor <em> (NoL </em> SurfaceAttenuation)<br>我们将创建一个新的光衰减变量 。 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        float3 AttenuationColor <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">.</span>f<span class="token punctuation">;</span>
+        BRANCH 
+        <span class="token keyword">if</span>（ShadingModelID <span class="token operator">==</span> SHADINGMODELID_STYLIZED_SHADOW）
+        <span class="token punctuation">{</span> 
+                <span class="token keyword">float</span> Range <span class="token operator">=</span> GBuffer<span class="token punctuation">.</span>CustomData<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">0.5f</span><span class="token punctuation">;</span> 
+                AttenuationColor <span class="token operator">=</span> LightColor <span class="token operator">*</span>（（DistanceAttenuation <span class="token operator">*</span> LightRadiusMask <span class="token operator">*</span> SpotFalloff）<span class="token operator">*</span> smoothstep（<span class="token number">0.5f</span>  <span class="token operator">-</span>  Range，<span class="token number">0.5f</span> <span class="token operator">+</span> Range，SurfaceShadow）<span class="token operator">*</span> <span class="token number">0.1f</span>）<span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span> 
+        <span class="token keyword">else</span> 
+        <span class="token punctuation">{</span> 
+                AttenuationColor <span class="token operator">=</span> LightColor <span class="token operator">*</span>（NoL <span class="token operator">*</span> SurfaceAttenuation）<span class="token punctuation">;</span> 
+        <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>新的着色系统 ，改了 阴影的计算 ，我们先不用这一套  。 </p>
+<h2 id="6-更改表面着色"><a href="#6-更改表面着色" class="headerlink" title="6. 更改表面着色"></a>6. 更改表面着色</h2><p>ShadingModels.ush  </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token comment" spellcheck="true">//910</span>
+
+        FDirectLighting <span class="token function">IntegrateBxDF</span><span class="token punctuation">(</span> FGBufferData GBuffer<span class="token punctuation">,</span> half3 N<span class="token punctuation">,</span> half3 V<span class="token punctuation">,</span> half3 L<span class="token punctuation">,</span> <span class="token keyword">float</span> Falloff<span class="token punctuation">,</span> <span class="token keyword">float</span> NoL<span class="token punctuation">,</span> FAreaLight AreaLight<span class="token punctuation">,</span> FShadowTerms Shadow <span class="token punctuation">)</span>
+
+                <span class="token keyword">switch</span><span class="token punctuation">(</span>GBuffer<span class="token punctuation">.</span>ShadingModelID<span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+                    <span class="token keyword">case</span> SHADINGMODELID_EYE<span class="token operator">:</span>
+                        <span class="token keyword">return</span> <span class="token function">EyeBxDF</span><span class="token punctuation">(</span>GBuffer<span class="token punctuation">,</span>N<span class="token punctuation">,</span>V<span class="token punctuation">,</span>L<span class="token punctuation">,</span>Falloff<span class="token punctuation">,</span>NoL<span class="token punctuation">,</span>AreaLight<span class="token punctuation">,</span>Shadow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">case</span> SHADINGMODELID_STYLIZED_SHADOW<span class="token operator">:</span>
+                        <span class="token keyword">return</span> <span class="token function">StylizedShadowShading</span><span class="token punctuation">(</span>GBuffer<span class="token punctuation">,</span>N<span class="token punctuation">,</span>V<span class="token punctuation">,</span>L<span class="token punctuation">,</span>Falloff<span class="token punctuation">,</span>NoL<span class="token punctuation">,</span>AreaLight<span class="token punctuation">,</span>Shadow<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token keyword">default</span><span class="token operator">:</span>
+                        <span class="token keyword">return</span> <span class="token punctuation">(</span>FDirectLighting<span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后我们来定义这个 StylizedShadowShading 函数 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    FDirectLighting <span class="token function">StylizedShadowShading</span><span class="token punctuation">(</span>FGBufferData GBuffer<span class="token punctuation">,</span> half3 N<span class="token punctuation">,</span> half3 V<span class="token punctuation">,</span> half3 L<span class="token punctuation">,</span> <span class="token keyword">float</span> Falloff<span class="token punctuation">,</span> <span class="token keyword">float</span> NoL<span class="token punctuation">,</span> FAreaLight AreaLight<span class="token punctuation">,</span> FShadowTerms Shadow<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+                <span class="token keyword">float</span>    Range <span class="token operator">=</span> GBuffer<span class="token punctuation">.</span>CustomData<span class="token punctuation">.</span>x <span class="token operator">*</span> <span class="token number">0.5f</span><span class="token punctuation">;</span>
+                float3     H <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>V<span class="token operator">+</span>L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">float</span>    NoH <span class="token operator">=</span> <span class="token function">saturate</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span>N<span class="token punctuation">,</span> H<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                FDirectLighting Lighting <span class="token punctuation">;</span>
+                Lighting<span class="token punctuation">.</span>Diffuse <span class="token operator">=</span> AreaLight<span class="token punctuation">.</span>FalloffColor <span class="token operator">*</span> <span class="token punctuation">(</span>Falloff <span class="token operator">*</span> NoL<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token function">Diffuse_Lambert</span><span class="token punctuation">(</span> GBuffer<span class="token punctuation">.</span>DiffuseColor <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                Lighting<span class="token punctuation">.</span>Specular <span class="token operator">=</span> <span class="token function">saturate</span><span class="token punctuation">(</span> <span class="token function">smoothstep</span><span class="token punctuation">(</span>  <span class="token number">0.5f</span><span class="token operator">-</span>Range <span class="token punctuation">,</span> <span class="token number">0.5f</span> <span class="token operator">+</span> Range <span class="token punctuation">,</span> <span class="token function">D_GGX</span><span class="token punctuation">(</span>GBuffer<span class="token punctuation">.</span>Roughness<span class="token punctuation">,</span>  NoH<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">*</span> GBuffer<span class="token punctuation">.</span>SpecularColor <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                Lighting<span class="token punctuation">.</span>Transmission <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span>
+
+                <span class="token keyword">return</span> Lighting <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-支持半透明"><a href="#7-支持半透明" class="headerlink" title="7. 支持半透明"></a>7. 支持半透明</h2><p>BasePassPixelShader.usf </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token comment" spellcheck="true">//1030</span>
+
+        <span class="token comment" spellcheck="true">// Volume lighting for lit translucency</span>
+
+        <span class="token comment" spellcheck="true">// Volume lighting for lit translucency</span>
+        <span class="token comment" spellcheck="true">// #if (MATERIAL_SHADINGMODEL_DEFAULT_LIT || MATERIAL_SHADINGMODEL_SUBSURFACE) &amp;&amp; (MATERIALBLENDING_TRANSLUCENT || MATERIALBLENDING_ADDITIVE) &amp;&amp; !SIMPLE_FORWARD_SHADING &amp;&amp; !FORWARD_SHADING</span>
+        <span class="token macro property">#<span class="token directive keyword">if</span>    (MATERIAL_SHADINGMODEL_DEFAULT_LIT || MATERIAL_SHADINGMODEL_SUBSURFACE  || MATERIAL_SHADINGMODEL_STYLIZED_SHADOW ) &amp;&amp; (MATERIALBLENDING_TRANSLUCENT || MATERIALBLENDING_ADDITIVE) &amp;&amp; !SIMPLE_FORWARD_SHADING &amp;&amp; !FORWARD_SHADING</span>
+                Color <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">GetTranslucencyVolumeLighting</span><span class="token punctuation">(</span>MaterialParameters<span class="token punctuation">,</span> PixelMaterialInputs<span class="token punctuation">,</span> BasePassInterpolants<span class="token punctuation">,</span> GBuffer<span class="token punctuation">,</span> IndirectIrradiance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="8-自定义接口名称"><a href="#8-自定义接口名称" class="headerlink" title="8. 自定义接口名称"></a>8. 自定义接口名称</h2><p>MaterialGraph.cpp </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">   <span class="token comment" spellcheck="true">// 527</span>
+
+       FText UMaterialGraph<span class="token operator">::</span><span class="token function">GetCustomDataPinName</span><span class="token punctuation">(</span> uint32 Index <span class="token punctuation">)</span> <span class="token keyword">const</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在 index == 0 的那个条件下 ，默认为custom data 0 ， 我们可以更改他的显示名称：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token keyword">if</span><span class="token punctuation">(</span> Index <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+                <span class="token keyword">switch</span><span class="token punctuation">(</span> Material<span class="token operator">-</span><span class="token operator">></span><span class="token function">GetShadingModel</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+
+                        <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+
+                        <span class="token keyword">case</span> MSM_Eye<span class="token operator">:</span>
+                                <span class="token keyword">return</span> <span class="token function">LOCTEXT</span><span class="token punctuation">(</span><span class="token string">"IrisMask"</span><span class="token punctuation">,</span> <span class="token string">"Iris Mask"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">case</span> MSM_StylizedShadow <span class="token operator">:</span>
+                                <span class="token keyword">return</span> <span class="token function">LOCTEXT</span><span class="token punctuation">(</span><span class="token string">"StylizedShadow"</span><span class="token punctuation">,</span> <span class="token string">"StylizedShadow"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token keyword">default</span><span class="token operator">:</span>
+                                <span class="token keyword">return</span> <span class="token function">LOCTEXT</span><span class="token punctuation">(</span><span class="token string">"CustomData0"</span><span class="token punctuation">,</span> <span class="token string">"Custom Data 0"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2018/11/21/Shader/unreal custom shading model/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2018/11/21/Shader/unreal custom shading model/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
