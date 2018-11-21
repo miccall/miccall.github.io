@@ -372,17 +372,16 @@ UnityLight <span class="token function">CreateLight</span> <span class="token pu
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol>
-<li><p>球谐光：<br>像顶点灯一样，我们会将球面谐波光数据添加到漫反射间接光中。另外，让我们确保它永远不会产生负面影响。毕竟，这是一个近似值</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">
- <span class="token macro property">#<span class="token directive keyword">if</span> defined(FORWARD_BASE_PASS)</span>
-         indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">ShadeSH9</span><span class="token punctuation">(</span><span class="token function">float4</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>normal<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- <span class="token macro property">#<span class="token directive keyword">endif</span></span>
-
-<span class="token comment" spellcheck="true">// 启用球谐光</span>
-<span class="token macro property">#<span class="token directive keyword">define</span> FORWARD_BASE_PASS</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+<li>球谐光：<br>像顶点灯一样，我们会将球面谐波光数据添加到漫反射间接光中。另外，让我们确保它永远不会产生负面影响。毕竟，这是一个近似值</li>
 </ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token macro property">#<span class="token directive keyword">if</span> defined(FORWARD_BASE_PASS)</span>
+                indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">ShadeSH9</span><span class="token punctuation">(</span><span class="token function">float4</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>normal<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+    <span class="token comment" spellcheck="true">// 启用球谐光</span>
+    <span class="token macro property">#<span class="token directive keyword">define</span> FORWARD_BASE_PASS</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>6.环境映射</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">    float3  reflectionDir <span class="token operator">=</span>  <span class="token function">reflect</span><span class="token punctuation">(</span><span class="token operator">-</span>viewDir<span class="token punctuation">,</span>i<span class="token punctuation">.</span>normal<span class="token punctuation">)</span><span class="token punctuation">;</span> 
     float4 envSample <span class="token operator">=</span> <span class="token function">UNITY_SAMPLE_TEXCUBE</span> <span class="token punctuation">(</span> unity_SpecCube0<span class="token punctuation">,</span>reflectionDir<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -432,88 +431,97 @@ UnityLight <span class="token function">CreateLight</span> <span class="token pu
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol>
-<li><p>间接光：<br><code>`</code> cpp<br>UnityIndirect CreateIndirectLight (Interpolators i, float3 viewDir) {<br> UnityIndirect indirectLight;<br> indirectLight.diffuse = 0;<br> indirectLight.specular = 0;</p>
-<p> #if defined(VERTEXLIGHT_ON)</p>
-<pre><code> indirectLight.diffuse = i.vertexLightColor;
-</code></pre><p> #endif</p>
-<p> #if defined(FORWARD_BASE_PASS)</p>
-<pre><code> indirectLight.diffuse += max(0, ShadeSH9(float4(i.normal, 1)));
-
- float3 reflectionDir = reflect(-viewDir, i.normal);
- Unity_GlossyEnvironmentData envData;
- envData.roughness = 1 - GetSmoothness(i);
- envData.reflUVW = BoxProjection(
-     reflectionDir, i.worldPos,
-     unity_SpecCube0_ProbePosition,
-     unity_SpecCube0_BoxMin, unity_SpecCube0_BoxMax
- );
-
- float3 probe0 = Unity_GlossyEnvironment(
-     UNITY_PASS_TEXCUBE(unity_SpecCube0), unity_SpecCube0_HDR, envData
- );
-
- envData.reflUVW = BoxProjection(
-     reflectionDir, i.worldPos,
-     unity_SpecCube1_ProbePosition,
-     unity_SpecCube1_BoxMin, unity_SpecCube1_BoxMax
- );
-
- #if UNITY_SPECCUBE_BLENDING
-     float interpolator = unity_SpecCube0_BoxMin.w;
-     UNITY_BRANCH
-     if (interpolator &lt; 0.99999) {
-         float3 probe1 = Unity_GlossyEnvironment(
-             UNITY_PASS_TEXCUBE_SAMPLER(unity_SpecCube1, unity_SpecCube0),
-             unity_SpecCube0_HDR, envData
-         );
-         indirectLight.specular = lerp(probe1, probe0, interpolator);
-     }
-     else {
-         indirectLight.specular = probe0;
-     }
- #else
-     indirectLight.specular = probe0;
- #endif
-</code></pre><p> #endif</p>
-<p> return indirectLight;<br>}</p>
-</li>
+<li>间接光：</li>
 </ol>
-<pre><code>
-8.获取metallic ，smoothness ，emssion
+<pre class="line-numbers language-cpp"><code class="language-cpp">UnityIndirect <span class="token function">CreateIndirectLight</span> <span class="token punctuation">(</span>Interpolators i<span class="token punctuation">,</span> float3 viewDir<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    UnityIndirect indirectLight<span class="token punctuation">;</span>
+    indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-``` cpp
+    <span class="token macro property">#<span class="token directive keyword">if</span> defined(VERTEXLIGHT_ON)</span>
+        indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">=</span> i<span class="token punctuation">.</span>vertexLightColor<span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
 
-float GetMetallic (Interpolators i) {
-    #if defined(_METALLIC_MAP)
-        return tex2D(_MetallicMap, i.uv.xy).r;
-    #else
-        return _Metallic;
-    #endif
-}
+    <span class="token macro property">#<span class="token directive keyword">if</span> defined(FORWARD_BASE_PASS)</span>
+        indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">ShadeSH9</span><span class="token punctuation">(</span><span class="token function">float4</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>normal<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-float GetSmoothness (Interpolators i) {
-    float smoothness = 1;
-    #if defined(_SMOOTHNESS_ALBEDO)
-        smoothness = tex2D(_MainTex, i.uv.xy).a;
-    #elif defined(_SMOOTHNESS_METALLIC) &amp;&amp; defined(_METALLIC_MAP)
-        smoothness = tex2D(_MetallicMap, i.uv.xy).a;
-    #endif
-    return smoothness * _Smoothness;
-}
+        float3 reflectionDir <span class="token operator">=</span> <span class="token function">reflect</span><span class="token punctuation">(</span><span class="token operator">-</span>viewDir<span class="token punctuation">,</span> i<span class="token punctuation">.</span>normal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Unity_GlossyEnvironmentData envData<span class="token punctuation">;</span>
+        envData<span class="token punctuation">.</span>roughness <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> <span class="token function">GetSmoothness</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        envData<span class="token punctuation">.</span>reflUVW <span class="token operator">=</span> <span class="token function">BoxProjection</span><span class="token punctuation">(</span>
+            reflectionDir<span class="token punctuation">,</span> i<span class="token punctuation">.</span>worldPos<span class="token punctuation">,</span>
+            unity_SpecCube0_ProbePosition<span class="token punctuation">,</span>
+            unity_SpecCube0_BoxMin<span class="token punctuation">,</span> unity_SpecCube0_BoxMax
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-float3 GetEmission (Interpolators i) {
-    #if defined(FORWARD_BASE_PASS)
-        #if defined(_EMISSION_MAP)
-            return tex2D(_EmissionMap, i.uv.xy) * _Emission;
-        #else
-            return _Emission;
-        #endif
-    #else
-        return 0 ;
-    #endif
-}
+        float3 probe0 <span class="token operator">=</span> <span class="token function">Unity_GlossyEnvironment</span><span class="token punctuation">(</span>
+            <span class="token function">UNITY_PASS_TEXCUBE</span><span class="token punctuation">(</span>unity_SpecCube0<span class="token punctuation">)</span><span class="token punctuation">,</span> unity_SpecCube0_HDR<span class="token punctuation">,</span> envData
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-</code></pre><ol>
+        envData<span class="token punctuation">.</span>reflUVW <span class="token operator">=</span> <span class="token function">BoxProjection</span><span class="token punctuation">(</span>
+            reflectionDir<span class="token punctuation">,</span> i<span class="token punctuation">.</span>worldPos<span class="token punctuation">,</span>
+            unity_SpecCube1_ProbePosition<span class="token punctuation">,</span>
+            unity_SpecCube1_BoxMin<span class="token punctuation">,</span> unity_SpecCube1_BoxMax
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token macro property">#<span class="token directive keyword">if</span> UNITY_SPECCUBE_BLENDING</span>
+            <span class="token keyword">float</span> interpolator <span class="token operator">=</span> unity_SpecCube0_BoxMin<span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+            UNITY_BRANCH
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>interpolator <span class="token operator">&lt;</span> <span class="token number">0.99999</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                float3 probe1 <span class="token operator">=</span> <span class="token function">Unity_GlossyEnvironment</span><span class="token punctuation">(</span>
+                    <span class="token function">UNITY_PASS_TEXCUBE_SAMPLER</span><span class="token punctuation">(</span>unity_SpecCube1<span class="token punctuation">,</span> unity_SpecCube0<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    unity_SpecCube0_HDR<span class="token punctuation">,</span> envData
+                <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> <span class="token function">lerp</span><span class="token punctuation">(</span>probe1<span class="token punctuation">,</span> probe0<span class="token punctuation">,</span> interpolator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> probe0<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> probe0<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+    <span class="token keyword">return</span> indirectLight<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>8.获取metallic ，smoothness ，emssion</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">float</span> <span class="token function">GetMetallic</span> <span class="token punctuation">(</span>Interpolators i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token macro property">#<span class="token directive keyword">if</span> defined(_METALLIC_MAP)</span>
+        <span class="token keyword">return</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_MetallicMap<span class="token punctuation">,</span> i<span class="token punctuation">.</span>uv<span class="token punctuation">.</span>xy<span class="token punctuation">)</span><span class="token punctuation">.</span>r<span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">else</span></span>
+        <span class="token keyword">return</span> _Metallic<span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">float</span> <span class="token function">GetSmoothness</span> <span class="token punctuation">(</span>Interpolators i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">float</span> smoothness <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">if</span> defined(_SMOOTHNESS_ALBEDO)</span>
+        smoothness <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_MainTex<span class="token punctuation">,</span> i<span class="token punctuation">.</span>uv<span class="token punctuation">.</span>xy<span class="token punctuation">)</span><span class="token punctuation">.</span>a<span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">elif</span> defined(_SMOOTHNESS_METALLIC) &amp;&amp; defined(_METALLIC_MAP)</span>
+        smoothness <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_MetallicMap<span class="token punctuation">,</span> i<span class="token punctuation">.</span>uv<span class="token punctuation">.</span>xy<span class="token punctuation">)</span><span class="token punctuation">.</span>a<span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+    <span class="token keyword">return</span> smoothness <span class="token operator">*</span> _Smoothness<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+float3 <span class="token function">GetEmission</span> <span class="token punctuation">(</span>Interpolators i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token macro property">#<span class="token directive keyword">if</span> defined(FORWARD_BASE_PASS)</span>
+        <span class="token macro property">#<span class="token directive keyword">if</span> defined(_EMISSION_MAP)</span>
+            <span class="token keyword">return</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_EmissionMap<span class="token punctuation">,</span> i<span class="token punctuation">.</span>uv<span class="token punctuation">.</span>xy<span class="token punctuation">)</span> <span class="token operator">*</span> _Emission<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            <span class="token keyword">return</span> _Emission<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+    <span class="token macro property">#<span class="token directive keyword">else</span></span>
+        <span class="token keyword">return</span> <span class="token number">0</span> <span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
 <li>顶点和片元着色</li>
 </ol>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
