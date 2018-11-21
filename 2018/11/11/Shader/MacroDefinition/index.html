@@ -157,7 +157,8 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><h2 id="MacroDefinition-宏定义-："><a href="#MacroDefinition-宏定义-：" class="headerlink" title="MacroDefinition 宏定义 ："></a>MacroDefinition 宏定义 ：</h2><p>define命令是C类语言中的一个宏定义命令，它用来将一个标识符定义为一个字符串，该标识符被称为宏名，被定义的字符串称为替换文本</p>
+                <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><p>宏定义<br>条件编译<br>预定义着色器预处理器宏<br>预编译<br>Unity Lighting Model<br>自定义光照模型<br>其余的一些重要内置文件</p>
+<h2 id="MacroDefinition-宏定义-："><a href="#MacroDefinition-宏定义-：" class="headerlink" title="MacroDefinition 宏定义 ："></a>MacroDefinition 宏定义 ：</h2><p>define命令是C类语言中的一个宏定义命令，它用来将一个标识符定义为一个字符串，该标识符被称为宏名，被定义的字符串称为替换文本</p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token comment" spellcheck="true">// #define &lt;宏名> &lt;字符串>  例：</span>
     <span class="token macro property">#<span class="token directive keyword">define</span> PI 3.1415926</span>
     <span class="token comment" spellcheck="true">// #define &lt;宏名> (&lt;参数表>) &lt;宏体>  例： </span>
@@ -392,8 +393,7 @@
 <span class="token punctuation">}</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>自定义光照模型：</p>
-<pre class="line-numbers language-cpp"><code class="language-cpp">
+<h2 id="自定义光照模型："><a href="#自定义光照模型：" class="headerlink" title="自定义光照模型："></a>自定义光照模型：</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
     half4 Lighting<span class="token operator">&lt;</span>Name<span class="token operator">></span> <span class="token punctuation">(</span>SurfaceOutput s<span class="token punctuation">,</span> UnityGI gi<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">// 在前向渲染中使用此路径，了解不依赖于视图方向的灯光模型。</span>
 
