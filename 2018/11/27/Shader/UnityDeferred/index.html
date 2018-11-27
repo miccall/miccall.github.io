@@ -1,0 +1,816 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Algorithm/">Algorithm</a></li><li><a class="category-link" href="/categories/Shader/">Shader</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(http://miccall.oss-cn-beijing.aliyuncs.com/18-11-21/61200215.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Unity Deferred Shader</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><p>我们给shader 加一个 Pass </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">            Pass <span class="token punctuation">{</span>
+                Tags <span class="token punctuation">{</span>
+                    <span class="token string">"LightMode"</span> <span class="token operator">=</span> <span class="token string">"Deferred"</span>
+                <span class="token punctuation">}</span>
+                CGPROGRAM
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> target 3.0</span>
+
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> exclude_renderers nomrt</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> shader_feature _ _RENDERING_CUTOUT</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> shader_feature _METALLIC_MAP</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> shader_feature _ _SMOOTHNESS_ALBEDO _SMOOTHNESS_METALLIC</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> shader_feature _NORMAL_MAP</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> shader_feature _OCCLUSION_MAP</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> shader_feature _EMISSION_MAP</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> shader_feature _DETAIL_MASK</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> shader_feature _DETAIL_ALBEDO_MAP</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> shader_feature _DETAIL_NORMAL_MAP</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> multi_compile _ UNITY_HDR_ON</span>
+
+
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> vertex MyVertexProgram</span>
+                <span class="token macro property">#<span class="token directive keyword">pragma</span> fragment MyFragmentProgram</span>
+
+                <span class="token macro property">#<span class="token directive keyword">define</span> DEFERRED_PASS</span>
+                <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"My Lighting.cginc"</span></span>
+
+                ENDCG
+            <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>它最终将着色结果写入G缓冲区，就是几何缓冲 ，而不是 颜色缓冲  ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">struct</span> FragmentOutput <span class="token punctuation">{</span>
+        <span class="token macro property">#<span class="token directive keyword">if</span> defined(DEFERRED_PASS)</span>
+            float4 gBuffer0 <span class="token operator">:</span> SV_Target0<span class="token punctuation">;</span>
+            float4 gBuffer1 <span class="token operator">:</span> SV_Target1<span class="token punctuation">;</span>
+            float4 gBuffer2 <span class="token operator">:</span> SV_Target2<span class="token punctuation">;</span>
+            float4 gBuffer3 <span class="token operator">:</span> SV_Target3<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            float4 color <span class="token operator">:</span> SV_Target<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在 MyFragmentProgram 中 ，我们计算返回这个 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    FragmentOutput <span class="token function">MyFragmentProgram</span> <span class="token punctuation">(</span>Interpolators i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+       FragmentOutput output<span class="token punctuation">;</span>
+
+      <span class="token macro property">#<span class="token directive keyword">if</span> defined(DEFERRED_PASS)</span>
+            <span class="token macro property">#<span class="token directive keyword">if</span> !defined(UNITY_HDR_ON)</span>
+                color<span class="token punctuation">.</span>rgb <span class="token operator">=</span> <span class="token function">exp2</span><span class="token punctuation">(</span><span class="token operator">-</span>color<span class="token punctuation">.</span>rgb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+            output<span class="token punctuation">.</span>gBuffer0<span class="token punctuation">.</span>rgb <span class="token operator">=</span> albedo<span class="token punctuation">;</span>
+            output<span class="token punctuation">.</span>gBuffer0<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token function">GetOcclusion</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            output<span class="token punctuation">.</span>gBuffer1<span class="token punctuation">.</span>rgb <span class="token operator">=</span> specularTint<span class="token punctuation">;</span>
+            output<span class="token punctuation">.</span>gBuffer1<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token function">GetSmoothness</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            output<span class="token punctuation">.</span>gBuffer2 <span class="token operator">=</span> <span class="token function">float4</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>normal <span class="token operator">*</span> <span class="token number">0.5</span> <span class="token operator">+</span> <span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            output<span class="token punctuation">.</span>gBuffer3 <span class="token operator">=</span> color<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            output<span class="token punctuation">.</span>color <span class="token operator">=</span> color<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+            <span class="token keyword">return</span> output <span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第一个G缓冲区用于存储漫 Albedo 和 AO。<br>这是一个ARGB32纹理，就像常规的帧缓冲一样。Albedo存储在RGB通道中，AO 存储在A通道中。<br>我们知道此时的 Albedo 颜色，我们可以使用它GetOcclusion来访问遮挡值。</p>
+<p>第二个G缓冲区用于存储 specular 颜色以及 Smoothness 。它也是ARGB32纹理。</p>
+<p>第三个G缓冲区存储世界空间法线向量。它们存储在 ARGB2101010 纹理的 RGB通道中。这意味着每个坐标使用十位而不是通常的八位存储，这使得它们更精确。A通道只有两位 - 所以总数也是32位 - 但它没有被使用，所以我们只需将其设置为1.法线的编码就像常规法线贴图一样</p>
+<p>最后的G缓冲区用于累积场景的光照。其格式取决于相机是设置为LDR还是HDR。<br>在LDR的情况下，它是ARGB2101010纹理，就像法线的缓冲区一样。<br>启用HDR时，格式为ARGBHalf，每个通道存储一个16位浮点值，总共64位。</p>
+<p>因此HDR版本是其他缓冲区的两倍。仅使用RGB通道，因此可以再次将A通道设置为1。</p>
+<p>灯光 ：</p>
+<p>我们现在使用的颜色是完全阴影，好像有一个方向灯，这是不正确的。我们可以通过使用针对延迟传递的黑色虚拟灯来消除所有直接光计算。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    UnityLight <span class="token function">CreateLight</span> <span class="token punctuation">(</span>Interpolators i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        UnityLight light<span class="token punctuation">;</span>
+
+
+        <span class="token macro property">#<span class="token directive keyword">if</span> defined(DEFERRED_PASS)</span>
+            light<span class="token punctuation">.</span>dir <span class="token operator">=</span> <span class="token function">float3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            light<span class="token punctuation">.</span>color <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+
+
+        <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            <span class="token macro property">#<span class="token directive keyword">if</span> defined(POINT) || defined(POINT_COOKIE) || defined(SPOT)</span>
+                light<span class="token punctuation">.</span>dir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>_WorldSpaceLightPos0<span class="token punctuation">.</span>xyz <span class="token operator">-</span> i<span class="token punctuation">.</span>worldPos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">else</span></span>
+                light<span class="token punctuation">.</span>dir <span class="token operator">=</span> _WorldSpaceLightPos0<span class="token punctuation">.</span>xyz<span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+            <span class="token function">UNITY_LIGHT_ATTENUATION</span><span class="token punctuation">(</span>attenuation<span class="token punctuation">,</span> i<span class="token punctuation">,</span> i<span class="token punctuation">.</span>worldPos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            light<span class="token punctuation">.</span>color <span class="token operator">=</span> _LightColor0<span class="token punctuation">.</span>rgb <span class="token operator">*</span> attenuation<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+        <span class="token keyword">return</span> light<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>自发光：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    float3 <span class="token function">GetEmission</span> <span class="token punctuation">(</span>Interpolators i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+        <span class="token macro property">#<span class="token directive keyword">if</span> defined(FORWARD_BASE_PASS) || defined(DEFERRED_PASS)</span>
+
+            <span class="token macro property">#<span class="token directive keyword">if</span> defined(_EMISSION_MAP)</span>
+                <span class="token keyword">return</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_EmissionMap<span class="token punctuation">,</span> i<span class="token punctuation">.</span>uv<span class="token punctuation">.</span>xy<span class="token punctuation">)</span> <span class="token operator">*</span> _Emission<span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">else</span></span>
+                <span class="token keyword">return</span> _Emission<span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+        <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+    <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>间接光 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    UnityIndirect <span class="token function">CreateIndirectLight</span> <span class="token punctuation">(</span>Interpolators i<span class="token punctuation">,</span> float3 viewDir<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        UnityIndirect indirectLight<span class="token punctuation">;</span>
+        indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">if</span> defined(VERTEXLIGHT_ON)</span>
+            indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">=</span> i<span class="token punctuation">.</span>vertexLightColor<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+
+
+
+
+        <span class="token macro property">#<span class="token directive keyword">if</span> defined(FORWARD_BASE_PASS) || defined(DEFERRED_PASS)</span>
+
+
+
+
+            indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">ShadeSH9</span><span class="token punctuation">(</span><span class="token function">float4</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>normal<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            float3 reflectionDir <span class="token operator">=</span> <span class="token function">reflect</span><span class="token punctuation">(</span><span class="token operator">-</span>viewDir<span class="token punctuation">,</span> i<span class="token punctuation">.</span>normal<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Unity_GlossyEnvironmentData envData<span class="token punctuation">;</span>
+            envData<span class="token punctuation">.</span>roughness <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> <span class="token function">GetSmoothness</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            envData<span class="token punctuation">.</span>reflUVW <span class="token operator">=</span> <span class="token function">BoxProjection</span><span class="token punctuation">(</span>
+                reflectionDir<span class="token punctuation">,</span> i<span class="token punctuation">.</span>worldPos<span class="token punctuation">,</span>
+                unity_SpecCube0_ProbePosition<span class="token punctuation">,</span>
+                unity_SpecCube0_BoxMin<span class="token punctuation">,</span> unity_SpecCube0_BoxMax
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            float3 probe0 <span class="token operator">=</span> <span class="token function">Unity_GlossyEnvironment</span><span class="token punctuation">(</span>
+                <span class="token function">UNITY_PASS_TEXCUBE</span><span class="token punctuation">(</span>unity_SpecCube0<span class="token punctuation">)</span><span class="token punctuation">,</span> unity_SpecCube0_HDR<span class="token punctuation">,</span> envData
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            envData<span class="token punctuation">.</span>reflUVW <span class="token operator">=</span> <span class="token function">BoxProjection</span><span class="token punctuation">(</span>
+                reflectionDir<span class="token punctuation">,</span> i<span class="token punctuation">.</span>worldPos<span class="token punctuation">,</span>
+                unity_SpecCube1_ProbePosition<span class="token punctuation">,</span>
+                unity_SpecCube1_BoxMin<span class="token punctuation">,</span> unity_SpecCube1_BoxMax
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">if</span> UNITY_SPECCUBE_BLENDING</span>
+                <span class="token keyword">float</span> interpolator <span class="token operator">=</span> unity_SpecCube0_BoxMin<span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                UNITY_BRANCH
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>interpolator <span class="token operator">&lt;</span> <span class="token number">0.99999</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    float3 probe1 <span class="token operator">=</span> <span class="token function">Unity_GlossyEnvironment</span><span class="token punctuation">(</span>
+                        <span class="token function">UNITY_PASS_TEXCUBE_SAMPLER</span><span class="token punctuation">(</span>unity_SpecCube1<span class="token punctuation">,</span> unity_SpecCube0<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        unity_SpecCube0_HDR<span class="token punctuation">,</span> envData
+                    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> <span class="token function">lerp</span><span class="token punctuation">(</span>probe1<span class="token punctuation">,</span> probe0<span class="token punctuation">,</span> interpolator<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> probe0<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token macro property">#<span class="token directive keyword">else</span></span>
+                indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> probe0<span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+            <span class="token keyword">float</span> occlusion <span class="token operator">=</span> <span class="token function">GetOcclusion</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">*</span><span class="token operator">=</span> occlusion<span class="token punctuation">;</span>
+            indirectLight<span class="token punctuation">.</span>specular <span class="token operator">*</span><span class="token operator">=</span> occlusion<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+        <span class="token keyword">return</span> indirectLight<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>HDR和LDR ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+
+    <span class="token macro property">#<span class="token directive keyword">pragma</span> multi_compile _ UNITY_HDR_ON</span>
+
+
+     <span class="token macro property">#<span class="token directive keyword">if</span> !defined(UNITY_HDR_ON)</span>
+                color<span class="token punctuation">.</span>rgb <span class="token operator">=</span> <span class="token function">exp2</span><span class="token punctuation">(</span><span class="token operator">-</span>color<span class="token punctuation">.</span>rgb<span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>延迟渲染 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+vertex shader ：
+    Interpolators <span class="token function">VertexProgram</span> <span class="token punctuation">(</span>VertexData v<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Interpolators i<span class="token punctuation">;</span>
+        i<span class="token punctuation">.</span>pos <span class="token operator">=</span> <span class="token function">UnityObjectToClipPos</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>vertex<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i<span class="token punctuation">.</span>uv <span class="token operator">=</span> <span class="token function">ComputeScreenPos</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i<span class="token punctuation">.</span>ray <span class="token operator">=</span> <span class="token function">lerp</span><span class="token punctuation">(</span>
+            <span class="token function">UnityObjectToViewPos</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>vertex<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token function">float3</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            v<span class="token punctuation">.</span>normal<span class="token punctuation">,</span>
+            _LightAsQuad
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>计算UV </li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    i<span class="token punctuation">.</span>uv <span class="token operator">=</span> <span class="token function">ComputeScreenPos</span><span class="token punctuation">(</span>i<span class="token punctuation">.</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>uv是一个 float4 类型的</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token keyword">struct</span> VertexData <span class="token punctuation">{</span>
+            float4 vertex <span class="token operator">:</span> POSITION<span class="token punctuation">;</span>
+            float3 normal <span class="token operator">:</span> NORMAL<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">struct</span> Interpolators <span class="token punctuation">{</span>
+              float4 pos <span class="token operator">:</span> SV_POSITION<span class="token punctuation">;</span>
+                float4 uv <span class="token operator">:</span> TEXCOORD0<span class="token punctuation">;</span>
+                float3 ray <span class="token operator">:</span> TEXCOORD1<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>fragment shader 计算最终的2D坐标</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        float2 uv <span class="token operator">=</span> i<span class="token punctuation">.</span>uv<span class="token punctuation">.</span>xy <span class="token operator">/</span> i<span class="token punctuation">.</span>uv<span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+
+
+        float4 <span class="token function">FragmentProgram</span> <span class="token punctuation">(</span>Interpolators i<span class="token punctuation">)</span> <span class="token operator">:</span> SV_Target <span class="token punctuation">{</span>
+            float2 uv <span class="token operator">=</span> i<span class="token punctuation">.</span>uv<span class="token punctuation">.</span>xy <span class="token operator">/</span> i<span class="token punctuation">.</span>uv<span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+            <span class="token keyword">float</span> depth <span class="token operator">=</span> <span class="token function">SAMPLE_DEPTH_TEXTURE</span><span class="token punctuation">(</span>_CameraDepthTexture<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            depth <span class="token operator">=</span> <span class="token function">Linear01Depth</span><span class="token punctuation">(</span>depth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            float3 rayToFarPlane <span class="token operator">=</span> i<span class="token punctuation">.</span>ray <span class="token operator">*</span> _ProjectionParams<span class="token punctuation">.</span>z <span class="token operator">/</span> i<span class="token punctuation">.</span>ray<span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+            float3 viewPos <span class="token operator">=</span> rayToFarPlane <span class="token operator">*</span> depth<span class="token punctuation">;</span>
+            float3 worldPos <span class="token operator">=</span> <span class="token function">mul</span><span class="token punctuation">(</span>unity_CameraToWorld<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>viewPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>xyz<span class="token punctuation">;</span>
+            float3 viewDir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>_WorldSpaceCameraPos <span class="token operator">-</span> worldPos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            float3 albedo <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_CameraGBufferTexture0<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">.</span>rgb<span class="token punctuation">;</span>
+            float3 specularTint <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_CameraGBufferTexture1<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">.</span>rgb<span class="token punctuation">;</span>
+            float3 smoothness <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_CameraGBufferTexture1<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">.</span>a<span class="token punctuation">;</span>
+            float3 normal <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_CameraGBufferTexture2<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">.</span>rgb <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">float</span> oneMinusReflectivity <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> <span class="token function">SpecularStrength</span><span class="token punctuation">(</span>specularTint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            UnityLight light <span class="token operator">=</span> <span class="token function">CreateLight</span><span class="token punctuation">(</span>uv<span class="token punctuation">,</span> worldPos<span class="token punctuation">,</span> viewPos<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            UnityIndirect indirectLight<span class="token punctuation">;</span>
+            indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            float4 color <span class="token operator">=</span> <span class="token function">UNITY_BRDF_PBS</span><span class="token punctuation">(</span>
+                albedo<span class="token punctuation">,</span> specularTint<span class="token punctuation">,</span> oneMinusReflectivity<span class="token punctuation">,</span> smoothness<span class="token punctuation">,</span>
+                normal<span class="token punctuation">,</span> viewDir<span class="token punctuation">,</span> light<span class="token punctuation">,</span> indirectLight
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">if</span> !defined(UNITY_HDR_ON)</span>
+                color <span class="token operator">=</span> <span class="token function">exp2</span><span class="token punctuation">(</span><span class="token operator">-</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+            <span class="token keyword">return</span> color<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>世界位置</li>
+</ol>
+<p>在定向光的情况下，四边形的四个顶点的光线作为法向矢量提供。所以我们可以将它们传递给顶点程序并插入它们。</p>
+<p>通过对  CameraDepthTexture  纹理进行采样并将其线性化来找到 fragment 中的深度值</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">            <span class="token function">UNITY_DECLARE_DEPTH_TEXTURE</span><span class="token punctuation">(</span>_CameraDepthTexture<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            <span class="token keyword">float</span> depth <span class="token operator">=</span> <span class="token function">SAMPLE_DEPTH_TEXTURE</span><span class="token punctuation">(</span>_CameraDepthTexture<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            depth <span class="token operator">=</span> <span class="token function">Linear01Depth</span><span class="token punctuation">(</span>depth<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>对它们进行缩放，以便我们得到 远裁剪平面 的光线</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        float3 rayToFarPlane <span class="token operator">=</span> i<span class="token punctuation">.</span>ray <span class="token operator">*</span> _ProjectionParams<span class="token punctuation">.</span>z <span class="token operator">/</span> i<span class="token punctuation">.</span>ray<span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>按深度值缩放此光线可为我们提供一个位置。提供的光线在视图空间中定义，视图空间是摄像机的本地空间。所以我们最终得到了片段在视图空间中的位置。从该空间到世界空间的转换是使用unity_CameraToWorld矩阵完成的，该矩阵在ShaderVariables中定义 。 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">            float3 viewPos <span class="token operator">=</span> rayToFarPlane <span class="token operator">*</span> depth<span class="token punctuation">;</span>
+            float3 worldPos <span class="token operator">=</span> <span class="token function">mul</span><span class="token punctuation">(</span>unity_CameraToWorld<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>viewPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>xyz<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ol>
+<li>读取G缓冲区数据<br>缓冲区通过三个_CameraGBufferTexture变量提供</li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    sampler2D _CameraGBufferTexture0<span class="token punctuation">;</span>
+    sampler2D _CameraGBufferTexture1<span class="token punctuation">;</span>
+    sampler2D _CameraGBufferTexture2<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>我们需要反照率，镜面色调，光滑度和法线。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">            float3 albedo <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_CameraGBufferTexture0<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">.</span>rgb<span class="token punctuation">;</span>
+            float3 specularTint <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_CameraGBufferTexture1<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">.</span>rgb<span class="token punctuation">;</span>
+            float3 smoothness <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_CameraGBufferTexture1<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">.</span>a<span class="token punctuation">;</span>
+            float3 normal <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_CameraGBufferTexture2<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">.</span>rgb <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>BRDF</li>
+</ol>
+<p>BRDF函数在UnityPBSLighting中定义，因此我们必须包含该文件<br>计算BRDF 需要 viewdir ，反射率 ， 光的数据 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        float3 viewDir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>_WorldSpaceCameraPos <span class="token operator">-</span> worldPos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">float</span> oneMinusReflectivity <span class="token operator">=</span> <span class="token number">1</span> <span class="token operator">-</span> <span class="token function">SpecularStrength</span><span class="token punctuation">(</span>specularTint<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            UnityLight light <span class="token operator">=</span> <span class="token function">CreateLight</span><span class="token punctuation">(</span>uv<span class="token punctuation">,</span> worldPos<span class="token punctuation">,</span> viewPos<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            UnityIndirect indirectLight<span class="token punctuation">;</span>
+            indirectLight<span class="token punctuation">.</span>diffuse <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            indirectLight<span class="token punctuation">.</span>specular <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>于是，我们就可以计算 BRDF 了 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">            float4 color <span class="token operator">=</span> <span class="token function">UNITY_BRDF_PBS</span><span class="token punctuation">(</span>
+                albedo<span class="token punctuation">,</span> specularTint<span class="token punctuation">,</span> oneMinusReflectivity<span class="token punctuation">,</span> smoothness<span class="token punctuation">,</span>
+                normal<span class="token punctuation">,</span> viewDir<span class="token punctuation">,</span> light<span class="token punctuation">,</span> indirectLight
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>配置灯 ：</li>
+</ol>
+<p>间接光不适用于此，因此它仍然是黑色的。但必须配置直射光，使其与当前正在渲染的光相匹配。对于定向光，我们需要颜色和方向。这些是通过_LightColor和_LightDir变量提供的</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    float4 _LightColor<span class="token punctuation">,</span> _LightDir<span class="token punctuation">,</span> _LightPos<span class="token punctuation">;</span>
+
+        UnityLight <span class="token function">CreateLight</span> <span class="token punctuation">(</span>float2 uv<span class="token punctuation">,</span> float3 worldPos<span class="token punctuation">,</span> <span class="token keyword">float</span> viewZ<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            UnityLight light<span class="token punctuation">;</span>
+            <span class="token keyword">float</span> attenuation <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">float</span> shadowAttenuation <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">bool</span> shadowed <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">if</span> defined(DIRECTIONAL) || defined(DIRECTIONAL_COOKIE)</span>
+                light<span class="token punctuation">.</span>dir <span class="token operator">=</span> <span class="token operator">-</span>_LightDir<span class="token punctuation">;</span>
+                <span class="token macro property">#<span class="token directive keyword">if</span> defined(DIRECTIONAL_COOKIE)</span>
+                    float2 uvCookie <span class="token operator">=</span> <span class="token function">mul</span><span class="token punctuation">(</span>unity_WorldToLight<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>xy<span class="token punctuation">;</span>
+                    attenuation <span class="token operator">*</span><span class="token operator">=</span> <span class="token function">tex2Dbias</span><span class="token punctuation">(</span>_LightTexture0<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>uvCookie<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+                <span class="token macro property">#<span class="token directive keyword">if</span> defined(SHADOWS_SCREEN)</span>
+                    shadowed <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                    shadowAttenuation <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_ShadowMapTexture<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">.</span>r<span class="token punctuation">;</span>
+                <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+            <span class="token macro property">#<span class="token directive keyword">else</span></span>
+                float3 lightVec <span class="token operator">=</span> _LightPos<span class="token punctuation">.</span>xyz <span class="token operator">-</span> worldPos<span class="token punctuation">;</span>
+                light<span class="token punctuation">.</span>dir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>lightVec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                attenuation <span class="token operator">*</span><span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>
+                    _LightTextureB0<span class="token punctuation">,</span>
+                    <span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>lightVec<span class="token punctuation">,</span> lightVec<span class="token punctuation">)</span> <span class="token operator">*</span> _LightPos<span class="token punctuation">.</span>w<span class="token punctuation">)</span><span class="token punctuation">.</span>rr
+                <span class="token punctuation">)</span><span class="token punctuation">.</span>UNITY_ATTEN_CHANNEL<span class="token punctuation">;</span>
+                <span class="token macro property">#<span class="token directive keyword">if</span> defined(SPOT)</span>
+                    float4 uvCookie <span class="token operator">=</span> <span class="token function">mul</span><span class="token punctuation">(</span>unity_WorldToLight<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    uvCookie<span class="token punctuation">.</span>xy <span class="token operator">/</span><span class="token operator">=</span> uvCookie<span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                    attenuation <span class="token operator">*</span><span class="token operator">=</span>
+                        <span class="token function">tex2Dbias</span><span class="token punctuation">(</span>_LightTexture0<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>uvCookie<span class="token punctuation">.</span>xy<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                    attenuation <span class="token operator">*</span><span class="token operator">=</span> uvCookie<span class="token punctuation">.</span>w <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                    <span class="token macro property">#<span class="token directive keyword">if</span> defined(SHADOWS_DEPTH)</span>
+                        shadowed <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                        shadowAttenuation <span class="token operator">=</span> <span class="token function">UnitySampleShadowmap</span><span class="token punctuation">(</span>
+                            <span class="token function">mul</span><span class="token punctuation">(</span>unity_WorldToShadow<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+                <span class="token macro property">#<span class="token directive keyword">else</span></span>
+                    <span class="token macro property">#<span class="token directive keyword">if</span> defined(POINT_COOKIE)</span>
+                        float3 uvCookie <span class="token operator">=</span>
+                            <span class="token function">mul</span><span class="token punctuation">(</span>unity_WorldToLight<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>xyz<span class="token punctuation">;</span>
+                        attenuation <span class="token operator">*</span><span class="token operator">=</span>
+                            <span class="token function">texCUBEbias</span><span class="token punctuation">(</span>_LightTexture0<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>uvCookie<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+                    <span class="token macro property">#<span class="token directive keyword">if</span> defined(SHADOWS_CUBE)</span>
+                        shadowed <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                        shadowAttenuation <span class="token operator">=</span> <span class="token function">UnitySampleShadowmap</span><span class="token punctuation">(</span><span class="token operator">-</span>lightVec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+                <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+            <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>shadowed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">float</span> shadowFadeDistance <span class="token operator">=</span>
+                    <span class="token function">UnityComputeShadowFadeDistance</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> viewZ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">float</span> shadowFade <span class="token operator">=</span> <span class="token function">UnityComputeShadowFade</span><span class="token punctuation">(</span>shadowFadeDistance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                shadowAttenuation <span class="token operator">=</span> <span class="token function">saturate</span><span class="token punctuation">(</span>shadowAttenuation <span class="token operator">+</span> shadowFade<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token macro property">#<span class="token directive keyword">if</span> defined(UNITY_FAST_COHERENT_DYNAMIC_BRANCHING) &amp;&amp; defined(SHADOWS_SOFT)</span>
+                    UNITY_BRANCH
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>shadowFade <span class="token operator">></span> <span class="token number">0.99</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        shadowAttenuation <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+            <span class="token punctuation">}</span>
+            light<span class="token punctuation">.</span>color <span class="token operator">=</span> _LightColor<span class="token punctuation">.</span>rgb <span class="token operator">*</span> <span class="token punctuation">(</span>attenuation <span class="token operator">*</span> shadowAttenuation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> light<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>LightDir设置为光线行进的方向。对于我们的计算，我们需要从表面到光的方向，所以相反</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token macro property">#<span class="token directive keyword">if</span> defined(DIRECTIONAL) || defined(DIRECTIONAL_COOKIE)</span>
+            light<span class="token punctuation">.</span>dir <span class="token operator">=</span> <span class="token operator">-</span>_LightDir<span class="token punctuation">;</span>
+      <span class="token macro property">#<span class="token directive keyword">else</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>阴影</li>
+</ol>
+<p>通过  ShadowMapTexture  变量访问阴影贴图</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token macro property">#<span class="token directive keyword">if</span> defined (SHADOWS_SCREEN)</span>
+        sampler2D _ShadowMapTexture<span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>需要对阴影纹理进行采样并使用它来衰减光色</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token keyword">bool</span> shadowed <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token keyword">float</span> shadowAttenuation <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+                <span class="token macro property">#<span class="token directive keyword">if</span> defined(SHADOWS_SCREEN)</span>
+                    shadowed <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                    shadowAttenuation <span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>_ShadowMapTexture<span class="token punctuation">,</span> uv<span class="token punctuation">)</span><span class="token punctuation">.</span>r<span class="token punctuation">;</span>
+                <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>仅在定向灯启用阴影时才有效。如果不是，则阴影衰减始终为1</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">                    <span class="token macro property">#<span class="token directive keyword">if</span> defined(SHADOWS_DEPTH)</span>
+                        shadowed <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                        shadowAttenuation <span class="token operator">=</span> <span class="token function">UnitySampleShadowmap</span><span class="token punctuation">(</span>
+                            <span class="token function">mul</span><span class="token punctuation">(</span>unity_WorldToShadow<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当聚光灯有阴影时，SHADOWS_DEPTH定义关键字<br>聚光灯和方向灯使用相同的变量来对阴影贴图进行采样。在聚光灯的情况下，我们可以UnitySampleShadowmap用来处理硬或阴影采样的细节。我们必须在阴影空间中提供片段位置。unity_WorldToShadow数组中的第一个矩阵可用于从世界转换为阴影空间</p>
+<p>点光源的阴影存储在立方体贴图中。UnitySampleShadowmap为我们处理抽样。在这种情况下，我们必须为它提供从光到表面的矢量，以便对立方体贴图进行采样。这与光矢量相反</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+                    <span class="token macro property">#<span class="token directive keyword">if</span> defined(POINT_COOKIE)</span>
+                        float3 uvCookie <span class="token operator">=</span>
+                            <span class="token function">mul</span><span class="token punctuation">(</span>unity_WorldToLight<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>xyz<span class="token punctuation">;</span>
+                        attenuation <span class="token operator">*</span><span class="token operator">=</span>
+                            <span class="token function">texCUBEbias</span><span class="token punctuation">(</span>_LightTexture0<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>uvCookie<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+                    <span class="token macro property">#<span class="token directive keyword">if</span> defined(SHADOWS_CUBE)</span>
+                        shadowed <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+                        shadowAttenuation <span class="token operator">=</span> <span class="token function">UnitySampleShadowmap</span><span class="token punctuation">(</span><span class="token operator">-</span>lightVec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>阴影范围</li>
+</ol>
+<p>阴影贴图是有限的。它无法覆盖整个世界。它覆盖的区域越大，阴影的分辨率越低。Unity具有最大距离，可以绘制阴影。除此之外，没有实时阴影。当阴影接近这个距离时，它们会淡出。至少，这就是Unity的着色器所做的。因为我们手动对阴影贴图进行采样，所以当到达地图边缘时，我们的阴影会被截断。结果是阴影被急剧切断或者在淡入淡出距离之外丢失。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    UnityComputeShadowFadeDistance  功能可以为我们找出正确的指标
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>shadowed<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">float</span> shadowFadeDistance <span class="token operator">=</span>
+                    <span class="token function">UnityComputeShadowFadeDistance</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> viewZ<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">float</span> shadowFade <span class="token operator">=</span> <span class="token function">UnityComputeShadowFade</span><span class="token punctuation">(</span>shadowFadeDistance<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                shadowAttenuation <span class="token operator">=</span> <span class="token function">saturate</span><span class="token punctuation">(</span>shadowAttenuation <span class="token operator">+</span> shadowFade<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token macro property">#<span class="token directive keyword">if</span> defined(UNITY_FAST_COHERENT_DYNAMIC_BRANCHING) &amp;&amp; defined(SHADOWS_SOFT)</span>
+                    UNITY_BRANCH
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>shadowFade <span class="token operator">></span> <span class="token number">0.99</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        shadowAttenuation <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+            <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当阴影接近渐变距离时，阴影应该开始消失，一旦达到它就完全消失<br>视图深度是视图空间中片段位置的Z分量 。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    UnityLight light <span class="token operator">=</span> <span class="token function">CreateLight</span><span class="token punctuation">(</span>uv<span class="token punctuation">,</span> worldPos<span class="token punctuation">,</span> viewPos<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>最终超出阴影渐变距离的碎片将不会被遮蔽。但是，我们仍在对它们的阴影进行采样，这可能很昂贵。我们可以通过基于阴影衰落因子的分支来避免这种情况。它接近1，然后我们可以完全跳过阴影衰减</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">                <span class="token macro property">#<span class="token directive keyword">if</span> defined(UNITY_FAST_COHERENT_DYNAMIC_BRANCHING) &amp;&amp; defined(SHADOWS_SOFT)</span>
+                    UNITY_BRANCH
+                    <span class="token keyword">if</span> <span class="token punctuation">(</span>shadowFade <span class="token operator">></span> <span class="token number">0.99</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        shadowAttenuation <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>分支机构本身可能很昂贵。这只是一个改进，因为这是一个连贯的分支。除了在阴影区域的边缘附近，所有碎片都落在它的内部或外部。但这只有GPU可以利用这一点才有意义<br>HLSLSupport定义UNITY_FAST_COHERENT_DYNAMIC_BRANCHING宏时应该是这种情况<br>用SHADOWS_SOFT关键字表示。定向阴影总是需要单个纹理样本，因此便宜</p>
+<ol>
+<li>cookie<br>cookie纹理可通过_LightTextureB0 。unity_WorldToLight矩阵变量可以实现从世界转换为光照空间</li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token macro property">#<span class="token directive keyword">if</span> defined(POINT_COOKIE)</span>
+        samplerCUBE _LightTexture0<span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">else</span></span>
+        sampler2D _LightTexture0<span class="token punctuation">;</span>
+    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+    float4x4 unity_WorldToLight<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用矩阵将世界位置转换为光空间坐标。然后使用它们来采样cookie纹理。让我们使用一个单独的attenuation变量来跟踪cookie的衰减</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">                <span class="token keyword">float</span> attenuation <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+                <span class="token macro property">#<span class="token directive keyword">if</span> defined(DIRECTIONAL_COOKIE)</span>
+                    float2 uvCookie <span class="token operator">=</span> <span class="token function">mul</span><span class="token punctuation">(</span>unity_WorldToLight<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>xy<span class="token punctuation">;</span>
+                    attenuation <span class="token operator">*</span><span class="token operator">=</span> <span class="token function">tex2Dbias</span><span class="token punctuation">(</span>_LightTexture0<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>uvCookie<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+            light<span class="token punctuation">.</span>color <span class="token operator">=</span> _LightColor<span class="token punctuation">.</span>rgb <span class="token operator">*</span> <span class="token punctuation">(</span>attenuation <span class="token operator">*</span> shadowAttenuation<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> light<span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>cookie坐标之间存在较大差异时，会出现这些伪影。Unity使用的解决方案是在采样mip贴图时应用偏差，因此我们也会这样做：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">           attenuation <span class="token operator">*</span><span class="token operator">=</span> <span class="token function">tex2Dbias</span><span class="token punctuation">(</span>_LightTexture0<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>uvCookie<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>点光饼干也可以通过_LightTexture0。但是，在这种情况下，我们需要一个立方体贴图而不是常规纹理。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        <span class="token macro property">#<span class="token directive keyword">if</span> defined(POINT_COOKIE)</span>
+            samplerCUBE _LightTexture0<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">else</span></span>
+            sampler2D _LightTexture0<span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对cookie进行采样，请将片段的世界位置转换为光照空间，然后使用它来对立方体贴图进行采样</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">                    <span class="token macro property">#<span class="token directive keyword">if</span> defined(POINT_COOKIE)</span>
+                        float3 uvCookie <span class="token operator">=</span>
+                            <span class="token function">mul</span><span class="token punctuation">(</span>unity_WorldToLight<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>xyz<span class="token punctuation">;</span>
+                        attenuation <span class="token operator">*</span><span class="token operator">=</span>
+                            <span class="token function">texCUBEbias</span><span class="token punctuation">(</span>_LightTexture0<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>uvCookie<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                    <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>LDR</li>
+</ol>
+<p>编码的LDR颜色必须乘以光缓冲区而不是加。我们可以通过将着色器的混合模式更改为。但是，如果我们这样做，那么HDR渲染就会出错。相反，我们必须使混合模式变量</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">                Blend <span class="token punctuation">[</span>_SrcBlend<span class="token punctuation">]</span> <span class="token punctuation">[</span>_DstBlend<span class="token punctuation">]</span>
+                ZWrite Off
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>计算完PBS之后：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+            <span class="token macro property">#<span class="token directive keyword">if</span> !defined(UNITY_HDR_ON)</span>
+                color <span class="token operator">=</span> <span class="token function">exp2</span><span class="token punctuation">(</span><span class="token operator">-</span>color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>聚光灯</li>
+</ol>
+<p>非定向的灯具有位置。它是  LightPos 。可以确定聚光灯的光矢量和光线方向</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">        float3 lightVec <span class="token operator">=</span> _LightPos<span class="token punctuation">.</span>xyz <span class="token operator">-</span> worldPos<span class="token punctuation">;</span>
+        light<span class="token punctuation">.</span>dir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>lightVec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>LightAsQuad ：光线方向 通过将点转换为视图空间来完成的</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">            i<span class="token punctuation">.</span>ray <span class="token operator">=</span> <span class="token function">lerp</span><span class="token punctuation">(</span>
+                <span class="token function">UnityObjectToViewPos</span><span class="token punctuation">(</span>v<span class="token punctuation">.</span>vertex<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token function">float3</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                v<span class="token punctuation">.</span>normal<span class="token punctuation">,</span>
+                _LightAsQuad
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Cookie衰减，聚光灯的圆锥衰减是通过cookie纹理创建的</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+                <span class="token macro property">#<span class="token directive keyword">if</span> defined(DIRECTIONAL_COOKIE)</span>
+                    float2 uvCookie <span class="token operator">=</span> <span class="token function">mul</span><span class="token punctuation">(</span>unity_WorldToLight<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>xy<span class="token punctuation">;</span>
+                    attenuation <span class="token operator">*</span><span class="token operator">=</span> <span class="token function">tex2Dbias</span><span class="token punctuation">(</span>_LightTexture0<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>uvCookie<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                <span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+                <span class="token macro property">#<span class="token directive keyword">if</span> defined(SPOT)</span>
+                    float4 uvCookie <span class="token operator">=</span> <span class="token function">mul</span><span class="token punctuation">(</span>unity_WorldToLight<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>worldPos<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    uvCookie<span class="token punctuation">.</span>xy <span class="token operator">/</span><span class="token operator">=</span> uvCookie<span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                    attenuation <span class="token operator">*</span><span class="token operator">=</span>
+                        <span class="token function">tex2Dbias</span><span class="token punctuation">(</span>_LightTexture0<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>uvCookie<span class="token punctuation">.</span>xy<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>w<span class="token punctuation">;</span>
+                    attenuation <span class="token operator">*</span><span class="token operator">=</span> uvCookie<span class="token punctuation">.</span>w <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token macro property">#<span class="token directive keyword">else</span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这实际上导致两个光锥，一个向前，一个向后。向后锥体通常最终在渲染区域之外，但这不能保证。我们只需要前锥，它对应于负W坐标 。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">         attenuation <span class="token operator">*</span><span class="token operator">=</span> uvCookie<span class="token punctuation">.</span>w <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ol>
+<li>距离衰减</li>
+</ol>
+<p>来自聚光灯的光也会根据距离衰减。该衰减存储在查找纹理中，该纹理可通过_LightTextureB0<br>应该使用哪个纹理通道因平台而异，并由UNITY_ATTEN_CHANNEL宏定义</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">                float3 lightVec <span class="token operator">=</span> _LightPos<span class="token punctuation">.</span>xyz <span class="token operator">-</span> worldPos<span class="token punctuation">;</span>
+                light<span class="token punctuation">.</span>dir <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>lightVec<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                attenuation <span class="token operator">*</span><span class="token operator">=</span> <span class="token function">tex2D</span><span class="token punctuation">(</span>
+                    _LightTextureB0<span class="token punctuation">,</span>
+                    <span class="token punctuation">(</span><span class="token function">dot</span><span class="token punctuation">(</span>lightVec<span class="token punctuation">,</span> lightVec<span class="token punctuation">)</span> <span class="token operator">*</span> _LightPos<span class="token punctuation">.</span>w<span class="token punctuation">)</span><span class="token punctuation">.</span>rr
+                <span class="token punctuation">)</span><span class="token punctuation">.</span>UNITY_ATTEN_CHANNEL<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li><p>点光源</p>
+<p>点光源使用与聚光灯相同的光矢量，方向和距离衰减。所以他们可以共享该代码。只有在SPOT定义关键字时才能使用其余的聚光灯代码。</p>
+</li>
+</ol>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2018/11/27/Shader/UnityDeferred/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2018/11/27/Shader/UnityDeferred/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
