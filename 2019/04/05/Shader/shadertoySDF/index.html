@@ -1,0 +1,772 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Shader/">Shader</a></li><li><a class="category-link" href="/categories/Tracing/">Tracing</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://github.com/miccall/ShaderToy/raw/master/mdtexture/title.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >ShaderToy for SDF</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><h1 id="ShaderToy-for-vscode-Test"><a href="#ShaderToy-for-vscode-Test" class="headerlink" title="ShaderToy for vscode Test"></a>ShaderToy for vscode Test</h1><p>最终图像,内容来自iq大神的sahdertoy</p>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/finalImage.png" alt="finalImage"><br><br></div>
+
+<h2 id="1-Camera的设置"><a href="#1-Camera的设置" class="headerlink" title="1. Camera的设置"></a>1. Camera的设置</h2><div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/cameravector.jpg" alt="camera vector"><br><br></div>
+
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+mat3 <span class="token function">setCamera</span><span class="token punctuation">(</span> in vec3 ro<span class="token punctuation">,</span> in vec3 ta<span class="token punctuation">,</span> <span class="token keyword">float</span> cr <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    vec3 cw <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span>ta<span class="token operator">-</span>ro<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 cp <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token function">sin</span><span class="token punctuation">(</span>cr<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">cos</span><span class="token punctuation">(</span>cr<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 cu <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> <span class="token function">cross</span><span class="token punctuation">(</span>cw<span class="token punctuation">,</span>cp<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 cv <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> <span class="token function">cross</span><span class="token punctuation">(</span>cu<span class="token punctuation">,</span>cw<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">mat3</span><span class="token punctuation">(</span> cu<span class="token punctuation">,</span> cv<span class="token punctuation">,</span> cw <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这个方法设置了一个转化矩阵，根据摄像机的空间位置，我们需要把摄像机转化到世界坐标系</p>
+<p>在main()中调用 :</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// camera, ro:摄像机圆心，ta：目标点 </span>
+    vec3 ro <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span> <span class="token number">2</span> <span class="token punctuation">,</span> <span class="token number">2</span> <span class="token punctuation">,</span>  <span class="token number">4</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 ta <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// camera-to-world transformation</span>
+    mat3 ca <span class="token operator">=</span> <span class="token function">setCamera</span><span class="token punctuation">(</span> ro<span class="token punctuation">,</span> ta<span class="token punctuation">,</span> <span class="token number">0.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    gl_FragColor <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>为了更加可控，可以增加鼠标控制：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+vec2 mo <span class="token operator">=</span> iMouse<span class="token punctuation">.</span>xy<span class="token operator">/</span>iResolution<span class="token punctuation">.</span>xy<span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>获得鼠标的空间坐标点<br>那么我们可以直接使用这个值进行对camera的位置更改</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token comment" spellcheck="true">// 鼠标控制的摄像机位置 </span>
+vec3 ro <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span> <span class="token function">cos</span><span class="token punctuation">(</span>mo<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> mo<span class="token punctuation">.</span>y<span class="token punctuation">,</span> <span class="token function">sin</span><span class="token punctuation">(</span>mo<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 测试</span>
+gl_FragColor <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span>ro<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-Pixel-Coordinates-设置"><a href="#2-Pixel-Coordinates-设置" class="headerlink" title="2. Pixel Coordinates 设置"></a>2. Pixel Coordinates 设置</h2><p>我们把屏幕的坐标从 0-1 ，改到 -0.5 到 0.5 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    vec2 p <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">-</span>iResolution<span class="token punctuation">.</span>xy <span class="token operator">+</span> <span class="token number">2.0</span><span class="token operator">*</span>gl_FragCoord<span class="token punctuation">.</span>xy<span class="token punctuation">)</span><span class="token operator">/</span>iResolution<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 测</span>
+    gl_FragColor <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span>p<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-Ray-Direction"><a href="#3-Ray-Direction" class="headerlink" title="3. Ray Direction"></a>3. Ray Direction</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+    vec3 rd <span class="token operator">=</span> ca <span class="token operator">*</span> <span class="token function">normalize</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>xy<span class="token punctuation">,</span><span class="token number">2.0</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>     
+    <span class="token comment" spellcheck="true">// 测试</span>
+    gl_FragColor <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span>rd<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>ca * viewSpace ，把坐标空间从 viewspace 转化到世界空间 </p>
+<h2 id="4-Sphere-的-SDF-函数"><a href="#4-Sphere-的-SDF-函数" class="headerlink" title="4. Sphere 的 SDF 函数"></a>4. Sphere 的 SDF 函数</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// p是球心位置，s是球的半径</span>
+<span class="token keyword">float</span> <span class="token function">sdSphere</span><span class="token punctuation">(</span> vec3 p<span class="token punctuation">,</span> <span class="token keyword">float</span> s <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">length</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span><span class="token operator">-</span>s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-Ray-Marching"><a href="#5-Ray-Marching" class="headerlink" title="5. Ray Marching"></a>5. Ray Marching</h2><p>我们已经有了两个基本值，一个是相机原点 ro ，一个是光线方向 rd </p>
+<p>我们定义一个场景来存放所有marching的内容 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">float</span> <span class="token function">map</span><span class="token punctuation">(</span> in vec3 pos <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">sdSphere</span><span class="token punctuation">(</span> pos <span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>光线的位置更新： ro + rd * t ，从初始点ro开始，朝着方向rd ，走t倍的距离 </li>
+<li>我们循环 Max_Step 次，代表我们最多marching 步数 ，</li>
+<li>还要满足t被距离之后，不能超过我们预定的Max_Dist。</li>
+<li>就算SDF函数，我们每一次都得到一个 最小 距离 h  </li>
+<li>然后我们每一步都用 h 更新 t  </li>
+<li>最后，当我们得到的最小距离h很接近表面时，我们就知道他已经时表面的点，我们更新一个res返回</li>
+</ul>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/spheretrace.jpg" alt=""><br><br></div>
+
+<pre class="line-numbers language-cpp"><code class="language-cpp">vec3 <span class="token function">castRay</span><span class="token punctuation">(</span> in vec3 ro<span class="token punctuation">,</span> in vec3 rd <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    vec3  res <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> t <span class="token operator">=</span> <span class="token number">0.0</span> <span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Max_Step <span class="token operator">&amp;&amp;</span> t <span class="token operator">&lt;</span> Max_Dist <span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">float</span> h <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span> ro<span class="token operator">+</span>rd<span class="token operator">*</span>t <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">abs</span><span class="token punctuation">(</span>h<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token punctuation">(</span> Surf_Dist <span class="token operator">*</span> t <span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span> 
+            res <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>h<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         t <span class="token operator">+</span><span class="token operator">=</span> h<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当然我么还要define 这些值 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">define</span> Max_Step  250 </span>
+<span class="token macro property">#<span class="token directive keyword">define</span> Max_Dist 100.0</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> Surf_Dist 0.000001 </span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-Render"><a href="#6-Render" class="headerlink" title="6. Render"></a>6. Render</h2><p>最后，我们希望对这个图进行渲染，我们为了综合，开一个单独的函数，为了以后反射，高光，阴影等计算 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">vec3 <span class="token function">render</span><span class="token punctuation">(</span> in vec3 ro<span class="token punctuation">,</span> in vec3 rd <span class="token punctuation">)</span>
+<span class="token punctuation">{</span> 
+    vec3 res <span class="token operator">=</span> <span class="token function">castRay</span><span class="token punctuation">(</span>ro<span class="token punctuation">,</span>rd<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">vec3</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>测试：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    vec3 ro <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span> <span class="token function">cos</span><span class="token punctuation">(</span>mo<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">5.0</span><span class="token punctuation">,</span> mo<span class="token punctuation">.</span>y<span class="token punctuation">,</span> <span class="token function">sin</span><span class="token punctuation">(</span>mo<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    vec3 col <span class="token operator">=</span> <span class="token function">render</span><span class="token punctuation">(</span>ro<span class="token punctuation">,</span>rd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    gl_FragColor <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span>col<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/SDF_02.png" alt="render sphere "><br><br></div>
+
+
+<h2 id="7-combine"><a href="#7-combine" class="headerlink" title="7. combine"></a>7. combine</h2><p>至此，我么已经渲染出一个球，我们再来回顾一下整个过程：顺便我还加入一些其他步骤</p>
+<ol>
+<li>更新设置鼠标和摄像机</li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">void</span> <span class="token function">mainImage</span><span class="token punctuation">(</span> out vec4 fragColor<span class="token punctuation">,</span> in vec2 fragCoord <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    vec2 mo <span class="token operator">=</span> iMouse<span class="token punctuation">.</span>xy<span class="token operator">/</span>iResolution<span class="token punctuation">.</span>xy<span class="token punctuation">;</span>
+    <span class="token keyword">float</span> time <span class="token operator">=</span> <span class="token number">15.0</span> <span class="token operator">+</span> iTime<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//cam</span>
+    vec3 ro <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span> <span class="token number">4.6</span><span class="token operator">*</span><span class="token function">cos</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token operator">*</span>time <span class="token operator">+</span> <span class="token number">6.0</span><span class="token operator">*</span>mo<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token operator">+</span> <span class="token number">2.0</span><span class="token operator">*</span>mo<span class="token punctuation">.</span>y<span class="token punctuation">,</span> <span class="token number">0.5</span> <span class="token operator">+</span> <span class="token number">4.6</span><span class="token operator">*</span><span class="token function">sin</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token operator">*</span>time <span class="token operator">+</span> <span class="token number">6.0</span><span class="token operator">*</span>mo<span class="token punctuation">.</span>x<span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 ta <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    mat3 ca <span class="token operator">=</span> <span class="token function">setCamera</span><span class="token punctuation">(</span> ro<span class="token punctuation">,</span> ta<span class="token punctuation">,</span> <span class="token number">0.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>初始化Ray，并且调用render进行marching，加入了gamma 和 tot 总量 </li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    vec3 tot <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec2 p <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">-</span>iResolution<span class="token punctuation">.</span>xy <span class="token operator">+</span> <span class="token number">2.0</span><span class="token operator">*</span>gl_FragCoord<span class="token punctuation">.</span>xy<span class="token punctuation">)</span><span class="token operator">/</span>iResolution<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+    vec3 rd <span class="token operator">=</span> ca <span class="token operator">*</span> <span class="token function">normalize</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>xy<span class="token punctuation">,</span><span class="token number">2.0</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 col <span class="token operator">=</span> <span class="token function">render</span><span class="token punctuation">(</span>ro<span class="token punctuation">,</span>rd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// gamma</span>
+    col <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span> col<span class="token punctuation">,</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.4545</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    tot <span class="token operator">+</span><span class="token operator">=</span> col<span class="token punctuation">;</span>
+    gl_FragColor <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span>tot<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>在render函数中，我们只是简单的做了一个castRay，并没有做光照渲染。</li>
+<li>castRay中，我们根据ro 和 rd ，利用sdf的sphere公式，绘制出了一个球 </li>
+</ol>
+<h2 id="8-normal"><a href="#8-normal" class="headerlink" title="8. normal"></a>8. normal</h2><div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/normal.jpg" alt="normal vector preview"><br><br></div>
+
+<ol>
+<li>方法一 :<br>来自 iq 的网站 ： <a href="http://iquilezles.org/www/articles/normalsSDF/normalsSDF.htm" target="_blank" rel="external">normalsSDF</a></li>
+</ol>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+vec3 <span class="token function">calcNormal</span><span class="token punctuation">(</span> in vec3 pos <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    vec2 e <span class="token operator">=</span> <span class="token function">vec2</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">0.5773</span><span class="token operator">*</span><span class="token number">0.0005</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">normalize</span><span class="token punctuation">(</span> e<span class="token punctuation">.</span>xyy<span class="token operator">*</span><span class="token function">map</span><span class="token punctuation">(</span> pos <span class="token operator">+</span> e<span class="token punctuation">.</span>xyy <span class="token punctuation">)</span> <span class="token operator">+</span> 
+                      e<span class="token punctuation">.</span>yyx<span class="token operator">*</span><span class="token function">map</span><span class="token punctuation">(</span> pos <span class="token operator">+</span> e<span class="token punctuation">.</span>yyx <span class="token punctuation">)</span> <span class="token operator">+</span> 
+                      e<span class="token punctuation">.</span>yxy<span class="token operator">*</span><span class="token function">map</span><span class="token punctuation">(</span> pos <span class="token operator">+</span> e<span class="token punctuation">.</span>yxy <span class="token punctuation">)</span> <span class="token operator">+</span> 
+                      e<span class="token punctuation">.</span>xxx<span class="token operator">*</span><span class="token function">map</span><span class="token punctuation">(</span> pos <span class="token operator">+</span> e<span class="token punctuation">.</span>xxx <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>2.方法二 :<br>来自 klems </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">vec3 <span class="token function">calcNormal</span><span class="token punctuation">(</span> in vec3 pos <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    vec3 n <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> i<span class="token operator">=</span>ZERO<span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">4</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        vec3 e <span class="token operator">=</span> <span class="token number">0.5773</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token number">2.0</span><span class="token operator">*</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token operator">>></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i<span class="token operator">>></span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span>i<span class="token operator">&amp;</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        n <span class="token operator">+</span><span class="token operator">=</span> e<span class="token operator">*</span><span class="token function">map</span><span class="token punctuation">(</span>pos<span class="token operator">+</span><span class="token number">0.0005</span><span class="token operator">*</span>e<span class="token punctuation">)</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">normalize</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们要在render方法中计算他的法线：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    vec3 res <span class="token operator">=</span> <span class="token function">castRay</span><span class="token punctuation">(</span>ro<span class="token punctuation">,</span>rd<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    vec3 pos <span class="token operator">=</span> ro <span class="token operator">+</span> res<span class="token punctuation">.</span>x <span class="token operator">*</span> rd<span class="token punctuation">;</span>
+    vec3 normal <span class="token operator">=</span> <span class="token function">calcNormal</span><span class="token punctuation">(</span> pos <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="9-diffuse"><a href="#9-diffuse" class="headerlink" title="9. diffuse"></a>9. diffuse</h2><p>既然我们法线也有了，我们现在就可以模拟一个灯光，然后做一个漫反射材质了 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+vec3 <span class="token function">render</span><span class="token punctuation">(</span> in vec3 ro<span class="token punctuation">,</span> in vec3 rd <span class="token punctuation">)</span>
+<span class="token punctuation">{</span> 
+    vec3 col <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 res <span class="token operator">=</span> <span class="token function">castRay</span><span class="token punctuation">(</span>ro<span class="token punctuation">,</span>rd<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    vec3 normal <span class="token operator">=</span> <span class="token function">calcNormal</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>x <span class="token operator">*</span> rd <span class="token operator">+</span> ro<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    col <span class="token operator">=</span>  <span class="token function">sin</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.9</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3  lig <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> dif <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span> normal<span class="token punctuation">,</span> lig <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> dif <span class="token operator">*</span> col <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/diffuse.jpg" alt="diffuse preview"><br><br></div>
+
+
+<h2 id="10-Other-shading"><a href="#10-Other-shading" class="headerlink" title="10. Other shading"></a>10. Other shading</h2><p>当然除了diffue ,还有其他光照计算<br>这里我们一共计算了</p>
+<ul>
+<li>vertex positon</li>
+<li>vertex normal</li>
+<li>vertex refect</li>
+<li>light direction</li>
+<li>half vector</li>
+<li>ambient color </li>
+<li>back Color</li>
+<li>cubemap Color</li>
+<li>Rim Color</li>
+<li>Diffuse </li>
+</ul>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+vec3 <span class="token function">render</span><span class="token punctuation">(</span> in vec3 ro<span class="token punctuation">,</span> in vec3 rd <span class="token punctuation">)</span>
+<span class="token punctuation">{</span> 
+    vec3 col <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 res <span class="token operator">=</span> <span class="token function">castRay</span><span class="token punctuation">(</span>ro<span class="token punctuation">,</span>rd<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    vec3 pos <span class="token operator">=</span> res<span class="token punctuation">.</span>x <span class="token operator">*</span> rd <span class="token operator">+</span> ro <span class="token punctuation">;</span>
+    vec3 normal <span class="token operator">=</span> <span class="token function">calcNormal</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 ref <span class="token operator">=</span> <span class="token function">reflect</span><span class="token punctuation">(</span> rd<span class="token punctuation">,</span> normal <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    col <span class="token operator">=</span>  <span class="token function">sin</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.9</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+    vec3  lig <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Half vector </span>
+    vec3  hal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> lig<span class="token operator">-</span>rd <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// ambient </span>
+    <span class="token keyword">float</span> amb <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token number">0.5</span><span class="token operator">+</span><span class="token number">0.5</span><span class="token operator">*</span>normal<span class="token punctuation">.</span>y<span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// back </span>
+    <span class="token keyword">float</span> bac <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span> normal<span class="token punctuation">,</span> <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token operator">-</span>lig<span class="token punctuation">.</span>x<span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token operator">-</span>lig<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token operator">*</span><span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token number">1.0</span><span class="token operator">-</span>pos<span class="token punctuation">.</span>y<span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// cube map rel</span>
+    <span class="token keyword">float</span> dom <span class="token operator">=</span> <span class="token function">smoothstep</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> ref<span class="token punctuation">.</span>y <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// rim </span>
+    <span class="token keyword">float</span> fre <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span> <span class="token function">clamp</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">+</span><span class="token function">dot</span><span class="token punctuation">(</span>normal<span class="token punctuation">,</span>rd<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// diffuse </span>
+    <span class="token keyword">float</span> dif <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span> normal<span class="token punctuation">,</span> lig <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token function">vec3</span><span class="token punctuation">(</span>fre<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以逐个的输出测试：</p>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/ambient.png" alt="ambient preview"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/backColor.png" alt="backColor preview"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/cubemap.png" alt="cubemap preview"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/rim.png" alt="rim preview"><br><br></div>
+
+<h2 id="11-plane-地面"><a href="#11-plane-地面" class="headerlink" title="11. plane 地面"></a>11. plane 地面</h2><p>我们在castray的时候指定一个范围来当作地面 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token keyword">float</span> tmax <span class="token operator">=</span> Max_Dist <span class="token punctuation">;</span>
+    <span class="token keyword">float</span> tp1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">0.0</span><span class="token operator">-</span>ro<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token operator">/</span>rd<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span> tp1<span class="token operator">></span><span class="token number">0.0</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        tmax <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span> tmax<span class="token punctuation">,</span> tp1 <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        res <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span> tp1<span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/plane.png" alt="normal vector preview"><br><br></div>
+
+<h2 id="12-材质分离"><a href="#12-材质分离" class="headerlink" title="12. 材质分离"></a>12. 材质分离</h2><p>我们需要一种方法来区分不同的问题，地板还是sphere？<br>所以我们把map函数改一下，我们增加一个通道来区分他们</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">vec2 <span class="token function">map</span><span class="token punctuation">(</span> in vec3 pos <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">vec2</span><span class="token punctuation">(</span><span class="token function">sdSphere</span><span class="token punctuation">(</span>  pos<span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>第二个通道随便指定一个值就行 </p>
+<p>此外我们就很多地方需要修改一下<br>calcNormal函数中返回指定x通道<br>castRay函数中，判断指定x通道，res指定y通道</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">    <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> i <span class="token operator">&lt;</span> Max_Step <span class="token operator">&amp;&amp;</span> t <span class="token operator">&lt;</span> Max_Dist <span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        vec2 h <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span> ro<span class="token operator">+</span>rd<span class="token operator">*</span>t <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span> <span class="token function">abs</span><span class="token punctuation">(</span>h<span class="token punctuation">.</span>x<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token punctuation">(</span> Surf_Dist <span class="token operator">*</span> t <span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span> 
+            res <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span>h<span class="token punctuation">.</span>y<span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
+         t <span class="token operator">+</span><span class="token operator">=</span> h<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>同样报错的地方，比如法线计算，我们也要指定到x通道</p>
+<p>这样我们就可以根据res的y通道来区分材质了</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+vec3 <span class="token function">render</span><span class="token punctuation">(</span> in vec3 ro<span class="token punctuation">,</span> in vec3 rd <span class="token punctuation">)</span>
+<span class="token punctuation">{</span> 
+    vec3 col <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 res <span class="token operator">=</span> <span class="token function">castRay</span><span class="token punctuation">(</span>ro<span class="token punctuation">,</span>rd<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    <span class="token keyword">float</span> m <span class="token operator">=</span> res<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+    vec3 pos <span class="token operator">=</span> res<span class="token punctuation">.</span>x <span class="token operator">*</span> rd <span class="token operator">+</span> ro <span class="token punctuation">;</span>
+    vec3 normal <span class="token operator">=</span> <span class="token function">calcNormal</span><span class="token punctuation">(</span>pos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    vec3 ref <span class="token operator">=</span> <span class="token function">reflect</span><span class="token punctuation">(</span> rd<span class="token punctuation">,</span> normal <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// light dir </span>
+    vec3  lig <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// Half vector </span>
+    vec3  hal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> lig<span class="token operator">-</span>rd <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// ambient </span>
+    <span class="token keyword">float</span> amb <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token number">0.5</span><span class="token operator">+</span><span class="token number">0.5</span><span class="token operator">*</span>normal<span class="token punctuation">.</span>y<span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// back </span>
+    <span class="token keyword">float</span> bac <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span> normal<span class="token punctuation">,</span> <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token operator">-</span>lig<span class="token punctuation">.</span>x<span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token operator">-</span>lig<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token operator">*</span><span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token number">1.0</span><span class="token operator">-</span>pos<span class="token punctuation">.</span>y<span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// cube map rel</span>
+    <span class="token keyword">float</span> dom <span class="token operator">=</span> <span class="token function">smoothstep</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> ref<span class="token punctuation">.</span>y <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// rim </span>
+    <span class="token keyword">float</span> fre <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span> <span class="token function">clamp</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">+</span><span class="token function">dot</span><span class="token punctuation">(</span>normal<span class="token punctuation">,</span>rd<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// diffuse </span>
+    <span class="token keyword">float</span> dif <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span> normal<span class="token punctuation">,</span> lig <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span> m<span class="token operator">></span><span class="token operator">-</span><span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token operator">&lt;</span><span class="token number">1.5</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        col <span class="token operator">=</span>  <span class="token function">sin</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.9</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> col <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/materialstep.png" alt="normal vector preview"><br><br></div>
+
+
+<h2 id="13-plane-Checkboard"><a href="#13-plane-Checkboard" class="headerlink" title="13. plane Checkboard"></a>13. plane Checkboard</h2><p>同样来自iq大神的文章<br><a href="http://iquilezles.org/www/articles/checkerfiltering/checkerfiltering.htm" target="_blank" rel="external">checkerfiltering</a></p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// </span>
+<span class="token keyword">float</span> <span class="token function">checkersGradBox</span><span class="token punctuation">(</span> in vec2 p <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// filter kernel</span>
+    vec2 w <span class="token operator">=</span> <span class="token function">fwidth</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token number">0.001</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// analytical integral (box filter)</span>
+    vec2 i <span class="token operator">=</span> <span class="token number">2.0</span><span class="token operator">*</span><span class="token punctuation">(</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token function">fract</span><span class="token punctuation">(</span><span class="token punctuation">(</span>p<span class="token number">-0.5</span><span class="token operator">*</span>w<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token function">abs</span><span class="token punctuation">(</span><span class="token function">fract</span><span class="token punctuation">(</span><span class="token punctuation">(</span>p<span class="token operator">+</span><span class="token number">0.5</span><span class="token operator">*</span>w<span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span>w<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// xor pattern</span>
+    <span class="token keyword">return</span> <span class="token number">0.5</span> <span class="token operator">-</span> <span class="token number">0.5</span><span class="token operator">*</span>i<span class="token punctuation">.</span>x<span class="token operator">*</span>i<span class="token punctuation">.</span>y<span class="token punctuation">;</span>                  
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在地板选择材质中调用他 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">if</span><span class="token punctuation">(</span>m<span class="token operator">&lt;</span><span class="token number">1.5</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>  
+            <span class="token keyword">float</span> f <span class="token operator">=</span> <span class="token function">checkersGradBox</span><span class="token punctuation">(</span> <span class="token number">5.0</span><span class="token operator">*</span>pos<span class="token punctuation">.</span>xz <span class="token punctuation">)</span><span class="token punctuation">;</span>
+            col <span class="token operator">=</span> <span class="token number">0.3</span> <span class="token operator">+</span> f<span class="token operator">*</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> col <span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们在更新一下球：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+vec2 <span class="token function">map</span><span class="token punctuation">(</span> in vec3 pos <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">vec2</span><span class="token punctuation">(</span><span class="token function">sdSphere</span><span class="token punctuation">(</span>  pos <span class="token operator">-</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">0.25</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.25</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">)</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/planeCheckBoard.png" alt="normal vector preview"><br><br></div>
+
+<h2 id="14-计算AO"><a href="#14-计算AO" class="headerlink" title="14. 计算AO"></a>14. 计算AO</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">float</span> <span class="token function">calcAO</span><span class="token punctuation">(</span> in vec3 pos<span class="token punctuation">,</span> in vec3 nor <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">float</span> occ <span class="token operator">=</span> <span class="token number">0.0</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> sca <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">float</span> hr <span class="token operator">=</span> <span class="token number">0.01</span> <span class="token operator">+</span> <span class="token number">0.12</span><span class="token operator">*</span><span class="token keyword">float</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">4.0</span><span class="token punctuation">;</span>
+        vec3 aopos <span class="token operator">=</span>  nor <span class="token operator">*</span> hr <span class="token operator">+</span> pos<span class="token punctuation">;</span>
+        <span class="token keyword">float</span> dd <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span> aopos <span class="token punctuation">)</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+        occ <span class="token operator">+</span><span class="token operator">=</span> <span class="token operator">-</span><span class="token punctuation">(</span>dd<span class="token operator">-</span>hr<span class="token punctuation">)</span><span class="token operator">*</span>sca<span class="token punctuation">;</span>
+        sca <span class="token operator">*</span><span class="token operator">=</span> <span class="token number">0.95</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token number">1.0</span> <span class="token operator">-</span> <span class="token number">3.0</span><span class="token operator">*</span>occ<span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token punctuation">(</span><span class="token number">0.5</span><span class="token operator">+</span><span class="token number">0.5</span><span class="token operator">*</span>nor<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token comment" spellcheck="true">// lighting</span>
+    <span class="token keyword">float</span> occ <span class="token operator">=</span> <span class="token function">calcAO</span><span class="token punctuation">(</span> pos<span class="token punctuation">,</span> normal <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/AO.png" alt="normal vector preview"><br><br></div>
+
+
+<h2 id="15-重置render函数"><a href="#15-重置render函数" class="headerlink" title="15.重置render函数"></a>15.重置render函数</h2><p>我们回过头去重新看代码，我重新理了一下render函数，使他看起来更加流畅：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">vec3 <span class="token function">render</span><span class="token punctuation">(</span> in vec3 ro<span class="token punctuation">,</span> in vec3 rd <span class="token punctuation">)</span>
+<span class="token punctuation">{</span> 
+    vec3 col <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.9</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span> <span class="token operator">+</span> rd<span class="token punctuation">.</span>y <span class="token operator">*</span> <span class="token number">0.8</span> <span class="token punctuation">;</span>
+    vec3 res <span class="token operator">=</span> <span class="token function">castRay</span><span class="token punctuation">(</span>ro<span class="token punctuation">,</span>rd<span class="token punctuation">)</span> <span class="token punctuation">;</span>
+    <span class="token keyword">float</span> t <span class="token operator">=</span> res<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+    <span class="token keyword">float</span> m <span class="token operator">=</span> res<span class="token punctuation">.</span>y<span class="token punctuation">;</span>    
+    <span class="token keyword">if</span><span class="token punctuation">(</span> m<span class="token operator">></span><span class="token operator">-</span><span class="token number">0.5</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+      vec3 pos <span class="token operator">=</span> t <span class="token operator">*</span> rd <span class="token operator">+</span> ro <span class="token punctuation">;</span>
+      vec3 nor <span class="token operator">=</span> <span class="token punctuation">(</span>m<span class="token operator">&lt;</span><span class="token number">1.5</span><span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">calcNormal</span><span class="token punctuation">(</span> pos <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      vec3 ref <span class="token operator">=</span> <span class="token function">reflect</span><span class="token punctuation">(</span> rd<span class="token punctuation">,</span> nor <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      col <span class="token operator">=</span> <span class="token number">0.45</span> <span class="token operator">+</span> <span class="token number">0.35</span><span class="token operator">*</span><span class="token function">sin</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.05</span><span class="token punctuation">,</span><span class="token number">0.08</span><span class="token punctuation">,</span><span class="token number">0.10</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token punctuation">(</span>m<span class="token number">-1.0</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span> m<span class="token operator">&lt;</span><span class="token number">1.5</span> <span class="token punctuation">)</span>
+      <span class="token punctuation">{</span>
+
+          <span class="token keyword">float</span> f <span class="token operator">=</span> <span class="token function">checkersGradBox</span><span class="token punctuation">(</span> <span class="token number">5.0</span><span class="token operator">*</span>pos<span class="token punctuation">.</span>xz <span class="token punctuation">)</span><span class="token punctuation">;</span>
+          col <span class="token operator">=</span> <span class="token number">0.3</span> <span class="token operator">+</span> f<span class="token operator">*</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// lighting</span>
+      <span class="token keyword">float</span> occ <span class="token operator">=</span> <span class="token function">calcAO</span><span class="token punctuation">(</span> pos<span class="token punctuation">,</span> nor <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        vec3  lig <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.4</span><span class="token punctuation">,</span> <span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.6</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      vec3  hal <span class="token operator">=</span> <span class="token function">normalize</span><span class="token punctuation">(</span> lig<span class="token operator">-</span>rd <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">float</span> amb <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token number">0.5</span><span class="token operator">+</span><span class="token number">0.5</span><span class="token operator">*</span>nor<span class="token punctuation">.</span>y<span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">float</span> dif <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span> nor<span class="token punctuation">,</span> lig <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">float</span> bac <span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span> nor<span class="token punctuation">,</span> <span class="token function">normalize</span><span class="token punctuation">(</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token operator">-</span>lig<span class="token punctuation">.</span>x<span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token operator">-</span>lig<span class="token punctuation">.</span>z<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token operator">*</span><span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token number">1.0</span><span class="token operator">-</span>pos<span class="token punctuation">.</span>y<span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">float</span> dom <span class="token operator">=</span> <span class="token function">smoothstep</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">0.2</span><span class="token punctuation">,</span> <span class="token number">0.2</span><span class="token punctuation">,</span> ref<span class="token punctuation">.</span>y <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">float</span> fre <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span> <span class="token function">clamp</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">+</span><span class="token function">dot</span><span class="token punctuation">(</span>nor<span class="token punctuation">,</span>rd<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">2.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+   <span class="token keyword">return</span> col <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="16-组合颜色"><a href="#16-组合颜色" class="headerlink" title="16. 组合颜色"></a>16. 组合颜色</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+          vec3 lin <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        lin <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">1.40</span><span class="token operator">*</span>dif<span class="token operator">*</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">1.00</span><span class="token punctuation">,</span><span class="token number">0.80</span><span class="token punctuation">,</span><span class="token number">0.55</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        lin <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">0.20</span><span class="token operator">*</span>amb<span class="token operator">*</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.40</span><span class="token punctuation">,</span><span class="token number">0.60</span><span class="token punctuation">,</span><span class="token number">1.00</span><span class="token punctuation">)</span><span class="token operator">*</span>occ<span class="token punctuation">;</span>
+        lin <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">0.40</span><span class="token operator">*</span>dom<span class="token operator">*</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.40</span><span class="token punctuation">,</span><span class="token number">0.60</span><span class="token punctuation">,</span><span class="token number">1.00</span><span class="token punctuation">)</span><span class="token operator">*</span>occ<span class="token punctuation">;</span>
+        lin <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">0.50</span><span class="token operator">*</span>bac<span class="token operator">*</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.25</span><span class="token punctuation">,</span><span class="token number">0.25</span><span class="token punctuation">,</span><span class="token number">0.25</span><span class="token punctuation">)</span><span class="token operator">*</span>occ<span class="token punctuation">;</span>
+        lin <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">0.25</span><span class="token operator">*</span>fre<span class="token operator">*</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">1.00</span><span class="token punctuation">,</span><span class="token number">1.00</span><span class="token punctuation">,</span><span class="token number">1.00</span><span class="token punctuation">)</span><span class="token operator">*</span>occ<span class="token punctuation">;</span>
+        col <span class="token operator">=</span> col<span class="token operator">*</span>lin<span class="token punctuation">;</span>
+        col <span class="token operator">=</span> <span class="token function">mix</span><span class="token punctuation">(</span> col<span class="token punctuation">,</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.8</span><span class="token punctuation">,</span><span class="token number">0.9</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token operator">-</span><span class="token function">exp</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">0.0002</span><span class="token operator">*</span>t<span class="token operator">*</span>t<span class="token operator">*</span>t <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>最后返回颜色时，最好clamp一下</p>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/mixLight.png" alt="normal vector preview"><br><br></div>
+
+
+
+
+<h2 id="17-计算高光"><a href="#17-计算高光" class="headerlink" title="17.计算高光"></a>17.计算高光</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token keyword">float</span> spe <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span> <span class="token function">clamp</span><span class="token punctuation">(</span> <span class="token function">dot</span><span class="token punctuation">(</span> nor<span class="token punctuation">,</span> hal <span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">16.0</span><span class="token punctuation">)</span><span class="token operator">*</span>
+                    dif <span class="token operator">*</span>
+                    <span class="token punctuation">(</span><span class="token number">0.04</span> <span class="token operator">+</span> <span class="token number">0.96</span><span class="token operator">*</span><span class="token function">pow</span><span class="token punctuation">(</span> <span class="token function">clamp</span><span class="token punctuation">(</span><span class="token number">1.0</span><span class="token operator">+</span><span class="token function">dot</span><span class="token punctuation">(</span>hal<span class="token punctuation">,</span>rd<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">5.0</span> <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        col <span class="token operator">=</span> col<span class="token operator">*</span>lin<span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 合并高光 </span>
+        col <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">9.00</span><span class="token operator">*</span>spe<span class="token operator">*</span><span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">1.00</span><span class="token punctuation">,</span><span class="token number">0.90</span><span class="token punctuation">,</span><span class="token number">0.70</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        col <span class="token operator">=</span> <span class="token function">mix</span><span class="token punctuation">(</span> col<span class="token punctuation">,</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.8</span><span class="token punctuation">,</span><span class="token number">0.9</span><span class="token punctuation">,</span><span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token operator">-</span><span class="token function">exp</span><span class="token punctuation">(</span> <span class="token operator">-</span><span class="token number">0.0002</span><span class="token operator">*</span>t<span class="token operator">*</span>t<span class="token operator">*</span>t <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="18-计算shadow"><a href="#18-计算shadow" class="headerlink" title="18.计算shadow"></a>18.计算shadow</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">const</span> <span class="token keyword">float</span> maxHei <span class="token operator">=</span> <span class="token number">0.8</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> ZERO (min(iFrame,0))</span>
+<span class="token keyword">float</span> <span class="token function">calcSoftshadow</span><span class="token punctuation">(</span> in vec3 ro<span class="token punctuation">,</span> in vec3 rd<span class="token punctuation">,</span> in <span class="token keyword">float</span> mint<span class="token punctuation">,</span> in <span class="token keyword">float</span> tmax <span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// bounding volume</span>
+    <span class="token keyword">float</span> tp <span class="token operator">=</span> <span class="token punctuation">(</span>maxHei<span class="token operator">-</span>ro<span class="token punctuation">.</span>y<span class="token punctuation">)</span><span class="token operator">/</span>rd<span class="token punctuation">.</span>y<span class="token punctuation">;</span> <span class="token keyword">if</span><span class="token punctuation">(</span> tp<span class="token operator">></span><span class="token number">0.0</span> <span class="token punctuation">)</span> tmax <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span> tmax<span class="token punctuation">,</span> tp <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">float</span> res <span class="token operator">=</span> <span class="token number">1.0</span><span class="token punctuation">;</span>
+    <span class="token keyword">float</span> t <span class="token operator">=</span> mint<span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">16</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">float</span> h <span class="token operator">=</span> <span class="token function">map</span><span class="token punctuation">(</span> ro <span class="token operator">+</span> rd<span class="token operator">*</span>t <span class="token punctuation">)</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+        res <span class="token operator">=</span> <span class="token function">min</span><span class="token punctuation">(</span> res<span class="token punctuation">,</span> <span class="token number">8.0</span><span class="token operator">*</span>h<span class="token operator">/</span>t <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        t <span class="token operator">+</span><span class="token operator">=</span> <span class="token function">clamp</span><span class="token punctuation">(</span> h<span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">,</span> <span class="token number">0.10</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span> res<span class="token operator">&lt;</span><span class="token number">0.005</span> <span class="token operator">||</span> t<span class="token operator">></span>tmax <span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token function">clamp</span><span class="token punctuation">(</span> res<span class="token punctuation">,</span> <span class="token number">0.0</span><span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在render中合并 ：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+      dif <span class="token operator">*</span><span class="token operator">=</span> <span class="token function">calcSoftshadow</span><span class="token punctuation">(</span> pos<span class="token punctuation">,</span> lig<span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">,</span> <span class="token number">2.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+      dom <span class="token operator">*</span><span class="token operator">=</span> <span class="token function">calcSoftshadow</span><span class="token punctuation">(</span> pos<span class="token punctuation">,</span> ref<span class="token punctuation">,</span> <span class="token number">0.02</span><span class="token punctuation">,</span> <span class="token number">2.5</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="19-修正天空"><a href="#19-修正天空" class="headerlink" title="19. 修正天空"></a>19. 修正天空</h2><p>在castray 初始化时： </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">vec3 res <span class="token operator">=</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="20-抗锯齿"><a href="#20-抗锯齿" class="headerlink" title="20.抗锯齿"></a>20.抗锯齿</h2><p>定义抗锯齿等级 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">define</span> AA 3   </span><span class="token comment" spellcheck="true">// make this 2 or 3 for antialiasing</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在主循环中：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token macro property">#<span class="token directive keyword">if</span> AA>1</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> m<span class="token operator">=</span>ZERO<span class="token punctuation">;</span> m<span class="token operator">&lt;</span>AA<span class="token punctuation">;</span> m<span class="token operator">++</span> <span class="token punctuation">)</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span> <span class="token keyword">int</span> n<span class="token operator">=</span>ZERO<span class="token punctuation">;</span> n<span class="token operator">&lt;</span>AA<span class="token punctuation">;</span> n<span class="token operator">++</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// pixel coordinates</span>
+        vec2 o <span class="token operator">=</span> <span class="token function">vec2</span><span class="token punctuation">(</span><span class="token keyword">float</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token keyword">float</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token keyword">float</span><span class="token punctuation">(</span>AA<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0.5</span><span class="token punctuation">;</span>
+        vec2 p <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">-</span>iResolution<span class="token punctuation">.</span>xy <span class="token operator">+</span> <span class="token number">2.0</span><span class="token operator">*</span><span class="token punctuation">(</span>gl_FragCoord<span class="token punctuation">.</span>xy <span class="token operator">+</span> o<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">/</span>iResolution<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">else</span>    </span>
+        vec2 p <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">-</span>iResolution<span class="token punctuation">.</span>xy <span class="token operator">+</span> <span class="token number">2.0</span><span class="token operator">*</span>gl_FragCoord<span class="token punctuation">.</span>xy <span class="token punctuation">)</span><span class="token operator">/</span>iResolution<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+
+        <span class="token comment" spellcheck="true">// ray direction</span>
+        vec3 rd <span class="token operator">=</span> ca <span class="token operator">*</span> <span class="token function">normalize</span><span class="token punctuation">(</span> <span class="token function">vec3</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>xy<span class="token punctuation">,</span><span class="token number">2.0</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// render    </span>
+        vec3 col <span class="token operator">=</span> <span class="token function">render</span><span class="token punctuation">(</span> ro<span class="token punctuation">,</span> rd <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// gamma</span>
+        col <span class="token operator">=</span> <span class="token function">pow</span><span class="token punctuation">(</span> col<span class="token punctuation">,</span> <span class="token function">vec3</span><span class="token punctuation">(</span><span class="token number">0.4545</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        tot <span class="token operator">+</span><span class="token operator">=</span> col<span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">if</span> AA>1</span>
+    <span class="token punctuation">}</span>
+    tot <span class="token operator">/</span><span class="token operator">=</span> <span class="token keyword">float</span><span class="token punctuation">(</span>AA<span class="token operator">*</span>AA<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+    gl_FragColor <span class="token operator">=</span> <span class="token function">vec4</span><span class="token punctuation">(</span> tot<span class="token punctuation">,</span> <span class="token number">1.0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<div align="center"><br><br><img src="https://github.com/miccall/ShaderToy/raw/master/mdtexture/finalImage.png" alt="finalImage"><br><br></div>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2019/04/05/Shader/shadertoySDF/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2019/04/05/Shader/shadertoySDF/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
