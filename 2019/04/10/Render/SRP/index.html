@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/logo_miccall.png"/>
+	<link rel="shortcut icon" href="/img/logo_miccall.png">
+	
+			    <title>
+    Mr.Metro
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="miccall" />
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-coy.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/Render/">Render</a></li><li><a class="category-link" href="/categories/Shader/">Shader</a></li><li><a class="category-link" href="/categories/Tracing/">Tracing</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/group/" title="团队">
+		                团队
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/gallery/" title="图库">
+		                图库
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(https://i.loli.net/2019/04/15/5cb48b98c423f.jpg);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Scriptable Render Pipeline</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h6 id="Created-by-miccall-转载请注明出处-miccall-tech"><a href="#Created-by-miccall-转载请注明出处-miccall-tech" class="headerlink" title="Created by miccall  (转载请注明出处  miccall.tech)"></a>Created by miccall  (转载请注明出处  <a href="http://miccall.tech">miccall.tech</a>)</h6><h2 id="1-Cull-剔除检查"><a href="#1-Cull-剔除检查" class="headerlink" title="1. Cull 剔除检查"></a>1. Cull 剔除检查</h2><p>在unity中，每个可以被渲染的物体，都带有一个Mesh Render组件<br>但是我们并不是渲染场景中每个物体，而是只渲染相机可以看到的那些物体。<br>所以我们从要剔除那些不在摄像机视锥之外的物体。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>CullResults<span class="token punctuation">.</span><span class="token function">GetCullingParameters</span><span class="token punctuation">(</span>camera<span class="token punctuation">,</span> out var cullparamet<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>CullResults.GetCullingParameters 方法可以检测camera相机是否有效的剔除，<br>如果相机无效渲染（空视口矩形，无效剪裁平面设置等）那么我们直接return<br>否则，他会把剔除信息记录到 cullparamet 。</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+CullResults<span class="token punctuation">.</span><span class="token function">Cull</span><span class="token punctuation">(</span>ref cullparamet<span class="token punctuation">,</span> context <span class="token punctuation">,</span> ref _cull<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>之后，调用 Cull 方法把物体剔除 </p>
+<p>然后，我们需要更新camera的一些view, projection and clipping planes等信息</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+context<span class="token punctuation">.</span><span class="token function">SetupCameraProperties</span><span class="token punctuation">(</span>camera<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>此外 ，UI 层时unity为我们在render时增加的一层overlay ，我们在编辑器时需要对这一层做剔除</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token macro property">#<span class="token directive keyword">if</span> UNITY_EDITOR</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>camera<span class="token punctuation">.</span>cameraType <span class="token operator">==</span> CameraType<span class="token punctuation">.</span>SceneView<span class="token punctuation">)</span>
+                ScriptableRenderContext<span class="token punctuation">.</span><span class="token function">EmitWorldGeometryForSceneView</span><span class="token punctuation">(</span>camera<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token macro property">#<span class="token directive keyword">endif</span> </span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-Clear-清屏"><a href="#2-Clear-清屏" class="headerlink" title="2. Clear 清屏"></a>2. Clear 清屏</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+        var clearFlags <span class="token operator">=</span> camera<span class="token punctuation">.</span>clearFlags<span class="token punctuation">;</span>
+
+        _cameraBuffer<span class="token punctuation">.</span><span class="token function">ClearRenderTarget</span><span class="token punctuation">(</span>
+                <span class="token punctuation">(</span>clearFlags <span class="token operator">&amp;</span> CameraClearFlags<span class="token punctuation">.</span>Depth<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                <span class="token punctuation">(</span>clearFlags <span class="token operator">&amp;</span> CameraClearFlags<span class="token punctuation">.</span>Color<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">,</span>
+                camera<span class="token punctuation">.</span>backgroundColor
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+            _cameraBuffer<span class="token punctuation">.</span><span class="token function">BeginSample</span><span class="token punctuation">(</span><span class="token string">"Render Camera"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            context<span class="token punctuation">.</span><span class="token function">ExecuteCommandBuffer</span><span class="token punctuation">(</span>_cameraBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            _cameraBuffer<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-Draw-Opaque-渲染不透明物体"><a href="#3-Draw-Opaque-渲染不透明物体" class="headerlink" title="3. Draw Opaque 渲染不透明物体"></a>3. Draw Opaque 渲染不透明物体</h2><pre class="line-numbers language-cpp"><code class="language-cpp">            var drawRendererSettings <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">DrawRendererSettings</span><span class="token punctuation">(</span>camera<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token function">ShaderPassName</span><span class="token punctuation">(</span><span class="token string">"SRPDefaultUnlit"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                sorting <span class="token operator">=</span> <span class="token punctuation">{</span>flags <span class="token operator">=</span> SortFlags<span class="token punctuation">.</span>CommonOpaque<span class="token punctuation">}</span><span class="token punctuation">,</span>
+                <span class="token comment" spellcheck="true">// 开启动态批处理</span>
+                flags <span class="token operator">=</span> _drawFlags
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+            var filterRendererSettings <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">FilterRenderersSettings</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                renderQueueRange <span class="token operator">=</span> RenderQueueRange<span class="token punctuation">.</span>opaque
+            <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+            context<span class="token punctuation">.</span><span class="token function">DrawRenderers</span><span class="token punctuation">(</span>_cull<span class="token punctuation">.</span>visibleRenderers<span class="token punctuation">,</span>ref drawRendererSettings<span class="token punctuation">,</span>filterRendererSettings<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-Sky-box-渲染天空盒"><a href="#4-Sky-box-渲染天空盒" class="headerlink" title="4. Sky box 渲染天空盒"></a>4. Sky box 渲染天空盒</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+context<span class="token punctuation">.</span><span class="token function">DrawSkybox</span><span class="token punctuation">(</span>camera<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-DrawTransparent-渲染透明物体"><a href="#5-DrawTransparent-渲染透明物体" class="headerlink" title="5. DrawTransparent 渲染透明物体"></a>5. DrawTransparent 渲染透明物体</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+            drawRendererSettings<span class="token punctuation">.</span>sorting<span class="token punctuation">.</span>flags <span class="token operator">=</span> SortFlags<span class="token punctuation">.</span>CommonTransparent <span class="token punctuation">;</span>
+            filterRendererSettings<span class="token punctuation">.</span>renderQueueRange <span class="token operator">=</span> RenderQueueRange<span class="token punctuation">.</span>transparent<span class="token punctuation">;</span>
+            context<span class="token punctuation">.</span><span class="token function">DrawRenderers</span><span class="token punctuation">(</span>_cull<span class="token punctuation">.</span>visibleRenderers<span class="token punctuation">,</span>ref drawRendererSettings<span class="token punctuation">,</span>filterRendererSettings<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="6-error-错误材质"><a href="#6-error-错误材质" class="headerlink" title="6. error 错误材质"></a>6. error 错误材质</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token punctuation">[</span><span class="token function">Conditional</span><span class="token punctuation">(</span><span class="token string">"DEVELOPMENT_BUILD"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Conditional</span><span class="token punctuation">(</span><span class="token string">"UNITY_EDITOR"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">private</span>  <span class="token keyword">void</span> <span class="token function">DrawDefaultPipeline</span><span class="token punctuation">(</span>ScriptableRenderContext context<span class="token punctuation">,</span> Camera camera<span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>_errorMaterial <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                var errorShader <span class="token operator">=</span> Shader<span class="token punctuation">.</span><span class="token function">Find</span><span class="token punctuation">(</span><span class="token string">"Hidden/InternalErrorShader"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                _errorMaterial <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">Material</span><span class="token punctuation">(</span>errorShader<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    hideFlags <span class="token operator">=</span> HideFlags<span class="token punctuation">.</span>HideAndDontSave
+                <span class="token punctuation">}</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            var drawSettings <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">DrawRendererSettings</span><span class="token punctuation">(</span>
+                camera<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token function">ShaderPassName</span><span class="token punctuation">(</span><span class="token string">"ForwardBase"</span><span class="token punctuation">)</span>
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            drawSettings<span class="token punctuation">.</span><span class="token function">SetShaderPassName</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token function">ShaderPassName</span><span class="token punctuation">(</span><span class="token string">"PrepassBase"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            drawSettings<span class="token punctuation">.</span><span class="token function">SetShaderPassName</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token function">ShaderPassName</span><span class="token punctuation">(</span><span class="token string">"Always"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            drawSettings<span class="token punctuation">.</span><span class="token function">SetShaderPassName</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token function">ShaderPassName</span><span class="token punctuation">(</span><span class="token string">"Vertex"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            drawSettings<span class="token punctuation">.</span><span class="token function">SetShaderPassName</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token function">ShaderPassName</span><span class="token punctuation">(</span><span class="token string">"VertexLMRGBM"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            drawSettings<span class="token punctuation">.</span><span class="token function">SetShaderPassName</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token function">ShaderPassName</span><span class="token punctuation">(</span><span class="token string">"VertexLM"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            drawSettings<span class="token punctuation">.</span><span class="token function">SetOverrideMaterial</span><span class="token punctuation">(</span>_errorMaterial<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            var filterSettings <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">FilterRenderersSettings</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            context<span class="token punctuation">.</span><span class="token function">DrawRenderers</span><span class="token punctuation">(</span>
+                _cull<span class="token punctuation">.</span>visibleRenderers<span class="token punctuation">,</span> ref drawSettings<span class="token punctuation">,</span> filterSettings
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-Dynamic-Batching-动态合批处理"><a href="#7-Dynamic-Batching-动态合批处理" class="headerlink" title="7. Dynamic Batching 动态合批处理"></a>7. Dynamic Batching 动态合批处理</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="8-GPU-Instance-GPU-实例化"><a href="#8-GPU-Instance-GPU-实例化" class="headerlink" title="8. GPU Instance GPU 实例化"></a>8. GPU Instance GPU 实例化</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://miccall.tech/2019/04/10/Render/SRP/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://miccall.tech/2019/04/10/Render/SRP/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
