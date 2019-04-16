@@ -251,10 +251,94 @@ context<span class="token punctuation">.</span><span class="token function">Draw
         <span class="token punctuation">}</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="7-Dynamic-Batching-动态合批处理"><a href="#7-Dynamic-Batching-动态合批处理" class="headerlink" title="7. Dynamic Batching 动态合批处理"></a>7. Dynamic Batching 动态合批处理</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h2 id="8-GPU-Instance-GPU-实例化"><a href="#8-GPU-Instance-GPU-实例化" class="headerlink" title="8. GPU Instance GPU 实例化"></a>8. GPU Instance GPU 实例化</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="7-Dynamic-Batching-动态合批处理"><a href="#7-Dynamic-Batching-动态合批处理" class="headerlink" title="7. Dynamic Batching 动态合批处理"></a>7. Dynamic Batching 动态合批处理</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">private</span> readonly DrawRendererFlags _drawFlags<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 开启 动态合批处理 </span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>dynamicBatching<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _drawFlags <span class="token operator">=</span> DrawRendererFlags<span class="token punctuation">.</span>EnableDynamicBatching<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="8-GPU-Instance-GPU-实例化"><a href="#8-GPU-Instance-GPU-实例化" class="headerlink" title="8. GPU Instance GPU 实例化"></a>8. GPU Instance GPU 实例化</h2><pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token comment" spellcheck="true">// 开启 GPU 实例化 </span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>instancing<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    _drawFlags <span class="token operator">|</span><span class="token operator">=</span> DrawRendererFlags<span class="token punctuation">.</span>EnableInstancing<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="9-材质"><a href="#9-材质" class="headerlink" title="9. 材质"></a>9. 材质</h2><pre class="line-numbers language-cpp"><code class="language-cpp">Shader <span class="token string">"MyPipeLine/Unlit"</span>
+<span class="token punctuation">{</span>
+    Properties
+    <span class="token punctuation">{</span>
+        <span class="token function">_Color</span><span class="token punctuation">(</span><span class="token string">"Color"</span><span class="token punctuation">,</span>Color<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    SubShader
+    <span class="token punctuation">{</span>
+        Pass
+        <span class="token punctuation">{</span>    
+            HLSLPROGRAM
+            <span class="token macro property">#<span class="token directive keyword">pragma</span> target 3.5</span>
+            <span class="token macro property">#<span class="token directive keyword">pragma</span> multi_compile_instancing</span>
+            <span class="token macro property">#<span class="token directive keyword">pragma</span> instancing_options assumeuniformscaling</span>
+            <span class="token macro property">#<span class="token directive keyword">pragma</span> vertex UnlitPassVertex</span>
+            <span class="token macro property">#<span class="token directive keyword">pragma</span> fragment UnlitPassFragment</span>
+            <span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"../ShaderLibrary/Unlit.hlsl"</span></span>
+            ENDHLSL
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>shader 包含了 vert 和 fragment shader<br>以及支持 instance 的 multi compile<br>此外 ， 为支持instance 的矩阵变换 ，我们添加了 instancing_options </p>
+<p>其余内容，添加到 hlsl 的include 文件 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token keyword">struct</span> VertexInput <span class="token punctuation">{</span>
+    float4 pos<span class="token operator">:</span>POSITION<span class="token punctuation">;</span>
+    UNITY_VERTEX_INPUT_INSTANCE_ID
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">struct</span> VertexOutput <span class="token punctuation">{</span>
+    float4 clipPos<span class="token operator">:</span>SV_POSITION<span class="token punctuation">;</span>
+    UNITY_VERTEX_INPUT_INSTANCE_ID
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输入输出结构体<br>UNITY_VERTEX_INPUT_INSTANCE_ID 为支持instance 定义在 include 文件中</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+VertexOutput <span class="token function">UnlitPassVertex</span> <span class="token punctuation">(</span>VertexInput input<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    VertexOutput output<span class="token punctuation">;</span>
+    <span class="token function">UNITY_SETUP_INSTANCE_ID</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">UNITY_TRANSFER_INSTANCE_ID</span><span class="token punctuation">(</span>input<span class="token punctuation">,</span> output<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    float4 worldPos <span class="token operator">=</span> <span class="token function">mul</span><span class="token punctuation">(</span>UNITY_MATRIX_M<span class="token punctuation">,</span> <span class="token function">float4</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span>pos<span class="token punctuation">.</span>xyz<span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    output<span class="token punctuation">.</span>clipPos <span class="token operator">=</span> <span class="token function">mul</span><span class="token punctuation">(</span>unity_MatrixVP<span class="token punctuation">,</span> worldPos<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> output<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+float4 <span class="token function">UnlitPassFragment</span> <span class="token punctuation">(</span>VertexOutput input<span class="token punctuation">)</span> <span class="token operator">:</span> SV_TARGET <span class="token punctuation">{</span>
+    <span class="token function">UNITY_SETUP_INSTANCE_ID</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token function">UNITY_ACCESS_INSTANCED_PROP</span><span class="token punctuation">(</span>PerInstance<span class="token punctuation">,</span> _Color<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>顶点着色器中，我们除了支持instace的定义外 ，<br>我们计算了 worldPos 和 clipPos<br>其中用到了 MVP 矩阵 </p>
+<p>在 片元着色器中 ，我们用color输出了 instance</p>
+<p>矩阵的定义和赋值：</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token function">CBUFFER_START</span><span class="token punctuation">(</span>UnityPerFrame<span class="token punctuation">)</span>
+    float4x4 unity_MatrixVP<span class="token punctuation">;</span>
+CBUFFER_END
+
+<span class="token function">CBUFFER_START</span><span class="token punctuation">(</span>UnityPerDraw<span class="token punctuation">)</span>
+    float4x4 unity_ObjectToWorld<span class="token punctuation">;</span>
+CBUFFER_END
+<span class="token macro property">#<span class="token directive keyword">define</span> UNITY_MATRIX_M unity_ObjectToWorld</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>CBUFFER_START 是引用unity的常量缓存区，Constant buffer。<br>unity把矩阵计算好，存入其中 </p>
+<p>为了支持instace ，我们还需引入一个</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"Packages/com.unity.render-pipelines.core/ShaderLibrary/UnityInstancing.hlsl"</span></span>
+
+<span class="token function">UNITY_INSTANCING_BUFFER_START</span><span class="token punctuation">(</span>PerInstance<span class="token punctuation">)</span>
+<span class="token function">UNITY_DEFINE_INSTANCED_PROP</span><span class="token punctuation">(</span>float4<span class="token punctuation">,</span> _Color<span class="token punctuation">)</span>
+<span class="token function">UNITY_INSTANCING_BUFFER_END</span><span class="token punctuation">(</span>PerInstance<span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
 
