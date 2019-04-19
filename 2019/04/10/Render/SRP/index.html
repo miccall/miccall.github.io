@@ -180,7 +180,8 @@ context<span class="token punctuation">.</span><span class="token function">Setu
         <span class="token macro property">#<span class="token directive keyword">endif</span> </span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="2-Clear-清屏"><a href="#2-Clear-清屏" class="headerlink" title="2. Clear 清屏"></a>2. Clear 清屏</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+<h2 id="2-Clear-清屏"><a href="#2-Clear-清屏" class="headerlink" title="2. Clear 清屏"></a>2. Clear 清屏</h2><p>清空颜色缓存和深度缓存</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
         var clearFlags <span class="token operator">=</span> camera<span class="token punctuation">.</span>clearFlags<span class="token punctuation">;</span>
 
         _cameraBuffer<span class="token punctuation">.</span><span class="token function">ClearRenderTarget</span><span class="token punctuation">(</span>
@@ -190,6 +191,7 @@ context<span class="token punctuation">.</span><span class="token function">Setu
         <span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>ExecuteCommandBuffer 开始执行 command buffer </p>
 <pre class="line-numbers language-cpp"><code class="language-cpp">
             _cameraBuffer<span class="token punctuation">.</span><span class="token function">BeginSample</span><span class="token punctuation">(</span><span class="token string">"Render Camera"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
             context<span class="token punctuation">.</span><span class="token function">ExecuteCommandBuffer</span><span class="token punctuation">(</span>_cameraBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -197,7 +199,8 @@ context<span class="token punctuation">.</span><span class="token function">Setu
 
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="3-Draw-Opaque-渲染不透明物体"><a href="#3-Draw-Opaque-渲染不透明物体" class="headerlink" title="3. Draw Opaque 渲染不透明物体"></a>3. Draw Opaque 渲染不透明物体</h2><pre class="line-numbers language-cpp"><code class="language-cpp">            var drawRendererSettings <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">DrawRendererSettings</span><span class="token punctuation">(</span>camera<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token function">ShaderPassName</span><span class="token punctuation">(</span><span class="token string">"SRPDefaultUnlit"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<h2 id="3-Draw-Opaque-渲染不透明物体"><a href="#3-Draw-Opaque-渲染不透明物体" class="headerlink" title="3. Draw Opaque 渲染不透明物体"></a>3. Draw Opaque 渲染不透明物体</h2><p>渲染物体 ，首先根据渲染对象的类型 ，设置其 drawRendererSettings 的值<br>.sorting.flags 的值表示他渲染的物体排序方式<br>不透明物体的渲染时从前向后 ，而透明物体的渲染是从后向前<br>filterRendererSettings 表示渲染物体的种类 </p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">            var drawRendererSettings <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">DrawRendererSettings</span><span class="token punctuation">(</span>camera<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token function">ShaderPassName</span><span class="token punctuation">(</span><span class="token string">"SRPDefaultUnlit"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
             <span class="token punctuation">{</span>
                 sorting <span class="token operator">=</span> <span class="token punctuation">{</span>flags <span class="token operator">=</span> SortFlags<span class="token punctuation">.</span>CommonOpaque<span class="token punctuation">}</span><span class="token punctuation">,</span>
                 <span class="token comment" spellcheck="true">// 开启动态批处理</span>
@@ -212,17 +215,21 @@ context<span class="token punctuation">.</span><span class="token function">Setu
             context<span class="token punctuation">.</span><span class="token function">DrawRenderers</span><span class="token punctuation">(</span>_cull<span class="token punctuation">.</span>visibleRenderers<span class="token punctuation">,</span>ref drawRendererSettings<span class="token punctuation">,</span>filterRendererSettings<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>context.DrawRenderers 来执行渲染操作 </p>
 <h2 id="4-Sky-box-渲染天空盒"><a href="#4-Sky-box-渲染天空盒" class="headerlink" title="4. Sky box 渲染天空盒"></a>4. Sky box 渲染天空盒</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
 context<span class="token punctuation">.</span><span class="token function">DrawSkybox</span><span class="token punctuation">(</span>camera<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="5-DrawTransparent-渲染透明物体"><a href="#5-DrawTransparent-渲染透明物体" class="headerlink" title="5. DrawTransparent 渲染透明物体"></a>5. DrawTransparent 渲染透明物体</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+<h2 id="5-DrawTransparent-渲染透明物体"><a href="#5-DrawTransparent-渲染透明物体" class="headerlink" title="5. DrawTransparent 渲染透明物体"></a>5. DrawTransparent 渲染透明物体</h2><p>同理，我们上面说到了不透明物体的渲染时从前向后 ，而透明物体的渲染是从后向前  。<br>这次我们同样修改 drawRendererSettings 和 filterRendererSettings ，<br>并且context.DrawRenderers来执行</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
             drawRendererSettings<span class="token punctuation">.</span>sorting<span class="token punctuation">.</span>flags <span class="token operator">=</span> SortFlags<span class="token punctuation">.</span>CommonTransparent <span class="token punctuation">;</span>
             filterRendererSettings<span class="token punctuation">.</span>renderQueueRange <span class="token operator">=</span> RenderQueueRange<span class="token punctuation">.</span>transparent<span class="token punctuation">;</span>
             context<span class="token punctuation">.</span><span class="token function">DrawRenderers</span><span class="token punctuation">(</span>_cull<span class="token punctuation">.</span>visibleRenderers<span class="token punctuation">,</span>ref drawRendererSettings<span class="token punctuation">,</span>filterRendererSettings<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="6-error-错误材质"><a href="#6-error-错误材质" class="headerlink" title="6. error 错误材质"></a>6. error 错误材质</h2><pre class="line-numbers language-cpp"><code class="language-cpp">
+<h2 id="6-error-错误材质"><a href="#6-error-错误材质" class="headerlink" title="6. error 错误材质"></a>6. error 错误材质</h2><p>由于我们的管道仅支持我们自己的着色器，<br>而其他的却不会被渲染 。所有我们需要对其他进行统一处理，<br>最方便的方法就是使用错误的着色器。 </p>
+<p>让我们为此添加一个专用的DrawDefaultPipeline方法，</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
         <span class="token punctuation">[</span><span class="token function">Conditional</span><span class="token punctuation">(</span><span class="token string">"DEVELOPMENT_BUILD"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Conditional</span><span class="token punctuation">(</span><span class="token string">"UNITY_EDITOR"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
         <span class="token keyword">private</span>  <span class="token keyword">void</span> <span class="token function">DrawDefaultPipeline</span><span class="token punctuation">(</span>ScriptableRenderContext context<span class="token punctuation">,</span> Camera camera<span class="token punctuation">)</span>
         <span class="token punctuation">{</span>
@@ -339,6 +346,123 @@ CBUFFER_END
 <span class="token function">UNITY_INSTANCING_BUFFER_END</span><span class="token punctuation">(</span>PerInstance<span class="token punctuation">)</span>
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="10-灯光"><a href="#10-灯光" class="headerlink" title="10. 灯光"></a>10. 灯光</h2><p>平行光<br>点光<br>聚光</p>
+<p>范围<br>衰减</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+    <span class="token comment" spellcheck="true">// 最大支持的灯光数量 </span>
+    <span class="token keyword">private</span> <span class="token keyword">const</span> <span class="token keyword">int</span> maxVisibleLights <span class="token operator">=</span> <span class="token number">16</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 颜色id</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token keyword">int</span> visibleLightColorsId <span class="token operator">=</span> Shader<span class="token punctuation">.</span><span class="token function">PropertyToID</span><span class="token punctuation">(</span><span class="token string">"_VisibleLightColors"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 灯光的方向或者位置 (平行光忽略位置)</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token keyword">int</span> visibleLightDirectionsOrPositionsId <span class="token operator">=</span> Shader<span class="token punctuation">.</span><span class="token function">PropertyToID</span><span class="token punctuation">(</span><span class="token string">"_VisibleLightDirectionsOrPositions"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 灯光衰减</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token keyword">int</span> visibleLightAttenuationsId <span class="token operator">=</span> Shader<span class="token punctuation">.</span><span class="token function">PropertyToID</span><span class="token punctuation">(</span><span class="token string">"_VisibleLightAttenuations"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 聚光灯方向</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token keyword">int</span> visibleLightSpotDirectionsId <span class="token operator">=</span> Shader<span class="token punctuation">.</span><span class="token function">PropertyToID</span><span class="token punctuation">(</span><span class="token string">"_VisibleLightSpotDirections"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">//索引</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token keyword">int</span> lightIndicesOffsetAndCountID <span class="token operator">=</span> Shader<span class="token punctuation">.</span><span class="token function">PropertyToID</span><span class="token punctuation">(</span><span class="token string">"unity_LightIndicesOffsetAndCount"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">//buffer </span>
+    <span class="token keyword">private</span> Vector4<span class="token punctuation">[</span><span class="token punctuation">]</span> visibleLightColors <span class="token operator">=</span> <span class="token keyword">new</span> Vector4<span class="token punctuation">[</span>maxVisibleLights<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> Vector4<span class="token punctuation">[</span><span class="token punctuation">]</span> visibleLightDirectionsOrPositions <span class="token operator">=</span> <span class="token keyword">new</span> Vector4<span class="token punctuation">[</span>maxVisibleLights<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> Vector4<span class="token punctuation">[</span><span class="token punctuation">]</span> visibleLightAttenuations <span class="token operator">=</span> <span class="token keyword">new</span> Vector4<span class="token punctuation">[</span>maxVisibleLights<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> Vector4<span class="token punctuation">[</span><span class="token punctuation">]</span> visibleLightSpotDirections <span class="token operator">=</span> <span class="token keyword">new</span> Vector4<span class="token punctuation">[</span>maxVisibleLights<span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们需要对这些赋值然后传入shader</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp">
+        <span class="token comment" spellcheck="true">// 可见性</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>_cull<span class="token punctuation">.</span>visibleLights<span class="token punctuation">.</span>Count <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token function">ConfigureLights</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> _cameraBuffer<span class="token punctuation">.</span><span class="token function">SetGlobalVector</span><span class="token punctuation">(</span>lightIndicesOffsetAndCountID<span class="token punctuation">,</span> Vector4<span class="token punctuation">.</span>zero<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 传入shader</span>
+         _cameraBuffer<span class="token punctuation">.</span><span class="token function">BeginSample</span><span class="token punctuation">(</span><span class="token string">"Render Camera"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 设置 灯光 缓冲区  </span>
+        _cameraBuffer<span class="token punctuation">.</span><span class="token function">SetGlobalVectorArray</span><span class="token punctuation">(</span>
+            visibleLightColorsId<span class="token punctuation">,</span> visibleLightColors
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        _cameraBuffer<span class="token punctuation">.</span><span class="token function">SetGlobalVectorArray</span><span class="token punctuation">(</span>
+            visibleLightDirectionsOrPositionsId<span class="token punctuation">,</span> visibleLightDirectionsOrPositions
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        _cameraBuffer<span class="token punctuation">.</span><span class="token function">SetGlobalVectorArray</span><span class="token punctuation">(</span>
+            visibleLightAttenuationsId<span class="token punctuation">,</span> visibleLightAttenuations
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        _cameraBuffer<span class="token punctuation">.</span><span class="token function">SetGlobalVectorArray</span><span class="token punctuation">(</span>
+            visibleLightSpotDirectionsId<span class="token punctuation">,</span> visibleLightSpotDirections
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        context<span class="token punctuation">.</span><span class="token function">ExecuteCommandBuffer</span><span class="token punctuation">(</span>_cameraBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        _cameraBuffer<span class="token punctuation">.</span><span class="token function">Clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在 ConfigureLights(); 中 ，我们遍历场景中的灯光</p>
+<pre class="line-numbers language-cpp"><code class="language-cpp"><span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">ConfigureLights</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> _cull<span class="token punctuation">.</span>visibleLights<span class="token punctuation">.</span>Count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// 灯光数量限制</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> maxVisibleLights<span class="token punctuation">)</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 可用灯光 </span>
+            var light <span class="token operator">=</span> _cull<span class="token punctuation">.</span>visibleLights<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//finalColor ： 灯光的颜色乘以其强度</span>
+            visibleLightColors<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> light<span class="token punctuation">.</span>finalColor<span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 衰减值 </span>
+            var attenuation <span class="token operator">=</span> Vector4<span class="token punctuation">.</span>zero<span class="token punctuation">;</span>
+            attenuation<span class="token punctuation">.</span>w <span class="token operator">=</span> <span class="token number">1f</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 平行光 ： 计算灯光方向 ，位置无关 </span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>light<span class="token punctuation">.</span>lightType <span class="token operator">==</span> LightType<span class="token punctuation">.</span>Directional<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                var v <span class="token operator">=</span> light<span class="token punctuation">.</span>localToWorld<span class="token punctuation">.</span><span class="token function">GetColumn</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                v<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token operator">-</span>v<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+                v<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token operator">-</span>v<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+                v<span class="token punctuation">.</span>z <span class="token operator">=</span> <span class="token operator">-</span>v<span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+                visibleLightDirectionsOrPositions<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">else</span>
+            <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// point light</span>
+
+                visibleLightDirectionsOrPositions<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> light<span class="token punctuation">.</span>localToWorld<span class="token punctuation">.</span><span class="token function">GetColumn</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                attenuation<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token number">1f</span> <span class="token operator">/</span> Mathf<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>light<span class="token punctuation">.</span>range <span class="token operator">*</span> light<span class="token punctuation">.</span>range<span class="token punctuation">,</span> <span class="token number">0.00001f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>light<span class="token punctuation">.</span>lightType <span class="token operator">==</span> LightType<span class="token punctuation">.</span>Spot<span class="token punctuation">)</span>
+                <span class="token punctuation">{</span>
+                    var v <span class="token operator">=</span> light<span class="token punctuation">.</span>localToWorld<span class="token punctuation">.</span><span class="token function">GetColumn</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    v<span class="token punctuation">.</span>x <span class="token operator">=</span> <span class="token operator">-</span>v<span class="token punctuation">.</span>x<span class="token punctuation">;</span>
+                    v<span class="token punctuation">.</span>y <span class="token operator">=</span> <span class="token operator">-</span>v<span class="token punctuation">.</span>y<span class="token punctuation">;</span>
+                    v<span class="token punctuation">.</span>z <span class="token operator">=</span> <span class="token operator">-</span>v<span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+                    visibleLightSpotDirections<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> v<span class="token punctuation">;</span>
+
+                    var outerRad <span class="token operator">=</span> Mathf<span class="token punctuation">.</span>Deg2Rad <span class="token operator">*</span> <span class="token number">0.5f</span> <span class="token operator">*</span> light<span class="token punctuation">.</span>spotAngle<span class="token punctuation">;</span>
+                    var outerCos <span class="token operator">=</span> Mathf<span class="token punctuation">.</span><span class="token function">Cos</span><span class="token punctuation">(</span>outerRad<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    var outerTan <span class="token operator">=</span> Mathf<span class="token punctuation">.</span><span class="token function">Tan</span><span class="token punctuation">(</span>outerRad<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    var innerCos <span class="token operator">=</span>
+                        Mathf<span class="token punctuation">.</span><span class="token function">Cos</span><span class="token punctuation">(</span>Mathf<span class="token punctuation">.</span><span class="token function">Atan</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">46f</span> <span class="token operator">/</span> <span class="token number">64f</span><span class="token punctuation">)</span> <span class="token operator">*</span> outerTan<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    var angleRange <span class="token operator">=</span> Mathf<span class="token punctuation">.</span><span class="token function">Max</span><span class="token punctuation">(</span>innerCos <span class="token operator">-</span> outerCos<span class="token punctuation">,</span> <span class="token number">0.001f</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    attenuation<span class="token punctuation">.</span>z <span class="token operator">=</span> <span class="token number">1f</span> <span class="token operator">/</span> angleRange<span class="token punctuation">;</span>
+                    attenuation<span class="token punctuation">.</span>w <span class="token operator">=</span> <span class="token operator">-</span>outerCos <span class="token operator">*</span> attenuation<span class="token punctuation">.</span>z<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+
+            visibleLightAttenuations<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> attenuation<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>_cull<span class="token punctuation">.</span>visibleLights<span class="token punctuation">.</span>Count <span class="token operator">&lt;=</span> maxVisibleLights<span class="token punctuation">)</span> <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">{</span>
+            var lightIndices <span class="token operator">=</span> _cull<span class="token punctuation">.</span><span class="token function">GetLightIndexMap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>var i <span class="token operator">=</span> maxVisibleLights<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> _cull<span class="token punctuation">.</span>visibleLights<span class="token punctuation">.</span>Count<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                lightIndices<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            _cull<span class="token punctuation">.</span><span class="token function">SetLightIndexMap</span><span class="token punctuation">(</span>lightIndices<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
 
